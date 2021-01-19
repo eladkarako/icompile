@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons</title>
+  <meta itemprop="name"                                content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+  <meta name="dcterms.title"                           content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+  <meta property="og:title"                            content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+  <meta name="twitter:title"                           content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+  <meta name="twitter:text:title"                      content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+  <meta name="application-name"                        content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+  <meta name="subject"                                 content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+  <meta name="apple-mobile-web-app-title"              content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+  <meta name="msapplication-tooltip"                   content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+  <meta itemprop="description"                         content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+  <meta name="dcterms.description"                     content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+  <meta name="twitter:description"                     content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+  <meta property="og:description"                      content="A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="absorb,absorbable,align,alignnone,answers,arrow,attribute,avoiding,base,blank,bold,bolder,browsers,called,cases,click,code,color,combined,compatible,content,convert,copy,create,cursor,download,easy,editor,elements,embedded,emoji,emojis,english,essentially,experiment,external,font,generated,github,hebrew,hovering,icon,icons,ignore,image,include,inform,internal,links,made,make,making,margin,meaning,mimics,minimal,modify,native,naturally,nice,optionally,padding,paint,param,paste,placing,position,program,project,pure,querying,remove,required,rgba,rules,save,scenario,script,sections,selector,semi,simple,size,solution,specific,super,syntax,target,transparent,umoji,unicode,upward,usable,users,versions,vertical,vertically,website,weight,white,wikipedia,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="absorb,absorbable,align,alignnone,answers,arrow,attribute,avoiding,base,blank,bold,bolder,browsers,called,cases,click,code,color,combined,compatible,content,convert,copy,create,cursor,download,easy,editor,elements,embedded,emoji,emojis,english,essentially,experiment,external,font,generated,github,hebrew,hovering,icon,icons,ignore,image,include,inform,internal,links,made,make,making,margin,meaning,mimics,minimal,modify,native,naturally,nice,optionally,padding,paint,param,paste,placing,position,program,project,pure,querying,remove,required,rgba,rules,save,scenario,script,sections,selector,semi,simple,size,solution,specific,super,syntax,target,transparent,umoji,unicode,upward,usable,users,versions,vertical,vertically,website,weight,white,wikipedia,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/bi-cure-laser-nope"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/bi-cure-laser-nope"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/css-ninja-techniques-external-links-icon-in-pure-css"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/css-for-external-links"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/css-for-external-links"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/css-for-external-links"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/css-for-external-links"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/css-for-external-links"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/css-for-external-links"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-01-19T13:48:23+00:00"     />
+  <meta name="page-datetime"                           content="2016-01-19T13:48:23+00:00"     />
+  <meta property="article:published_time"              content="2016-01-19T13:48:23+00:00"     />
+  <meta name="dcterms.date"                            content="2016-01-19T13:48:23+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-03-12T13:59:17+00:00"    />
+  <meta property="article:modified_time"               content="2016-03-12T13:59:17+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/css-for-external-links"
+,"url"             : "https://icompile.eladkarako.com/css-for-external-links"
+,"headline"        : "A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"
+,"description"     : "A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons"
+,"datePosted"      : "2016-01-19T13:48:23+00:00"
+,"dateCreated"     : "2016-01-19T13:48:23+00:00"
+,"datePublished"   : "2016-01-19T13:48:23+00:00"
+,"dateModified"    : "2016-03-12T13:59:17+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003031123541">
+  <header>
+    <h1 itemprop="headline">A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons</h1>
+    <sup>Posted at <time datetime="2016-03-12T13:59:17+00:00" itemprop="dateModified">Sat, 12 Mar 2016 13:59:17 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><!--more--><br/>
+<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_external_links.jpg" alt="icompile.eladkarako.com_external_links" width="823" height="130" class="alignnone size-full wp-image-4403" /><br/>
+<br/>
+I had a nice experiment before, that mimics the icons Wikipedia uses (both Hebrew [RTL] and English [LTR] versions) it even used a base64 of semi-transparent PNG to make it super-compatible with most browsers out there, minimal CSS rules required.<br/>
+<br/>
+This time avoiding the need to use an embedded image, I've generated a website called <a href="http://umoji.eladkarako.com/" target="_blank">umoji.eladkarako.com</a> (and its <a href="http://www.github.com/eladkarako/umoji.eladkarako.com/" target="_blank">GitHub project</a>) that contain a simple one box with all (most) of Unicode-emojis out-there, making it easy to include them in project (or StackOverflow answers &#x1f44c;) by a simple Copy&&Paste,<br/>
+<br/>
+This made to following code super easy to style,<br/>
+<br/>
+essentially YOU are placing an "icon" right after the link (using the ':after' syntax-selector),<br/>
+the icon is an upward arrow, placed vertically at super-script position,<br/>
+- not using top or padding or margin to place elements, but native values- is the best practice, naturally..<br/>
+<br/>
+The entire solution is pure CSS implementation, it uses the 'href' attribute of &lt;a&gt; elements querying about its content, specifically asking only &lt;a&gt; elements that has no content with the string 'eladkarako.com' in it,<br/>
+naturally there are some links that would considered "not external" for example:<br/>
+http://example.com?param1=eladkarako.com but in-order to keep the solution simple, this scenario is "absorbable" (meaning we can absorb or "ignore" the few cases..)<br/>
+<br/>
+<br/>
+<pre><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#808030; '>[</span><span style='color:#074726; '>href</span><span style='color:#808030; '>]</span><span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>not</span><span style='color:#800080; '>(</span><span style='color:#808030; '>[</span><span style='color:#074726; '>href</span><span style='color:#808030; '>*=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>eladkarako.com</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span><span style='color:#800080; '>)</span><span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>after</span> <span style='color:#800080; '>{</span><br/>
+  <span style='color:#bb7977; font-weight:bold; '>content</span><span style='color:#808030; '>:</span> <span style='color:#800000; '>'</span><span style='font-weight:bolder;color:#0000e6; '>↗</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#bb7977; font-weight:bold; '>position</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>relative</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#bb7977; font-weight:bold; '>color</span><span style='color:#808030; '>:</span> <span style='color:#400000; '>rgba</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>.5</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#bb7977; font-weight:bold; '>font-size</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>8</span><span style='color:#006600; '>pt</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#bb7977; font-weight:bold; '>font-weight</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>bolder</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#bb7977; font-weight:bold; '>vertical-align</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>super</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><br/>
+</pre><br/>
+<br/>
+this may be combined with other similar rules such as "download" links, internal links, links to specific sections, log-out links, registration links etc...<br/>
+<br/>
+you can even modify the cursor while hovering them, to the same image,<br/>
+but in this case you would either have to create a SVG image (using that unicode-emoji) or copy-paste to an image-editor program such as Paint.net, remove white background, save as png, convert to base64 (optionally) before making the image usable.. <br/>
+<br/>
+too long? meh.</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/bi-cure-laser-nope">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/css-ninja-techniques-external-links-icon-in-pure-css">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-ninja-techniques-external-links-icon-in-pure-css">CSS Ninja Techniques - External Links Icon In Pure CSS</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/apktool-advance-settings">APKTOOL Hidden Advance Command Line Switches</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/canon-maxify-mb2300-driver-disk-and-hebrew-manual-pdf">Canon MAXIFY MB2300 Driver Disk And Hebrew Manual (PDF)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/genymotion-flash-gapps-supersu-and-update-binary-su">SuperSU And Update Binary su</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tcpip-and-winsock-clean-fix-for-xpvistawin7">TCP/IP and Winsock clean fix for xp,vista,win7+</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/zero-plugin-solution-for-disqus-on-wordpress">Zero Plugin Solution For Disqus On WordPress</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-compatible-javascript-window">Controllable-Window</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ublock-can-block-mutationevent">uBlock Can Block MutationEvent :)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/a-gentle-yet-effective-nul-css">Yet Effective - NUL CSS</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/right-to-left-and-hebrew-content-on-template-based-platform">Right-To-Left And Hebrew Content On Template-Based Platform</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-repeat-anything">JavaScript Snippet - Repeat Anything</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/very-wow-much-something">"Very Wow Much..." Something</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascriptphp-unicode-notes">JavaScript/PHP Unicode Notes</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adblock-rules-for-an-ad-free-pandora">AdBlock-Rules For An Ad-Free Pandora (No Audio Ads!)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unofficial-dex2jar-2-1">Unofficial dex2jar/dex-tools 2.1 Nightly &#x1f527;</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/file-touch-format-one-liner">Unix Snippet - Get File's "Touch Date-Format" One-Liner</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

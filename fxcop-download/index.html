@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>FxCop Download</title>
+  <meta itemprop="name"                                content="FxCop Download"       />
+  <meta name="dcterms.title"                           content="FxCop Download"       />
+  <meta property="og:title"                            content="FxCop Download"       />
+  <meta name="twitter:title"                           content="FxCop Download"       />
+  <meta name="twitter:text:title"                      content="FxCop Download"       />
+  <meta name="application-name"                        content="FxCop Download"       />
+  <meta name="subject"                                 content="FxCop Download"       />
+  <meta name="apple-mobile-web-app-title"              content="FxCop Download"       />
+  <meta name="msapplication-tooltip"                   content="FxCop Download"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="FxCop Download"       />
+  <meta itemprop="description"                         content="FxCop Download"       />
+  <meta name="dcterms.description"                     content="FxCop Download"       />
+  <meta name="twitter:description"                     content="FxCop Download"       />
+  <meta property="og:description"                      content="FxCop Download"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="affect,align,analyzes,archive,areas,assemblies,based,blank,block,border,callgraph,casing,checking,checks,clean,click,clicking,code,codeplex,coding,collisions,command,compiled,completely,configured,configuring,conformance,continue,cooler,correct,create,cross,default,degrade,description,design,detect,development,discuses,display,double,download,downloaded,downloading,easier,easy,edit,editions,editor,elements,enhanced,errors,execution,extract,extracted,extracting,favour,feature,features,figured,file,files,fine,flaws,font,framework,free,fxcop,fxcopy,grab,guidelines,hell,icsharpcode,include,included,includes,incorrect,information,inline,inspect,install,installer,installers,interop,issues,keyword,language,leave,line,lint,location,maintenance,malicious,managed,margin,members,memory,method,microsoft,missing,names,namespaces,naming,nice,noticed,object,original,padding,parameters,parsing,perfectly,performance,placing,portability,portable,potential,premium,program,programming,purged,radius,reading,recently,recklessly,registry,related,relations,reliability,requires,rgba,ripped,rules,safe,security,settings,setup,setupzip,shortcuts,simply,size,skip,slightly,source,spoiler,standards,static,stripping,strong,studio,stylecop,system,target,team,thread,title,tool,types,typically,ugly,unmodified,usage,users,version,versions,violations,visual,vulnerable,wiki,wikipedia,windows,winsdk,wonderful,works,wrapped,write,writes,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="affect,align,analyzes,archive,areas,assemblies,based,blank,block,border,callgraph,casing,checking,checks,clean,click,clicking,code,codeplex,coding,collisions,command,compiled,completely,configured,configuring,conformance,continue,cooler,correct,create,cross,default,degrade,description,design,detect,development,discuses,display,double,download,downloaded,downloading,easier,easy,edit,editions,editor,elements,enhanced,errors,execution,extract,extracted,extracting,favour,feature,features,figured,file,files,fine,flaws,font,framework,free,fxcop,fxcopy,grab,guidelines,hell,icsharpcode,include,included,includes,incorrect,information,inline,inspect,install,installer,installers,interop,issues,keyword,language,leave,line,lint,location,maintenance,malicious,managed,margin,members,memory,method,microsoft,missing,names,namespaces,naming,nice,noticed,object,original,padding,parameters,parsing,perfectly,performance,placing,portability,portable,potential,premium,program,programming,purged,radius,reading,recently,recklessly,registry,related,relations,reliability,requires,rgba,ripped,rules,safe,security,settings,setup,setupzip,shortcuts,simply,size,skip,slightly,source,spoiler,standards,static,stripping,strong,studio,stylecop,system,target,team,thread,title,tool,types,typically,ugly,unmodified,usage,users,version,versions,violations,visual,vulnerable,wiki,wikipedia,windows,winsdk,wonderful,works,wrapped,write,writes,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/uninstall-pdanet-broadband"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/uninstall-pdanet-broadband"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javascript-no-regex-with-backtrack-and-global-search"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/fxcop-download"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/fxcop-download"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/fxcop-download"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/fxcop-download"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/fxcop-download"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/fxcop-download"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-06-24T00:54:29+00:00"     />
+  <meta name="page-datetime"                           content="2016-06-24T00:54:29+00:00"     />
+  <meta property="article:published_time"              content="2016-06-24T00:54:29+00:00"     />
+  <meta name="dcterms.date"                            content="2016-06-24T00:54:29+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-06-25T11:22:10+00:00"    />
+  <meta property="article:modified_time"               content="2016-06-25T11:22:10+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/fxcop-download"
+,"url"             : "https://icompile.eladkarako.com/fxcop-download"
+,"headline"        : "FxCop Download"
+,"description"     : "FxCop Download"
+,"datePosted"      : "2016-06-24T00:54:29+00:00"
+,"dateCreated"     : "2016-06-24T00:54:29+00:00"
+,"datePublished"   : "2016-06-24T00:54:29+00:00"
+,"dateModified"    : "2016-06-25T11:22:10+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0009669276641">
+  <header>
+    <h1 itemprop="headline">FxCop Download</h1>
+    <sup>Posted at <time datetime="2016-06-25T11:22:10+00:00" itemprop="dateModified">Sat, 25 Jun 2016 11:22:10 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><span style="text-align:center; margin:0; background:none rgba(234,240,77,.3); border-radius:20px; display:inline-block; padding:10px;">Download A 100% No Installer,<br>Completely Portable Unmodified FxCop.</span><br/>
+<br/>
+<!--more--><br/>
+<hr/><br/>
+<br/>
+<blockquote style="border-radius:5px; background:none rgba(214,252,255,.4); font-size:9pt;"><strong>FxCop</strong> is a free static code analysis tool from Microsoft that checks .NET managed code assemblies for conformance to Microsoft's .NET Framework Design Guidelines. Unlike StyleCop, or the Lint programming tool, for the C programming language, <strong>FxCop</strong> analyzes the compiled object code, not the original source code.<br/>
+<br/>
+It uses CIL parsing, and callgraph analysis to inspect assemblies for more than 200 different possible coding standards violations in the following areas:<br/>
+  - COM (Interoperability) – rules that detect COM Interop issues.<br/>
+  - Design – rules that detect potential design flaws. These coding errors typically do not affect the execution of your code.<br/>
+  - Globalization – rules that detect missing or incorrect usage of information related to globalization and localization.<br/>
+  - Naming – rules that detect incorrect casing, cross language keyword collisions, and other issues related to the names of types, members, parameters, namespaces, and assemblies.<br/>
+  - Performance – rules that detect elements in your assemblies that will degrade performance.<br/>
+  - Security – rules that detect programming elements that leave your assemblies vulnerable to malicious users or code.<br/>
+  - Usage - rules that detect potential flaws in your assemblies that can affect code execution.<br/>
+  - Maintainability - rules that detect maintenance issues.<br/>
+  - Portability - rules that detect portability issues.<br/>
+  - Reliability- rules that detect correct memory and thread usage.<br/>
+<br/>
+<strong>FxCop</strong> includes both GUI and command line versions of the tool. Microsoft Visual Studio 2005 and Visual Studio 2008 Team System Development Editions both include a "Code Analysis" feature based on <strong>FxCop</strong>.<br/>
+<br/>
+For Visual Studio 2010 the corresponding, and slightly enhanced, static code analysis features are included in the Premium and Ultimate editions. <strong>FxCop</strong> 10.0 is included in the Microsoft Windows SDK for Windows 7.<br/>
+<br/>
+<em><a href="https://en.wikipedia.org/wiki/FxCop" target="_blank">FxCop</a> - Wikipedia.</em><br/>
+</blockquote><br/>
+<br/>
+<br/>
+I've recently purged everything <em>Visual-Studio .NET</em> related in favour of <a href="http://www.icsharpcode.net/" target="_blank">SharpDevelop</a>, <sup><strong>[which is a wonderful C++/C# editor]</strong></sup>, while <em>configuring things up there</em> I've noticed that FxCopy (which is a part of WinSDK installation) wasn't configured,<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/06/icompile.eladkarako.com_description_of_sharpdevelop_FxCop_settings.gif"/><br/>
+<br/>
+While I did downloaded the SDK before But I've figured that it will be much *cooler* to have <em>*just this part*</em> portable as $hit, since I'm already using the portable version of <em>SharpDevelop</em>.<br/>
+<br/>
+While <a href="https://fxcopinstaller.codeplex.com/" target="_blank">FxCop Installer [codeplex]</a> ripped successfully the installer..<br/>
+it was still wrapped with the ugly Windows-Installer hell.. <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/06/icompile.eladkarako.com_description_of_windows_installer.gif"/><br/>
+<br/>
+After I've extracted the HELL of it <em>(let us not discuses my method here&&now..)</em>  I've got a nice clean <a href="https://en.wikipedia.org/wiki/Windows_Installer" target="_blank"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/06/icompile.eladkarako.com_description_of_msi_windows_installer.gif"/>MSI archive</a>  <br/>
+<br/>
+<blockquote code-like><br/>
+<strong>[Download #1 - A Clean MSI installer]</strong><br/>
+Size: 2.86MB.<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/06/icompile.eladkarako.com_description_of_FxCop10_setup.gif"/><br/>
+<a title="Download FxCop10_setup.zip" target="_blank" rem-href="https://icompile.eladkarako.com/_uploads/2016/06/icompile.eladkarako.com__FxCop10_setup.zip" href="http://q.gs/6965854/fxcop10-setupzip">FxCop10_setup.zip</a><br/>
+</blockquote><br/>
+<br/>
+The installer above will write the file to their default-location under program-files, and will create shortcuts and such..<br/>
+<em>so if you are inexperience downloading and extracting the zip, and double-clicking the <code>install.msi</code> will probably be the easier method for you.</em><br/>
+<br/>
+If you are a <em>recklessly s.o.b</em> keep reading..<br/>
+<br/>
+<blockquote style="font-size:10pt;"><strong>EDIT:</strong> actually from my checking <em>[*spoiler*]</em> neither <strong>FxCop</strong> nor <strong>SharpDevelop</strong> (in its portable version) writes any registry values, so it is perfectly safe to continue stripping the installers, and placing the files in any place you'll like to..</blockquote><br/>
+<br/>
+..anyway extracting MSI-archive-installer is relatively easy, <br/>
+<sub><em>as long you consider the relations between MSI-files, but let us skip this part..</em></sub><br/>
+<br/>
+here is what you've came-for..<br/>
+<br/>
+<blockquote code-like><br/>
+<strong>[Download #2 - FxCop 10, No install]</strong><br/>
+Size: 2.98MB.<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/06/icompile.eladkarako.com_description_of_FxCop10.gif"/><br/>
+<a title="Download FxCop10.zip" target="_blank" rem-href="https://icompile.eladkarako.com/_uploads/2016/06/icompile.eladkarako.com__FxCop10.zip" href="http://q.gs/6965854/fxcop10zip">FxCop10.zip</a><br/>
+</blockquote><br/>
+<br/>
+I've figured out that both SharpDevelop (in its portable version) and FxCop actually does not write any registry-values, so just grab the *later* zip file, extract it *anywhere* and simply target <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/06/icompile.eladkarako.com_description_of_FxCop_exe.gif"/><code>fxcop.exe</code> in any program that requires it.<br/>
+<br/>
+..or just double-click it, it works just fine :]<br/>
+<br/>
+Have fun.</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/uninstall-pdanet-broadband">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-no-regex-with-backtrack-and-global-search">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-no-regex-with-backtrack-and-global-search">JavaScript Ninja - No RegEx With Backtrack And Global-Search</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/remove-pagespeed-images">Remove PageSpeed Images</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-event-purge-no-jquery-needed">JavaScript Ninja - Event Purge (No jQuery Needed..)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-wrap-fold-text-at-certain-column-size">JavaScript Ninja - Wrap Fold Text At Certain Column Size</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-vid-to-youtube-720p-compatible-slim-mkv">FFMPEG Vid To YouTube 720p Compatible Slim MKV</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-what-is-this-for">What Is This For?</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wordpress-ninja-the-missing-sorting-plugins-by-popularity">Wordpress Ninja - The Missing "Sorting Plugins By Popularity"</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/com-sec-jewishcalendar">לוח שנה עברי - com.sec.jewishcalendar</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-wordpress-plugin-set-robots">New WordPress Plugin - Set ROBOTS</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easeus-subdomains">EaseUS-Related Sub-Domains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easeus-update-service">EaseUS Update Service</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wordpresss-another-update-is-currently-in-progress">WordPress's "Another update is currently in progress."</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easeus-is-a-piece-of-shit">EaseUS Is A Piece Of $hit!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/go-daddy-thanks-for-the-nightmares">Go-Daddy! Thanks For The Nightmares</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-home-plants-anti-aphids">Solved: Home-Plants Anti-Aphids</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-wordpress-minileven-5-posts-limit">Solved: WordPress Minileven 5 Posts Limit</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

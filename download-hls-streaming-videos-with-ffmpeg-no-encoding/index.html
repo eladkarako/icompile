@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Download HLS Streaming-Videos With FFMPEG. No-Encoding!</title>
+  <meta itemprop="name"                                content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+  <meta name="dcterms.title"                           content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+  <meta property="og:title"                            content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+  <meta name="twitter:title"                           content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+  <meta name="twitter:text:title"                      content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+  <meta name="application-name"                        content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+  <meta name="subject"                                 content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+  <meta name="apple-mobile-web-app-title"              content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+  <meta name="msapplication-tooltip"                   content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+  <meta itemprop="description"                         content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+  <meta name="dcterms.description"                     content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+  <meta name="twitter:description"                     content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+  <meta property="og:description"                      content="Download HLS Streaming-Videos With FFMPEG. No-Encoding!"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="adding,address,advance,afifo,ahead,amlst,archive,arrow,authorities,automate,back,backup,banner,beautifuly,black,blocked,bother,browse,browser,browsing,buggy,build,builds,built,burp,button,canary,card,care,ccookie,central,certificate,change,cheat,check,checkboxes,choice,choose,chrome,chunklist,classic,click,clipboard,clips,close,code,codec,codecguide,colon,color,combination,command,community,complex,compression,computer,configure,connection,console,content,cookie,copy,copying,couple,creates,ctedgecdn,ctoken,curl,dashboard,data,decodes,default,defaults,definst,designed,desktop,details,developers,dialog,directed,divisable,download,downloaded,downloading,dxva,edit,encode,encoding,ends,enter,execute,extension,fast,ffmpeg,fiddler,fifo,file,filename,files,filled,filter,filters,fine,finish,firefox,folder,frame,free,gave,gear,generated,generic,github,google,goto,gpus,graphic,great,haboker,haolam,headers,helps,hide,high,highest,hold,hour,hover,hqdn,html,hwaccel,idle,iiscdn,import,includes,information,input,inspect,inspection,install,installing,intel,intercept,issues,item,java,joining,keeping,keyboard,kind,larger,latest,lenovo,libx,license,line,links,lockpref,lost,lower,lowers,machine,major,make,makes,manual,match,media,mediaroot,mergin,merging,minutes,modern,mouse,mozilla,myvideo,named,nana,nearest,needed,network,newpipe,news,nice,nightly,noise,note,notepad,notes,noticed,nvidia,official,officially,open,opened,opening,operation,option,options,original,output,pane,paste,path,pause,period,picture,pixelations,play,playable,player,playlist,port,portswigger,possibly,power,praticular,pref,prefer,preferences,prefs,preserve,preset,press,privacy,process,processing,profile,program,proper,properties,proportion,proportions,provide,proxy,quality,qulity,ration,releases,removes,replaces,require,required,reshet,resize,resolution,resource,running,runtime,sadly,scale,scaling,scrape,scraping,screen,season,seconds,secure,secured,security,segments,select,selected,selecting,settings,shame,site,size,smaller,smart,smartphones,smooth,somepage,specific,start,static,step,steps,stopped,streaming,strong,sucked,sucks,supports,switch,system,target,task,teamnewpipe,tips,tool,trac,traffic,tree,trust,trusting,turn,type,ultrafast,upload,uploading,user,users,version,veryslow,video,videos,viewed,wait,waiting,website,websites,webview,wide,wiki,window,windows,wise,worked,working,works,wrapping,write,youtube,zeranoe,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="adding,address,advance,afifo,ahead,amlst,archive,arrow,authorities,automate,back,backup,banner,beautifuly,black,blocked,bother,browse,browser,browsing,buggy,build,builds,built,burp,button,canary,card,care,ccookie,central,certificate,change,cheat,check,checkboxes,choice,choose,chrome,chunklist,classic,click,clipboard,clips,close,code,codec,codecguide,colon,color,combination,command,community,complex,compression,computer,configure,connection,console,content,cookie,copy,copying,couple,creates,ctedgecdn,ctoken,curl,dashboard,data,decodes,default,defaults,definst,designed,desktop,details,developers,dialog,directed,divisable,download,downloaded,downloading,dxva,edit,encode,encoding,ends,enter,execute,extension,fast,ffmpeg,fiddler,fifo,file,filename,files,filled,filter,filters,fine,finish,firefox,folder,frame,free,gave,gear,generated,generic,github,google,goto,gpus,graphic,great,haboker,haolam,headers,helps,hide,high,highest,hold,hour,hover,hqdn,html,hwaccel,idle,iiscdn,import,includes,information,input,inspect,inspection,install,installing,intel,intercept,issues,item,java,joining,keeping,keyboard,kind,larger,latest,lenovo,libx,license,line,links,lockpref,lost,lower,lowers,machine,major,make,makes,manual,match,media,mediaroot,mergin,merging,minutes,modern,mouse,mozilla,myvideo,named,nana,nearest,needed,network,newpipe,news,nice,nightly,noise,note,notepad,notes,noticed,nvidia,official,officially,open,opened,opening,operation,option,options,original,output,pane,paste,path,pause,period,picture,pixelations,play,playable,player,playlist,port,portswigger,possibly,power,praticular,pref,prefer,preferences,prefs,preserve,preset,press,privacy,process,processing,profile,program,proper,properties,proportion,proportions,provide,proxy,quality,qulity,ration,releases,removes,replaces,require,required,reshet,resize,resolution,resource,running,runtime,sadly,scale,scaling,scrape,scraping,screen,season,seconds,secure,secured,security,segments,select,selected,selecting,settings,shame,site,size,smaller,smart,smartphones,smooth,somepage,specific,start,static,step,steps,stopped,streaming,strong,sucked,sucks,supports,switch,system,target,task,teamnewpipe,tips,tool,trac,traffic,tree,trust,trusting,turn,type,ultrafast,upload,uploading,user,users,version,veryslow,video,videos,viewed,wait,waiting,website,websites,webview,wide,wiki,window,windows,wise,worked,working,works,wrapping,write,youtube,zeranoe,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/sphereup-subdomains"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/sphereup-subdomains"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/easy-native-lazyloading-support-for-your-website"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/download-hls-streaming-videos-with-ffmpeg-no-encoding"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/download-hls-streaming-videos-with-ffmpeg-no-encoding"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/download-hls-streaming-videos-with-ffmpeg-no-encoding"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/download-hls-streaming-videos-with-ffmpeg-no-encoding"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/download-hls-streaming-videos-with-ffmpeg-no-encoding"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/download-hls-streaming-videos-with-ffmpeg-no-encoding"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2020-04-19T14:11:10+00:00"     />
+  <meta name="page-datetime"                           content="2020-04-19T14:11:10+00:00"     />
+  <meta property="article:published_time"              content="2020-04-19T14:11:10+00:00"     />
+  <meta name="dcterms.date"                            content="2020-04-19T14:11:10+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2020-04-19T14:11:10+00:00"    />
+  <meta property="article:modified_time"               content="2020-04-19T14:11:10+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/download-hls-streaming-videos-with-ffmpeg-no-encoding"
+,"url"             : "https://icompile.eladkarako.com/download-hls-streaming-videos-with-ffmpeg-no-encoding"
+,"headline"        : "Download HLS Streaming-Videos With FFMPEG. No-Encoding!"
+,"description"     : "Download HLS Streaming-Videos With FFMPEG. No-Encoding!"
+,"datePosted"      : "2020-04-19T14:11:10+00:00"
+,"dateCreated"     : "2020-04-19T14:11:10+00:00"
+,"datePublished"   : "2020-04-19T14:11:10+00:00"
+,"dateModified"    : "2020-04-19T14:11:10+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0000745037851">
+  <header>
+    <h1 itemprop="headline">Download HLS Streaming-Videos With FFMPEG. No-Encoding!</h1>
+    <sup>Posted at <time datetime="2020-04-19T14:11:10+00:00" itemprop="dateModified">Sun, 19 Apr 2020 14:11:10 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">Those notes were designed for developers, <br/>
+they are complex and advance, require many installations, <br/>
+but you can't actually f*** anything-up in the process, <br/>
+so if you're up for it, go ahead.<br/>
+<br/>
+We'll be getting a playlist URL from a browser, <br/>
+copying cookie-authentication and downloading and merging streaming video-segments into a playable video file, and fast too.<br/>
+<br/>
+Here are the steps to follow...<br/>
+<br/>
+<ol><br/>
+<li><br/>
+You'll need: <br/>
+<br/>
+FFMPEG<br/>
+<a href="https://ffmpeg.zeranoe.com/builds/">https://ffmpeg.zeranoe.com/builds/</a>.<br/>
+Choose the static build (prefer x64 bit if your machine supports it).<br/>
+<br/>
+<br/>
+Burp.<br/>
+You can get a (free) community license in here: <a href="https://portswigger.net/burp/releases/professional-community-2020-2-1?requestededition=community">portswigger.net/burp/releases/professional-community-2020-2-1?requestededition=community</a>. <br/>
+It's a way we'll view the network-traffic, <br/>
+and it will help us to copy the needed-data in-order to download the video.<br/>
+I've used Fiddler. It sucked! (and sometime ago stopped working..),<br/>
+Chrome had issues with the specific HTML video-player I've needed to scrape (was blocked..),<br/>
+and Firefox worked by the nightly version I've used had the major issues with the network-inspection tab.<br/>
+<br/>
+<br/>
+Java.<br/>
+Burp needs Java. <br/>
+You can download the exe (if your operation-system is Windows), <br/>
+which probably includes a Java-runtime. <br/>
+Or you can download the Jar from the Burp-website (better) and use your own java.<br/>
+You can download JDK (which includes java-runtime) for Windows from here: <a href="https://github.com/eladkarako/JDK-archive">https://github.com/eladkarako/JDK-archive</a>. <br/>
+You'll probably be fine with just keeping the JRE folder, no need to install or configure anything, <br/>
+just be specific to where you run the <code>java.exe</code> from.<br/>
+<br/>
+<br/>
+A modern browser. You can try <a href="https://www.google.com/chrome/canary">https://www.google.com/chrome/canary</a> or Firefox nightly <a href="">https://ftp.mozilla.org/pub/firefox/nightly/latest-mozilla-central-l10n/</a>. <br/>
+<br/>
+<br/>
+Some kind of notepad (Notepad++ or Notepad2)<br/>
+<br/>
+<br/>
+About 10-minutes to set everything up for the first time.<br/>
+It can be done in 5-minutes or less afterwards.<br/>
+</li><br/>
+<li><br/>
+Firefox sucks. But I prefer it for this task.<br/>
+<br/>
+I'll explain.<br/>
+<br/>
+Burp (the network-traffic-inspection-tool) creates a proxy on your machine, <br/>
+it uses the <code>127.0.0.1</code> address and (by default) the <code>8080</code> port.<br/>
+<br/>
+To use Burp you'll need to set the proxy for the browser to that address and port.<br/>
+<br/>
+While Chrome is great, it (sadly) uses the system proxy, <br/>
+which means a system wide switch, and possibly a lot of traffic directed.<br/>
+<br/>
+Firefox has "its own" proxy settings.<br/>
+<br/>
+Secondly, Certificates!<br/>
+to inspect an SSL connection and traffic, <br/>
+you'll need to make the browser trust the certificate that comes with the website, <br/>
+Burp replaces the certificate (and decodes the secure connection so you'll be able to inspect it..).<br/>
+<br/>
+Again, Chrome uses the system-wide certificate installing (which means installing a certificate on your operation system, which is not always idle..), <br/>
+while Firefox - Has its own certificate trusting system. <br/>
+<br/>
+Nice.<br/>
+<br/>
+<hr/><br/>
+<br/>
+Open Firefox and goto options, preferences, connection settings, manual proxy configurations, put in: <code>127.0.0.1</code> and <code>8080</code>, click OK.<br/>
+<br/>
+You won't be able to browse any-website until you'll provide an actual proxy running in that port, <br/>
+so in the next step we'll be opening Burp for the first time.<br/>
+<br/>
+Note:<br/>
+If you're trying to automate the scraping process you might want to look on <br/>
+<code>pref("network.proxy.type", 1);</code> if you're using your own <code>user.js</code> in the Firefox profile, <br/>
+(or <code>user_pref(</code> for the <code>prefs.js</code> generated by the profile (although you should not edit it, probably) or <code>lockPref(</code> if you're using <code>mozilla.cfg</code> in the Firefox-execute folder).<br/>
+also: <br/>
+<code>pref("network.proxy.backup.ftp", "127.0.0.1");</code><br/>
+<code>pref("network.proxy.backup.ftp_port", 8080);</code><br/>
+<code>pref("network.proxy.backup.ssl", "127.0.0.1");</code><br/>
+<code>pref("network.proxy.backup.ssl_port", 8080);</code><br/>
+<code>pref("network.proxy.ftp", "127.0.0.1");</code><br/>
+<code>pref("network.proxy.ftp_port", 8080);</code><br/>
+<code>pref("network.proxy.http", "127.0.0.1");</code><br/>
+<code>pref("network.proxy.http_port", 8080);</code><br/>
+<code>pref("network.proxy.ssl", "127.0.0.1");</code><br/>
+<code>pref("network.proxy.ssl_port", 8080);</code><br/>
+</li><br/>
+<li><br/>
+You'll need to open up Burp. <br/>
+if you've downloaded the JAR-file just run <code>Java -jar "burp_v2.1.jar"</code>.<br/>
+<br/>
+Change the path and the file name to match where you've placed the JAR-file and your JAR-filename.<br/>
+You'll start with a dialog-box, go ahead and click the "Next"-button (keep the option "Use Burp defaults") and click the "Start Burp"-button.<br/>
+<br/>
+From the "Dashboard" tab, switch to "Proxy" and click the "Intercept is on"-button, <br/>
+it will turn it off, we don't need it.<br/>
+<br/>
+Switch to "Target" tab. <br/>
+(when you'll start browsing you'll be getting some resource-tree filled up there).<br/>
+</li><br/>
+<li><br/>
+This is needed to be done just one time: <br/>
+<br/>
+In your browser of choice (<strong>Firefox!</strong>), browse <a href="http://burp">http://burp</a>, <br/>
+click "CA Certificate" on the top right and download the file to your desktop.<br/>
+<br/>
+Go to "options", "privacy&security", "view certificates", select "authorities", click "import".<br/>
+Browse and select the certificate-file from your desktop, check-ON all the checkboxes, trusting the certificate (SSL data from HTTPS-secured websites can be viewed now).<br/>
+</li><br/>
+<li><br/>
+Browse somepage with a streaming player, <br/>
+for example: <a href="https://13tv.co.il/item/news/haolam-haboker/season-01/clips/s7m7l-2011988/?webview=true">https://13tv.co.il/item/news/haolam-haboker/season-01/clips/s7m7l-2011988/?webview=true</a>, <br/>
+click the play button, switch to full screen, hover your mouse and click the gear-button, select HD-quality (you need to press play and switch to full-screen in order to switch quality in that specific player.. it's buggy!).<br/>
+<br/>
+Wait couple of seconds and we're done with the browser, <br/>
+all the data we need is in the Burp-program, <br/>
+pause the video, close the tab, go ahead to "Options", "Connection Settings", select "Use system proxy settings" and click OK. You can close Firefox.<br/>
+</li><br/>
+<li><br/>
+View your Burp program, <br/>
+on the "Target" tab, select the "Site Map" tab (if not already selected).<br/>
+<br/>
+See <code>reshet-vod-il&period;ctedgecdn&period;net</code>? click once, selecting it,<br/>
+now press and hold your <kbd>RIGHT</kbd> keyboard arrow, <br/>
+it will open-up the sub-tree(s) until it will get to the files.<br/>
+<br/>
+We are looking for a playlist file (ends with <code>m3u8</code>) that has the highest-resolution, <br/>
+in this case: <code>chunklist_b1400000.m3u8</code> (if you're not seeing it, you'll need to go back to the browser and select the HD - high-resolution in the gear-button).<br/>
+<br/>
+Right click the <code>chunklist_b1400000.m3u8</code> line, <br/>
+click "Copy as curl command".<br/>
+<br/>
+Open up notepad (Notepad++ or Notepad2 will do fine, Windows' Notepad not so much..), <br/>
+paste the content of the clipboard on to the notepad.<br/>
+</li><br/>
+<li><br/>
+You can close down Burp, we've got our data.<br/>
+</li><br/>
+<li><br/>
+we'll need two things, the cookie content which usually looks like this: <code>Cookie: Ccookie=0x9c2c387ccf2578a3bc517b0de44e86e76851e9402fb913960396c704d7f4a423&?ctoken=&str=1587779070&exp=1587780270</code> (we don't need the wrapping <code>'</code> characters!) and the URL itself which usually looks like this: <code>https&colon;//reshet-vod-il.ctedgecdn.net/reshet-vod/_definst_/amlst:mediaroot/nana10/media/iiscdn/2020/04/05/news-haolam-haboker-season-01-clips-375-part-06_,550,850,1400,.mp4/chunklist_b1400000.m3u8</code><br/>
+<br/>
+Open up a console window, <br/>
+if you're using Windows, use the <kbd>Win</kbd>+<kbd>R</kbd> combination, <br/>
+write down <code>cmd</code> and press <kbd>Enter</kbd>, <br/>
+You'll be getting into the folder of your Windows-user-profile. <br/>
+Type: <code>cd Desktop</code> and press <kbd>Enter</kbd>.<br/>
+<br/>
+Finally - we're going to download the video-content.<br/>
+<br/>
+Here is the FFMPEG-command:<br/>
+<code>ffmpeg.exe -headers "Cookie: Ccookie=0x9c2c387ccf2578a3bc517b0de44e86e76851e9402fb913960396c704d7f4a423&?ctoken=&str=1587779070&exp=1587780270" -i "https&colon;//reshet-vod-il.ctedgecdn.net/reshet-vod/_definst_/amlst:mediaroot/nana10/media/iiscdn/2020/04/05/news-haolam-haboker-season-01-clips-375-part-06_,550,850,1400,.mp4/chunklist_b1400000.m3u8" <strong>-c copy</strong> "myvideo<strong>.mkv</strong>"<br/>
+<br/>
+Go back to your notepad and copy the actual cookie-value, and URL for your video.<br/>
+You may choose any filename for your video, but make sure to use the <code>.mkv</code>-extension, <br/>
+press <kbd>Enter</kbd> to execute the command and wait until FFMPEG will finish downloading and mergin the video file. It will be done as fast as FFMPEG can download it, the "joining" part is done automatically and it <strong>will not encode the video</strong> (see <code>-codec copy</code>), so it take very little CPU power and no-additional processing-time.<br/>
+</li><br/>
+<li><br/>
+Tips:<br/>
+Say you'll be uploading the video to YouTube, <br/>
+have you noticed its resolution?<br/>
+<br/>
+You can open your desktop as a folder by running the command <code>C:\Users\YOUR-USER-NAME\Desktop\</code>, <br/>
+and if you have the details pane opened it will show you some of the video-properties.<br/>
+You can also open the video in VLC or Media-Player-Classic (<a href="https://codecguide.com/download_kl.htm">https://codecguide.com/download_kl.htm</a>) and look for the properties.<br/>
+<br/>
+<strong>This praticular video</strong> is "near HD" resolution,<br/>
+its width is 960 and its height is 540, once you'll upload it to YouTube, <br/>
+the nearest resolution in the YouTube player is 720p, <br/>
+which is a shame, since the current resolution is much better. <br/>
+<br/>
+There is "a cheat" in which we'll resize the video, not much, <br/>
+until it will get to width of 1920 and height of 1080, <br/>
+this will allow the users to view the video at 1080p,<br/>
+although the official-YouTube app on smartphones won't usually allow the 1080p (try <a href="https://github.com/TeamNewPipe/NewPipe">https://github.com/TeamNewPipe/NewPipe</a>) but YouTube on smart-TVs will!<br/>
+<br/>
+You don't have to do this step if you're fine with the video file "as is", <br/>
+and we're have to re-encode it, which means that ("officially") some quality will be lost, <br/>
+although you won't see it.<br/>
+<br/>
+We're going to use h.265 encoding which will result a half of file-size that would be in the old h.264 encoding (although it can take a lot of CPU and about 15-30 minutes of encoding time) - but at least your upload time will be very short.<br/>
+<br/>
+Also we're going to smooth the picture a bit with the built-in <code>hqdn3d</code> video-filter, <br/>
+it usually helps the video-compression process and removes noise and pixelations.<br/>
+<br/>
+..also we're going to make sure the input video has (in this case it is already is) a proper 16:9 ration of width to height, but we'll pad it (with black background) in case needed before the scale-up so the original proportions will be kept.<br/>
+Next we'll use the scaling filter with <code>-2</code> this makes sure the frame size is divisable by 2 as required by the MP4-frame size, with the proportion we gave before this isn't needed but this line is beautifuly-generic and I don't want to change it..<br/>
+<br/>
+Here is the command: <br/>
+<code>ffmpeg -hide_banner -y -i "myvideo.mkv" -c:v libx265 -crf 26 -preset ultrafast -c:a copy -vf "fifo,pad=width=ih*16/9:height=ih:x=(ow-iw)/2:y=(oh-ih)/2:color=#00000000,scale=-2:1080,hqdn3d" "myvideo<strong>_hd</strong>.mkv"</code><br/>
+<br/>
+Keep in mind to specify the path to FFMPEG and your input and output file.<br/>
+<br/>
+Note that <code>CRF 28</code> (for h.265) is like <code>CRF 23</code> (for h.264) quality wise, but half the size.<br/>
+I've went to 26 to preserve more quality (will make the file-size a bit larger).<br/>
+<br/>
+If you need a smaller file-size, you can change the CRF switch to 30 (lower qulity, smaller file-size), and (if you don't care about waiting an hour+) switch to PRESET of <code>veryslow</code> (don't change quality, just lowers the file-size).<br/>
+<br/>
+If you have a computer with a strong graphic card, you might want to try using some GPU-processing, <br/>
+which help you to lower the CPU while processing.<br/>
+It is done by adding <code>-hwaccel dxva2</code> before the <code>-i "myvideo.mkv"</code>. It works well on most Windows, but if you have a Lenovo x220 (like me) or similar (where the GPU is part of the CPU, named something like "Intel 3000") don't bother, it won't get you any better result. If you DO have a proper-GPU you can try it (browse <a href="https://trac.ffmpeg.org/wiki/HWAccelIntro">https://trac.ffmpeg.org/wiki/HWAccelIntro</a> for information regarding Intel, nVidia and AMD GPUs)<br/>
+<br/>
+<br/>
+Here are some links about the video-filters:<br/>
+<a href="http://ffmpeg.org/ffmpeg-filters.html#fifo_002c-afifo">http://ffmpeg.org/ffmpeg-filters.html#fifo_002c-afifo</a><br/>
+<a href="http://ffmpeg.org/ffmpeg-filters.html#pad-1>http://ffmpeg.org/ffmpeg-filters.html#pad-1</a><br/>
+<a href="http://ffmpeg.org/ffmpeg-filters.html#hqdn3d-1>http://ffmpeg.org/ffmpeg-filters.html#hqdn3d-1</a><br/>
+<a href="http://ffmpeg.org/ffmpeg-filters.html#scale-1">http://ffmpeg.org/ffmpeg-filters.html#scale-1</a><br/>
+<br/>
+And about h.265 encoding:<br/>
+<a href="https://trac.ffmpeg.org/wiki/Encode/H.265">https://trac.ffmpeg.org/wiki/Encode/H.265</a><br/>
+</li><br/>
+</ol><br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/sphereup-subdomains">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/easy-native-lazyloading-support-for-your-website">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easy-native-lazyloading-support-for-your-website">Easy Native-LazyLoading Support For Your Website</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/you-do-not-need-jekyll">You Don't Need Jekyll!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/you-do-not-need-jekyll">You Don't Need Jekyll!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/you-do-not-need-jekyll">You Don't Need Jekyll!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/prevent-youtube-from-translating-your-video-title-and-description">Prevent YouTube From Translating Your Video Title And Description</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/comma-first">Comma First</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-loglevel-verbosity">FFMPEG Log-Level Verbosity</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/c-sharp-utf8-support">C# UTF-8 Support</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/monodevelop-windows-builds">MonoDevelop Windows-Builds</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bsod-0xfe">BSOD 0XFE</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/mtu-for-windows-and-router-using-ping">Calculate The Proper MTU (Maximum Transmission Unit) For Windows And Your Router (ISP WAN Settings) Using PING-Command</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tcp-ip-reset-and-rebuild-at-windows-shutdown">TCP-IP Reset and Rebuild At Windows-Shutdown</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tcp-ip-reset-and-rebuild-at-windows-shutdown">TCP-IP Reset and Rebuild At Windows-Shutdown</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/burp-as-reverse-proxy">Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows_sendo_46_items_only_limit">Windows SendTo Context-Menu Only Allows Displaying Of First 46 Items From The SendTo Folder [UNSOLVED]</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/closure-compiler-after-deprecation-of-closure-linter">How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

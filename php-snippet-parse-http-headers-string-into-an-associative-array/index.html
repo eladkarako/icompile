@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>PHP Snippet - Parse HTTP Headers String Into An Associative Array</title>
+  <meta itemprop="name"                                content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+  <meta name="dcterms.title"                           content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+  <meta property="og:title"                            content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+  <meta name="twitter:title"                           content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+  <meta name="twitter:text:title"                      content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+  <meta name="application-name"                        content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+  <meta name="subject"                                 content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+  <meta name="apple-mobile-web-app-title"              content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+  <meta name="msapplication-tooltip"                   content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+  <meta itemprop="description"                         content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+  <meta name="dcterms.description"                     content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+  <meta name="twitter:description"                     content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+  <meta property="og:description"                      content="PHP Snippet - Parse HTTP Headers String Into An Associative Array"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accept,agent,alignnone,alive,applewebkit,application,array,associative,border,cache,call,chrome,code,collect,color,connection,content,continue,control,cookie,curl,curlinfo,data,deflate,display,doubleclick,dump,encoding,essentially,explode,external,fallback,feel,foreach,form,forward,func,function,gecko,getinfo,gzip,handle,header,headerline,headers,host,image,index,info,inline,isset,khtml,language,length,lets,line,lines,localhost,manual,margin,modules,mozilla,outline,padding,parameter,parse,parts,pass,post,pragma,process,referer,request,resolved,return,rgba,safari,sdch,shadow,simply,size,skip,small,snippet,starting,stats,strong,track,type,urlencoded,usage,user,webp,windows,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accept,agent,alignnone,alive,applewebkit,application,array,associative,border,cache,call,chrome,code,collect,color,connection,content,continue,control,cookie,curl,curlinfo,data,deflate,display,doubleclick,dump,encoding,essentially,explode,external,fallback,feel,foreach,form,forward,func,function,gecko,getinfo,gzip,handle,header,headerline,headers,host,image,index,info,inline,isset,khtml,language,length,lets,line,lines,localhost,manual,margin,modules,mozilla,outline,padding,parameter,parse,parts,pass,post,pragma,process,referer,request,resolved,return,rgba,safari,sdch,shadow,simply,size,skip,small,snippet,starting,stats,strong,track,type,urlencoded,usage,user,webp,windows,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/php-snippet-a-self-called-function-just-like-javascript"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/php-snippet-a-self-called-function-just-like-javascript"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/php-snippet-array-by-reference"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/php-snippet-parse-http-headers-string-into-an-associative-array"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/php-snippet-parse-http-headers-string-into-an-associative-array"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/php-snippet-parse-http-headers-string-into-an-associative-array"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/php-snippet-parse-http-headers-string-into-an-associative-array"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/php-snippet-parse-http-headers-string-into-an-associative-array"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/php-snippet-parse-http-headers-string-into-an-associative-array"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-07-25T07:32:21+00:00"     />
+  <meta name="page-datetime"                           content="2014-07-25T07:32:21+00:00"     />
+  <meta property="article:published_time"              content="2014-07-25T07:32:21+00:00"     />
+  <meta name="dcterms.date"                            content="2014-07-25T07:32:21+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2014-07-25T07:45:25+00:00"    />
+  <meta property="article:modified_time"               content="2014-07-25T07:45:25+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/php-snippet-parse-http-headers-string-into-an-associative-array"
+,"url"             : "https://icompile.eladkarako.com/php-snippet-parse-http-headers-string-into-an-associative-array"
+,"headline"        : "PHP Snippet - Parse HTTP Headers String Into An Associative Array"
+,"description"     : "PHP Snippet - Parse HTTP Headers String Into An Associative Array"
+,"datePosted"      : "2014-07-25T07:32:21+00:00"
+,"dateCreated"     : "2014-07-25T07:32:21+00:00"
+,"datePublished"   : "2014-07-25T07:32:21+00:00"
+,"dateModified"    : "2014-07-25T07:45:25+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0001453726041">
+  <header>
+    <h1 itemprop="headline">PHP Snippet - Parse HTTP Headers String Into An Associative Array</h1>
+    <sup>Posted at <time datetime="2014-07-25T07:45:25+00:00" itemprop="dateModified">Fri, 25 Jul 2014 07:45:25 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><pre><style type="text/css">
+code{
+display:inline !important;
+box-shadow: .5px .5px .5px rgba(0,0,0,.3) !important;
+margin: 2px 2px 2px 2px !important;
+border: rgba(0,0,0,.8) !important;
+padding: 1px 7px 1px 7px !important;
+outline: rgba(0,0,0,.8) !important;
+background-color: rgba(245,255,0,0.3) !important;
+}
+</style></pre><br/>
+<br/>
+<em><h3>Here Is A POST Request Header String (without the data-body)</h3></em><br/>
+<br/>
+<pre>
+POST /collect HTTP/1.1
+Host: stats.g.doubleclick.net
+Connection: keep-alive
+Cache-Control: no-cache
+Accept: image/webp,*/*;q=0.8
+Pragma: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36
+Referer: http://localhost/a/
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en,en-US;q=0.8,he;q=0.6
+Cookie: _ga=GA1.2.53d1ee9b3c4810.54724696
+X-Forward-For: 1.2.3.4
+Content-type: application/x-www-form-urlencoded
+Content-Length: 485
+</pre><br/>
+<br/>
+without the usage of external modules, lets parse it into associative array, with fallback for lines like <code>POST /collect HTTP/1.1</code> which do not have to be with string-key, for those, we will use the index of the line (starting from 0).<br/>
+<br/>
+essentially exactly the same look&feel, you'll get from <code>$responseHeaders = <a href="http://php.net/manual/en/function.get-headers.php">get_headers</a>($url, true);</code>, but for any given string,<br/>
+for example you can specify using CURL's <code>CURLINFO_HEADER_OUT => true</code> to track the handle's request string, so later you will use <code>$info = curl_getinfo($ch)</code> followed by <code>$requestHeaders = $info['request_header']</code> to get the <strong>string</strong> <small>(or simply use <code>curl_getinfo($ch, CURLINFO_HEADER_OUT)</code> to get the string)</small><br/>
+<br/>
+<pre>
+//-------------------------------------------------------------------------------- process request headers from info, from string to associative array
+$requestHeaders = call_user_func_array(function ($info) {
+  $headersAssociative = array();
+
+  $headers = (isset($info['request_header']) === true) ? $info['request_header'] : '';
+  $headers = explode("\\
+", $headers);
+
+  foreach ($headers as $i => $headerLine) {
+    if($headerLine === ''){ //skip empty lines.
+      continue;
+    }
+
+    $parts = explode(': ', $headerLine);
+    if (isset($parts[1])) {
+      $headersAssociative[ $parts[0] ] = $parts[1]; //use key name
+    } else {
+      $headersAssociative[ $i ] = $headerLine; //use index as key name
+    }
+  }
+  return $headersAssociative;
+
+}, array($info)); //pass the $info as parameter to call_user_func_array
+//--------------------------------------------------------------------------------------------------------------------
+</pre><br/>
+<br/>
+which will be resolved to following <code>var_dump</code><br/>
+<pre>
+array (size=14)
+  0 => string 'POST /collect HTTP/1.1' (length=22)
+  'Host' => string 'stats.g.doubleclick.net' (length=23)
+  'Connection' => string 'keep-alive' (length=10)
+  'Cache-Control' => string 'no-cache' (length=8)
+  'Accept' => string 'image/webp,*/*;q=0.8' (length=20)
+  'Pragma' => string 'no-cache' (length=8)
+  'User-Agent' => string 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36' (length=109)
+  'Referer' => string 'http://localhost/a/' (length=19)
+  'Accept-Encoding' => string 'gzip,deflate,sdch' (length=17)
+  'Accept-Language' => string 'en,en-US;q=0.8,he;q=0.6' (length=23)
+  'Cookie' => string '_ga=GA1.2.53d1ee9b3c4880.54724696' (length=33)
+  'X-Forward-For' => string '8.8.8.8' (length=7)
+  'Content-type' => string 'application/x-www-form-urlencoded' (length=33)
+  'Content-Length' => string '485' (length=3)
+</pre><br/>
+<br/>
+<img loading="lazy" lazyload="on"  style="width:100%" src="https://icompile.eladkarako.com/_uploads/2014/07/2014-07-25_103021.jpg" alt="2014-07-25_103021" width="703" height="298" class="alignnone size-full wp-image-1603" /><br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-a-self-called-function-just-like-javascript">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-array-by-reference">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-array-by-reference">PHP Snippet - Array By-Reference</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ip2country-sql-download">IP2Country SQL Download</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-proper-utf-8-and-gzip-with-buffers-handling-and-content-length-header-and-ratio-information">PHP Snippet - Proper UTF-8 And GZip With Buffers-Handling And Content-Length Header And Ratio Information</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/a-better-wordpress-image-css">Better WordPress Post Image Display Using Block-Container And CSS3</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-google-chrome-developer-tools-wow-nice">Wow Nice!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-wil-wheaton-project">The Wil Wheaton Project</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/java-9">Java 9</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/doctor-who-season-8-12th-doctor-peter-capaldi">Doctor Who Season 8 - 12th Doctor - Peter Capaldi</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/putty-theme-and-logs">PUTTY Theme And Logs</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/xen-server-within-vmware-hypervisor-nested-virtual-machine-architectures">Xen-Server Within VMware Hypervisor - Nested Virtual-Machine Architectures</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/jetbrains-ides-early-access">JetBrains IDEs Early Access - Yummy!!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/autohotkey-remap-space-to-underscore">AutoHotKey Script - Replace (Re-Map) Space to Underscore</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/minimal-javascript-bookmarklet-format-no-cache">No-Cache</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/happy-hebrew-new-year-2014">שנה עברית טובה (תשרי ה'תשע"ה)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/internet-explorers-domstorage-in-registry">Internet Explorer's DOMStorage - In Registry!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-html5-crossdomain-ninja-techniques-part-4-google-safeframe-and-window-name-sync-solution-a-k-a-publisher-team-paranoid-cure">JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

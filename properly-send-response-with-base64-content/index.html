@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Properly Send-Response With Base64-Content</title>
+  <meta itemprop="name"                                content="Properly Send-Response With Base64-Content"       />
+  <meta name="dcterms.title"                           content="Properly Send-Response With Base64-Content"       />
+  <meta property="og:title"                            content="Properly Send-Response With Base64-Content"       />
+  <meta name="twitter:title"                           content="Properly Send-Response With Base64-Content"       />
+  <meta name="twitter:text:title"                      content="Properly Send-Response With Base64-Content"       />
+  <meta name="application-name"                        content="Properly Send-Response With Base64-Content"       />
+  <meta name="subject"                                 content="Properly Send-Response With Base64-Content"       />
+  <meta name="apple-mobile-web-app-title"              content="Properly Send-Response With Base64-Content"       />
+  <meta name="msapplication-tooltip"                   content="Properly Send-Response With Base64-Content"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Properly Send-Response With Base64-Content"       />
+  <meta itemprop="description"                         content="Properly Send-Response With Base64-Content"       />
+  <meta name="dcterms.description"                     content="Properly Send-Response With Base64-Content"       />
+  <meta name="twitter:description"                     content="Properly Send-Response With Base64-Content"       />
+  <meta property="og:description"                      content="Properly Send-Response With Base64-Content"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="adknepp,aotbak,atuwuvr,base,bbrbkvm,bibumzl,content,cuyc,czwzw,disposition,email,encoding,evaquz,ffjpcek,fhjy,filename,fkdv,fomfzive,funjzli,fvkbcgp,fxpiyhmwhei,fzjlh,giboxq,gmpraxf,gxze,gzxwu,hkuc,hkvmkvg,hlhnhermd,hmzj,houtj,hzcnm,igzn,ijdjdesq,image,inline,iqdmew,ivborw,ivprkjqye,jayb,jdltz,jgyh,jhoy,jytyd,kbmus,kdszj,kgyvtecalx,kjob,kkzlgypvzb,krqpi,kxinfyet,kxqyyuv,lakjonznqx,laoc,lbjgircxv,ldinnxnguz,legz,lhzjh,logo,lsxsltfnftl,ltgw,mdytaw,mgxhs,mhihoii,mlyoqej,mmejm,moifomzm,multipart,muuyhxz,mvvobfgyzc,natural,ngrc,nkcmrlr,nvmz,oemtmvb,oknm,oogkok,opyms,orxi,otjodbgsa,oyoyomkb,papuw,pdni,pdzt,properly,pysrhblm,qiumcplned,qksms,qtrvmr,qungyvr,response,responses,romxztfi,scnlun,send,server,signoff,sktljpi,spasquqc,ssqoimnminp,supported,synhgcnt,syxgqoo,szpf,szyvdjs,takz,tikl,tjgzosxfzg,tnaxsp,transfer,type,untcmnuek,unvo,uqsz,uyipyk,uyux,vgvmoisi,vijd,vwpt,wbfrd,wmpn,wsrza,wuvrjhh,wwab,xjgqzgjyyoz,xkmxtlw,xtdkhkskf,xvqunfsjiet,yfviyw,yhvtb,ykxlnmtybhk,yseb,yzspmy,zcbev,zccs,zfdwyyftiy,zgtv,zgtxb,zivm,znokk,zobhamis,ztgi,zvkkdmyb,zxfl,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="adknepp,aotbak,atuwuvr,base,bbrbkvm,bibumzl,content,cuyc,czwzw,disposition,email,encoding,evaquz,ffjpcek,fhjy,filename,fkdv,fomfzive,funjzli,fvkbcgp,fxpiyhmwhei,fzjlh,giboxq,gmpraxf,gxze,gzxwu,hkuc,hkvmkvg,hlhnhermd,hmzj,houtj,hzcnm,igzn,ijdjdesq,image,inline,iqdmew,ivborw,ivprkjqye,jayb,jdltz,jgyh,jhoy,jytyd,kbmus,kdszj,kgyvtecalx,kjob,kkzlgypvzb,krqpi,kxinfyet,kxqyyuv,lakjonznqx,laoc,lbjgircxv,ldinnxnguz,legz,lhzjh,logo,lsxsltfnftl,ltgw,mdytaw,mgxhs,mhihoii,mlyoqej,mmejm,moifomzm,multipart,muuyhxz,mvvobfgyzc,natural,ngrc,nkcmrlr,nvmz,oemtmvb,oknm,oogkok,opyms,orxi,otjodbgsa,oyoyomkb,papuw,pdni,pdzt,properly,pysrhblm,qiumcplned,qksms,qtrvmr,qungyvr,response,responses,romxztfi,scnlun,send,server,signoff,sktljpi,spasquqc,ssqoimnminp,supported,synhgcnt,syxgqoo,szpf,szyvdjs,takz,tikl,tjgzosxfzg,tnaxsp,transfer,type,untcmnuek,unvo,uqsz,uyipyk,uyux,vgvmoisi,vijd,vwpt,wbfrd,wmpn,wsrza,wuvrjhh,wwab,xjgqzgjyyoz,xkmxtlw,xtdkhkskf,xvqunfsjiet,yfviyw,yhvtb,ykxlnmtybhk,yseb,yzspmy,zcbev,zccs,zfdwyyftiy,zgtv,zgtxb,zivm,znokk,zobhamis,ztgi,zvkkdmyb,zxfl,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/waze-related-urls"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/waze-related-urls"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/bootclasspath-for-note-5-lollipop-sm-n920c"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/properly-send-response-with-base64-content"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/properly-send-response-with-base64-content"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/properly-send-response-with-base64-content"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/properly-send-response-with-base64-content"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/properly-send-response-with-base64-content"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/properly-send-response-with-base64-content"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-02-22T03:33:57+00:00"     />
+  <meta name="page-datetime"                           content="2016-02-22T03:33:57+00:00"     />
+  <meta property="article:published_time"              content="2016-02-22T03:33:57+00:00"     />
+  <meta name="dcterms.date"                            content="2016-02-22T03:33:57+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-02-22T03:34:36+00:00"    />
+  <meta property="article:modified_time"               content="2016-02-22T03:34:36+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/properly-send-response-with-base64-content"
+,"url"             : "https://icompile.eladkarako.com/properly-send-response-with-base64-content"
+,"headline"        : "Properly Send-Response With Base64-Content"
+,"description"     : "Properly Send-Response With Base64-Content"
+,"datePosted"      : "2016-02-22T03:33:57+00:00"
+,"dateCreated"     : "2016-02-22T03:33:57+00:00"
+,"datePublished"   : "2016-02-22T03:33:57+00:00"
+,"dateModified"    : "2016-02-22T03:34:36+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007302116541">
+  <header>
+    <h1 itemprop="headline">Properly Send-Response With Base64-Content</h1>
+    <sup>Posted at <time datetime="2016-02-22T03:34:36+00:00" itemprop="dateModified">Mon, 22 Feb 2016 03:34:36 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><!--more--><br/>
+<br/>
+<br/>
+this is a part of multipart email, XHR, and natural server responses are supported as well.<br/>
+<br/>
+<pre>
+------=_Part_**************************************
+Content-Type: image/png; name=signoff-logo.png
+Content-Transfer-Encoding: base64
+Content-Disposition: inline; filename=signoff-logo.png
+Content-ID: &lt;00000000000000000000000000000000>
+
+iVBORw0KGgoAAAANSUhEUgAAAKYAAAAkCAQAAACp+YkvAAAFBElEQVR4Ae2a
+W2wUVRjHh7YUSouAgGiLVKNgQTYgeMHIxeoqIRXTSrYYflFIaYgVoj6YhvTB
+mHihoii1WJFCUJKNFwSRNCQiSAzR6oOGKok20tiKl5Rq0xvQUnFsJieT2W9m
+Oss60FkDv7fv/33s5Ld7cuYc0P4/fxhBmMgAIbQL5FZjLh/tv6FhJY2wSRZa
+0pDNI7xHJ7rBhrjnslhCFc1q7qi/Mmejm4SSQOIMnmInP6Ir4pV5Fat5laOc
+s875LXNVksncIjTGK7PAPuW/zNokk1kTXJkZtCWZzNrgyixHTzKZ0aDKnEpP
+0sl8jaYB+i9YZr4x13GxZE7mJ3QpM0moiFOmZM7FkVnIKfQhkplCHgVEKGAm
+aY7vgvMoIsI9TJGZosxFZg5hlhNhERMd56a4ykxlnMTybHk8SCnLuN4uM596
+dA/KjOb1ohq176pySrHBlm016rls4jdLtZ1t5KKZLGYPvZb8BM8yNg6ZGTxB
+Q0ztGI+RHrfMELqNtcYXW87PltoRZsTKlCIujczdpLCeMw5TnaxSp5r96A60
+EvaQuZ9Gx8nvmZ64TD5nAb/aqh3kDb3Mz9iF7spasqUQC30skTLjpI2ZCcs8
+Lzc6Rd3Qy/wbfRD65XYo6CZXyIyXRjISkulOH+lDINNXNguZ8fOMfzIVE0yZ
+FFJpcEK07KDSZJ6HzCnM5U4+cZWZw3zCbEV3pN3jm+92qP7gIbOXQ2xnH10O
+n5bhKTODuQNUotv4gmpRaXF6aa/zfDWyyfTIy0S+AF3QwFJjkWTxpOPCjzLL
+mLyOqEj6B5V5kGyVTeCALX3IS6Zivm3yfVIYw18xtdKhkSkf7ltGW9IqdMEW
+S5pKg0gzXWU2M8oyOYomkb+RoMxzTFI/ij/MVVOBFgyZC2LSxSLtFNfTL4h8
+hKvMKvG560R+LEGZ9WaSSYRySrgWLRgyOxkmLqbFUvVQ4nkCMrlR5F0JytyD
+JgmKzBaRhpze34SyxGQOo090XJGQzGjyyoz6IVPRKjqyE5d5WWab6BibuMzL
+MuUyHxZ8mc8FVKbcgP5Eu9Qy59iay0XHAZEfCqjMlVKaTzKn8SYNHGcnt0iZ
+u8XoKpvMEtFxihGWtAg9IDK/IT1mL/9a5Bt9kbmUs5bz2OpYmS+K0SZyVDJS
+Pdzt6IJdjDeSq6ngrC1dJx5uYUx6UqSz5NFN5I97yzSpMy8fUnjZli5SWa6o
+f+lx/H3XkmXTLW7BbrbKvM/houtj3uYIpyk2OtJodbgsa5FXpiYHmWHei09i
+OrXi44u5QR0KJ5LHZjH9O4vIJd0QksMs2zVKKdMYb8qUnGYvr/AOTbak0dh+
+JhOy/Xx6WMpN6oknM5takZ/kXqYyUv67k6LaKjONZnQX9qqeTejxIpZOh0te
+Y6QtrvMr5HKUC0/K9KRQPI+kxiNfYeT2q+3DSqZiBboLver7Gk97ksv8CM0X
+mdW2+oemTMVb9mGxHS0b5I68h+0Bl/kVo3ySeb+t/qiUmcpLnEd34HmzJ0KX
+Y8d3zObhAMis5wF+cezeQSaaTzLl289hUg2Zgtv4IGZn7uNTCmNueK7h9ZgL
+0n+oZyVpaBQEQGYxGlk8zXFL7Qz7uNvo9U/mcDbSqzbhbWRZXo0EI7mDYtaw
+nLvUwpCkEqKINZSwhElmdTjjBKNVMlbUFepvHyOqJmo3d0szPf4LbJgIRcxV
+O7D/jGYh+VwpT0CX8YF/ATuWuvR2m4GUAAAAAElFTkSuQmCC
+
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/waze-related-urls">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/bootclasspath-for-note-5-lollipop-sm-n920c">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bootclasspath-for-note-5-lollipop-sm-n920c">BOOTCLASSPATH For Note 5 Lollipop SM-N920C</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/http-response-status-codes">HTTP Response Status-Codes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/android-6-0-1-marshmallow-for-samsung-note-5-sm-n920c">Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/making-xda-code-readable-using-javascript-css3">Making XDA Code Readable Using JavaScript && CSS3</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cygwin-repo-on-top-of-git">Cygwin Repo On Top Of Git</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-better-uuid-using-chromes-crypto">JavaScript Ninja - Better UUID Using Chrome's Crypto</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cygwin-ctrl-left-to-jump-word-backward">Cygwin CTRL+Left To Jump Word Backward</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-quick-and-dirty-clickjacking-iframe-embedding-protection">JavaScript Ninja - Quick And Dirty ClickJacking IFRAME-Embedding Protection</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files">Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/repo-help">repo Help</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/everything-to-html-entity-bookmarklet">Everything To HTML-Entity Bookmarklet</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/network-traffic-analyze-tools">Network Traffic Analyze Tϕϕls</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/file-sharing-hosts-logos">File-Sharing Hosts Logos</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/efficient-json-table-data-representation">Efficient JSON-Table Data Representation</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/clockwork-recovery-img-to-tar-md5">Clockwork Recovery img to tar.md5</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-implement-select-for-all-html-elements">JavaScript Ninja - Implement .select() For All HTML-Elements</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

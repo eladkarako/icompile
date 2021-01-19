@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>cURL - Latest Chromium Downloader</title>
+  <meta itemprop="name"                                content="cURL - Latest Chromium Downloader"       />
+  <meta name="dcterms.title"                           content="cURL - Latest Chromium Downloader"       />
+  <meta property="og:title"                            content="cURL - Latest Chromium Downloader"       />
+  <meta name="twitter:title"                           content="cURL - Latest Chromium Downloader"       />
+  <meta name="twitter:text:title"                      content="cURL - Latest Chromium Downloader"       />
+  <meta name="application-name"                        content="cURL - Latest Chromium Downloader"       />
+  <meta name="subject"                                 content="cURL - Latest Chromium Downloader"       />
+  <meta name="apple-mobile-web-app-title"              content="cURL - Latest Chromium Downloader"       />
+  <meta name="msapplication-tooltip"                   content="cURL - Latest Chromium Downloader"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="cURL - Latest Chromium Downloader"       />
+  <meta itemprop="description"                         content="cURL - Latest Chromium Downloader"       />
+  <meta name="dcterms.description"                     content="cURL - Latest Chromium Downloader"       />
+  <meta name="twitter:description"                     content="cURL - Latest Chromium Downloader"       />
+  <meta property="og:description"                      content="cURL - Latest Chromium Downloader"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="agent,alive,allocation,android,anyauth,archive,aria,ascii,auth,auto,based,beast,bold,branch,browser,build,call,certificate,challenge,change,changelog,check,chrome,chromeos,chromium,chromiumos,code,color,command,compilation,compile,concurrent,connect,connection,console,content,continue,continuous,cross,curl,debug,description,devtools,directory,disable,download,downloader,downloaders,downloads,echo,elad,enable,error,exchange,exit,false,faster,fastopen,file,files,font,forgot,forversion,free,frontend,gcapi,github,glopes,google,googleapis,goto,handling,host,human,ignore,insecure,installer,integrity,july,karako,lastchange,latest,length,level,lines,linux,linuxgit,location,macgit,machine,maintained,metadata,metrics,mini,misc,modify,mozilla,nebm,newer,newest,nodelay,notice,noversion,optional,orbitdm,overwrite,package,passed,pause,pipelining,pnacl,prealloc,prefered,prefix,preform,program,protocol,reach,readable,releases,remote,remoting,renaming,response,retry,revisions,revoke,script,secure,server,shell,silent,size,snapshots,split,stable,start,storage,strong,stuff,suits,syms,test,tests,timeout,tokens,tools,trusted,unit,unstable,updated,user,verbose,version,wait,weight,wget,windows,wingit,written,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="agent,alive,allocation,android,anyauth,archive,aria,ascii,auth,auto,based,beast,bold,branch,browser,build,call,certificate,challenge,change,changelog,check,chrome,chromeos,chromium,chromiumos,code,color,command,compilation,compile,concurrent,connect,connection,console,content,continue,continuous,cross,curl,debug,description,devtools,directory,disable,download,downloader,downloaders,downloads,echo,elad,enable,error,exchange,exit,false,faster,fastopen,file,files,font,forgot,forversion,free,frontend,gcapi,github,glopes,google,googleapis,goto,handling,host,human,ignore,insecure,installer,integrity,july,karako,lastchange,latest,length,level,lines,linux,linuxgit,location,macgit,machine,maintained,metadata,metrics,mini,misc,modify,mozilla,nebm,newer,newest,nodelay,notice,noversion,optional,orbitdm,overwrite,package,passed,pause,pipelining,pnacl,prealloc,prefered,prefix,preform,program,protocol,reach,readable,releases,remote,remoting,renaming,response,retry,revisions,revoke,script,secure,server,shell,silent,size,snapshots,split,stable,start,storage,strong,stuff,suits,syms,test,tests,timeout,tokens,tools,trusted,unit,unstable,updated,user,verbose,version,wait,weight,wget,windows,wingit,written,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/solved-lenovo-power-manager-pwmui-exe-slow-start-workaround"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/solved-lenovo-power-manager-pwmui-exe-slow-start-workaround"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/curl-download-list-of-urls-from-file-in-windows"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/curl-latest-chromium-downloader"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/curl-latest-chromium-downloader"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/curl-latest-chromium-downloader"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/curl-latest-chromium-downloader"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/curl-latest-chromium-downloader"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/curl-latest-chromium-downloader"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-07-18T22:01:53+00:00"     />
+  <meta name="page-datetime"                           content="2017-07-18T22:01:53+00:00"     />
+  <meta property="article:published_time"              content="2017-07-18T22:01:53+00:00"     />
+  <meta name="dcterms.date"                            content="2017-07-18T22:01:53+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-07-18T22:13:25+00:00"    />
+  <meta property="article:modified_time"               content="2017-07-18T22:13:25+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/curl-latest-chromium-downloader"
+,"url"             : "https://icompile.eladkarako.com/curl-latest-chromium-downloader"
+,"headline"        : "cURL - Latest Chromium Downloader"
+,"description"     : "cURL - Latest Chromium Downloader"
+,"datePosted"      : "2017-07-18T22:01:53+00:00"
+,"dateCreated"     : "2017-07-18T22:01:53+00:00"
+,"datePublished"   : "2017-07-18T22:01:53+00:00"
+,"dateModified"    : "2017-07-18T22:13:25+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003135140051">
+  <header>
+    <h1 itemprop="headline">cURL - Latest Chromium Downloader</h1>
+    <sup>Posted at <time datetime="2017-07-18T22:13:25+00:00" itemprop="dateModified">Tue, 18 Jul 2017 22:13:25 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><pre><br/>
+<span style='color:#800000; font-weight:bold; '>echo off</span><br/>
+<span style='color:#509D52; '>::stuff you can modify.</span><br/>
+<span style='color:#509D52; '>::--------------------------------------------------------------------------------</span><br/>
+<span style='color:#509D52; '>::                          http|https</span><br/>
+<span style='color:#800000; font-weight:bold; '>set</span> PROTOCOL<span style='color:#808030; '>=</span>http<br/>
+<span style='color:#509D52; '>::                          snapshots|continuous</span><br/>
+<span style='color:#800000; font-weight:bold; '>set</span> BRANCH<span style='color:#808030; '>=</span>snapshots<br/>
+<span style='color:#509D52; '>::                          Android|Arm|Linux|LinuxGit|LinuxGit_x64|Linux_ARM_Cross-Compile|Linux_ChromiumOS|Linux_ChromiumOS_Full|Linux_x64|Mac|MacGit|Win|WinGit|Win_x64|chromium-full-linux-chromeos</span><br/>
+<span style='color:#800000; font-weight:bold; '>set</span> OS<span style='color:#808030; '>=</span>Win_x64<br/>
+<span style='color:#509D52; '>::                          mini_installer.exe|REVISIONS|chrome-win32-syms.zip|chrome-win32.zip|pnacl.zip|content-shell.zip|gcapi.zip|metrics-metadata.zip|remoting-host.msi|remoting-me2me-host-win.zip|devtools_frontend.zip|chrome-linux.zip|changelog.xml|chrome-android.zip</span><br/>
+<span style='color:#800000; font-weight:bold; '>set</span> <span style='color:#800000; font-weight:bold; '>FILE</span><span style='color:#808030; '>=</span>mini_installer.exe<br/>
+<span style='color:#509D52; '>::--------------------------------------------------------------------------------</span><br/>
+<br/>
+<br/>
+<span style='color:#509D52; '>::stuff you should keep as is.</span><br/>
+<span style='color:#509D52; '>::--------------------------------------------------------------------------------</span><br/>
+<span style='color:#800000; font-weight:bold; '>set</span> URL_LASTCHANGE<span style='color:#808030; '>=</span><span style='color:#797997; '>%PROTOCOL%</span><span style='color:#808030; '>:</span><span style='color:#808030; '>/</span><span style='color:#808030; '>/</span>storage.googleapis.com<span style='color:#808030; '>/</span>chromium<span style='color:#808030; '>-</span>browser<span style='color:#808030; '>-</span><span style='color:#797997; '>%BRANCH%</span><span style='color:#808030; '>/</span><span style='color:#797997; '>%OS%</span><span style='color:#808030; '>/</span>LAST_CHANGE<br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>set</span> COMMAND_CURL_FORVERSION<span style='color:#808030; '>=</span>curl.exe <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>silent <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>http2 <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>ipv4 <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>anyauth <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>insecure <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>location<span style='color:#808030; '>-</span>trusted <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>ssl<span style='color:#808030; '>-</span>allow<span style='color:#808030; '>-</span>beast <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>ssl<span style='color:#808030; '>-</span>no<span style='color:#808030; '>-</span>revoke <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>url <span style='color:#0000e6; '>"%URL_LASTCHANGE%"</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>set</span> VERSION<span style='color:#808030; '>=</span><br/>
+<span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>/</span>f <span style='color:#0000e6; '>"tokens=*"</span> <span style='color:#797997; '>%%</span>a <span style='color:#800000; font-weight:bold; '>in</span> <span style='color:#808030; '>(</span>'<span style='color:#800000; font-weight:bold; '>call</span> <span style='color:#797997; '>%COMMAND_CURL_FORVERSION%</span> <span style='color:#008c00; '>2</span><span style='color:#808030; '>^</span><span style='color:#808030; '>&gt;</span><span style='color:#808030; '>^</span><span style='color:#808030; '>&amp;</span><span style='color:#008c00; '>1</span>'<span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>do</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>set</span> VERSION<span style='color:#808030; '>=</span><span style='color:#797997; '>%%</span>a<span style='color:#808030; '>)</span><br/>
+<span style='color:#509D52; '>::error handling</span><br/>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>[</span><span style='color:#0000e6; '>"%VERSION%"</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span><span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#0000e6; '>""</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>(</span> <span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>NOVERSION</span> <span style='color:#808030; '>)</span><br/>
+<span style='color:#800000; font-weight:bold; '>set</span> URL_DOWNLOAD<span style='color:#808030; '>=</span><span style='color:#797997; '>%PROTOCOL%</span><span style='color:#808030; '>:</span><span style='color:#808030; '>/</span><span style='color:#808030; '>/</span>storage.googleapis.com<span style='color:#808030; '>/</span>chromium<span style='color:#808030; '>-</span>browser<span style='color:#808030; '>-</span><span style='color:#797997; '>%BRANCH%</span><span style='color:#808030; '>/</span><span style='color:#797997; '>%OS%</span><span style='color:#808030; '>/</span><span style='color:#797997; '>%VERSION%</span><span style='color:#808030; '>/</span><span style='color:#797997; '>%FILE%</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '>.</span><br/>
+<span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> Got Latest-Version: </span><span style='color:#0000e6; '>^></span><span style='color:#0000e6; '>%VERSION%</span><span style='color:#0000e6; '>^&lt;</span><span style='color:#0000e6; '> ^[Branch:%BRANCH%/OS:%OS%^]</span><br/>
+<span style='color:#509D52; '>::--------------------------------------------------------------------------------</span><br/>
+<br/>
+<br/>
+<span style='color:#509D52; '>::you should enable one-of-your-prefered downloaders.</span><br/>
+<span style='color:#509D52; '>::goto DOWNLOAD_CURL</span><br/>
+<span style='color:#509D52; '>::goto DOWNLOAD_WGET</span><br/>
+<span style='color:#509D52; '>::goto DOWNLOAD_ORBITDOWNLOADER</span><br/>
+<span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>DOWNLOAD_ARIA2C</span><br/>
+<br/>
+<br/>
+<br/>
+<span style='color:#509D52; '>::you should not reach here, unless</span><br/>
+<span style='color:#509D52; '>::you've forgot to enable one of the "downloader lines" (above)...</span><br/>
+<span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>NODOWNLOADER</span><br/>
+<br/>
+<br/>
+<span style='color:#509D52; '>::--------------------------------------------------------------------------------</span><br/>
+<span style='color:#e34adc; '>:NOVERSION</span><br/>
+  <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> ERROR: could not get the latest version...</span><br/>
+  <span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>EXIT</span><br/>
+<br/>
+<span style='color:#e34adc; '>:NODOWNLOADER</span><br/>
+  <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> ERROR: please enable one of the downloader lines..</span><br/>
+  <span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>EXIT</span><br/>
+<br/>
+<br/>
+<span style='color:#e34adc; '>:DOWNLOAD_CURL</span><br/>
+  <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> Start Download using cURL...</span><br/>
+  <span style='color:#800000; font-weight:bold; '>call</span> curl.exe <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>verbose <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>http2 <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>ipv4 <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>ignore<span style='color:#808030; '>-</span>content<span style='color:#808030; '>-</span>length <span style='color:#808030; '>^</span><br/>
+                <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>anyauth <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>insecure <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>location<span style='color:#808030; '>-</span>trusted          <span style='color:#808030; '>^</span><br/>
+                <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>ssl<span style='color:#808030; '>-</span>allow<span style='color:#808030; '>-</span>beast <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>ssl<span style='color:#808030; '>-</span>no<span style='color:#808030; '>-</span>revoke <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>tcp<span style='color:#808030; '>-</span><span style='color:#800000; font-weight:bold; '>fastopen</span> <span style='color:#808030; '>^</span><br/>
+                <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>tcp<span style='color:#808030; '>-</span>nodelay <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span><span style='color:#800000; font-weight:bold; '>use</span><span style='color:#808030; '>-</span>ascii <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>url <span style='color:#0000e6; '>"%URL_DOWNLOAD%"</span><br/>
+  <span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>EXIT</span><br/>
+<br/>
+<br/>
+<span style='color:#e34adc; '>:DOWNLOAD_WGET</span><br/>
+  <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> Start Download using wGET...</span><br/>
+  <span style='color:#800000; font-weight:bold; '>call</span> wget.exe <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>directory<span style='color:#808030; '>-</span>prefix<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"."</span> <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span><span style='color:#800000; font-weight:bold; '>debug</span> <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span><span style='color:#800000; font-weight:bold; '>user</span><span style='color:#808030; '>-</span>agent<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Mozilla/5.0 Chrome"</span> <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span><span style='color:#800000; font-weight:bold; '>continue</span> <span style='color:#808030; '>^</span><br/>
+                <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>server<span style='color:#808030; '>-</span>response <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>no<span style='color:#808030; '>-</span>check<span style='color:#808030; '>-</span>certificate <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>secure<span style='color:#808030; '>-</span>protocol<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>auto</span>  <span style='color:#0000e6; '>"%URL_DOWNLOAD%"</span><br/>
+  <span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>EXIT</span><br/>
+<br/>
+<br/>
+<span style='color:#e34adc; '>:DOWNLOAD_ARIA2C</span><br/>
+  <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> Start Download using Aria2C...</span><br/>
+  <span style='color:#800000; font-weight:bold; '>call</span> aria2c.exe <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>allow<span style='color:#808030; '>-</span>overwrite<span style='color:#808030; '>=</span>true         <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span><span style='color:#800000; font-weight:bold; '>auto</span><span style='color:#808030; '>-</span><span style='color:#800000; font-weight:bold; '>file</span><span style='color:#808030; '>-</span>renaming<span style='color:#808030; '>=</span>false         <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>check<span style='color:#808030; '>-</span>certificate<span style='color:#808030; '>=</span>false        <span style='color:#808030; '>^</span><br/>
+                  <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>check<span style='color:#808030; '>-</span>integrity<span style='color:#808030; '>=</span>false        <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>connect<span style='color:#808030; '>-</span>timeout<span style='color:#808030; '>=</span><span style='color:#008c00; '>120</span>              <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>console<span style='color:#808030; '>-</span>log<span style='color:#808030; '>-</span>level<span style='color:#808030; '>=</span>notice       <span style='color:#808030; '>^</span><br/>
+                  <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span><span style='color:#800000; font-weight:bold; '>continue</span><span style='color:#808030; '>=</span>true                <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span><span style='color:#800000; font-weight:bold; '>dir</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"."</span>                          <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>disable<span style='color:#808030; '>-</span>ipv6<span style='color:#808030; '>=</span>true              <span style='color:#808030; '>^</span><br/>
+                  <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>enable<span style='color:#808030; '>-</span>http<span style='color:#808030; '>-</span>keep<span style='color:#808030; '>-</span>alive<span style='color:#808030; '>=</span>true  <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>enable<span style='color:#808030; '>-</span>http<span style='color:#808030; '>-</span>pipelining<span style='color:#808030; '>=</span>true      <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span><span style='color:#800000; font-weight:bold; '>file</span><span style='color:#808030; '>-</span>allocation<span style='color:#808030; '>=</span>prealloc       <span style='color:#808030; '>^</span><br/>
+                  <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>http<span style='color:#808030; '>-</span>auth<span style='color:#808030; '>-</span>challenge<span style='color:#808030; '>=</span>false    <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>human<span style='color:#808030; '>-</span>readable<span style='color:#808030; '>=</span>true              <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>max<span style='color:#808030; '>-</span>concurrent<span style='color:#808030; '>-</span>downloads<span style='color:#808030; '>=</span><span style='color:#008c00; '>16</span>    <span style='color:#808030; '>^</span><br/>
+                  <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>max<span style='color:#808030; '>-</span>connection<span style='color:#808030; '>-</span>per<span style='color:#808030; '>-</span>server<span style='color:#808030; '>=</span><span style='color:#008c00; '>16</span> <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>max<span style='color:#808030; '>-</span>tries<span style='color:#808030; '>=</span><span style='color:#008c00; '>3</span>                      <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>min<span style='color:#808030; '>-</span>split<span style='color:#808030; '>-</span>size<span style='color:#808030; '>=</span>1M              <span style='color:#808030; '>^</span><br/>
+                  <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>retry<span style='color:#808030; '>-</span>wait<span style='color:#808030; '>=</span><span style='color:#008c00; '>1</span>                 <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>rpc<span style='color:#808030; '>-</span>secure<span style='color:#808030; '>=</span>false                 <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>split<span style='color:#808030; '>=</span><span style='color:#008c00; '>8</span>                        <span style='color:#808030; '>^</span><br/>
+                  <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span>timeout<span style='color:#808030; '>=</span><span style='color:#008c00; '>120</span>                  <span style='color:#808030; '>-</span><span style='color:#808030; '>-</span><span style='color:#800000; font-weight:bold; '>user</span><span style='color:#808030; '>-</span>agent<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Mozilla/5.0 Chrome"</span>  <span style='color:#0000e6; '>"%URL_DOWNLOAD%"</span><br/>
+  <span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>EXIT</span><br/>
+<br/>
+<br/>
+<span style='color:#e34adc; '>:DOWNLOAD_ORBITDOWNLOADER</span><br/>
+  <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> Start Download using OrbitDownloader...</span><br/>
+  <span style='color:#800000; font-weight:bold; '>call</span> <span style='color:#0000e6; '>"C:\\Program Files (x86)\\Orbitdownloader\\orbitdm.exe"</span> <span style='color:#0000e6; '>"%URL_DOWNLOAD%"</span><br/>
+  <span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>EXIT</span><br/>
+<br/>
+<br/>
+<span style='color:#e34adc; '>:EXIT  </span><br/>
+  <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '>.</span><br/>
+  <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> Done.</span><br/>
+  <span style='color:#800000; font-weight:bold; '>pause</span><br/>
+<br/>
+<br/>
+<span style='color:#509D52; '>::--------------------------------------------------------------------------------------------</span><br/>
+<span style='color:#509D52; '>::--------------------------------------------------------------------------------------------</span><br/>
+<span style='color:#509D52; '>::</span><br/>
+<span style='color:#509D52; '>::   - "http"           - http protocol is faster to connect and download with OrbitDownloader and wGet, it also means your PC won't preform certificate exchange with the remote machine.</span><br/>
+<span style='color:#509D52; '>::   - "snapshots"      - snapshots is newer, "continuous" is more stable (but might be very old).</span><br/>
+<span style='color:#509D52; '>::   - "OS" and "FILE"  - are what you want to download</span><br/>
+<span style='color:#509D52; '>::</span><br/>
+<span style='color:#509D52; '>::</span><br/>
+<span style='color:#509D52; '>:: snapshots    - newest (unstable) newest code-changes - passed unit-tests + compilation.</span><br/>
+<span style='color:#509D52; '>:: continuous   - old    (stable)                       - passed unit-tests + compilation + test-suits.</span><br/>
+<span style='color:#509D52; '>:: ------------------------------------------------------------------------------------------------------</span><br/>
+<span style='color:#509D52; '>::   branch   |  branch description           |  version-based build</span><br/>
+<span style='color:#509D52; '>:: ___________|_______________________________|_____________________________________________________________________________________________</span><br/>
+<span style='color:#509D52; '>::   Win_x64  |  Chromium Installer (64-bit)  |  storage.googleapis.com/chromium-browser-continuous/Win_x64/{version}/mini_installer.exe  </span><br/>
+<span style='color:#509D52; '>::   Win_x64  |  Chromium Package (64-bit)    |  storage.googleapis.com/chromium-browser-continuous/Win_x64/{version}/chrome-win32.zip    </span><br/>
+<span style='color:#509D52; '>::   Win      |  Chromium Installer (32-bit)  |  storage.googleapis.com/chromium-browser-continuous/Win/{version}/mini_installer.exe</span><br/>
+<span style='color:#509D52; '>::   Win      |  Chromium Package (64-bit)    |  storage.googleapis.com/chromium-browser-continuous/Win/{version}/chrome-win32.zip    </span><br/>
+<span style='color:#509D52; '>::</span><br/>
+<span style='color:#509D52; '>::</span><br/>
+<span style='color:#509D52; '>::------------------------------------------------------</span><br/>
+<span style='color:#509D52; '>::- SCRIPT WAS WRITTEN AND MAINTAINED BY ELAD KARAKO.  -</span><br/>
+<span style='color:#509D52; '>::- LAST UPDATED: JULY, 2017. FREE TO USE UNDER GNU.   -</span><br/>
+<span style='color:#509D52; '>::------------------------------------------------------</span><br/>
+</pre><br/>
+<br/>
+Download tools..<br/>
+<ul><br/>
+<li><strong>must: cURL for windows:</strong> <a href="https://github.com/eladkarako/curl-archive">github.com/eladkarako/curl-archive</a>.</li><br/>
+<li>optional: <a href="https://github.com/aria2/aria2/releases">github.com/aria2/aria2/releases</a>.</li><br/>
+<li>optional: wGet for Windows: <a href="http://nebm.ist.utl.pt/~glopes/wget/">nebm.ist.utl.pt/~glopes/wget/</a>|<a href="https://eternallybored.org/misc/wget/">eternallybored.org/misc/wget/</a>.</li><br/>
+<li>optional: orbitdownloader (Google it...)</li><br/>
+</ul><br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-lenovo-power-manager-pwmui-exe-slow-start-workaround">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/curl-download-list-of-urls-from-file-in-windows">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/curl-download-list-of-urls-from-file-in-windows">cURL - Download List Of URLs From File - In Windows!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/schema-manifest-for-your-exe">Schema-Manifest For Your EXE</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/eyk-unagi">EYK Does Unagi!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sandbox-iframe-tell-me-now">JavaScript Ninja - How To Tell If You're Running Code From Within A SandBox'ed IFRAME</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/noto-alpha-latest-otf">From GitHub's Pipeling Of-Course!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cmd-architecture">CMD Architecture</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/js-snippet-relink-urls-for-a-quick-download-from-github">JS-Snippet - ReLink URLs For A Quick Download From GitHub</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vm-shrink-optimize">VM Shrink and Optimization Guide</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disable-on-screen-keyboard-starting-every-boot">Disable On-Screen Keyboard Starting on Every Boot</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/color-convertion-kelvin-to-rgb-with-javascript">Color Convertion - Kelvin to RGB - with JavaScript</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-html-to-text">PHP Method To Extract Text From HTML (Tag-Based) Content</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-document-ready">JavaScript Method For Launching A Callback When The Document Is Ready</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/f-lux-eye-friendly-coding">f.lux - Eye-Friendly Coding</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/autohotkey-disable-mouse-with-f8">AutoHotKey - Disable Mouse Movement, Buttons And Scroll To Help With Lenovo-TrackPoint - Mouse Cursor Move By Itself - Problem</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/autohotkey-disable-touchpad-while-typing">AutoHotKey - Disable TouchPad/Mouse Movement/Buttons/Scroll for 300ms After A Key-Press To Help With Accidental Touch-Gestures</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-shadowdom-data-extraction-example">JavaScript Example On How To Extract Data From ShadowDom Nodes In A Document (From VirusTotal New Design)</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

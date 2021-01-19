@@ -1,0 +1,1 @@
+<img src="https://icompile.eladkarako.com/_uploads/2015/07/icompile.eladkarako.com_ted2_is_so_funny.jpg" alt="icompile.eladkarako.com_ted2_is_so_funny" rem-width="807" rem-height="529" class="alignnone size-full wp-image-3372" />

@@ -1,0 +1,4 @@
+<img src="https://icompile.eladkarako.com/_uploads/2015/03/icompile.eladkarako.com_internet.jpg" alt="icompile.eladkarako.com_internet" rem-width="259" rem-height="194" class="alignright size-full wp-image-2663" /><h2><a href="http://eladkarako.github.io/URI-JS" target="_blank">URI-JS</a></h2>
+quicker memory operation, more data, better approach, smaller code
+<h3>The Only <em>JavaScript</em> <em>URI Parser</em> That Follows <code>RFC 3986/66</code>.</h3>
+<h3><em>~~-&gt;<a title="https://github.com/eladkarako/URI-JS" href="https://github.com/eladkarako/URI-JS" target="_blank">github.com/eladkarako/URI-JS</a></em></h3>

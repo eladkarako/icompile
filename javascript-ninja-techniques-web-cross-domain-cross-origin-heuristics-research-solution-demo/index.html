@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work</title>
+  <meta itemprop="name"                                content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+  <meta name="dcterms.title"                           content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+  <meta property="og:title"                            content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+  <meta name="twitter:title"                           content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+  <meta name="twitter:text:title"                      content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+  <meta name="application-name"                        content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+  <meta name="subject"                                 content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+  <meta name="apple-mobile-web-app-title"              content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+  <meta name="msapplication-tooltip"                   content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+  <meta itemprop="description"                         content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+  <meta name="dcterms.description"                     content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+  <meta name="twitter:description"                     content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+  <meta property="og:description"                      content="JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="access,accessing,ajax,alien,alignnone,allowed,argument,assume,attached,attachevent,attacks,back,basic,blog,browser,browsers,called,calling,cdmn,change,check,checks,code,communicate,company,completely,completes,control,cookie,cors,couple,cover,cross,custom,data,decides,declared,defines,demo,determine,developer,disallows,dispatched,document,domain,draft,easily,echoing,enables,events,exectue,executed,executes,existence,explorer,extra,fail,failure,false,firefox,function,hacks,handler,handlers,header,headers,heuristics,html,idea,identity,image,include,information,internet,javascript,listener,location,match,mechanic,message,messages,method,missing,mozilla,nczonline,ninja,nofollow,note,null,object,onload,onmessage,open,opera,origin,origins,page,parent,party,pass,pending,plain,policy,port,possibly,post,postmessage,processes,properly,properties,property,protocol,public,reasoning,receive,remaining,request,requesting,requests,research,resource,resources,response,responses,return,script,scripting,send,sender,sends,serve,server,sets,sharing,shorter,simple,simply,site,size,solution,source,sourced,sources,statement,store,strong,subdomain,succeed,suffix,suggests,suited,supports,target,team,techniques,timeouts,type,typeof,undefined,understated,webkit,window,work,working,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="access,accessing,ajax,alien,alignnone,allowed,argument,assume,attached,attachevent,attacks,back,basic,blog,browser,browsers,called,calling,cdmn,change,check,checks,code,communicate,company,completely,completes,control,cookie,cors,couple,cover,cross,custom,data,decides,declared,defines,demo,determine,developer,disallows,dispatched,document,domain,draft,easily,echoing,enables,events,exectue,executed,executes,existence,explorer,extra,fail,failure,false,firefox,function,hacks,handler,handlers,header,headers,heuristics,html,idea,identity,image,include,information,internet,javascript,listener,location,match,mechanic,message,messages,method,missing,mozilla,nczonline,ninja,nofollow,note,null,object,onload,onmessage,open,opera,origin,origins,page,parent,party,pass,pending,plain,policy,port,possibly,post,postmessage,processes,properly,properties,property,protocol,public,reasoning,receive,remaining,request,requesting,requests,research,resource,resources,response,responses,return,script,scripting,send,sender,sends,serve,server,sets,sharing,shorter,simple,simply,site,size,solution,source,sourced,sources,statement,store,strong,subdomain,succeed,suffix,suggests,suited,supports,target,team,techniques,timeouts,type,typeof,undefined,understated,webkit,window,work,working,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/formal-language-algorithm-specific-word-format-problem-solution-using-javascript-implementations"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/formal-language-algorithm-specific-word-format-problem-solution-using-javascript-implementations"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javascript-ninja-techniques-web-cross-domain-cross-origin-heuristics-presentation-tease"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/javascript-ninja-techniques-web-cross-domain-cross-origin-heuristics-research-solution-demo"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/javascript-ninja-techniques-web-cross-domain-cross-origin-heuristics-research-solution-demo"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/javascript-ninja-techniques-web-cross-domain-cross-origin-heuristics-research-solution-demo"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/javascript-ninja-techniques-web-cross-domain-cross-origin-heuristics-research-solution-demo"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/javascript-ninja-techniques-web-cross-domain-cross-origin-heuristics-research-solution-demo"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/javascript-ninja-techniques-web-cross-domain-cross-origin-heuristics-research-solution-demo"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2015-01-17T05:18:52+00:00"     />
+  <meta name="page-datetime"                           content="2015-01-17T05:18:52+00:00"     />
+  <meta property="article:published_time"              content="2015-01-17T05:18:52+00:00"     />
+  <meta name="dcterms.date"                            content="2015-01-17T05:18:52+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2015-01-17T05:26:03+00:00"    />
+  <meta property="article:modified_time"               content="2015-01-17T05:26:03+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/javascript-ninja-techniques-web-cross-domain-cross-origin-heuristics-research-solution-demo"
+,"url"             : "https://icompile.eladkarako.com/javascript-ninja-techniques-web-cross-domain-cross-origin-heuristics-research-solution-demo"
+,"headline"        : "JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"
+,"description"     : "JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work"
+,"datePosted"      : "2015-01-17T05:18:52+00:00"
+,"dateCreated"     : "2015-01-17T05:18:52+00:00"
+,"datePublished"   : "2015-01-17T05:18:52+00:00"
+,"dateModified"    : "2015-01-17T05:26:03+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0002391741241">
+  <header>
+    <h1 itemprop="headline">JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work</h1>
+    <sup>Posted at <time datetime="2015-01-17T05:26:03+00:00" itemprop="dateModified">Sat, 17 Jan 2015 05:26:03 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><!--more--><br/>
+<br/>
+<h2>The <code>document.domain</code> method</h2><br/>
+<ul><br/>
+	<li>Method type: <strong>iframe</strong>.</li><br/>
+</ul><br/>
+Note that this is an iframe method that sets the value of document.domain to a suffix of the current domain. If it does so, the shorter domain is used for subsequent origin checks. For example, assume a script in the document at <code>http://store.company.com/dir/other.html</code> executes the following statement:<br/>
+<pre><code><span class="pln">document</span><span class="pun">.</span><span class="pln">domain </span><span class="pun">=</span> <span class="str">"company.com"</span><span class="pun">;</span></code></pre><br/>
+After that statement executes, the page would pass the origin check with <code>http://company.com/dir/page.html</code>. However, by the same reasoning, company.com could not set <code>document.domain</code> to <code>othercompany.com</code>.<br/>
+<br/>
+With this method, you would be allowed to exectue javascript from an iframe sourced on a subdomain on a page sourced on the main domain. This method is not suited for cross-domain resources as browsers like Firefox will not allow you to change the <code>document.domain</code> to a completely alien domain.<br/>
+<br/>
+Source: <a href="https://developer.mozilla.org/en/Same_origin_policy_for_JavaScript" rel="nofollow">https://developer.mozilla.org/en/Same_origin_policy_for_JavaScript</a><br/>
+<h2>The Cross-Origin Resource Sharing method</h2><br/>
+<ul><br/>
+	<li>Method type: <strong>AJAX</strong>.</li><br/>
+</ul><br/>
+<a href="http://www.w3.org/TR/access-control/" rel="nofollow">Cross-Origin Resource Sharing</a> (CORS) is a W3C Working Draft that defines how the browser and server must communicate when accessing sources across origins. The basic idea behind CORS is to use custom HTTP headers to allow both the browser and the server to know enough about each other to determine if the request or response should succeed or fail.<br/>
+<br/>
+For a simple request, one that uses either <code>GET</code> or <code>POST</code> with no custom headers and whose body is <code>text/plain</code>, the request is sent with an extra header called <code>Origin</code>. The Origin header contains the origin (protocol, domain name, and port) of the requesting page so that the server can easily determine whether or not it should serve a response. An example <code>Origin</code> header might look like this:<br/>
+<pre><code><span class="typ">Origin</span><span class="pun">:</span><span class="pln"> http</span><span class="pun">:</span><span class="com">//www.stackoverflow.com</span></code></pre><br/>
+If the server decides that the request should be allowed, it sends a <code>Access-Control-Allow-Origin</code> header echoing back the same origin that was sent or <code>*</code> if it's a public resource. For example:<br/>
+<pre><code><span class="typ">Access</span><span class="pun">-</span><span class="typ">Control</span><span class="pun">-</span><span class="typ">Allow</span><span class="pun">-</span><span class="typ">Origin</span><span class="pun">:</span><span class="pln"> http</span><span class="pun">:</span><span class="com">//www.stackoverflow.com</span></code></pre><br/>
+If this header is missing, or the origins don't match, then the browser disallows the request. If all is well, then the browser processes the request. Note that neither the requests nor responses include cookie information.<br/>
+<br/>
+The Mozilla team suggests in <a href="http://hacks.mozilla.org/2009/07/cross-site-xmlhttprequest-with-cors/" rel="nofollow">their post about CORS</a> that you should check for the existence of the <code>withCredentials</code> property to determine if the browser supports CORS via XHR. You can then couple with the existence of the <code>XDomainRequest</code> object to cover all browsers:<br/>
+<pre><code><span class="kwd">function</span><span class="pln"> createCORSRequest</span><span class="pun">(</span><span class="pln">method</span><span class="pun">,</span><span class="pln"> url</span><span class="pun">){</span><br/>
+    <span class="kwd">var</span><span class="pln"> xhr </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">XMLHttpRequest</span><span class="pun">();</span><br/>
+    <span class="kwd">if</span> <span class="pun">(</span><span class="str">"withCredentials"</span> <span class="kwd">in</span><span class="pln"> xhr</span><span class="pun">){</span><span class="pln"><br/>
+        xhr</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="pln">method</span><span class="pun">,</span><span class="pln"> url</span><span class="pun">,</span> <span class="kwd">true</span><span class="pun">);</span><br/>
+    <span class="pun">}</span> <span class="kwd">else</span> <span class="kwd">if</span> <span class="pun">(</span><span class="kwd">typeof</span> <span class="typ">XDomainRequest</span> <span class="pun">!=</span> <span class="str">"undefined"</span><span class="pun">){</span><span class="pln"><br/>
+        xhr </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">XDomainRequest</span><span class="pun">();</span><span class="pln"><br/>
+        xhr</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="pln">method</span><span class="pun">,</span><span class="pln"> url</span><span class="pun">);</span><br/>
+    <span class="pun">}</span> <span class="kwd">else</span> <span class="pun">{</span><span class="pln"><br/>
+        xhr </span><span class="pun">=</span> <span class="kwd">null</span><span class="pun">;</span><br/>
+    <span class="pun">}</span><br/>
+    <span class="kwd">return</span><span class="pln"> xhr</span><span class="pun">;</span><br/>
+<span class="pun">}</span><br/>
+<br/>
+<span class="kwd">var</span><span class="pln"> request </span><span class="pun">=</span><span class="pln"> createCORSRequest</span><span class="pun">(</span><span class="str">"get"</span><span class="pun">,</span> <span class="str">"http://www.stackoverflow.com/"</span><span class="pun">);</span><br/>
+<span class="kwd">if</span> <span class="pun">(</span><span class="pln">request</span><span class="pun">){</span><span class="pln"><br/>
+    request</span><span class="pun">.</span><span class="pln">onload </span><span class="pun">=</span> <span class="kwd">function</span><span class="pun">()</span> <span class="pun">{</span><br/>
+        <span class="com">// ...</span><br/>
+    <span class="pun">};</span><span class="pln"><br/>
+    request</span><span class="pun">.</span><span class="pln">onreadystatechange </span><span class="pun">=</span><span class="pln"> handler</span><span class="pun">;</span><span class="pln"><br/>
+    request</span><span class="pun">.</span><span class="pln">send</span><span class="pun">();</span><br/>
+<span class="pun">}</span></code></pre><br/>
+Note that for the CORS method to work, you need to have access to any type of server header mechanic and can't simply access any third-party resource.<br/>
+<br/>
+Source: <a href="http://www.nczonline.net/blog/2010/05/25/cross-domain-ajax-with-cross-origin-resource-sharing/" rel="nofollow">http://www.nczonline.net/blog/2010/05/25/cross-domain-ajax-with-cross-origin-resource-sharing/</a><br/>
+<h2>The <code>window.postMessage</code> method</h2><br/>
+<ul><br/>
+	<li>Method type: <strong>iframe</strong>.</li><br/>
+</ul><br/>
+<code>window.postMessage</code>, when called, causes a <code>MessageEvent</code> to be dispatched at the target window when any pending script that must be executed completes (e.g. remaining event handlers if<code>window.postMessage</code> is called from an event handler, previously-set pending timeouts, etc.). The<code>MessageEvent</code> has the type message, a <code>data</code> property which is set to the string value of the first argument provided to <code>window.postMessage</code>, an <code>origin</code> property corresponding to the origin of the main document in the window calling <code>window.postMessage</code> at the time <code>window.postMessage</code> was called, and a <code>source</code> property which is the window from which <code>window.postMessage</code> is called.<br/>
+<br/>
+To use <code>window.postMessage</code>, an event listener must be attached:<br/>
+<pre><code>    <span class="com">// Internet Explorer</span><span class="pln"><br/>
+    window</span><span class="pun">.</span><span class="pln">attachEvent</span><span class="pun">(</span><span class="str">'onmessage'</span><span class="pun">,</span><span class="pln">receiveMessage</span><span class="pun">);</span><br/>
+<br/>
+    <span class="com">// Opera/Mozilla/Webkit</span><span class="pln"><br/>
+    window</span><span class="pun">.</span><span class="pln">addEventListener</span><span class="pun">(</span><span class="str">"message"</span><span class="pun">,</span><span class="pln"> receiveMessage</span><span class="pun">,</span> <span class="kwd">false</span><span class="pun">);</span></code></pre><br/>
+And a <code>receiveMessage</code> function must be declared:<br/>
+<pre><code><span class="kwd">function</span><span class="pln"> receiveMessage</span><span class="pun">(</span><span class="kwd">event</span><span class="pun">)</span><br/>
+<span class="pun">{</span><br/>
+    <span class="com">// do something with event.data;</span><br/>
+<span class="pun">}</span></code></pre><br/>
+The off-site iframe must also send events properly via <code>postMessage</code>:<br/>
+<pre><code><span class="tag">&lt;script&gt;</span><span class="pln">window</span><span class="pun">.</span><span class="pln">parent</span><span class="pun">.</span><span class="pln">postMessage</span><span class="pun">(</span><span class="str">'foo'</span><span class="pun">,</span><span class="str">'*'</span><span class="pun">)</span><span class="tag">&lt;/script&gt;</span></code></pre><br/>
+Any window may access this method on any other window, at any time, regardless of the location of the document in the window, to send it a message. Consequently, any event listener used to receive messages must first check the identity of the sender of the message, using the origin and possibly source properties. This cannot be understated: <strong>Failure to check the <code>origin</code> and possibly <code>source</code> properties enables cross-site scripting attacks.</strong><br/>
+<br/>
+Source: <a href="https://developer.mozilla.org/en/DOM/window.postMessage" rel="nofollow">https://developer.mozilla.org/en/DOM/window.postMessage</a><br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/01/cdmn.png"><img loading="lazy" lazyload="on"  class="alignnone size-full wp-image-2387" src="https://icompile.eladkarako.com/_uploads/2015/01/cdmn.png" alt="cdmn" rem-width="1023" rem-height="590" /></a></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/formal-language-algorithm-specific-word-format-problem-solution-using-javascript-implementations">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-techniques-web-cross-domain-cross-origin-heuristics-presentation-tease">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-techniques-web-cross-domain-cross-origin-heuristics-presentation-tease">JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Presentation Tease 4Work</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/gluten-free-trick">טריק לשיפור לחם-קל של בר-אל</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/proper-british-morning-qi-and-tea">Proper British Morning - QI && Tea</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/handlebarsjs-2-0-cdn-resources-explained">HandlebarsJS 2.0 CDN-Resources Explained</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/life-logic">Life's Logic</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-include-require-require_once">require_once</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/lotr-project-json-resources">LOTR Project - JSON Resources</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nasa-json-resources-from-android-aplication">NASA JSON Resources From Android Aplication</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/xposed-repositories-full-xml">Xposed Repositories Full XML</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/4chan-api-cross-domain-image-fetcher-usage-examples">4Chan API - Cross-Domain Image Fetcher - Usage + Examples</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-raw-html-processing-move-all-script-tags-to-the-end-of-body-tag">PHP Raw HTML Processing - Move All Script Tags To The End Of Body Tag</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wordpress-plugin-raw-html-processing">WordPress Plugin - Raw HTML Processing</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-raw-html-processing-working-with-javascript-escaped-html">PHP Raw HTML Processing - Working With JavaScript Escaped HTML</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/jsonip-simple-alternative">JSONIP Simple Alternative</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-techniques-extract-unique-list-of-domain-names-from-anchor-tags">JavaScript Ninja Techniques - Extract Unique List Of Domain Names From Anchor Tags</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ajax-head-request-just-to-get-response-headers-of-same-page">$.ajax HEAD Request Just To Get Response Headers Of Same page</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

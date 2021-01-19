@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>CSS Snippet - A Language Specific font-family Rule That Does Not Suck!</title>
+  <meta itemprop="name"                                content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+  <meta name="dcterms.title"                           content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+  <meta property="og:title"                            content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+  <meta name="twitter:title"                           content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+  <meta name="twitter:text:title"                      content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+  <meta name="application-name"                        content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+  <meta name="subject"                                 content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+  <meta name="apple-mobile-web-app-title"              content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+  <meta name="msapplication-tooltip"                   content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+  <meta itemprop="description"                         content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+  <meta name="dcterms.description"                     content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+  <meta name="twitter:description"                     content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+  <meta property="og:description"                      content="CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="aboriginal,adobe,advanced,ahead,alef,amount,arabian,arabic,aramaic,armenian,automatise,avestan,balinese,bamum,batak,bengali,blank,bold,brahmi,browse,browser,browsers,buginese,buhid,canadian,carian,cham,change,cherokee,chiki,chrome,cleaning,code,color,content,coptic,correct,correctly,courier,cuneiform,cypriot,david,decent,default,defined,definition,deseret,design,devanagari,developer,display,displayed,dual,eastern,egyptian,engine,english,estrangela,ethiopic,fallback,families,family,file,fine,font,fonts,found,georgian,glagolitic,global,glyphs,google,gothic,gujarati,gurmukhi,handle,handles,handling,hanunoo,hebrew,hieroglyphs,html,identify,imperial,init,input,issue,javanese,javascript,junk,kaithi,kannada,kayah,keeping,kharoshthi,khmer,lang,language,languages,lepcha,letter,letters,limbu,linear,list,lisu,logic,lycian,lydian,malayalam,mandaic,mayek,mechanisem,meetei,missing,mixed,modifying,mongolian,mono,monospace,multiple,myanmar,nagri,names,naturally,note,noto,ogham,open,operation,optionally,oriya,osmanya,page,pahlavi,parthian,perfect,persian,phags,phoenician,picky,prefer,preferred,prioritise,problem,quirk,readability,recommend,reduce,rejang,relation,repeating,respect,roboto,roman,rule,rules,runic,russian,samaritan,sans,satisfy,saurashtra,sentences,serif,settings,shavian,sinhala,size,slightly,snippet,solution,solve,south,specific,styles,suck,suite,sundanese,syloti,symbols,syriac,system,systems,tagalog,tagbanwa,tahoma,tamil,target,telugu,textarea,thaana,thai,tham,tibetan,tifinagh,times,turkic,ugaritic,unified,unmark,variation,variations,viet,webstore,weight,western,windows,wont,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="aboriginal,adobe,advanced,ahead,alef,amount,arabian,arabic,aramaic,armenian,automatise,avestan,balinese,bamum,batak,bengali,blank,bold,brahmi,browse,browser,browsers,buginese,buhid,canadian,carian,cham,change,cherokee,chiki,chrome,cleaning,code,color,content,coptic,correct,correctly,courier,cuneiform,cypriot,david,decent,default,defined,definition,deseret,design,devanagari,developer,display,displayed,dual,eastern,egyptian,engine,english,estrangela,ethiopic,fallback,families,family,file,fine,font,fonts,found,georgian,glagolitic,global,glyphs,google,gothic,gujarati,gurmukhi,handle,handles,handling,hanunoo,hebrew,hieroglyphs,html,identify,imperial,init,input,issue,javanese,javascript,junk,kaithi,kannada,kayah,keeping,kharoshthi,khmer,lang,language,languages,lepcha,letter,letters,limbu,linear,list,lisu,logic,lycian,lydian,malayalam,mandaic,mayek,mechanisem,meetei,missing,mixed,modifying,mongolian,mono,monospace,multiple,myanmar,nagri,names,naturally,note,noto,ogham,open,operation,optionally,oriya,osmanya,page,pahlavi,parthian,perfect,persian,phags,phoenician,picky,prefer,preferred,prioritise,problem,quirk,readability,recommend,reduce,rejang,relation,repeating,respect,roboto,roman,rule,rules,runic,russian,samaritan,sans,satisfy,saurashtra,sentences,serif,settings,shavian,sinhala,size,slightly,snippet,solution,solve,south,specific,styles,suck,suite,sundanese,syloti,symbols,syriac,system,systems,tagalog,tagbanwa,tahoma,tamil,target,telugu,textarea,thaana,thai,tham,tibetan,tifinagh,times,turkic,ugaritic,unified,unmark,variation,variations,viet,webstore,weight,western,windows,wont,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/machine-logo-for-ssh-putty"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/machine-logo-for-ssh-putty"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/java-utf8"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/css-snippet-language-specific-font-family"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/css-snippet-language-specific-font-family"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/css-snippet-language-specific-font-family"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/css-snippet-language-specific-font-family"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/css-snippet-language-specific-font-family"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/css-snippet-language-specific-font-family"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-04-13T17:20:53+00:00"     />
+  <meta name="page-datetime"                           content="2017-04-13T17:20:53+00:00"     />
+  <meta property="article:published_time"              content="2017-04-13T17:20:53+00:00"     />
+  <meta name="dcterms.date"                            content="2017-04-13T17:20:53+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-04-13T17:51:07+00:00"    />
+  <meta property="article:modified_time"               content="2017-04-13T17:51:07+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/css-snippet-language-specific-font-family"
+,"url"             : "https://icompile.eladkarako.com/css-snippet-language-specific-font-family"
+,"headline"        : "CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"
+,"description"     : "CSS Snippet - A Language Specific font-family Rule That Does Not Suck!"
+,"datePosted"      : "2017-04-13T17:20:53+00:00"
+,"dateCreated"     : "2017-04-13T17:20:53+00:00"
+,"datePublished"   : "2017-04-13T17:20:53+00:00"
+,"dateModified"    : "2017-04-13T17:51:07+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003504012941">
+  <header>
+    <h1 itemprop="headline">CSS Snippet - A Language Specific font-family Rule That Does Not Suck!</h1>
+    <sup>Posted at <time datetime="2017-04-13T17:51:07+00:00" itemprop="dateModified">Thu, 13 Apr 2017 17:51:07 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><!--more--><br/>
+<br/>
+Put this code at the top of your CSS file, just after the "zero/clear/init" part.<br/>
+<br/>
+<pre><br/>
+<span style='color:#800000; font-weight:bold; '>html</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>textarea</span><span style='color:#800080; '>{</span>  <span style='color:#bb7977; font-weight:bold; '>font-family</span><span style='color:#808030; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Noto Sans</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Roboto</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#074726; '>sans-serif</span><span style='color:#800080; '>;</span>                    <span style='color:#800080; '>}</span><br/>
+<span style='color:#800000; font-weight:bold; '>pre</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>code</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>kbd</span><span style='color:#800080; '>{</span>         <span style='color:#bb7977; font-weight:bold; '>font-family</span><span style='color:#808030; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Noto Mono</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Roboto Mono</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Courier New</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#074726; '>monospace</span><span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span><br/>
+</pre><br/>
+<br/>
+And go through your other styles and try to reduce the amount of repeating rules,<br/>
+for example, change 'font' to 'font-size' since we've already defined the 'font-family' ;]<br/>
+<br/>
+<hr/><br/>
+Handling dual Hebrew/English content:<br/>
+<pre><br/>
+<span style='color:#800000; font-weight:bold; '>html</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>textarea</span><span style='color:#800080; '>{</span>  <span style='color:#bb7977; font-weight:bold; '>font-family</span><span style='color:#808030; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Noto Sans</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Roboto</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#074726; '>sans-serif</span><span style='color:#800080; '>;</span>  <span style='color:#800080; '>}</span><br/>
+<br/>
+ <span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>lang</span><span style='color:#800080; '>(</span><span style='color:#074726; '>he</span><span style='color:#800080; '>)</span><span style='color:#808030; '>,</span><span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>lang</span>(he-IL)<br/>
+<span style='color:#808030; '>,</span><span style='color:#808030; '>[</span><span style='color:#074726; '>lang</span><span style='color:#808030; '>^=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>hebrew</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span><span style='color:#808030; '>,</span><span style='color:#808030; '>[</span><span style='color:#074726; '>lang</span><span style='color:#808030; '>^=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Hebrew</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span><br/>
+<span style='color:#808030; '>,</span><span style='color:#808030; '>[</span><span style='color:#074726; '>language</span><span style='color:#808030; '>^=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>hebrew</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span><span style='color:#808030; '>,</span><span style='color:#808030; '>[</span><span style='color:#074726; '>language</span><span style='color:#808030; '>^=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Hebrew</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span><br/>
+<span style='color:#808030; '>,</span><span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>lang</span>(he-iw)<span style='color:#808030; '>,</span><span style='color:#808030; '>[</span><span style='color:#074726; '>lang</span><span style='color:#808030; '>^=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>iw</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span><span style='color:#808030; '>,</span><span style='color:#808030; '>[</span><span style='color:#074726; '>lang</span><span style='color:#808030; '>^=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>IW</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span> <span style='color:#696969; '>/*old Hebrew definition was 'iw' instead of 'he' (still IS in 'IE'&lt;9)*/</span><br/>
+<span style='color:#800080; '>{</span>  <span style='color:#696969; '>/*when the content is unambiguously-specified to Hebrew, *respect it*, and prefer a variation of Hebrew-font first (but still including the default ones.. later...) */</span><br/>
+  <span style='color:#bb7977; font-weight:bold; '>font-family</span><span style='color:#808030; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Noto Sans Hebrew</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Open Sans Hebrew</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Tahoma</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Adobe Hebrew</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Alef</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Noto Sans</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Roboto</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#074726; '>sans-serif</span><span style='color:#800080; '>;</span>                    <span style='color:#800080; '>}</span><br/>
+<span style='color:#800080; '>}</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>pre</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>code</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>kbd</span><span style='color:#800080; '>{</span>         <span style='color:#bb7977; font-weight:bold; '>font-family</span><span style='color:#808030; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Noto Mono</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Roboto Mono</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Courier New</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#074726; '>monospace</span><span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span><br/>
+</pre><br/>
+<br/>
+The addition, added above, specify the 'preferred' order to be used (with fallback).<br/>
+<br/>
+Note that <code>Note Sans</code> has the glyphs for Hebrew-letters, but browsers handles language-relation to fonts differently from operation-systems, so while your Windows7 wont be picky and if you'll set the <code>Note Sans</code> as the global-default font (for example) and will show you file-names containing Hebrew with no particular issue, Chrome will *quirk up* and use the the default system font-family unless you've specified it ahead using a CSS-rule,<br/>
+which usually means <code>David</code>, <code>Times New Roman</code> or other known font-families will be used.<br/>
+<br/>
+The code-above will prioritise the use of the Hebrew variation of some known fonts such as <code>Noto Sans</code>, which will *absolutely* help the identification-engine to handle multiple languages, while still keeping a decent unified design and readability.<br/>
+<br/>
+<em>This mechanisem can be automatise using <a href="https://chrome.google.com/webstore/detail/caclkomlalccbpcdllchkeecicepbmbm" target="_blank">Advanced Font Settings</a> but I do not recommend using it because it is quite cr^ppy and will load a lot of junk Javascript into every page you'll browse!</em><br/>
+<br/>
+<hr/><br/>
+the problem with the above code, is that mix-language-sentences where you have English and Hebrew content are, still, shown using the Noto font for English and the 'David' font-family (default on my PC) for the Hebrew content.<br/>
+<br/>
+Cleaning up and slightly modifying the CSS code, will solve it:<br/>
+<pre><br/>
+<span style='color:#800000; font-weight:bold; '>html</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>textarea</span><span style='color:#800080; '>{</span>                       <span style='color:#bb7977; font-weight:bold; '>font-family</span><span style='color:#808030; '>:</span>  <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Noto Sans Hebrew</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Noto Sans</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Roboto</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#074726; '>sans-serif</span><span style='color:#800080; '>;</span>  <span style='color:#800080; '>}</span>  <span style='color:#696969; '>/* English or Hebrew/English mixed-content.      */</span><br/>
+<span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>lang</span><span style='color:#800080; '>(</span><span style='color:#074726; '>he</span><span style='color:#800080; '>)</span>         <span style='color:#808030; '>,</span> <span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>lang</span>(he-IL)     <span style='color:#808030; '>,</span>  <span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>lang</span><span style='color:#800080; '>(</span><span style='color:#074726; '>iw</span><span style='color:#800080; '>)</span>                                                                   <span style='color:#696969; '>/* When browser identify a Hebrew-only content.  */</span><br/>
+<span style='color:#808030; '>,</span><span style='color:#808030; '>[</span><span style='color:#074726; '>lang</span><span style='color:#808030; '>^=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>he</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span>     <span style='color:#808030; '>,</span> <span style='color:#808030; '>[</span><span style='color:#074726; '>lang</span><span style='color:#808030; '>^=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>He</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span>     <span style='color:#808030; '>,</span>  <span style='color:#808030; '>[</span><span style='color:#074726; '>lang</span><span style='color:#808030; '>^=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>iw</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span><br/>
+<span style='color:#808030; '>,</span><span style='color:#808030; '>[</span><span style='color:#074726; '>language</span><span style='color:#808030; '>^=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>he</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>,</span> <span style='color:#808030; '>[</span><span style='color:#074726; '>language</span><span style='color:#808030; '>^=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>He</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>,</span>  <span style='color:#808030; '>[</span><span style='color:#074726; '>language</span><span style='color:#808030; '>^=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>iw</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span><span style='color:#800080; '>{</span><br/>
+                                           <span style='color:#bb7977; font-weight:bold; '>font-family</span><span style='color:#808030; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Noto Sans Hebrew</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Open Sans Hebrew</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Adobe Hebrew</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Tahoma</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Alef</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Noto Sans</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Roboto</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#074726; '>sans-serif</span><span style='color:#800080; '>;</span>  <span style='color:#800080; '>}</span><br/>
+<span style='color:#800000; font-weight:bold; '>pre</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>code</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>kbd</span><span style='color:#800080; '>{</span>                              <span style='color:#bb7977; font-weight:bold; '>font-family</span><span style='color:#808030; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Courier New</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Noto Mono</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#074726; '>monospace</span><span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span><br/>
+</pre><br/>
+<br/>
+In this case the Hebrew content will always be shown using the provided glyphs found in the font-file, and the fallback will use if any of the letter-glyphs are missing, granted, not a perfect solution,<br/>
+and Noto has so many variations:<br/>
+<pre>
+Noto Sans Armenian
+Noto Sans Avestan
+Noto Sans Balinese
+Noto Sans Bamum
+Noto Sans Batak
+Noto Sans Bengali
+Noto Sans Brahmi
+Noto Sans Buginese
+Noto Sans Buhid
+Noto Sans Canadian Aboriginal
+Noto Sans Carian
+Noto Sans Cham
+Noto Sans Cherokee
+Noto Sans CJK JP
+Noto Sans CJK KR
+Noto Sans CJK SC
+Noto Sans CJK TC
+Noto Sans Coptic
+Noto Sans Cuneiform
+Noto Sans Cypriot
+Noto Sans Deseret
+Noto Sans Devanagari
+Noto Sans Egyptian Hieroglyphs
+Noto Sans Ethiopic
+Noto Sans Georgian
+Noto Sans Glagolitic
+Noto Sans Gothic
+Noto Sans Gujarati
+Noto Sans Gurmukhi
+Noto Sans Hanunoo
+Noto Sans Hebrew
+Noto Sans Imperial Aramaic
+Noto Sans Inscriptional Pahlavi
+Noto Sans Inscriptional Parthian
+Noto Sans Javanese
+Noto Sans JP
+Noto Sans Kaithi
+Noto Sans Kannada
+Noto Sans Kayah Li
+Noto Sans Kharoshthi
+Noto Sans Khmer
+Noto Sans KR
+Noto Sans Lao
+Noto Sans Lepcha
+Noto Sans Limbu
+Noto Sans Linear B
+Noto Sans Lisu
+Noto Sans Lycian
+Noto Sans Lydian
+Noto Sans Malayalam
+Noto Sans Mandaic
+Noto Sans Meetei Mayek
+Noto Sans Mongolian
+Noto Sans Myanmar
+Noto Sans New Tai Lue
+Noto Sans NKo
+Noto Sans Ogham
+Noto Sans Ol Chiki
+Noto Sans Old
+Noto Sans Old Persian
+Noto Sans Old South Arabian
+Noto Sans Old Turkic
+Noto Sans Oriya
+Noto Sans Osmanya
+Noto Sans Phags Pa
+Noto Sans Phoenician
+Noto Sans Rejang
+Noto Sans Runic
+Noto Sans Samaritan
+Noto Sans Saurashtra
+Noto Sans SC
+Noto Sans Shavian
+Noto Sans Sinhala
+Noto Sans Sundanese
+Noto Sans Syloti Nagri
+Noto Sans Symbols
+Noto Sans Syriac Eastern
+Noto Sans Syriac Estrangela
+Noto Sans Syriac Western
+Noto Sans Tagalog
+Noto Sans Tagbanwa
+Noto Sans Tai Le
+Noto Sans Tai Tham
+Noto Sans Tai Viet
+Noto Sans Tamil
+Noto Sans TC
+Noto Sans Telugu
+Noto Sans Thaana
+Noto Sans Thai
+Noto Sans Tibetan
+Noto Sans Tifinagh
+Noto Sans Ugaritic
+Noto Sans Vai
+Noto Sans Yi
+</pre><br/>
+<br/>
+So by this logic you'll have to put all those variation in-front of the actual 'Noto Sans', to have a truly  multilingual mixed languages maybe you'll need to have something like this:<br/>
+<pre>
+html,input,textarea{
+  font-family: 'Noto Sans Armenian', 'Noto Sans Avestan', 'Noto Sans Balinese', 'Noto Sans Bamum', 'Noto Sans Batak', 'Noto Sans Bengali', 'Noto Sans Brahmi', 'Noto Sans Buginese', 'Noto Sans Buhid', 'Noto Sans Canadian Aboriginal', 'Noto Sans Carian', 'Noto Sans Cham', 'Noto Sans Cherokee', 'Noto Sans CJK JP', 'Noto Sans CJK KR', 'Noto Sans CJK SC', 'Noto Sans CJK TC', 'Noto Sans Coptic', 'Noto Sans Cuneiform', 'Noto Sans Cypriot', 'Noto Sans Deseret', 'Noto Sans Devanagari', 'Noto Sans Egyptian Hieroglyphs', 'Noto Sans Ethiopic', 'Noto Sans Georgian', 'Noto Sans Glagolitic', 'Noto Sans Gothic', 'Noto Sans Gujarati', 'Noto Sans Gurmukhi', 'Noto Sans Hanunoo', 'Noto Sans Hebrew', 'Noto Sans Imperial Aramaic', 'Noto Sans Inscriptional Pahlavi', 'Noto Sans Inscriptional Parthian', 'Noto Sans Javanese', 'Noto Sans JP', 'Noto Sans Kaithi', 'Noto Sans Kannada', 'Noto Sans Kayah Li', 'Noto Sans Kharoshthi', 'Noto Sans Khmer', 'Noto Sans KR', 'Noto Sans Lao', 'Noto Sans Lepcha', 'Noto Sans Limbu', 'Noto Sans Linear B', 'Noto Sans Lisu', 'Noto Sans Lycian', 'Noto Sans Lydian', 'Noto Sans Malayalam', 'Noto Sans Mandaic', 'Noto Sans Meetei Mayek', 'Noto Sans Mongolian', 'Noto Sans Myanmar', 'Noto Sans New Tai Lue', 'Noto Sans NKo', 'Noto Sans Ogham', 'Noto Sans Ol Chiki', 'Noto Sans Old', 'Noto Sans Old Persian', 'Noto Sans Old South Arabian', 'Noto Sans Old Turkic', 'Noto Sans Oriya', 'Noto Sans Osmanya', 'Noto Sans Phags Pa', 'Noto Sans Phoenician', 'Noto Sans Rejang', 'Noto Sans Runic', 'Noto Sans Samaritan', 'Noto Sans Saurashtra', 'Noto Sans SC', 'Noto Sans Shavian', 'Noto Sans Sinhala', 'Noto Sans Sundanese', 'Noto Sans Syloti Nagri', 'Noto Sans Symbols', 'Noto Sans Syriac Eastern', 'Noto Sans Syriac Estrangela', 'Noto Sans Syriac Western', 'Noto Sans Tagalog', 'Noto Sans Tagbanwa', 'Noto Sans Tai Le', 'Noto Sans Tai Tham', 'Noto Sans Tai Viet', 'Noto Sans Tamil', 'Noto Sans TC', 'Noto Sans Telugu', 'Noto Sans Thaana', 'Noto Sans Thai', 'Noto Sans Tibetan', 'Noto Sans Tifinagh', 'Noto Sans Ugaritic', 'Noto Sans Vai', 'Noto Sans Yi', 'Noto Sans , sans-serif;
+}  
+</pre><br/>
+<br/>
+naturally I won't recommend it (other than to satisfy your inner-experimentalist-developer),<br/>
+so this will probably suite you better:<br/>
+<pre>
+html,input,textarea{ font-family:  'Noto Sans Hebrew', 'Noto Sans', 'Roboto', sans-serif;  }
+pre,code,kbd{        font-family: 'Courier New', 'Noto Mono', monospace;                   }
+</pre><br/>
+<br/>
+or this:<br/>
+<sub>(optionally unmark the Hebrew-only part if you want to be very specific/correct display in old browsers)</sub><br/>
+<pre>
+html,input,textarea{  font-family:  'Noto Sans Hebrew', 'Noto Sans', 'Roboto', sans-serif;  }  /* English or Hebrew/English mixed-content.      */
+pre,code,kbd{         font-family:  'Courier New', 'Noto Mono', monospace;                  }
+/* Hebrew-only content. *//*
+:lang(he),:lang(he-IL),:lang(iw),[lang^="he"],[lang^="He"],[lang^="iw"],[language^="he"],[language^="He"],[language^="iw"]{
+                      font-family:  'Noto Sans Hebrew', 'Open Sans Hebrew', 'Adobe Hebrew', 'Tahoma', 'Alef', 'Noto Sans', 'Roboto', sans-serif;
+}
+*/                                           
+</pre><br/>
+if you have any other mixed-content that isn't displayed correctly (Arabic, Russian, ...) just add its variation to the list, in-front of 'Noto Sans' one, and you should be fine.. :]<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/machine-logo-for-ssh-putty">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/java-utf8">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/java-utf8">Java And UTF-8</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-remove-300ms-delay-on-touchclick-no-javascript-required">HTML5 - Remove 300ms Delay On-Touch/Click - No JavaScript Required!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-close-connection-with-non-standard-status">PHP Snippet - Close Connection With A Non-Standard HTTP-Status</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-snippet-the-magical-rotated-logo">CSS Snippet - The Magical Rotated Logo</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nodejs-snippet-file-accessmodification-stat-and-utimes-one-second-scope">NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/github-branch-delete">GitHub - How To Delete A Branch</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/antivirus-exclude-list">Stuff You Should Exclude From Your Anti-Virus</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hebrew-unicode-range">Hebrew Unicode-Range</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/odin-3-10-7b3-patched-version">Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adding-noto-mono-courier-new-droid-sans-mono-roboto-mono-ubuntu-mono-to-windows-cmd">'Ubuntu Mono' To Windows' CMD</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/crowd-wisdom-ebay-enhancements">JavaScript Ninja - Crowd Wisdom eBay Enhancements</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-ebay-fetch-accurate-sold-amount-and-update-the-main-page">JavaScript Snippet - eBay - Fetch Accurate "Sold" Amount And Update The Main Page</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/feature-policy-header">Feature-Policy Header</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromereader-a-news-reader-right-in-your-mobile-google-chrome">ChromeReader - A News Reader Right In Your Mobile Google Chrome</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/block-chrome-content-suggestions">ChromeReader/Content-Suggestions - Yes You CAN Block It...</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/flat-namednodemap">But Flat!</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

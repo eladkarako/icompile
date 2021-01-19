@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Installing Git-LFS On Linux Mint</title>
+  <meta itemprop="name"                                content="Installing Git-LFS On Linux Mint"       />
+  <meta name="dcterms.title"                           content="Installing Git-LFS On Linux Mint"       />
+  <meta property="og:title"                            content="Installing Git-LFS On Linux Mint"       />
+  <meta name="twitter:title"                           content="Installing Git-LFS On Linux Mint"       />
+  <meta name="twitter:text:title"                      content="Installing Git-LFS On Linux Mint"       />
+  <meta name="application-name"                        content="Installing Git-LFS On Linux Mint"       />
+  <meta name="subject"                                 content="Installing Git-LFS On Linux Mint"       />
+  <meta name="apple-mobile-web-app-title"              content="Installing Git-LFS On Linux Mint"       />
+  <meta name="msapplication-tooltip"                   content="Installing Git-LFS On Linux Mint"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Installing Git-LFS On Linux Mint"       />
+  <meta itemprop="description"                         content="Installing Git-LFS On Linux Mint"       />
+  <meta name="dcterms.description"                     content="Installing Git-LFS On Linux Mint"       />
+  <meta name="twitter:description"                     content="Installing Git-LFS On Linux Mint"       />
+  <meta property="og:description"                      content="Installing Git-LFS On Linux Mint"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="access,archive,archives,atom,back,backports,bash,building,candidate,candidates,canonical,checking,code,command,commands,common,core,curl,database,debian,dependency,detected,directories,disk,enjoy,ensure,entering,executing,exit,experiments,fail,fetched,file,files,github,higher,imported,importing,info,information,initialized,inrelease,install,installed,installing,internal,isoc,java,keys,keyserver,launchpad,lhuzoqitio,linux,linuxmint,list,lists,logo,machine,maintainers,make,manager,mint,mirror,nemo,newly,number,operating,operation,package,packages,permission,preparing,processed,processing,properties,public,python,quit,reading,recv,regular,release,remove,repository,requesting,restart,running,script,security,selecting,serena,server,setting,setup,shorter,silently,software,solved,sources,space,stable,start,state,succeed,sudo,system,team,total,transport,tree,triggers,ubuntu,unpack,unpacking,unselected,update,updates,upgraded,upstream,user,version,webupd,wheezy,xenial,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="access,archive,archives,atom,back,backports,bash,building,candidate,candidates,canonical,checking,code,command,commands,common,core,curl,database,debian,dependency,detected,directories,disk,enjoy,ensure,entering,executing,exit,experiments,fail,fetched,file,files,github,higher,imported,importing,info,information,initialized,inrelease,install,installed,installing,internal,isoc,java,keys,keyserver,launchpad,lhuzoqitio,linux,linuxmint,list,lists,logo,machine,maintainers,make,manager,mint,mirror,nemo,newly,number,operating,operation,package,packages,permission,preparing,processed,processing,properties,public,python,quit,reading,recv,regular,release,remove,repository,requesting,restart,running,script,security,selecting,serena,server,setting,setup,shorter,silently,software,solved,sources,space,stable,start,state,succeed,sudo,system,team,total,transport,tree,triggers,ubuntu,unpack,unpacking,unselected,update,updates,upgraded,upstream,user,version,webupd,wheezy,xenial,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/godaddy-portal-requires-js-support"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/godaddy-portal-requires-js-support"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/build-apktool"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/git-lfs-on-linux-mint"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/git-lfs-on-linux-mint"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/git-lfs-on-linux-mint"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/git-lfs-on-linux-mint"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/git-lfs-on-linux-mint"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/git-lfs-on-linux-mint"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-06-11T17:08:39+00:00"     />
+  <meta name="page-datetime"                           content="2017-06-11T17:08:39+00:00"     />
+  <meta property="article:published_time"              content="2017-06-11T17:08:39+00:00"     />
+  <meta name="dcterms.date"                            content="2017-06-11T17:08:39+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-06-11T18:31:40+00:00"    />
+  <meta property="article:modified_time"               content="2017-06-11T18:31:40+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/git-lfs-on-linux-mint"
+,"url"             : "https://icompile.eladkarako.com/git-lfs-on-linux-mint"
+,"headline"        : "Installing Git-LFS On Linux Mint"
+,"description"     : "Installing Git-LFS On Linux Mint"
+,"datePosted"      : "2017-06-11T17:08:39+00:00"
+,"dateCreated"     : "2017-06-11T17:08:39+00:00"
+,"datePublished"   : "2017-06-11T17:08:39+00:00"
+,"dateModified"    : "2017-06-11T18:31:40+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0009190027941">
+  <header>
+    <h1 itemprop="headline">Installing Git-LFS On Linux Mint</h1>
+    <sup>Posted at <time datetime="2017-06-11T18:31:40+00:00" itemprop="dateModified">Sun, 11 Jun 2017 18:31:40 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2017/06/icompile.eladkarako.com_git_lfs_logo.png" alt="" width="223" height="223" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2017/06/icompile.eladkarako.com_solved_linux_mint_version.png" alt="" width="318" height="199"/><br/>
+<br/>
+<!--more--><br/>
+<br/>
+<br/>
+<ul><br/>
+<li>Start with entering into higher-permission state using <code>su -</code>.<br/>
+<hr/><br/>
+It will make the following commands shorter,<br/>
+and this way you won't need <code>sudo</code>,<br/>
+<br/>
+it will also make sure internal-commands in the <code>sh</code>-file (below) will succeed,<br/>
+otherwise they will fail.. silently.. :/<br/>
+</li><br/>
+<br/>
+<li>Follow:<br/>
+<a href="https://icompile.eladkarako.com/solved-linux-mint-and-debian-packages/">Solved: Linux Mint And Debian Packages <sub><em>(https://icompile.eladkarako.com/solved-linux-mint-and-debian-packages/)</em></sub></a>,<br/>
+it will ensure you can access Debian-packages server.<br/>
+</li><br/>
+<br/>
+<li><br/>
+<code>apt-get -y install software-properties-common</code><br/>
+<em>You'll see something like:</em><br/>
+<pre>
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  software-properties-common
+0 upgraded, 1 newly installed, 0 to remove and 94 not upgraded.
+Need to get 5,206 B of archives.
+After this operation, 12.3 kB of additional disk space will be used.
+Get:1 http://packages.linuxmint.com serena/upstream amd64 software-properties-common all 1.6.4 [5,206 B]
+Fetched 5,206 B in 0s (6,165 B/s)                     
+Selecting previously unselected package software-properties-common.
+(Reading database ... 237010 files and directories currently installed.)
+Preparing to unpack .../software-properties-common_1.6.4_all.deb ...
+Unpacking software-properties-common (1.6.4) ...
+Setting up software-properties-common (1.6.4) ...
+</pre><br/>
+</li><br/>
+<br/>
+<li><br/>
+<code>apt-get -y install python-software-properties</code><br/>
+<em>You'll see something like:</em><br/>
+<pre>
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  python-software-properties
+0 upgraded, 1 newly installed, 0 to remove and 94 not upgraded.
+Need to get 5,212 B of archives.
+After this operation, 12.3 kB of additional disk space will be used.
+Get:1 http://packages.linuxmint.com serena/upstream amd64 python-software-properties all 1.6.4 [5,212 B]
+Fetched 5,212 B in 0s (5,602 B/s)                       
+Selecting previously unselected package python-software-properties.
+(Reading database ... 237013 files and directories currently installed.)
+Preparing to unpack .../python-software-properties_1.6.4_all.deb ...
+Unpacking python-software-properties (1.6.4) ...
+Setting up python-software-properties (1.6.4) ...
+</pre><br/>
+</li><br/>
+<br/>
+<li><em>(if you do not have <code>git</code>- install it using <code>apt-get -y install git</code>)</em>)<li><br/>
+<br/>
+<code>add-apt-repository -y ppa:git-core/ppa</code><br/>
+<em>You'll see something like:</em><br/>
+<pre>
+You are about to add the following PPA:
+ The most current stable version of Git for Ubuntu.
+
+For release candidates, go to https://launchpad.net/~git-core/+archive/candidate .
+ More info: https://launchpad.net/~git-core/+archive/ubuntu/ppa
+Executing: /tmp/tmp.lHuzOqiTIo/gpg.1.sh --keyserver
+hkp://keyserver.ubuntu.com:80
+--recv-keys
+E1DF1F24
+gpg: requesting key E1DF1F24 from hkp server keyserver.ubuntu.com
+gpg: key E1DF1F24: public key "Launchpad PPA for Ubuntu Git Maintainers" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+</pre><br/>
+</li><br/>
+<br/>
+<li><br/>
+<code>apt-get -y update</code><br/>
+<em>You'll see something like:</em><br/>
+<pre>
+Hit:1 http://mirror.isoc.org.il/pub/ubuntu xenial InRelease
+Hit:2 http://mirror.isoc.org.il/pub/ubuntu xenial-updates InRelease            
+Hit:3 http://mirror.isoc.org.il/pub/ubuntu xenial-backports InRelease          
+Hit:4 http://ppa.launchpad.net/git-core/ppa/ubuntu xenial InRelease            
+Get:5 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]     
+Hit:6 http://archive.canonical.com/ubuntu xenial InRelease                     
+Hit:7 http://ppa.launchpad.net/webupd8team/atom/ubuntu xenial InRelease        
+Hit:8 http://ppa.launchpad.net/webupd8team/experiments/ubuntu xenial InRelease 
+Hit:9 http://ppa.launchpad.net/webupd8team/java/ubuntu xenial InRelease        
+Ign:10 http://packages.linuxmint.com serena InRelease                          
+Hit:11 http://ppa.launchpad.net/webupd8team/nemo/ubuntu xenial InRelease       
+Hit:12 http://ppa.launchpad.net/webupd8team/y-ppa-manager/ubuntu xenial InRelease
+Hit:13 http://packages.linuxmint.com serena Release                            
+Hit:15 https://deb.debian.org/debian wheezy-backports InRelease                
+Ign:16 https://deb.debian.org/debian stable InRelease
+Hit:17 https://deb.debian.org/debian-security stable/updates InRelease
+Hit:18 https://deb.debian.org/debian stable Release
+Hit:20 https://packagecloud.io/github/git-lfs/linuxmint serena InRelease       
+Fetched 102 kB in 7s (13.4 kB/s)                                               
+Reading package lists... Done
+</pre><br/>
+</li><br/>
+<br/>
+<li><br/>
+<code>curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash</code><br/>
+<em>You'll see something like:</em><br/>
+<pre>
+Detected operating system as LinuxMint/serena.
+Checking for curl...
+Detected curl...
+Running apt-get update... done.
+Installing apt-transport-https... done.
+Installing /etc/apt/sources.list.d/github_git-lfs.list...done.
+Importing packagecloud gpg key... done.
+Running apt-get update... done.
+
+The repository is setup! You can now install packages.
+</pre><br/>
+</li><br/>
+<br/>
+<li><br/>
+<code>apt-get -y install git-lfs</code><br/>
+<em>You'll see something like:</em><br/>
+<pre>
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  git-lfs
+0 upgraded, 1 newly installed, 0 to remove and 96 not upgraded.
+Need to get 2,671 kB of archives.
+After this operation, 10.8 MB of additional disk space will be used.
+Get:1 https://packagecloud.io/github/git-lfs/linuxmint serena/main amd64 git-lfs amd64 2.1.1 [2,671 kB]
+Fetched 2,671 kB in 53s (49.9 kB/s)                                            
+Selecting previously unselected package git-lfs.
+(Reading database ... 237016 files and directories currently installed.)
+Preparing to unpack .../git-lfs_2.1.1_amd64.deb ...
+Unpacking git-lfs (2.1.1) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up git-lfs (2.1.1) ...
+Git LFS initialized.
+</pre><br/>
+</li><br/>
+<br/>
+<li><br/>
+<code>git lfs install</code><br/>
+<em>You'll see something like:</em><br/>
+<pre>
+Git LFS initialized.
+</pre><br/>
+</li><br/>
+<br/>
+<li><br/>
+You can now quit the 'su' state,<br/>
+using <code>exit</code> command (to go back to your regular user).<br/>
+<em>And, you might want to restart your machine now :]</em><br/>
+</li><br/>
+<br/>
+</ul><br/>
+<br/>
+Done.<br/>
+<br/>
+Enjoy!<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/godaddy-portal-requires-js-support">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/build-apktool">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/build-apktool">Build ApkTool</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-java">Solved: Java</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-linux-mint-and-debian-packages">Solved: Linux Mint And Debian Packages</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/samsung-usb-drivers">Samsung USB Drivers And KIES3</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/smooth-scroll-animation-no-jquery">No jQuery!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/generate-keystore-and-sign-anything">Generate KeyStore And Sign Anything</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/lean-ux-tokyo">Lean UX Convention</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unfuck-crayon-syntax-highlighter">UnFuck Crayon-Syntax-Highlighter</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/mozilla-ftp-download-latest-firefox">Mozilla FTP - Download Latest Firefox</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/supersu-mods-no-systemless-no-bindsystemxbin-force-permissive">Force PERMISSIVE</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-sorttable">JavaScript - SortTable</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/compile-schema-manifest-for-exe">Compile Schema-Manifest For EXE</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/download-curl">Download cURL</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cmd-ninja-relative-to-fully-qualified-path-and-other-file-properties-without-directing-relative-path-to-another-cmd-file-as-an-argument">CMD Ninja - Relative To Fully Qualified Path And Other File Properties Without Directing Relative Path To Another CMD-File As An Argument</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-everything-to-webm-dragdrop">FFmpeg - Everything To WebM - Drag&Drop!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/download-latest-busybox-binary-for-android-ready-to-use">Download Latest BUSYBOX Binary For Android - Ready To Use!</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

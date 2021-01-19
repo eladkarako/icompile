@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML</title>
+  <meta itemprop="name"                                content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+  <meta name="dcterms.title"                           content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+  <meta property="og:title"                            content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+  <meta name="twitter:title"                           content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+  <meta name="twitter:text:title"                      content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+  <meta name="application-name"                        content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+  <meta name="subject"                                 content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+  <meta name="apple-mobile-web-app-title"              content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+  <meta name="msapplication-tooltip"                   content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+  <meta itemprop="description"                         content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+  <meta name="dcterms.description"                     content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+  <meta name="twitter:description"                     content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+  <meta property="og:description"                      content="A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accept,action,ajax,apos,application,array,ascii,autocorrect,autofocus,backtick,breaking,call,callback,check,client,console,content,converted,courier,data,default,define,document,duplicated,echo,edcdbde,efficient,encode,encodes,enctype,english,escape,explode,fallback,false,family,file,filter,flag,font,form,format,fully,func,function,gist,github,google,header,hidden,high,host,hostname,hostnames,html,implode,input,inputmode,item,items,javascript,jquery,json,lang,language,leave,line,lines,linux,list,literally,margin,matches,method,monospace,multibyte,multipart,normalize,null,numbers,numeric,object,open,options,overflow,padding,parse,placeholder,plain,post,preg,preserved,pretty,print,push,qualified,quot,readonly,readystate,remove,replace,resize,resolve,return,returned,safe,sanitize,script,search,send,server,shift,simple,size,source,spellcheck,strict,stringify,strings,strip,submit,submitting,target,textarea,trick,type,typeof,unescaped,unicode,urldecode,urlencode,urlencoded,urls,user,utorrent,uxxxx,verbatim,whitespace,windows,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accept,action,ajax,apos,application,array,ascii,autocorrect,autofocus,backtick,breaking,call,callback,check,client,console,content,converted,courier,data,default,define,document,duplicated,echo,edcdbde,efficient,encode,encodes,enctype,english,escape,explode,fallback,false,family,file,filter,flag,font,form,format,fully,func,function,gist,github,google,header,hidden,high,host,hostname,hostnames,html,implode,input,inputmode,item,items,javascript,jquery,json,lang,language,leave,line,lines,linux,list,literally,margin,matches,method,monospace,multibyte,multipart,normalize,null,numbers,numeric,object,open,options,overflow,padding,parse,placeholder,plain,post,preg,preserved,pretty,print,push,qualified,quot,readonly,readystate,remove,replace,resize,resolve,return,returned,safe,sanitize,script,search,send,server,shift,simple,size,source,spellcheck,strict,stringify,strings,strip,submit,submitting,target,textarea,trick,type,typeof,unescaped,unicode,urldecode,urlencode,urlencoded,urls,user,utorrent,uxxxx,verbatim,whitespace,windows,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/javascript-shadowdom-data-extraction-example"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/javascript-shadowdom-data-extraction-example"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/php-chunked-response"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/php-javascript-ajax-form-submit-with-sanitize-and-fallback-nojquery"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/php-javascript-ajax-form-submit-with-sanitize-and-fallback-nojquery"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/php-javascript-ajax-form-submit-with-sanitize-and-fallback-nojquery"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/php-javascript-ajax-form-submit-with-sanitize-and-fallback-nojquery"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/php-javascript-ajax-form-submit-with-sanitize-and-fallback-nojquery"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/php-javascript-ajax-form-submit-with-sanitize-and-fallback-nojquery"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2019-10-13T19:54:11+00:00"     />
+  <meta name="page-datetime"                           content="2019-10-13T19:54:11+00:00"     />
+  <meta property="article:published_time"              content="2019-10-13T19:54:11+00:00"     />
+  <meta name="dcterms.date"                            content="2019-10-13T19:54:11+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2019-10-13T19:54:11+00:00"    />
+  <meta property="article:modified_time"               content="2019-10-13T19:54:11+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/php-javascript-ajax-form-submit-with-sanitize-and-fallback-nojquery"
+,"url"             : "https://icompile.eladkarako.com/php-javascript-ajax-form-submit-with-sanitize-and-fallback-nojquery"
+,"headline"        : "A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"
+,"description"     : "A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"
+,"datePosted"      : "2019-10-13T19:54:11+00:00"
+,"dateCreated"     : "2019-10-13T19:54:11+00:00"
+,"datePublished"   : "2019-10-13T19:54:11+00:00"
+,"dateModified"    : "2019-10-13T19:54:11+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0001546990751">
+  <header>
+    <h1 itemprop="headline">A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML</h1>
+    <sup>Posted at <time datetime="2019-10-13T19:54:11+00:00" itemprop="dateModified">Sun, 13 Oct 2019 19:54:11 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">A Simple form-submit example (without jQuery) with server-side sanitize for the input.<br/>
+<br/>
+<pre>
+&lt;?php
+  function arg_value($name){
+    $items = [
+              filter_input(INPUT_POST, $name, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH | FILTER_FLAG_STRIP_BACKTICK)
+             ,filter_input(INPUT_GET,  $name, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH | FILTER_FLAG_STRIP_BACKTICK)
+             ];
+
+    $items = array_filter($items, function($item){
+               return ((null !== $item) && (false !== $item));
+             });
+
+    array_push($items, null); /* null value so there always be something to return, even if the array was empty.. */
+
+    $items = array_shift($items);
+
+    return $items;
+  }
+
+/* main */
+
+  $urls = call_user_func(function(){  //array of urls (empty lines preserved, order important).
+    $raw  = arg_value("_textarea_source");
+    $raw  = null === $raw ? "" : $raw;
+
+    $raw  = preg_replace("#\r\n#m",                                   "\n", $raw);  //normalize windows|linux EOL, for breaking into lines, utorrent-client actually needs-the-'\r\n'-EOL, otherwise it will all be in one line...
+    $raw  = preg_replace("#^\s+$#",                                   "",   $raw);  //remove whitespace-lines.
+    $raw  = preg_replace("#[^a-z0-9\$\#\/\-\_\!\%\?\&\:\@\=\.\n]#im", "",   $raw);  //similar to "URL SANITIZE FILTER".
+    $raw  = explode("\n", $raw);
+    $raw  = array_unique($raw); //remove 100% duplicated lines (leave only first one)
+    return $raw;
+  });
+
+  $hostnames =  call_user_func(function() use ($urls){  //unique list of just the hostnames
+    $hostnames = array_map(function($url){
+      return parse_url($url, PHP_URL_HOST);
+    }, $urls);
+    
+    $hostnames = array_filter($hostnames, function($hostname){
+      return null !== $hostname && "" !== $hostname;
+    });
+
+    $hostnames = array_unique($hostnames);
+    
+    return $hostnames;
+  });
+  
+  $ips = array_map(function($hostname){
+    return gethostbynamel($hostname)[0];
+  }, $hostnames);
+  
+  $urls = implode("\r\n", $urls);
+  $urls_hostname_as_ip = str_replace($hostnames, $ips, $urls);
+
+?&gt;&lt;html&gt;&lt;head&gt;
+&lt;style&gt;
+*{
+  margin:0;
+  padding:0;
+  width:100%;
+  font-family: "Courier New", monospace;
+  font-size: 12pt;
+  resize:none;
+}
+textarea{
+  overflow:hidden;
+}
+textarea[name="_textarea_source"]{ height:40%; }
+input[type="submit"]{              height:20%; }
+textarea[name="_textarea_target"]{ height:40%; }
+&lt;/style&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;form id="_form" method="POST" rem-action="" target="_self" accept-charset="UTF-8" autocapitalize="none" autocomplete="off" autofocus="true" spellcheck="false" autocorrect="false" enctype="application/x-www-form-urlencoded;charset=UTF-8" rem-enctype="multipart/form-data"&gt;
+  &lt;textarea name="_textarea_source" inputmode="verbatim" placeholder="http://82.102.187.123/search?q=aaa"&gt;&lt;?php echo $urls; ?&gt;&lt;/textarea&gt;
+  &lt;input type="submit" /&gt;
+&lt;/form&gt;
+&lt;textarea name="_textarea_target" readonly&gt;&lt;?php echo $urls_hostname_as_ip; ?&gt;&lt;/textarea&gt;
+
+&lt;script&gt;
+(function(form, textarea_source, textarea_target, xhr, self_url){ "use strict";
+  
+  textarea.placeholder = "http://82.102.187.123/search?q=aaa" + "\r\n"
+                       + "http://www.google.com/search?q=aaa" + "\r\n"
+                       ;
+
+  form.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXonsubmit = function(ev){
+    ev.cancelBubble = true;
+    ("function" === typeof ev.preventDefault)  && ev.preventDefault();
+    ("function" === typeof ev.stopPropagation) && ev.stopPropagation();
+    
+    xhr.onreadystatechange = function(ev){
+      if(XMLHttpRequest.DONE !== xhr.readyState) return;
+      console.log(ev);
+    };
+    
+    xhr.open("POST", self_url, true);
+    xhr.responseType = "text";
+    xhr.overrideMimeType("text/plain;charset=UTF-8;lang=en-US;language=English");
+    xhr.send();
+  };
+
+}(
+    document.querySelector('[id="_form"]')
+  , document.querySelector('[name="_textarea_source"]')
+  , document.querySelector('[name="_textarea_target"]')
+  , new XMLHttpRequest()
+  , (function(a){a.href="_self";return a}(document.createElement("a"))).href /* fully qualified URL (trick) */
+))
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;&lt;?php
+//define("JSON_OPTIONS", 0 | JSON_HEX_APOS /*           All ' are converted to \u0027.                                                  (Available since PHP 5.3.0). */
+//                         | JSON_HEX_QUOT /*           All " are converted to \u0022.                                                  (Available since PHP 5.3.0)*/
+//                         | JSON_HEX_AMP /*            All &#38;#38;s are converted to \u0026.                                         (Available since PHP 5.3.0). */
+//                         | JSON_HEX_TAG /*            All &lt; and &gt; are converted to \u003C and \u003E.                           (Available since PHP 5.3.0). */
+//                         | JSON_NUMERIC_CHECK /*      Encodes numeric strings as numbers.                                             (Available since PHP 5.3.3). */
+//                         | JSON_UNESCAPED_UNICODE /*  Encode multibyte Unicode characters literally (default is to escape as \uXXXX)  (Available since PHP 5.4.0). */
+//                         | JSON_PRETTY_PRINT /*       Use whitespace in returned data to format it                                    (Available since PHP 5.4.0). */
+//);
+
+  //$raw = json_encode($raw, JSON_OPTIONS);
+  //JSON stringify the object (Unicode content!)
+  //$xhr = json_encode($xhr, 0 | JSON_HEX_APOS /*           All ' are converted to \u0027.                                                  (Available since PHP 5.3.0). */
+  //                           | JSON_HEX_QUOT /*           All " are converted to \u0022.                                                  (Available since PHP 5.3.0)*/
+  //                           | JSON_HEX_AMP /*            All &#38;#38;s are converted to \u0026.                                         (Available since PHP 5.3.0). */
+  //                           | JSON_HEX_TAG /*            All &lt; and &gt; are converted to \u003C and \u003E.                           (Available since PHP 5.3.0). */
+  //                           | JSON_NUMERIC_CHECK /*      Encodes numeric strings as numbers.                                             (Available since PHP 5.3.3). */
+  //                           | JSON_UNESCAPED_UNICODE /*  Encode multibyte Unicode characters literally (default is to escape as \uXXXX)  (Available since PHP 5.4.0). */
+  //                           | JSON_PRETTY_PRINT /*       Use whitespace in returned data to format it                                    (Available since PHP 5.4.0). */
+  //                   );
+  //header('Content-Type: '                      .   'text/json;charset=UTF-8');
+
+  //$url  = preg_replace_callback('%[^:/@?&=#]+%usD', function($matches){ return urlencode($matches[0]); }, $url); /*to safe US-ASCII*/
+  //$host = parse_url($url, PHP_URL_HOST);
+  //$host = urldecode($host); 
+?&gt;
+</pre><br/>
+<br/>
+<a href="https://gist.github.com/eladkarako/9c3bb124f54b2c71d3519edcdbde4528#file-form_submit_with_fallback_more_efficient_one-time-per-hostname_resolve-php">https://gist.github.com/eladkarako/9c3bb124f54b2c71d3519edcdbde4528#file-form_submit_with_fallback_more_efficient_one-time-per-hostname_resolve-php</a><br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-shadowdom-data-extraction-example">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/php-chunked-response">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-chunked-response">Trying To Send A Chunk-ed Response With Plain-PHP</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/virustotal-api">VirusTotal API</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nullify-windows-ownership-and-permissions">Null-ify Windows Ownership And Permissions</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adguard-subdomains">AdGuard SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hebrew-voice-from-google-translate-and-ffmpeg-pitch-manipulation">Hebrew Voice From Google-Translate And FFMPEG Pitch-Manipulation</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nullify-windows-registry-permissions">Null-ify Windows-Registry Permissions</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/babylon-subdomains">Babylon-Related Sub-Domains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/block-internet-access-from-thinapp-app">Block Internet-Access From VMWare ThinApp (Thinstall)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/trackers-utorrent-format">Trackers In µTorrent Format</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/removing-ads-from-apk">Removing Ads From Android Applications</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/levenshtein-distance-and-a-real-world-use-in-finding-similar-words">Levenshtein Distance And A Real-World-Use In-Finding Similar-Words</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/removing-ads-from-apk-by-nullifying-libs">Removing Ads From Android Applications By Nullifying LIBs</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/modified-perseus-kernel-for-samsung-galaxy-s4-i9500">Modified Perseus-UNIVERSAL5410 Kernel For Samsung Galaxy S4 (i9500)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/prevent-mouse-movement-from-waking-up-the-computer">Prevent Mouse Movement From Waking Up The Computer</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/opensearch-for-static-hosted-websites-using-google-search">OpenSearch For A Static-Hosted Websites Using Google-Search</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tech-buzzwords">Tech-BuzzWords</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

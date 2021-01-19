@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Pure CSS Tabs</title>
+  <meta itemprop="name"                                content="Pure CSS Tabs"       />
+  <meta name="dcterms.title"                           content="Pure CSS Tabs"       />
+  <meta property="og:title"                            content="Pure CSS Tabs"       />
+  <meta name="twitter:title"                           content="Pure CSS Tabs"       />
+  <meta name="twitter:text:title"                      content="Pure CSS Tabs"       />
+  <meta name="application-name"                        content="Pure CSS Tabs"       />
+  <meta name="subject"                                 content="Pure CSS Tabs"       />
+  <meta name="apple-mobile-web-app-title"              content="Pure CSS Tabs"       />
+  <meta name="msapplication-tooltip"                   content="Pure CSS Tabs"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Pure CSS Tabs"       />
+  <meta itemprop="description"                         content="Pure CSS Tabs"       />
+  <meta name="dcterms.description"                     content="Pure CSS Tabs"       />
+  <meta name="twitter:description"                     content="Pure CSS Tabs"       />
+  <meta property="og:description"                      content="Pure CSS Tabs"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="active,acxtaw,adding,agvhzd,ahrtbci,alteration,area,article,avoidable,awjszsigy,base,bawqkpsjfy,bgfizwwgzm,bgfzdc,bgugdhlwzt,blank,block,blpsiiigl,bnrolw,bold,border,bottom,bsyxk,button,bwwsym,cdovl,cgogicagaw,cgogicagi,cgogicagzgl,cgugahrtbd,cguomil,cguomsk,cguomsl,cguomyk,cguomyl,cguonck,cguoncl,change,checkbox,checked,choosing,chqgj,ciagicagig,ciagicavkl,ciagicb,ciagicbib,ciagicbkaxy,ciagicbkaxz,ciagicbodg,ciagicbpbnb,ciagpg,ciagphn,ciigbgfuzz,cjwhzg,cjwvagvhzd,cjwvahrtbd,cjwvym,cjxkaxy,cjxkaxygicb,cjxodg,cjxpbnb,click,clicking,close,code,color,container,content,cudzmub,custom,data,dcbpzd,ddpudggtb,design,development,dghpcmq,dhatzxf,dhtkaxnwbgf,disabling,display,divs,dlylbhz,dpiovciagpc,dragging,easier,easily,easy,edges,efficient,element,elements,enjoy,escape,events,ewogicagicb,ewxlihr,exbligh,exblkdepe,exblkdipe,exblkdmpe,exblpsj,existing,extra,false,favor,feel,font,forms,fqogicagaw,fqogicagi,fqogicagzgl,fqokicagicn,frame,frameworks,fsywjszt,fszt,gist,github,gradient,gray,great,gzgl,happily,hbgw,hbwu,hegltdw,hhcnnldd,hlbweub,hodg,hpdgupo,hpdgutc,html,hzgp,iagvpz,iahr,ibhryiibsyw,icagawq,icagdgfimj,icddb,icjvveytoci,icmfkaw,idewchg,idgfiil,idgfimii,idgfiml,idgfimsigy,idgfimv,idgfimyi,idgv,idmlld,ighlawdoddo,iglkpsj,igrhc,igrpc,igrpdlt,ihrhyjegy,iieilz,iiigaxrlbxr,iklfpwvkz,ikvuz,ilgtvuetq,ilvuri,imfsbci,imhlawdodd,imzyywdtzw,inline,input,inrhyjffy,inrhyjiiihr,inrhyjjfy,inrhyjmiihr,inrhynmilz,inrlehqvy,inzpzxdwb,isuu,ivvrgltgilz,iwrvy,iywxsij,iznjhz,javascript,jazt,jdhlwzsbodg,jhesk,jheswgd,jkzxi,jkzxitdg,jkzxitym,jnlze,jvdw,jvzhk,jywgbw,kaxy,kcjxpbnb,keeping,khrvccwgd,khrvccwgz,kica,kicagic,kicagicn,koibub,kpgh,kpghlywq,kpgjvzhk,kpgluchv,kpgrpdj,kxtiywnrz,kxtkaxnwbgf,kzxzpy,label,lcxvpdj,ldgegahr,ldgegbmftzt,ldgegy,ldycsig,ligdyzwvuo,ligxpz,lihjlzdt,linear,list,live,lkdgg,lkxj,lnczlm,lock,loybib,lpsj,lpteilz,lxjhzgl,lyxitz,lzgdllgnocm,make,makes,manifest,mcaxmhb,meaning,miig,mjwvzgl,mlxr,mobile,modals,mouse,mtawchg,mtwvzgl,mzwvzgl,native,navigation,nbglzacigy,ndwfnzt,nhbgfibgu,nhbgu,nice,ninja,njagvtys,notice,noyxjzzxq,nozw,npsjlbi,nvbnrlbnr,nvbnryb,nvcgu,nztt,oiaxnhb,ojqwchg,oldest,omit,omjsb,operator,orientation,origin,otkvegh,owogicagicb,oybkaxnwbgf,oybozwlnahq,ozwfkpgo,ozwlnahqsaw,padding,pair,pairs,pbmltdw,pbwfslxvpii,pcfkb,pdglhbc,pgluchv,pointer,popups,psihii,psjdb,psjjrt,psjozwlnahq,pure,pvvuri,pwrldmljzs,qlwogidwvc,qpcfbq,radio,radius,rbvefbki,related,relaying,relays,removing,required,rhyjfde,rhyjffy,rhyjjfy,rounding,rpbmc,rpdj,rule,running,sandbox,sbgfwc,scripts,scrolling,seamless,select,selectable,selection,separator,showing,sigl,siibjagvja,simple,simplified,slgjvzhl,slightly,smudge,solid,source,space,spans,specific,spgo,standards,start,strong,support,sywjlbd,szwz,tabs,target,task,tcgf,tlzcb,tncm,toolbar,touch,trick,type,ubyx,udgvudc,udgvudci,udgvudd,udhjvbci,ugimh,uiigrpcj,unsafe,upside,user,utagvpz,uzsb,uzsbvcmfuz,uztsgym,uztt,vbmu,vbmugcmvko,vbmugewvsbg,vcmcvmtk,vcmcvv,version,versions,vkih,vkihr,vuyigbgfuz,vuzdogbm,vvrgltgilz,vyawvyie,vydgg,wdxq,wdxqgawq,wdxr,wdxrbdgfim,webkit,weight,white,whitespace,wider,wipmzpcnn,wipnnly,wlcb,wlcbncmf,wlhvzzxitc,wlxjpz,work,works,xhymvse,xhymvspgo,xljasbwf,xljasbwluaw,xljasdxnlci,xotk,xsyxbzztogy,yawdodc,ymfja,ymxvy,ypsj,ysbjagfyc,ysbuyw,ytdhlwzsb,ytdhlwzsg,ywixx,ywiyx,ywizpjm,ywizxsb,ywjzii,yywrpdxm,yzgvylxrvcc,zaxppbmc,zdhlszt,zswgz,ztsgciagicb,zwxsb,zzwnvbmq,zzwxly,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="active,acxtaw,adding,agvhzd,ahrtbci,alteration,area,article,avoidable,awjszsigy,base,bawqkpsjfy,bgfizwwgzm,bgfzdc,bgugdhlwzt,blank,block,blpsiiigl,bnrolw,bold,border,bottom,bsyxk,button,bwwsym,cdovl,cgogicagaw,cgogicagi,cgogicagzgl,cgugahrtbd,cguomil,cguomsk,cguomsl,cguomyk,cguomyl,cguonck,cguoncl,change,checkbox,checked,choosing,chqgj,ciagicagig,ciagicavkl,ciagicb,ciagicbib,ciagicbkaxy,ciagicbkaxz,ciagicbodg,ciagicbpbnb,ciagpg,ciagphn,ciigbgfuzz,cjwhzg,cjwvagvhzd,cjwvahrtbd,cjwvym,cjxkaxy,cjxkaxygicb,cjxodg,cjxpbnb,click,clicking,close,code,color,container,content,cudzmub,custom,data,dcbpzd,ddpudggtb,design,development,dghpcmq,dhatzxf,dhtkaxnwbgf,disabling,display,divs,dlylbhz,dpiovciagpc,dragging,easier,easily,easy,edges,efficient,element,elements,enjoy,escape,events,ewogicagicb,ewxlihr,exbligh,exblkdepe,exblkdipe,exblkdmpe,exblpsj,existing,extra,false,favor,feel,font,forms,fqogicagaw,fqogicagi,fqogicagzgl,fqokicagicn,frame,frameworks,fsywjszt,fszt,gist,github,gradient,gray,great,gzgl,happily,hbgw,hbwu,hegltdw,hhcnnldd,hlbweub,hodg,hpdgupo,hpdgutc,html,hzgp,iagvpz,iahr,ibhryiibsyw,icagawq,icagdgfimj,icddb,icjvveytoci,icmfkaw,idewchg,idgfiil,idgfimii,idgfiml,idgfimsigy,idgfimv,idgfimyi,idgv,idmlld,ighlawdoddo,iglkpsj,igrhc,igrpc,igrpdlt,ihrhyjegy,iieilz,iiigaxrlbxr,iklfpwvkz,ikvuz,ilgtvuetq,ilvuri,imfsbci,imhlawdodd,imzyywdtzw,inline,input,inrhyjffy,inrhyjiiihr,inrhyjjfy,inrhyjmiihr,inrhynmilz,inrlehqvy,inzpzxdwb,isuu,ivvrgltgilz,iwrvy,iywxsij,iznjhz,javascript,jazt,jdhlwzsbodg,jhesk,jheswgd,jkzxi,jkzxitdg,jkzxitym,jnlze,jvdw,jvzhk,jywgbw,kaxy,kcjxpbnb,keeping,khrvccwgd,khrvccwgz,kica,kicagic,kicagicn,koibub,kpgh,kpghlywq,kpgjvzhk,kpgluchv,kpgrpdj,kxtiywnrz,kxtkaxnwbgf,kzxzpy,label,lcxvpdj,ldgegahr,ldgegbmftzt,ldgegy,ldycsig,ligdyzwvuo,ligxpz,lihjlzdt,linear,list,live,lkdgg,lkxj,lnczlm,lock,loybib,lpsj,lpteilz,lxjhzgl,lyxitz,lzgdllgnocm,make,makes,manifest,mcaxmhb,meaning,miig,mjwvzgl,mlxr,mobile,modals,mouse,mtawchg,mtwvzgl,mzwvzgl,native,navigation,nbglzacigy,ndwfnzt,nhbgfibgu,nhbgu,nice,ninja,njagvtys,notice,noyxjzzxq,nozw,npsjlbi,nvbnrlbnr,nvbnryb,nvcgu,nztt,oiaxnhb,ojqwchg,oldest,omit,omjsb,operator,orientation,origin,otkvegh,owogicagicb,oybkaxnwbgf,oybozwlnahq,ozwfkpgo,ozwlnahqsaw,padding,pair,pairs,pbmltdw,pbwfslxvpii,pcfkb,pdglhbc,pgluchv,pointer,popups,psihii,psjdb,psjjrt,psjozwlnahq,pure,pvvuri,pwrldmljzs,qlwogidwvc,qpcfbq,radio,radius,rbvefbki,related,relaying,relays,removing,required,rhyjfde,rhyjffy,rhyjjfy,rounding,rpbmc,rpdj,rule,running,sandbox,sbgfwc,scripts,scrolling,seamless,select,selectable,selection,separator,showing,sigl,siibjagvja,simple,simplified,slgjvzhl,slightly,smudge,solid,source,space,spans,specific,spgo,standards,start,strong,support,sywjlbd,szwz,tabs,target,task,tcgf,tlzcb,tncm,toolbar,touch,trick,type,ubyx,udgvudc,udgvudci,udgvudd,udhjvbci,ugimh,uiigrpcj,unsafe,upside,user,utagvpz,uzsb,uzsbvcmfuz,uztsgym,uztt,vbmu,vbmugcmvko,vbmugewvsbg,vcmcvmtk,vcmcvv,version,versions,vkih,vkihr,vuyigbgfuz,vuzdogbm,vvrgltgilz,vyawvyie,vydgg,wdxq,wdxqgawq,wdxr,wdxrbdgfim,webkit,weight,white,whitespace,wider,wipmzpcnn,wipnnly,wlcb,wlcbncmf,wlhvzzxitc,wlxjpz,work,works,xhymvse,xhymvspgo,xljasbwf,xljasbwluaw,xljasdxnlci,xotk,xsyxbzztogy,yawdodc,ymfja,ymxvy,ypsj,ysbjagfyc,ysbuyw,ytdhlwzsb,ytdhlwzsg,ywixx,ywiyx,ywizpjm,ywizxsb,ywjzii,yywrpdxm,yzgvylxrvcc,zaxppbmc,zdhlszt,zswgz,ztsgciagicb,zwxsb,zzwnvbmq,zzwxly,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/downloading-directly-from-dailymotion"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/downloading-directly-from-dailymotion"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/advised-config-for-linux-on-the-start"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/pure-css-tabs"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/pure-css-tabs"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/pure-css-tabs"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/pure-css-tabs"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/pure-css-tabs"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/pure-css-tabs"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-01-03T07:11:28+00:00"     />
+  <meta name="page-datetime"                           content="2017-01-03T07:11:28+00:00"     />
+  <meta property="article:published_time"              content="2017-01-03T07:11:28+00:00"     />
+  <meta name="dcterms.date"                            content="2017-01-03T07:11:28+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-01-03T08:13:40+00:00"    />
+  <meta property="article:modified_time"               content="2017-01-03T08:13:40+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/pure-css-tabs"
+,"url"             : "https://icompile.eladkarako.com/pure-css-tabs"
+,"headline"        : "Pure CSS Tabs"
+,"description"     : "Pure CSS Tabs"
+,"datePosted"      : "2017-01-03T07:11:28+00:00"
+,"dateCreated"     : "2017-01-03T07:11:28+00:00"
+,"datePublished"   : "2017-01-03T07:11:28+00:00"
+,"dateModified"    : "2017-01-03T08:13:40+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0008847243841">
+  <header>
+    <h1 itemprop="headline">Pure CSS Tabs</h1>
+    <sup>Posted at <time datetime="2017-01-03T08:13:40+00:00" itemprop="dateModified">Tue, 03 Jan 2017 08:13:40 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">- Pure CSS.<br/>
+- <strong>No JavaScript Required!</strong><br/>
+- You can right-click each example, and view its source-code ("see frame-source")<br/>
+<br/>
+<sub>also available on GitHub: <a href="https://gist.github.com/eladkarako/ab7a98b67a42010eca087c26d3ead76b" target="_blank">https://gist.github.com/eladkarako/ab7a98b67a42010eca087c26d3ead76b</a></sub><br/>
+<br/>
+<br/>
+<iframe loading="lazy" lazyload="on"  style="height:100px;min-height:100px;width:70%;" allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" target="" src="data:text/html;charset=UTF-8;base64,PCFkb2N0eXBlIGh0bWw+CjxodG1sIGl0ZW1zY29wZT0iIiBpdGVtdHlwZT0iaHR0cDovL3NjaGVtYS5vcmcvV2ViUGFnZSIgZGlyPSJsdHIiIGxhbmc9ImVuLVVTIiBsYW5ndWFnZT0iRW5nbGlzaCIgY2hhcnNldD0iVVRGLTgiIGVuY29kaW5nPSJVVEYtOCI+CjxoZWFkPgogIDxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSxjaHJvbWU9MSIvPgogIDxtZXRhIGNoYXJzZXQ9IlVURi04Ii8+CiAgPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiAgICBjb250ZW50PSJ0ZXh0L2h0bWw7Y2hhcnNldD1VVEYtOCIvPgogIDxtZXRhIG5hbWU9ImZyYWdtZW50IiAgICAgICAgICAgICAgY29udGVudD0iISIvPgogIDxtZXRhIG5hbWU9InZpZXdwb3J0IiAgICAgICAgICAgICAgY29udGVudD0iaGVpZ2h0PWRldmljZS1oZWlnaHQsaW5pdGlhbC1zY2FsZT0xLjAsbWF4aW11bS1zY2FsZT0xLjAsbWluaW11bS1zY2FsZT0xLjAsdXNlci1zY2FsYWJsZT1ubyx3aWR0aD1kZXZpY2Utd2lkdGgsbWluaW1hbC11aSIvPgogIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyIgbWVkaWE9ImFsbCI+CiAgICAvKjwhW0NEQVRBWyovCiAgICBAY2hhcnNldCAiVVRGLTgiOwogICAgQG5hbWVzcGFjZSAiaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI7CiAgICBodG1sLGJvZHl7CiAgICAgIGhlaWdodDogICAgICAgICAgICAgICAgICAgICAgICAgICAgIDEwMCU7CiAgICAgIHdpZHRoOiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDEwMCU7CiAgICAgIHBhZGRpbmc6ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDA7CiAgICAgIG1hcmdpbjogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDA7CiAgICAgIGJveC1zaXppbmc6ICAgICAgICAgICAgICAgICAgIGJvcmRlci1ib3g7CiAgICAgIHRleHQtc2l6ZS1hZGp1c3Q6ICAgICAgICAgICAgICAgICAgIDEwMCU7CiAgICAgIGZvbnQ6IDE0cHQgJ0NvdXJpZXIgTmV3JywgbW9ub3NwYWNlOwogICAgfQogICAgYm9keXsKICAgICAgd2hpdGUtc3BhY2U6ICAgICAgICAgICAgICAgICAgICAgaW5pdGlhbDsKICAgICAgd29yZC1icmVhazogICAgICAgICAgICAgICAgICAgIGJyZWFrLWFsbDsKICAgIH0KICAgIGJvZHl7CiAgICAgIGJhY2tncm91bmQ6ICAgICAgICAgICAgICAgbm9uZSBsaWdodGJsdWU7IAogICAgfQogICAgZGl2e3dpZHRoOjEwMHB4OyBoZWlnaHQ6NDBweDsgZGlzcGxheTpub25lOyBib3JkZXI6M3B4IGRhc2hlZCBibGFjazt9CgogICAgZGl2Om50aC1vZi10eXBlKDEpe2JhY2tncm91bmQ6IG5vbmUgeWVsbG93O30KICAgIGRpdjpudGgtb2YtdHlwZSgyKXtiYWNrZ3JvdW5kOiBub25lIHJlZDt9CiAgICBkaXY6bnRoLW9mLXR5cGUoMyl7YmFja2dyb3VuZDogbm9uZSBncmVlbjt9CiAgICBkaXY6bnRoLW9mLXR5cGUoNCl7YmFja2dyb3VuZDogbm9uZSBvcmFuZ2U7fQoKICAgIGlucHV0Om50aC1vZi10eXBlKDEpOmNoZWNrZWQgfiBkaXY6bnRoLW9mLXR5cGUoMSl7ZGlzcGxheTpibG9jazt9CiAgICBpbnB1dDpudGgtb2YtdHlwZSgyKTpjaGVja2VkIH4gZGl2Om50aC1vZi10eXBlKDIpe2Rpc3BsYXk6YmxvY2s7fQogICAgaW5wdXQ6bnRoLW9mLXR5cGUoMyk6Y2hlY2tlZCB+IGRpdjpudGgtb2YtdHlwZSgzKXtkaXNwbGF5OmJsb2NrO30KICAgIGlucHV0Om50aC1vZi10eXBlKDQpOmNoZWNrZWQgfiBkaXY6bnRoLW9mLXR5cGUoNCl7ZGlzcGxheTpibG9jazt9CgogICAgaW5wdXR7ZGlzcGxheTpub25lO30KICAgIGxhYmVse2JhY2tncm91bmQ6IC13ZWJraXQtbGluZWFyLWdyYWRpZW50KHRvcCwgd2hpdGUsIGdyYXkpO30KICAgIGlucHV0OmNoZWNrZWQgK2xhYmVse2JhY2tncm91bmQ6IC13ZWJraXQtbGluZWFyLWdyYWRpZW50KHRvcCwgZ3JheSwgd2hpdGUpO30KCiAgICBsYWJlbDpmaXJzdC1vZi10eXBlIHsKICAgICAgYm9yZGVyLWJvdHRvbS1sZWZ0LXJhZGl1czogMTBweDsKICAgICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMTBweDsKICAgIH0KICAgIGxhYmVsOmxhc3Qtb2YtdHlwZSB7CiAgICAgIGJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzOiAxMHB4OwogICAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogMTBweDsKICAgIH0KICAgIGxhYmVsewogICAgICBwYWRkaW5nOjAgMTBweCAwIDEwcHg7CiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIGdyYXk7CiAgICAgIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7CiAgICB9CiAgICBsYWJlbHsgdXNlci1zZWxlY3Q6bm9uZTt9CiAgICAvKl1dPiovCiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KCjxpbnB1dCBpZD0idGFiMSIgY2hlY2tlZCB0eXBlPSJyYWRpbyIgbmFtZT0idGFicyIvPjxsYWJlbCBmb3I9InRhYjEiPmZpcnN0PC9sYWJlbD48aW5wdXQgaWQ9InRhYjIiIHR5cGU9InJhZGlvIiBuYW1lPSJ0YWJzIi8+PGxhYmVsIGZvcj0idGFiMiI+c2Vjb25kPC9sYWJlbD48aW5wdXQgaWQ9InRhYjMiIHR5cGU9InJhZGlvIiBuYW1lPSJ0YWJzIi8+PGxhYmVsIGZvcj0idGFiMyI+dGhpcmQ8L2xhYmVsPjxpbnB1dCBpZD0idGFiNCIgdHlwZT0icmFkaW8iIG5hbWU9InRhYnMiLz48bGFiZWwgZm9yPSJ0YWI0Ij5mb3VydGg8L2xhYmVsPgo8ZGl2PjE8L2Rpdj4KPGRpdj4yPC9kaXY+CjxkaXY+MzwvZGl2Pgo8ZGl2PjQ8L2Rpdj4KPC9ib2R5Pgo8L2h0bWw+Cg=="></iframe><br/>
+<br/>
+<!--more--><br/>
+<hr/><br/>
+<br/>
+<strong>Development,<em> From The Start!</em></strong><br/>
+<br/>
+The most simplified version:<br/>
+<iframe loading="lazy" lazyload="on"  style="height:100px;min-height:100px;width:50%;" allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" target="" src="data:text/html;charset=UTF-8;base64,PCFkb2N0eXBlIGh0bWw+CjxodG1sIGl0ZW1zY29wZT0iIiBpdGVtdHlwZT0iaHR0cDovL3NjaGVtYS5vcmcvV2ViUGFnZSIgZGlyPSJsdHIiIGxhbmc9ImVuLVVTIiBsYW5ndWFnZT0iRW5nbGlzaCIgY2hhcnNldD0iVVRGLTgiIGVuY29kaW5nPSJVVEYtOCI+CjxoZWFkPgogIDxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSxjaHJvbWU9MSIvPgogIDxtZXRhIGNoYXJzZXQ9IlVURi04Ii8+CiAgPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiAgICBjb250ZW50PSJ0ZXh0L2h0bWw7Y2hhcnNldD1VVEYtOCIvPgogIDxtZXRhIG5hbWU9ImZyYWdtZW50IiAgICAgICAgICAgICAgY29udGVudD0iISIvPgogIDxtZXRhIG5hbWU9InZpZXdwb3J0IiAgICAgICAgICAgICAgY29udGVudD0iaGVpZ2h0PWRldmljZS1oZWlnaHQsaW5pdGlhbC1zY2FsZT0xLjAsbWF4aW11bS1zY2FsZT0xLjAsbWluaW11bS1zY2FsZT0xLjAsdXNlci1zY2FsYWJsZT1ubyx3aWR0aD1kZXZpY2Utd2lkdGgsbWluaW1hbC11aSIvPgogIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyIgbWVkaWE9ImFsbCI+CiAgICAvKjwhW0NEQVRBWyovCiAgICBAY2hhcnNldCAiVVRGLTgiOwogICAgQG5hbWVzcGFjZSAiaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI7CiAgICBodG1sLGJvZHl7CiAgICAgIGhlaWdodDogICAgICAgICAgICAgICAgICAgICAgICAgICAgIDEwMCU7CiAgICAgIHdpZHRoOiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDEwMCU7CiAgICAgIHBhZGRpbmc6ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDA7CiAgICAgIG1hcmdpbjogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDA7CiAgICAgIGJveC1zaXppbmc6ICAgICAgICAgICAgICAgICAgIGJvcmRlci1ib3g7CiAgICAgIHRleHQtc2l6ZS1hZGp1c3Q6ICAgICAgICAgICAgICAgICAgIDEwMCU7CiAgICAgIGZvbnQ6IDE0cHQgJ0NvdXJpZXIgTmV3JywgbW9ub3NwYWNlOwogICAgfQogICAgYm9keXsKICAgICAgd2hpdGUtc3BhY2U6ICAgICAgICAgICAgICAgICAgICAgaW5pdGlhbDsKICAgICAgd29yZC1icmVhazogICAgICAgICAgICAgICAgICAgIGJyZWFrLWFsbDsKICAgIH0KICAgIGJvZHl7CiAgICAgIGJhY2tncm91bmQ6ICAgICAgICAgICAgICAgbm9uZSBsaWdodGJsdWU7IAogICAgfQogICAgZGl2e3dpZHRoOjEwMHB4OyBoZWlnaHQ6NDBweDsgZGlzcGxheTpub25lOyBib3JkZXI6M3B4IGRhc2hlZCBibGFjazt9CgogICAgZGl2W3RhYjFde2JhY2tncm91bmQ6IG5vbmUgeWVsbG93O30KICAgIGRpdlt0YWIyXXtiYWNrZ3JvdW5kOiBub25lIHJlZDt9CiAgICBkaXZbdGFiM117YmFja2dyb3VuZDogbm9uZSBsaWdodGdyZWVuO30KCiAgICBpbnB1dFt0YWIxXTpjaGVja2VkIH4gZGl2W3RhYjFdIHtkaXNwbGF5OmJsb2NrO30KICAgIGlucHV0W3RhYjJdOmNoZWNrZWQgfiBkaXZbdGFiMl0ge2Rpc3BsYXk6YmxvY2s7fQogICAgaW5wdXRbdGFiM106Y2hlY2tlZCB+IGRpdlt0YWIzXSB7ZGlzcGxheTpibG9jazt9CiAgICAvKl1dPiovCiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KPGlucHV0IHRhYjEgY2hlY2tlZCB0eXBlPSJyYWRpbyIgbmFtZT0idGFicyIvPgo8aW5wdXQgdGFiMiAgICAgICAgIHR5cGU9InJhZGlvIiBuYW1lPSJ0YWJzIi8+CjxpbnB1dCB0YWIzICAgICAgICAgdHlwZT0icmFkaW8iIG5hbWU9InRhYnMiLz4KPGRpdiAgIHRhYjE+MTwvZGl2Pgo8ZGl2ICAgdGFiMj4yPC9kaXY+CjxkaXYgICB0YWIzPjM8L2Rpdj4KPC9ib2R5Pgo8L2h0bWw+Cg=="></iframe><br/>
+<br/>
+You can change the "first active tab", by choosing a different <code>checked</code> input element.<br/>
+<br/>
+Same simple example, with use of <code>id</code> and <code>label</code> for a wider selection area (you can select by clicking the label too not just the radio-button area)<br/>
+<br/>
+<iframe loading="lazy" lazyload="on"  style="height:100px;min-height:100px;width:50%;" allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" target="" src="data:text/html;charset=UTF-8;base64,CjwhZG9jdHlwZSBodG1sPgo8aHRtbCBpdGVtc2NvcGU9IiIgaXRlbXR5cGU9Imh0dHA6Ly9zY2hlbWEub3JnL1dlYlBhZ2UiIGRpcj0ibHRyIiBsYW5nPSJlbi1VUyIgbGFuZ3VhZ2U9IkVuZ2xpc2giIGNoYXJzZXQ9IlVURi04IiBlbmNvZGluZz0iVVRGLTgiPgo8aGVhZD4KICA8bWV0YSBodHRwLWVxdWl2PSJYLVVBLUNvbXBhdGlibGUiIGNvbnRlbnQ9IklFPWVkZ2UsY2hyb21lPTEiLz4KICA8bWV0YSBjaGFyc2V0PSJVVEYtOCIvPgogIDxtZXRhIGh0dHAtZXF1aXY9IkNvbnRlbnQtVHlwZSIgICAgY29udGVudD0idGV4dC9odG1sO2NoYXJzZXQ9VVRGLTgiLz4KICA8bWV0YSBuYW1lPSJmcmFnbWVudCIgICAgICAgICAgICAgIGNvbnRlbnQ9IiEiLz4KICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgICAgICAgICAgICAgIGNvbnRlbnQ9ImhlaWdodD1kZXZpY2UtaGVpZ2h0LGluaXRpYWwtc2NhbGU9MS4wLG1heGltdW0tc2NhbGU9MS4wLG1pbmltdW0tc2NhbGU9MS4wLHVzZXItc2NhbGFibGU9bm8sd2lkdGg9ZGV2aWNlLXdpZHRoLG1pbmltYWwtdWkiLz4KICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiIG1lZGlhPSJhbGwiPgogICAgLyo8IVtDREFUQVsqLwogICAgQGNoYXJzZXQgIlVURi04IjsKICAgIEBuYW1lc3BhY2UgImh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiOwogICAgaHRtbCxib2R5ewogICAgICBoZWlnaHQ6ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxMDAlOwogICAgICB3aWR0aDogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxMDAlOwogICAgICBwYWRkaW5nOiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwOwogICAgICBtYXJnaW46ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwOwogICAgICBib3gtc2l6aW5nOiAgICAgICAgICAgICAgICAgICBib3JkZXItYm94OwogICAgICB0ZXh0LXNpemUtYWRqdXN0OiAgICAgICAgICAgICAgICAgICAxMDAlOwogICAgICBmb250OiAxNHB0ICdDb3VyaWVyIE5ldycsIG1vbm9zcGFjZTsKICAgIH0KICAgIGJvZHl7CiAgICAgIHdoaXRlLXNwYWNlOiAgICAgICAgICAgICAgICAgICAgIGluaXRpYWw7CiAgICAgIHdvcmQtYnJlYWs6ICAgICAgICAgICAgICAgICAgICBicmVhay1hbGw7CiAgICB9CiAgICBib2R5ewogICAgICBiYWNrZ3JvdW5kOiAgICAgICAgICAgICAgIG5vbmUgbGlnaHRibHVlOyAKICAgIH0KICAgIGRpdnt3aWR0aDoxMDBweDsgaGVpZ2h0OjQwcHg7IGRpc3BsYXk6bm9uZTsgYm9yZGVyOjNweCBkYXNoZWQgYmxhY2s7fQoKICAgICN0YWIxX2NvbnRlbnR7YmFja2dyb3VuZDogbm9uZSB5ZWxsb3c7fQogICAgI3RhYjJfY29udGVudHtiYWNrZ3JvdW5kOiBub25lIHJlZDt9CgogICAgI3RhYjFfY29udHJvbDpjaGVja2VkIH4gI3RhYjFfY29udGVudHtkaXNwbGF5OmJsb2NrO30KICAgICN0YWIyX2NvbnRyb2w6Y2hlY2tlZCB+ICN0YWIyX2NvbnRlbnR7ZGlzcGxheTpibG9jazt9CiAgICAvKl1dPiovCiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KPGlucHV0IGlkPSJ0YWIxX2NvbnRyb2wiIGNoZWNrZWQgdHlwZT0icmFkaW8iIG5hbWU9InRhYnMiLz48bGFiZWwgZm9yPSJ0YWIxX2NvbnRyb2wiPmZpcnN0PC9sYWJlbD4KPGlucHV0IGlkPSJ0YWIyX2NvbnRyb2wiICAgICAgICAgdHlwZT0icmFkaW8iIG5hbWU9InRhYnMiLz48bGFiZWwgZm9yPSJ0YWIyX2NvbnRyb2wiPnNlY29uZDwvbGFiZWw+CjxkaXYgICBpZD0idGFiMV9jb250ZW50Ij4xPC9kaXY+CjxkaXYgICBpZD0idGFiMl9jb250ZW50Ij4yPC9kaXY+CjwvYm9keT4KPC9odG1sPgo="></iframe><br/>
+<br/>
+<hr/><br/>
+<br/>
+Now.. following an example in my previous article <a href="https://icompile.eladkarako.com/html5-checkbox/" target="_blank"><em>HTML5 Ninja – Custom CheckBox</em></a> we can make the input-radio "go away" entirely, keeping the label element which is quite design'able.<br/>
+<br/>
+<pre><br/>
+               <span style='color:#800000; font-weight:bold; '>label</span><span style='color:#800080; '>{</span><span style='color:#bb7977; font-weight:bold; '>background</span><span style='color:#808030; '>:</span> <span style='color:#008484; '>-webkit-linear-gradient</span><span style='color:#808030; '>(</span><span style='color:#074726; '>top</span><span style='color:#808030; '>,</span> <span style='color:#797997; '>white</span><span style='color:#808030; '>,</span> <span style='color:#797997; '>gray</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span><br/>
+<span style='color:#800000; font-weight:bold; '>input</span><span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>checked</span> <span style='color:#808030; '>+</span><span style='color:#800000; font-weight:bold; '>label</span><span style='color:#800080; '>{</span><span style='color:#bb7977; font-weight:bold; '>background</span><span style='color:#808030; '>:</span> <span style='color:#008484; '>-webkit-linear-gradient</span><span style='color:#808030; '>(</span><span style='color:#074726; '>top</span><span style='color:#808030; '>,</span> <span style='color:#797997; '>gray</span><span style='color:#808030; '>,</span> <span style='color:#797997; '>white</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span><br/>
+</pre><br/>
+<br/>
+<em>The "upside gradient" trick, makes it a little more "tab'ish" look-n-feel!</em><br/>
+<br/>
+<iframe loading="lazy" lazyload="on"  style="height:100px;min-height:100px;width:50%;" allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" target="" src="data:text/html;charset=UTF-8;base64,CjwhZG9jdHlwZSBodG1sPgo8aHRtbCBpdGVtc2NvcGU9IiIgaXRlbXR5cGU9Imh0dHA6Ly9zY2hlbWEub3JnL1dlYlBhZ2UiIGRpcj0ibHRyIiBsYW5nPSJlbi1VUyIgbGFuZ3VhZ2U9IkVuZ2xpc2giIGNoYXJzZXQ9IlVURi04IiBlbmNvZGluZz0iVVRGLTgiPgo8aGVhZD4KICA8bWV0YSBodHRwLWVxdWl2PSJYLVVBLUNvbXBhdGlibGUiIGNvbnRlbnQ9IklFPWVkZ2UsY2hyb21lPTEiLz4KICA8bWV0YSBjaGFyc2V0PSJVVEYtOCIvPgogIDxtZXRhIGh0dHAtZXF1aXY9IkNvbnRlbnQtVHlwZSIgICAgY29udGVudD0idGV4dC9odG1sO2NoYXJzZXQ9VVRGLTgiLz4KICA8bWV0YSBuYW1lPSJmcmFnbWVudCIgICAgICAgICAgICAgIGNvbnRlbnQ9IiEiLz4KICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgICAgICAgICAgICAgIGNvbnRlbnQ9ImhlaWdodD1kZXZpY2UtaGVpZ2h0LGluaXRpYWwtc2NhbGU9MS4wLG1heGltdW0tc2NhbGU9MS4wLG1pbmltdW0tc2NhbGU9MS4wLHVzZXItc2NhbGFibGU9bm8sd2lkdGg9ZGV2aWNlLXdpZHRoLG1pbmltYWwtdWkiLz4KICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiIG1lZGlhPSJhbGwiPgogICAgLyo8IVtDREFUQVsqLwogICAgQGNoYXJzZXQgIlVURi04IjsKICAgIEBuYW1lc3BhY2UgImh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiOwogICAgaHRtbCxib2R5ewogICAgICBoZWlnaHQ6ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxMDAlOwogICAgICB3aWR0aDogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxMDAlOwogICAgICBwYWRkaW5nOiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwOwogICAgICBtYXJnaW46ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwOwogICAgICBib3gtc2l6aW5nOiAgICAgICAgICAgICAgICAgICBib3JkZXItYm94OwogICAgICB0ZXh0LXNpemUtYWRqdXN0OiAgICAgICAgICAgICAgICAgICAxMDAlOwogICAgICBmb250OiAxNHB0ICdDb3VyaWVyIE5ldycsIG1vbm9zcGFjZTsKICAgIH0KICAgIGJvZHl7CiAgICAgIHdoaXRlLXNwYWNlOiAgICAgICAgICAgICAgICAgICAgIGluaXRpYWw7CiAgICAgIHdvcmQtYnJlYWs6ICAgICAgICAgICAgICAgICAgICBicmVhay1hbGw7CiAgICB9CiAgICBib2R5ewogICAgICBiYWNrZ3JvdW5kOiAgICAgICAgICAgICAgIG5vbmUgbGlnaHRibHVlOyAKICAgIH0KICAgIGRpdnt3aWR0aDoxMDBweDsgaGVpZ2h0OjQwcHg7IGRpc3BsYXk6bm9uZTsgYm9yZGVyOjNweCBkYXNoZWQgYmxhY2s7fQoKICAgICN0YWIxX2NvbnRlbnR7YmFja2dyb3VuZDogbm9uZSB5ZWxsb3c7fQogICAgI3RhYjJfY29udGVudHtiYWNrZ3JvdW5kOiBub25lIHJlZDt9CgogICAgI3RhYjFfY29udHJvbDpjaGVja2VkIH4gI3RhYjFfY29udGVudHtkaXNwbGF5OmJsb2NrO30KICAgICN0YWIyX2NvbnRyb2w6Y2hlY2tlZCB+ICN0YWIyX2NvbnRlbnR7ZGlzcGxheTpibG9jazt9CgogICAgaW5wdXR7ZGlzcGxheTpub25lO30KICAgIGxhYmVse2JhY2tncm91bmQ6IC13ZWJraXQtbGluZWFyLWdyYWRpZW50KHRvcCwgd2hpdGUsIGdyYXkpO30KICAgIGlucHV0OmNoZWNrZWQgK2xhYmVse2JhY2tncm91bmQ6IC13ZWJraXQtbGluZWFyLWdyYWRpZW50KHRvcCwgZ3JheSwgd2hpdGUpO30KICAgIAogICAgW2lkXj0idGFiIl1baWQkPSJfY29udHJvbCJdewogICAgLypdXT4qLwogIDwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+CjxpbnB1dCBpZD0idGFiMV9jb250cm9sIiBjaGVja2VkIHR5cGU9InJhZGlvIiBuYW1lPSJ0YWJzIi8+PGxhYmVsIGZvcj0idGFiMV9jb250cm9sIj5maXJzdDwvbGFiZWw+CjxpbnB1dCBpZD0idGFiMl9jb250cm9sIiAgICAgICAgIHR5cGU9InJhZGlvIiBuYW1lPSJ0YWJzIi8+PGxhYmVsIGZvcj0idGFiMl9jb250cm9sIj5zZWNvbmQ8L2xhYmVsPgo8ZGl2ICAgaWQ9InRhYjFfY29udGVudCI+MTwvZGl2Pgo8ZGl2ICAgaWQ9InRhYjJfY29udGVudCI+MjwvZGl2Pgo8L2JvZHk+CjwvaHRtbD4K"></iframe><br/>
+<br/>
+Notice that extra-space between the "tabs", similar to two spans, label-elements are "inline" elements, meaning any whitespace will manifest as a real-separator,<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/12/icompile.eladkarako.com_whitespace_on_inner_element.png" alt="" width="929" height="95"/><br/>
+instead of doing any sophisticated alteration, just put the input/label elements close-together :]<br/>
+<br/>
+<iframe loading="lazy" lazyload="on"  style="height:100px;min-height:100px;width:50%;" allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" target="" src="data:text/html;charset=UTF-8;base64,CjwhZG9jdHlwZSBodG1sPgo8aHRtbCBpdGVtc2NvcGU9IiIgaXRlbXR5cGU9Imh0dHA6Ly9zY2hlbWEub3JnL1dlYlBhZ2UiIGRpcj0ibHRyIiBsYW5nPSJlbi1VUyIgbGFuZ3VhZ2U9IkVuZ2xpc2giIGNoYXJzZXQ9IlVURi04IiBlbmNvZGluZz0iVVRGLTgiPgo8aGVhZD4KICA8bWV0YSBodHRwLWVxdWl2PSJYLVVBLUNvbXBhdGlibGUiIGNvbnRlbnQ9IklFPWVkZ2UsY2hyb21lPTEiLz4KICA8bWV0YSBjaGFyc2V0PSJVVEYtOCIvPgogIDxtZXRhIGh0dHAtZXF1aXY9IkNvbnRlbnQtVHlwZSIgICAgY29udGVudD0idGV4dC9odG1sO2NoYXJzZXQ9VVRGLTgiLz4KICA8bWV0YSBuYW1lPSJmcmFnbWVudCIgICAgICAgICAgICAgIGNvbnRlbnQ9IiEiLz4KICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgICAgICAgICAgICAgIGNvbnRlbnQ9ImhlaWdodD1kZXZpY2UtaGVpZ2h0LGluaXRpYWwtc2NhbGU9MS4wLG1heGltdW0tc2NhbGU9MS4wLG1pbmltdW0tc2NhbGU9MS4wLHVzZXItc2NhbGFibGU9bm8sd2lkdGg9ZGV2aWNlLXdpZHRoLG1pbmltYWwtdWkiLz4KICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiIG1lZGlhPSJhbGwiPgogICAgLyo8IVtDREFUQVsqLwogICAgQGNoYXJzZXQgIlVURi04IjsKICAgIEBuYW1lc3BhY2UgImh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiOwogICAgaHRtbCxib2R5ewogICAgICBoZWlnaHQ6ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxMDAlOwogICAgICB3aWR0aDogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxMDAlOwogICAgICBwYWRkaW5nOiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwOwogICAgICBtYXJnaW46ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwOwogICAgICBib3gtc2l6aW5nOiAgICAgICAgICAgICAgICAgICBib3JkZXItYm94OwogICAgICB0ZXh0LXNpemUtYWRqdXN0OiAgICAgICAgICAgICAgICAgICAxMDAlOwogICAgICBmb250OiAxNHB0ICdDb3VyaWVyIE5ldycsIG1vbm9zcGFjZTsKICAgIH0KICAgIGJvZHl7CiAgICAgIHdoaXRlLXNwYWNlOiAgICAgICAgICAgICAgICAgICAgIGluaXRpYWw7CiAgICAgIHdvcmQtYnJlYWs6ICAgICAgICAgICAgICAgICAgICBicmVhay1hbGw7CiAgICB9CiAgICBib2R5ewogICAgICBiYWNrZ3JvdW5kOiAgICAgICAgICAgICAgIG5vbmUgbGlnaHRibHVlOyAKICAgIH0KICAgIGRpdnt3aWR0aDoxMDBweDsgaGVpZ2h0OjQwcHg7IGRpc3BsYXk6bm9uZTsgYm9yZGVyOjNweCBkYXNoZWQgYmxhY2s7fQoKICAgICN0YWIxX2NvbnRlbnR7YmFja2dyb3VuZDogbm9uZSB5ZWxsb3c7fQogICAgI3RhYjJfY29udGVudHtiYWNrZ3JvdW5kOiBub25lIHJlZDt9CgogICAgI3RhYjFfY29udHJvbDpjaGVja2VkIH4gI3RhYjFfY29udGVudHtkaXNwbGF5OmJsb2NrO30KICAgICN0YWIyX2NvbnRyb2w6Y2hlY2tlZCB+ICN0YWIyX2NvbnRlbnR7ZGlzcGxheTpibG9jazt9CgogICAgaW5wdXR7ZGlzcGxheTpub25lO30KICAgIGxhYmVse2JhY2tncm91bmQ6IC13ZWJraXQtbGluZWFyLWdyYWRpZW50KHRvcCwgd2hpdGUsIGdyYXkpO30KICAgIGlucHV0OmNoZWNrZWQgK2xhYmVse2JhY2tncm91bmQ6IC13ZWJraXQtbGluZWFyLWdyYWRpZW50KHRvcCwgZ3JheSwgd2hpdGUpO30KICAgIAogICAgLypdXT4qLwogIDwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+CjxpbnB1dCBpZD0idGFiMV9jb250cm9sIiBjaGVja2VkIHR5cGU9InJhZGlvIiBuYW1lPSJ0YWJzIi8+PGxhYmVsIGZvcj0idGFiMV9jb250cm9sIj5maXJzdDwvbGFiZWw+PGlucHV0IGlkPSJ0YWIyX2NvbnRyb2wiICAgICAgICAgdHlwZT0icmFkaW8iIG5hbWU9InRhYnMiLz48bGFiZWwgZm9yPSJ0YWIyX2NvbnRyb2wiPnNlY29uZDwvbGFiZWw+PGRpdiAgIGlkPSJ0YWIxX2NvbnRlbnQiPjE8L2Rpdj48ZGl2ICAgaWQ9InRhYjJfY29udGVudCI+MjwvZGl2Pgo8L2JvZHk+CjwvaHRtbD4K"></iframe><br/>
+<br/>
+with a little rounding of the edges for the first and last label-elements (without being specific..)<br/>
+<br/>
+<pre><br/>
+<span style='color:#800000; font-weight:bold; '>label</span><span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>first-of-type</span> <span style='color:#800080; '>{</span><br/>
+  <span style='color:#bb7977; font-weight:bold; '>border-bottom-left-radius</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#bb7977; font-weight:bold; '>border-top-left-radius</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><br/>
+<span style='color:#800000; font-weight:bold; '>label</span><span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>last-of-type</span> <span style='color:#800080; '>{</span><br/>
+  <span style='color:#bb7977; font-weight:bold; '>border-bottom-right-radius</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#bb7977; font-weight:bold; '>border-top-right-radius</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><br/>
+<span style='color:#800000; font-weight:bold; '>label</span><span style='color:#800080; '>{</span><br/>
+  <span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span> <span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span> <span style='color:#008c00; '>0</span> <span style='color:#008c00; '>10</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><br/>
+</pre><br/>
+<br/>
+you can make the whole thing look quite nice,<br/>
+<br/>
+<iframe loading="lazy" lazyload="on"  style="height:100px;min-height:100px;width:50%;" allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" target="" src="data:text/html;charset=UTF-8;base64,CjwhZG9jdHlwZSBodG1sPgo8aHRtbCBpdGVtc2NvcGU9IiIgaXRlbXR5cGU9Imh0dHA6Ly9zY2hlbWEub3JnL1dlYlBhZ2UiIGRpcj0ibHRyIiBsYW5nPSJlbi1VUyIgbGFuZ3VhZ2U9IkVuZ2xpc2giIGNoYXJzZXQ9IlVURi04IiBlbmNvZGluZz0iVVRGLTgiPgo8aGVhZD4KICA8bWV0YSBodHRwLWVxdWl2PSJYLVVBLUNvbXBhdGlibGUiIGNvbnRlbnQ9IklFPWVkZ2UsY2hyb21lPTEiLz4KICA8bWV0YSBjaGFyc2V0PSJVVEYtOCIvPgogIDxtZXRhIGh0dHAtZXF1aXY9IkNvbnRlbnQtVHlwZSIgICAgY29udGVudD0idGV4dC9odG1sO2NoYXJzZXQ9VVRGLTgiLz4KICA8bWV0YSBuYW1lPSJmcmFnbWVudCIgICAgICAgICAgICAgIGNvbnRlbnQ9IiEiLz4KICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgICAgICAgICAgICAgIGNvbnRlbnQ9ImhlaWdodD1kZXZpY2UtaGVpZ2h0LGluaXRpYWwtc2NhbGU9MS4wLG1heGltdW0tc2NhbGU9MS4wLG1pbmltdW0tc2NhbGU9MS4wLHVzZXItc2NhbGFibGU9bm8sd2lkdGg9ZGV2aWNlLXdpZHRoLG1pbmltYWwtdWkiLz4KICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiIG1lZGlhPSJhbGwiPgogICAgLyo8IVtDREFUQVsqLwogICAgQGNoYXJzZXQgIlVURi04IjsKICAgIEBuYW1lc3BhY2UgImh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiOwogICAgaHRtbCxib2R5ewogICAgICBoZWlnaHQ6ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxMDAlOwogICAgICB3aWR0aDogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxMDAlOwogICAgICBwYWRkaW5nOiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwOwogICAgICBtYXJnaW46ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwOwogICAgICBib3gtc2l6aW5nOiAgICAgICAgICAgICAgICAgICBib3JkZXItYm94OwogICAgICB0ZXh0LXNpemUtYWRqdXN0OiAgICAgICAgICAgICAgICAgICAxMDAlOwogICAgICBmb250OiAxNHB0ICdDb3VyaWVyIE5ldycsIG1vbm9zcGFjZTsKICAgIH0KICAgIGJvZHl7CiAgICAgIHdoaXRlLXNwYWNlOiAgICAgICAgICAgICAgICAgICAgIGluaXRpYWw7CiAgICAgIHdvcmQtYnJlYWs6ICAgICAgICAgICAgICAgICAgICBicmVhay1hbGw7CiAgICB9CiAgICBib2R5ewogICAgICBiYWNrZ3JvdW5kOiAgICAgICAgICAgICAgIG5vbmUgbGlnaHRibHVlOyAKICAgIH0KICAgIGRpdnt3aWR0aDoxMDBweDsgaGVpZ2h0OjQwcHg7IGRpc3BsYXk6bm9uZTsgYm9yZGVyOjNweCBkYXNoZWQgYmxhY2s7fQoKICAgICN0YWIxX2NvbnRlbnR7YmFja2dyb3VuZDogbm9uZSB5ZWxsb3c7fQogICAgI3RhYjJfY29udGVudHtiYWNrZ3JvdW5kOiBub25lIHJlZDt9CgogICAgI3RhYjFfY29udHJvbDpjaGVja2VkIH4gI3RhYjFfY29udGVudHtkaXNwbGF5OmJsb2NrO30KICAgICN0YWIyX2NvbnRyb2w6Y2hlY2tlZCB+ICN0YWIyX2NvbnRlbnR7ZGlzcGxheTpibG9jazt9CgogICAgaW5wdXR7ZGlzcGxheTpub25lO30KICAgIGxhYmVse2JhY2tncm91bmQ6IC13ZWJraXQtbGluZWFyLWdyYWRpZW50KHRvcCwgd2hpdGUsIGdyYXkpO30KICAgIGlucHV0OmNoZWNrZWQgK2xhYmVse2JhY2tncm91bmQ6IC13ZWJraXQtbGluZWFyLWdyYWRpZW50KHRvcCwgZ3JheSwgd2hpdGUpO30KCiAgICBsYWJlbDpmaXJzdC1vZi10eXBlIHsKICAgICAgYm9yZGVyLWJvdHRvbS1sZWZ0LXJhZGl1czogMTBweDsKICAgICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMTBweDsKICAgIH0KICAgIGxhYmVsOmxhc3Qtb2YtdHlwZSB7CiAgICAgIGJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzOiAxMHB4OwogICAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogMTBweDsKICAgIH0KICAgIGxhYmVsewogICAgICBwYWRkaW5nOjAgMTBweCAwIDEwcHg7CiAgICB9CiAgICAvKl1dPiovCiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KPGlucHV0IGlkPSJ0YWIxX2NvbnRyb2wiIGNoZWNrZWQgdHlwZT0icmFkaW8iIG5hbWU9InRhYnMiLz48bGFiZWwgZm9yPSJ0YWIxX2NvbnRyb2wiPmZpcnN0PC9sYWJlbD48aW5wdXQgaWQ9InRhYjJfY29udHJvbCIgICAgICAgICB0eXBlPSJyYWRpbyIgbmFtZT0idGFicyIvPjxsYWJlbCBmb3I9InRhYjJfY29udHJvbCI+c2Vjb25kPC9sYWJlbD48ZGl2ICAgaWQ9InRhYjFfY29udGVudCI+MTwvZGl2PjxkaXYgICBpZD0idGFiMl9jb250ZW50Ij4yPC9kaXY+CjwvYm9keT4KPC9odG1sPgo="></iframe><br/>
+<br/>
+How this thing works?<br/>
+it relays on the CSS <code>~</code> operator to place the actual "content-container" after all "tabs-toolbar",<br/>
+and it uses the CSS <code>+</code> operator to pair label with its input-button, which makes it easier to change its design.<br/>
+<br/>
+<blockquote><br/>
+Overall this is quite easy and much more efficient design then JavaScript related frameworks, since it can work on the oldest IE versions (IE5.5), and live quite happily without JavaScript running,<br/>
+It also looks great on mobile on due to it is relaying on the solid HTML4-standards of input/type-radio,<br/>
+it will support native touch events, which again, also means you can omit the JavaScript from the UI design at all, which really is the BEST PRACTICE :]<br/>
+</blockquote><br/>
+<br/>
+Another improvements, is removing some of the id-elements (in favor of CSS' <code>nth-of-type</code>)<br/>
+it also means adding new tabs is relatively easy-task,<br/>
+- add input/label pair at the end of the "list" of already existing input/label pairs.<br/>
+- add div at the end of the current "list of divs",<br/>
+- add CSS rule to "pair" the functionality of checked input, with showing container:<br/>
+<pre><span style='color:#800000; font-weight:bold; '>input</span><span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>nth-of-type</span><span style='color:#800080; '>(</span><span style='color:#008c00; '>4</span><span style='color:#800080; '>)</span><span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>checked</span> <span style='color:#808030; '>~</span> <span style='color:#800000; font-weight:bold; '>div</span><span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>nth-of-type</span><span style='color:#800080; '>(</span><span style='color:#008c00; '>4</span><span style='color:#800080; '>)</span><span style='color:#800080; '>{</span><span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>block</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span></pre><br/>
+<br/>
+<iframe loading="lazy" lazyload="on"  style="height:100px;min-height:100px;width:70%;" allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" target="" src="data:text/html;charset=UTF-8;base64,Cgo8IWRvY3R5cGUgaHRtbD4KPGh0bWwgaXRlbXNjb3BlPSIiIGl0ZW10eXBlPSJodHRwOi8vc2NoZW1hLm9yZy9XZWJQYWdlIiBkaXI9Imx0ciIgbGFuZz0iZW4tVVMiIGxhbmd1YWdlPSJFbmdsaXNoIiBjaGFyc2V0PSJVVEYtOCIgZW5jb2Rpbmc9IlVURi04Ij4KPGhlYWQ+CiAgPG1ldGEgaHR0cC1lcXVpdj0iWC1VQS1Db21wYXRpYmxlIiBjb250ZW50PSJJRT1lZGdlLGNocm9tZT0xIi8+CiAgPG1ldGEgY2hhcnNldD0iVVRGLTgiLz4KICA8bWV0YSBodHRwLWVxdWl2PSJDb250ZW50LVR5cGUiICAgIGNvbnRlbnQ9InRleHQvaHRtbDtjaGFyc2V0PVVURi04Ii8+CiAgPG1ldGEgbmFtZT0iZnJhZ21lbnQiICAgICAgICAgICAgICBjb250ZW50PSIhIi8+CiAgPG1ldGEgbmFtZT0idmlld3BvcnQiICAgICAgICAgICAgICBjb250ZW50PSJoZWlnaHQ9ZGV2aWNlLWhlaWdodCxpbml0aWFsLXNjYWxlPTEuMCxtYXhpbXVtLXNjYWxlPTEuMCxtaW5pbXVtLXNjYWxlPTEuMCx1c2VyLXNjYWxhYmxlPW5vLHdpZHRoPWRldmljZS13aWR0aCxtaW5pbWFsLXVpIi8+CiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIiBtZWRpYT0iYWxsIj4KICAgIC8qPCFbQ0RBVEFbKi8KICAgIEBjaGFyc2V0ICJVVEYtOCI7CiAgICBAbmFtZXNwYWNlICJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIjsKICAgIGh0bWwsYm9keXsKICAgICAgaGVpZ2h0OiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMTAwJTsKICAgICAgd2lkdGg6ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMTAwJTsKICAgICAgcGFkZGluZzogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMDsKICAgICAgbWFyZ2luOiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMDsKICAgICAgYm94LXNpemluZzogICAgICAgICAgICAgICAgICAgYm9yZGVyLWJveDsKICAgICAgdGV4dC1zaXplLWFkanVzdDogICAgICAgICAgICAgICAgICAgMTAwJTsKICAgICAgZm9udDogMTRwdCAnQ291cmllciBOZXcnLCBtb25vc3BhY2U7CiAgICB9CiAgICBib2R5ewogICAgICB3aGl0ZS1zcGFjZTogICAgICAgICAgICAgICAgICAgICBpbml0aWFsOwogICAgICB3b3JkLWJyZWFrOiAgICAgICAgICAgICAgICAgICAgYnJlYWstYWxsOwogICAgfQogICAgYm9keXsKICAgICAgYmFja2dyb3VuZDogICAgICAgICAgICAgICBub25lIGxpZ2h0Ymx1ZTsgCiAgICB9CiAgICBkaXZ7d2lkdGg6MTAwcHg7IGhlaWdodDo0MHB4OyBkaXNwbGF5Om5vbmU7IGJvcmRlcjozcHggZGFzaGVkIGJsYWNrO30KCiAgICBkaXY6bnRoLW9mLXR5cGUoMSl7YmFja2dyb3VuZDogbm9uZSB5ZWxsb3c7fQogICAgZGl2Om50aC1vZi10eXBlKDIpe2JhY2tncm91bmQ6IG5vbmUgcmVkO30KICAgIGRpdjpudGgtb2YtdHlwZSgzKXtiYWNrZ3JvdW5kOiBub25lIGdyZWVuO30KICAgIGRpdjpudGgtb2YtdHlwZSg0KXtiYWNrZ3JvdW5kOiBub25lIG9yYW5nZTt9CgogICAgaW5wdXQ6bnRoLW9mLXR5cGUoMSk6Y2hlY2tlZCB+IGRpdjpudGgtb2YtdHlwZSgxKXtkaXNwbGF5OmJsb2NrO30KICAgIGlucHV0Om50aC1vZi10eXBlKDIpOmNoZWNrZWQgfiBkaXY6bnRoLW9mLXR5cGUoMil7ZGlzcGxheTpibG9jazt9CiAgICBpbnB1dDpudGgtb2YtdHlwZSgzKTpjaGVja2VkIH4gZGl2Om50aC1vZi10eXBlKDMpe2Rpc3BsYXk6YmxvY2s7fQogICAgaW5wdXQ6bnRoLW9mLXR5cGUoNCk6Y2hlY2tlZCB+IGRpdjpudGgtb2YtdHlwZSg0KXtkaXNwbGF5OmJsb2NrO30KCiAgICBpbnB1dHtkaXNwbGF5Om5vbmU7fQogICAgbGFiZWx7YmFja2dyb3VuZDogLXdlYmtpdC1saW5lYXItZ3JhZGllbnQodG9wLCB3aGl0ZSwgZ3JheSk7fQogICAgaW5wdXQ6Y2hlY2tlZCArbGFiZWx7YmFja2dyb3VuZDogLXdlYmtpdC1saW5lYXItZ3JhZGllbnQodG9wLCBncmF5LCB3aGl0ZSk7fQoKICAgIGxhYmVsOmZpcnN0LW9mLXR5cGUgewogICAgICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAxMHB4OwogICAgICBib3JkZXItdG9wLWxlZnQtcmFkaXVzOiAxMHB4OwogICAgfQogICAgbGFiZWw6bGFzdC1vZi10eXBlIHsKICAgICAgYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXM6IDEwcHg7CiAgICAgIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiAxMHB4OwogICAgfQogICAgbGFiZWx7CiAgICAgIHBhZGRpbmc6MCAxMHB4IDAgMTBweDsKICAgICAgZGlzcGxheTppbmxpbmUtYmxvY2s7CiAgICB9CiAgICAvKl1dPiovCiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KCjxpbnB1dCBpZD0idGFiMSIgY2hlY2tlZCB0eXBlPSJyYWRpbyIgbmFtZT0idGFicyIvPjxsYWJlbCBmb3I9InRhYjEiPmZpcnN0PC9sYWJlbD48aW5wdXQgaWQ9InRhYjIiIHR5cGU9InJhZGlvIiBuYW1lPSJ0YWJzIi8+PGxhYmVsIGZvcj0idGFiMiI+c2Vjb25kPC9sYWJlbD48aW5wdXQgaWQ9InRhYjMiIHR5cGU9InJhZGlvIiBuYW1lPSJ0YWJzIi8+PGxhYmVsIGZvcj0idGFiMyI+dGhpcmQ8L2xhYmVsPjxpbnB1dCBpZD0idGFiNCIgdHlwZT0icmFkaW8iIG5hbWU9InRhYnMiLz48bGFiZWwgZm9yPSJ0YWI0Ij5mb3VydGg8L2xhYmVsPgo8ZGl2PjE8L2Rpdj4KPGRpdj4yPC9kaXY+CjxkaXY+MzwvZGl2Pgo8ZGl2PjQ8L2Rpdj4KPC9ib2R5Pgo8L2h0bWw+Cg=="></iframe><br/>
+<br/>
+You might notice that clicking with slightly dragging the mouse will result with a little smudge of a selection background:<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/12/icompile.eladkarako.com_selectable-1.png" alt="" width="448" height="132"/><br/>
+This is easily avoidable, by disabling the selection of the input/label using <code>user-select:none;</code>.<br/>
+<br/>
+<iframe loading="lazy" lazyload="on"  style="height:100px;min-height:100px;width:70%;" allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" target="" src="data:text/html;charset=UTF-8;base64,Cgo8IWRvY3R5cGUgaHRtbD4KPGh0bWwgaXRlbXNjb3BlPSIiIGl0ZW10eXBlPSJodHRwOi8vc2NoZW1hLm9yZy9XZWJQYWdlIiBkaXI9Imx0ciIgbGFuZz0iZW4tVVMiIGxhbmd1YWdlPSJFbmdsaXNoIiBjaGFyc2V0PSJVVEYtOCIgZW5jb2Rpbmc9IlVURi04Ij4KPGhlYWQ+CiAgPG1ldGEgaHR0cC1lcXVpdj0iWC1VQS1Db21wYXRpYmxlIiBjb250ZW50PSJJRT1lZGdlLGNocm9tZT0xIi8+CiAgPG1ldGEgY2hhcnNldD0iVVRGLTgiLz4KICA8bWV0YSBodHRwLWVxdWl2PSJDb250ZW50LVR5cGUiICAgIGNvbnRlbnQ9InRleHQvaHRtbDtjaGFyc2V0PVVURi04Ii8+CiAgPG1ldGEgbmFtZT0iZnJhZ21lbnQiICAgICAgICAgICAgICBjb250ZW50PSIhIi8+CiAgPG1ldGEgbmFtZT0idmlld3BvcnQiICAgICAgICAgICAgICBjb250ZW50PSJoZWlnaHQ9ZGV2aWNlLWhlaWdodCxpbml0aWFsLXNjYWxlPTEuMCxtYXhpbXVtLXNjYWxlPTEuMCxtaW5pbXVtLXNjYWxlPTEuMCx1c2VyLXNjYWxhYmxlPW5vLHdpZHRoPWRldmljZS13aWR0aCxtaW5pbWFsLXVpIi8+CiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIiBtZWRpYT0iYWxsIj4KICAgIC8qPCFbQ0RBVEFbKi8KICAgIEBjaGFyc2V0ICJVVEYtOCI7CiAgICBAbmFtZXNwYWNlICJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIjsKICAgIGh0bWwsYm9keXsKICAgICAgaGVpZ2h0OiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMTAwJTsKICAgICAgd2lkdGg6ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMTAwJTsKICAgICAgcGFkZGluZzogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMDsKICAgICAgbWFyZ2luOiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMDsKICAgICAgYm94LXNpemluZzogICAgICAgICAgICAgICAgICAgYm9yZGVyLWJveDsKICAgICAgdGV4dC1zaXplLWFkanVzdDogICAgICAgICAgICAgICAgICAgMTAwJTsKICAgICAgZm9udDogMTRwdCAnQ291cmllciBOZXcnLCBtb25vc3BhY2U7CiAgICB9CiAgICBib2R5ewogICAgICB3aGl0ZS1zcGFjZTogICAgICAgICAgICAgICAgICAgICBpbml0aWFsOwogICAgICB3b3JkLWJyZWFrOiAgICAgICAgICAgICAgICAgICAgYnJlYWstYWxsOwogICAgfQogICAgYm9keXsKICAgICAgYmFja2dyb3VuZDogICAgICAgICAgICAgICBub25lIGxpZ2h0Ymx1ZTsgCiAgICB9CiAgICBkaXZ7d2lkdGg6MTAwcHg7IGhlaWdodDo0MHB4OyBkaXNwbGF5Om5vbmU7IGJvcmRlcjozcHggZGFzaGVkIGJsYWNrO30KCiAgICBkaXY6bnRoLW9mLXR5cGUoMSl7YmFja2dyb3VuZDogbm9uZSB5ZWxsb3c7fQogICAgZGl2Om50aC1vZi10eXBlKDIpe2JhY2tncm91bmQ6IG5vbmUgcmVkO30KICAgIGRpdjpudGgtb2YtdHlwZSgzKXtiYWNrZ3JvdW5kOiBub25lIGdyZWVuO30KICAgIGRpdjpudGgtb2YtdHlwZSg0KXtiYWNrZ3JvdW5kOiBub25lIG9yYW5nZTt9CgogICAgaW5wdXQ6bnRoLW9mLXR5cGUoMSk6Y2hlY2tlZCB+IGRpdjpudGgtb2YtdHlwZSgxKXtkaXNwbGF5OmJsb2NrO30KICAgIGlucHV0Om50aC1vZi10eXBlKDIpOmNoZWNrZWQgfiBkaXY6bnRoLW9mLXR5cGUoMil7ZGlzcGxheTpibG9jazt9CiAgICBpbnB1dDpudGgtb2YtdHlwZSgzKTpjaGVja2VkIH4gZGl2Om50aC1vZi10eXBlKDMpe2Rpc3BsYXk6YmxvY2s7fQogICAgaW5wdXQ6bnRoLW9mLXR5cGUoNCk6Y2hlY2tlZCB+IGRpdjpudGgtb2YtdHlwZSg0KXtkaXNwbGF5OmJsb2NrO30KCiAgICBpbnB1dHtkaXNwbGF5Om5vbmU7fQogICAgbGFiZWx7YmFja2dyb3VuZDogLXdlYmtpdC1saW5lYXItZ3JhZGllbnQodG9wLCB3aGl0ZSwgZ3JheSk7fQogICAgaW5wdXQ6Y2hlY2tlZCArbGFiZWx7YmFja2dyb3VuZDogLXdlYmtpdC1saW5lYXItZ3JhZGllbnQodG9wLCBncmF5LCB3aGl0ZSk7fQoKICAgIGxhYmVsOmZpcnN0LW9mLXR5cGUgewogICAgICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAxMHB4OwogICAgICBib3JkZXItdG9wLWxlZnQtcmFkaXVzOiAxMHB4OwogICAgfQogICAgbGFiZWw6bGFzdC1vZi10eXBlIHsKICAgICAgYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXM6IDEwcHg7CiAgICAgIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiAxMHB4OwogICAgfQogICAgbGFiZWx7CiAgICAgIHBhZGRpbmc6MCAxMHB4IDAgMTBweDsKICAgICAgZGlzcGxheTppbmxpbmUtYmxvY2s7CiAgICB9CiAgICBsYWJlbHsgdXNlci1zZWxlY3Q6bm9uZTt9CiAgICAvKl1dPiovCiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KCjxpbnB1dCBpZD0idGFiMSIgY2hlY2tlZCB0eXBlPSJyYWRpbyIgbmFtZT0idGFicyIvPjxsYWJlbCBmb3I9InRhYjEiPmZpcnN0PC9sYWJlbD48aW5wdXQgaWQ9InRhYjIiIHR5cGU9InJhZGlvIiBuYW1lPSJ0YWJzIi8+PGxhYmVsIGZvcj0idGFiMiI+c2Vjb25kPC9sYWJlbD48aW5wdXQgaWQ9InRhYjMiIHR5cGU9InJhZGlvIiBuYW1lPSJ0YWJzIi8+PGxhYmVsIGZvcj0idGFiMyI+dGhpcmQ8L2xhYmVsPjxpbnB1dCBpZD0idGFiNCIgdHlwZT0icmFkaW8iIG5hbWU9InRhYnMiLz48bGFiZWwgZm9yPSJ0YWI0Ij5mb3VydGg8L2xhYmVsPgo8ZGl2PjE8L2Rpdj4KPGRpdj4yPC9kaXY+CjxkaXY+MzwvZGl2Pgo8ZGl2PjQ8L2Rpdj4KPC9ib2R5Pgo8L2h0bWw+Cg=="></iframe><br/>
+<hr/><br/>
+<br/>
+ah, amm.. and how about a little border between each "tab"?<br/>
+<br/>
+<iframe loading="lazy" lazyload="on"  style="height:100px;min-height:100px;width:70%;" allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" target="" src="data:text/html;charset=UTF-8;base64,PCFkb2N0eXBlIGh0bWw+CjxodG1sIGl0ZW1zY29wZT0iIiBpdGVtdHlwZT0iaHR0cDovL3NjaGVtYS5vcmcvV2ViUGFnZSIgZGlyPSJsdHIiIGxhbmc9ImVuLVVTIiBsYW5ndWFnZT0iRW5nbGlzaCIgY2hhcnNldD0iVVRGLTgiIGVuY29kaW5nPSJVVEYtOCI+CjxoZWFkPgogIDxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSxjaHJvbWU9MSIvPgogIDxtZXRhIGNoYXJzZXQ9IlVURi04Ii8+CiAgPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiAgICBjb250ZW50PSJ0ZXh0L2h0bWw7Y2hhcnNldD1VVEYtOCIvPgogIDxtZXRhIG5hbWU9ImZyYWdtZW50IiAgICAgICAgICAgICAgY29udGVudD0iISIvPgogIDxtZXRhIG5hbWU9InZpZXdwb3J0IiAgICAgICAgICAgICAgY29udGVudD0iaGVpZ2h0PWRldmljZS1oZWlnaHQsaW5pdGlhbC1zY2FsZT0xLjAsbWF4aW11bS1zY2FsZT0xLjAsbWluaW11bS1zY2FsZT0xLjAsdXNlci1zY2FsYWJsZT1ubyx3aWR0aD1kZXZpY2Utd2lkdGgsbWluaW1hbC11aSIvPgogIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyIgbWVkaWE9ImFsbCI+CiAgICAvKjwhW0NEQVRBWyovCiAgICBAY2hhcnNldCAiVVRGLTgiOwogICAgQG5hbWVzcGFjZSAiaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI7CiAgICBodG1sLGJvZHl7CiAgICAgIGhlaWdodDogICAgICAgICAgICAgICAgICAgICAgICAgICAgIDEwMCU7CiAgICAgIHdpZHRoOiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDEwMCU7CiAgICAgIHBhZGRpbmc6ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDA7CiAgICAgIG1hcmdpbjogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDA7CiAgICAgIGJveC1zaXppbmc6ICAgICAgICAgICAgICAgICAgIGJvcmRlci1ib3g7CiAgICAgIHRleHQtc2l6ZS1hZGp1c3Q6ICAgICAgICAgICAgICAgICAgIDEwMCU7CiAgICAgIGZvbnQ6IDE0cHQgJ0NvdXJpZXIgTmV3JywgbW9ub3NwYWNlOwogICAgfQogICAgYm9keXsKICAgICAgd2hpdGUtc3BhY2U6ICAgICAgICAgICAgICAgICAgICAgaW5pdGlhbDsKICAgICAgd29yZC1icmVhazogICAgICAgICAgICAgICAgICAgIGJyZWFrLWFsbDsKICAgIH0KICAgIGJvZHl7CiAgICAgIGJhY2tncm91bmQ6ICAgICAgICAgICAgICAgbm9uZSBsaWdodGJsdWU7IAogICAgfQogICAgZGl2e3dpZHRoOjEwMHB4OyBoZWlnaHQ6NDBweDsgZGlzcGxheTpub25lOyBib3JkZXI6M3B4IGRhc2hlZCBibGFjazt9CgogICAgZGl2Om50aC1vZi10eXBlKDEpe2JhY2tncm91bmQ6IG5vbmUgeWVsbG93O30KICAgIGRpdjpudGgtb2YtdHlwZSgyKXtiYWNrZ3JvdW5kOiBub25lIHJlZDt9CiAgICBkaXY6bnRoLW9mLXR5cGUoMyl7YmFja2dyb3VuZDogbm9uZSBncmVlbjt9CiAgICBkaXY6bnRoLW9mLXR5cGUoNCl7YmFja2dyb3VuZDogbm9uZSBvcmFuZ2U7fQoKICAgIGlucHV0Om50aC1vZi10eXBlKDEpOmNoZWNrZWQgfiBkaXY6bnRoLW9mLXR5cGUoMSl7ZGlzcGxheTpibG9jazt9CiAgICBpbnB1dDpudGgtb2YtdHlwZSgyKTpjaGVja2VkIH4gZGl2Om50aC1vZi10eXBlKDIpe2Rpc3BsYXk6YmxvY2s7fQogICAgaW5wdXQ6bnRoLW9mLXR5cGUoMyk6Y2hlY2tlZCB+IGRpdjpudGgtb2YtdHlwZSgzKXtkaXNwbGF5OmJsb2NrO30KICAgIGlucHV0Om50aC1vZi10eXBlKDQpOmNoZWNrZWQgfiBkaXY6bnRoLW9mLXR5cGUoNCl7ZGlzcGxheTpibG9jazt9CgogICAgaW5wdXR7ZGlzcGxheTpub25lO30KICAgIGxhYmVse2JhY2tncm91bmQ6IC13ZWJraXQtbGluZWFyLWdyYWRpZW50KHRvcCwgd2hpdGUsIGdyYXkpO30KICAgIGlucHV0OmNoZWNrZWQgK2xhYmVse2JhY2tncm91bmQ6IC13ZWJraXQtbGluZWFyLWdyYWRpZW50KHRvcCwgZ3JheSwgd2hpdGUpO30KCiAgICBsYWJlbDpmaXJzdC1vZi10eXBlIHsKICAgICAgYm9yZGVyLWJvdHRvbS1sZWZ0LXJhZGl1czogMTBweDsKICAgICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMTBweDsKICAgIH0KICAgIGxhYmVsOmxhc3Qtb2YtdHlwZSB7CiAgICAgIGJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzOiAxMHB4OwogICAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogMTBweDsKICAgIH0KICAgIGxhYmVsewogICAgICBwYWRkaW5nOjAgMTBweCAwIDEwcHg7CiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIGdyYXk7CiAgICAgIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7CiAgICB9CiAgICBsYWJlbHsgdXNlci1zZWxlY3Q6bm9uZTt9CiAgICAvKl1dPiovCiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KCjxpbnB1dCBpZD0idGFiMSIgY2hlY2tlZCB0eXBlPSJyYWRpbyIgbmFtZT0idGFicyIvPjxsYWJlbCBmb3I9InRhYjEiPmZpcnN0PC9sYWJlbD48aW5wdXQgaWQ9InRhYjIiIHR5cGU9InJhZGlvIiBuYW1lPSJ0YWJzIi8+PGxhYmVsIGZvcj0idGFiMiI+c2Vjb25kPC9sYWJlbD48aW5wdXQgaWQ9InRhYjMiIHR5cGU9InJhZGlvIiBuYW1lPSJ0YWJzIi8+PGxhYmVsIGZvcj0idGFiMyI+dGhpcmQ8L2xhYmVsPjxpbnB1dCBpZD0idGFiNCIgdHlwZT0icmFkaW8iIG5hbWU9InRhYnMiLz48bGFiZWwgZm9yPSJ0YWI0Ij5mb3VydGg8L2xhYmVsPgo8ZGl2PjE8L2Rpdj4KPGRpdj4yPC9kaXY+CjxkaXY+MzwvZGl2Pgo8ZGl2PjQ8L2Rpdj4KPC9ib2R5Pgo8L2h0bWw+Cg=="></iframe><br/>
+<br/>
+nice!<br/>
+<br/>
+<hr/><br/>
+<br/>
+<em><strong>Enjoy :]</strong></em></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/downloading-directly-from-dailymotion">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/advised-config-for-linux-on-the-start">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/advised-config-for-linux-on-the-start">קינפוגים מומלצים ללינוקס על ההתחלה</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-10-hours-video">YouTube 10-Hours Video</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/aria2c-example-download-script-to-download-latest-ffmpeg">Aria2C Example Download Script To Download Latest FFMPEG</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/font-family-name">Font Family-Name</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video">FFMPEG - Merge Multiple Audio Files To A Single Video</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-get-doctype-as-string">JavaScript Snippet - Get DOCTYPE As String</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-convert-camelcase-to-snake_case">JavaScript Snippet - Convert CamelCase to snake_case</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/json-stringify-with-escape-for-unicode-characters">JSON.stringify With Escape For Unicode-Characters</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ebay-pulsar-user-behavioral-tracking">JavaScript Ninja - eBay's PULSAR A.K.A User-Behavioral-Tracking</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-document-write-alternative">JavaScript Ninja - document.write Alternative</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-most-popular-adblock-lists">The Most Popular Adblock Lists</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-kitty-algorithm">You're Giving Me Far Too Many Kitten-Videos! And I Love It!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-snippet-everything-to-button">CSS3 Snippet - Everything To Button</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/imagemagick-nightly-builds">ImageMagick Nightly Builds</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vuze-subdomains">Vuze SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-domain2ip">Google Domain2IP (DNS Over HTTPS)</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

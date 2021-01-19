@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>You Can't Really AdBlock Google-Analytics On Chrome</title>
+  <meta itemprop="name"                                content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+  <meta name="dcterms.title"                           content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+  <meta property="og:title"                            content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+  <meta name="twitter:title"                           content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+  <meta name="twitter:text:title"                      content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+  <meta name="application-name"                        content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+  <meta name="subject"                                 content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+  <meta name="apple-mobile-web-app-title"              content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+  <meta name="msapplication-tooltip"                   content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+  <meta itemprop="description"                         content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+  <meta name="dcterms.description"                     content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+  <meta name="twitter:description"                     content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+  <meta property="og:description"                      content="You Can't Really AdBlock Google-Analytics On Chrome"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="adblock,analytics,analyticsjs,answered,arguments,awnzl,awrlcy,base,based,bgxmbia,blocked,bmbia,bmbjskcs,bmbjskcxauc,bold,browsers,budwxszm,catch,cgkjdhj,cglnys,cglwlnnldca,chrome,chromium,collection,color,content,create,developers,devguides,dgljc,dhtmftzv,dszs,dszufuywx,embedded,eucmvtb,exblowojcc,fcanz,font,foyw,fsbgjhy,function,fuywx,gahr,ganame,getall,getbyname,ggkgv,google,gznvuy,hate,hbhl,headers,hitcallback,iamvjdcb,icdmdw,icdvymply,idagksb,igfyz,igygpt,ihskcqkjzi,kzxzlbg,length,lkdvb,luzg,migygit,migyuagl,ndgg,noopfn,noopnullfn,null,nzxqgpsbub,object,oksb,owojz,prototype,qnihx,remove,requests,response,return,rldmd,send,sgit,tlcia,tmftzsa,tracker,typeof,ukckgewojly,vcgl,vcgzuowojd,vtzw,vuzca,weight,window,wzxjzlmdvb,xszwn,yxigbm,yxigcca,yxigvhjhy,yxigz,zlid,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="adblock,analytics,analyticsjs,answered,arguments,awnzl,awrlcy,base,based,bgxmbia,blocked,bmbia,bmbjskcs,bmbjskcxauc,bold,browsers,budwxszm,catch,cgkjdhj,cglnys,cglwlnnldca,chrome,chromium,collection,color,content,create,developers,devguides,dgljc,dhtmftzv,dszs,dszufuywx,embedded,eucmvtb,exblowojcc,fcanz,font,foyw,fsbgjhy,function,fuywx,gahr,ganame,getall,getbyname,ggkgv,google,gznvuy,hate,hbhl,headers,hitcallback,iamvjdcb,icdmdw,icdvymply,idagksb,igfyz,igygpt,ihskcqkjzi,kzxzlbg,length,lkdvb,luzg,migygit,migyuagl,ndgg,noopfn,noopnullfn,null,nzxqgpsbub,object,oksb,owojz,prototype,qnihx,remove,requests,response,return,rldmd,send,sgit,tlcia,tmftzsa,tracker,typeof,ukckgewojly,vcgl,vcgzuowojd,vtzw,vuzca,weight,window,wzxjzlmdvb,xszwn,yxigbm,yxigcca,yxigvhjhy,yxigz,zlid,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/http-non-standard-methods"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/http-non-standard-methods"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/supersu-systemless-false"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/you-cant-really-adblock-google-analytics-on-chrome"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/you-cant-really-adblock-google-analytics-on-chrome"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/you-cant-really-adblock-google-analytics-on-chrome"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/you-cant-really-adblock-google-analytics-on-chrome"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/you-cant-really-adblock-google-analytics-on-chrome"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/you-cant-really-adblock-google-analytics-on-chrome"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-05-13T05:01:53+00:00"     />
+  <meta name="page-datetime"                           content="2016-05-13T05:01:53+00:00"     />
+  <meta property="article:published_time"              content="2016-05-13T05:01:53+00:00"     />
+  <meta name="dcterms.date"                            content="2016-05-13T05:01:53+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-05-13T05:01:53+00:00"    />
+  <meta property="article:modified_time"               content="2016-05-13T05:01:53+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/you-cant-really-adblock-google-analytics-on-chrome"
+,"url"             : "https://icompile.eladkarako.com/you-cant-really-adblock-google-analytics-on-chrome"
+,"headline"        : "You Can't Really AdBlock Google-Analytics On Chrome"
+,"description"     : "You Can't Really AdBlock Google-Analytics On Chrome"
+,"datePosted"      : "2016-05-13T05:01:53+00:00"
+,"dateCreated"     : "2016-05-13T05:01:53+00:00"
+,"datePublished"   : "2016-05-13T05:01:53+00:00"
+,"dateModified"    : "2016-05-13T05:01:53+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003175113641">
+  <header>
+    <h1 itemprop="headline">You Can't Really AdBlock Google-Analytics On Chrome</h1>
+    <sup>Posted at <time datetime="2016-05-13T05:01:53+00:00" itemprop="dateModified">Fri, 13 May 2016 05:01:53 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">On Chrome/Chromium-based browsers,<br/>
+Blocked Google-Analytics requests will be answered with an embedded-(BASE64)-content.<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/05/icompile.eladkarako.com_you_cant_really_adblock_google-analytics_on_chrome_response_headers.gif" alt="icompile.eladkarako.com_you_cant_really_adblock_google-analytics_on_chrome_response_headers"/><br/>
+<br/>
+The BASE64 content:<br/>
+<pre>KGZ1bmN0aW9uKCkgewoJLy8gaHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vYW5hbHl0aWNzL2Rldmd1aWRlcy9jb2xsZWN0aW9uL2FuYWx5dGljc2pzLwoJdmFyIG5vb3BmbiA9IGZ1bmN0aW9uKCkgewoJCTsKCX07Cgl2YXIgbm9vcG51bGxmbiA9IGZ1bmN0aW9uKCkgewoJCXJldHVybiBudWxsOwoJfTsKCS8vCgl2YXIgVHJhY2tlciA9IGZ1bmN0aW9uKCkgewoJCTsKCX07Cgl2YXIgcCA9IFRyYWNrZXIucHJvdG90eXBlOwoJcC5nZXQgPSBub29wZm47CglwLnNldCA9IG5vb3BmbjsKCXAuc2VuZCA9IG5vb3BmbjsKCS8vCgl2YXIgZ2FOYW1lID0gd2luZG93Lkdvb2dsZUFuYWx5dGljc09iamVjdCB8fCAnZ2EnOwoJdmFyIGdhID0gZnVuY3Rpb24oKSB7CgkJdmFyIGxlbiA9IGFyZ3VtZW50cy5sZW5ndGg7CgkJaWYgKCBsZW4gPT09IDAgKSB7CgkJCXJldHVybjsKCQl9CgkJdmFyIGYgPSBhcmd1bWVudHNbbGVuLTFdOwoJCWlmICggdHlwZW9mIGYgIT09ICdvYmplY3QnIHx8IGYgPT09IG51bGwgfHwgdHlwZW9mIGYuaGl0Q2FsbGJhY2sgIT09ICdmdW5jdGlvbicgKSB7CgkJCXJldHVybjsKCQl9CgkJdHJ5IHsKCQkJZi5oaXRDYWxsYmFjaygpOwoJCX0gY2F0Y2ggKGV4KSB7CgkJfQoJfTsKCWdhLmNyZWF0ZSA9IGZ1bmN0aW9uKCkgewoJCXJldHVybiBuZXcgVHJhY2tlcigpOwoJfTsKCWdhLmdldEJ5TmFtZSA9IG5vb3BudWxsZm47CglnYS5nZXRBbGwgPSBmdW5jdGlvbigpIHsKCQlyZXR1cm4gW107Cgl9OwoJZ2EucmVtb3ZlID0gbm9vcGZuOwoJd2luZG93W2dhTmFtZV0gPSBnYTsKfSkoKTs=</pre><br/>
+<br/>
+Is:<br/>
+<pre><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+	<span style='color:#696969; '>// https://developers.google.com/analytics/devguides/collection/analyticsjs/</span><br/>
+	<span style='color:#800000; font-weight:bold; '>var</span> noopfn <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+		<span style='color:#800080; '>;</span><br/>
+	<span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+	<span style='color:#800000; font-weight:bold; '>var</span> noopnullfn <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+		<span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#0f4d75; '>null</span><span style='color:#800080; '>;</span><br/>
+	<span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+	<span style='color:#696969; '>//</span><br/>
+	<span style='color:#800000; font-weight:bold; '>var</span> Tracker <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+		<span style='color:#800080; '>;</span><br/>
+	<span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+	<span style='color:#800000; font-weight:bold; '>var</span> p <span style='color:#808030; '>=</span> Tracker<span style='color:#808030; '>.</span><span style='color:#797997; '>prototype</span><span style='color:#800080; '>;</span><br/>
+	p<span style='color:#808030; '>.</span>get <span style='color:#808030; '>=</span> noopfn<span style='color:#800080; '>;</span><br/>
+	p<span style='color:#808030; '>.</span>set <span style='color:#808030; '>=</span> noopfn<span style='color:#800080; '>;</span><br/>
+	p<span style='color:#808030; '>.</span>send <span style='color:#808030; '>=</span> noopfn<span style='color:#800080; '>;</span><br/>
+	<span style='color:#696969; '>//</span><br/>
+	<span style='color:#800000; font-weight:bold; '>var</span> gaName <span style='color:#808030; '>=</span> window<span style='color:#808030; '>.</span>GoogleAnalyticsObject <span style='color:#808030; '>||</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>ga</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span><br/>
+	<span style='color:#800000; font-weight:bold; '>var</span> ga <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+		<span style='color:#800000; font-weight:bold; '>var</span> len <span style='color:#808030; '>=</span> <span style='color:#797997; '>arguments</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span><span style='color:#800080; '>;</span><br/>
+		<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span> len <span style='color:#808030; '>===</span> <span style='color:#008c00; '>0</span> <span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+			<span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span><br/>
+		<span style='color:#800080; '>}</span><br/>
+		<span style='color:#800000; font-weight:bold; '>var</span> f <span style='color:#808030; '>=</span> <span style='color:#797997; '>arguments</span><span style='color:#808030; '>[</span>len<span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span><br/>
+		<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span> <span style='color:#800000; font-weight:bold; '>typeof</span> f <span style='color:#808030; '>!==</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>object</span><span style='color:#800000; '>'</span> <span style='color:#808030; '>||</span> f <span style='color:#808030; '>===</span> <span style='color:#0f4d75; '>null</span> <span style='color:#808030; '>||</span> <span style='color:#800000; font-weight:bold; '>typeof</span> f<span style='color:#808030; '>.</span>hitCallback <span style='color:#808030; '>!==</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>function</span><span style='color:#800000; '>'</span> <span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+			<span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span><br/>
+		<span style='color:#800080; '>}</span><br/>
+		<span style='color:#800000; font-weight:bold; '>try</span> <span style='color:#800080; '>{</span><br/>
+			f<span style='color:#808030; '>.</span>hitCallback<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+		<span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>catch</span> <span style='color:#808030; '>(</span>ex<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+		<span style='color:#800080; '>}</span><br/>
+	<span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+	ga<span style='color:#808030; '>.</span>create <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+		<span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#800000; font-weight:bold; '>new</span> Tracker<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+	<span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+	ga<span style='color:#808030; '>.</span>getByName <span style='color:#808030; '>=</span> noopnullfn<span style='color:#800080; '>;</span><br/>
+	ga<span style='color:#808030; '>.</span>getAll <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+		<span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span><br/>
+	<span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+	ga<span style='color:#808030; '>.</span>remove <span style='color:#808030; '>=</span> noopfn<span style='color:#800080; '>;</span><br/>
+	window<span style='color:#808030; '>[</span>gaName<span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> ga<span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+</pre><br/>
+<br/>
+Like it? Hate it?<br/>
+<br/>
+It does not matter. It is there!<br/>
+<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/http-non-standard-methods">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/supersu-systemless-false">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/supersu-systemless-false">SuperSU SYSTEMLESS=false</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cast-senderadblock-finder">cast_sender.js - AdBlock finder</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/even-smaller-gif">Even Smaller GIF</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/eset-subdomains">ESet-Related Sub-Domains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sm-n920c_mm_skyhigh34_mod_eladkarako-zip">sm-n920c_mm_skyhigh34_mod_eladkarako.zip</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/backup-network-architecture">Windows Tech Ninja - Backup/Restore Your Network Architecture</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tcp-z">TCP-Z</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-high-interest-video-thumbnails">FFMPEG - High-Interest Video Thumbnails</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/save-songs-from-pandora-radio">Save Songs From Pandora Radio</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-time-range-to-time-diff-using-javascript">FFMPEG Time-Range To Time-Diff Using JavaScript</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-correct-way-to-fast-cut-video">FFMPEG Correct Way to Fast Cut Video</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/n-state-html-element">N-State HTML Element</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/contenteditable-states">contentEditable States</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-720p-vid-data-sample">YouTube 720p Vid Data Sample</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wmidiag-plus-fixer">WMIDiag.vbs - WMI Diagnostic Script + WMI Fixer</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/element-size">JavaScript Ninja - Element's Measurements</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

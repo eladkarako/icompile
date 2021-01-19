@@ -1,0 +1,3 @@
+<h2><img class="alignnone wp-image-1217 size-full" src="https://icompile.eladkarako.com/_uploads/2014/06/2014-06-13_231446.png" alt="HTML5 Security Cheatsheet" width="557" height="253" /></h2>
+<h2><a title="html5sec.org - HTML5 Security Cheatsheet" href="html5sec.org" target="_blank">html5sec.org</a></h2>
+<h2><a title="html5sec.org - HTML5 Security Cheatsheet RSS" href="http://html5sec.org/rss" target="_blank">html5sec.org/rss</a></h2>

@@ -1,0 +1,2 @@
+<h3><pre>git submodule foreach git pull origin master <span style='color:#800080; '>&amp;&amp;</span> git pull --recurse-submodules <span style='color:#800080; '>&amp;&amp;</span> git submodule update <span style='color:#800080; '>&amp;&amp;</span> git submodule update --recursive
+</pre></h3>', 'Git Update

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>File-Sharing Hosts Logos</title>
+  <meta itemprop="name"                                content="File-Sharing Hosts Logos"       />
+  <meta name="dcterms.title"                           content="File-Sharing Hosts Logos"       />
+  <meta property="og:title"                            content="File-Sharing Hosts Logos"       />
+  <meta name="twitter:title"                           content="File-Sharing Hosts Logos"       />
+  <meta name="twitter:text:title"                      content="File-Sharing Hosts Logos"       />
+  <meta name="application-name"                        content="File-Sharing Hosts Logos"       />
+  <meta name="subject"                                 content="File-Sharing Hosts Logos"       />
+  <meta name="apple-mobile-web-app-title"              content="File-Sharing Hosts Logos"       />
+  <meta name="msapplication-tooltip"                   content="File-Sharing Hosts Logos"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="File-Sharing Hosts Logos"       />
+  <meta itemprop="description"                         content="File-Sharing Hosts Logos"       />
+  <meta name="dcterms.description"                     content="File-Sharing Hosts Logos"       />
+  <meta name="twitter:description"                     content="File-Sharing Hosts Logos"       />
+  <meta property="og:description"                      content="File-Sharing Hosts Logos"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="abtn,amount,anonhosted,archives,attribution,blank,business,code,color,commons,contact,creative,currency,dcews,dcmitype,dcoffee,dicon,donatecc,donations,download,egif,elad,emxn,file,files,filesfm,font,free,gamefront,hcvav,host,hosts,html,hugefiles,icyo,image,item,karako,license,licensed,licenses,logo,logos,lvajw,mirror,number,optimized,paypal,property,purl,rdlct,sendmyway,share,sharing,size,solidfiles,speedyshare,stillimage,target,terms,title,tnhmei,turbobit,tusfiles,type,ublpvb,usage,userscloud,utpm,wbpdqe,webscr,xmlns,zippyshare,zpyn,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="abtn,amount,anonhosted,archives,attribution,blank,business,code,color,commons,contact,creative,currency,dcews,dcmitype,dcoffee,dicon,donatecc,donations,download,egif,elad,emxn,file,files,filesfm,font,free,gamefront,hcvav,host,hosts,html,hugefiles,icyo,image,item,karako,license,licensed,licenses,logo,logos,lvajw,mirror,number,optimized,paypal,property,purl,rdlct,sendmyway,share,sharing,size,solidfiles,speedyshare,stillimage,target,terms,title,tnhmei,turbobit,tusfiles,type,ublpvb,usage,userscloud,utpm,wbpdqe,webscr,xmlns,zippyshare,zpyn,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/network-traffic-analyze-tools"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/network-traffic-analyze-tools"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/efficient-json-table-data-representation"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/file-sharing-hosts-logos"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/file-sharing-hosts-logos"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/file-sharing-hosts-logos"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/file-sharing-hosts-logos"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/file-sharing-hosts-logos"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/file-sharing-hosts-logos"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-02-27T01:03:19+00:00"     />
+  <meta name="page-datetime"                           content="2016-02-27T01:03:19+00:00"     />
+  <meta property="article:published_time"              content="2016-02-27T01:03:19+00:00"     />
+  <meta name="dcterms.date"                            content="2016-02-27T01:03:19+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-02-29T11:35:02+00:00"    />
+  <meta property="article:modified_time"               content="2016-02-29T11:35:02+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/file-sharing-hosts-logos"
+,"url"             : "https://icompile.eladkarako.com/file-sharing-hosts-logos"
+,"headline"        : "File-Sharing Hosts Logos"
+,"description"     : "File-Sharing Hosts Logos"
+,"datePosted"      : "2016-02-27T01:03:19+00:00"
+,"dateCreated"     : "2016-02-27T01:03:19+00:00"
+,"datePublished"   : "2016-02-27T01:03:19+00:00"
+,"dateModified"    : "2016-02-29T11:35:02+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0009994356541">
+  <header>
+    <h1 itemprop="headline">File-Sharing Hosts Logos</h1>
+    <sup>Posted at <time datetime="2016-02-29T11:35:02+00:00" itemprop="dateModified">Mon, 29 Feb 2016 11:35:02 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/02/icompile.eladkarako.com_host_share_logo.jpg" alt="icompile.eladkarako.com_host_share_logo" rem-width="613" rem-height="441" class="aligncenter size-full wp-image-4755" /><br/>
+<br/>
+<!--more--><br/>
+<br/>
+<code>icompile.eladkarako.com_file-sharing-hosts-logos_175x34_hd.7z</code><br/>
+<em>(139KB - Each: 175x34 ~4KB)</em><br/>
+<br/>
+<a mirror target="_blank" title="ZippyShare" href="http://www103.zippyshare.com/v/Is76KC5i/file.html">http://www103.zippyshare.com/v/Is76KC5i/file.html</a><br/>
+<a mirror target="_blank" title="SolidFiles" href="http://www.solidfiles.com/d/4240dbf61d">http://www.solidfiles.com/d/4240dbf61d</a><br/>
+<a mirror target="_blank" title="HugeFiles" href="http://hugefiles.net/3d3940tnhmei">http://hugefiles.net/3d3940tnhmei</a><br/>
+<a mirror target="_blank" title="SendMyWay" href="https://www.sendmyway.com/v06139l2icyo">https://www.sendmyway.com/v06139l2icyo</a><br/>
+<a mirror target="_blank" title="TurboBit" href="http://turbobit.net/50820zpyn1xw.html">http://turbobit.net/50820zpyn1xw.html</a><br/>
+<a mirror target="_blank" title="GameFront" href="http://www.gamefront.com/files/25506675/icompile.eladkarako.com_file-sharing-hosts-logos_175x34_hd.7z">http://www.gamefront.com/files/25506675/icompile.eladkarako.com_file-sharing-hosts-logos_175x34_hd.7z</a><br/>
+<a mirror target="_blank" title="SpeedyShare" href="http://www.speedyshare.com/file/EmxN4/icompile.eladkarako.com_file-sharing-hosts-logos_175x34_hd.7z">http://www.speedyshare.com/file/EmxN4/icompile.eladkarako.com_file-sharing-hosts-logos_175x34_hd.7z</a><br/>
+<a mirror target="_blank" title="FilesFm" href="https://files.fm/u/sqq3utpm">https://files.fm/u/sqq3utpm</a><br/>
+<a mirror target="_blank" title="TusFiles" href="https://tusfiles.net/b7exa3ublpvb">https://tusfiles.net/b7exa3ublpvb</a><br/>
+<a mirror target="_blank" title="UsersCloud" href="https://userscloud.com/u227wh7t373m">https://userscloud.com/u227wh7t373m</a><br/>
+<br/>
+<hr /><br/>
+<br/>
+<code>icompile.eladkarako.com_file-sharing-hosts-logos_98x19_optimized_low_color.7z</code><br/>
+<em>(18.9KB - Each: 98x19 ~0.450KB)</em><br/>
+<a mirror target="_blank" title="ZippyShare" href="http://www67.zippyshare.com/v/uW1dcewS/file.html">http://www67.zippyshare.com/v/uW1dcewS/file.html</a><br/>
+<a mirror target="_blank" title="TusFiles" href="https://tusfiles.net/ut60rdlct3qo">https://tusfiles.net/ut60rdlct3qo</a><br/>
+<a mirror target="_blank" title="SolidFiles" href="http://www.solidfiles.com/d/07c174dd61">http://www.solidfiles.com/d/07c174dd61</a><br/>
+<a mirror target="_blank" title="HugeFiles" href="http://hugefiles.net/563dqz2xt5fw">http://hugefiles.net/563dqz2xt5fw</a><br/>
+<a mirror target="_blank" title="SendMyWay" href="https://www.sendmyway.com/fl32lvajw7x3">https://www.sendmyway.com/fl32lvajw7x3</a><br/>
+<a mirror target="_blank" title="GameFront" href="http://www.gamefront.com/files/25506674/icompile.eladkarako.com_file-sharing-hosts-logos_98x19_optimized_low_color.7z">http://www.gamefront.com/files/25506674/icompile.eladkarako.com_file-sharing-hosts-logos_98x19_optimized_low_color.7z</a><br/>
+<a mirror target="_blank" title="TurboBit" href="http://turbobit.net/hcvav2j749ns.html">http://turbobit.net/hcvav2j749ns.html</a><br/>
+<a mirror target="_blank" title="SpeedyShare" href="http://www.speedyshare.com/file/4n8Bm/icompile.eladkarako.com_file-sharing-hosts-logos_98x19_optimized_low_color_0.7z">http://www.speedyshare.com/file/4n8Bm/icompile.eladkarako.com_file-sharing-hosts-logos_98x19_optimized_low_color_0.7z</a><br/>
+<a mirror target="_blank" title="FilesFm" href="https://files.fm/u/r4tw56a8">https://files.fm/u/r4tw56a8</a><br/>
+<a mirror target="_blank" title="UsersCloud" href="https://userscloud.com/z5w5f3wbpdqe">https://userscloud.com/z5w5f3wbpdqe</a><br/>
+<br/>
+Usage And Download Is Free.<br/>
+<br/>
+<hr /><br/>
+<br/>
+<div style="font-size:8pt"><br/>
+<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/StillImage?from=icompile.eladkarako.com" property="dct:title" rel="dct:type">File-Sharing Hosts Logos</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://icompile.eladkarako.com/file-sharing-hosts-logos/" property="cc:attributionName" rel="cc:attributionURL">Elad Karako</a> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/?from=icompile.eladkarako.com">Creative Commons Attribution 4.0 International License</a>. <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=7994YX29444PA&lc=US&item_name=Elad%20Karako&item_number=stackoverflow%2dcoffee%2dicon&amount=0%2e50&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted&from=icompile.eladkarako.com" target="_blank">Donations</a> are welcome. :]<br/>
+<hr /><br/>
+<em>If you need help with the archives, just <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=7994YX29444PA&lc=US&item_name=Elad%20Karako&item_number=stackoverflow%2dcoffee%2dicon&amount=0%2e50&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted" target="_blank">contact me</a>.</em><br/>
+</div></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/network-traffic-analyze-tools">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/efficient-json-table-data-representation">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/efficient-json-table-data-representation">Efficient JSON-Table Data Representation</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/clockwork-recovery-img-to-tar-md5">Clockwork Recovery img to tar.md5</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-implement-select-for-all-html-elements">JavaScript Ninja - Implement .select() For All HTML-Elements</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/android-synapse-dynamic-translation-layer-color">Android Synapse - Dynamic Translation Layer Color</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/reverse-engineer-and-modify-d-link-binary-firmware-file">Reverse Engineer And Modify D-Link Binary Firmware File</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/marshmallow-deepsleep-fix">Android Marshmallow 6.0.1 - DeepSleep Fix For Samsung Galaxy Note 5 SM-N920C noblelte</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-6-0-1-arm-arm64-jar-files">Complete Framework Files - Samsung Galaxy Note 5 - Android 6.0.1 - ARM + ARM64 + JAR Files</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/samsung-bloatware">Samsung Bloatware</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hola-and-luminati-network-subdomains">Hola And Luminati-Network SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/examples-of-accuweather-api-from-the-android-application">Examples Of AccuWeather-API From The Android-Application Including API-Key</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bi-cure-laser-nope">בי-קיור לייזר = חרטה ברטה ?</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-for-external-links">A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-ninja-techniques-external-links-icon-in-pure-css">CSS Ninja Techniques - External Links Icon In Pure CSS</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/apktool-advance-settings">APKTOOL Hidden Advance Command Line Switches</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/canon-maxify-mb2300-driver-disk-and-hebrew-manual-pdf">Canon MAXIFY MB2300 Driver Disk And Hebrew Manual (PDF)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/genymotion-flash-gapps-supersu-and-update-binary-su">SuperSU And Update Binary su</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>TCP/IP and Winsock clean fix for xp,vista,win7+</title>
+  <meta itemprop="name"                                content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+  <meta name="dcterms.title"                           content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+  <meta property="og:title"                            content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+  <meta name="twitter:title"                           content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+  <meta name="twitter:text:title"                      content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+  <meta name="application-name"                        content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+  <meta name="subject"                                 content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+  <meta name="apple-mobile-web-app-title"              content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+  <meta name="msapplication-tooltip"                   content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+  <meta itemprop="description"                         content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+  <meta name="dcterms.description"                     content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+  <meta name="twitter:description"                     content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+  <meta property="og:description"                      content="TCP/IP and Winsock clean fix for xp,vista,win7+"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="adapter,advfirewall,allprofiles,ansi,bold,branchcache,cache,clean,click,color,connection,copy,default,delete,direct,disable,disabled,echo,edit,esetlog,extension,feature,file,firewall,flush,font,handle,hardcore,httpstunnel,interface,interfaces,lists,make,march,mode,netsh,network,older,opmode,optimize,paste,pause,portproxy,profile,proxy,rebuild,rename,reset,routing,server,software,state,strong,temp,timeout,timeouttype,tracing,traffic,turn,versions,vista,weight,windows,winhttp,winsock,work,works,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="adapter,advfirewall,allprofiles,ansi,bold,branchcache,cache,clean,click,color,connection,copy,default,delete,direct,disable,disabled,echo,edit,esetlog,extension,feature,file,firewall,flush,font,handle,hardcore,httpstunnel,interface,interfaces,lists,make,march,mode,netsh,network,older,opmode,optimize,paste,pause,portproxy,profile,proxy,rebuild,rename,reset,routing,server,software,state,strong,temp,timeout,timeouttype,tracing,traffic,turn,versions,vista,weight,windows,winhttp,winsock,work,works,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/genymotion-flash-gapps-supersu-and-update-binary-su"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/genymotion-flash-gapps-supersu-and-update-binary-su"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/zero-plugin-solution-for-disqus-on-wordpress"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/tcpip-and-winsock-clean-fix-for-xpvistawin7"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/tcpip-and-winsock-clean-fix-for-xpvistawin7"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/tcpip-and-winsock-clean-fix-for-xpvistawin7"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/tcpip-and-winsock-clean-fix-for-xpvistawin7"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/tcpip-and-winsock-clean-fix-for-xpvistawin7"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/tcpip-and-winsock-clean-fix-for-xpvistawin7"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2012-07-11T12:57:56+00:00"     />
+  <meta name="page-datetime"                           content="2012-07-11T12:57:56+00:00"     />
+  <meta property="article:published_time"              content="2012-07-11T12:57:56+00:00"     />
+  <meta name="dcterms.date"                            content="2012-07-11T12:57:56+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-03-14T05:50:12+00:00"    />
+  <meta property="article:modified_time"               content="2016-03-14T05:50:12+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/tcpip-and-winsock-clean-fix-for-xpvistawin7"
+,"url"             : "https://icompile.eladkarako.com/tcpip-and-winsock-clean-fix-for-xpvistawin7"
+,"headline"        : "TCP/IP and Winsock clean fix for xp,vista,win7+"
+,"description"     : "TCP/IP and Winsock clean fix for xp,vista,win7+"
+,"datePosted"      : "2012-07-11T12:57:56+00:00"
+,"dateCreated"     : "2012-07-11T12:57:56+00:00"
+,"datePublished"   : "2012-07-11T12:57:56+00:00"
+,"dateModified"    : "2016-03-14T05:50:12+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006741102431">
+  <header>
+    <h1 itemprop="headline">TCP/IP and Winsock clean fix for xp,vista,win7+</h1>
+    <sup>Posted at <time datetime="2016-03-14T05:50:12+00:00" itemprop="dateModified">Mon, 14 Mar 2016 05:50:12 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">Edit: March 2016 - Copy&Paste this to a new text-file, rename the extension from txt to cmd, and right click, run as Administrator.<br/>
+<br/>
+<pre><span style='color:#308080; '>@</span><span style='color:#200080; font-weight:bold; '>echo on</span><br/>
+<span style='color:#595979; '>::-------------------------------------------------------------------Firewall Reset (firewall works on XP,7,8+, advfirewall work on 7,8+)</span><br/>
+netsh firewall reset<br/>
+netsh advfirewall reset<br/>
+<br/>
+<span style='color:#595979; '>::-------------------------------------------------------------------Disable Firewall (firewall works on XP,7,8+, advfirewall work on 7,8+)</span><br/>
+netsh firewall <span style='color:#200080; font-weight:bold; '>set</span> opmode <span style='color:#200080; font-weight:bold; '>mode</span><span style='color:#308080; '>=</span>DISABLE profile<span style='color:#308080; '>=</span>ALL<br/>
+netsh advfirewall <span style='color:#200080; font-weight:bold; '>set</span> allprofiles state <span style='color:#200080; font-weight:bold; '>off</span><br/>
+<br/>
+<span style='color:#595979; '>::-------------------------------------------------------------------delete http cache</span><br/>
+netsh nap reset<br/>
+netsh rpc reset<br/>
+netsh winhttp reset<br/>
+netsh http flush<br/>
+netsh http delete timeout timeouttype<span style='color:#308080; '>=</span>idleconnectiontimeout<br/>
+netsh http delete timeout timeouttype<span style='color:#308080; '>=</span>headerwaittimeout<br/>
+<br/>
+<span style='color:#595979; '>::-------------------------------------------------------------------make connection direct</span><br/>
+netsh winhttp reset proxy<br/>
+<br/>
+<span style='color:#595979; '>::-------------------------------------------------------------------disable tracing (default = disabled, ansi, 65535)</span><br/>
+netsh winhttp reset tracing<br/>
+<br/>
+<span style='color:#595979; '>::-------------------------------------------------------------------delete http cache</span><br/>
+<br/>
+netsh http delete cache<br/>
+<br/>
+<span style='color:#595979; '>::-------------------------------------------------------------------BranchCache Optimize WAN traffic (Windows Server 2008 R2 and Windows® 7)</span><br/>
+netsh branchcache reset<br/>
+<br/>
+<span style='color:#595979; '>::-------------------------------------------------------------------Routing Lists Clear</span><br/>
+netsh routing reset<br/>
+<br/>
+<span style='color:#595979; '>::-------------------------------------------------------------------Network-Adapter's Software Default (Winsock Reset and Rebuild)</span><br/>
+netsh winsock reset<br/>
+<br/>
+<span style='color:#595979; '>::-------------------------------------------------------------------BranchCache is a new feature of Windows Server 2008 R2 and Windows® 7. BranchCache </span><br/>
+netsh interface ipv4 reset<br/>
+netsh interface ipv6 reset<br/>
+<br/>
+<span style='color:#595979; '>::-------------------------------------------------------------------Network-Interfaces Reset</span><br/>
+netsh interface reset all<br/>
+<br/>
+netsh interface httpstunnel reset<br/>
+<br/>
+<br/>
+<span style='color:#595979; '>::-------------------------------------------------------------------Hardcore TCP/IP Reset and Rebuild</span><br/>
+netsh int ip reset c<span style='color:#308080; '>:</span><span style='color:#308080; '>\\</span>temp<span style='color:#308080; '>\\</span>netsh_ip_reset_log.txt<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<span style='color:#200080; font-weight:bold; '>pause</span><br/>
+</pre><br/>
+<br/>
+<hr /><br/>
+<br/>
+older versions:<br/>
+<br/>
+<br/>
+<strong>handle windows xp clean fix<br/>
+</strong><br/>
+@echo off<br/>
+echo.<br/>
+echo -Firewall Reset and Turn-Off.-------------<br/>
+echo -----------------------------<br/>
+netsh firewall reset<br/>
+netsh firewall set opmode mode=DISABLE profile=ALL<br/>
+<br/>
+echo.<br/>
+echo -Routing Lists Clear.-------------<br/>
+echo ---------------------<br/>
+netsh routing reset<br/>
+<br/>
+echo.<br/>
+echo -Winsock Reset and Rebuild.-------------<br/>
+echo ---------------------<br/>
+netsh winsock reset<br/>
+<br/>
+echo.<br/>
+echo -Network-Interfaces Reset.-------------<br/>
+echo --------------------------<br/>
+netsh interface reset all<br/>
+<br/>
+echo.<br/>
+echo -Hardcore TCP/IP Reset and Rebuild.-------------<br/>
+echo -----------------------------------<br/>
+netsh int ip reset d:\esetlog.txt<br/>
+<br/>
+echo.<br/>
+echo -Done.<br/>
+pause<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<strong>handle windows 7 clean fix</strong><br/>
+<br/>
+netsh interface portproxy reset<br/>
+netsh http delete cache<br/>
+netsh interface tcp reset<br/>
+<br/>
+netsh rpc reset<br/>
+netsh winsock reset<br/>
+netsh winhttp reset<br/>
+<br/>
+netsh advfirewall reset<br/>
+netsh advfirewall set allprofiles state off<br/>
+netsh branchcache reset<br/>
+<br/>
+netsh int ip reset c:\esetlog.txt<br/>
+netsh int ipv4 reset c:\\ipv4reset.txt<br/>
+netsh int ipv6 reset c:\\ipv6reset.txt<br/>
+netsh int httpstunnel reset c:\\httpstunnel.txt<br/>
+netsh int tcp reset c:\\tcp.txt<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/genymotion-flash-gapps-supersu-and-update-binary-su">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/zero-plugin-solution-for-disqus-on-wordpress">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/zero-plugin-solution-for-disqus-on-wordpress">Zero Plugin Solution For Disqus On WordPress</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-compatible-javascript-window">Controllable-Window</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ublock-can-block-mutationevent">uBlock Can Block MutationEvent :)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/a-gentle-yet-effective-nul-css">Yet Effective - NUL CSS</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/right-to-left-and-hebrew-content-on-template-based-platform">Right-To-Left And Hebrew Content On Template-Based Platform</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-repeat-anything">JavaScript Snippet - Repeat Anything</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/very-wow-much-something">"Very Wow Much..." Something</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascriptphp-unicode-notes">JavaScript/PHP Unicode Notes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adblock-rules-for-an-ad-free-pandora">AdBlock-Rules For An Ad-Free Pandora (No Audio Ads!)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unofficial-dex2jar-2-1">Unofficial dex2jar/dex-tools 2.1 Nightly &#x1f527;</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/file-touch-format-one-liner">Unix Snippet - Get File's "Touch Date-Format" One-Liner</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/samsung-galaxy-recovery-and-download-mode">Samsung Galaxy Recovery And Download-Mode</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-text-wrapfold-on-specific-line-character-length">JavaScript Text Wrap/Fold On Specific Line-Character-Length</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/batman-logo-vector-graphic">Batman Logo Vector Graphic</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-lenovo-low-audio-volume">Solved: Lenovo Low Audio-Volume</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sexy-electronics">Sexy Electronics</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

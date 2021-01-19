@@ -1,0 +1,2 @@
+Could Not Resist The Temptation To Use One Of The More Iconic Quotes From The Terminator Franchise :)
+<img src="https://icompile.eladkarako.com/_uploads/2015/06/2015-06-21_234254.jpg" alt="Could Not Resist The Temptation To Use One Of The More Iconic Quotes From Terminator Franchise :)" rem-width="728" rem-height="410" class="size-full wp-image-3332" />

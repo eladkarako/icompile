@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Animated Israel Flag</title>
+  <meta itemprop="name"                                content="Animated Israel Flag"       />
+  <meta name="dcterms.title"                           content="Animated Israel Flag"       />
+  <meta property="og:title"                            content="Animated Israel Flag"       />
+  <meta name="twitter:title"                           content="Animated Israel Flag"       />
+  <meta name="twitter:text:title"                      content="Animated Israel Flag"       />
+  <meta name="application-name"                        content="Animated Israel Flag"       />
+  <meta name="subject"                                 content="Animated Israel Flag"       />
+  <meta name="apple-mobile-web-app-title"              content="Animated Israel Flag"       />
+  <meta name="msapplication-tooltip"                   content="Animated Israel Flag"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Animated Israel Flag"       />
+  <meta itemprop="description"                         content="Animated Israel Flag"       />
+  <meta name="dcterms.description"                     content="Animated Israel Flag"       />
+  <meta name="twitter:description"                     content="Animated Israel Flag"       />
+  <meta property="og:description"                      content="Animated Israel Flag"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="aboutisrael,algorithm,amplitude,angle,animated,animation,anthem,appearence,army,aspx,atzmaut,authorship,aviv,birthday,blank,blue,border,bump,calculate,calculated,category,cities,city,colors,common,commons,consists,continues,copyright,created,daaaa,dark,defence,defense,developed,domain,download,edge,edges,emblem,english,extremely,feeding,file,flag,flags,force,forces,formulas,frames,free,github,gold,graphic,haifa,hebrew,high,image,ineligible,information,intelligent,interest,israel,israelat,israeli,jerusalem,latest,laws,level,licensing,limitation,minister,mossad,movement,msec,naturally,naval,netanya,nofollow,ordinances,oref,original,originated,pages,pass,phase,phases,photoshop,physics,pikud,pixel,pixels,president,prime,processing,promulgated,property,protection,providing,public,pursuant,quality,releases,required,resolution,returning,riding,scratch,script,simulate,size,slightly,slimmed,smooth,smoothing,symbols,target,technical,terms,thumb,today,university,upload,usage,warp,wave,week,wiki,wikimedia,wikipedia,wind,wrote,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="aboutisrael,algorithm,amplitude,angle,animated,animation,anthem,appearence,army,aspx,atzmaut,authorship,aviv,birthday,blank,blue,border,bump,calculate,calculated,category,cities,city,colors,common,commons,consists,continues,copyright,created,daaaa,dark,defence,defense,developed,domain,download,edge,edges,emblem,english,extremely,feeding,file,flag,flags,force,forces,formulas,frames,free,github,gold,graphic,haifa,hebrew,high,image,ineligible,information,intelligent,interest,israel,israelat,israeli,jerusalem,latest,laws,level,licensing,limitation,minister,mossad,movement,msec,naturally,naval,netanya,nofollow,ordinances,oref,original,originated,pages,pass,phase,phases,photoshop,physics,pikud,pixel,pixels,president,prime,processing,promulgated,property,protection,providing,public,pursuant,quality,releases,required,resolution,returning,riding,scratch,script,simulate,size,slightly,slimmed,smooth,smoothing,symbols,target,technical,terms,thumb,today,university,upload,usage,warp,wave,week,wiki,wikimedia,wikipedia,wind,wrote,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/vcf-format-dev-hub-notes"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/vcf-format-dev-hub-notes"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/disable-youtube-spf"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/animated-israel-flag"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/animated-israel-flag"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/animated-israel-flag"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/animated-israel-flag"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/animated-israel-flag"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/animated-israel-flag"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-04-13T21:06:16+00:00"     />
+  <meta name="page-datetime"                           content="2016-04-13T21:06:16+00:00"     />
+  <meta property="article:published_time"              content="2016-04-13T21:06:16+00:00"     />
+  <meta name="dcterms.date"                            content="2016-04-13T21:06:16+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-04-13T21:42:32+00:00"    />
+  <meta property="article:modified_time"               content="2016-04-13T21:42:32+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/animated-israel-flag"
+,"url"             : "https://icompile.eladkarako.com/animated-israel-flag"
+,"headline"        : "Animated Israel Flag"
+,"description"     : "Animated Israel Flag"
+,"datePosted"      : "2016-04-13T21:06:16+00:00"
+,"dateCreated"     : "2016-04-13T21:06:16+00:00"
+,"datePublished"   : "2016-04-13T21:06:16+00:00"
+,"dateModified"    : "2016-04-13T21:42:32+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006751850641">
+  <header>
+    <h1 itemprop="headline">Animated Israel Flag</h1>
+    <sup>Posted at <time datetime="2016-04-13T21:42:32+00:00" itemprop="dateModified">Wed, 13 Apr 2016 21:42:32 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">Although Israel's independence-day (<a href="https://en.wikipedia.org/wiki/Yom_Ha%27atzmaut" target="_blank">Yom Ha'atzmaut</a>) is not quite-here just yet, (about a ~week from today, [--which is my birthday ;) &#x1f382;] ).<br/>
+<br/>
+High Quality [415KB]<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/04/icompile.eladkarako.com_free_download_free_usage_israel_flag_with_wind_movement_high_quality.gif"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/04/icompile.eladkarako.com_free_download_free_usage_israel_flag_with_wind_movement_high_quality.gif" alt="icompile.eladkarako.com_free_download_free_usage_israel_flag_with_wind_movement_high_quality" width="320" height="200" class="aligncenter size-full wp-image-5121" /></a><br/>
+<br/>
+Slimmed-Down Quality [191KB]<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/04/icompile.eladkarako.com_free_download_free_usage_israel_flag_with_wind_movement_slimmed_down_quality.gif"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/04/icompile.eladkarako.com_free_download_free_usage_israel_flag_with_wind_movement_slimmed_down_quality.gif" alt="icompile.eladkarako.com_free_download_free_usage_israel_flag_with_wind_movement_slimmed_down_quality" width="320" height="200" class="aligncenter size-full wp-image-5122" /></a><br/>
+<br/>
+<div box-like><br/>
+Technical information, and how I've done it..<br/>
+<br/>
+I've used the high-resolution <sup>1280×931 pixels</sup>of the Israel-flag from <a href="https://en.wikipedia.org/wiki/File:Flag_of_Israel.svg" target="_blank">wikipedia.org/wiki/File:Flag_of_Israel.svg</a><br/>
+<a href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flag_of_Israel.svg/1280px-Flag_of_Israel.svg.png" target="_blank">https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flag_of_Israel.svg/1280px-Flag_of_Israel.svg.png</a><br/>
+<br/>
+<hr /><br/>
+<br/>
+"feeding it" to a <a href="#" rel="nofollow">graphic-processing script</a> I've wrote for Photoshop, the script slightly warp the edges and "pass a wave" through the center-of-interest of the image,<br/>
+which required an intelligent algorithm I've developed from scratch.. <sub>naturally..</sub><br/>
+- providing extremely edge-smoothing (4×4 pixels for EACH PIXEL!!)<br/>
+- 40 frames (smooth animation)<br/>
+- the wave animation is created by a 60% Amplitude/ 40% appearence / 40deg angle wave-riding through the center-of interest of the image, simulate ~4% bump (you can actually calculate it using few university-level physics-101 formulas) and returning-phase (those terms probably won't tell n00b$ nothing..) of 100 event-phases.<br/>
+- the gif is high-quality 8bit (256 colors), continues animation with 50 msec delay between frames (calculated)<br/>
+</div><br/>
+<br/>
+<br/>
+<div box-like><br/>
+- "About":<br/>
+Flag Of Israel Wiki: <a rel="nofollow" href="https://en.wikipedia.org/wiki/Flag_of_Israel" target="_blank">English</a>/<a rel="nofollow" href="https://he.wikipedia.org/wiki/%D7%93%D7%92%D7%9C_%D7%99%D7%A9%D7%A8%D7%90%D7%9C" target="_blank">Hebrew</a><br/>
+<br/>
+- More "About":<br/>
+<a href="http://www.mfa.gov.il/mfa/aboutisrael/israelat50/pages/the%20flag%20and%20the%20emblem.aspx" target="_blank">http://www.mfa.gov.il/mfa/aboutisrael/israelat50/pages/the%20flag%20and%20the%20emblem.aspx</a><br/>
+<hr /><br/>
+<br/>
+- Licensing And Usage limitation:<br/>
+This file is ineligible for copyright and therefore in the public domain because it consists entirely of information that is common property and contains no original authorship..<br/>
+Anyway.. it should be used according to the Israeli Flag, Emblem and Anthem Law (1949), or the Israeli Protection of Symbols Law (1974), and according to the ordinances promulgated pursuant to these two laws.<br/>
+</div><br/>
+<!--more--><br/>
+<br/>
+<br/>
+<br /><hr /><br /><br/>
+<br/>
+Some more? daaaa...<br/>
+<br/>
+City of Tel-Aviv [433KB]<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag_cities__tel_aviv.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag_cities__tel_aviv.gif" alt="icompile.eladkarako.com_israel_flag_cities__tel_aviv" width="320" height="200" class="aligncenter size-full wp-image-5123" /></a><br/>
+<br/>
+City of Netanya [538KB]<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag_cities__netanya.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag_cities__netanya.gif" alt="icompile.eladkarako.com_israel_flag_cities__netanya" width="320" height="200" class="aligncenter size-full wp-image-5124" /></a><br/>
+<br/>
+City of Jerusalem [522KB]<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag_cities__jerusalem.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag_cities__jerusalem.gif" alt="icompile.eladkarako.com_israel_flag_cities__jerusalem" width="320" height="200" class="aligncenter size-full wp-image-5125" /></a><br/>
+<br/>
+City of Haifa [559KB]<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag_cities__haifa.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag_cities__haifa.gif" alt="icompile.eladkarako.com_israel_flag_cities__haifa" width="320" height="200" class="aligncenter size-full wp-image-5126" /></a><br/>
+<br/>
+<hr /><br/>
+<br/>
+Some more: <sup>originated from <a href="https://commons.wikimedia.org/wiki/Category:Flags_of_the_Israel_Defense_Forces" target="_blank">https://commons.wikimedia.org/wiki/Category:Flags_of_the_Israel_Defense_Forces</a></sup><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__emblem.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__emblem.gif" alt="icompile.eladkarako.com_israel_flag__emblem" width="320" height="200" class="aligncenter size-full wp-image-5129" /></a><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__emblem_blue_gold.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__emblem_blue_gold.gif" alt="icompile.eladkarako.com_israel_flag__emblem_blue_gold" width="320" height="200" class="aligncenter size-full wp-image-5130" /></a><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__emblem_dark_blue_border.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__emblem_dark_blue_border.gif" alt="icompile.eladkarako.com_israel_flag__emblem_dark_blue_border" width="320" height="200" class="aligncenter size-full wp-image-5131" /></a><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__emblem_dark_blue_full.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__emblem_dark_blue_full.gif" alt="icompile.eladkarako.com_israel_flag__emblem_dark_blue_full" width="320" height="200" class="aligncenter size-full wp-image-5132" /></a><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__emblem_gold.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__emblem_gold.gif" alt="icompile.eladkarako.com_israel_flag__emblem_gold" width="320" height="200" class="aligncenter size-full wp-image-5133" /></a><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__idf.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__idf.gif" alt="icompile.eladkarako.com_israel_flag__idf" width="320" height="200" class="aligncenter size-full wp-image-5134" /></a><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__idf_army.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__idf_army.gif" alt="icompile.eladkarako.com_israel_flag__idf_army" width="320" height="200" class="aligncenter size-full wp-image-5135" /></a><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__idf_israeli_air_force.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__idf_israeli_air_force.gif" alt="icompile.eladkarako.com_israel_flag__idf_israeli_air_force" width="320" height="200" class="aligncenter size-full wp-image-5136" /></a><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__idf_naval.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__idf_naval.gif" alt="icompile.eladkarako.com_israel_flag__idf_naval" width="320" height="200" class="aligncenter size-full wp-image-5137" /></a><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__idf_pikud_ha_oref.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__idf_pikud_ha_oref.gif" alt="icompile.eladkarako.com_israel_flag__idf_pikud_ha_oref" width="320" height="200" class="aligncenter size-full wp-image-5138" /></a><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__minister_of_defence.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__minister_of_defence.gif" alt="icompile.eladkarako.com_israel_flag__minister_of_defence" width="320" height="200" class="aligncenter size-full wp-image-5139" /></a><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__mossad.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__mossad.gif" alt="icompile.eladkarako.com_israel_flag__mossad" width="320" height="200" class="aligncenter size-full wp-image-5140" /></a><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__president.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__president.gif" alt="icompile.eladkarako.com_israel_flag__president" width="320" height="200" class="aligncenter size-full wp-image-5141" /></a><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__prime_minister.gif"><img loading="lazy" lazyload="on"  src="https://github.com/eladkarako/icompile/releases/download/latest/icompile.eladkarako.com_israel_flag__prime_minister.gif" alt="icompile.eladkarako.com_israel_flag__prime_minister" width="320" height="200" class="aligncenter size-full wp-image-5142" /></a></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/vcf-format-dev-hub-notes">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/disable-youtube-spf">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disable-youtube-spf">Disable YouTube SPF</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/urls-google-tia-text-input-assistant">URLs - Google TIA - Text Input Assistant</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-parse-time-format-into-number-of-seconds">JavaScript Snippet - Parse Time Format Into Number Of Seconds</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-123-cookie-to-hash-enumerator">JavaScript Snippet - 123 Cookie To Hash Enumerator</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stackoverflow-subdomains">Stackoverflow-Related Sub-Domains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/gae-script-headers">Google-App-Engine PHP - Script With Headers</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/other-google-app-engine-insights">Other Google App Engine Insights</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/happy-star-wars-day-2016">Happy Star-Wars Day! 2016</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-better-font-face-loader">CSS3 Better Font-Face Loader</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hebrew-html5-synthesis-api">Hebrew HTML5 Synthesis API</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-proxy-configuration-for-apache">HTML Proxy Configuration For Apache</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/http-non-standard-methods">HTTP Non-Standard Methods</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/you-cant-really-adblock-google-analytics-on-chrome">You Can't Really AdBlock Google-Analytics On Chrome</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/supersu-systemless-false">SuperSU SYSTEMLESS=false</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cast-senderadblock-finder">cast_sender.js - AdBlock finder</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/even-smaller-gif">Even Smaller GIF</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

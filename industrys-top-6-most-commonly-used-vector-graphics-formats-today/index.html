@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today</title>
+  <meta itemprop="name"                                content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+  <meta name="dcterms.title"                           content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+  <meta property="og:title"                            content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+  <meta name="twitter:title"                           content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+  <meta name="twitter:text:title"                      content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+  <meta name="application-name"                        content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+  <meta name="subject"                                 content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+  <meta name="apple-mobile-web-app-title"              content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+  <meta name="msapplication-tooltip"                   content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+  <meta itemprop="description"                         content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+  <meta name="dcterms.description"                     content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+  <meta name="twitter:description"                     content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+  <meta property="og:description"                      content="Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="adobe,alpha,android,apple,artwork,autocad,based,bitmap,black,blank,border,bottom,child,color,commonly,container,content,display,document,download,downloading,drawing,enhanced,exchange,float,format,formats,graphic,graphics,illustrator,industry,inline,interchange,lovely,margin,meta,metafile,nbsp,nofollow,padding,piss,portable,postscript,rgba,samples,scalable,size,small,solid,static,strong,target,template,today,ttable,type,vector,wiki,wikipedia,windows,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="adobe,alpha,android,apple,artwork,autocad,based,bitmap,black,blank,border,bottom,child,color,commonly,container,content,display,document,download,downloading,drawing,enhanced,exchange,float,format,formats,graphic,graphics,illustrator,industry,inline,interchange,lovely,margin,meta,metafile,nbsp,nofollow,padding,piss,portable,postscript,rgba,samples,scalable,size,small,solid,static,strong,target,template,today,ttable,type,vector,wiki,wikipedia,windows,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/javascript-ninja-solutions-aggregate-elements-positioning-and-size-with-an-additional-quick-recursive-tree-enumerator"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/javascript-ninja-solutions-aggregate-elements-positioning-and-size-with-an-additional-quick-recursive-tree-enumerator"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javascript-non-linear-random-numbers"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/industrys-top-6-most-commonly-used-vector-graphics-formats-today"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/industrys-top-6-most-commonly-used-vector-graphics-formats-today"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/industrys-top-6-most-commonly-used-vector-graphics-formats-today"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/industrys-top-6-most-commonly-used-vector-graphics-formats-today"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/industrys-top-6-most-commonly-used-vector-graphics-formats-today"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/industrys-top-6-most-commonly-used-vector-graphics-formats-today"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-09-27T13:06:53+00:00"     />
+  <meta name="page-datetime"                           content="2014-09-27T13:06:53+00:00"     />
+  <meta property="article:published_time"              content="2014-09-27T13:06:53+00:00"     />
+  <meta name="dcterms.date"                            content="2014-09-27T13:06:53+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2014-09-27T13:28:57+00:00"    />
+  <meta property="article:modified_time"               content="2014-09-27T13:28:57+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/industrys-top-6-most-commonly-used-vector-graphics-formats-today"
+,"url"             : "https://icompile.eladkarako.com/industrys-top-6-most-commonly-used-vector-graphics-formats-today"
+,"headline"        : "Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"
+,"description"     : "Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today"
+,"datePosted"      : "2014-09-27T13:06:53+00:00"
+,"dateCreated"     : "2014-09-27T13:06:53+00:00"
+,"datePublished"   : "2014-09-27T13:06:53+00:00"
+,"dateModified"    : "2014-09-27T13:28:57+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003123281141">
+  <header>
+    <h1 itemprop="headline">Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today</h1>
+    <sup>Posted at <time datetime="2014-09-27T13:28:57+00:00" itemprop="dateModified">Sat, 27 Sep 2014 13:28:57 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><br/>
+<h3><br/>
+<blockquote><br/>
+<strong><em>.ai</em></strong> - Adobe Illustrator (Also Known As Adobe Illustrator Artwork) <small> &nbsp;  &nbsp; <a target="_blank" rel="nofollow" href="http://en.wikipedia.org/wiki/Adobe_Illustrator_Artwork">-> wiki</a></small><br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+<strong><em>.dxf</em></strong> - Drawing Exchange Format (Also Known As AutoCAD DXF or Drawing Interchange Format) <small> &nbsp;  &nbsp; <a target="_blank" rel="nofollow" href="http://en.wikipedia.org/wiki/AutoCAD_DXF">-> wiki</a></small><br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+<strong><em>.emf</em></strong> - Enhanced Meta Format (Also Known As Windows Enhanced Metafile Format) <small> &nbsp;  &nbsp; <a target="_blank" rel="nofollow" href="http://en.wikipedia.org/wiki/Windows_Metafile">-> wiki</a></small><br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+<strong><em>.eps</em></strong> - Encapsulated PostScript<small> &nbsp;  &nbsp; <a target="_blank" rel="nofollow" href="http://en.wikipedia.org/wiki/Encapsulated_PostScript">-> wiki</a></small><br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+<strong><em>.pdf</em></strong> - Portable Document Format<small> &nbsp;  &nbsp; <a target="_blank" rel="nofollow" href="http://en.wikipedia.org/wiki/Portable_Document_Format">-> wiki</a></small><br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+<strong><em>.svg</em></strong> - Scalable Vector Graphics<small> &nbsp;  &nbsp; <a target="_blank" rel="nofollow" href="http://en.wikipedia.org/wiki/Scalable_Vector_Graphics">-> wiki</a></small><br/>
+</blockquote><br/>
+</h3><br/>
+<br/>
+<br/><hr/><br/>
+<br/>
+<h4><br/>
+<em>Downloading Vector-Graphic Samples</em><br/>
+<br/>
+<pre><style type="text/css">
+/* size */
+#download_container_for_vector_graphic1 .ttable, 
+#download_container_for_vector_graphic1 .ttable:before, 
+#download_container_for_vector_graphic1 .ttable:after, 
+#download_container_for_vector_graphic1 .ttable.clear, 
+#download_container_for_vector_graphic1 .ttable.clear:before, 
+#download_container_for_vector_graphic1 .ttable.clear:after{
+  content:       "";
+  clear:         both;
+  padding:       0px;
+  margin:        0px;
+  width:         100%;
+}
+.ttable div{ 
+  float:         left;
+  display:       inline;
+  margin-right:  5px;
+  margin-bottom: 5px;
+}
+ 
+#download_container_for_vector_graphic1 .ttable div:last-child { margin-right: 0; }
+ 
+/* style */
+#download_container_for_vector_graphic1 .ttable div{
+  border:            1px solid black;
+  padding-left:      10px;
+  padding-right:     10px;
+  background-color:  rgba(237,237,214,.4);
+}
+</style></pre><br/>
+<div id="download_container_for_vector_graphic1"><br/>
+<div class="ttable"><br/>
+<div><a target="_blank" href="https://icompile.eladkarako.com/_uploads/2014/09/android_piss_on_apple_ai.ai"><strong><em>.ai</em></strong></a></div><br/>
+<br/>
+<div><a target="_blank" href="https://icompile.eladkarako.com/_uploads/2014/09/android_piss_on_apple_dxf.dxf"><strong><em>.dxf</em></strong></a></div><br/>
+<br/>
+<div><a target="_blank" href="https://icompile.eladkarako.com/_uploads/2014/09/android_piss_on_apple_emf.emf"><strong><em>.emf</em></strong></a></div><br/>
+<br/>
+<div><a target="_blank" href="https://icompile.eladkarako.com/_uploads/2014/09/android_piss_on_apple_eps.eps"><strong><em>.eps</em></strong></a></div><br/>
+<br/>
+<div><a target="_blank" href="https://icompile.eladkarako.com/_uploads/2014/09/android_piss_on_apple_pdf.pdf"><strong><em>.pdf</em></strong></a></div><br/>
+<br/>
+<div><a target="_blank" href="https://icompile.eladkarako.com/_uploads/2014/09/android_piss_on_apple_svg.svg"><strong><em>.svg</em></strong></a></div><br/>
+<br/>
+</div><br/>
+</div><br/>
+<div style="clear:both"></div><br/>
+<br/>
+<br/>
+All are based on this *lovely* static-bitmap as template (background enhanced with alpha-transparency):<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2014/09/android_piss_on_apple_png.png" /><br/>
+:)<br/>
+<br/>
+</h4><br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-solutions-aggregate-elements-positioning-and-size-with-an-additional-quick-recursive-tree-enumerator">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-non-linear-random-numbers">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-non-linear-random-numbers">JavaScript Non-Linear Random Numbers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/loose-cross-domain-xml-policy">Loose Cross-Domain XML Policy</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/morfix-melingo-android-application-request-response">Morfix Melingo Android Application Request/Response</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bbc-iplayer-android-application-request-response">BBC iPlayer Android Application Request-Response</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-quick-and-dirty-pure-client-side-qr-code-rendering-playground">JavaScript Quick And Dirty - Pure Client-Side QR Code Rendering Playground</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows-7-test-mode-onoff">Windows 7 Test Mode ON/OFF</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bash-rename-all-files-lower-case">bash rename all files lower-case</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/constantine-vs-hellblazer-success">Constantine vs. Hellblazer - Success! </a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/lenovo-x220-model-42914cg-direct-link-drivers-to-lenovo-website">Lenovo X220 Model 42914CG - Direct Link Drivers To Lenovo Website</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-techniques-discovering-ad-block-implementation-example">JavaScript Ninja Techniques - Discovering Ad-Block + Implementation Example</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromeflagsenable-app-window-controls">chrome://flags/#enable-app-window-controls</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ginger-manual-uninstall">Ginger Manual Uninstall</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/make-windows-7-sp1-use-microsoft-update">Make Windows 7 SP1 Use Microsoft Update</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/prototype-js-1-7-2-kills-console-log">Prototype.JS 1.7.2 Kills Console-Log!!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/lenovo-ultranav-trackpointtrackpad-scroll-is-not-working-fixed">Lenovo UltraNav TrackPoint/TrackPad - Scroll Is Not Working Fixed</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unicode-checkbox-check-characters">Unicode Checkbox / Check Characters</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

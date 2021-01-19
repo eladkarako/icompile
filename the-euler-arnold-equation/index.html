@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>The Euler-Arnold equation</title>
+  <meta itemprop="name"                                content="The Euler-Arnold equation"       />
+  <meta name="dcterms.title"                           content="The Euler-Arnold equation"       />
+  <meta property="og:title"                            content="The Euler-Arnold equation"       />
+  <meta name="twitter:title"                           content="The Euler-Arnold equation"       />
+  <meta name="twitter:text:title"                      content="The Euler-Arnold equation"       />
+  <meta name="application-name"                        content="The Euler-Arnold equation"       />
+  <meta name="subject"                                 content="The Euler-Arnold equation"       />
+  <meta name="apple-mobile-web-app-title"              content="The Euler-Arnold equation"       />
+  <meta name="msapplication-tooltip"                   content="The Euler-Arnold equation"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="The Euler-Arnold equation"       />
+  <meta itemprop="description"                         content="The Euler-Arnold equation"       />
+  <meta name="dcterms.description"                     content="The Euler-Arnold equation"       />
+  <meta name="twitter:description"                     content="The Euler-Arnold equation"       />
+  <meta property="og:description"                      content="The Euler-Arnold equation"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="abstract,adjoint,affecting,angle,arnold,assigns,assumed,boundary,bundle,cfrac,cgamma,cint,ciota,clangle,cogeodesic,constant,constraint,coordinates,cotangent,crangle,crightarrow,critical,ctimes,curve,curves,defined,definition,degeneracy,denote,dynamical,elements,endpoints,energy,equation,equipped,euler,external,ffffff,fixed,flow,flows,font,forces,formula,frac,freely,functional,fundamental,gamma,geodesic,geodesics,governs,group,hamilton,hamiltonian,holding,identified,ightarrow,index,inverse,invertible,iota,langle,latex,length,manifold,metric,minimise,minimisers,minimising,momentum,motion,moves,notation,pair,particle,perspective,physical,position,post,product,providing,quantity,rank,recall,referred,replaces,requirement,riemannian,roman,save,smooth,smoothly,speed,square,state,stay,subject,symmetric,system,tangent,tensor,terms,times,title,tractable,turns,varying,vector,vectors,velocity,viewed,wiki,wikipedia,wordpress,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="abstract,adjoint,affecting,angle,arnold,assigns,assumed,boundary,bundle,cfrac,cgamma,cint,ciota,clangle,cogeodesic,constant,constraint,coordinates,cotangent,crangle,crightarrow,critical,ctimes,curve,curves,defined,definition,degeneracy,denote,dynamical,elements,endpoints,energy,equation,equipped,euler,external,ffffff,fixed,flow,flows,font,forces,formula,frac,freely,functional,fundamental,gamma,geodesic,geodesics,governs,group,hamilton,hamiltonian,holding,identified,ightarrow,index,inverse,invertible,iota,langle,latex,length,manifold,metric,minimise,minimisers,minimising,momentum,motion,moves,notation,pair,particle,perspective,physical,position,post,product,providing,quantity,rank,recall,referred,replaces,requirement,riemannian,roman,save,smooth,smoothly,speed,square,state,stay,subject,symmetric,system,tangent,tensor,terms,times,title,tractable,turns,varying,vector,vectors,velocity,viewed,wiki,wikipedia,wordpress,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/the-golden-thompson-inequality"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/the-golden-thompson-inequality"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/partial-differential-equations-two-dimensional-heat-equation"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/the-euler-arnold-equation"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/the-euler-arnold-equation"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/the-euler-arnold-equation"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/the-euler-arnold-equation"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/the-euler-arnold-equation"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/the-euler-arnold-equation"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2010-08-26T18:25:16+00:00"     />
+  <meta name="page-datetime"                           content="2010-08-26T18:25:16+00:00"     />
+  <meta property="article:published_time"              content="2010-08-26T18:25:16+00:00"     />
+  <meta name="dcterms.date"                            content="2010-08-26T18:25:16+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2010-08-27T18:51:33+00:00"    />
+  <meta property="article:modified_time"               content="2010-08-27T18:51:33+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/the-euler-arnold-equation"
+,"url"             : "https://icompile.eladkarako.com/the-euler-arnold-equation"
+,"headline"        : "The Euler-Arnold equation"
+,"description"     : "The Euler-Arnold equation"
+,"datePosted"      : "2010-08-26T18:25:16+00:00"
+,"dateCreated"     : "2010-08-26T18:25:16+00:00"
+,"datePublished"   : "2010-08-26T18:25:16+00:00"
+,"dateModified"    : "2010-08-27T18:51:33+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006117482821">
+  <header>
+    <h1 itemprop="headline">The Euler-Arnold equation</h1>
+    <sup>Posted at <time datetime="2010-08-27T18:51:33+00:00" itemprop="dateModified">Fri, 27 Aug 2010 18:51:33 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">A (smooth) <a href="http://en.wikipedia.org/wiki/Riemannian_manifold">Riemannian  manifold</a> is a smooth manifold <img loading="lazy" lazyload="on"  title="{M}" src="http://l.wordpress.com/latex.php?latex=%7BM%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{M}" /> without boundary, equipped with a  Riemannian metric <img loading="lazy" lazyload="on"  title="{{\m g}}" src="http://l.wordpress.com/latex.php?latex=%7B%7B%5Crm+g%7D%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{{\m g}}" />, which assigns a  length <img loading="lazy" lazyload="on"  title="{|v|_{{\m g}(x)} \\in  {\\bf R}^+}" src="http://l.wordpress.com/latex.php?latex=%7B%7Cv%7C_%7B%7B%5Crm+g%7D%28x%29%7D+%5Cin+%7B%5Cbf+R%7D%5E%2B%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{|v|_{{\m g}(x)} \\in {\\bf R}^+}" /> to every tangent vector <img loading="lazy" lazyload="on"  title="{v \\in T_x M}" src="http://l.wordpress.com/latex.php?latex=%7Bv+%5Cin+T_x+M%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{v \\in T_x M}" /> at a point <img loading="lazy" lazyload="on"  title="{x \\in M}" src="http://l.wordpress.com/latex.php?latex=%7Bx+%5Cin+M%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{x \\in M}" />, and more generally  assigns an inner product<br/>
+<br/>
+<img loading="lazy" lazyload="on"  title="\\displaystyle  \\langle v, w \angle_{{\m g}(x)} \\in {\\bf R}" src="http://l.wordpress.com/latex.php?latex=%5Cdisplaystyle++%5Clangle+v%2C+w+%5Crangle_%7B%7B%5Crm+g%7D%28x%29%7D+%5Cin+%7B%5Cbf+R%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="\\displaystyle  \\langle v, w \angle_{{\m g}(x)} \\in {\\bf R}" /><br/>
+<!--more--><br/>
+to every pair of tangent vectors <img loading="lazy" lazyload="on"  title="{v, w \\in T_x M}" src="http://l.wordpress.com/latex.php?latex=%7Bv%2C+w+%5Cin+T_x+M%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{v, w \\in T_x M}" /> at a  point <img loading="lazy" lazyload="on"  title="{x \\in M}" src="http://l.wordpress.com/latex.php?latex=%7Bx+%5Cin+M%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{x \\in M}" />. (We use Roman font  for <img loading="lazy" lazyload="on"  title="{g}" src="http://l.wordpress.com/latex.php?latex=%7Bg%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{g}" /> here, as we will need to use <img loading="lazy" lazyload="on"  title="{g}" src="http://l.wordpress.com/latex.php?latex=%7Bg%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{g}" /> to denote group elements later in  this post.) This inner product is assumed to symmetric, positive  definite, and smoothly varying in <img loading="lazy" lazyload="on"  title="{x}" src="http://l.wordpress.com/latex.php?latex=%7Bx%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{x}" />, and the length is then given in  terms of the inner product by the formula<br/>
+<img loading="lazy" lazyload="on"  title="\\displaystyle  |v|_{{\m g}(x)}^2 := \\langle v, v  \angle_{{\m g}(x)}." src="http://l.wordpress.com/latex.php?latex=%5Cdisplaystyle++%7Cv%7C_%7B%7B%5Crm+g%7D%28x%29%7D%5E2+%3A%3D+%5Clangle+v%2C+v+%5Crangle_%7B%7B%5Crm+g%7D%28x%29%7D.&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="\\displaystyle  |v|_{{\m g}(x)}^2 := \\langle v, v \angle_{{\m  g}(x)}." /><br/>
+<br/>
+In coordinates (and also using <a href="http://en.wikipedia.org/wiki/Abstract_index_notation">abstract  index notation</a>), the metric <img loading="lazy" lazyload="on"  title="{{\m g}}" src="http://l.wordpress.com/latex.php?latex=%7B%7B%5Crm+g%7D%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{{\m g}}" /> can be viewed as an  invertible symmetric rank <img loading="lazy" lazyload="on"  title="{(0,2)}" src="http://l.wordpress.com/latex.php?latex=%7B%280%2C2%29%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{(0,2)}" /> tensor <img loading="lazy" lazyload="on"  title="{{\m g}_{ij}(x)}" src="http://l.wordpress.com/latex.php?latex=%7B%7B%5Crm+g%7D_%7Bij%7D%28x%29%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{{\m g}_{ij}(x)}" />, with<br/>
+<br/>
+<img loading="lazy" lazyload="on"  title="\\displaystyle  \\langle v, w \angle_{{\m g}(x)} =  {\m g}_{ij}(x) v^i w^j." src="http://l.wordpress.com/latex.php?latex=%5Cdisplaystyle++%5Clangle+v%2C+w+%5Crangle_%7B%7B%5Crm+g%7D%28x%29%7D+%3D+%7B%5Crm+g%7D_%7Bij%7D%28x%29+v%5Ei+w%5Ej.&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="\\displaystyle  \\langle v, w \angle_{{\m g}(x)} = {\m g}_{ij}(x)  v^i w^j." /><br/>
+<br/>
+One can also view the Riemannian metric as providing a (self-adjoint)  identification between the <a href="http://en.wikipedia.org/wiki/Tangent_bundle">tangent bundle</a> <img loading="lazy" lazyload="on"  title="{TM}" src="http://l.wordpress.com/latex.php?latex=%7BTM%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{TM}" /> of the manifold and the <a href="http://en.wikipedia.org/wiki/Cotangent_bundle">cotangent bundle</a> <img loading="lazy" lazyload="on"  title="{T^* M}" src="http://l.wordpress.com/latex.php?latex=%7BT%5E%2A+M%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{T^* M}" />; indeed, every tangent  vector <img loading="lazy" lazyload="on"  title="{v \\in T_x M}" src="http://l.wordpress.com/latex.php?latex=%7Bv+%5Cin+T_x+M%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{v \\in T_x M}" /> is then  identified with the cotangent vector <img loading="lazy" lazyload="on"  title="{\\iota_{TM  \ightarrow T^* M}(v) \\in T_x^* M}" src="http://l.wordpress.com/latex.php?latex=%7B%5Ciota_%7BTM+%5Crightarrow+T%5E%2A+M%7D%28v%29+%5Cin+T_x%5E%2A+M%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{\\iota_{TM \ightarrow T^* M}(v) \\in T_x^* M}" />, defined by the  formula<br/>
+<br/>
+<img loading="lazy" lazyload="on"  title="\\displaystyle \\iota_{TM \ightarrow T^*  M}(v)(w) := \\langle v, w \angle_{{\m g}(x)}." src="http://l.wordpress.com/latex.php?latex=%5Cdisplaystyle+%5Ciota_%7BTM+%5Crightarrow+T%5E%2A+M%7D%28v%29%28w%29+%3A%3D+%5Clangle+v%2C+w+%5Crangle_%7B%7B%5Crm+g%7D%28x%29%7D.&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="\\displaystyle \\iota_{TM \ightarrow T^* M}(v)(w) := \\langle v, w  \angle_{{\m g}(x)}." /><br/>
+<br/>
+In coordinates, <img loading="lazy" lazyload="on"  title="{\\iota_{TM \ightarrow T^* M}(v)_i = {\m g}_{ij} v^j}" src="http://l.wordpress.com/latex.php?latex=%7B%5Ciota_%7BTM+%5Crightarrow+T%5E%2A+M%7D%28v%29_i+%3D+%7B%5Crm+g%7D_%7Bij%7D+v%5Ej%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{\\iota_{TM \ightarrow T^* M}(v)_i = {\m g}_{ij} v^j}" />.<br/>
+<br/>
+A fundamental dynamical system on the tangent bundle (or equivalently,  the cotangent bundle, using the above identification) of a Riemannian  manifold is that of <a href="http://en.wikipedia.org/wiki/Geodesic_flow">geodesic  flow</a>. Recall that geodesics are smooth curves <img loading="lazy" lazyload="on"  title="{\\gamma: [a,b] \ightarrow  M}" src="http://l.wordpress.com/latex.php?latex=%7B%5Cgamma%3A+%5Ba%2Cb%5D+%5Crightarrow+M%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{\\gamma: [a,b] \ightarrow M}" /> that minimise the length<br/>
+<br/>
+<img loading="lazy" lazyload="on"  title="\\displaystyle  |\\gamma| := \\int_a^b  |\\gamma'(t)|_{{\m g}(\\gamma(t))}\\ dt." src="http://l.wordpress.com/latex.php?latex=%5Cdisplaystyle++%7C%5Cgamma%7C+%3A%3D+%5Cint_a%5Eb+%7C%5Cgamma%27%28t%29%7C_%7B%7B%5Crm+g%7D%28%5Cgamma%28t%29%29%7D%5C+dt.&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="\\displaystyle  |\\gamma| := \\int_a^b |\\gamma'(t)|_{{\m  g}(\\gamma(t))}\\ dt." /><br/>
+<br/>
+There is some degeneracy in this definition, because one can  reparameterise the curve <img loading="lazy" lazyload="on"  title="{\\gamma}" src="http://l.wordpress.com/latex.php?latex=%7B%5Cgamma%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{\\gamma}" /> without affecting the  length. In order to fix this degeneracy (and also because the square of  the speed is a more tractable quantity analytically than the speed  itself), it is better if one replaces the length with the <em>energy</em><br/>
+<br/>
+<img loading="lazy" lazyload="on"  title="\\displaystyle   E(\\gamma) := \\frac{1}{2} \\int_a^b |\\gamma'(t)|_{{\m g}(\\gamma(t))}^2\\  dt." src="http://l.wordpress.com/latex.php?latex=%5Cdisplaystyle++E%28%5Cgamma%29+%3A%3D+%5Cfrac%7B1%7D%7B2%7D+%5Cint_a%5Eb+%7C%5Cgamma%27%28t%29%7C_%7B%7B%5Crm+g%7D%28%5Cgamma%28t%29%29%7D%5E2%5C+dt.&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="\\displaystyle  E(\\gamma) := \\frac{1}{2} \\int_a^b  |\\gamma'(t)|_{{\m g}(\\gamma(t))}^2\\ dt." /><br/>
+<br/>
+Minimising the energy of a parameterised curve <img loading="lazy" lazyload="on"  title="{\\gamma}" src="http://l.wordpress.com/latex.php?latex=%7B%5Cgamma%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{\\gamma}" /> turns out to be the same  as minimising the length, together with an additional requirement that  the speed <img loading="lazy" lazyload="on"  title="{|\\gamma'(t)|_{{\m  g}(\\gamma(t))}}" src="http://l.wordpress.com/latex.php?latex=%7B%7C%5Cgamma%27%28t%29%7C_%7B%7B%5Crm+g%7D%28%5Cgamma%28t%29%29%7D%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{|\\gamma'(t)|_{{\m g}(\\gamma(t))}}" /> stay constant in time. Minimisers (and  more generally, critical points) of the energy functional (holding the  endpoints fixed) are known as <em>geodesic flows</em>. From a physical  perspective, geodesic flow governs the motion of a particle that is  subject to no external forces and thus moves freely, save for the  constraint that it must always lie on the manifold <img loading="lazy" lazyload="on"  title="{M}" src="http://l.wordpress.com/latex.php?latex=%7BM%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{M}" />.<br/>
+<br/>
+One can also view geodesic flows as a dynamical system on the tangent  bundle (with the state at any time <img loading="lazy" lazyload="on"  title="{t}" src="http://l.wordpress.com/latex.php?latex=%7Bt%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{t}" /> given by the position <img loading="lazy" lazyload="on"  title="{\\gamma(t) \\in M}" src="http://l.wordpress.com/latex.php?latex=%7B%5Cgamma%28t%29+%5Cin+M%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{\\gamma(t) \\in M}" /> and  the velocity <img loading="lazy" lazyload="on"  title="{\\gamma'(t) \\in  T_{\\gamma(t)} M}" src="http://l.wordpress.com/latex.php?latex=%7B%5Cgamma%27%28t%29+%5Cin+T_%7B%5Cgamma%28t%29%7D+M%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{\\gamma'(t) \\in T_{\\gamma(t)} M}" />) or on the cotangent bundle (with the  state then given by the position <img loading="lazy" lazyload="on"  title="{\\gamma(t) \\in M}" src="http://l.wordpress.com/latex.php?latex=%7B%5Cgamma%28t%29+%5Cin+M%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{\\gamma(t) \\in M}" /> and  the <em>momentum</em> <img loading="lazy" lazyload="on"  title="{\\iota_{TM \ightarrow T^* M}( \\gamma'(t) ) \\in  T_{\\gamma(t)}^* M}" src="http://l.wordpress.com/latex.php?latex=%7B%5Ciota_%7BTM+%5Crightarrow+T%5E%2A+M%7D%28+%5Cgamma%27%28t%29+%29+%5Cin+T_%7B%5Cgamma%28t%29%7D%5E%2A+M%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{\\iota_{TM \ightarrow T^* M}( \\gamma'(t) ) \\in T_{\\gamma(t)}^*  M}" />). With the latter perspective  (sometimes referred to as <em>cogeodesic flow</em>), geodesic flow  becomes a Hamiltonian flow, with Hamiltonian <img loading="lazy" lazyload="on"  title="{H: T^* M \ightarrow {\\bf  R}}" src="http://l.wordpress.com/latex.php?latex=%7BH%3A+T%5E%2A+M+%5Crightarrow+%7B%5Cbf+R%7D%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{H: T^* M \ightarrow {\\bf R}}" /> given as<br/>
+<br/>
+<img loading="lazy" lazyload="on"  title="\\displaystyle   H( x, p ) := \\frac{1}{2} \\langle p, p \angle_{{\m g}(x)^{-1}} =  \\frac{1}{2} {\m g}^{ij}(x) p_i p_j" src="http://l.wordpress.com/latex.php?latex=%5Cdisplaystyle++H%28+x%2C+p+%29+%3A%3D+%5Cfrac%7B1%7D%7B2%7D+%5Clangle+p%2C+p+%5Crangle_%7B%7B%5Crm+g%7D%28x%29%5E%7B-1%7D%7D+%3D+%5Cfrac%7B1%7D%7B2%7D+%7B%5Crm+g%7D%5E%7Bij%7D%28x%29+p_i+p_j&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="\\displaystyle  H( x, p ) := \\frac{1}{2} \\langle p, p \angle_{{\m  g}(x)^{-1}} = \\frac{1}{2} {\m g}^{ij}(x) p_i p_j" /><br/>
+<br/>
+where <img loading="lazy" lazyload="on"  title="{\\langle ,\angle_{{\m g}(x)^{-1}}: T^*_x M  \\times T^*_x M \ightarrow {\\bf R}}" src="http://l.wordpress.com/latex.php?latex=%7B%5Clangle+%2C%5Crangle_%7B%7B%5Crm+g%7D%28x%29%5E%7B-1%7D%7D%3A+T%5E%2A_x+M+%5Ctimes+T%5E%2A_x+M+%5Crightarrow+%7B%5Cbf+R%7D%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{\\langle ,\angle_{{\m g}(x)^{-1}}: T^*_x M \\times T^*_x M  \ightarrow {\\bf R}}" /> is the inverse  inner product to <img loading="lazy" lazyload="on"  title="{\\langle, \angle_{{\m g}(x)}: T_x M \\times T_x M  \ightarrow {\\bf R}}" src="http://l.wordpress.com/latex.php?latex=%7B%5Clangle%2C+%5Crangle_%7B%7B%5Crm+g%7D%28x%29%7D%3A+T_x+M+%5Ctimes+T_x+M+%5Crightarrow+%7B%5Cbf+R%7D%7D&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="{\\langle, \angle_{{\m g}(x)}: T_x M \\times T_x M \ightarrow  {\\bf R}}" />, which can be defined for instance  by the formula<br/>
+<br/>
+<img loading="lazy" lazyload="on"  title="\\displaystyle  \\langle  p_1, p_2 \angle_{{\m g}(x)^{-1}} = \\langle \\iota_{TM \ightarrow T^*  M}^{-1}(p_1), \\iota_{TM \ightarrow T^* M}^{-1}(p_2)\angle_{{\m  g}(x)}." src="http://l.wordpress.com/latex.php?latex=%5Cdisplaystyle++%5Clangle+p_1%2C+p_2+%5Crangle_%7B%7B%5Crm+g%7D%28x%29%5E%7B-1%7D%7D+%3D+%5Clangle+%5Ciota_%7BTM+%5Crightarrow+T%5E%2A+M%7D%5E%7B-1%7D%28p_1%29%2C+%5Ciota_%7BTM+%5Crightarrow+T%5E%2A+M%7D%5E%7B-1%7D%28p_2%29%5Crangle_%7B%7B%5Crm+g%7D%28x%29%7D.&amp;bg=ffffff&amp;fg=000000&amp;s=0" alt="\\displaystyle  \\langle p_1, p_2 \angle_{{\m g}(x)^{-1}} =  \\langle \\iota_{TM \ightarrow T^* M}^{-1}(p_1), \\iota_{TM \ightarrow  T^* M}^{-1}(p_2)\angle_{{\m g}(x)}." /><br/>
+<br/>
+In coordinates, geodesic flow is given by Hamilton</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/the-golden-thompson-inequality">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/partial-differential-equations-two-dimensional-heat-equation">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/partial-differential-equations-two-dimensional-heat-equation">Partial Differential Equations- Two-Dimensional Heat Equation</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-mass-checkboxes-handler">JavaScript Mass Checkboxes Handler</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/thoughts-of-the-banach%e2%80%93tarski-paradox">thoughts of the Banach</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/remove-desktop-context-menu">Remove Desktop Context-Menu</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/erdos-distance-problem">Erdos distance problem</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hosts-file-for-enhanced-security">HOSTS file for enhanced security</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/messagebox-in-c-sharp-console-application">MessageBox in C# Console Application</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sign-assembly-with-a-strong-name-key-file">Sign an Assembly With a Strong Name Key File</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-high-quality-programing-icons">Free High Quality Icons for Programing Languages</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/higher-order-linear-equations-and-matlab">Higher Order Linear Equations and MatLab</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/use-mathtype-with-wordpress">Use MathType with WordPress</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/measuring-the-execution-time-of-commands-vb6-api-examples">measuring the execution time of commands (VB6 API & examples)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cygwin-install-annotation">Cygwin Install Annotation</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/userscript-javascript-to-automate-spamcop-reporting">UserScript JavaScript to Automate SpamCop Reporting</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/closure-compiler-by-google">Closure Compiler by Google</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-sums-of-all-studies">The Sums Of All Studies</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

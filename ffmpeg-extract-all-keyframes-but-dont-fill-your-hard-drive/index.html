@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>But Don't Fill Your Hard-Drive...</title>
+  <meta itemprop="name"                                content="But Don't Fill Your Hard-Drive..."       />
+  <meta name="dcterms.title"                           content="But Don't Fill Your Hard-Drive..."       />
+  <meta property="og:title"                            content="But Don't Fill Your Hard-Drive..."       />
+  <meta name="twitter:title"                           content="But Don't Fill Your Hard-Drive..."       />
+  <meta name="twitter:text:title"                      content="But Don't Fill Your Hard-Drive..."       />
+  <meta name="application-name"                        content="But Don't Fill Your Hard-Drive..."       />
+  <meta name="subject"                                 content="But Don't Fill Your Hard-Drive..."       />
+  <meta name="apple-mobile-web-app-title"              content="But Don't Fill Your Hard-Drive..."       />
+  <meta name="msapplication-tooltip"                   content="But Don't Fill Your Hard-Drive..."       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="But Don't Fill Your Hard-Drive..."       />
+  <meta itemprop="description"                         content="But Don't Fill Your Hard-Drive..."       />
+  <meta name="dcterms.description"                     content="But Don't Fill Your Hard-Drive..."       />
+  <meta name="twitter:description"                     content="But Don't Fill Your Hard-Drive..."       />
+  <meta property="og:description"                      content="But Don't Fill Your Hard-Drive..."       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="algorithm,alignnone,amount,bigger,blank,client,code,collector,command,compression,container,correct,crop,decent,display,drive,easy,extract,extraction,factors,fake,ffmpeg,file,files,fill,filter,frames,generate,highest,holding,image,images,iokg,jpeg,keyframe,keyframes,line,loosely,lowest,movie,naturally,nice,original,output,pict,pixel,pixels,providing,qscale,quality,range,ratio,reasonable,resize,scale,select,showads,showinfo,showing,size,stretch,strong,table,target,terms,threads,total,trimming,type,vary,video,visually,vsync,weight,worst,youtube,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="algorithm,alignnone,amount,bigger,blank,client,code,collector,command,compression,container,correct,crop,decent,display,drive,easy,extract,extraction,factors,fake,ffmpeg,file,files,fill,filter,frames,generate,highest,holding,image,images,iokg,jpeg,keyframe,keyframes,line,loosely,lowest,movie,naturally,nice,original,output,pict,pixel,pixels,providing,qscale,quality,range,ratio,reasonable,resize,scale,select,showads,showinfo,showing,size,stretch,strong,table,target,terms,threads,total,trimming,type,vary,video,visually,vsync,weight,worst,youtube,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/javascript-ninja-so-you-want-to-get-a-youtube-video-streams-resource-without-ajaxing-around-daaaa"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/javascript-ninja-so-you-want-to-get-a-youtube-video-streams-resource-without-ajaxing-around-daaaa"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/natural-language-pronunciation-easily-pronounce-random-word-in-both-php-or-javascript"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/ffmpeg-extract-all-keyframes-but-dont-fill-your-hard-drive"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/ffmpeg-extract-all-keyframes-but-dont-fill-your-hard-drive"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/ffmpeg-extract-all-keyframes-but-dont-fill-your-hard-drive"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/ffmpeg-extract-all-keyframes-but-dont-fill-your-hard-drive"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/ffmpeg-extract-all-keyframes-but-dont-fill-your-hard-drive"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/ffmpeg-extract-all-keyframes-but-dont-fill-your-hard-drive"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-01-18T01:52:26+00:00"     />
+  <meta name="page-datetime"                           content="2016-01-18T01:52:26+00:00"     />
+  <meta property="article:published_time"              content="2016-01-18T01:52:26+00:00"     />
+  <meta name="dcterms.date"                            content="2016-01-18T01:52:26+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-04-04T23:03:17+00:00"    />
+  <meta property="article:modified_time"               content="2016-04-04T23:03:17+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/ffmpeg-extract-all-keyframes-but-dont-fill-your-hard-drive"
+,"url"             : "https://icompile.eladkarako.com/ffmpeg-extract-all-keyframes-but-dont-fill-your-hard-drive"
+,"headline"        : "But Don't Fill Your Hard-Drive..."
+,"description"     : "But Don't Fill Your Hard-Drive..."
+,"datePosted"      : "2016-01-18T01:52:26+00:00"
+,"dateCreated"     : "2016-01-18T01:52:26+00:00"
+,"datePublished"   : "2016-01-18T01:52:26+00:00"
+,"dateModified"    : "2016-04-04T23:03:17+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006491803541">
+  <header>
+    <h1 itemprop="headline">But Don't Fill Your Hard-Drive...</h1>
+    <sup>Posted at <time datetime="2016-04-04T23:03:17+00:00" itemprop="dateModified">Mon, 04 Apr 2016 23:03:17 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px__2016-01-18_033413.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px__2016-01-18_033413" width="972" height="512" class="alignnone size-full wp-image-4382" /><br/>
+<br/>
+The following line will<br/>
+- extract (well.. generate) an keyframe representing image, of EVERY keyframe image in your video file,<br/>
+- a "ratio-correct" 100 pixel width image,<br/>
+- a loosely JPEG output with quality of 15, which is about 53% (from 0-100) in terms of quality where 100 is highest quality and 0 is lowest quality,<br/>
+- all total it will be a lot (!) of files, but 100 files will weight (size) in ~67.2 KB,<br/>
+which if you'll be using this command to generate a way of (let's say..) trimming a video by visually showing the keyframes, and providing a range collector (..for example), will still generate nice output,<br/>
+<br/>
+you can even stretch it a bit (in client side!) so it will "look bigger" if you'll keep the 100x? ratio (which is easy to remember, right?)<br/>
+<br/>
+<pre>ffmpeg -threads 4 -i my_movie.mp4 -vf "select=eq(pict_type\\,I)" -vsync vfr -filter:v scale=100:-1,crop=iw:ih*0.8 -q:v 15 -qscale:v 15 out%05d.jpg</pre><br/>
+<br/>
+<pre><style>
+pre[image-container]{ display: table-row; }
+</style></pre><br/>
+<br/>
+<br/>
+Here are the first ~~52 frames of <a href="https://www.youtube-nocookie.com/embed/z0ik1IOKG5I?rel=0&amp;showinfo=0&amp;showads=0" target="_blank">this YouTube video</a>:<br/>
+<iframe loading="lazy" lazyload="on"  width="960" height="720" src="https://www.youtube-nocookie.com/embed/z0ik1IOKG5I?rel=0&amp;showinfo=0&amp;showads=0" frameborder="0" allowfullscreen></iframe><br/>
+<br/>
+<!--more--><br/>
+<br/>
+<br/>
+<pre><br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00001.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00001" width="100" height="44" class="alignnone size-full wp-image-4330" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00002.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00002" width="100" height="44" class="alignnone size-full wp-image-4331" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00003.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00003" width="100" height="44" class="alignnone size-full wp-image-4332" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00004.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00004" width="100" height="44" class="alignnone size-full wp-image-4333" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00005.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00005" width="100" height="44" class="alignnone size-full wp-image-4334" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00006.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00006" width="100" height="44" class="alignnone size-full wp-image-4335" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00007.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00007" width="100" height="44" class="alignnone size-full wp-image-4336" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00008.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00008" width="100" height="44" class="alignnone size-full wp-image-4337" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00009.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00009" width="100" height="44" class="alignnone size-full wp-image-4338" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00010.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00010" width="100" height="44" class="alignnone size-full wp-image-4339" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00011.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00011" width="100" height="44" class="alignnone size-full wp-image-4340" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00012.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00012" width="100" height="44" class="alignnone size-full wp-image-4341" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00013.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00013" width="100" height="44" class="alignnone size-full wp-image-4342" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00014.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00014" width="100" height="44" class="alignnone size-full wp-image-4343" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00015.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00015" width="100" height="44" class="alignnone size-full wp-image-4344" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00016.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00016" width="100" height="44" class="alignnone size-full wp-image-4345" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00017.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00017" width="100" height="44" class="alignnone size-full wp-image-4346" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00018.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00018" width="100" height="44" class="alignnone size-full wp-image-4347" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00019.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00019" width="100" height="44" class="alignnone size-full wp-image-4348" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00020.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00020" width="100" height="44" class="alignnone size-full wp-image-4349" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00021.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00021" width="100" height="44" class="alignnone size-full wp-image-4350" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00022.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00022" width="100" height="44" class="alignnone size-full wp-image-4351" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00023.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00023" width="100" height="44" class="alignnone size-full wp-image-4352" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00024.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00024" width="100" height="44" class="alignnone size-full wp-image-4353" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00025.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00025" width="100" height="44" class="alignnone size-full wp-image-4354" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00026.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00026" width="100" height="44" class="alignnone size-full wp-image-4355" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00027.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00027" width="100" height="44" class="alignnone size-full wp-image-4356" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00028.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00028" width="100" height="44" class="alignnone size-full wp-image-4357" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00029.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00029" width="100" height="44" class="alignnone size-full wp-image-4358" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00030.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00030" width="100" height="44" class="alignnone size-full wp-image-4359" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00031.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00031" width="100" height="44" class="alignnone size-full wp-image-4360" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00032.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00032" width="100" height="44" class="alignnone size-full wp-image-4361" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00033.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00033" width="100" height="44" class="alignnone size-full wp-image-4362" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00034.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00034" width="100" height="44" class="alignnone size-full wp-image-4363" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00035.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00035" width="100" height="44" class="alignnone size-full wp-image-4364" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00036.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00036" width="100" height="44" class="alignnone size-full wp-image-4365" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00037.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00037" width="100" height="44" class="alignnone size-full wp-image-4366" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00038.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00038" width="100" height="44" class="alignnone size-full wp-image-4367" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00039.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00039" width="100" height="44" class="alignnone size-full wp-image-4368" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00040.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00040" width="100" height="44" class="alignnone size-full wp-image-4369" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00041.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00041" width="100" height="44" class="alignnone size-full wp-image-4370" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00042.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00042" width="100" height="44" class="alignnone size-full wp-image-4371" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00043.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00043" width="100" height="44" class="alignnone size-full wp-image-4372" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00044.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00044" width="100" height="44" class="alignnone size-full wp-image-4373" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00045.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00045" width="100" height="44" class="alignnone size-full wp-image-4374" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00046.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00046" width="100" height="44" class="alignnone size-full wp-image-4375" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00047.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00047" width="100" height="44" class="alignnone size-full wp-image-4376" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00048.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00048" width="100" height="44" class="alignnone size-full wp-image-4377" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00049.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00049" width="100" height="44" class="alignnone size-full wp-image-4378" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00050.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00050" width="100" height="44" class="alignnone size-full wp-image-4379" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00051.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00051" width="100" height="44" class="alignnone size-full wp-image-4380" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00052.jpg" alt="icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00052" width="100" height="44" class="alignnone size-full wp-image-4381" /><br/>
+</pre><br/>
+<br/>
+Looking on one of the images, if you'll keep the ratio you can probably "fake" resize it, still holding the same file size, on reasonable quality<br/>
+<br/>
+original:<br/>
+<code>&lt;img src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00052.jpg" width="100" height="44" /&gt;</code><br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00052.jpg" width="100" height="44" /><br/>
+<br/>
+x1.5<br/>
+<code>..width="150" height="66"..</code><br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00052.jpg" width="150" height="66" /><br/>
+<br/>
+x2<br/>
+<code>..width="200" height="88"..</code><br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_ffmpeg_keyframes_extraction_100px_00052.jpg" width="200" height="88" /><br/>
+<br/>
+<br/>
+still looks quite decent :)<br/>
+<br/>
+naturally you can always scale up:<br/>
+- image size (by width and ratio -- eventually amount of pixels in the image),<br/>
+- quality (both <code>-q</code> factors from 1 to 32 <sub>where 32 is worst-quality and <strong>1 is best</strong></sub>) - to vary the JPEG compression algorithm<br/>
+<br/>
+', 'FFMPEG - Extract All Keyframes</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-so-you-want-to-get-a-youtube-video-streams-resource-without-ajaxing-around-daaaa">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/natural-language-pronunciation-easily-pronounce-random-word-in-both-php-or-javascript">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/natural-language-pronunciation-easily-pronounce-random-word-in-both-php-or-javascript">Natural Language Pronunciation - Easily Pronounce Random Word In Both PHP Or Javascript</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/happy-hanukkah">Happy Hanukkah</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/doctor-who-before-the-flood-breaks-the-4th-wall">Doctor Who "Before The Flood" Breaks The 4'th Wall</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/rrrun">RRRun</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/deadpool-is-my-favorite">OMG Deadpool Is Going To Be My Favorite Marvel Movie!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/robot-chicken-bipolar-bear">Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/information-randomness-entropy-and-quantom-mechanics">Entropy and Quantom- Mechanics</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-polymer-nice">Google Polymer! Nice!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/simulate-winter-in-rain-less-israel">Simulate Winter In Rain-less Israel</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/outbrain-new-employee-orientation-film-hackathon-2012">Outbrain's New Employee Orientation Film - Hackathon 2012</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/embedded-smart-safe-project">Embedded Smart-Safe Project</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/xampp-installation-and-configuration">XAMPP Installation and Configuration</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/enable-xfade-overlapping-in-winamp">Enable XFade (Overlapping) in Winamp</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easy-support-for-protobuf-by-jax-rs-and-rest-api">Easy Support For Protobuf By JAX-RS And REST-API</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javadoc-searchmonkey-to-the-rescue">Javadoc? SearchMonkey To The Rescue</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/criteria-api-to-jpa">Criteria-API To JPA</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

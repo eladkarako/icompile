@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JavaScript Libraries used by web.whatsapp.com</title>
+  <meta itemprop="name"                                content="JavaScript Libraries used by web.whatsapp.com"       />
+  <meta name="dcterms.title"                           content="JavaScript Libraries used by web.whatsapp.com"       />
+  <meta property="og:title"                            content="JavaScript Libraries used by web.whatsapp.com"       />
+  <meta name="twitter:title"                           content="JavaScript Libraries used by web.whatsapp.com"       />
+  <meta name="twitter:text:title"                      content="JavaScript Libraries used by web.whatsapp.com"       />
+  <meta name="application-name"                        content="JavaScript Libraries used by web.whatsapp.com"       />
+  <meta name="subject"                                 content="JavaScript Libraries used by web.whatsapp.com"       />
+  <meta name="apple-mobile-web-app-title"              content="JavaScript Libraries used by web.whatsapp.com"       />
+  <meta name="msapplication-tooltip"                   content="JavaScript Libraries used by web.whatsapp.com"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JavaScript Libraries used by web.whatsapp.com"       />
+  <meta itemprop="description"                         content="JavaScript Libraries used by web.whatsapp.com"       />
+  <meta name="dcterms.description"                     content="JavaScript Libraries used by web.whatsapp.com"       />
+  <meta name="twitter:description"                     content="JavaScript Libraries used by web.whatsapp.com"       />
+  <meta property="og:description"                      content="JavaScript Libraries used by web.whatsapp.com"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="addons,ajax,apparently,avoidwork,base,blank,blocks,bluebird,build,bytebuffer,call,cancel,categories,code,components,core,crypto,cryptojs,dcode,dcodeio,docs,download,embedded,enabled,facebook,features,file,filesize,filesizejs,filter,font,generated,generators,github,google,googleapis,gwjjeff,html,image,javascript,julian,libraries,libs,loader,loads,local,locales,locals,lodash,medium,methods,nodeify,plugin,plugins,progress,promisify,properties,props,prototype,race,react,reduce,research,resource,scripts,settle,size,slevithan,target,timers,typekit,uipack,unicode,velocity,velocityjs,webfont,whatsapp,wifi,xregexp,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="addons,ajax,apparently,avoidwork,base,blank,blocks,bluebird,build,bytebuffer,call,cancel,categories,code,components,core,crypto,cryptojs,dcode,dcodeio,docs,download,embedded,enabled,facebook,features,file,filesize,filesizejs,filter,font,generated,generators,github,google,googleapis,gwjjeff,html,image,javascript,julian,libraries,libs,loader,loads,local,locales,locals,lodash,medium,methods,nodeify,plugin,plugins,progress,promisify,properties,props,prototype,race,react,reduce,research,resource,scripts,settle,size,slevithan,target,timers,typekit,uipack,unicode,velocity,velocityjs,webfont,whatsapp,wifi,xregexp,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/stanford-javascript-crypto-library-vs-cryptojs"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/stanford-javascript-crypto-library-vs-cryptojs"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/pure-css-progressbar"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/javascript-libraries-used-by-web-whatsapp-com"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/javascript-libraries-used-by-web-whatsapp-com"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/javascript-libraries-used-by-web-whatsapp-com"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/javascript-libraries-used-by-web-whatsapp-com"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/javascript-libraries-used-by-web-whatsapp-com"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/javascript-libraries-used-by-web-whatsapp-com"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2015-04-15T14:08:26+00:00"     />
+  <meta name="page-datetime"                           content="2015-04-15T14:08:26+00:00"     />
+  <meta property="article:published_time"              content="2015-04-15T14:08:26+00:00"     />
+  <meta name="dcterms.date"                            content="2015-04-15T14:08:26+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2015-04-15T20:50:09+00:00"    />
+  <meta property="article:modified_time"               content="2015-04-15T20:50:09+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/javascript-libraries-used-by-web-whatsapp-com"
+,"url"             : "https://icompile.eladkarako.com/javascript-libraries-used-by-web-whatsapp-com"
+,"headline"        : "JavaScript Libraries used by web.whatsapp.com"
+,"description"     : "JavaScript Libraries used by web.whatsapp.com"
+,"datePosted"      : "2015-04-15T14:08:26+00:00"
+,"dateCreated"     : "2015-04-15T14:08:26+00:00"
+,"datePublished"   : "2015-04-15T14:08:26+00:00"
+,"dateModified"    : "2015-04-15T20:50:09+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006096019241">
+  <header>
+    <h1 itemprop="headline">JavaScript Libraries used by web.whatsapp.com</h1>
+    <sup>Posted at <time datetime="2015-04-15T20:50:09+00:00" itemprop="dateModified">Wed, 15 Apr 2015 20:50:09 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">by the order of loading (with local download).<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/04/icompile.eladkarako.com_web.whatsapp.com_wifi.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/04/icompile.eladkarako.com_web.whatsapp.com_wifi.jpg" alt="icompile.eladkarako.com_web.whatsapp.com_wifi" width="300" height="300" class="aligncenter size-medium wp-image-3040" /></a><br/>
+<!--more--><br/>
+<br/>
+<br/>
+<ol><br/>
+<li><br/>
+<h4><a href="http://julian.com/research/velocity/#uiPack" target="_blank">VelocityJS (UI components)</a></h4><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/04/velocity-ui-5.0.min_.js">https://web.whatsapp.com/lib/velocity-ui-5.0.min.js</a><br/>
+</li><br/>
+<li><br/>
+<h4><a href="https://github.com/typekit/webfontloader" target="_blank">Web Font Loader</a></h4><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/04/webfont.js">https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js</a><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://facebook.github.io/react" target="_blank">React</a> (<a href="https://facebook.github.io/react/docs/addons.html" target="_blank">with addons</a>)</h4><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/04/react-with-addons-0.13.1.min_.js">https://web.whatsapp.com/lib/react-with-addons-0.13.1.min.js</a><br/>
+</li><br/>
+<li><br/>
+<h4><a href="https://github.com/petkaantonov/bluebird" target="_blank">bluebird</a> (Features enabled: core, race, call_get, generators, map, nodeify, promisify, props, reduce, settle, some, progress, cancel, using, filter, any, each and timers)</h4><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/04/bluebird-2.5.3.min_.js">https://web.whatsapp.com/lib/bluebird-2.5.3.min.js</a><br/>
+it is (apparently..) embedded (again) in <em>the generated app_***********.js resource-file</em> (even-though it loads later).<br/>
+</li><br/>
+<li><br/>
+<h4><a href="https://icompile.eladkarako.com/moment-js/" target="_blank">moment.js (with locals)</a></h4><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/04/moment-with-locales-2.8.4.min_.js">https://web.whatsapp.com/lib/moment-with-locales-2.8.4.min.js</a><br/>
+</li><br/>
+<li><br/>
+<h4><a href="https://lodash.com/" target="_blank">lodash</a> (+<a href="https://github.com/lodash/lodash" target="_blank">GitHub</a>)</h4><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/04/lodash-3.6.0.min_.js">https://web.whatsapp.com/lib/lodash-3.6.0.min.js</a><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://julian.com/research/velocity/" target="_blank">VelocityJS</a></h4><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/04/velocity-1.2.0.min_.js">https://web.whatsapp.com/lib/velocity-1.2.0.min.js</a><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://xregexp.com/" target="_blank">XRegExp</a>(+<a href="https://github.com/slevithan/xregexp" target="_blank">GitHub</a>)</h4><br/>
+<em>XRegExp v2.0.0 is a part of generated app_***********.js resource-file</em><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://xregexp.com/plugins/" target="_blank">XRegExp Unicode Base (XRegExp Plugin)</a>(+<a href="https://github.com/slevithan/xregexp" target="_blank">GitHub</a>)</h4><br/>
+<em>XRegExp Unicode Base v1.0.0 (uses <a href="http://unicode.org/" target="_blank">Unicode 6.1</a>) is a part of generated app_***********.js resource-file</em><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://xregexp.com/plugins/" target="_blank">XRegExp Unicode Categories (XRegExp Plugin)</a>(+<a href="https://github.com/slevithan/xregexp" target="_blank">GitHub</a>)</h4><br/>
+<em>XRegExp Unicode Categories v1.2.0 (uses <a href="http://unicode.org/" target="_blank">Unicode 6.1</a>) is a part of generated app_***********.js resource-file</em><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://xregexp.com/plugins/" target="_blank">XRegExp Unicode Scripts (XRegExp Plugin)</a>(+<a href="https://github.com/slevithan/xregexp" target="_blank">GitHub</a>)</h4><br/>
+<em>XRegExp Unicode Scripts v1.2.0 (uses <a href="http://unicode.org/" target="_blank">Unicode 6.1</a>) is a part of generated app_***********.js resource-file</em><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://xregexp.com/plugins/" target="_blank">XRegExp Unicode Blocks (XRegExp Plugin)</a>(+<a href="https://github.com/slevithan/xregexp" target="_blank">GitHub</a>)</h4><br/>
+<em>XRegExp Unicode Blocks v1.2.0 (uses <a href="http://unicode.org/" target="_blank">Unicode 6.1</a>) is a part of generated app_***********.js resource-file</em><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://xregexp.com/plugins/" target="_blank">XRegExp Unicode Properties (XRegExp Plugin)</a>(+<a href="https://github.com/slevithan/xregexp" target="_blank">GitHub</a>)</h4><br/>
+<em>XRegExp Unicode Properties v1.0.0 (uses <a href="http://unicode.org/" target="_blank">Unicode 6.1</a>) is a part of generated app_***********.js resource-file</em><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://xregexp.com/plugins/" target="_blank">XRegExp .matchRecursive (XRegExp Plugin)</a>(+<a href="https://github.com/slevithan/xregexp" target="_blank">GitHub</a>)</h4><br/>
+<em>XRegExp.matchRecursive v0.2.0 is a part of generated app_***********.js resource-file</em><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://xregexp.com/plugins/" target="_blank">XRegExp .build (XRegExp Plugin)</a>(+<a href="https://github.com/slevithan/xregexp" target="_blank">GitHub</a>)</h4><br/>
+<em>XRegExp.build v0.1.0 is a part of generated app_***********.js resource-file</em><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://xregexp.com/plugins/" target="_blank">XRegExp Prototype Methods (XRegExp Plugin)</a>(+<a href="https://github.com/slevithan/xregexp" target="_blank">GitHub</a>)</h4><br/>
+<em>XRegExp Prototype Methods v1.0.0 is a part of generated app_***********.js resource-file</em><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://filesizejs.com/" target="_blank">filesizeJS</a>(+<a href="https://github.com/avoidwork/filesize.js" target="_blank">GitHub</a>)</h4><br/>
+<em>filesizeJS 2.0.4 is a part of generated app_***********.js resource-file</em><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://dcode.io/" target="_blank">Long.js</a>(+<a href="https://github.com/dcodeIO/Long.js" target="_blank">GitHub</a>)</h4><br/>
+<em>Long.js 2.0 is a part of generated app_***********.js resource-file</em><br/>
+</li><br/>
+<li><br/>
+<h4><a href="http://dcode.io/" target="_blank">ByteBuffer.js</a>(+<a href="https://github.com/dcodeIO/ByteBuffer.js" target="_blank">GitHub</a>)</h4><br/>
+<em>ByteBuffer.js 2.0 is a part of generated app_***********.js resource-file</em><br/>
+</li><br/>
+<li><br/>
+<h4><a href="https://code.google.com/p/crypto-js/" target="_blank">CryptoJS</a>(+<a href="https://github.com/gwjjeff/cryptojs" target="_blank">GitHub</a>)</h4><br/>
+<em>CryptoJS is a part of generated crypto_***********.js resource-file</em><br/>
+</li><br/>
+<br/>
+</ol></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/stanford-javascript-crypto-library-vs-cryptojs">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/pure-css-progressbar">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pure-css-progressbar">HTML5 / CSS3 Ninja Technics #113 - Pure CSS Progressbar</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/whatsapp-emoji">whatsapp Emoji</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-search-result-cleanup-notes">Google Search Result - Cleanup Notes</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/asyncalljs">AsynCallJS</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unlimited-list-iblocklist-com">unlimited list.iblocklist.com</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/git-sub-module-with-different-name">Git Submodule With Different Name</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vobsub-2-23-installer-free">VobSub 2.23 Installer Free</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/winhlp-for-windows-7">WinHlp For Windows 7</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-ninja-techniques-pulsing-keyframe-animated-button">CSS3 Ninja Techniques - Pulsing Keyframe Animated Button</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/robots-directive-nofollow-and-more">Robots Directive - NoFollow And More</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/jetbrains-ideawebstormphpstorm-portable">JetBrains IDEA/WebStorm/PhpStorm Portable</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/liberated-html5">Liberated HTML5</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hosts-chrome-extension">HOSTS Chrome Extension</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/right-so-access-control-expose-headers-does-not-support-wildcard">Access-Control-Expose-Headers Does Not Support Wildcard...</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/whatsapp-before-material-design">Whatsapp Before Material Design</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stopping-gwx-exe">Stopping GWX.exe</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

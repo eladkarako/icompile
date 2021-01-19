@@ -1,0 +1,1 @@
+Once in a while, the scoping rules for functions get in your way. Although you can virtually always do what you need within the rules, it

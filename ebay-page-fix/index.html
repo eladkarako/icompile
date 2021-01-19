@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JavaScript Ninja - eBay Page Fix - Cleanup And Main Description</title>
+  <meta itemprop="name"                                content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+  <meta name="dcterms.title"                           content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+  <meta property="og:title"                            content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+  <meta name="twitter:title"                           content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+  <meta name="twitter:text:title"                      content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+  <meta name="application-name"                        content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+  <meta name="subject"                                 content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+  <meta name="apple-mobile-web-app-title"              content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+  <meta name="msapplication-tooltip"                   content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+  <meta itemprop="description"                         content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+  <meta name="dcterms.description"                     content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+  <meta name="twitter:description"                     content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+  <meta property="og:description"                      content="JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="access,account,adds,anymore,appendchild,area,blank,block,blocked,bold,bookmarklet,border,called,cleanup,clonenode,code,color,compromised,default,description,display,document,ebay,ebaydesc,enables,escape,false,favor,firstchild,font,footer,forms,frame,function,gray,html,huge,innerhtml,itemattr,iteration,javascript,junk,larger,layout,links,lock,malicious,modals,navigation,ninja,null,official,onload,option,orientation,origin,original,page,parent,pinpoint,placement,pointer,popups,problematic,property,read,referrer,remove,removechild,removed,return,running,safe,sandbox,scripts,scroll,scrolling,seamless,security,seller,sellers,settimeout,shit,single,solid,sort,store,strict,stuff,unsafe,viewable,weight,wide,window,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="access,account,adds,anymore,appendchild,area,blank,block,blocked,bold,bookmarklet,border,called,cleanup,clonenode,code,color,compromised,default,description,display,document,ebay,ebaydesc,enables,escape,false,favor,firstchild,font,footer,forms,frame,function,gray,html,huge,innerhtml,itemattr,iteration,javascript,junk,larger,layout,links,lock,malicious,modals,navigation,ninja,null,official,onload,option,orientation,origin,original,page,parent,pinpoint,placement,pointer,popups,problematic,property,read,referrer,remove,removechild,removed,return,running,safe,sandbox,scripts,scroll,scrolling,seamless,security,seller,sellers,settimeout,shit,single,solid,sort,store,strict,stuff,unsafe,viewable,weight,wide,window,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/google-secret-domain-check-api-service"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/google-secret-domain-check-api-service"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/chromium-api-keys"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/ebay-page-fix"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/ebay-page-fix"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/ebay-page-fix"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/ebay-page-fix"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/ebay-page-fix"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/ebay-page-fix"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-10-03T03:49:46+00:00"     />
+  <meta name="page-datetime"                           content="2016-10-03T03:49:46+00:00"     />
+  <meta property="article:published_time"              content="2016-10-03T03:49:46+00:00"     />
+  <meta name="dcterms.date"                            content="2016-10-03T03:49:46+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-10-06T22:22:59+00:00"    />
+  <meta property="article:modified_time"               content="2016-10-06T22:22:59+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/ebay-page-fix"
+,"url"             : "https://icompile.eladkarako.com/ebay-page-fix"
+,"headline"        : "JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"
+,"description"     : "JavaScript Ninja - eBay Page Fix - Cleanup And Main Description"
+,"datePosted"      : "2016-10-03T03:49:46+00:00"
+,"dateCreated"     : "2016-10-03T03:49:46+00:00"
+,"datePublished"   : "2016-10-03T03:49:46+00:00"
+,"dateModified"    : "2016-10-06T22:22:59+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006856645741">
+  <header>
+    <h1 itemprop="headline">JavaScript Ninja - eBay Page Fix - Cleanup And Main Description</h1>
+    <sup>Posted at <time datetime="2016-10-06T22:22:59+00:00" itemprop="dateModified">Thu, 06 Oct 2016 22:22:59 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">eBay sellers place a lot of junk-links for their store,<br/>
+and one single description area which is usually hard to read, or scroll due to eBay's problematic page layout.<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_ebay_description_fix_2.png" alt="icompile.eladkarako.com_ebay_description_fix_2" width="1366" height="737" /><br/>
+<br/>
+Here is some code to fix those stuff..<br/>
+I've even added a bookmarklet... :]<br/>
+<br/>
+<!--more--><br/>
+<hr/><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_ebay_description_fix_1.png" alt="icompile.eladkarako.com_ebay_description_fix_1" width="514" height="716" /><br/>
+<br/>
+after:<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_ebay_description_fix_3.png" alt="icompile.eladkarako.com_ebay_description_fix_3" width="1288" height="637" /><br/>
+<br/>
+A huge security plus: the seller can not run malicious code on your eBay account anymore,<br/>
+the description page is running using a new HTML5 property called sandbox, in which, scripts and other access stuff are blocked by default.<br/>
+nothing but text! safe!<br/>
+<br/>
+<pre><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>window<span style='color:#808030; '>,</span> document<span style='color:#808030; '>,</span> ebaydesc_src<span style='color:#808030; '>,</span> pinpoint<span style='color:#808030; '>,</span> pinpoint_parent<span style='color:#808030; '>,</span> new_iframe<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>use strict</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+<br/>
+  <span style='color:#696969; '>/* remove all shit other than official description */</span><br/>
+  <span style='color:#800000; font-weight:bold; '>while</span><span style='color:#808030; '>(</span><span style='color:#0f4d75; '>null</span> <span style='color:#808030; '>!==</span> pinpoint<span style='color:#808030; '>.</span>nextElementSibling<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+    pinpoint_parent<span style='color:#808030; '>.</span>removeChild<span style='color:#808030; '>(</span> pinpoint<span style='color:#808030; '>.</span>nextElementSibling <span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><br/>
+  <br/>
+  <span style='color:#696969; '>/* shit removed */</span><br/>
+  <br/>
+  <span style='color:#696969; '>/* add new description-iframe */</span><br/>
+  pinpoint_parent<span style='color:#808030; '>.</span>appendChild<span style='color:#808030; '>(</span>new_iframe<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800000; font-weight:bold; '>setTimeout</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+    new_iframe<span style='color:#808030; '>.</span>src <span style='color:#808030; '>=</span> ebaydesc_src<span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>100</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<br/>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>(</span><br/>
+  top<br/>
+<span style='color:#808030; '>,</span> top<span style='color:#808030; '>.</span>document<br/>
+<span style='color:#808030; '>,</span> top<span style='color:#808030; '>.</span>document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>iframe[src*="ebaydesc"]:not([new_iframe])</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>src<br/>
+<span style='color:#808030; '>,</span> document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>.itemAttr</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><br/>
+<span style='color:#808030; '>,</span> document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>.itemAttr</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parentElement<br/>
+<span style='color:#808030; '>,</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>tmp<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+    tmp <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>createElement<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>div</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#696969; '>/*</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;tmp.innerHTML = '&lt;iframe new_iframe allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" style="width:100%;height:1200px;border:1px solid gray;" src="about:blank">&lt;/iframe>';</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;*/</span><br/>
+    tmp<span style='color:#808030; '>.</span>innerHTML <span style='color:#808030; '>=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>&lt;iframe new_iframe allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="no-referrer" scrolling="yes" sandbox="" seamless="false" style="width:100%;height:1200px;border:1px solid gray;" src="about:blank">&lt;/iframe></span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#800000; font-weight:bold; '>return</span> tmp<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>iframe</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>cloneNode<span style='color:#808030; '>(</span><span style='color:#0f4d75; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><br/>
+<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+</pre><br/>
+<br/>
+bookmarklet:<br/>
+<pre>javascript<span style='color:#800080; '>:</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>window<span style='color:#808030; '>,</span>document<span style='color:#808030; '>,</span>ebaydesc_src<span style='color:#808030; '>,</span>pinpoint<span style='color:#808030; '>,</span>pinpoint_parent<span style='color:#808030; '>,</span>new_iframe<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><span style='color:#800000; font-weight:bold; '>while</span><span style='color:#808030; '>(</span><span style='color:#0f4d75; '>null</span><span style='color:#808030; '>!==</span>pinpoint<span style='color:#808030; '>.</span>nextElementSibling<span style='color:#808030; '>)</span>pinpoint_parent<span style='color:#808030; '>.</span>removeChild<span style='color:#808030; '>(</span>pinpoint<span style='color:#808030; '>.</span>nextElementSibling<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>pinpoint_parent<span style='color:#808030; '>.</span>appendChild<span style='color:#808030; '>(</span>new_iframe<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><span style='color:#800000; font-weight:bold; '>setTimeout</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>new_iframe<span style='color:#808030; '>.</span>src<span style='color:#808030; '>=</span>ebaydesc_src<span style='color:#800080; '>}</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>100</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>(</span>top<span style='color:#808030; '>,</span>top<span style='color:#808030; '>.</span>document<span style='color:#808030; '>,</span>top<span style='color:#808030; '>.</span>document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>iframe[src*="ebaydesc"]:not([new_iframe])</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>src<span style='color:#808030; '>,</span>document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>.itemAttr</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span>document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>.itemAttr</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parentElement<span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>tmp<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>tmp<span style='color:#808030; '>=</span>document<span style='color:#808030; '>.</span>createElement<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>div</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>tmp<span style='color:#808030; '>.</span>innerHTML<span style='color:#808030; '>=</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>&lt;iframe new_iframe allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="no-referrer" scrolling="yes" sandbox="" seamless="false" style="width:100%;height:1200px;border:1px solid gray;" src="about:blank">&lt;/iframe></span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span><span style='color:#800000; font-weight:bold; '>return</span> tmp<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>iframe</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>cloneNode<span style='color:#808030; '>(</span><span style='color:#0f4d75; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+</pre><br/>
+<br/>
+<br/>
+<br/>
+<blockquote><br/>
+another iteration of the code adds the description frame a bit below the original placement, in-favor of a much more-clear and wide viewable area, with not much of the original layout compromised.<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_ebay_description_fix__2_1.png" alt="icompile.eladkarako.com_ebay_description_fix__2_1" width="525" height="638"/><br/>
+<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_ebay_description_fix__2_2.png" alt="icompile.eladkarako.com_ebay_description_fix__2_2" width="1358" height="682"/><br/>
+<br/>
+<pre><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>window<span style='color:#808030; '>,</span> document<span style='color:#808030; '>,</span> ebaydesc_src<span style='color:#808030; '>,</span> pinpoint<span style='color:#808030; '>,</span> pinpoint_parent<span style='color:#808030; '>,</span> new_iframe<span style='color:#808030; '>,</span> footer<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>use strict</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+<br/>
+  <span style='color:#696969; '>/* remove all shit other than official description */</span><br/>
+  <span style='color:#800000; font-weight:bold; '>while</span><span style='color:#808030; '>(</span><span style='color:#0f4d75; '>null</span> <span style='color:#808030; '>!==</span> pinpoint<span style='color:#808030; '>.</span>nextElementSibling<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+    pinpoint_parent<span style='color:#808030; '>.</span>removeChild<span style='color:#808030; '>(</span> pinpoint<span style='color:#808030; '>.</span>nextElementSibling <span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><br/>
+  <br/>
+  <span style='color:#696969; '>/* shit removed */</span><br/>
+  <br/>
+  <span style='color:#696969; '>/* add new description-iframe */</span><br/>
+<br/>
+  <span style='color:#696969; '>/*</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;option #1 - just add it in same (sort of) placement.</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;pinpoint_parent.appendChild(new_iframe);</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;*/</span><br/>
+  <span style='color:#696969; '>/*</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;option #2 - a little bit below the layout enables a much larger width.</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;*/</span><br/>
+  footer<span style='color:#808030; '>.</span>insertBefore<span style='color:#808030; '>(</span>new_iframe<span style='color:#808030; '>,</span> footer<span style='color:#808030; '>.</span>firstChild<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  new_iframe<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>display <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>none</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+  new_iframe<span style='color:#808030; '>.</span>onload <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <br/>
+    <span style='color:#800000; font-weight:bold; '>setTimeout</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span> <br/>
+      new_iframe<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>display <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>block</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>100</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+<br/>
+  new_iframe<span style='color:#808030; '>.</span>src <span style='color:#808030; '>=</span> ebaydesc_src<span style='color:#800080; '>;</span><br/>
+<br/>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>(</span><br/>
+  top<br/>
+<span style='color:#808030; '>,</span> top<span style='color:#808030; '>.</span>document<br/>
+<span style='color:#808030; '>,</span> top<span style='color:#808030; '>.</span>document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>iframe[src*="ebaydesc"]:not([new_iframe])</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>src<br/>
+<span style='color:#808030; '>,</span> document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>.itemAttr</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><br/>
+<span style='color:#808030; '>,</span> document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>.itemAttr</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parentElement<br/>
+<span style='color:#808030; '>,</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>tmp<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+    tmp <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>createElement<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>div</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#696969; '>/*</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;tmp.innerHTML = '&lt;iframe new_iframe allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" style="width:100%;height:1200px;border:1px solid gray;" src="about:blank">&lt;/iframe>';</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;*/</span><br/>
+    tmp<span style='color:#808030; '>.</span>innerHTML <span style='color:#808030; '>=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>&lt;iframe new_iframe allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="no-referrer" scrolling="yes" sandbox="" seamless="false" style="width:100%;height:1200px;border:1px solid gray;" src="about:blank">&lt;/iframe></span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#800000; font-weight:bold; '>return</span> tmp<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>iframe</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>cloneNode<span style='color:#808030; '>(</span><span style='color:#0f4d75; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><br/>
+<span style='color:#808030; '>,</span> document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>footer</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><br/>
+<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+</pre><br/>
+<br/>
+bookmarklet:<br/>
+<pre>javascript<span style='color:#800080; '>:</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>window<span style='color:#808030; '>,</span>document<span style='color:#808030; '>,</span>ebaydesc_src<span style='color:#808030; '>,</span>pinpoint<span style='color:#808030; '>,</span>pinpoint_parent<span style='color:#808030; '>,</span>new_iframe<span style='color:#808030; '>,</span>footer<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><span style='color:#800000; font-weight:bold; '>while</span><span style='color:#808030; '>(</span><span style='color:#0f4d75; '>null</span><span style='color:#808030; '>!==</span>pinpoint<span style='color:#808030; '>.</span>nextElementSibling<span style='color:#808030; '>)</span>pinpoint_parent<span style='color:#808030; '>.</span>removeChild<span style='color:#808030; '>(</span>pinpoint<span style='color:#808030; '>.</span>nextElementSibling<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>footer<span style='color:#808030; '>.</span>insertBefore<span style='color:#808030; '>(</span>new_iframe<span style='color:#808030; '>,</span>footer<span style='color:#808030; '>.</span>firstChild<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>new_iframe<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>display<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>none</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>new_iframe<span style='color:#808030; '>.</span>onload<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><span style='color:#800000; font-weight:bold; '>setTimeout</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>new_iframe<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>display<span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>block</span><span style='color:#800000; '>"</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>100</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#800080; '>;</span>new_iframe<span style='color:#808030; '>.</span>src<span style='color:#808030; '>=</span>ebaydesc_src<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>(</span>top<span style='color:#808030; '>,</span>top<span style='color:#808030; '>.</span>document<span style='color:#808030; '>,</span>top<span style='color:#808030; '>.</span>document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>iframe[src*="ebaydesc"]:not([new_iframe])</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>src<span style='color:#808030; '>,</span>document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>.itemAttr</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span>document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>.itemAttr</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parentElement<span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>tmp<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>tmp<span style='color:#808030; '>=</span>document<span style='color:#808030; '>.</span>createElement<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>div</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>tmp<span style='color:#808030; '>.</span>innerHTML<span style='color:#808030; '>=</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>&lt;iframe new_iframe allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="no-referrer" scrolling="yes" sandbox="" seamless="false" style="width:100%;height:1200px;border:1px solid gray;" src="about:blank">&lt;/iframe></span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span><span style='color:#800000; font-weight:bold; '>return</span> tmp<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>iframe</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>cloneNode<span style='color:#808030; '>(</span><span style='color:#0f4d75; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span>document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>footer</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+</pre><br/>
+</blockquote><br/>
+<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/google-secret-domain-check-api-service">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-api-keys">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-api-keys">Chromium API Keys</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vmware-subdomains">VMware-Related Sub-Domains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-ninja-css3-to-make-your-website-behave-and-render-faster-including-a-more-responsive-scrolling">Including A More Responsive Scrolling</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/reverse-engineering-extract-version-information-from-and-executable-using-reshacker">Reverse Engineering - Extract Version Information From And Executable Using ResHacker</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-script-runtime">PHP Snippet - Script Runtime</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-generate-random-bytes">PHP Snippet - Generate Random Bytes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-request-argument-from-either-post-or-get">PHP Snippet - Request-Argument From Either POST Or GET</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/thinapp-registry-export">Solved: ThinApp Registry Export</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-two-approaches-on-uniquefing-an-array-memory-wise">JavaScript Snippet - Two Approaches On Unique'fing An Array - Memory Wise</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hubic-secret-coupon">hubiC Secret Coupon</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-obfuscated-numbering-for-csrf">JavaScript Obfuscated Numbering For CSRF</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-event-isolation-with-documentation">JavaScript Snippet - Event Isolation With Documentation</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/removing-eset-products-additional-notes">Removing ESET Products - Additional Notes</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/noscript-subdomains">NoScript SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-download-calendar-emoji-image">Free Download - Graphics Of Old School Calendar Unicode Emoji</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-onmibox">You Can't!</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

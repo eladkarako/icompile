@@ -1,0 +1,27 @@
+this snippets is an example on how to remove the rule links that changes the target to a redirection server really-fast,
+it could help you protect yourself against <em><a title="https://en.wikipedia.org/wiki/Clickjacking
+" rel="nofollow" href="https://en.wikipedia.org/wiki/Clickjacking" target="_blank">clickjacking</a></em> or save you time waiting for a redirect server to send you the <strong>real page</strong>. It is a great anti-tracking technique.
+
+<pre><span style='color:#696969; '>/*</span>
+<span style='color:#696969; '>&#xa0;&#xa0;clone           - cleans non-attribute event-handlers (it's a nice side effect..)</span>
+<span style='color:#696969; '>&#xa0;&#xa0;removeAttribute - handle the attributes event-handlers</span>
+<span style='color:#696969; '>*/</span>
+
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>elements<span style='color:#808030; '>,</span> tmp<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+  <span style='color:#800000; '>'</span><span style='color:#0000e6; '>use strict</span><span style='color:#800000; '>'</span><span style='color:#800080; '>;</span>
+
+  <span style='color:#797997; '>Array</span><span style='color:#808030; '>.</span><span style='color:#797997; '>prototype</span><span style='color:#808030; '>.</span>forEach<span style='color:#808030; '>.</span>call<span style='color:#808030; '>(</span>elements<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    tmp <span style='color:#808030; '>=</span> element<span style='color:#808030; '>.</span>cloneNode<span style='color:#808030; '>(</span><span style='color:#0f4d75; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    tmp<span style='color:#808030; '>.</span>removeAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>onmousedown</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    element<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>replaceChild<span style='color:#808030; '>(</span>tmp<span style='color:#808030; '>,</span> element<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+<span style='color:#800080; '>}</span><span style='color:#808030; '>(</span>
+  document<span style='color:#808030; '>.</span>querySelectorAll<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>[onmousedown*="rwt("], [onmousedown*=".href="]</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span>
+<span style='color:#808030; '>,</span> <span style='color:#0f4d75; '>null</span>
+<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+
+This code is so-minimal it could easily be placed as a one liner bookmarklet on your bookmarklet toolbar:
+<pre>javascript<span style='color:#800080; '>:</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>elements<span style='color:#808030; '>,</span>tmp<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><span style='color:#797997; '>Array</span><span style='color:#808030; '>.</span><span style='color:#797997; '>prototype</span><span style='color:#808030; '>.</span>forEach<span style='color:#808030; '>.</span>call<span style='color:#808030; '>(</span>elements<span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>tmp<span style='color:#808030; '>=</span>element<span style='color:#808030; '>.</span>cloneNode<span style='color:#808030; '>(</span><span style='color:#0f4d75; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>tmp<span style='color:#808030; '>.</span>removeAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>onmousedown</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>element<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>replaceChild<span style='color:#808030; '>(</span>tmp<span style='color:#808030; '>,</span>element<span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>(</span>document<span style='color:#808030; '>.</span>querySelectorAll<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>[onmousedown*="rwt("],[onmousedown*=".href="]</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span><span style='color:#0f4d75; '>null</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>

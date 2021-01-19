@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+     ░ - Serve this file as UTF-8.                ░
+     ░ - Serve this file as Windows-EOL (CR+LF).  ░
+     ░ - Serve this file use mimetype:            ░
+     ░   application/opensearchdescription+xml    ░
+     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+<!--
+╔═════════════════════════╗
+║ OpenSearch description. ║
+╚═════════════════════════╝ -->
+  <InputEncoding>UTF-8</InputEncoding>
+  <ShortName>Search iCompile</ShortName>
+  <Description>Search icompile.eladkarako.com</Description>
+  <Tags>search-icompile</Tags>
+  <Developer>Elad Karako</Developer>
+  <Image height="16" width="16" type="image/icon">data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAPgsT/FGmq/xN0p/8plZD/NaqZ/z6wqP9ApJL/Q4+Y/zGBnv8pe3D/NJZo/yt3aP8pdHf/Jnpg/zWGU/9BkVD/C53m/wuV3P8KnNX/CZDE/wiXwf8ImLn/BqLG/weTx/8Qksv/EYLO/xN8qP8aiYT/Iodu/yaGVf8jdFT/K385/xLF7f8PxvH/Dbfw/wyx7f8Jse3/B6fi/wu06P8NsuT/C6jo/wuw7P8KpOr/CY3Y/w2Bw/8fioj/J5Z1/yqEU/8dkKH/LYWF/yCMoP8Wssz/EL/k/xHN9f8Z1vL/HdXw/xnQ8f8Vw/T/EsT0/xnA9f8TvfP/C6vi/wmh2P8NldP/L2tI/ztpTv80c0L/LXtp/x2blf8Woq7/F56r/xyWlv8ejJT/J5eK/yl/ZP8saFz/JVZX/yJxeP8miHb/JYWB/0SXXf85jFr/QJRY/zaEU/8gbGT/HWNC/xlTMP8dVUT/H0lF/yBLNP8cMSn/HCYe/yE2LP8fSSz/HlZC/ydeIv8zYDn/MXhP/2yFWP+JfT3/f45W/3yfaf9VbkP/N08+/yI1Lv85SjX/Mi0e/xMODf8fIRT/IDwl/xksLv8oYnL/h8SZ/6TOsf/M5dL/vt7O/67Mtf+el2//q3s6/5eLSP91fjT/tJ5g/3x2Vf8cHhj/EwkJ/xcQDP8cHBH/mKdz/+fXsv/d4MP/yeTW/8vp2f+u4s3/sNu8/9Hfxf/cyp3/2MSY/+rgzf/TtYX/STgo/xIMCf8WGQ3/PDsn/76HSP/Xz6f/1t/J/9fj0f+x06b/mNOh/6XYrf+p1rD/1eXW/9vy6v/2+/b/8Pjy/5Sfk/8hGRr/FRwP/11DMP+6h0X/x82n/9PSrv/Gyp3/zcOT/9e7gv/Bw4n/p9Gb/83p2P/j8eb/4ezU/9Hhvf/I3Lz/XWJj/xksEv+Ojmn/tKJe/97hyP/b48v/1+DH/8Pg0f+m2cn/wMmj/9rMn//cyZz/28yf/9rYrf/G05n/5+zW/5KNgf8ZHA3/wsCD/83bof/G7eb/0evg/+Lkz//f8+r/v+7q/8Xcyf/U1rT/6+DB/93ewv/R6N7/u9Sx/8Dat//Kybr/JigX/8i8cf/Izo3/xfTw/8Tq4f/a38P/3eXP/+Dv4f/q9ev/2OXR/9nZtv/a3MH/vciJ/73Hi//E0Kf/w9S+/0RPOv/a6tv/ye/p/8/n2f/J4sv/w8eL/9vYuv/p0ab/6NCk//TXqv/l0KH/xtSv/83Urv+906z/39i1/9zNn/9VX1D/y/Dr/7PFhv/Jv4f/3cSP/+LFiv/i2bT/5tWs/+jUqv/w58v/88uQ/7HMkv+wwIn/pq5U/8i+hP/X1bL/iIBa/8HGiP+xtFL/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</Image>
+<!--
+╔══════════════╗
+║ self update. ║
+╚══════════════╝ -->
+<!--
+  <Url rel="self"        template="https://www.google.com/searchdomaincheck"  type="application/opensearchdescription+xml">
+     <Param name="format" value="opensearch" />
+  </Url>
+-->
+<!--
+╔═══════════════╗
+║ AutoComplete. ║
+╚═══════════════╝ -->
+  <Url rel="suggestions" template="https://www.google.com/complete/search"  type="application/x-suggestions+json" >
+     <Param name="q"              value="{searchTerms} site:https://icompile.eladkarako.com/"    /> 
+     <Param name="inputEncoding"  value="{inputEncoding}"  /> 
+     <Param name="outputEncoding" value="{outputEncoding}" /> 
+     <!--
+     Here is another use of the autocomplete/suggestion API including various foo partnerid from around the web (just for example)
+     https://www.google.com/complete/search?client=hp&hl=en&gs_nf=1&cp=1&gs_id​=4&xhr=t&q=eladkar&partnerID=169&partnerUID=4fae7c145d2f957b&sscs_active=1
+     https://www.google.com/complete/search?client=hp&hl=en&gs_nf=1&cp=1&gs_id​=4&xhr=t&q=eladkar&partnerID=191&partnerUID=2865308626608336017&sscs_active=1
+     https://www.google.com/complete/search?client=partner&hl=en&source=gcsc&partnerid=004830092955692134028%3Ah3oyn06c6nq&callback=google.search.CustomSearchControl.GcrcGcsc17089&ds=cse
+
+     http://suggestqueries.google.com/complete/search?&hl=en&client=youtube&jsonp=window.setautocomplete&q=eladk  //jsonp function
+     http://suggestqueries.google.com/complete/search?&hl=en&client=toolbar&q=eladk                               //xml
+     http://suggestqueries.google.com/complete/search?&hl=en&client=firefox&q=eladk                               //json
+     partnerid=004232795589008966185:d-cdy26a3wk
+     -->
+  </Url>
+<!--
+╔═══════════════════════╗
+║ 'From toolbar' search ║
+║ (main functionality). ║ 
+╚═══════════════════════╝ -->
+   <Url rel="results"    template="https://www.google.com/search"           type="text/html" xmlns:referrer="http://a9.com/-/opensearch/extensions/referrer/1.0/">
+     <Param name="gbv" value="1"                />   <!-- no javascript                   -->
+     <Param name="num" value="10"               />   <!-- search-results in a page        -->
+     <Param name="oe"  value="{outputEncoding}" />   <!-- oe === outputencoding - "utf-8" -->
+     <Param name="oe"  value="{outputEncoding}" />   <!-- oe === outputencoding - "utf-8" -->
+     <Param name="q"   value="{searchTerms}  site:https://icompile.eladkarako.com"    />
+  </Url>
+
+  <moz:SearchForm>https://www.google.com/search</moz:SearchForm>
+</OpenSearchDescription>
+
+<!--
+suggestion on what you can use as a 'modified search URL':
+https://www.google.com/search?num=100&gbv=1&q=%s%20-site%3Aw3schools.com%20-site%3Asourceforge.net%20-site%3Asourceforge.io%20-site%3Awww.amazon.com%20-site%3Awww.amazon.co.uk%20-site%3Amedium.com%20-site%3Awww.alibaba.com%20-site%3Awww.aliexpress.com%20-site%3A4pda.ru%20-site%3Af5.com%20-site%3Aexperts-exchange.com%20-site%3Adaniweb.com%20-site%3Aoutbrain.com%20-site%3Ataboola.com%20-site%3Avisualstudio.com%20-site%3Atumblr.com%20-site%3Afacebook.com%20-site%3Ahe-il.facebook.com%20-site%3Apictaram.com%20-site%3Atwitter.com%20-site%3Ainstagram.com%20-site%3Awikihow.com%20-site%3Aquora.com%20-site%3Astumbleupon.com%20-site%3Awww.pinterest.com%20-site%3Alinkedin.com%20-site%3Aplus.google.com%20-site%3Aflickr.com%20-site%3Abugzilla.mozilla.org%20-site%3Ajsfiddle.net%20-site%3Acodepen.io%20-site%3Abooks.google.com%20-site%3Asafaribooksonline.com%20-site%3Aw3.org%20-site%3Awufoo.com%20-site%3Ahtmlcodes.ws%20-site%3Asimania.co.il%20-site%3Agnu.org%20-site%3Asitelinks.info%20-site%3Awww.pinterest.co.uk
+-->

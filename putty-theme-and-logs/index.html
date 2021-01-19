@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>PUTTY Theme And Logs</title>
+  <meta itemprop="name"                                content="PUTTY Theme And Logs"       />
+  <meta name="dcterms.title"                           content="PUTTY Theme And Logs"       />
+  <meta property="og:title"                            content="PUTTY Theme And Logs"       />
+  <meta name="twitter:title"                           content="PUTTY Theme And Logs"       />
+  <meta name="twitter:text:title"                      content="PUTTY Theme And Logs"       />
+  <meta name="application-name"                        content="PUTTY Theme And Logs"       />
+  <meta name="subject"                                 content="PUTTY Theme And Logs"       />
+  <meta name="apple-mobile-web-app-title"              content="PUTTY Theme And Logs"       />
+  <meta name="msapplication-tooltip"                   content="PUTTY Theme And Logs"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="PUTTY Theme And Logs"       />
+  <meta itemprop="description"                         content="PUTTY Theme And Logs"       />
+  <meta name="dcterms.description"                     content="PUTTY Theme And Logs"       />
+  <meta name="twitter:description"                     content="PUTTY Theme And Logs"       />
+  <meta property="og:description"                      content="PUTTY Theme And Logs"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="agentfwd,altf,altonly,altspace,alwaysontop,ansicolour,answerback,arcfour,authfile,authgssapi,authki,authtis,authtype,backward,beep,beepind,blank,blinkcur,blinktext,blowfish,boldfont,bughmac,bugignore,bugmaxpkt,bugpksessid,bugplainpw,bugrekey,bugrsa,bugrsapad,bugwinadj,capslockcyr,change,cipher,click,closeonexit,color,colour,composekey,compression,connect,copy,courier,create,crimplieslf,ctrlaltkeys,curtype,custom,demo,desert,directly,disablebidi,discard,display,double,drive,dsusp,dword,echo,echoctl,echoe,echok,echoke,echonl,editor,enter,environment,erase,extension,file,flush,folder,font,fontcharset,fontheight,fontisbold,fontquality,fontvtmode,forward,group,gssapi,gssapifwd,gsscustom,gsslibs,hkey,host,hostname,icanon,icrnl,iexten,igncr,ignpar,igvita,imaxbel,inlcr,inpck,intr,isig,istrip,iuclc,ixany,ixoff,ixon,kill,lfimpliescr,line,lnext,localecho,localedit,locksize,logfilename,logflush,logged,logging,loghost,loginshell,logs,logtype,make,menu,merged,named,nicer,noaltscreen,noflsh,nopty,ocrnl,olcuc,onlcr,onlret,onocr,opost,override,parenb,parmrk,parodd,password,paste,pasted,pastertf,pendin,plugins,port,portnumber,printer,protocol,proxy,proxydns,proxyhost,proxymethod,proxyport,putty,quit,rawcnp,rectselect,registry,rekeybytes,rekeytime,reprint,rfcenviron,root,rxvthomeend,scroll,scrollbar,scrollonkey,serialline,serialspeed,session,sessions,shadowbold,shortcut,simontatham,software,sshbanner,sshnoauth,sshnoshell,sshprot,sspi,stamputmp,start,starttray,status,stop,sunkenedge,susp,swtch,target,tcpnodelay,telnetkey,telnetret,termheight,termwidth,theme,themes,title,tostop,tray,trayrestore,tryagent,trypalette,tweaks,unlimited,user,username,version,warn,warnonclose,werase,widefont,windowclass,windows,wintitle,wordness,xcase,xterm,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="agentfwd,altf,altonly,altspace,alwaysontop,ansicolour,answerback,arcfour,authfile,authgssapi,authki,authtis,authtype,backward,beep,beepind,blank,blinkcur,blinktext,blowfish,boldfont,bughmac,bugignore,bugmaxpkt,bugpksessid,bugplainpw,bugrekey,bugrsa,bugrsapad,bugwinadj,capslockcyr,change,cipher,click,closeonexit,color,colour,composekey,compression,connect,copy,courier,create,crimplieslf,ctrlaltkeys,curtype,custom,demo,desert,directly,disablebidi,discard,display,double,drive,dsusp,dword,echo,echoctl,echoe,echok,echoke,echonl,editor,enter,environment,erase,extension,file,flush,folder,font,fontcharset,fontheight,fontisbold,fontquality,fontvtmode,forward,group,gssapi,gssapifwd,gsscustom,gsslibs,hkey,host,hostname,icanon,icrnl,iexten,igncr,ignpar,igvita,imaxbel,inlcr,inpck,intr,isig,istrip,iuclc,ixany,ixoff,ixon,kill,lfimpliescr,line,lnext,localecho,localedit,locksize,logfilename,logflush,logged,logging,loghost,loginshell,logs,logtype,make,menu,merged,named,nicer,noaltscreen,noflsh,nopty,ocrnl,olcuc,onlcr,onlret,onocr,opost,override,parenb,parmrk,parodd,password,paste,pasted,pastertf,pendin,plugins,port,portnumber,printer,protocol,proxy,proxydns,proxyhost,proxymethod,proxyport,putty,quit,rawcnp,rectselect,registry,rekeybytes,rekeytime,reprint,rfcenviron,root,rxvthomeend,scroll,scrollbar,scrollonkey,serialline,serialspeed,session,sessions,shadowbold,shortcut,simontatham,software,sshbanner,sshnoauth,sshnoshell,sshprot,sspi,stamputmp,start,starttray,status,stop,sunkenedge,susp,swtch,target,tcpnodelay,telnetkey,telnetret,termheight,termwidth,theme,themes,title,tostop,tray,trayrestore,tryagent,trypalette,tweaks,unlimited,user,username,version,warn,warnonclose,werase,widefont,windowclass,windows,wintitle,wordness,xcase,xterm,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/doctor-who-season-8-12th-doctor-peter-capaldi"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/doctor-who-season-8-12th-doctor-peter-capaldi"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/xen-server-within-vmware-hypervisor-nested-virtual-machine-architectures"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/putty-theme-and-logs"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/putty-theme-and-logs"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/putty-theme-and-logs"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/putty-theme-and-logs"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/putty-theme-and-logs"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/putty-theme-and-logs"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-08-24T07:03:32+00:00"     />
+  <meta name="page-datetime"                           content="2014-08-24T07:03:32+00:00"     />
+  <meta property="article:published_time"              content="2014-08-24T07:03:32+00:00"     />
+  <meta name="dcterms.date"                            content="2014-08-24T07:03:32+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2014-08-24T07:54:35+00:00"    />
+  <meta property="article:modified_time"               content="2014-08-24T07:54:35+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/putty-theme-and-logs"
+,"url"             : "https://icompile.eladkarako.com/putty-theme-and-logs"
+,"headline"        : "PUTTY Theme And Logs"
+,"description"     : "PUTTY Theme And Logs"
+,"datePosted"      : "2014-08-24T07:03:32+00:00"
+,"dateCreated"     : "2014-08-24T07:03:32+00:00"
+,"datePublished"   : "2014-08-24T07:03:32+00:00"
+,"dateModified"    : "2014-08-24T07:54:35+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0002183688041">
+  <header>
+    <h1 itemprop="headline">PUTTY Theme And Logs</h1>
+    <sup>Posted at <time datetime="2014-08-24T07:54:35+00:00" itemprop="dateModified">Sun, 24 Aug 2014 07:54:35 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">There are few tweaks that make PUTTY (raw PUTTY, no other software nor plugins) nicer,<br/>
+the <a href="https://www.igvita.com/2008/04/14/custom-putty-color-themes/" title="https://www.igvita.com/2008/04/14/custom-putty-color-themes/" target="_blank">Desert-Theme from igvita.com</a> is one of them, other may be logging and unlimited scroll backward, right click menu and username pasted automatically, merged into one REG file,<br/>
+<br/>
+just copy&&paste it to an empty text file and change its extension to *.reg,<br/>
+then double click and you'll have a new line for a demo,<br/>
+load it and change the IP, and username to something that will be useful to you.<br/>
+<br/>
+<br/>
+<pre>
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\\Software\\SimonTatham\\PuTTY\\Sessions\oot@172.29.40.112]
+"Present"=dword:00000001
+"HostName"="172.29.40.112"
+"LogFileName"="D:\\\\LOGS\\\\log_host&H_y&Ym&Md&D_t&T.txt"
+"LogType"=dword:00000001
+"LogFileClash"=dword:00000000
+"LogFlush"=dword:00000001
+"SSHLogOmitPasswords"=dword:00000001
+"SSHLogOmitData"=dword:00000000
+"Protocol"="ssh"
+"PortNumber"=dword:00000016
+"CloseOnExit"=dword:00000001
+"WarnOnClose"=dword:00000001
+"PingInterval"=dword:00000000
+"PingIntervalSecs"=dword:00000000
+"TCPNoDelay"=dword:00000001
+"TCPKeepalives"=dword:00000001
+"TerminalType"="xterm"
+"TerminalSpeed"="38400,38400"
+"TerminalModes"="CS7=A,CS8=A,DISCARD=A,DSUSP=A,ECHO=A,ECHOCTL=A,ECHOE=A,ECHOK=A,ECHOKE=A,ECHONL=A,EOF=A,EOL=A,EOL2=A,ERASE=A,FLUSH=A,ICANON=A,ICRNL=A,IEXTEN=A,IGNCR=A,IGNPAR=A,IMAXBEL=A,INLCR=A,INPCK=A,INTR=A,ISIG=A,ISTRIP=A,IUCLC=A,IXANY=A,IXOFF=A,IXON=A,KILL=A,LNEXT=A,NOFLSH=A,OCRNL=A,OLCUC=A,ONLCR=A,ONLRET=A,ONOCR=A,OPOST=A,PARENB=A,PARMRK=A,PARODD=A,PENDIN=A,QUIT=A,REPRINT=A,START=A,STATUS=A,STOP=A,SUSP=A,SWTCH=A,TOSTOP=A,WERASE=A,XCASE=A"
+"AddressFamily"=dword:00000001
+"ProxyExcludeList"=""
+"ProxyDNS"=dword:00000001
+"ProxyLocalhost"=dword:00000000
+"ProxyMethod"=dword:00000000
+"ProxyHost"="proxy"
+"ProxyPort"=dword:00000050
+"ProxyUsername"=""
+"ProxyPassword"=""
+"ProxyTelnetCommand"="connect %host %port\\\
+"
+"Environment"=""
+"UserName"="root"
+"UserNameFromEnvironment"=dword:00000000
+"LocalUserName"="root"
+"NoPTY"=dword:00000000
+"Compression"=dword:00000000
+"TryAgent"=dword:00000001
+"AgentFwd"=dword:00000000
+"GssapiFwd"=dword:00000000
+"ChangeUsername"=dword:00000000
+"Cipher"="aes,blowfish,3des,WARN,arcfour,des"
+"KEX"="dh-gex-sha1,dh-group14-sha1,dh-group1-sha1,rsa,WARN"
+"RekeyTime"=dword:0000003c
+"RekeyBytes"="1G"
+"SshNoAuth"=dword:00000000
+"SshBanner"=dword:00000001
+"AuthTIS"=dword:00000000
+"AuthKI"=dword:00000001
+"AuthGSSAPI"=dword:00000001
+"GSSLibs"="gssapi32,sspi,custom"
+"GSSCustom"=""
+"SshNoShell"=dword:00000000
+"SshProt"=dword:00000002
+"LogHost"=""
+"SSH2DES"=dword:00000000
+"PublicKeyFile"=""
+"RemoteCommand"=""
+"RFCEnviron"=dword:00000000
+"PassiveTelnet"=dword:00000000
+"BackspaceIsDelete"=dword:00000001
+"RXVTHomeEnd"=dword:00000000
+"LinuxFunctionKeys"=dword:00000000
+"NoApplicationKeys"=dword:00000000
+"NoApplicationCursors"=dword:00000000
+"NoMouseReporting"=dword:00000000
+"NoRemoteResize"=dword:00000000
+"NoAltScreen"=dword:00000000
+"NoRemoteWinTitle"=dword:00000000
+"RemoteQTitleAction"=dword:00000001
+"NoDBackspace"=dword:00000000
+"NoRemoteCharset"=dword:00000000
+"ApplicationCursorKeys"=dword:00000000
+"ApplicationKeypad"=dword:00000000
+"NetHackKeypad"=dword:00000000
+"Tray"=dword:00000001
+"StartTray"=dword:00000000
+"TrayRestore"=dword:00000001
+"WakeupReconnect"=dword:00000001
+"FailureReconnect"=dword:00000001
+"AltF4"=dword:00000001
+"AltSpace"=dword:00000000
+"AltOnly"=dword:00000000
+"ComposeKey"=dword:00000000
+"CtrlAltKeys"=dword:00000001
+"TelnetKey"=dword:00000000
+"TelnetRet"=dword:00000001
+"LocalEcho"=dword:00000002
+"LocalEdit"=dword:00000002
+"Answerback"="PuTTY"
+"AlwaysOnTop"=dword:00000000
+"FullScreenOnAltEnter"=dword:00000000
+"HideMousePtr"=dword:00000000
+"SunkenEdge"=dword:00000000
+"WindowBorder"=dword:00000001
+"CurType"=dword:00000001
+"BlinkCur"=dword:00000001
+"Beep"=dword:00000001
+"BeepInd"=dword:00000000
+"BellWaveFile"=""
+"BellOverload"=dword:00000001
+"BellOverloadN"=dword:00000005
+"BellOverloadT"=dword:000007d0
+"BellOverloadS"=dword:00001388
+"ScrollbackLines"=dword:0098967f
+"DECOriginMode"=dword:00000000
+"AutoWrapMode"=dword:00000001
+"LFImpliesCR"=dword:00000000
+"CRImpliesLF"=dword:00000000
+"DisableArabicShaping"=dword:00000000
+"DisableBidi"=dword:00000000
+"WinNameAlways"=dword:00000001
+"WinTitle"="172.29.40.112 - PuTTY"
+"TermWidth"=dword:00000064
+"TermHeight"=dword:0000001a
+"Font"="Courier New"
+"FontIsBold"=dword:00000000
+"FontCharSet"=dword:000000b1
+"FontHeight"=dword:00000010
+"FontQuality"=dword:00000001
+"FontVTMode"=dword:00000004
+"UseSystemColours"=dword:00000000
+"TryPalette"=dword:00000000
+"ANSIColour"=dword:00000001
+"Xterm256Colour"=dword:00000001
+"BoldAsColour"=dword:00000001
+"Colour0"="255,255,255"
+"Colour1"="255,255,255"
+"Colour2"="51,51,51"
+"Colour3"="85,85,85"
+"Colour4"="0,0,0"
+"Colour5"="0,255,0"
+"Colour6"="77,77,77"
+"Colour7"="85,85,85"
+"Colour8"="255,43,43"
+"Colour9"="255,85,85"
+"Colour10"="152,251,152"
+"Colour11"="85,255,85"
+"Colour12"="240,230,140"
+"Colour13"="255,255,85"
+"Colour14"="205,133,63"
+"Colour15"="135,206,235"
+"Colour16"="255,222,173"
+"Colour17"="255,85,255"
+"Colour18"="255,160,160"
+"Colour19"="255,215,0"
+"Colour20"="245,222,179"
+"Colour21"="255,255,255"
+"RawCNP"=dword:00000000
+"PasteRTF"=dword:00000001
+"MouseIsXterm"=dword:00000002
+"RectSelect"=dword:00000000
+"MouseOverride"=dword:00000001
+"Wordness0"="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+"Wordness32"="0,1,2,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1"
+"Wordness64"="1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2"
+"Wordness96"="1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1"
+"Wordness128"="1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+"Wordness160"="1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+"Wordness192"="2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2"
+"Wordness224"="2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2"
+"LineCodePage"="UTF-8"
+"CJKAmbigWide"=dword:00000000
+"UTF8Override"=dword:00000001
+"Printer"=""
+"CapsLockCyr"=dword:00000000
+"ScrollBar"=dword:00000001
+"ScrollBarFullScreen"=dword:00000001
+"ScrollOnKey"=dword:00000001
+"ScrollOnDisp"=dword:00000001
+"EraseToScrollback"=dword:00000001
+"LockSize"=dword:00000000
+"BCE"=dword:00000001
+"BlinkText"=dword:00000000
+"X11Forward"=dword:00000000
+"X11Display"=""
+"X11AuthType"=dword:00000001
+"X11AuthFile"=""
+"LocalPortAcceptAll"=dword:00000000
+"RemotePortAcceptAll"=dword:00000000
+"PortForwardings"=""
+"BugIgnore1"=dword:00000000
+"BugPlainPW1"=dword:00000000
+"BugRSA1"=dword:00000000
+"BugIgnore2"=dword:00000000
+"BugHMAC2"=dword:00000000
+"BugDeriveKey2"=dword:00000000
+"BugRSAPad2"=dword:00000000
+"BugPKSessID2"=dword:00000000
+"BugRekey2"=dword:00000000
+"BugMaxPkt2"=dword:00000000
+"BugWinadj"=dword:00000000
+"StampUtmp"=dword:00000001
+"LoginShell"=dword:00000001
+"ScrollbarOnLeft"=dword:00000000
+"BoldFont"=""
+"BoldFontIsBold"=dword:00000000
+"BoldFontCharSet"=dword:00000000
+"BoldFontHeight"=dword:00000000
+"WideFont"=""
+"WideFontIsBold"=dword:00000000
+"WideFontCharSet"=dword:00000000
+"WideFontHeight"=dword:00000000
+"WideBoldFont"=""
+"WideBoldFontIsBold"=dword:00000000
+"WideBoldFontCharSet"=dword:00000000
+"WideBoldFontHeight"=dword:00000000
+"ShadowBold"=dword:00000000
+"ShadowBoldOffset"=dword:00000001
+"SerialLine"="COM1"
+"SerialSpeed"=dword:00002580
+"SerialDataBits"=dword:00000008
+"SerialStopHalfbits"=dword:00000002
+"SerialParity"=dword:00000000
+"SerialFlowControl"=dword:00000001
+"WindowClass"=""
+</pre><br/>
+<br/>
+<br/>
+create an empty folder in your D: drive named "LOGS",<br/>
+and every session will be logged into that folder.<br/>
+<br/>
+create a windows shortcut link, like so:<br/>
+<pre>
+"D:\\Software\\putty\\PUTTY.EXE" -load root@172.29.40.112 -pw thePasswordText
+</pre><br/>
+to get directly into the session without the need to enter the password.<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/doctor-who-season-8-12th-doctor-peter-capaldi">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/xen-server-within-vmware-hypervisor-nested-virtual-machine-architectures">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/xen-server-within-vmware-hypervisor-nested-virtual-machine-architectures">Xen-Server Within VMware Hypervisor - Nested Virtual-Machine Architectures</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/jetbrains-ides-early-access">JetBrains IDEs Early Access - Yummy!!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/autohotkey-remap-space-to-underscore">AutoHotKey Script - Replace (Re-Map) Space to Underscore</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/minimal-javascript-bookmarklet-format-no-cache">No-Cache</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/happy-hebrew-new-year-2014">שנה עברית טובה (תשרי ה'תשע"ה)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/internet-explorers-domstorage-in-registry">Internet Explorer's DOMStorage - In Registry!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-html5-crossdomain-ninja-techniques-part-4-google-safeframe-and-window-name-sync-solution-a-k-a-publisher-team-paranoid-cure">JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/autohotkey-script-whitespace-cleanup">AutoHotKey Script - WhiteSpace Cleanup</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-jquery-input-select-all-onfocus-override-mouseup-block">JavaScript - jQuery input select all onFocus override mouseup block</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/coldfusion-and-javascript-data-js-better-date-formats">ColdFusion and JavaScript data.js - Better Date-Formats</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-dynamic-html5-iframe-attributes-with-backward-compatibility">New Dynamic HTML5 IFrame-Attributes With Backward Compatibility</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/anti-anti-debugging-techniques-in-win32napolar-solarbot">Anti- Anti-debugging Techniques in Win32/Napolar solarbot </a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cool-javascript-compenent-handsontable-and-pikaday">Cool UI Compenents - HandsOnTable and PikaDay</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/web-design-best-practices-css3-responsive-style-fluid-layout-4">Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/eset-anti-virus-8-free-beta-trial">ESET Anti-Virus 8 Free Beta Trial</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/three-wishes-rule">Three Wishes Rule</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

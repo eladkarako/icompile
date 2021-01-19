@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Natively In Google-Chrome</title>
+  <meta itemprop="name"                                content="Natively In Google-Chrome"       />
+  <meta name="dcterms.title"                           content="Natively In Google-Chrome"       />
+  <meta property="og:title"                            content="Natively In Google-Chrome"       />
+  <meta name="twitter:title"                           content="Natively In Google-Chrome"       />
+  <meta name="twitter:text:title"                      content="Natively In Google-Chrome"       />
+  <meta name="application-name"                        content="Natively In Google-Chrome"       />
+  <meta name="subject"                                 content="Natively In Google-Chrome"       />
+  <meta name="apple-mobile-web-app-title"              content="Natively In Google-Chrome"       />
+  <meta name="msapplication-tooltip"                   content="Natively In Google-Chrome"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Natively In Google-Chrome"       />
+  <meta itemprop="description"                         content="Natively In Google-Chrome"       />
+  <meta name="dcterms.description"                     content="Natively In Google-Chrome"       />
+  <meta name="twitter:description"                     content="Natively In Google-Chrome"       />
+  <meta property="og:description"                      content="Natively In Google-Chrome"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="account,accounts,activate,activating,adding,additions,affiliation,android,applied,arguments,ascii,asked,awesome,based,baseline,browser,buttons,choose,choosing,chrome,chromium,code,component,desktop,edit,email,enabled,encoded,escape,existing,export,feature,file,flags,format,gmail,google,hash,hidden,hostname,import,limit,login,matches,matching,natively,option,page,pass,password,passwords,path,putting,range,restart,secret,settings,signin,simple,specific,super,switch,sync,unicode,urls,username,weird,wider,wrap,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="account,accounts,activate,activating,adding,additions,affiliation,android,applied,arguments,ascii,asked,awesome,based,baseline,browser,buttons,choose,choosing,chrome,chromium,code,component,desktop,edit,email,enabled,encoded,escape,existing,export,feature,file,flags,format,gmail,google,hash,hidden,hostname,import,limit,login,matches,matching,natively,option,page,pass,password,passwords,path,putting,range,restart,secret,settings,signin,simple,specific,super,switch,sync,unicode,urls,username,weird,wider,wrap,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/adblock-rule-to-block-ping-and-beacon-requests"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/adblock-rule-to-block-ping-and-beacon-requests"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javascript-snippet-a-human-readable-memory-formatter-add-commas-to-a-number-by-regular-expression"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/chrome-passwords-import-export"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/chrome-passwords-import-export"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/chrome-passwords-import-export"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/chrome-passwords-import-export"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/chrome-passwords-import-export"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/chrome-passwords-import-export"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-03-25T22:32:35+00:00"     />
+  <meta name="page-datetime"                           content="2017-03-25T22:32:35+00:00"     />
+  <meta property="article:published_time"              content="2017-03-25T22:32:35+00:00"     />
+  <meta name="dcterms.date"                            content="2017-03-25T22:32:35+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-03-30T09:48:49+00:00"    />
+  <meta property="article:modified_time"               content="2017-03-30T09:48:49+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/chrome-passwords-import-export"
+,"url"             : "https://icompile.eladkarako.com/chrome-passwords-import-export"
+,"headline"        : "Natively In Google-Chrome"
+,"description"     : "Natively In Google-Chrome"
+,"datePosted"      : "2017-03-25T22:32:35+00:00"
+,"dateCreated"     : "2017-03-25T22:32:35+00:00"
+,"datePublished"   : "2017-03-25T22:32:35+00:00"
+,"dateModified"    : "2017-03-30T09:48:49+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0005511840941">
+  <header>
+    <h1 itemprop="headline">Natively In Google-Chrome</h1>
+    <sup>Posted at <time datetime="2017-03-30T09:48:49+00:00" itemprop="dateModified">Thu, 30 Mar 2017 09:48:49 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2017/03/icompile.eladkarako.com_chrome_chromium_password_import_export_new_feature.png" alt="" width="256" height="256" /><br/>
+<br/>
+Adding new feature to Chromium lately,<br/>
+currently you can only activate it through the *super-secret-hidden* flags page..<br/>
+<br/>
+..Here is how:<br/>
+<!--more--><br/>
+<br/>
+<br/>
+Go to <code>chrome://flags/#password-import-export</code>,<br/>
+Switch to "enabled" and restart the browser.<br/>
+<br/>
+Then go to <code>chrome://settings/passwords</code> and you'll see two buttons,<br/>
+import and export,<br/>
+<br/>
+You can export the existing password as a CSV to your desktop,<br/>
+edit/add etc..<br/>
+<br/>
+the format is simple, here is an example:<br/>
+<pre>name,url,username,password
+accounts.google.com,https://accounts.google.com/signin,email@gmail.com,"my_pass_has_some_weird_$h!t'^'in/it.."
+foo.eladkarako.com,https://eladkarako.com,username,simple_password
+
+</pre><br/>
+<br/>
+<blockquote><br/>
+You can use ASCII/UTF-8/Unicode encoded text-file,<br/>
+if your password has some weird characters in it wrap it with <code>"</code>, if your password has <code>"</code> characters in it, escape them by <code>\\"</code>. Simple passwords you can just put there..<br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+As for the name, you can choose anything, the url can be as specific or as simple as you need, putting a very specific path will limit the password to only be used for the current url, or urls based on the current url with any additions to the path, arguments or hash component of the url,<br/>
+choosing simple, or even only a hostname as the url will means that the password will be applied to a wider range of matches, all based on the current baseline of the current url.<br/>
+</blockquote><br/>
+<br/>
+<em>And as always you will be asked your OS-login password before you can view or export your passwords.</em><br/>
+<br/>
+<br/>
+Also, the really awesome part is that it will sync with your account,<br/>
+Try activating <code>chrome://flags/#affiliation-based-matching</code> for using all the password with Android too!<br/>
+<br/>
+', 'Finally - An Option To Import And Export Passwords</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/adblock-rule-to-block-ping-and-beacon-requests">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-a-human-readable-memory-formatter-add-commas-to-a-number-by-regular-expression">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-a-human-readable-memory-formatter-add-commas-to-a-number-by-regular-expression">Add Commas To A Number By Regular-Expression</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sqlite3-exe">sqlite3.exe</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/preload-google-analytics">Preload Google Analytics</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/opensearchdescription-example">OpenSearchDescription Example</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/opensearch-logo">OpenSearch Logo</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-update-removal">Google-Update Removal</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/goodbye-chrome-plugins">Goodbye chrome://plugins !!!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-character-encoderreplacer-for-unicode-and-common-characters-to-html-entity">JavaScript Character Encoder/Replacer For Unicode And Common-Characters To HTML-Entity</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nice-scrollbars">Nice Scrollbars</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/exiftool-ultimate-batch-to-remove-all-tags-from-infinite-list-of-files-with-verbose-status-and-progress-report">With Verbose Status And Progress Report</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/machine-logo-for-ssh-putty">machine logo for ssh (putty)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-snippet-language-specific-font-family">CSS Snippet - A Language Specific font-family Rule That Does Not Suck!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/java-utf8">Java And UTF-8</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-remove-300ms-delay-on-touchclick-no-javascript-required">HTML5 - Remove 300ms Delay On-Touch/Click - No JavaScript Required!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-close-connection-with-non-standard-status">PHP Snippet - Close Connection With A Non-Standard HTTP-Status</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-snippet-the-magical-rotated-logo">CSS Snippet - The Magical Rotated Logo</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

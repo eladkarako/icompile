@@ -1,0 +1,1 @@
+there is no <img src="https://icompile.eladkarako.com/_uploads/2016/01/spoon.png" alt="spoon" width="120" height="120" class="alignnone size-full wp-image-4127" />, it's <strong>"android:Theme.Holo"</strong>.', 'There Is No "android:Theme.Holo.Dark" (...also

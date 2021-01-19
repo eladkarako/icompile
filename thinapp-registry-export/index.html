@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Solved: ThinApp Registry Export</title>
+  <meta itemprop="name"                                content="Solved: ThinApp Registry Export"       />
+  <meta name="dcterms.title"                           content="Solved: ThinApp Registry Export"       />
+  <meta property="og:title"                            content="Solved: ThinApp Registry Export"       />
+  <meta name="twitter:title"                           content="Solved: ThinApp Registry Export"       />
+  <meta name="twitter:text:title"                      content="Solved: ThinApp Registry Export"       />
+  <meta name="application-name"                        content="Solved: ThinApp Registry Export"       />
+  <meta name="subject"                                 content="Solved: ThinApp Registry Export"       />
+  <meta name="apple-mobile-web-app-title"              content="Solved: ThinApp Registry Export"       />
+  <meta name="msapplication-tooltip"                   content="Solved: ThinApp Registry Export"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Solved: ThinApp Registry Export"       />
+  <meta itemprop="description"                         content="Solved: ThinApp Registry Export"       />
+  <meta name="dcterms.description"                     content="Solved: ThinApp Registry Export"       />
+  <meta name="twitter:description"                     content="Solved: ThinApp Registry Export"       />
+  <meta property="og:description"                      content="Solved: ThinApp Registry Export"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="allowing,application,authorized,automated,back,batch,blank,bold,bottom,build,building,built,called,capture,captured,capturing,cases,changed,check,cleanup,code,collide,color,command,common,company,comparing,completed,compression,contact,content,convert,converting,copy,copying,create,creating,data,deepest,drag,drop,dumping,easier,easily,egistry,encouraged,engine,engineering,engineers,english,exist,export,exporting,exportreg,extra,extract,familiar,faster,feature,fewer,file,files,find,folder,font,foreign,format,foxit,freeware,generate,generated,generating,generic,good,google,hebrew,helps,hint,hkey,holding,html,human,ignore,importdir,information,inside,inspected,internal,isolation,jump,keys,language,level,limitation,lines,linked,lite,make,merged,method,minimal,named,naturally,navigate,needed,news,nice,open,operation,organised,original,outdir,overkill,pack,package,page,pair,parameters,permission,pretty,process,products,program,project,read,recent,registry,related,releases,remove,removing,required,safely,sake,sanbox,sandbox,sandboxing,savvy,seconds,service,setup,simplifying,slightly,small,smaller,snapshots,soft,solution,solved,standard,structure,symbolic,sync,system,target,thinapp,thinstall,torchsoft,tracking,usage,users,versioning,virtual,virtualapp,vmware,vregtool,walk,warnings,weight,windows,workshop,worry,wrap,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="allowing,application,authorized,automated,back,batch,blank,bold,bottom,build,building,built,called,capture,captured,capturing,cases,changed,check,cleanup,code,collide,color,command,common,company,comparing,completed,compression,contact,content,convert,converting,copy,copying,create,creating,data,deepest,drag,drop,dumping,easier,easily,egistry,encouraged,engine,engineering,engineers,english,exist,export,exporting,exportreg,extra,extract,familiar,faster,feature,fewer,file,files,find,folder,font,foreign,format,foxit,freeware,generate,generated,generating,generic,good,google,hebrew,helps,hint,hkey,holding,html,human,ignore,importdir,information,inside,inspected,internal,isolation,jump,keys,language,level,limitation,lines,linked,lite,make,merged,method,minimal,named,naturally,navigate,needed,news,nice,open,operation,organised,original,outdir,overkill,pack,package,page,pair,parameters,permission,pretty,process,products,program,project,read,recent,registry,related,releases,remove,removing,required,safely,sake,sanbox,sandbox,sandboxing,savvy,seconds,service,setup,simplifying,slightly,small,smaller,snapshots,soft,solution,solved,standard,structure,symbolic,sync,system,target,thinapp,thinstall,torchsoft,tracking,usage,users,versioning,virtual,virtualapp,vmware,vregtool,walk,warnings,weight,windows,workshop,worry,wrap,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/php-snippet-request-argument-from-either-post-or-get"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/php-snippet-request-argument-from-either-post-or-get"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javascript-snippet-two-approaches-on-uniquefing-an-array-memory-wise"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/thinapp-registry-export"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/thinapp-registry-export"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/thinapp-registry-export"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/thinapp-registry-export"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/thinapp-registry-export"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/thinapp-registry-export"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-10-15T02:56:40+00:00"     />
+  <meta name="page-datetime"                           content="2016-10-15T02:56:40+00:00"     />
+  <meta property="article:published_time"              content="2016-10-15T02:56:40+00:00"     />
+  <meta name="dcterms.date"                            content="2016-10-15T02:56:40+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-10-15T03:02:28+00:00"    />
+  <meta property="article:modified_time"               content="2016-10-15T03:02:28+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/thinapp-registry-export"
+,"url"             : "https://icompile.eladkarako.com/thinapp-registry-export"
+,"headline"        : "Solved: ThinApp Registry Export"
+,"description"     : "Solved: ThinApp Registry Export"
+,"datePosted"      : "2016-10-15T02:56:40+00:00"
+,"dateCreated"     : "2016-10-15T02:56:40+00:00"
+,"datePublished"   : "2016-10-15T02:56:40+00:00"
+,"dateModified"    : "2016-10-15T03:02:28+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0000020056741">
+  <header>
+    <h1 itemprop="headline">Solved: ThinApp Registry Export</h1>
+    <sup>Posted at <time datetime="2016-10-15T03:02:28+00:00" itemprop="dateModified">Sat, 15 Oct 2016 03:02:28 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">Say you want to convert <a href="https://www.vmware.com/products/thinapp.html" target="_blank">VMWare's ThinApp</a> <sub>(formerly known as <em><a href="http://www.vmware.com/company/news/releases/thinstall.html" target="_blank">Thinstall</a></em>)</sub> Registry,<br/>
+From the sanbox-virtual format (those text files in your <code>capture/project-name</code> folder) To something a human can be easily read, say, a windows registry file.<br/>
+<br/>
+Why? well.. maybe you've just captured a setup process in-order to check what has been changed on your operation-system.<br/>
+<br/>
+<blockquote><br/>
+A really common reason to use ThinApp without actually building anything at the end, at least among the <em>VM-savvy engineers</em> is for the sake of tracking the changes to the operation-system, in hope of simplifying installations, in cases all you may need is a pair of exe-and-reg files and no need for an overkill of sandboxing an entire application + virtualapp-engine.<br/>
+~<br/>
+ThinApp does a very good job of capturing even the deepest registry changes (including those of permission limitation or ones which does not "really exist", such as soft symbolic-linked keys for example under <code>HKEY_USERS</code> (which are common enough).<br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+Another way of comparing registry changes including dumping the entire registry (before and after..) and comparing the the <code>.REG</code> files using a program such as <a href="http://www.scootersoftware.com/" target="_blank">BeyondCompare</a>.<br/>
+<br/>
+A similar method but somehow slightly easier is the usage of <a href="http://www.torchsoft.com/en/rw_information.html" target="_blank">Registry-Workshop</a>, and the "before" and "after" snapshots feature, following the built-in compare-engine which is pretty much a nice wrap around the same thing (above) except using the program's internal-compare engine which also allows to jump-into the inspected values, sync changes, etc...<br/>
+</blockquote><br/>
+<br/>
+So..<br/>
+<br/>
+I've captured a nice little freeware called <a href="https://www.foxitsoftware.com" target="_blank">foxit PDF</a><br/>
+and got the familiar folder structure (before building anything!)<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key1.png" alt="icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key1" width="565" height="318"/><br/>
+<br/>
+If you'll have a look <sup>(just a look, don't worry..)</sup><br/>
+inside the <code>build.bat</code> batch-file,<br/>
+You'll see part of the command we'll going to use, which is actually part of creating the virtual-sandbox,<br/>
+in-particularity- the REGISTRY part:<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key2_batch_look.png" alt="icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key2_batch_look" width="972" height="381"/><br/>
+<br/>
+After the hint, it is time for the solution walk-through:<br/>
+<br/>
+<ol><br/>
+<li><br/>
+Under your ThinApp folder (same level where you'll find the <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key3_Setup-Capture_exe.png" alt="Setup Capture.exe file" width="195" height="87" /> create a new folder, named <code>reg_convert</code>.<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_folder1.png" alt="icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_folder1" width="553" height="428" /><br/>
+</li><br/>
+<li><br/>
+Under <code>reg_convert</code> create two folder named <code>in</code> and <code>out</code><br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_folder2.png" alt="icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_folder2" width="576" height="189"/><br/>
+</li><br/>
+<li><br/>
+Under <code>in</code> folder, copy the <code>Package.ini</code> from your captured-package,<br/>
+or use this generic, minimal <code>Package.ini</code><br/>
+<br/>
+<blockquote>you only need the part related to setup-capture, mostly the versioning of the capturing engine of ThinApp, and the code-page [language] of <code>1033</code> [English] might be useful in-case you have registry keys with foreign-characters, which in this case you might want to have a look at the values of one of your original captured <code>Package.ini</code> files, or Google it.. <code>1037</code> is Hebrew :]</blockquote><br/>
+<br/>
+<pre><span style='color:#7f9fbf; font-weight:bold; '>[Compression]</span><br/>
+CompressionType<span style='color:#808030; '>=</span>None<br/>
+<br/>
+<span style='color:#7f9fbf; font-weight:bold; '>[Isolation]</span><br/>
+DirectoryIsolationMode<span style='color:#808030; '>=</span>Merged<br/>
+<br/>
+<span style='color:#7f9fbf; font-weight:bold; '>[BuildOptions]</span><br/>
+<span style='color:#696969; '>;-------- Parameters used only during Setup Capture  ----------</span><br/>
+AccessDeniedMsg<span style='color:#808030; '>=</span>You are not currently authorized to run this application. Please contact your administrator.<br/>
+CapturedUsingVersion<span style='color:#808030; '>=</span><span style='color:#008c00; '>5</span>.<span style='color:#008c00; '>1</span>.<span style='color:#008c00; '>0</span>-<span style='color:#008c00; '>2079447</span><br/>
+CaptureProcessorArchitecture<span style='color:#808030; '>=</span><span style='color:#008c00; '>0</span><br/>
+CapturePlatformVersion<span style='color:#808030; '>=</span><span style='color:#008c00; '>0501</span><br/>
+CaptureOSArchitecture<span style='color:#808030; '>=</span><span style='color:#008c00; '>32</span><br/>
+CaptureOSMajorVersion<span style='color:#808030; '>=</span><span style='color:#008c00; '>5</span><br/>
+CaptureOSMinorVersion<span style='color:#808030; '>=</span><span style='color:#008c00; '>1</span><br/>
+CaptureOSSuite<span style='color:#808030; '>=</span><span style='color:#008c00; '>256</span><br/>
+CaptureOSProductType<span style='color:#808030; '>=</span><span style='color:#008c00; '>1</span><br/>
+CaptureOSCSDVersion<span style='color:#808030; '>=</span>Service Pack <span style='color:#008c00; '>3</span><br/>
+CaptureOSProcessorCoreCount<span style='color:#808030; '>=</span><span style='color:#008c00; '>2</span><br/>
+CaptureOSRemoteSession<span style='color:#808030; '>=</span><span style='color:#008c00; '>0</span><br/>
+CaptureOSVMwareVM<span style='color:#808030; '>=</span><span style='color:#008c00; '>1</span><br/>
+OutDir<span style='color:#808030; '>=</span>bin<br/>
+<br/>
+AnsiCodePage<span style='color:#808030; '>=</span><span style='color:#008c00; '>1255</span><br/>
+LocaleIdentifier<span style='color:#808030; '>=</span><span style='color:#008c00; '>1033</span><br/>
+<br/>
+AltArchitectureShortcut<span style='color:#808030; '>=</span><span style='color:#008c00; '>0</span><br/>
+QualityReportingEnabled<span style='color:#808030; '>=</span><span style='color:#008c00; '>0</span><br/>
+</pre><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_folder3.png" alt="icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_folder3" width="591" height="204"/><br/>
+</li><br/>
+<li><br/>
+Still under the <code>in</code> folder, you should now copy (just) the registry files (<code>.TXT</code>) from your captured project. <br/>
+<br/>
+You do not have to copy them all, and you are well encouraged to make them as small and lite as possible by removing values that are not needed. The smaller and fewer they'll be, the faster the entire process will be completed.<br/>
+<br/>
+For example I'll going to remove the following "keys/values/data" since they are not needed or even related to the package itself, even more than that, those can collide with the operation-system's more recent-values (in-case I'll be building the project later..)<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_can_make_registry_txt_files_smaller.png" alt="icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_can_make_registry_txt_files_smaller" width="1148" height="503" /><br/>
+</li><br/>
+<li><br/>
+At this point, we will generate a virtual-sandbox holding just the registry values (no files), using the <code>vregtool.exe</code> command.<br/>
+  <ol><br/>
+    <li><br/>
+    open up CMD and navigate to where you have your <code>vregtool.exe</code><br/>
+    (same place you'll have <code>reg_convert</code>).<br/>
+    <code>cd c:\\.......\\ThinApp\\</code><br/>
+    </li><br/>
+    <li><br/>
+    run <code>vregtool.exe reg_convert\\out\eg.tvr ImportDir reg_convert\\in\\</code>,<br/>
+    <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_generate_tvr_of_just_registry_values2.png" alt="icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_generate_tvr_of_just_registry_values2" width="1014" height="133"/><br/>
+    You may ignore warnings, or remove any extra-empty lines at the bottom of the txt files,<br/>
+    It will take few seconds, and you'll find the <code>tvr</code> file under the <code>out</code> folder.<br/>
+    <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_generate_tvr_result.png" alt="icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_generate_tvr_result" width="601" height="185"/><br/>
+    </li><br/>
+  <ol><br/>
+</li><br/>
+<li><br/>
+Almost done, we will, now, extract the actual registry key (in the standard windows format) from the virtual-sandbox, exporting it to the same <code>out</code> folder.<br/>
+<br/>
+run:<code>vregtool.exe reg_convert\\out\eg.tvr ExportReg reg_convert\\out\egistry.reg</code><br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_generate_final_registry_key_result.png" alt="icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_generate_final_registry_key_result" width="967" height="94" /><br/>
+You'll find your result file under the <code>out</code> folder as well as the old <code>tvr</code> file.<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_generate_final_registry_key_result_in_folder.png" alt="icompile.eladkarako.com_thinapp_thinstall_virtual_registry_tvr_convert_to_reg_key_generate_final_registry_key_result_in_folder" width="592" height="196"/><br/>
+</li><br/>
+<li><br/>
+Done.<br/>
+<br/>
+naturally a cleanup will be required in-order to use the same method of converting <code>txt</code>-<code>tvr</code>-<code>reg</code>,<br/>
+remove the <code>txt</code> files under <code>in</code> folder, keep <code>Package.ini</code> file there to be used the next time.<br/>
+you can safely remove the entire content of the <code>out</code> folder (the <code>reg.tvr</code>, and once you'll be done with it- the <code>registry.reg</code> file).<br/>
+<br/>
+Naturally a batch file can quite easily be generated,<br/>
+You can make one to drag&drop the entire captured-folder, allowing automated copy, generating the copying back the result to your captured-project, in same place as the <code>txt</code> files, to keep things organised by project. :)<br/>
+</li><br/>
+</ol><br/>
+<br/>
+Hope it helps ! :]<br/>
+<br/>
+Happy engineering day :]]</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-request-argument-from-either-post-or-get">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-two-approaches-on-uniquefing-an-array-memory-wise">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-two-approaches-on-uniquefing-an-array-memory-wise">JavaScript Snippet - Two Approaches On Unique'fing An Array - Memory Wise</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hubic-secret-coupon">hubiC Secret Coupon</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-obfuscated-numbering-for-csrf">JavaScript Obfuscated Numbering For CSRF</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-event-isolation-with-documentation">JavaScript Snippet - Event Isolation With Documentation</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/removing-eset-products-additional-notes">Removing ESET Products - Additional Notes</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/noscript-subdomains">NoScript SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-download-calendar-emoji-image">Free Download - Graphics Of Old School Calendar Unicode Emoji</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-onmibox">You Can't!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-createdocument-with-doctype-example">JavaScript Ninja ☕ - createDocument With DocType - The Missing Example</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows-update-exes-and-services">Windows Update EXEs And Services</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-snippet-example-on-multiple-language-resource">HTML Snippet - Example On Multiple Language Resource</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-ninja-centring-container-in-the-middle-of-viewport-with-css3-only-no-javascript">No JavaScript</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/full-on-centering-panel-css">HTML5 Ninja Techniques - Minimal HTML/CSS3 Markup Needed For Full-On Centering-Panel - With/Without CSS-Table</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/multi-language-version-info-resource-for-your-exe">Multi-Language Version-Info Resource For Your EXE</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/faster-copying-files-to-sd-card">Faster Copying Files To SD-Card</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-code-search">Chromium Code-Search</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

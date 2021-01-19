@@ -1,0 +1,24 @@
+{
+ ,"short_name"  : "iCompile"
+ ,"name"        : "iCompile - A Blog By Elad Karako"
+ ,"description" : "iCompile - A Blog By Elad Karako"
+ ,"start_url"   : "https://icompile.eladkarako.com/"
+ ,"scope"       : "https://icompile.eladkarako.com/"
+ ,"icons"       : [
+                    {"sizes" : "154x154"
+                    ,"src"   : "https://icompile.eladkarako.com/favicon.png"
+                    ,"type"  : "image/png"
+                    }
+                  ]
+ ,"theme_color" : "blue"
+ ,"orientation" : "any"
+ ,"lang"        : "en-US"
+ ,"dir"         : "ltr"
+ ,"display"     : "browser"
+ ,"categories"  : ["math"
+                  ,"programming"
+                  ,"tech"
+                  ,"computers"
+                  ,"education"
+                  ]
+}

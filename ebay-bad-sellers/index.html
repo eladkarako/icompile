@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>eBay Bad Sellers</title>
+  <meta itemprop="name"                                content="eBay Bad Sellers"       />
+  <meta name="dcterms.title"                           content="eBay Bad Sellers"       />
+  <meta property="og:title"                            content="eBay Bad Sellers"       />
+  <meta name="twitter:title"                           content="eBay Bad Sellers"       />
+  <meta name="twitter:text:title"                      content="eBay Bad Sellers"       />
+  <meta name="application-name"                        content="eBay Bad Sellers"       />
+  <meta name="subject"                                 content="eBay Bad Sellers"       />
+  <meta name="apple-mobile-web-app-title"              content="eBay Bad Sellers"       />
+  <meta name="msapplication-tooltip"                   content="eBay Bad Sellers"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="eBay Bad Sellers"       />
+  <meta itemprop="description"                         content="eBay Bad Sellers"       />
+  <meta name="dcterms.description"                     content="eBay Bad Sellers"       />
+  <meta name="twitter:description"                     content="eBay Bad Sellers"       />
+  <meta property="og:description"                      content="eBay Bad Sellers"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accessing,adding,address,advance,amount,answer,apparently,apply,article,asks,assign,avoid,back,bear,beautyzz,benjeans,bessky,bitb,blacklist,blank,block,blog,bookmarklet,boss,bothered,btlife,button,buyer,buyers,buyincoins,buyworld,cagoqra,category,change,cherrystore,clickable,clickkey,close,combines,comma,complex,content,copy,crowd,cskwin,data,deal,deeping,delivery,document,dream,ebay,ebayisapi,elec,elgb,entered,entering,entries,everyday,exclude,execcommand,execute,find,flyingtiger,fmdinis,fsradio,ftrt,ftrv,function,gelivable,good,green,guoqca,haoadp,happyness,hear,herminidixo,horror,horse,html,idea,ignore,iluckydog,include,infinite,input,javascript,jinbostore,jinshan,join,kingsing,koala,line,list,lists,location,lovelyhome,lucky,made,magic,maintain,mall,message,mhestore,misszhou,misszt,money,months,nasty,needed,nice,nihaomayun,ninja,normalize,null,offer,olyhome,onedot,onsalezone,open,opened,partial,past,pasting,paypal,phoenix,photo,phrases,plenty,popular,prices,prompt,purchases,queen,query,quit,readers,recent,replace,requires,return,roseforyou,sabdhi,sabdlo,sacat,sadis,sale,salic,samihi,samilow,sargn,sasl,saslc,saslop,scenario,script,search,seller,sellers,send,sending,sends,separated,service,sharing,shuli,small,space,sseariver,stangeleyes,starsmile,stop,store,stories,stpos,strong,stungun,sunnyshop,surprised,target,term,tiger,tinaforyou,toquedarte,total,trench,udhi,udlo,ugly,undefined,version,vovotrade,websites,wholesaleuk,window,wisdom,women,world,worldwide,zysysy,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accessing,adding,address,advance,amount,answer,apparently,apply,article,asks,assign,avoid,back,bear,beautyzz,benjeans,bessky,bitb,blacklist,blank,block,blog,bookmarklet,boss,bothered,btlife,button,buyer,buyers,buyincoins,buyworld,cagoqra,category,change,cherrystore,clickable,clickkey,close,combines,comma,complex,content,copy,crowd,cskwin,data,deal,deeping,delivery,document,dream,ebay,ebayisapi,elec,elgb,entered,entering,entries,everyday,exclude,execcommand,execute,find,flyingtiger,fmdinis,fsradio,ftrt,ftrv,function,gelivable,good,green,guoqca,haoadp,happyness,hear,herminidixo,horror,horse,html,idea,ignore,iluckydog,include,infinite,input,javascript,jinbostore,jinshan,join,kingsing,koala,line,list,lists,location,lovelyhome,lucky,made,magic,maintain,mall,message,mhestore,misszhou,misszt,money,months,nasty,needed,nice,nihaomayun,ninja,normalize,null,offer,olyhome,onedot,onsalezone,open,opened,partial,past,pasting,paypal,phoenix,photo,phrases,plenty,popular,prices,prompt,purchases,queen,query,quit,readers,recent,replace,requires,return,roseforyou,sabdhi,sabdlo,sacat,sadis,sale,salic,samihi,samilow,sargn,sasl,saslc,saslop,scenario,script,search,seller,sellers,send,sending,sends,separated,service,sharing,shuli,small,space,sseariver,stangeleyes,starsmile,stop,store,stories,stpos,strong,stungun,sunnyshop,surprised,target,term,tiger,tinaforyou,toquedarte,total,trench,udhi,udlo,ugly,undefined,version,vovotrade,websites,wholesaleuk,window,wisdom,women,world,worldwide,zysysy,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/keyframe-animation-example"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/keyframe-animation-example"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/htaccess-cors"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/ebay-bad-sellers"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/ebay-bad-sellers"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/ebay-bad-sellers"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/ebay-bad-sellers"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/ebay-bad-sellers"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/ebay-bad-sellers"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-02-24T08:15:17+00:00"     />
+  <meta name="page-datetime"                           content="2017-02-24T08:15:17+00:00"     />
+  <meta property="article:published_time"              content="2017-02-24T08:15:17+00:00"     />
+  <meta name="dcterms.date"                            content="2017-02-24T08:15:17+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-02-24T10:00:34+00:00"    />
+  <meta property="article:modified_time"               content="2017-02-24T10:00:34+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/ebay-bad-sellers"
+,"url"             : "https://icompile.eladkarako.com/ebay-bad-sellers"
+,"headline"        : "eBay Bad Sellers"
+,"description"     : "eBay Bad Sellers"
+,"datePosted"      : "2017-02-24T08:15:17+00:00"
+,"dateCreated"     : "2017-02-24T08:15:17+00:00"
+,"datePublished"   : "2017-02-24T08:15:17+00:00"
+,"dateModified"    : "2017-02-24T10:00:34+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007114297841">
+  <header>
+    <h1 itemprop="headline">eBay Bad Sellers</h1>
+    <sup>Posted at <time datetime="2017-02-24T10:00:34+00:00" itemprop="dateModified">Fri, 24 Feb 2017 10:00:34 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><blockquote><br/>
+There are plenty of "Bad-Buyers" websites,<br/>
+for sellers to be adding to their "ignore list",<br/>
+but not much of (if any) "bad seller" lists,<br/>
+<br/>
+<hr/><br/>
+<br/>
+From time to time you hear of a seller that sends partial-delivery,<br/>
+Or even avoid sending anything at all (especially if you place a very small order),<br/>
+After two or three months when you'll send them a message,<br/>
+They will act *all "surprised"* and if you are lucky you might get your money back,<br/>
+that is, if they will bothered to answer you at all, <br/>
+and it wasn't too long until you've opened a case with either eBay/PayPal.<br/>
+<br/>
+why wouldn't you just avoid that scenario at all?<br/>
+apparently my other article <em><a href="https://icompile.eladkarako.com/crowd-wisdom-ebay-enhancements/" target="_blank">JavaScript Ninja – Crowd Wisdom eBay Enhancements</a></em> was so popular, that I've actually got address by few of my blog-readers,<br/>
+sharing some 'horror'-stories about recent purchases,<br/>
+We've had a new idea:<br/>
+<br/>
+<strong>A seller blacklist</strong><br/>
+</blockquote><br/>
+<br/>
+<!--more--><br/>
+<hr/><br/>
+<br/>
+<strong>Nasty s.o.b sellers list:</strong><br/>
+<pre>
+1stangeleyes
+5starsvipstore
+7-39158
+12deeping
+47st.photo
+51buyworld
+168come
+av-rf
+babastoreong
+beautyzz2009
+benjeans2015
+bessky_store
+best4noone
+bib-queen
+bitb99
+boss7321
+btlife
+buyincoins_au
+cagoqra
+cherrystore2012
+clickkey
+craftmentools
+cskwin2015
+elec-mall
+elgb16
+fashion-trench
+fashionwomensale
+flyingtiger0104
+fmdinis
+gelivable.2u
+good4deal999
+gracefulvara
+green-the-world
+guoqca0
+haoadp123
+happygreenshopteam
+happyness8966
+healthnbeautyexpress
+herminidixo0
+horse3109
+iluckydog
+incellworldukltd
+jinbostore
+jinshan2013
+kingsing6688
+koala-bear-au 
+lovelyhome2015
+mhestore2009
+misszhou2013
+misszt1983
+my_dream1960
+nihaomayun
+olyhome
+onedot1
+onsalezone2012
+past-prices
+phoenix1900
+roseforyou_nice
+sale4women
+service2worldwide
+shuli8882012
+smartphonestation
+sseariver2009
+starsmile5
+stungun112
+sunnyshop06
+tiger.vzu
+tinaforyou
+toquedarte
+traveleroutdoor
+vovotrade_top
+wholesaleuk
+yur1924
+zysysy2012
+</pre><br/>
+<br/>
+<blockquote><br/>
+apparently you <strong>CAN block</strong> sellers, but it requires some accessing to eBay advance-search,<br/>
+any copy-pasting a long-list of bad-sellers with an "exclude" category. Too complex for everyday use.<br/>
+</blockquote><br/>
+<br/>
+<strong>Here comes the JavaScript Magic :]</strong><br/>
+ <br/>
+<pre>
+javascript:(function(window, document, search_for, ignore_from, search_url, blacklist_sellers) {
+  if("" === search_for || null === search_for) return undefined;                  /* no query - quit */
+  ignore_from = ("" === ignore_from || null === ignore_from) ? "" : ignore_from;  /* normalize input */
+  
+  /* clear up tab's content first */
+  window.stop(), document.execCommand("Stop"), document.clear(), document.close(), document.open(), document.close();
+  
+  blacklist_sellers = encodeURIComponent( blacklist_sellers.join(",") );
+  search_for        = encodeURIComponent(search_for);
+  ignore_from       = encodeURIComponent(ignore_from);
+  search_url        = search_url.replace("##BLACKLIST_SELLERS##", blacklist_sellers)
+                                .replace("##SEARCH_FOR##",        search_for)
+                                .replace("##IGNORE_FROM##",       ignore_from)
+                                ;
+  /* apply URL change */
+  window.location.assign(search_url)
+
+}(
+  top
+,
+  top.document
+,
+  prompt("Search For..", "good")
+,
+  prompt("Ignore From\
+(for 2 or more use a comma)", "bad,ugly")
+,
+  "http://www.ebay.com/sch/i.html?_in_kw=1&_sacat=0&_udlo=&_udhi=&LH_BIN=1&LH_ItemCondition=3&_ftrt=901&_ftrv=1&_sabdlo=&_sabdhi=&_samilow=&_samihi=&_stpos=&_sargn=-1%26saslc%3D1&_salic=1&_fss=1&_fsradio=%26LH_SpecificSeller%3D1&_saslop=2&_sop=12&_dmd=1&_sadis=15&_ipg=200&_sasl=##BLACKLIST_SELLERS##&_nkw=##SEARCH_FOR##&_ex_kw=##IGNORE_FROM##"
+,
+["1stangeleyes"
+,"5starsvipstore"
+,"7-39158"
+,"12deeping"
+,"47st.photo"
+,"51buyworld"
+,"168come"
+,"av-rf"
+,"babastoreong"
+,"beautyzz2009"
+,"benjeans2015"
+,"bessky_store"
+,"best4noone"
+,"bib-queen"
+,"bitb99"
+,"boss7321"
+,"btlife"
+,"buyincoins_au"
+,"cagoqra"
+,"cherrystore2012"
+,"clickkey"
+,"craftmentools"
+,"cskwin2015"
+,"elec-mall"
+,"elgb16"
+,"fashion-trench"
+,"fashionwomensale"
+,"flyingtiger0104"
+,"fmdinis"
+,"gelivable.2u"
+,"good4deal999"
+,"gracefulvara"
+,"green-the-world"
+,"guoqca0"
+,"haoadp123"
+,"happygreenshopteam"
+,"happyness8966"
+,"healthnbeautyexpress"
+,"herminidixo0"
+,"horse3109"
+,"iluckydog"
+,"incellworldukltd"
+,"jinbostore"
+,"jinshan2013"
+,"kingsing6688"
+,"koala-bear-au "
+,"lovelyhome2015"
+,"mhestore2009"
+,"misszhou2013"
+,"misszt1983"
+,"my_dream1960"
+,"nihaomayun"
+,"olyhome"
+,"onedot1"
+,"onsalezone2012"
+,"past-prices"
+,"phoenix1900"
+,"roseforyou_nice"
+,"sale4women"
+,"service2worldwide"
+,"shuli8882012"
+,"smartphonestation"
+,"sseariver2009"
+,"starsmile5"
+,"stungun112"
+,"sunnyshop06"
+,"tiger.vzu"
+,"tinaforyou"
+,"toquedarte"
+,"traveleroutdoor"
+,"vovotrade_top"
+,"wholesaleuk"
+,"yur1924"
+,"zysysy2012"
+]
+));
+</pre><br/>
+<br/>
+and- a bookmarklet version that you can made into a clickable button,<br/>
+<br/>
+<pre>
+javascript:(function(window,document,search_for,ignore_from,search_url,blacklist_sellers){if(""===search_for||null===search_for)return undefined;ignore_from=""===ignore_from||null===ignore_from?"":ignore_from;window.stop(),document.execCommand("Stop"),document.clear(),document.close(),document.open(),document.close();blacklist_sellers=encodeURIComponent(blacklist_sellers.join(","));search_for=encodeURIComponent(search_for);ignore_from=encodeURIComponent(ignore_from);search_url=search_url.replace("##BLACKLIST_SELLERS##",blacklist_sellers).replace("##SEARCH_FOR##",search_for).replace("##IGNORE_FROM##",ignore_from);window.location.assign(search_url)}(top,top.document,prompt("Search For..","good"),prompt("Ignore From\
+(for 2 or more use a comma)","bad,ugly"),"http://www.ebay.com/sch/i.html?_in_kw=1&_sacat=0&_udlo=&_udhi=&LH_BIN=1&LH_ItemCondition=3&_ftrt=901&_ftrv=1&_sabdlo=&_sabdhi=&_samilow=&_samihi=&_stpos=&_sargn=-1%26saslc%3D1&_salic=1&_fss=1&_fsradio=%26LH_SpecificSeller%3D1&_saslop=2&_sop=12&_dmd=1&_sadis=15&_ipg=200&_sasl=##BLACKLIST_SELLERS##&_nkw=##SEARCH_FOR##&_ex_kw=##IGNORE_FROM##",["1stangeleyes","5starsvipstore","7-39158","12deeping","47st.photo","51buyworld","168come","av-rf","babastoreong","beautyzz2009","benjeans2015","bessky_store","best4noone","bib-queen","bitb99","boss7321","btlife","buyincoins_au","cagoqra","cherrystore2012","clickkey","craftmentools","cskwin2015","elec-mall","elgb16","fashion-trench","fashionwomensale","flyingtiger0104","fmdinis","gelivable.2u","good4deal999","gracefulvara","green-the-world","guoqca0","haoadp123","happygreenshopteam","happyness8966","healthnbeautyexpress","herminidixo0","horse3109","iluckydog","incellworldukltd","jinbostore","jinshan2013","kingsing6688","koala-bear-au ","lovelyhome2015","mhestore2009","misszhou2013","misszt1983","my_dream1960","nihaomayun","olyhome","onedot1","onsalezone2012","past-prices","phoenix1900","roseforyou_nice","sale4women","service2worldwide","shuli8882012","smartphonestation","sseariver2009","starsmile5","stungun112","sunnyshop06","tiger.vzu","tinaforyou","toquedarte","traveleroutdoor","vovotrade_top","wholesaleuk","yur1924","zysysy2012"]));
+</pre><br/>
+<br/>
+<br/>
+What it does?<br/>
+- asks you for your search term,<br/>
+- asks you for "ignore from" - words (you can include infinite amount of phrases, separated by comma)<br/>
+<br/>
+the script above combines a list of <strong>bad sellers</strong> with your entered data,<br/>
+and execute a search, instead of you, entering the whole thing by hand.<br/>
+<br/>
+<em><strong>Hope it help :]</strong></em><br/>
+<br/>
+<hr/><br/>
+<br/>
+You may also find it useful to add those to the buyer block-list:<br/>
+<a href="http://offer.ebay.com/ws/eBayISAPI.dll?BidderBlockLogin">http://offer.ebay.com/ws/eBayISAPI.dll?BidderBlockLogin</a><br/>
+it is comma-separated (no space and no new-line needed), and you can maintain total of up until 5,000 entries..<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/keyframe-animation-example">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/htaccess-cors">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/htaccess-cors">.htaccess CORS</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/delete-a-lot-of-wordpress-tags">Delete A Lot Of WordPress Tags</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/harry-dresden-wizard">HARRY DRESDEN - WIZARD</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/complete-fill-textarea-page">HTML Snippet - 100% Fill Textarea-Page</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-vmware-thinapp-import-error">Solved: VMware ThinAPP Import Error</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-entity-minimal-common">HTML-Entity - Minimal Common</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/100-client-side-file-to-base64-converter">100% Client-Side File To Base64 Converter</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/aria2c-sample-chromium-command-line-switch-updater">aria2c Sample - Chromium Command-Line Switch Updater</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adblock-rule-to-block-ping-and-beacon-requests">AdBlock Rule To Block Ping And Beacon Requests</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-passwords-import-export">Natively In Google-Chrome</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-a-human-readable-memory-formatter-add-commas-to-a-number-by-regular-expression">Add Commas To A Number By Regular-Expression</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sqlite3-exe">sqlite3.exe</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/preload-google-analytics">Preload Google Analytics</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/opensearchdescription-example">OpenSearchDescription Example</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/opensearch-logo">OpenSearch Logo</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-update-removal">Google-Update Removal</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

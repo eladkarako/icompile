@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)</title>
+  <meta itemprop="name"                                content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+  <meta name="dcterms.title"                           content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+  <meta property="og:title"                            content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+  <meta name="twitter:title"                           content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+  <meta name="twitter:text:title"                      content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+  <meta name="application-name"                        content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+  <meta name="subject"                                 content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+  <meta name="apple-mobile-web-app-title"              content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+  <meta name="msapplication-tooltip"                   content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+  <meta itemprop="description"                         content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+  <meta name="dcterms.description"                     content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+  <meta name="twitter:description"                     content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+  <meta property="og:description"                      content="Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accepting,access,active,adapter,address,advance,android,apps,area,authorities,back,binary,bind,binding,burp,button,cable,capable,capture,certificate,click,complete,computer,configure,configuring,confirm,connection,connections,convert,converter,copy,creates,defined,defines,device,devices,dialong,disable,download,edit,explained,file,format,framework,free,good,guest,home,html,identify,image,inspect,inspection,install,interfaces,internet,javascript,line,listen,listeners,listening,machine,manage,mobile,module,move,network,note,online,operation,options,output,phone,pinning,planing,port,portswigger,possibly,press,printers,proxy,remote,requires,resources,reverse,router,running,save,school,section,secure,select,settings,shared,specific,sslshopper,standard,storage,suggest,systems,title,traffic,trusted,turn,unpin,unsecure,virtual,visit,website,wifi,windows,works,xposed,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accepting,access,active,adapter,address,advance,android,apps,area,authorities,back,binary,bind,binding,burp,button,cable,capable,capture,certificate,click,complete,computer,configure,configuring,confirm,connection,connections,convert,converter,copy,creates,defined,defines,device,devices,dialong,disable,download,edit,explained,file,format,framework,free,good,guest,home,html,identify,image,inspect,inspection,install,interfaces,internet,javascript,line,listen,listeners,listening,machine,manage,mobile,module,move,network,note,online,operation,options,output,phone,pinning,planing,port,portswigger,possibly,press,printers,proxy,remote,requires,resources,reverse,router,running,save,school,section,secure,select,settings,shared,specific,sslshopper,standard,storage,suggest,systems,title,traffic,trusted,turn,unpin,unsecure,virtual,visit,website,wifi,windows,works,xposed,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/tcp-ip-reset-and-rebuild-at-windows-shutdown"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/tcp-ip-reset-and-rebuild-at-windows-shutdown"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/windows_sendo_46_items_only_limit"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/burp-as-reverse-proxy"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/burp-as-reverse-proxy"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/burp-as-reverse-proxy"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/burp-as-reverse-proxy"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/burp-as-reverse-proxy"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/burp-as-reverse-proxy"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2020-09-17T10:02:11+00:00"     />
+  <meta name="page-datetime"                           content="2020-09-17T10:02:11+00:00"     />
+  <meta property="article:published_time"              content="2020-09-17T10:02:11+00:00"     />
+  <meta name="dcterms.date"                            content="2020-09-17T10:02:11+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2020-09-14T10:02:11+00:00"    />
+  <meta property="article:modified_time"               content="2020-09-14T10:02:11+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/burp-as-reverse-proxy"
+,"url"             : "https://icompile.eladkarako.com/burp-as-reverse-proxy"
+,"headline"        : "Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"
+,"description"     : "Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)"
+,"datePosted"      : "2020-09-17T10:02:11+00:00"
+,"dateCreated"     : "2020-09-17T10:02:11+00:00"
+,"datePublished"   : "2020-09-17T10:02:11+00:00"
+,"dateModified"    : "2020-09-14T10:02:11+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0001396330061">
+  <header>
+    <h1 itemprop="headline">Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)</h1>
+    <sup>Posted at <time datetime="2020-09-14T10:02:11+00:00" itemprop="dateModified">Mon, 14 Sep 2020 10:02:11 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/icompile.eladkarako.com_burp_as_reverse_proxy.png" title="Burp configuration to allow accepting connections from other devices" alt="Burp configuration to allow accepting connections from other devices" />  <br/>
+<br/>
+Follow the instructions: (as explained in the image above)  <br/>
+<ol><br/>
+<li><br/>
+  Configuring Burp to listen to remote-connections (all interfaces).  <br/>
+  <br/>
+  <pre>
+  'Proxy' tab
+    'Options' tab
+      select the line at 'proxy listeners', and click 'Edit'.
+        'Binding' tab
+          in 'Bind to address', select 'All interfaces', and click 'OK'.
+            on the dialong 'Confirm: are you sure you want...', click 'Yes'.
+  </pre>  <br/>
+  <br/>
+  Note that you can also specify address to capture only traffic from a specific network-adapter,  <br/>
+  but usually your PC has one active network-connection to your home WiFi,  <br/>
+  from which it gets both internet and possibly (unless the router defines you in 'guest area'),  <br/>
+  and access shared resources from other network devices such as storage or printers.  <br/>
+    <br/>
+  You might get few more if you are using a virtual-machine which creates a virtual network-adapter,  <br/>
+  if you are planing on listening to connections just from a virtual-machine,  <br/>
+  than this is just for you, otherwise best to keep it on 'All interfaces'.  <br/>
+</li><br/>
+<li><br/>
+  <pre>
+  On the different device,  
+  the one you want to inspect,  
+  configure a proxy, using the address of the computer running Burp at the moment and port 8080.  
+
+  You can inspect unsecure traffic from that device right-away on your computer-running-Burp.  
+  
+  Visit, http://burp in the device you just defined proxy.  
+  on the top, press the burp button, and install or download to your device and install later the certificate-file.  
+  If you can manage, place it in the trusted authorities section (Windows),  
+  and VPN (Android) - for example.
+  
+  You should be able to use secure-connection inspection for standard-connections.  
+  
+  </pre><br/>
+  Note, that for some mobile-apps,  <br/>
+  which uses Certificate-Pinning,  <br/>
+  you need Xposed-Framework, Xposed-App, and 'Unpin Certificate' module,  <br/>
+  to manage to capture traffic with Burp.<br/>
+  sorry...<br/>
+</li><br/>
+<li><br/>
+Note that the format of the certificate is DER,  <br/>
+binary format that works OK with Windows (and maybe a more advance Android operation-systems),  <br/>
+you need to convert it to good, old-school CRT.  <br/>
+<br/>
+that you can do online for free with the website:  <br/>
+https://www.sslshopper.com/ssl-converter.html (requires JavaScript),  <br/>
+it will identify the format itself,  <br/>
+and suggest the CRT as output, click save.  <br/>
+<br/>
+You can do this on your device (disable the proxy settings for now, complete, install and turn them on again),  <br/>
+or on your computer and move the CRT file back to the phone by a USB cable (or disable the proxy to be able to copy the file over the home-network if you are capable of it).  <br/>
+<br/>
+for CRT, just click it, and install, you need it for WiFi, but you can install it for apps and VPN a well.<br/>
+</li><br/>
+</ol></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/tcp-ip-reset-and-rebuild-at-windows-shutdown">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/windows_sendo_46_items_only_limit">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows_sendo_46_items_only_limit">Windows SendTo Context-Menu Only Allows Displaying Of First 46 Items From The SendTo Folder [UNSOLVED]</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/closure-compiler-after-deprecation-of-closure-linter">How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/dropbox">DropBox</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">SHealth</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">Show Hidden Devices In Windows Device-Manager</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/fasterfox-eladkarako-mod">FasterFox (EladKarako MOD)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/notepad2-and-notepad">Notepad2 and Notepad++</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/w3schools-a-developers-best-friend">w3schools - a developer's best friend</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-browser-the-future-of-google-chrome">Chromium Browser - The Future Of Google Chrome</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-icons-for-developers">free icons for developers</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/matlab-advanced-memory-prellocation">MATLAB Advanced </a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/triquicksort-string-sorting-algorithm">triQuickSort String Sorting Algorithm</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/matlab-advanced-scoping-exceptions">MATLAB Advanced - Scoping exceptions</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disable-google-fade-in-homepage">Disable Google Fade-in Homepage</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/force-save-password">Force Save Password</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/matlab-advanced-biometric-recognition">MATLAB Advanced - Biometric Recognition</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

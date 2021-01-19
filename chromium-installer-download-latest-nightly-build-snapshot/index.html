@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Chromium Installer - Download Latest Nightly-Build Snapshot</title>
+  <meta itemprop="name"                                content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+  <meta name="dcterms.title"                           content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+  <meta property="og:title"                            content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+  <meta name="twitter:title"                           content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+  <meta name="twitter:text:title"                      content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+  <meta name="application-name"                        content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+  <meta name="subject"                                 content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+  <meta name="apple-mobile-web-app-title"              content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+  <meta name="msapplication-tooltip"                   content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+  <meta itemprop="description"                         content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+  <meta name="dcterms.description"                     content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+  <meta name="twitter:description"                     content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+  <meta property="og:description"                      content="Chromium Installer - Download Latest Nightly-Build Snapshot"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accept,agent,alive,application,arguments,auth,avoiding,backup,base,batch,bigcache,blank,browse,browser,build,cache,call,certificate,challenge,change,check,chrome,chromium,code,command,common,compatible,compiled,concat,content,continue,continuous,cookie,cookies,counter,curl,custom,debug,directory,document,download,downloaded,downloading,dynamic,echo,endlocal,error,execute,exist,figured,file,filename,files,firefox,folder,fool,gecko,github,google,googleapis,gtbdfff,header,html,index,information,init,installer,latest,line,longer,made,manager,march,meaning,mime,mini,modify,mozilla,msdos,msie,newest,nightly,notepad,number,octet,option,orbitdm,output,parallel,path,pause,platform,preferred,prefix,program,protocol,reading,reads,redirect,referer,reffer,releases,remove,response,revision,scookie,script,send,server,session,setlocal,settings,sfile,small,snapshot,software,speed,sreferrer,start,static,stdout,stream,strong,surl,suseragent,switches,target,throw,times,title,tokens,trident,tring,trunk,type,update,user,variable,version,viewed,wait,wget,windows,working,write,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accept,agent,alive,application,arguments,auth,avoiding,backup,base,batch,bigcache,blank,browse,browser,build,cache,call,certificate,challenge,change,check,chrome,chromium,code,command,common,compatible,compiled,concat,content,continue,continuous,cookie,cookies,counter,curl,custom,debug,directory,document,download,downloaded,downloading,dynamic,echo,endlocal,error,execute,exist,figured,file,filename,files,firefox,folder,fool,gecko,github,google,googleapis,gtbdfff,header,html,index,information,init,installer,latest,line,longer,made,manager,march,meaning,mime,mini,modify,mozilla,msdos,msie,newest,nightly,notepad,number,octet,option,orbitdm,output,parallel,path,pause,platform,preferred,prefix,program,protocol,reading,reads,redirect,referer,reffer,releases,remove,response,revision,scookie,script,send,server,session,setlocal,settings,sfile,small,snapshot,software,speed,sreferrer,start,static,stdout,stream,strong,surl,suseragent,switches,target,throw,times,title,tokens,trident,tring,trunk,type,update,user,variable,version,viewed,wait,wget,windows,working,write,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/eclipse-kepler-and-lite-configurations"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/eclipse-kepler-and-lite-configurations"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/mine-types-complete-list"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/chromium-installer-download-latest-nightly-build-snapshot"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/chromium-installer-download-latest-nightly-build-snapshot"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/chromium-installer-download-latest-nightly-build-snapshot"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/chromium-installer-download-latest-nightly-build-snapshot"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/chromium-installer-download-latest-nightly-build-snapshot"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/chromium-installer-download-latest-nightly-build-snapshot"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2012-08-04T21:23:52+00:00"     />
+  <meta name="page-datetime"                           content="2012-08-04T21:23:52+00:00"     />
+  <meta property="article:published_time"              content="2012-08-04T21:23:52+00:00"     />
+  <meta name="dcterms.date"                            content="2012-08-04T21:23:52+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-08-01T23:38:05+00:00"    />
+  <meta property="article:modified_time"               content="2016-08-01T23:38:05+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/chromium-installer-download-latest-nightly-build-snapshot"
+,"url"             : "https://icompile.eladkarako.com/chromium-installer-download-latest-nightly-build-snapshot"
+,"headline"        : "Chromium Installer - Download Latest Nightly-Build Snapshot"
+,"description"     : "Chromium Installer - Download Latest Nightly-Build Snapshot"
+,"datePosted"      : "2012-08-04T21:23:52+00:00"
+,"dateCreated"     : "2012-08-04T21:23:52+00:00"
+,"datePublished"   : "2012-08-04T21:23:52+00:00"
+,"dateModified"    : "2016-08-01T23:38:05+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0002345114431">
+  <header>
+    <h1 itemprop="headline">Chromium Installer - Download Latest Nightly-Build Snapshot</h1>
+    <sup>Posted at <time datetime="2016-08-01T23:38:05+00:00" itemprop="dateModified">Mon, 01 Aug 2016 23:38:05 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">figured it out.<br/>
+<br/>
+1.<br/>
+get latest revision number from this url: <a href="http://commondatastorage.googleapis.com/chromium-browser-continuous/Win/LAST_CHANGE" title="http://commondatastorage.googleapis.com/chromium-browser-continuous/Win/LAST_CHANGE" target="_blank">http://commondatastorage.googleapis.com/chromium-browser-continuous/Win/LAST_CHANGE</a><br/>
+<br/>
+2.<br/>
+concat it to this url, to get into the FTP of this (meaning the latest) revision<br/>
+http://commondatastorage.googleapis.com/chromium-browser-continuous/index.html?path=Win/<strong>put revision number here</strong>/<br/>
+<br/>
+<br/>
+I've made a small VB6 program that uses Win32 API to download the latest revision number and send it to the STDOUT,<br/>
+and a CMD (batch file) that reads it and use wGet to download the execute.<br/>
+<br/>
+wget has custom settings like using reffer url, cookie, user-agent, avoiding cache, re-write the mime-type, longer keep-alive, tring few times, downloading backup in case of an error- can re download from the same point,<br/>
+all like the execute was downloaded from a browser.<br/>
+<br/>
+<br/>
+<br/>
+<pre>
+::  browse
+::  http://commondatastorage.googleapis.com/chromium-browser-continuous/index.html
+::  http://commondatastorage.googleapis.com/chromium-browser-continuous/index.html?path=Win/
+::  http://commondatastorage.googleapis.com/chromium-browser-continuous/index.html?path=Win/
+::  https://commondatastorage.googleapis.com/chromium-browser-continuous/index.html?path=Win/
+::  https://commondatastorage.googleapis.com/chromium-browser-continuous/index.html?path=Win/144914/
+::  for more information.
+
+@echo off
+::static information init.
+set sUserAgent="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.2; WOW64; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET4.0C; .NET4.0E)"
+set sUrl_Protocol=https
+set sUrl_Base=commondatastorage.googleapis.com/chromium-browser-continuous/Win
+set sUrl_FileName=mini_installer.exe
+
+
+
+setlocal enableextensions
+    :: sVersionNumber init.
+    set sVersionNumber=""
+    set sUrl_Version=http://commondatastorage.googleapis.com/chromium-browser-continuous/Win/LAST_CHANGE
+    for /f "tokens=*" %%a in ('.\
+es\\getRemoteFileTextContent.exe %sUrl_Version%') do (set sVersionNumber=%%a)
+    
+    ::dynamic information init.
+    set sReferrer="http://commondatastorage.googleapis.com/chromium-browser-continuous/index.html?path=Win/%sVersionNumber%/"
+    set sCookie="http://o-o.preferred.fra07t11.v8.cache8.c.bigcache.googleapis.com/chromium-browser-continuous/Win/%sVersionNumber%/mini_installer.exe?ms=tsu&mt=1340990464&cms_redirect=yes&redirect_counter=2"
+
+    ::download execute
+    wget "%sUrl_Protocol%://%sUrl_Base%/%sVersionNumber%/%sUrl_FileName%"                                                   ^
+                                                                            --no-check-certificate                          ^
+                                                                            --wait=2                                        ^
+                                                                            --referer=%sReferrer%                           ^
+                                                                            --timestamping                                  ^
+                                                                            --debug                                         ^
+                                                                            --continue                                      ^
+                                                                            --no-cache                                      ^
+                                                                            --no-cookies                                    ^
+                                                                            --no-dns-cache                                  ^
+                                                                            --server-response                               ^
+                                                                            --auth-no-challenge                             ^
+                                                                            --directory-prefix=.                            ^
+                                                                            --header="Accept: application/octet-stream"     ^
+                                                                            --header="Accept: application/x-msdos-program"  ^
+                                                                            --header="Keep-Alive: 300"                      ^
+
+endlocal
+
+pause
+</pre><br/>
+<br/>
+<br/>
+to use the script you'll need the small Execute or any other way of downloading and reading the content of the latest revision number (you can use "curl" compiled for windows, or something...)<br/>
+<br/>
+and wGet (compiled for win32) placed in the same folder as the script or in the PATH.<br/>
+download it here:<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/getRemoteFileTextContent.rar">https://github.com/eladkarako/icompile/releases/download/latest/getRemoteFileTextContent.rar</a><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+p.s.<br/>
+<br/>
+you can have all the new command-line switches for the newest latest version of chromium put in a text file and viewed by notepad++.<br/>
+use the following CMD (batch) script:<br/>
+<pre>
+@echo off
+rem   set command-line arguments.
+set sURL1=http://src.chromium.org/svn/trunk/src/chrome/common/chrome_switches.cc
+set sURL2=http://src.chromium.org/svn/trunk/src/base/base_switches.cc
+set sUserAgent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 GTBDFff GTB7.0 (.NET CLR 3.5.30729)"
+
+set sFile=switches.cc
+
+rem   remove old files.
+if exist %sFile%   del /f /q %sFile%   >nul
+
+rem   download.
+wget --directory-prefix=. --user-agent=%sUserAgent% --output-document=%sFile% %sURL1% %sURL2%
+rem ren %sFile% %sFile%_
+
+start "D:\\Software\\Notepad++\\Notepad++.exe" "%CD%\\%sFile%"
+</pre><br/>
+<br/>
+you will need to modify the full url to Notepad++, or put its path in your PATH variable and just use "Notepad++.exe", you will also need a wget compiled for win32 platform (or x64) just google it.<br/>
+<br/>
+<br/>
+____----____----<br/>
+<em>March 2014:</em> here is a working update:<br/>
+<code>it uses wGet, but you can also throw the link into any parallel download manager to speed things up a little, it uses a session cookie to fool the web-server a little bit..</code><br/>
+<br/>
+<pre>
+::  browse
+::  http://commondatastorage.googleapis.com/chromium-browser-continuous/index.html
+::  http://commondatastorage.googleapis.com/chromium-browser-continuous/index.html?path=Win/
+::  http://commondatastorage.googleapis.com/chromium-browser-continuous/index.html?path=Win/
+::  https://commondatastorage.googleapis.com/chromium-browser-continuous/index.html?path=Win/
+::  https://commondatastorage.googleapis.com/chromium-browser-continuous/index.html?path=Win/144914/
+::  for more information.
+
+
+::static information init.
+set sUserAgent="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.2; WOW64; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET4.0C; .NET4.0E)"
+set sUrl_Protocol=https
+set sUrl_Base=commondatastorage.googleapis.com/chromium-browser-continuous/Win
+set sUrl_FileName=mini_installer.exe
+set sOrbitDownloaderExeFullPath=C:\\Program Files (x86)\\Orbitdownloader\\orbitdm.exe
+
+
+setlocal enableextensions
+    :: sVersionNumber init.
+    set sVersionNumber=""
+    set sUrl_Version=http://commondatastorage.googleapis.com/chromium-browser-continuous/Win/LAST_CHANGE
+    for /f "tokens=*" %%a in ('.\
+es\\getRemoteFileTextContent.exe %sUrl_Version%') do (set sVersionNumber=%%a)
+    
+    ::dynamic information init.
+    set sReferrer="http://commondatastorage.googleapis.com/chromium-browser-continuous/index.html?path=Win/%sVersionNumber%/"
+    set sCookie="http://o-o.preferred.fra07t11.v8.cache8.c.bigcache.googleapis.com/chromium-browser-continuous/Win/%sVersionNumber%/mini_installer.exe?ms=tsu&mt=1340990464&cms_redirect=yes&redirect_counter=2"
+
+    set sURL=%sUrl_Protocol%://%sUrl_Base%/%sVersionNumber%/%sUrl_FileName%
+
+
+
+    ::option #1.
+    ::-------------------------------------------
+    wget --no-check-certificate                          ^
+         --wait=2                                        ^
+         --referer=%sReferrer%                           ^
+         --timestamping                                  ^
+         --debug                                         ^
+         --continue                                      ^
+         --no-cache                                      ^
+         --no-cookies                                    ^
+         --no-dns-cache                                  ^
+         --server-response                               ^
+         --auth-no-challenge                             ^
+         --directory-prefix=.                            ^
+         --header="Accept: application/octet-stream"     ^
+         --header="Accept: application/x-msdos-program"  ^
+         --header="Keep-Alive: 300"                      ^
+         "%sURL%"
+    
+    ::option #2.
+    ::-------------------------------------------
+    ::call "%sOrbitDownloaderExeFullPath%" "%sURL%"
+    
+endlocal
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/eclipse-kepler-and-lite-configurations">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/mine-types-complete-list">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/mine-types-complete-list">Mine-Types Complete List</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-social-networking-icon-set">Free Social Networking Icon Set</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/fast-download-and-parse-http-archive-requests-file">Fast download and parse http-archive requests file</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/13-31-113-131-311-prime-numbers">311 Prime Numbers</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vb6-api-for-coinitializeex-and-couninitialize-of-ole32-dll">VB6 API For CoInitializeEx and CoUninitialize of ole32.dll</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/window-messeging-example">JavaScript Snippet - WordPress Window-Messaging Semi-Safe Example</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-robtex-com-sorted-lists">JavaScript Snippet - Robtex.com Sorted Lists</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-wordpress-plugin-tagclass-bgone">New WordPress Plugin - TagClass-B-Gone</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wordpress-script-style-killer">New WordPress Plugin - Script-Style-Killer</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/web-whatsapp-com-resources-inline-style-zero-and-custom">web.whatsapp.com Resources - Inline-Style - Zero And Custom</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/whatsapp-new-emoji-from-web-whatsapp-com">Whatsapp New Emoji - From web.whatsapp.com</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/whatsapp-new-emoji-from-android-apk">Whatsapp New Emoji – From Android-APK</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/firefox-disgrace">Firefox Is A F***ing Disgrace</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-specific-base64-snippet">JavaScript Snippet - Specific Base64 Bookmarklet</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/apache-htaccess-entry-for-serving-correct-mimetype-for-some-of-the-more-common-file-types">Apache .htaccess Entry For Serving Correct MimeType For Some Of The More Common File-Types</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-checkbox">HTML5 Ninja - Custom CheckBox</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

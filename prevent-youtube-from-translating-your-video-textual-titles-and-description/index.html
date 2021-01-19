@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Prevent YouTube From Translating Your Video Title And Description</title>
+  <meta itemprop="name"                                content="Prevent YouTube From Translating Your Video Title And Description"       />
+  <meta name="dcterms.title"                           content="Prevent YouTube From Translating Your Video Title And Description"       />
+  <meta property="og:title"                            content="Prevent YouTube From Translating Your Video Title And Description"       />
+  <meta name="twitter:title"                           content="Prevent YouTube From Translating Your Video Title And Description"       />
+  <meta name="twitter:text:title"                      content="Prevent YouTube From Translating Your Video Title And Description"       />
+  <meta name="application-name"                        content="Prevent YouTube From Translating Your Video Title And Description"       />
+  <meta name="subject"                                 content="Prevent YouTube From Translating Your Video Title And Description"       />
+  <meta name="apple-mobile-web-app-title"              content="Prevent YouTube From Translating Your Video Title And Description"       />
+  <meta name="msapplication-tooltip"                   content="Prevent YouTube From Translating Your Video Title And Description"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Prevent YouTube From Translating Your Video Title And Description"       />
+  <meta itemprop="description"                         content="Prevent YouTube From Translating Your Video Title And Description"       />
+  <meta name="dcterms.description"                     content="Prevent YouTube From Translating Your Video Title And Description"       />
+  <meta name="twitter:description"                     content="Prevent YouTube From Translating Your Video Title And Description"       />
+  <meta property="og:description"                      content="Prevent YouTube From Translating Your Video Title And Description"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accurate,advanced,appears,area,areas,arrow,auto,aware,back,badly,basic,bonus,browse,browser,browsers,button,campaign,care,change,channel,character,choose,chrome,click,close,column,contained,content,copy,customise,data,define,defined,deleted,description,details,dialog,disable,dots,drop,edit,english,explained,favor,feature,feel,force,gave,gear,hebrew,horizontal,hover,icon,info,information,language,languages,leaving,line,lines,list,location,logo,made,manage,manager,medium,mouse,noticed,notify,open,options,original,override,overriding,page,paste,pasting,playlist,playlists,polymer,prevent,publish,recently,redirect,round,save,screens,screenshot,scroll,select,selection,sense,settings,source,specific,start,studio,subscriber,subtitles,switch,title,titles,translate,translated,translating,translation,tripple,typos,untill,upgrade,uploaded,user,users,video,videos,weird,wondering,wrote,youtube,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accurate,advanced,appears,area,areas,arrow,auto,aware,back,badly,basic,bonus,browse,browser,browsers,button,campaign,care,change,channel,character,choose,chrome,click,close,column,contained,content,copy,customise,data,define,defined,deleted,description,details,dialog,disable,dots,drop,edit,english,explained,favor,feature,feel,force,gave,gear,hebrew,horizontal,hover,icon,info,information,language,languages,leaving,line,lines,list,location,logo,made,manage,manager,medium,mouse,noticed,notify,open,options,original,override,overriding,page,paste,pasting,playlist,playlists,polymer,prevent,publish,recently,redirect,round,save,screens,screenshot,scroll,select,selection,sense,settings,source,specific,start,studio,subscriber,subtitles,switch,title,titles,translate,translated,translating,translation,tripple,typos,untill,upgrade,uploaded,user,users,video,videos,weird,wondering,wrote,youtube,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/you-do-not-need-jekyll"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/you-do-not-need-jekyll"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/comma-first"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/prevent-youtube-from-translating-your-video-title-and-description"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/prevent-youtube-from-translating-your-video-title-and-description"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/prevent-youtube-from-translating-your-video-title-and-description"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/prevent-youtube-from-translating-your-video-title-and-description"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/prevent-youtube-from-translating-your-video-title-and-description"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/prevent-youtube-from-translating-your-video-title-and-description"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2020-05-07T12:15:10+00:00"     />
+  <meta name="page-datetime"                           content="2020-05-07T12:15:10+00:00"     />
+  <meta property="article:published_time"              content="2020-05-07T12:15:10+00:00"     />
+  <meta name="dcterms.date"                            content="2020-05-07T12:15:10+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2020-05-07T12:15:10+00:00"    />
+  <meta property="article:modified_time"               content="2020-05-07T12:15:10+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/prevent-youtube-from-translating-your-video-title-and-description"
+,"url"             : "https://icompile.eladkarako.com/prevent-youtube-from-translating-your-video-title-and-description"
+,"headline"        : "Prevent YouTube From Translating Your Video Title And Description"
+,"description"     : "Prevent YouTube From Translating Your Video Title And Description"
+,"datePosted"      : "2020-05-07T12:15:10+00:00"
+,"dateCreated"     : "2020-05-07T12:15:10+00:00"
+,"datePublished"   : "2020-05-07T12:15:10+00:00"
+,"dateModified"    : "2020-05-07T12:15:10+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0000173588851">
+  <header>
+    <h1 itemprop="headline">Prevent YouTube From Translating Your Video Title And Description</h1>
+    <sup>Posted at <time datetime="2020-05-07T12:15:10+00:00" itemprop="dateModified">Thu, 07 May 2020 12:15:10 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">When users browse your YouTube channel, they not always get to see the original title and description you've set to the videos.<br/>
+<br/>
+I've recently uploaded a video, <br/>
+it was English speaking and I've added my own subtitles both in Hebrew and in English.<br/>
+<br/>
+I've gave the video a title that contained both English then a '/' character and then the Hebrew translation (in-line).<br/>
+For me it made sense.<br/>
+<br/>
+Another users notify me that my titles were having typos, which was weird, so they've sent me a screenshot of their screens.<br/>
+It appears that YouTube choose to translate the English part of the title to Hebrew as well. Badly (it had typos from the auto-translation).<br/>
+<br/>
+<hr/><br/>
+<br/>
+I've also noticed my channel-name (which is my own name), was translated into Hebrew. Badly.<br/>
+<br/>
+I was not aware of any of that since my browser's language/location is defined as English(GB). <br/>
+<br/>
+<hr/><br/>
+<br/>
+As for the videos, <br/>
+you need to go back to the YouTube manager with either: https://www.youtube.com/my_videos<br/>
+or the new link: https://studio.youtube.com/<br/>
+<br/>
+hover the mouse over a video, and click the pen icon for details, <br/>
+switch from the "basic" tab to "more options". scroll down until you'll see 'to manage other languages, go to subtitles' and and click 'subtitles' link.<br/>
+<br/>
+https&#x003A;//studio.youtube.com/video/{your video id}/translations?utm_campaign=upgrade&utm_medium=redirect&utm_source=%2Fmy_videos<br/>
+<br/>
+In my specific videos I had two lines, one for English (I've deleted the auto-translation in-favor of an accurate subtitles I've wrote), <br/>
+and one for Hebrew (which in, too, I've uploaded subtitles).<br/>
+<br/>
+But subtitles are not 'the thing' to do here, the column 'title and description' is.<br/>
+<br/>
+hover above Hebrew and click 'add', <br/>
+tripple click and right-click copy (in Chrome) or select everything from the start and copy (other browsers) in the title area on your left (the original/English part), <br/>
+now paste it 'as-is' into the Hebrew part on your right. This will force YouTube to use your translation, whatever it is.<br/>
+<br/>
+do the same for the description.<br/>
+<br/>
+No more auto-translate for the video content.<br/>
+<br/>
+click the publish button for the title/description translation, and the back arrow on top-left to go back to the video-manager.<br/>
+<br/>
+<hr/><br/>
+<br/>
+I has wondering about a playlist's title and description, surely there isn't need for YouTube to translate those too? Well there is.<br/>
+Click the playlists button on the youtube-studio (video-manager) or browse https://www.youtube.com/view_all_playlists?nv=1 .<br/>
+click the 'edit' button of the playlist you want to force not translating into Hebrew (for example).<br/>
+Click the three-horizontal points and choose 'playlist settings', <br/>
+click 'advanced settings'.<br/>
+the url is something like<br/>
+https#x003A;//www.youtube.com/playlist?list={your playlist id}&advanced_settings=1&disable_polymer=1<br/>
+close the settings-dialog, leaving you in the playlist page.<br/>
+see the three-dots on the top-right?<br/>
+click them.<br/>
+choose 'translate playlist info'.<br/>
+<br/>
+again similar look and feel, on the left there is the original content in what ever language it is, <br/>
+on the right you open the drop-down selection choose 'add new language', then 'Hebrew', <br/>
+and copy paste your data from the left to the right, overriding the YouTube auto-translation feature.<br/>
+click 'save'.<br/>
+<br/>
+you're done here.<br/>
+<br/>
+<hr/><br/>
+<br/>
+Users may define another language to their browser, <br/>
+which may change the English part of your video/playlist video-titles.<br/>
+If you care about those languages, you'll have to add those languages specifically and explicitly copy/paste your original title and description as 'your own translation' as explained above.<br/>
+<br/>
+<hr/><br/>
+<br/>
+Bonus round.<br/>
+<br/>
+Channel title/description.<br/>
+<br/>
+click on your logo on the top right (if you language is in left-to-right, such as English otherwise on the left).<br/>
+click the 'your channel' button.<br/>
+you'll get into <br/>
+https#x003A;//www.youtube.com/channel/{your channel id}?view_as=subscriber<br/>
+<br/>
+click customise channel.<br/>
+https#x003A;//www.youtube.com/channel/{your channel id}?disable_polymer=true<br/>
+<br/>
+click the gear icon on your right, <br/>
+scroll untill you get into the 'translate info', <br/>
+click the 'translate channel info' link.<br/>
+https#x003A;//www.youtube.com/user/{your youtube user name}/translate?disable_polymer=1<br/>
+<br/>
+again, <br/>
+add language (Hebrew) on the right, <br/>
+then copy your English content from the left, pasting it into the right title and description areas.<br/>
+click save, and you'll override YouTube's auto-translation of your channel-information.<br/>
+<br/>
+you're done.<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/you-do-not-need-jekyll">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/comma-first">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/comma-first">Comma First</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-loglevel-verbosity">FFMPEG Log-Level Verbosity</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/c-sharp-utf8-support">C# UTF-8 Support</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/monodevelop-windows-builds">MonoDevelop Windows-Builds</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bsod-0xfe">BSOD 0XFE</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/mtu-for-windows-and-router-using-ping">Calculate The Proper MTU (Maximum Transmission Unit) For Windows And Your Router (ISP WAN Settings) Using PING-Command</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tcp-ip-reset-and-rebuild-at-windows-shutdown">TCP-IP Reset and Rebuild At Windows-Shutdown</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tcp-ip-reset-and-rebuild-at-windows-shutdown">TCP-IP Reset and Rebuild At Windows-Shutdown</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/burp-as-reverse-proxy">Burp (By PortSwigger) As A Reverse-Proxy For Other Remote-Devices (Inspect Secure Connections Too)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows_sendo_46_items_only_limit">Windows SendTo Context-Menu Only Allows Displaying Of First 46 Items From The SendTo Folder [UNSOLVED]</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/closure-compiler-after-deprecation-of-closure-linter">How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/dropbox">DropBox</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">SHealth</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">Show Hidden Devices In Windows Device-Manager</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/fasterfox-eladkarako-mod">FasterFox (EladKarako MOD)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/notepad2-and-notepad">Notepad2 and Notepad++</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

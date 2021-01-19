@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>RedGate-Reflector SubDomains</title>
+  <meta itemprop="name"                                content="RedGate-Reflector SubDomains"       />
+  <meta name="dcterms.title"                           content="RedGate-Reflector SubDomains"       />
+  <meta property="og:title"                            content="RedGate-Reflector SubDomains"       />
+  <meta name="twitter:title"                           content="RedGate-Reflector SubDomains"       />
+  <meta name="twitter:text:title"                      content="RedGate-Reflector SubDomains"       />
+  <meta name="application-name"                        content="RedGate-Reflector SubDomains"       />
+  <meta name="subject"                                 content="RedGate-Reflector SubDomains"       />
+  <meta name="apple-mobile-web-app-title"              content="RedGate-Reflector SubDomains"       />
+  <meta name="msapplication-tooltip"                   content="RedGate-Reflector SubDomains"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="RedGate-Reflector SubDomains"       />
+  <meta itemprop="description"                         content="RedGate-Reflector SubDomains"       />
+  <meta name="dcterms.description"                     content="RedGate-Reflector SubDomains"       />
+  <meta name="twitter:description"                     content="RedGate-Reflector SubDomains"       />
+  <meta property="og:description"                      content="RedGate-Reflector SubDomains"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="activation,analytics,apps,ardownload,assets,bigdata,blog,clickonce,code,ctrl,download,downloads,forums,friendly,gate,gatesupport,handsonlabs,hellofrom,honeycomb,installed,installers,jobs,labs,licensing,local,machine,monitor,raygun,redexch,redgate,redmail,reflector,register,rgsmtp,robtex,sendgrid,shop,sniffing,sqlbackup,sqlmon,sqlmonitor,subdomains,support,update,uxstaging,virustotal,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="activation,analytics,apps,ardownload,assets,bigdata,blog,clickonce,code,ctrl,download,downloads,forums,friendly,gate,gatesupport,handsonlabs,hellofrom,honeycomb,installed,installers,jobs,labs,licensing,local,machine,monitor,raygun,redexch,redgate,redmail,reflector,register,rgsmtp,robtex,sendgrid,shop,sniffing,sqlbackup,sqlmon,sqlmonitor,subdomains,support,update,uxstaging,virustotal,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/sygic-navteq-subdomains"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/sygic-navteq-subdomains"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javascript-resources-load-error-handling"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/redgate-reflector-subdomains"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/redgate-reflector-subdomains"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/redgate-reflector-subdomains"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/redgate-reflector-subdomains"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/redgate-reflector-subdomains"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/redgate-reflector-subdomains"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-12-06T11:56:37+00:00"     />
+  <meta name="page-datetime"                           content="2016-12-06T11:56:37+00:00"     />
+  <meta property="article:published_time"              content="2016-12-06T11:56:37+00:00"     />
+  <meta name="dcterms.date"                            content="2016-12-06T11:56:37+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-12-06T11:56:37+00:00"    />
+  <meta property="article:modified_time"               content="2016-12-06T11:56:37+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/redgate-reflector-subdomains"
+,"url"             : "https://icompile.eladkarako.com/redgate-reflector-subdomains"
+,"headline"        : "RedGate-Reflector SubDomains"
+,"description"     : "RedGate-Reflector SubDomains"
+,"datePosted"      : "2016-12-06T11:56:37+00:00"
+,"dateCreated"     : "2016-12-06T11:56:37+00:00"
+,"datePublished"   : "2016-12-06T11:56:37+00:00"
+,"dateModified"    : "2016-12-06T11:56:37+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007935201841">
+  <header>
+    <h1 itemprop="headline">RedGate-Reflector SubDomains</h1>
+    <sup>Posted at <time datetime="2016-12-06T11:56:37+00:00" itemprop="dateModified">Tue, 06 Dec 2016 11:56:37 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">Using <code>virustotal.com</code>, <code>www.robtex.com</code> and sniffing on local-machine w/ it installed on.<br/>
+<!--more--><br/>
+<br/>
+<br/>
+<sup><em>*[CTRL]+[A] Friendly.</em></sup><br/>
+<pre>
+activation.redgate.com
+activation.red-gate.com
+activation.reflector.net
+analytics.redgate.com
+analytics.red-gate.com
+analytics.reflector.net
+apps.redgate.com
+apps.red-gate.com
+apps.reflector.net
+ardownload.redgate.com
+ardownload.red-gate.com
+ardownload.reflector.net
+assets.redgate.com
+assets.red-gate.com
+assets.reflector.net
+authentication.redgate.com
+authentication.red-gate.com
+authentication.reflector.net
+authenticationjwt.redgate.com
+authenticationjwt.red-gate.com
+authenticationjwt.reflector.net
+bigdata.redgate.com
+bigdata.red-gate.com
+bigdata.reflector.net
+blog.redgate.com
+blog.red-gate.com
+blog.reflector.net
+c.redgate.com
+c.red-gate.com
+c.reflector.net
+cdn.redgate.com
+cdn.red-gate.com
+cdn.reflector.net
+clickonce.redgate.com
+clickonce.red-gate.com
+clickonce.reflector.net
+cloudservices.redgate.com
+cloudservices.red-gate.com
+cloudservices.reflector.net
+com.redgate.com
+com.red-gate.com
+com.reflector.net
+dev.redgate.com
+dev.red-gate.com
+dev.reflector.net
+documentation.redgate.com
+documentation.red-gate.com
+documentation.reflector.net
+download.redgate.com
+download.red-gate.com
+download.reflector.net
+downloads.redgate.com
+downloads.red-gate.com
+downloads.reflector.net
+featureusage.redgate.com
+featureusage.red-gate.com
+featureusage.reflector.net
+forums.redgate.com
+forums.red-gate.com
+forums.reflector.net
+handsonlabs.redgate.com
+handsonlabs.red-gate.com
+handsonlabs.reflector.net
+hellofrom.redgate.com
+hellofrom.red-gate.com
+hellofrom.reflector.net
+hellofrom2.redgate.com
+hellofrom2.red-gate.com
+hellofrom2.reflector.net
+help.redgate.com
+help.red-gate.com
+help.reflector.net
+honeycomb.redgate.com
+honeycomb.red-gate.com
+honeycomb.reflector.net
+installers.redgate.com
+installers.red-gate.com
+installers.reflector.net
+ipn.redgate.com
+ipn.red-gate.com
+ipn.reflector.net
+jobs.redgate.com
+jobs.red-gate.com
+jobs.reflector.net
+labs.redgate.com
+labs.red-gate.com
+labs.reflector.net
+licensing.redgate.com
+licensing.red-gate.com
+licensing.reflector.net
+monitor.redgate.com
+monitor.red-gate.com
+monitor.reflector.net
+owa.redgate.com
+owa.red-gate.com
+owa.reflector.net
+productlogin.redgate.com
+productlogin.red-gate.com
+productlogin.reflector.net
+productusage.redgate.com
+productusage.red-gate.com
+productusage.reflector.net
+raygun.redgate.com
+raygun.red-gate.com
+raygun.reflector.net
+redexch1.redgate.com
+redexch1.red-gate.com
+redexch1.reflector.net
+redgate.com
+red-gate.com
+redgatesupport.redgate.com
+redgatesupport.red-gate.com
+red-gatesupport.red-gate.com
+redgatesupport.reflector.net
+redmail.redgate.com
+redmail.red-gate.com
+redmail.reflector.net
+reflector.net
+reflector.redgate.com
+reflector.red-gate.com
+reflector.reflector.net
+reflectorblog.redgate.com
+reflectorblog.red-gate.com
+reflectorblog.reflector.net
+register.redgate.com
+register.red-gate.com
+register.reflector.net
+rg-pub-app01.redgate.com
+rg-pub-app01.red-gate.com
+rg-pub-app01.reflector.net
+rgsmtp1.redgate.com
+rgsmtp1.red-gate.com
+rgsmtp1.reflector.net
+rgsmtp2.redgate.com
+rgsmtp2.red-gate.com
+rgsmtp2.reflector.net
+rgsmtp3.redgate.com
+rgsmtp3.red-gate.com
+rgsmtp3.reflector.net
+rgsmtp4.redgate.com
+rgsmtp4.red-gate.com
+rgsmtp4.reflector.net
+rg-web-app7.redgate.com
+rg-web-app7.red-gate.com
+rg-web-app7.reflector.net
+rg-web-app8.redgate.com
+rg-web-app8.red-gate.com
+rg-web-app8.reflector.net
+sawebservice.redgate.com
+sawebservice.red-gate.com
+sawebservice.reflector.net
+sawebservice2.redgate.com
+sawebservice2.red-gate.com
+sawebservice2.reflector.net
+sdk.redgate.com
+sdk.red-gate.com
+sdk.reflector.net
+sendgrid.redgate.com
+sendgrid.red-gate.com
+sendgrid.reflector.net
+shop.reflector.net
+sqlbackup.redgate.com
+sqlbackup.red-gate.com
+sqlbackup.reflector.net
+sqlinthecity.redgate.com
+sqlinthecity.red-gate.com
+sqlinthecity.reflector.net
+sqlmon.redgate.com
+sqlmon.red-gate.com
+sqlmon.reflector.net
+sqlmonitor.redgate.com
+sqlmonitor.red-gate.com
+sqlmonitor.reflector.net
+sqlmonitormetrics.redgate.com
+sqlmonitormetrics.red-gate.com
+sqlmonitormetrics.reflector.net
+support.redgate.com
+support.red-gate.com
+support.reflector.net
+update.redgate.com
+update.red-gate.com
+update.reflector.net
+uxstaging.redgate.com
+uxstaging.red-gate.com
+uxstaging.reflector.net
+www.redgate.com
+www.red-gate.com
+www.reflector.net
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/sygic-navteq-subdomains">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-resources-load-error-handling">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-resources-load-error-handling">JavaScript - Dynamic Resources Loading-Error Handling</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wordpress-a-better-article-datetime">WordPress - A Better Article DateTime</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/trackers-hosts-format">Trackers In HOSTS Format</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows7810-icon-files-handle-fixer">Windows7/8/10+ Icon Files Handle Fixer</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/contenteditable-css3-alternative">No JavaScript Pure CSS3 ContentEditable Alternative (Chrome-Based Browsers Only)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tools-that-work-with-graphite">Tools That Work With Graphite</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-emulate-click">JavaScript Ninja - Emulate A Click</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adding-stale-while-revalidate-and-stale-if-error">Adding Stale-While-Revalidate And Stale-If-Error</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/schema-for-your-website">Schema.org For Your WebSite</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-byte-string">PHP Byte String</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cmd-system32-or-syswow64-execution">CMD Snippet - Selective Executing From Either Windows System32 Or SysWOW64 Folders With Easy And Simple GOTO-State-Machine</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/umoji-unicode-emoji">UMOJI - Unicode Emoji</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/get-chrome-version-using-javascript">JavaScript Snippet - Get Chrome's Version Using JavaScript</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/github-because-those-who-can-not-do-fork">Fork.</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-proper-hard-subtitle">FFMPEG - Real Proper Hard-Burn Subtitle Onto A Video</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/how-to-update-your-gist-file">How To Update Your Gist File</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

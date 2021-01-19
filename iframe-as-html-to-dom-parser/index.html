@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JavaScript Ninja - IFRAME As HTML-To-DOM Parser</title>
+  <meta itemprop="name"                                content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+  <meta name="dcterms.title"                           content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+  <meta property="og:title"                            content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+  <meta name="twitter:title"                           content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+  <meta name="twitter:text:title"                      content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+  <meta name="application-name"                        content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+  <meta name="subject"                                 content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+  <meta name="apple-mobile-web-app-title"              content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+  <meta name="msapplication-tooltip"                   content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+  <meta itemprop="description"                         content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+  <meta name="dcterms.description"                     content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+  <meta name="twitter:description"                     content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+  <meta property="og:description"                      content="JavaScript Ninja - IFRAME As HTML-To-DOM Parser"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="alert,allowauth,allowimages,appendchild,blank,bold,browser,code,collapsed,color,components,content,convert,create,data,defaultview,destroy,document,element,false,firefox,font,frame,function,html,interfaces,javascript,listen,loaduri,location,mozilla,needed,ninja,null,older,page,parentnode,parser,remove,removechild,return,sample,settimeout,skip,starting,type,weight,window,work,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="alert,allowauth,allowimages,appendchild,blank,bold,browser,code,collapsed,color,components,content,convert,create,data,defaultview,destroy,document,element,false,firefox,font,frame,function,html,interfaces,javascript,listen,loaduri,location,mozilla,needed,ninja,null,older,page,parentnode,parser,remove,removechild,return,sample,settimeout,skip,starting,type,weight,window,work,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/json-of-dom-events-from-w3schools"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/json-of-dom-events-from-w3schools"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/url-source-attributes-of-html4-1-and-html5"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/iframe-as-html-to-dom-parser"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/iframe-as-html-to-dom-parser"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/iframe-as-html-to-dom-parser"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/iframe-as-html-to-dom-parser"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/iframe-as-html-to-dom-parser"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/iframe-as-html-to-dom-parser"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-07-24T01:38:31+00:00"     />
+  <meta name="page-datetime"                           content="2016-07-24T01:38:31+00:00"     />
+  <meta property="article:published_time"              content="2016-07-24T01:38:31+00:00"     />
+  <meta name="dcterms.date"                            content="2016-07-24T01:38:31+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-07-24T01:43:38+00:00"    />
+  <meta property="article:modified_time"               content="2016-07-24T01:43:38+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/iframe-as-html-to-dom-parser"
+,"url"             : "https://icompile.eladkarako.com/iframe-as-html-to-dom-parser"
+,"headline"        : "JavaScript Ninja - IFRAME As HTML-To-DOM Parser"
+,"description"     : "JavaScript Ninja - IFRAME As HTML-To-DOM Parser"
+,"datePosted"      : "2016-07-24T01:38:31+00:00"
+,"dateCreated"     : "2016-07-24T01:38:31+00:00"
+,"datePublished"   : "2016-07-24T01:38:31+00:00"
+,"dateModified"    : "2016-07-24T01:43:38+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0001134239641">
+  <header>
+    <h1 itemprop="headline">JavaScript Ninja - IFRAME As HTML-To-DOM Parser</h1>
+    <sup>Posted at <time datetime="2016-07-24T01:43:38+00:00" itemprop="dateModified">Sun, 24 Jul 2016 01:43:38 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><!--more--><br/>
+<br/>
+Sample code may need more work. Create your own function using unique name, ID, and so forth.<br/>
+<br/>
+<pre><span style='color:#800000; font-weight:bold; '>var</span> frame <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>sample-frame</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>!</span>frame<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+  <span style='color:#696969; '>// create frame</span><br/>
+  frame <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>createElement<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>iframe</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> <span style='color:#696969; '>// iframe (or browser on older Firefox)</span><br/>
+  frame<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>id</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>sample-frame</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  frame<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>name</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>sample-frame</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  frame<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>type</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>content</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  frame<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>collapsed</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>true</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>main-window</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><br/>
+    <span style='color:#808030; '>.</span>appendChild<span style='color:#808030; '>(</span>frame<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#696969; '>// or </span><br/>
+  <span style='color:#696969; '>// document.documentElement.appendChild(frame);</span><br/>
+<br/>
+  <span style='color:#696969; '>// set restrictions as needed</span><br/>
+  frame<span style='color:#808030; '>.</span>webNavigation<span style='color:#808030; '>.</span>allowAuth <span style='color:#808030; '>=</span> <span style='color:#0f4d75; '>false</span><span style='color:#800080; '>;</span><br/>
+  frame<span style='color:#808030; '>.</span>webNavigation<span style='color:#808030; '>.</span>allowImages <span style='color:#808030; '>=</span> <span style='color:#0f4d75; '>false</span><span style='color:#800080; '>;</span><br/>
+  frame<span style='color:#808030; '>.</span>webNavigation<span style='color:#808030; '>.</span>allowJavascript <span style='color:#808030; '>=</span> <span style='color:#0f4d75; '>false</span><span style='color:#800080; '>;</span><br/>
+  frame<span style='color:#808030; '>.</span>webNavigation<span style='color:#808030; '>.</span>allowMetaRedirects <span style='color:#808030; '>=</span> <span style='color:#0f4d75; '>true</span><span style='color:#800080; '>;</span><br/>
+  frame<span style='color:#808030; '>.</span>webNavigation<span style='color:#808030; '>.</span>allowPlugins <span style='color:#808030; '>=</span> <span style='color:#0f4d75; '>false</span><span style='color:#800080; '>;</span><br/>
+  frame<span style='color:#808030; '>.</span>webNavigation<span style='color:#808030; '>.</span>allowSubframes <span style='color:#808030; '>=</span> <span style='color:#0f4d75; '>false</span><span style='color:#800080; '>;</span><br/>
+<br/>
+  <span style='color:#696969; '>// listen for load</span><br/>
+  frame<span style='color:#808030; '>.</span>addEventListener<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>load</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>event<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+    <span style='color:#696969; '>// the document of the HTML in the DOM</span><br/>
+    <span style='color:#800000; font-weight:bold; '>var</span> doc <span style='color:#808030; '>=</span> event<span style='color:#808030; '>.</span>originalTarget<span style='color:#800080; '>;</span><br/>
+    <span style='color:#696969; '>// skip blank page or frame</span><br/>
+    <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>doc<span style='color:#808030; '>.</span>location<span style='color:#808030; '>.</span>href <span style='color:#808030; '>==</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>about:blank</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>||</span> doc<span style='color:#808030; '>.</span>defaultView<span style='color:#808030; '>.</span>frameElement<span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span><br/>
+<br/>
+    <span style='color:#696969; '>// do something with the DOM of doc</span><br/>
+    <span style='color:#800000; font-weight:bold; '>alert</span><span style='color:#808030; '>(</span>doc<span style='color:#808030; '>.</span>location<span style='color:#808030; '>.</span>href<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<br/>
+    <span style='color:#696969; '>// when done remove frame or set location "about:blank"</span><br/>
+    <span style='color:#800000; font-weight:bold; '>setTimeout</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>var</span> frame <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>sample-frame</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+      <span style='color:#696969; '>// remove frame</span><br/>
+      <span style='color:#696969; '>// frame.destroy(); // if using browser element instead of iframe</span><br/>
+      frame<span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>removeChild<span style='color:#808030; '>(</span>frame<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+      <span style='color:#696969; '>// or set location "about:blank"</span><br/>
+      <span style='color:#696969; '>// frame.contentDocument.location.href = "about:blank";</span><br/>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>10</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> <span style='color:#0f4d75; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><br/>
+<br/>
+<br/>
+<span style='color:#696969; '>// load a page</span><br/>
+frame<span style='color:#808030; '>.</span>contentDocument<span style='color:#808030; '>.</span>location<span style='color:#808030; '>.</span>href <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>http://www.mozilla.org/</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#696969; '>// or </span><br/>
+<span style='color:#696969; '>// frame.webNavigation.loadURI("http://www.mozilla.org/",Components.interfaces.nsIWebNavigation,null,null,null);</span><br/>
+</pre><br/>
+<br/>
+If you are starting with an HTML string, you can convert it to a data URI and use that to load in the browser element.</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/json-of-dom-events-from-w3schools">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/url-source-attributes-of-html4-1-and-html5">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/url-source-attributes-of-html4-1-and-html5">URL Source Attributes Of HTML4.1 And HTML5</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/speedy-mobile-friendly-website">Speedy Mobile Friendly Website</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/killdisk-subdomains">KillDisk-Related Sub-Domains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pixel-serving-pagespeed">Pixel Image Serving And Google's ModPageSpeed - Quick Checklist</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pagespeed-trim-urls-bug">Google PageSpeed 'trim_urls' Rewrites HTML Incorrectly - URL With No Base - Bug</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pagespeed-defer-bug">PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vmware-vmvisor-installer-5-5-esxi-embedded-with-inter-nic-drivers">VMware VMvisor Installer 5.5 (ESXi) embedded with Inter NIC drivers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/parallel-curl-requests">Parallel cUrl Requests</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/python-patch-ignore-some-of-google-closure-jslinter-gjslint-errors">Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/latest-google-closure-jslinter-gjslint-download-and-extract">Latest Google-Closure-JSLinter (GJSLint) - Download and Extract</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/eclipse-kepler-and-lite-configurations">Eclipse Kepler and lite configurations</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-installer-download-latest-nightly-build-snapshot">Chromium Installer - Download Latest Nightly-Build Snapshot</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/mine-types-complete-list">Mine-Types Complete List</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-social-networking-icon-set">Free Social Networking Icon Set</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/fast-download-and-parse-http-archive-requests-file">Fast download and parse http-archive requests file</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/13-31-113-131-311-prime-numbers">311 Prime Numbers</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

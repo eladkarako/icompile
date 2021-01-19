@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JSON.stringify With Escape For Unicode-Characters</title>
+  <meta itemprop="name"                                content="JSON.stringify With Escape For Unicode-Characters"       />
+  <meta name="dcterms.title"                           content="JSON.stringify With Escape For Unicode-Characters"       />
+  <meta property="og:title"                            content="JSON.stringify With Escape For Unicode-Characters"       />
+  <meta name="twitter:title"                           content="JSON.stringify With Escape For Unicode-Characters"       />
+  <meta name="twitter:text:title"                      content="JSON.stringify With Escape For Unicode-Characters"       />
+  <meta name="application-name"                        content="JSON.stringify With Escape For Unicode-Characters"       />
+  <meta name="subject"                                 content="JSON.stringify With Escape For Unicode-Characters"       />
+  <meta name="apple-mobile-web-app-title"              content="JSON.stringify With Escape For Unicode-Characters"       />
+  <meta name="msapplication-tooltip"                   content="JSON.stringify With Escape For Unicode-Characters"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JSON.stringify With Escape For Unicode-Characters"       />
+  <meta itemprop="description"                         content="JSON.stringify With Escape For Unicode-Characters"       />
+  <meta name="dcterms.description"                     content="JSON.stringify With Escape For Unicode-Characters"       />
+  <meta name="twitter:description"                     content="JSON.stringify With Escape For Unicode-Characters"       />
+  <meta property="og:description"                      content="JSON.stringify With Escape For Unicode-Characters"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="acts,ahead,application,ascii,back,beautified,blank,bold,break,browser,bsol,built,character,charcodeat,code,color,console,content,control,data,decimal,default,description,directional,directly,display,encode,encoding,entity,escape,escaping,expected,expression,familiar,fine,flag,free,function,giving,good,ground,include,includes,javascript,json,language,lower,manual,maximum,modify,named,naturally,nifty,nodejs,numbers,object,option,output,parse,parser,plain,play,process,putting,question,read,regular,replace,replacer,replacing,return,safe,single,special,storing,stream,stringify,strings,strong,substr,target,tend,textarea,tolerate,tostring,transform,trick,typeof,udfce,udfcf,udfd,uffff,unescaped,unicode,upper,uxxxx,variable,version,wonderful,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="acts,ahead,application,ascii,back,beautified,blank,bold,break,browser,bsol,built,character,charcodeat,code,color,console,content,control,data,decimal,default,description,directional,directly,display,encode,encoding,entity,escape,escaping,expected,expression,familiar,fine,flag,free,function,giving,good,ground,include,includes,javascript,json,language,lower,manual,maximum,modify,named,naturally,nifty,nodejs,numbers,object,option,output,parse,parser,plain,play,process,putting,question,read,regular,replace,replacer,replacing,return,safe,single,special,storing,stream,stringify,strings,strong,substr,target,tend,textarea,tolerate,tostring,transform,trick,typeof,udfce,udfcf,udfd,uffff,unescaped,unicode,upper,uxxxx,variable,version,wonderful,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/javascript-snippet-convert-camelcase-to-snake_case"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/javascript-snippet-convert-camelcase-to-snake_case"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/ebay-pulsar-user-behavioral-tracking"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/json-stringify-with-escape-for-unicode-characters"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/json-stringify-with-escape-for-unicode-characters"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/json-stringify-with-escape-for-unicode-characters"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/json-stringify-with-escape-for-unicode-characters"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/json-stringify-with-escape-for-unicode-characters"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/json-stringify-with-escape-for-unicode-characters"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-01-19T04:11:03+00:00"     />
+  <meta name="page-datetime"                           content="2017-01-19T04:11:03+00:00"     />
+  <meta property="article:published_time"              content="2017-01-19T04:11:03+00:00"     />
+  <meta name="dcterms.date"                            content="2017-01-19T04:11:03+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-01-19T11:08:59+00:00"    />
+  <meta property="article:modified_time"               content="2017-01-19T11:08:59+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/json-stringify-with-escape-for-unicode-characters"
+,"url"             : "https://icompile.eladkarako.com/json-stringify-with-escape-for-unicode-characters"
+,"headline"        : "JSON.stringify With Escape For Unicode-Characters"
+,"description"     : "JSON.stringify With Escape For Unicode-Characters"
+,"datePosted"      : "2017-01-19T04:11:03+00:00"
+,"dateCreated"     : "2017-01-19T04:11:03+00:00"
+,"datePublished"   : "2017-01-19T04:11:03+00:00"
+,"dateModified"    : "2017-01-19T11:08:59+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003609974841">
+  <header>
+    <h1 itemprop="headline">JSON.stringify With Escape For Unicode-Characters</h1>
+    <sup>Posted at <time datetime="2017-01-19T11:08:59+00:00" itemprop="dateModified">Thu, 19 Jan 2017 11:08:59 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">You may be familiar with PHP's <a href="http://php.net/manual/en/function.json-encode.php" target="_blank">json_encode</a> which allows you to do wonderful things such as giving you a ASCII safe version of Unicode-content (which is the default, and if you actually <strong>do</strong> want to return a plain Unicode content you need to specify <code>JSON_UNESCAPED_UNICODE</code> flag).<br/>
+<br/>
+<blockquote><br/>
+In your browser (<em>or NodeJS in that matter..</em>) <code>JSON.stringify</code> do not include a built-in parser for you to use, but it <strong>DOES</strong> include an option to specify a "replacer" function, which acts as the parser, naturally there is a lot more free-ground to play around, but if the only thing you need is something similar to PHP's <a href="http://php.net/manual/en/function.json-encode.php" target="_blank">json_encode</a> read ahead..<br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+A nifty little trick I'm going to use next is a <em>regular-expression replacing</em> using Unicode values of all characters with code  above <code>160</code> (decimal) to the maximum value for a single Unicode-character which is <code>65535</code>.<br/>
+Although we can tolerate character-values of up until <code>255</code>, those above <code>160</code> are generally <em>not-considered</em> ASCII safe, and includes special control-characters and language-directional control which might break the text-stream.<br/>
+</blockquote><br/>
+<br/>
+<!--more--><br/>
+<br/>
+<ul><br/>
+<li>The the usual "\\u...." encoding:<br/>
+<pre><br/>
+<span style="color:#808030; ">[</span><br/>
+<span style="color:#800080; ">{</span>description<span style="color:#800080; ">:</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">ascii</span><span style="color:#800000; ">'</span><br/>
+<span style="color:#808030; ">,</span>upper_case<span style="color:#800080; ">:</span>  <span style="color:#808030; ">[</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">A</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">B</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">C</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">D</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">E</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">F</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">G</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">H</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">I</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">J</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">K</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">L</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">M</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">N</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">O</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">P</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">Q</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">R</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">S</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">T</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">U</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">V</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">W</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">X</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">Y</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">Z</span><span style="color:#800000; ">'</span><span style="color:#808030; ">]</span><br/>
+<span style="color:#808030; ">,</span>lower_case<span style="color:#800080; ">:</span>  <span style="color:#808030; ">[</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">a</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">b</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">c</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">d</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">e</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">f</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">g</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">h</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">i</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">j</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">k</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">l</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">m</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">n</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">o</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">p</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">q</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">r</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">s</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">t</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">u</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">v</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">w</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">x</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">y</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">z</span><span style="color:#800000; ">'</span><span style="color:#808030; ">]</span><br/>
+<span style="color:#808030; ">,</span>numbers<span style="color:#800080; ">:</span>     <span style="color:#808030; ">[</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">0</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">1</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">2</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">3</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">4</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">5</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">6</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">7</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">8</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">9</span><span style="color:#800000; ">'</span><span style="color:#808030; ">]</span><br/>
+<span style="color:#800080; ">}</span><br/>
+<span style="color:#808030; ">,</span><br/>
+<span style="color:#800080; ">{</span>description<span style="color:#800080; ">:</span> <span style="color:#800000; ">'</span><span style="color:#0000e6; ">MATHEMATICAL BOLD</span><span style="color:#800000; ">'</span><br/>
+<span style="color:#808030; ">,</span>upper_case<span style="color:#800080; ">:</span>  <span style="color:#808030; ">[</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; ">�</span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">]</span><br/>
+<span style="color:#808030; ">,</span>lower_case<span style="color:#800080; ">:</span>  <span style="color:#808030; ">[</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">]</span><br/>
+<span style="color:#808030; ">,</span>numbers<span style="color:#800080; ">:</span>     <span style="color:#808030; ">[</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">,</span><span style="color:#800000; ">'</span><span style="color:#0000e6; "></span><span style="color:#800000; ">'</span><span style="color:#808030; ">]</span><br/>
+<span style="color:#800080; ">}</span><br/>
+<span style="color:#808030; ">]</span><br/>
+</pre><br/>
+<br/>
+putting all of the data above (as object) into a variable named <code>a</code>..<br/>
+<br/>
+<pre>
+function replacer(key, value){
+  if("string" !== typeof value) return value;
+  value = value.replace(/[\\u00A0-\\uFFFF]/gm, function(c){return "\\\\u" + ("0000" + c.charCodeAt(0).toString(16)).substr(-4); });
+  return value;
+}
+
+console.log(
+  JSON.stringify(a, replacer)
+);
+</pre><br/>
+<br/>
+which will give you:<br/>
+<pre>
+[{"description":"ascii","upper_case":["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],"lower_case":["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],"numbers":["0","1","2","3","4","5","6","7","8","9"]},{"description":"MATHEMATICAL BOLD","upper_case":["\\\\ud835\\\\udc00","\\\\ud835\\\\udc01","\\\\ud835\\\\udc02","\\\\ud835\\\\udc03","\\\\ud835\\\\udc04","\\\\ud835\\\\udc05","\\\\ud835\\\\udc06","\\\\ud835\\\\udc07","\\\\ud835\\\\udc08","\\\\ud835\\\\udc09","\\\\ud835\\\\udc0a","\\\\ud835\\\\udc0b","\\\\ud835\\\\udc0c","\\\\ud835\\\\udc0d","\\\\ud835\\\\udc0e","\\\\ud835\\\\udc0f","\\\\ud835\\\\udc10","\\\\ud835\\\\udc11","\\\\ud835\\\\udc12","\\\\ud835\\\\udc13","\\\\ud835\\\\udc14","\\\\ud835\\\\udc15","\\\\ud835\\\\udc16","\\\\ud835\\\\udc17","\\\\ud835\\\\udc18","\\\\ud835\\\\udc19"],"lower_case":["\\\\ud835\\\\udc1a","\\\\ud835\\\\udc1b","\\\\ud835\\\\udc1c","\\\\ud835\\\\udc1d","\\\\ud835\\\\udc1e","\\\\ud835\\\\udc1f","\\\\ud835\\\\udc20","\\\\ud835\\\\udc21","\\\\ud835\\\\udc22","\\\\ud835\\\\udc23","\\\\ud835\\\\udc24","\\\\ud835\\\\udc25","\\\\ud835\\\\udc26","\\\\ud835\\\\udc27","\\\\ud835\\\\udc28","\\\\ud835\\\\udc29","\\\\ud835\\\\udc2a","\\\\ud835\\\\udc2b","\\\\ud835\\\\udc2c","\\\\ud835\\\\udc2d","\\\\ud835\\\\udc2e","\\\\ud835\\\\udc2f","\\\\ud835\\\\udc30","\\\\ud835\\\\udc31","\\\\ud835\\\\udc32","\\\\ud835\\\\udc33"],"numbers":["\\\\ud835\\\\udfce","\\\\ud835\\\\udfcf","\\\\ud835\\\\udfd0","\\\\ud835\\\\udfd1","\\\\ud835\\\\udfd2","\\\\ud835\\\\udfd3","\\\\ud835\\\\udfd4","\\\\ud835\\\\udfd5","\\\\ud835\\\\udfd6","\\\\ud835\\\\udfd7"]}]
+</pre><br/>
+<br/>
+or beautified: <br/>
+<pre>
+[{
+  "description":  "ascii"
+  , "upper_case": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  , "lower_case": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+  , "numbers":    ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+}, {
+  "description":  "MATHEMATICAL BOLD"
+  , "upper_case": ["\\\\ud835\\\\udc00", "\\\\ud835\\\\udc01", "\\\\ud835\\\\udc02", "\\\\ud835\\\\udc03", "\\\\ud835\\\\udc04", "\\\\ud835\\\\udc05", "\\\\ud835\\\\udc06", "\\\\ud835\\\\udc07", "\\\\ud835\\\\udc08", "\\\\ud835\\\\udc09", "\\\\ud835\\\\udc0a", "\\\\ud835\\\\udc0b", "\\\\ud835\\\\udc0c", "\\\\ud835\\\\udc0d", "\\\\ud835\\\\udc0e", "\\\\ud835\\\\udc0f", "\\\\ud835\\\\udc10", "\\\\ud835\\\\udc11", "\\\\ud835\\\\udc12", "\\\\ud835\\\\udc13", "\\\\ud835\\\\udc14", "\\\\ud835\\\\udc15", "\\\\ud835\\\\udc16", "\\\\ud835\\\\udc17", "\\\\ud835\\\\udc18", "\\\\ud835\\\\udc19"]
+  , "lower_case": ["\\\\ud835\\\\udc1a", "\\\\ud835\\\\udc1b", "\\\\ud835\\\\udc1c", "\\\\ud835\\\\udc1d", "\\\\ud835\\\\udc1e", "\\\\ud835\\\\udc1f", "\\\\ud835\\\\udc20", "\\\\ud835\\\\udc21", "\\\\ud835\\\\udc22", "\\\\ud835\\\\udc23", "\\\\ud835\\\\udc24", "\\\\ud835\\\\udc25", "\\\\ud835\\\\udc26", "\\\\ud835\\\\udc27", "\\\\ud835\\\\udc28", "\\\\ud835\\\\udc29", "\\\\ud835\\\\udc2a", "\\\\ud835\\\\udc2b", "\\\\ud835\\\\udc2c", "\\\\ud835\\\\udc2d", "\\\\ud835\\\\udc2e", "\\\\ud835\\\\udc2f", "\\\\ud835\\\\udc30", "\\\\ud835\\\\udc31", "\\\\ud835\\\\udc32", "\\\\ud835\\\\udc33"]
+  , "numbers":    ["\\\\ud835\\\\udfce", "\\\\ud835\\\\udfcf", "\\\\ud835\\\\udfd0", "\\\\ud835\\\\udfd1", "\\\\ud835\\\\udfd2", "\\\\ud835\\\\udfd3", "\\\\ud835\\\\udfd4", "\\\\ud835\\\\udfd5", "\\\\ud835\\\\udfd6", "\\\\ud835\\\\udfd7"]
+}]
+</pre><br/>
+<br/>
+Which is truly an "ASCII-safe" version.<br/>
+<br/>
+<blockquote><br/>
+You may modify the result of the <code>JSON.stringify</code>, by replacing <code>JSON.stringify(a, replacer)</code> with <code>JSON.stringify(a, replacer).replace(/\\\\\\\\u/g, "\\\\u")</code> which will give your this:<br/>
+<pre>
+[{"description":"ascii","upper_case":["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],"lower_case":["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],"numbers":["0","1","2","3","4","5","6","7","8","9"]},{"description":"MATHEMATICAL BOLD","upper_case":["\\ud835\\udc00","\\ud835\\udc01","\\ud835\\udc02","\\ud835\\udc03","\\ud835\\udc04","\\ud835\\udc05","\\ud835\\udc06","\\ud835\\udc07","\\ud835\\udc08","\\ud835\\udc09","\\ud835\\udc0a","\\ud835\\udc0b","\\ud835\\udc0c","\\ud835\\udc0d","\\ud835\\udc0e","\\ud835\\udc0f","\\ud835\\udc10","\\ud835\\udc11","\\ud835\\udc12","\\ud835\\udc13","\\ud835\\udc14","\\ud835\\udc15","\\ud835\\udc16","\\ud835\\udc17","\\ud835\\udc18","\\ud835\\udc19"],"lower_case":["\\ud835\\udc1a","\\ud835\\udc1b","\\ud835\\udc1c","\\ud835\\udc1d","\\ud835\\udc1e","\\ud835\\udc1f","\\ud835\\udc20","\\ud835\\udc21","\\ud835\\udc22","\\ud835\\udc23","\\ud835\\udc24","\\ud835\\udc25","\\ud835\\udc26","\\ud835\\udc27","\\ud835\\udc28","\\ud835\\udc29","\\ud835\\udc2a","\\ud835\\udc2b","\\ud835\\udc2c","\\ud835\\udc2d","\\ud835\\udc2e","\\ud835\\udc2f","\\ud835\\udc30","\\ud835\\udc31","\\ud835\\udc32","\\ud835\\udc33"],"numbers":["\\ud835\\udfce","\\ud835\\udfcf","\\ud835\\udfd0","\\ud835\\udfd1","\\ud835\\udfd2","\\ud835\\udfd3","\\ud835\\udfd4","\\ud835\\udfd5","\\ud835\\udfd6","\\ud835\\udfd7"]}]
+</pre><br/>
+<br/>
+or beautified:<br/>
+<pre>
+[{
+  "description":  "ascii"
+  , "upper_case": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  , "lower_case": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+  , "numbers":    ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+}, {
+  "description":  "MATHEMATICAL BOLD"
+  , "upper_case": ["\\ud835\\udc00", "\\ud835\\udc01", "\\ud835\\udc02", "\\ud835\\udc03", "\\ud835\\udc04", "\\ud835\\udc05", "\\ud835\\udc06", "\\ud835\\udc07", "\\ud835\\udc08", "\\ud835\\udc09", "\\ud835\\udc0a", "\\ud835\\udc0b", "\\ud835\\udc0c", "\\ud835\\udc0d", "\\ud835\\udc0e", "\\ud835\\udc0f", "\\ud835\\udc10", "\\ud835\\udc11", "\\ud835\\udc12", "\\ud835\\udc13", "\\ud835\\udc14", "\\ud835\\udc15", "\\ud835\\udc16", "\\ud835\\udc17", "\\ud835\\udc18", "\\ud835\\udc19"]
+  , "lower_case": ["\\ud835\\udc1a", "\\ud835\\udc1b", "\\ud835\\udc1c", "\\ud835\\udc1d", "\\ud835\\udc1e", "\\ud835\\udc1f", "\\ud835\\udc20", "\\ud835\\udc21", "\\ud835\\udc22", "\\ud835\\udc23", "\\ud835\\udc24", "\\ud835\\udc25", "\\ud835\\udc26", "\\ud835\\udc27", "\\ud835\\udc28", "\\ud835\\udc29", "\\ud835\\udc2a", "\\ud835\\udc2b", "\\ud835\\udc2c", "\\ud835\\udc2d", "\\ud835\\udc2e", "\\ud835\\udc2f", "\\ud835\\udc30", "\\ud835\\udc31", "\\ud835\\udc32", "\\ud835\\udc33"]
+  , "numbers":    ["\\ud835\\udfce", "\\ud835\\udfcf", "\\ud835\\udfd0", "\\ud835\\udfd1", "\\ud835\\udfd2", "\\ud835\\udfd3", "\\ud835\\udfd4", "\\ud835\\udfd5", "\\ud835\\udfd6", "\\ud835\\udfd7"]
+}]
+</pre><br/>
+<br/>
+Which is probably what you've expected to have :]<br/>
+<br/>
+It is a good philosophical question wherever the string is ASCII, but it's content is Unicode, since JavaScript tend to parse strings looks like <code>&bsol;uXXXX</code> directly, on the fly, back to true Unicode.<br/>
+So if you'll be process it to another application or textarea for display, it should probably still look fine,<br/>
+storing the second output in a variable will likely to give you the unescaped version.. :/<br/>
+</li><br/>
+<li>You can have it transform Unicode-characters to HTTP-Entity:<br/>
+<pre>
+function replacer(key, value){
+  if("string" !== typeof value) return value;
+  value = value.replace(/[\\u00A0-\\uFFFF]/gm, function(c){return '&#' + c.charCodeAt(0) + ';'});
+  return value;
+}
+
+console.log(
+  JSON.stringify(a, replacer, "  ")
+);
+</pre><br/>
+<br/>
+which will give you:<br/>
+<br/>
+<pre>
+[{"description":"ascii","upper_case":["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],"lower_case":["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],"numbers":["0","1","2","3","4","5","6","7","8","9"]},{"description":"MATHEMATICAL%20BOLD","upper_case":["%uD835%uDC00","%uD835%uDC01","%uD835%uDC02","%uD835%uDC03","%uD835%uDC04","%uD835%uDC05","%uD835%uDC06","%uD835%uDC07","%uD835%uDC08","%uD835%uDC09","%uD835%uDC0A","%uD835%uDC0B","%uD835%uDC0C","%uD835%uDC0D","%uD835%uDC0E","%uD835%uDC0F","%uD835%uDC10","%uD835%uDC11","%uD835%uDC12","%uD835%uDC13","%uD835%uDC14","%uD835%uDC15","%uD835%uDC16","%uD835%uDC17","%uD835%uDC18","%uD835%uDC19"],"lower_case":["%uD835%uDC1A","%uD835%uDC1B","%uD835%uDC1C","%uD835%uDC1D","%uD835%uDC1E","%uD835%uDC1F","%uD835%uDC20","%uD835%uDC21","%uD835%uDC22","%uD835%uDC23","%uD835%uDC24","%uD835%uDC25","%uD835%uDC26","%uD835%uDC27","%uD835%uDC28","%uD835%uDC29","%uD835%uDC2A","%uD835%uDC2B","%uD835%uDC2C","%uD835%uDC2D","%uD835%uDC2E","%uD835%uDC2F","%uD835%uDC30","%uD835%uDC31","%uD835%uDC32","%uD835%uDC33"],"numbers":["%uD835%uDFCE","%uD835%uDFCF","%uD835%uDFD0","%uD835%uDFD1","%uD835%uDFD2","%uD835%uDFD3","%uD835%uDFD4","%uD835%uDFD5","%uD835%uDFD6","%uD835%uDFD7"]}]
+</pre><br/>
+<br/>
+or beautified:<br/>
+<pre>
+[{
+  "description":  "ascii"
+  , "upper_case": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  , "lower_case": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+  , "numbers":    ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+}, {
+  "description":  "MATHEMATICAL%20BOLD"
+  , "upper_case": ["%uD835%uDC00", "%uD835%uDC01", "%uD835%uDC02", "%uD835%uDC03", "%uD835%uDC04", "%uD835%uDC05", "%uD835%uDC06", "%uD835%uDC07", "%uD835%uDC08", "%uD835%uDC09", "%uD835%uDC0A", "%uD835%uDC0B", "%uD835%uDC0C", "%uD835%uDC0D", "%uD835%uDC0E", "%uD835%uDC0F", "%uD835%uDC10", "%uD835%uDC11", "%uD835%uDC12", "%uD835%uDC13", "%uD835%uDC14", "%uD835%uDC15", "%uD835%uDC16", "%uD835%uDC17", "%uD835%uDC18", "%uD835%uDC19"]
+  , "lower_case": ["%uD835%uDC1A", "%uD835%uDC1B", "%uD835%uDC1C", "%uD835%uDC1D", "%uD835%uDC1E", "%uD835%uDC1F", "%uD835%uDC20", "%uD835%uDC21", "%uD835%uDC22", "%uD835%uDC23", "%uD835%uDC24", "%uD835%uDC25", "%uD835%uDC26", "%uD835%uDC27", "%uD835%uDC28", "%uD835%uDC29", "%uD835%uDC2A", "%uD835%uDC2B", "%uD835%uDC2C", "%uD835%uDC2D", "%uD835%uDC2E", "%uD835%uDC2F", "%uD835%uDC30", "%uD835%uDC31", "%uD835%uDC32", "%uD835%uDC33"]
+  , "numbers":    ["%uD835%uDFCE", "%uD835%uDFCF", "%uD835%uDFD0", "%uD835%uDFD1", "%uD835%uDFD2", "%uD835%uDFD3", "%uD835%uDFD4", "%uD835%uDFD5", "%uD835%uDFD6", "%uD835%uDFD7"]
+}]
+</pre><br/>
+</li><br/>
+</ul><br/>
+<br/>
+<em>Happy escaping!</em> :)</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-convert-camelcase-to-snake_case">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/ebay-pulsar-user-behavioral-tracking">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ebay-pulsar-user-behavioral-tracking">JavaScript Ninja - eBay's PULSAR A.K.A User-Behavioral-Tracking</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-document-write-alternative">JavaScript Ninja - document.write Alternative</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-most-popular-adblock-lists">The Most Popular Adblock Lists</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-kitty-algorithm">You're Giving Me Far Too Many Kitten-Videos! And I Love It!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-snippet-everything-to-button">CSS3 Snippet - Everything To Button</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/imagemagick-nightly-builds">ImageMagick Nightly Builds</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vuze-subdomains">Vuze SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-domain2ip">Google Domain2IP (DNS Over HTTPS)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-entity-unicode-escape">HTML Entity - Unicode Escape</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unicode-character-sequence-with-zero-left-padding">Unicode Character Sequence With Zero Left-Padding</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/java-snippet-port-finder">Java Snippet - Port Finder</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-extension-snippet-modify-response-header">Chrome Extension Snippet - Modify Response Header</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-pre-fill-file-duration-into-ffmpegs-mp3-concatenation-file-list-using-ffprobe">Using FFPROBE</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-fixes-your-everything">FFMPEG Fixes Your... Everything!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-google-chrome-hides-the-url-of-error-pages">Solved: Google Chrome Hides The URL Of Error Pages</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bitcoin-emoji">Ƀ - BitCoin Emoji</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

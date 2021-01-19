@@ -1,0 +1,28 @@
+For Unicode only:
+<pre>
+<span style="color:#800000; ">'</span><span style="color:#0000e6; ">Français</span><span style="color:#800000; ">'</span>
+  <span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">replace</span><span style="color:#808030; ">(</span><span style="color:#800000; ">/</span><span style="color:#808030; ">[</span><span style="color:#0f69ff; ">\\u0080</span><span style="color:#808030; ">-</span><span style="color:#0f69ff; ">\\u10FF</span><span style="color:#0000e6; ">FF</span><span style="color:#808030; ">]</span><span style="color:#800000; ">/</span>ug<span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span><span style="color:#808030; ">(</span>c<span style="color:#808030; ">)</span><span style="color:#800080; ">{</span>
+                                    <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">&amp;#x</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> <span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">0000</span><span style="color:#800000; ">"</span> <span style="color:#808030; ">+</span> c<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">charCodeAt</span><span style="color:#808030; ">(</span><span style="color:#008c00; ">0</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">toString</span><span style="color:#808030; ">(</span><span style="color:#008c00; ">16</span><span style="color:#808030; ">)</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">toUpperCase</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">substr</span><span style="color:#808030; ">(</span><span style="color:#808030; ">-</span><span style="color:#008c00; ">4</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">+</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">;</span><span style="color:#800000; ">"</span> 
+                                  <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+
+output:
+<pre>
+&#x0026;&#x0023;&#x0078;&#x0030;&#x0030;&#x0034;&#x0036;&#x003B;&#x0072;&#x0061;&#x006E;&#x0026;&#x0023;&#x0078;&#x0030;&#x0030;&#x0045;&#x0037;&#x003B;&#x0061;&#x0069;&#x0073;
+</pre>
+
+<!--more-->
+<hr/>
+
+For everything:
+<pre>
+<span style='color:#800000; '>'</span><span style='color:#0000e6; '>Français</span><span style='color:#800000; '>'</span>
+   <span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><span style='color:#800000; '>/</span><span style='color:#808030; '>.</span><span style='color:#800000; '>/</span>ug<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>c<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+                     <span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>&amp;#x</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>0000</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> c<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>charCodeAt</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>toString</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>16</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>toUpperCase</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>substr</span><span style='color:#808030; '>(</span><span style='color:#808030; '>-</span><span style='color:#008c00; '>4</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>;</span><span style='color:#800000; '>"</span>
+                   <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+
+output:
+<pre>
+&#x0026;&#x0023;&#x0078;&#x0030;&#x0030;&#x0034;&#x0036;&#x003B;&#x0026;&#x0023;&#x0078;&#x0030;&#x0030;&#x0037;&#x0032;&#x003B;&#x0026;&#x0023;&#x0078;&#x0030;&#x0030;&#x0036;&#x0031;&#x003B;&#x0026;&#x0023;&#x0078;&#x0030;&#x0030;&#x0036;&#x0045;&#x003B;&#x0026;&#x0023;&#x0078;&#x0030;&#x0030;&#x0045;&#x0037;&#x003B;&#x0026;&#x0023;&#x0078;&#x0030;&#x0030;&#x0036;&#x0031;&#x003B;&#x0026;&#x0023;&#x0078;&#x0030;&#x0030;&#x0036;&#x0039;&#x003B;&#x0026;&#x0023;&#x0078;&#x0030;&#x0030;&#x0037;&#x0033;&#x003B;
+</pre>

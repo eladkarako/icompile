@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>PHP Snippet - Generate Random Bytes</title>
+  <meta itemprop="name"                                content="PHP Snippet - Generate Random Bytes"       />
+  <meta name="dcterms.title"                           content="PHP Snippet - Generate Random Bytes"       />
+  <meta property="og:title"                            content="PHP Snippet - Generate Random Bytes"       />
+  <meta name="twitter:title"                           content="PHP Snippet - Generate Random Bytes"       />
+  <meta name="twitter:text:title"                      content="PHP Snippet - Generate Random Bytes"       />
+  <meta name="application-name"                        content="PHP Snippet - Generate Random Bytes"       />
+  <meta name="subject"                                 content="PHP Snippet - Generate Random Bytes"       />
+  <meta name="apple-mobile-web-app-title"              content="PHP Snippet - Generate Random Bytes"       />
+  <meta name="msapplication-tooltip"                   content="PHP Snippet - Generate Random Bytes"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="PHP Snippet - Generate Random Bytes"       />
+  <meta itemprop="description"                         content="PHP Snippet - Generate Random Bytes"       />
+  <meta name="dcterms.description"                     content="PHP Snippet - Generate Random Bytes"       />
+  <meta name="twitter:description"                     content="PHP Snippet - Generate Random Bytes"       />
+  <meta property="og:description"                      content="PHP Snippet - Generate Random Bytes"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="amount,based,bold,byte,bytes,callback,code,color,create,crypto,dechex,dump,entropy,error,exists,fallback,false,font,function,generate,human,input,lack,length,libraries,make,mcrypt,openssl,preg,pseudo,rand,random,readable,replace,return,simpler,snippet,sort,substr,trim,urandom,valid,weight,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="amount,based,bold,byte,bytes,callback,code,color,create,crypto,dechex,dump,entropy,error,exists,fallback,false,font,function,generate,human,input,lack,length,libraries,make,mcrypt,openssl,preg,pseudo,rand,random,readable,replace,return,simpler,snippet,sort,substr,trim,urandom,valid,weight,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/php-snippet-script-runtime"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/php-snippet-script-runtime"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/php-snippet-request-argument-from-either-post-or-get"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/php-snippet-generate-random-bytes"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/php-snippet-generate-random-bytes"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/php-snippet-generate-random-bytes"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/php-snippet-generate-random-bytes"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/php-snippet-generate-random-bytes"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/php-snippet-generate-random-bytes"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-10-13T03:27:06+00:00"     />
+  <meta name="page-datetime"                           content="2016-10-13T03:27:06+00:00"     />
+  <meta property="article:published_time"              content="2016-10-13T03:27:06+00:00"     />
+  <meta name="dcterms.date"                            content="2016-10-13T03:27:06+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-10-13T03:27:06+00:00"    />
+  <meta property="article:modified_time"               content="2016-10-13T03:27:06+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/php-snippet-generate-random-bytes"
+,"url"             : "https://icompile.eladkarako.com/php-snippet-generate-random-bytes"
+,"headline"        : "PHP Snippet - Generate Random Bytes"
+,"description"     : "PHP Snippet - Generate Random Bytes"
+,"datePosted"      : "2016-10-13T03:27:06+00:00"
+,"dateCreated"     : "2016-10-13T03:27:06+00:00"
+,"datePublished"   : "2016-10-13T03:27:06+00:00"
+,"dateModified"    : "2016-10-13T03:27:06+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006229236741">
+  <header>
+    <h1 itemprop="headline">PHP Snippet - Generate Random Bytes</h1>
+    <sup>Posted at <time datetime="2016-10-13T03:27:06+00:00" itemprop="dateModified">Thu, 13 Oct 2016 03:27:06 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">This code will generate any amount of bytes, in human readable Hex-characters,<br/>
+using either <code>random_bytes</code>, <code>mcrypt_create_iv</code> or <code>openssl_random_pseudo_bytes</code> (all with added entropy), an additional, in-case of some sort of error or an old or lack of crypto-libraries PHP instance, there is a <code>mt_rand</code>-based on fallback.<br/>
+<br/>
+<pre><span style='color:#5f5035;'>&lt;?php</span><span style='color:#000000;'></span><br/>
+<span style='color:#797997;'>$get_random_bytes</span><span style='color:#000000;'> </span><span style='color:#808030;'>=</span><span style='color:#000000;'> </span><span style='color:#800000;font-weight:bold; '>function</span><span style='color:#808030;'>(</span><span style='color:#797997;'>$length</span><span style='color:#000000;'> </span><span style='color:#808030;'>=</span><span style='color:#000000;'> </span><span style='color:#008c00;'>64</span><span style='color:#808030;'>)</span><span style='color:#800080;'>{</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;</span><span style='color:#797997;'>$length</span><span style='color:#000000;'> </span><span style='color:#808030;'>=</span><span style='color:#000000;'> </span><span style='color:#400000;'>max</span><span style='color:#808030;'>(</span><span style='color:#008c00;'>1</span><span style='color:#808030;'>,</span><span style='color:#000000;'> </span><span style='color:#797997;'>$length</span><span style='color:#808030;'>)</span><span style='color:#800080;'>;</span><span style='color:#000000;'> </span><span style='color:#696969;'>/* valid input, at-least 1 byte. */</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'></span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;</span><span style='color:#797997;'>$result</span><span style='color:#000000;'> </span><span style='color:#808030;'>=</span><span style='color:#000000;'> </span><span style='color:#0f4d75;'>true</span><span style='color:#000000;'> </span><span style='color:#808030;'>=</span><span style='color:#808030;'>=</span><span style='color:#808030;'>=</span><span style='color:#000000;'> </span><span style='color:#400000;'>function_exists</span><span style='color:#808030;'>(</span><span style='color:#0000e6;'>'random_bytes'</span><span style='color:#808030;'>)</span><span style='color:#000000;'>                 </span><span style='color:#800080;'>?</span><span style='color:#000000;'>  </span><span style='color:#400000;'>bin2hex</span><span style='color:#808030;'>(</span><span style='color:#000000;'>random_bytes</span><span style='color:#808030;'>(</span><span style='color:#797997;'>$length</span><span style='color:#808030;'>)</span><span style='color:#808030;'>)</span><span style='color:#000000;'>                          </span><span style='color:#800080;'>:</span><span style='color:#000000;'> </span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#0f4d75;'>true</span><span style='color:#000000;'> </span><span style='color:#808030;'>=</span><span style='color:#808030;'>=</span><span style='color:#808030;'>=</span><span style='color:#000000;'> </span><span style='color:#400000;'>function_exists</span><span style='color:#808030;'>(</span><span style='color:#0000e6;'>'mcrypt_create_iv'</span><span style='color:#808030;'>)</span><span style='color:#000000;'>             </span><span style='color:#800080;'>?</span><span style='color:#000000;'>  </span><span style='color:#400000;'>bin2hex</span><span style='color:#808030;'>(</span><span style='color:#400000;'>mcrypt_create_iv</span><span style='color:#808030;'>(</span><span style='color:#797997;'>$length</span><span style='color:#808030;'>,</span><span style='color:#000000;'> </span><span style='color:#7d0045;'>MCRYPT_DEV_URANDOM</span><span style='color:#808030;'>)</span><span style='color:#808030;'>)</span><span style='color:#000000;'>  </span><span style='color:#800080;'>:</span><span style='color:#000000;'> </span><span style='color:#696969;'>/* might give false on error */</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#0f4d75;'>true</span><span style='color:#000000;'> </span><span style='color:#808030;'>=</span><span style='color:#808030;'>=</span><span style='color:#808030;'>=</span><span style='color:#000000;'> </span><span style='color:#400000;'>function_exists</span><span style='color:#808030;'>(</span><span style='color:#0000e6;'>'openssl_random_pseudo_bytes'</span><span style='color:#808030;'>)</span><span style='color:#000000;'>  </span><span style='color:#800080;'>?</span><span style='color:#000000;'>  </span><span style='color:#400000;'>bin2hex</span><span style='color:#808030;'>(</span><span style='color:#000000;'>openssl_random_pseudo_bytes</span><span style='color:#808030;'>(</span><span style='color:#797997;'>$length</span><span style='color:#808030;'>,</span><span style='color:#000000;'> </span><span style='color:#0f4d75;'>true</span><span style='color:#808030;'>)</span><span style='color:#808030;'>)</span><span style='color:#000000;'>     </span><span style='color:#800080;'>:</span><span style='color:#000000;'> </span><span style='color:#696969;'>/* might give false on error */</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#0f4d75;'>false</span><span style='color:#000000;'> </span><span style='color:#696969;'>/* fallback */</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#800080;'>;</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'></span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;</span><span style='color:#696969;'>/* in case of FALSE (because of function-error or fallback) we will be using "simpler" random */</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;</span><span style='color:#797997;'>$result</span><span style='color:#000000;'> </span><span style='color:#808030;'>=</span><span style='color:#000000;'> </span><span style='color:#0f4d75;'>false</span><span style='color:#000000;'> </span><span style='color:#808030;'>!</span><span style='color:#808030;'>=</span><span style='color:#808030;'>=</span><span style='color:#000000;'> </span><span style='color:#797997;'>$result</span><span style='color:#000000;'> </span><span style='color:#800080;'>?</span><span style='color:#000000;'> </span><span style='color:#797997;'>$result</span><span style='color:#000000;'> </span><span style='color:#800080;'>:</span><span style='color:#000000;'> </span><span style='color:#400000;'>substr</span><span style='color:#808030;'>(</span><span style='color:#000000;'>                                                </span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#400000;'>preg_replace_callback</span><span style='color:#808030;'>(</span><span style='color:#0000e6;'>'</span><span style='color:#800000;'>#</span><span style='color:#0000e6;'>@</span><span style='color:#800000;'>#</span><span style='color:#0000e6;'>'</span><span style='color:#808030;'>,</span><span style='color:#000000;'> </span><span style='color:#800000;font-weight:bold; '>function</span><span style='color:#808030;'>(</span><span style='color:#808030;'>)</span><span style='color:#800080;'>{</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#800000;font-weight:bold; '>return</span><span style='color:#000000;'> </span><span style='color:#400000;'>dechex</span><span style='color:#808030;'>(</span><span style='color:#400000;'>mt_rand</span><span style='color:#808030;'>(</span><span style='color:#008c00;'>0</span><span style='color:#808030;'>,</span><span style='color:#000000;'> </span><span style='color:#008c00;'>16</span><span style='color:#808030;'>)</span><span style='color:#808030;'>)</span><span style='color:#800080;'>;</span><span style='color:#000000;'> </span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#800080;'>}</span><span style='color:#808030;'>,</span><span style='color:#000000;'> </span><span style='color:#400000;'>str_repeat</span><span style='color:#808030;'>(</span><span style='color:#0000e6;'>'@'</span><span style='color:#808030;'>,</span><span style='color:#000000;'> </span><span style='color:#797997;'>$length</span><span style='color:#000000;'> </span><span style='color:#808030;'>*</span><span style='color:#000000;'> </span><span style='color:#008c00;'>2</span><span style='color:#808030;'>)</span><span style='color:#808030;'>)</span><span style='color:#000000;'>      </span><span style='color:#696969;'>/*64 bytes are 128 characters*/</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#808030;'>,</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#808030;'>(</span><span style='color:#808030;'>-</span><span style='color:#008c00;'>1</span><span style='color:#000000;'> </span><span style='color:#808030;'>*</span><span style='color:#000000;'> </span><span style='color:#797997;'>$length</span><span style='color:#000000;'> </span><span style='color:#808030;'>*</span><span style='color:#000000;'> </span><span style='color:#008c00;'>2</span><span style='color:#808030;'>)</span><span style='color:#000000;'>                    </span><span style='color:#696969;'>/*trim - make sure exactly 128 characters (for example, if $length is 64)*/</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#808030;'>)</span><span style='color:#800080;'>;</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;</span><span style='color:#800000;font-weight:bold; '>return</span><span style='color:#000000;'> </span><span style='color:#797997;'>$result</span><span style='color:#800080;'>;</span><span style='color:#000000;'></span><br/>
+<span style='color:#800080;'>}</span><span style='color:#800080;'>;</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'></span><br/>
+<span style='color:#400000;'>var_dump</span><span style='color:#808030;'>(</span><span style='color:#000000;'></span><br/>
+<span style='color:#000000;'>&#xa0;&#xa0;</span><span style='color:#797997;'>$get_random_bytes</span><span style='color:#808030;'>(</span><span style='color:#808030;'>)</span><span style='color:#000000;'></span><br/>
+<span style='color:#808030;'>)</span><span style='color:#800080;'>;</span><span style='color:#000000;'></span><br/>
+<span style='color:#5f5035;'>?&gt;</span><br/>
+</pre><br/>
+<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-script-runtime">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-request-argument-from-either-post-or-get">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-request-argument-from-either-post-or-get">PHP Snippet - Request-Argument From Either POST Or GET</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/thinapp-registry-export">Solved: ThinApp Registry Export</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-two-approaches-on-uniquefing-an-array-memory-wise">JavaScript Snippet - Two Approaches On Unique'fing An Array - Memory Wise</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hubic-secret-coupon">hubiC Secret Coupon</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-obfuscated-numbering-for-csrf">JavaScript Obfuscated Numbering For CSRF</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-event-isolation-with-documentation">JavaScript Snippet - Event Isolation With Documentation</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/removing-eset-products-additional-notes">Removing ESET Products - Additional Notes</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/noscript-subdomains">NoScript SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-download-calendar-emoji-image">Free Download - Graphics Of Old School Calendar Unicode Emoji</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-onmibox">You Can't!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-createdocument-with-doctype-example">JavaScript Ninja ☕ - createDocument With DocType - The Missing Example</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows-update-exes-and-services">Windows Update EXEs And Services</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-snippet-example-on-multiple-language-resource">HTML Snippet - Example On Multiple Language Resource</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-ninja-centring-container-in-the-middle-of-viewport-with-css3-only-no-javascript">No JavaScript</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/full-on-centering-panel-css">HTML5 Ninja Techniques - Minimal HTML/CSS3 Markup Needed For Full-On Centering-Panel - With/Without CSS-Table</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/multi-language-version-info-resource-for-your-exe">Multi-Language Version-Info Resource For Your EXE</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

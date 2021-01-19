@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JavaScript Ninja - Wrap Fold Text At Certain Column Size</title>
+  <meta itemprop="name"                                content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+  <meta name="dcterms.title"                           content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+  <meta property="og:title"                            content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+  <meta name="twitter:title"                           content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+  <meta name="twitter:text:title"                      content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+  <meta name="application-name"                        content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+  <meta name="subject"                                 content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+  <meta name="apple-mobile-web-app-title"              content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+  <meta name="msapplication-tooltip"                   content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+  <meta itemprop="description"                         content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+  <meta name="dcterms.description"                     content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+  <meta name="twitter:description"                     content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+  <meta property="og:description"                      content="JavaScript Ninja - Wrap Fold Text At Certain Column Size"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="assign,bank,base,bash,blank,bold,break,code,color,column,constant,constructor,content,copy,created,customers,cutting,deciphering,details,email,emails,evil,expression,factor,familiar,file,fold,font,function,good,helping,included,insert,integrate,javascript,length,line,magic,make,mystery,needed,ninja,normalized,object,open,possibly,programming,prototype,reassure,recreate,regex,regexp,regular,replace,reporting,return,reuse,reverse,savvy,security,server,size,spam,spamcop,strong,stuff,target,template,tolowercase,track,trimmmmmmmm,typeof,user,valid,weight,wrap,yeah,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="assign,bank,base,bash,blank,bold,break,code,color,column,constant,constructor,content,copy,created,customers,cutting,deciphering,details,email,emails,evil,expression,factor,familiar,file,fold,font,function,good,helping,included,insert,integrate,javascript,length,line,magic,make,mystery,needed,ninja,normalized,object,open,possibly,programming,prototype,reassure,recreate,regex,regexp,regular,replace,reporting,return,reuse,reverse,savvy,security,server,size,spam,spamcop,strong,stuff,target,template,tolowercase,track,trimmmmmmmm,typeof,user,valid,weight,wrap,yeah,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/javascript-ninja-event-purge-no-jquery-needed"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/javascript-ninja-event-purge-no-jquery-needed"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/ffmpeg-vid-to-youtube-720p-compatible-slim-mkv"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/javascript-ninja-wrap-fold-text-at-certain-column-size"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/javascript-ninja-wrap-fold-text-at-certain-column-size"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/javascript-ninja-wrap-fold-text-at-certain-column-size"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/javascript-ninja-wrap-fold-text-at-certain-column-size"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/javascript-ninja-wrap-fold-text-at-certain-column-size"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/javascript-ninja-wrap-fold-text-at-certain-column-size"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-07-04T12:10:46+00:00"     />
+  <meta name="page-datetime"                           content="2016-07-04T12:10:46+00:00"     />
+  <meta property="article:published_time"              content="2016-07-04T12:10:46+00:00"     />
+  <meta name="dcterms.date"                            content="2016-07-04T12:10:46+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-07-04T12:18:20+00:00"    />
+  <meta property="article:modified_time"               content="2016-07-04T12:18:20+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/javascript-ninja-wrap-fold-text-at-certain-column-size"
+,"url"             : "https://icompile.eladkarako.com/javascript-ninja-wrap-fold-text-at-certain-column-size"
+,"headline"        : "JavaScript Ninja - Wrap Fold Text At Certain Column Size"
+,"description"     : "JavaScript Ninja - Wrap Fold Text At Certain Column Size"
+,"datePosted"      : "2016-07-04T12:10:46+00:00"
+,"dateCreated"     : "2016-07-04T12:10:46+00:00"
+,"datePublished"   : "2016-07-04T12:10:46+00:00"
+,"dateModified"    : "2016-07-04T12:18:20+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006424367641">
+  <header>
+    <h1 itemprop="headline">JavaScript Ninja - Wrap Fold Text At Certain Column Size</h1>
+    <sup>Posted at <time datetime="2016-07-04T12:18:20+00:00" itemprop="dateModified">Mon, 04 Jul 2016 12:18:20 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">You might be a *nix savvy, and already familiar with <code>fold -w 80 <em>[text file name]</em></code> that will <strong><em>wrap</em></strong> <br/>
+<sub><em>(a.k.a fold, a.k.a insert a line-break, a.k.a insert new-line)</em></sub><br/>
+your text to constant line length,<br/>
+<br/>
+In server-side, it is very useful for stuff such as base64-content-cutting, for raw email template,<br/>
+I'm using it as a quick -no-file-no-copy-from-bash- needed for deciphering spam emails before reporting them to <a href="http://www.spamcop.net" target="_blank">SpamCop</a> just to make sure they do not have any evil details that will later be used to reverse-track the customers (helping IT Security)<br/>
+<br/>
+---- insert <em>regular expression</em> magic here ---------- :)<br/>
+<br/>
+<pre><span style='color:#800000; '>"</span><span style='color:#0000e6; '>kjlahflkjhweoiurysjfdhglkasjhfdoiuyewqdiufyalksjkjhalkjshdlkajhfdlkjahdsflkjahdsflkjhsadflkjhsadlkfjhsadlkfjhasdlkjfhalkdjfhhflkytiuwyretlkjahsdflkjhsadlkfhabcdefghij</span><span style='color:#800000; '>"</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><span style='color:#800000; '>/</span><span style='color:#808030; '>(</span><span style='color:#808030; '>.</span><span style='color:#808030; '>{</span><span style='color:#008c00; '>73</span><span style='color:#808030; '>}</span><span style='color:#808030; '>)</span><span style='color:#800000; '>/</span><span style='color:#800000; font-weight:bold; '>gm</span><span style='color:#808030; '>,</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>$1</span><span style='color:#0f69ff; '>\<br/>
+</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><br/>
+</pre><br/>
+<br/>
+this will trimmmmmmmm the text at (included) column 73 (after 73 characters)<br/>
+<br/>
+<pre>
+"kjlahflkjhweoiurysjfdhglkasjhfdoiuyewqdiufyalksjkjhalkjshdlkajhfdlkjahdsf
+lkjahdsflkjhsadflkjhsadlkfjhsadlkfjhasdlkjfhalkdjfhhflkytiuwyretlkjahsdfl
+kjhsadlkfhabcdefghij"
+</pre><br/>
+<br/>
+integrate it using some prototype fun:<br/>
+<pre><span style='color:#797997; '>String</span><span style='color:#808030; '>.</span><span style='color:#797997; '>prototype</span><span style='color:#808030; '>.</span>fold <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span> fold<span style='color:#808030; '>(</span>wrap_at_N_column<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+<span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><br/>
+             <span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#797997; '>RegExp</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>(.{</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> wrap_at_N_column <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>})</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>gm</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><br/>
+           <span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>$1</span><span style='color:#0f69ff; '>\<br/>
+</span><span style='color:#800000; '>"</span><br/>
+           <span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+</pre><br/>
+<br/>
+yeah I know I could have created the regex once and assign it to the String prototype itself as an "object bank",<br/>
+but THAT IS NOT A GOOD PROGRAMMING ("mystery factor") - better recreate that object, or alternatively be open to get it so user could assign it itself (possibly reuse same object)<br/>
+<br/>
+<pre><span style='color:#797997; '>String</span><span style='color:#808030; '>.</span><span style='color:#797997; '>prototype</span><span style='color:#808030; '>.</span>fold <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span> fold<span style='color:#808030; '>(</span>wrap_at_N_column<span style='color:#808030; '>,</span> regex<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+  regex <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>object</span><span style='color:#800000; '>"</span>   <span style='color:#808030; '>===</span> regex <span style='color:#808030; '>&amp;&amp;</span> <br/>
+           <span style='color:#800000; '>"</span><span style='color:#0000e6; '>function</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>===</span> <span style='color:#800000; font-weight:bold; '>typeof</span> regex<span style='color:#808030; '>.</span><span style='color:#797997; '>constructor</span> <span style='color:#808030; '>&amp;&amp;</span> <br/>
+           <span style='color:#800000; '>"</span><span style='color:#0000e6; '>string</span><span style='color:#800000; '>"</span>   <span style='color:#808030; '>===</span> <span style='color:#800000; font-weight:bold; '>typeof</span> regex<span style='color:#808030; '>.</span><span style='color:#797997; '>constructor</span><span style='color:#808030; '>.</span>name <span style='color:#808030; '>&amp;&amp;</span><br/>
+           <span style='color:#800000; '>"</span><span style='color:#0000e6; '>regexp</span><span style='color:#800000; '>"</span>   <span style='color:#808030; '>===</span> regex<span style='color:#808030; '>.</span><span style='color:#797997; '>constructor</span><span style='color:#808030; '>.</span>name<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>toLowerCase</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>)</span> <span style='color:#800080; '>?</span> regex <span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#797997; '>RegExp</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>(.{</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> wrap_at_N_column <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>})</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>gm</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<br/>
+  <span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span>regex<span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>$1</span><span style='color:#0f69ff; '>\<br/>
+</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+</pre><br/>
+<br/>
+<br/>
+b.t.w there is no need to reassure that <code>wrap_at_N_column</code> is valid, it is already normalized by the regular-expression implementation (for example try <code>-1</code> and such..)  :]<br/>
+<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-event-purge-no-jquery-needed">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-vid-to-youtube-720p-compatible-slim-mkv">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-vid-to-youtube-720p-compatible-slim-mkv">FFMPEG Vid To YouTube 720p Compatible Slim MKV</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-what-is-this-for">What Is This For?</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wordpress-ninja-the-missing-sorting-plugins-by-popularity">Wordpress Ninja - The Missing "Sorting Plugins By Popularity"</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/com-sec-jewishcalendar">לוח שנה עברי - com.sec.jewishcalendar</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-wordpress-plugin-set-robots">New WordPress Plugin - Set ROBOTS</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easeus-subdomains">EaseUS-Related Sub-Domains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easeus-update-service">EaseUS Update Service</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wordpresss-another-update-is-currently-in-progress">WordPress's "Another update is currently in progress."</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easeus-is-a-piece-of-shit">EaseUS Is A Piece Of $hit!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/go-daddy-thanks-for-the-nightmares">Go-Daddy! Thanks For The Nightmares</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-home-plants-anti-aphids">Solved: Home-Plants Anti-Aphids</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-wordpress-minileven-5-posts-limit">Solved: WordPress Minileven 5 Posts Limit</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sugar-free-gluten-free-chocolate-muffins">Chocolate-Muffins - Sugar Free And Gluten-Free</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/how-to-wire-an-israeli-electrical-socket">How To Wire An Israeli Electrical-Socket</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/globes-undocumented-api">Globes Undocumented API</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/beating-heart-css3">Beating Heart CSS3</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

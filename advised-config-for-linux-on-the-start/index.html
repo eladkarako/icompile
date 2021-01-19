@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>קינפוגים מומלצים ללינוקס על ההתחלה</title>
+  <meta itemprop="name"                                content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+  <meta name="dcterms.title"                           content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+  <meta property="og:title"                            content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+  <meta name="twitter:title"                           content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+  <meta name="twitter:text:title"                      content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+  <meta name="application-name"                        content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+  <meta name="subject"                                 content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+  <meta name="apple-mobile-web-app-title"              content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+  <meta name="msapplication-tooltip"                   content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+  <meta itemprop="description"                         content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+  <meta name="dcterms.description"                     content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+  <meta name="twitter:description"                     content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+  <meta property="og:description"                      content="קינפוגים מומלצים ללינוקס על ההתחלה"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="אולי,דסקטופ,ההתחלה,וירטואלית,יהיה,יעזור,להגדיר,להתקין,ללינוקס,לעשות,לקנפג,מומלצים,מכונה,פונטים,קינפוגים,רימוט,שאפשר,שונה,שירשם,address,apache,auto,blog,cache,cairo,carbon,cdrom,check,chown,client,clone,coding,commands,conf,configuring,cpanm,cpanmin,cpanminus,curl,data,date,default,django,dnsניסיון,download,downloads,eager,easily,echo,editor,epoch,examples,fallback,false,ficompile,fresh,gateway,gedit,gist,gistid,gistuser,github,gnome,graph,graphite,grep,groups,guessed,high,hostname,html,iface,importance,inet,init,input,install,installer,interfaces,karako,kuser,lamp,launchpad,ldap,libapache,license,linux,liuggio,local,localhost,lpadmin,make,manage,memcache,mkdir,mscorefonts,nameservers,nautilus,navigation,netcode,netmask,network,nodejs,nopasswd,olympus,openssh,optional,origin,outdated,package,password,perl,peter,plugdev,post,puppet,putty,python,rabbitvcs,read,referrer,reload,replacement,repository,resources,restart,ruby,rubygems,sambashare,sandbox,schemas,scripts,scrolling,seamless,search,send,server,serverguide,service,session,settings,setup,shlomo,simplejson,sites,skip,snmp,start,static,statsd,steps,storage,streetcred,sudo,surjikal,syncdb,tagging,test,tmsh,tools,twisted,txamqp,type,ubuntu,understand,update,vagrant,vagrantup,vhost,virtualbox,visudo,wamp,webapp,wget,whisper,wsgi,xrdp,xsession,xzvf,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="אולי,דסקטופ,ההתחלה,וירטואלית,יהיה,יעזור,להגדיר,להתקין,ללינוקס,לעשות,לקנפג,מומלצים,מכונה,פונטים,קינפוגים,רימוט,שאפשר,שונה,שירשם,address,apache,auto,blog,cache,cairo,carbon,cdrom,check,chown,client,clone,coding,commands,conf,configuring,cpanm,cpanmin,cpanminus,curl,data,date,default,django,dnsניסיון,download,downloads,eager,easily,echo,editor,epoch,examples,fallback,false,ficompile,fresh,gateway,gedit,gist,gistid,gistuser,github,gnome,graph,graphite,grep,groups,guessed,high,hostname,html,iface,importance,inet,init,input,install,installer,interfaces,karako,kuser,lamp,launchpad,ldap,libapache,license,linux,liuggio,local,localhost,lpadmin,make,manage,memcache,mkdir,mscorefonts,nameservers,nautilus,navigation,netcode,netmask,network,nodejs,nopasswd,olympus,openssh,optional,origin,outdated,package,password,perl,peter,plugdev,post,puppet,putty,python,rabbitvcs,read,referrer,reload,replacement,repository,resources,restart,ruby,rubygems,sambashare,sandbox,schemas,scripts,scrolling,seamless,search,send,server,serverguide,service,session,settings,setup,shlomo,simplejson,sites,skip,snmp,start,static,statsd,steps,storage,streetcred,sudo,surjikal,syncdb,tagging,test,tmsh,tools,twisted,txamqp,type,ubuntu,understand,update,vagrant,vagrantup,vhost,virtualbox,visudo,wamp,webapp,wget,whisper,wsgi,xrdp,xsession,xzvf,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/pure-css-tabs"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/pure-css-tabs"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/youtube-10-hours-video"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/advised-config-for-linux-on-the-start"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/advised-config-for-linux-on-the-start"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/advised-config-for-linux-on-the-start"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/advised-config-for-linux-on-the-start"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/advised-config-for-linux-on-the-start"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/advised-config-for-linux-on-the-start"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-01-01T08:15:54+00:00"     />
+  <meta name="page-datetime"                           content="2014-01-01T08:15:54+00:00"     />
+  <meta property="article:published_time"              content="2014-01-01T08:15:54+00:00"     />
+  <meta name="dcterms.date"                            content="2014-01-01T08:15:54+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-01-04T01:03:46+00:00"    />
+  <meta property="article:modified_time"               content="2017-01-04T01:03:46+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/advised-config-for-linux-on-the-start"
+,"url"             : "https://icompile.eladkarako.com/advised-config-for-linux-on-the-start"
+,"headline"        : "קינפוגים מומלצים ללינוקס על ההתחלה"
+,"description"     : "קינפוגים מומלצים ללינוקס על ההתחלה"
+,"datePosted"      : "2014-01-01T08:15:54+00:00"
+,"dateCreated"     : "2014-01-01T08:15:54+00:00"
+,"datePublished"   : "2014-01-01T08:15:54+00:00"
+,"dateModified"    : "2017-01-04T01:03:46+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0004514658831">
+  <header>
+    <h1 itemprop="headline">קינפוגים מומלצים ללינוקס על ההתחלה</h1>
+    <sup>Posted at <time datetime="2017-01-04T01:03:46+00:00" itemprop="dateModified">Wed, 04 Jan 2017 01:03:46 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><!--more--><br/>
+tmsh show sys license detail | grep -i "Registration key" | sha512sum<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+כדי שאפשר יהיה לעשות רימוט דסקטופ<br/>
+sudo apt-get install xrdp<br/>
+<br/>
+    echo "gnome-session --session=ubuntu-2d" > ~/.xsession<br/>
+    sudo apt-get install gnome-session-fallback<br/>
+<br/>
+<br/>
+פונטים<br/>
+sudo apt-get install ttf-mscorefonts-installer<br/>
+sudo apt-get install ttf-mscorefonts<br/>
+sudo fc-cache -f -s -v<br/>
+<br/>
+sudo apt-get install ubuntu-dev-tools<br/>
+sudo apt-get install openssh<br/>
+sudo apt-get install openssh-server<br/>
+<br/>
+install putty<br/>
+<br/>
+<br/>
+<br/>
+----------how to install svn<br/>
+sudo apt-get-repository ppa:rabbitvcs/ppa<br/>
+sudo apt-get update<br/>
+sudo apt-get install rabbitvcs-nautilus3<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+--------------------------------------- skip sudo password<br/>
+---install kuser<br/>
+sudo kuser,<br/>
+groups: adm, cdrom, sudo, dip, plugdev, lpadmin, netcode, sambashare<br/>
+<br/>
+<br/>
+sudo EDITOR=gedit visudo<br/>
+<br/>
+<br/>
+<br/>
+--------------------------------------------------------------<br/>
+<br/>
+<br/>
+sudo apt-get install nodejs npm<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+sudo apt-get install ruby<br/>
+sudo apt-get install rubygems<br/>
+http://www.vagrantup.com/downloads  --- as a replacement for puppet<br/>
+http://welcometothebundle.com/easily-install-statsd-and-graphite-with-vagrant/<br/>
+<br/>
+--------------------<br/>
+DNSניסיון להגדיר ככה שירשם ב<br/>
+https://help.ubuntu.com/12.10/serverguide/network-configuration.html<br/>
+--------<br/>
+sudo gedit /etc/network/interfaces<br/>
+iface eth0 inet static<br/>
+    address 172.29.32.139<br/>
+    netmask 255.255.255.0<br/>
+    gateway 172.29.32.254<br/>
+    dns-search olympus.F5Net.com<br/>
+    dns-nameservers 192.168.184.180 192.168.184.183<br/>
+--------<br/>
+<br/>
+<br/>
+<br/>
+http://johannilsson.com/2012/05/13/graphite.html<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+sudo EDITOR=gedit visudo<br/>
+add at end:<br/>
+netcode ALL=(ALL) NOPASSWD: ALL<br/>
+karako ALL=(ALL) NOPASSWD: ALL<br/>
+shlomo ALL=(ALL) NOPASSWD: ALL<br/>
+peter ALL=(ALL) NOPASSWD: ALL<br/>
+graphite ALL=(ALL) NOPASSWD: ALL<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+----------------------------------------------------------<br/>
+----------------------------------------------------------<br/>
+----------------------------------------------------------<br/>
+<br/>
+sudo apt-get install python-pip<br/>
+sudo apt-get install ruby1.9.3<br/>
+sudo gem install vagrant<br/>
+sudo git clone https://github.com/liuggio/vagrant-statsd-graphite-puppet.git<br/>
+cd vagrant-statsd-graphite-puppet<br/>
+##################################################sudo apt-get install virtualbox<br/>
+##################################################sudo vagrant up<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+אולי יעזור לקנפג על מכונה וירטואלית אי-פי שונה<br/>
+http://www.coding4streetcred.com/blog/post/VirtualBox-Configuring-Static-IPs-for-VMs<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-<br/>
+http://cookingclouds.com/2012/07/06/graphite-install/<br/>
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-<br/>
+sudo apt-get install python-pip<br/>
+sudo wget https://launchpad.net/graphite/0.9/0.9.10/+download/graphite-web-0.9.10.tar.gz<br/>
+sudo wget https://launchpad.net/graphite/0.9/0.9.10/+download/carbon-0.9.10.tar.gz<br/>
+sudo wget https://launchpad.net/graphite/0.9/0.9.10/+download/whisper-0.9.10.tar.gz<br/>
+sudo wget https://launchpad.net/graphite/0.9/0.9.10/+download/check-dependencies.py<br/>
+ls |grep tar |while read i ; do tar xzvf $i ; done<br/>
+sudo apt-get -y install apache2 python-django python-django-tagging python-ldap python-memcache python-cairo<br/>
+cd ~/whisper-0.9.10/<br/>
+sudo python setup.py install<br/>
+<br/>
+sudo pip install txamqp<br/>
+<br/>
+-----------INSTALL CARBON<br/>
+sudo apt-get -y install python-twisted python-simplejson<br/>
+cd ~/carbon-0.9.10/<br/>
+sudo python setup.py install<br/>
+cd /opt/graphite/conf/<br/>
+sudo cp carbon.conf.example carbon.conf<br/>
+sudo cp storage-schemas.conf.example storage-schemas.conf<br/>
+cd /opt/graphite/<br/>
+sudo ./bin/carbon-cache.py start<br/>
+<br/>
+-----------INSTALL GRAPHITE-WEB<br/>
+cd ~/graphite-web-0.9.10/<br/>
+sudo python check-dependencies.py<br/>
+----------------------------------->All necessary dependencies are met.<br/>
+----------------------------------->All optional dependencies are met.<br/>
+sudo python setup.py install<br/>
+sudo cp examples/example-graphite-vhost.conf /etc/apache2/sites-available/default<br/>
+sudo cp /opt/graphite/conf/graphite.wsgi.example /opt/graphite/conf/graphite.wsgi<br/>
+sudo mkdir /etc/apache2/run<br/>
+sudo apt-get -y install libapache2-mod-wsgi<br/>
+sudo /etc/init.d/apache2 reload<br/>
+cd /opt/graphite/webapp/graphite/<br/>
+sudo python manage.py syncdb<br/>
+sudo chown -R www-data:www-data /opt/graphite/storage<br/>
+cd /opt/graphite/webapp/graphite<br/>
+sudo cp local_settings.py.example local_settings.py<br/>
+sudo /etc/init.d/apache2 restart<br/>
+<br/>
+<br/>
+<br/>
+EXAMPLES ON HOW TO SEND DATA TO GRAPHITE<br/>
+hostname = * you guessed it<br/>
+test_001 = service name<br/>
+1001 = value<br/>
+NOW = epoch time to input in graph<br/>
+<br/>
+NOW='date +%s' ; echo "hostname.test_001 1001 $NOW" |nc localhost 2003<br/>
+or<br/>
+<br/>
+cd /opt/graphite/examples<br/>
+sudo python ./example-client.py<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+----------------------------------------------------------------------------------------------------------<br/>
+Follow these steps to install Graphite on a fresh Ubuntu 12.04 instance. Make sure you read and understand the commands because by the time you read this, things could be outdated.<br/>
+<a href="https://gist.github.com/surjikal/2777886">https://gist.github.com/surjikal/2777886</a><br/>
+<br/>
+<iframe loading="lazy" lazyload="on"  type="text/html" charset="UTF-8" loading="eager" lazyload="off" importance="high" 
+  src="https://icompile.eladkarako.com/_resources/embed_gist.html?gistuser=surjikal&gistid=2777886&origin=https%3A%2F%2Ficompile.eladkarako.com" 
+  referrerpolicy="no-referrer" sandbox="allow-same-origin allow-scripts allow-top-navigation" 
+  seamless="false" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" 
+  style="height:300px;"
+></iframe><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+----------להתקין cpanm<br/>
+curl -L http://cpanmin.us | perl - --sudo App::cpanminus <br/>
+sudo cpanm Net::SNMP<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+=======================lamp (wamp like package for linux):<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/pure-css-tabs">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-10-hours-video">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-10-hours-video">YouTube 10-Hours Video</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/aria2c-example-download-script-to-download-latest-ffmpeg">Aria2C Example Download Script To Download Latest FFMPEG</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/font-family-name">Font Family-Name</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video">FFMPEG - Merge Multiple Audio Files To A Single Video</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-get-doctype-as-string">JavaScript Snippet - Get DOCTYPE As String</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-convert-camelcase-to-snake_case">JavaScript Snippet - Convert CamelCase to snake_case</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/json-stringify-with-escape-for-unicode-characters">JSON.stringify With Escape For Unicode-Characters</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ebay-pulsar-user-behavioral-tracking">JavaScript Ninja - eBay's PULSAR A.K.A User-Behavioral-Tracking</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-document-write-alternative">JavaScript Ninja - document.write Alternative</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-most-popular-adblock-lists">The Most Popular Adblock Lists</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-kitty-algorithm">You're Giving Me Far Too Many Kitten-Videos! And I Love It!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-snippet-everything-to-button">CSS3 Snippet - Everything To Button</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/imagemagick-nightly-builds">ImageMagick Nightly Builds</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vuze-subdomains">Vuze SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-domain2ip">Google Domain2IP (DNS Over HTTPS)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-entity-unicode-escape">HTML Entity - Unicode Escape</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<!--
+load this page in an IFRAME element, source should look like:
+  http://......./gist_embed.html?gistuser=eladkarako&gistid=25ac4b57792ecaab98366b6f8bb935a3
+it will post {height: "...px", status: "success", gistuser: ..., gistid: ...} message to the parent window 
+you should have onmessage listener on the parent-window, and adjust the IFRAME height when possible to be larger.
+
+this HTML embed GIST in a dynamic way that does not uses document.write, but uses dynamic callback (JSONP) from GitHub.
+it will not slow down your web-page.
+
+normal gist embedding uses javascript and writes elements onto the same page, and loads stylesheet to the same page, 
+it messes with the page style and the embedded gist content inherits the pages-style which overrides its own.
+
+this way the gist is isolated.
+-->
+<html itemscope="" itemtype="http://schema.org/WebPage" dir="ltr" lang="en-US" language="English" charset="UTF-8" encoding="UTF-8">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta http-equiv="Content-Type"    content="text/html;charset=UTF-8"/>
+  <meta name="fragment"              content="!"/>
+  <meta name="viewport"              content="width=device-width,minimal-ui"/>
+  <base target="_parent" />
+  <style type="text/css" media="all">
+  /*<![CDATA[*/
+  @charset "UTF-8";
+  html,body,div[container]{
+    height  : 100%;
+    width   : 100%;
+    padding :    0;
+    margin  :    0;
+    outline           : 0px solid transparent;
+    border            : 0px solid transparent;
+    border-collapse   : collapse;
+    box-sizing        : border-box;
+    background-origin : border-box;
+    background-clip   : border-box;
+  }
+  body{ overflow: visible    !important;}
+  :root{overflow: auto       !important;
+      word-break: normal     !important;
+   overflow-wrap: break-word !important;
+       word-wrap: break-word !important;
+  }
+  
+  
+
+/* --- a generic dark-theme taken from https://github.com/eladkarako/chrome_extensions/tree/store/Invert --- */
+[invert],[invert]:hover{                                            -webkit-filter:invert(90%) !important; -moz-filter:invert(90%) !important; -filter:invert(90%) !important; } /*set for whole page. 'html{' got a weird mouse-movement-related bug, so I am using ':root' instead. */
+[invert] img,[invert] video,[invert] img:hover,[invert] video:hover{-webkit-filter:invert(90%) !important; -moz-filter:invert(90%) !important; -filter:invert(90%) !important; } /* -=Fix=- "invert the invert" for <IMG>/<VIDEO>-elements. This restores the original (minus ~10% "dimmed" background) color */
+[invert],[invert] body,[invert] body > *{        background-color: white !important; } /* this is somewhat minimal (root, body, first layer under body) that will apply the whole page that hasn't being set specifically */
+[invert],[invert] body,[invert] body > *:not(a){ color: black;                       } /* also provide 'default' color (if not <A>-element */
+/* --------------------------------------------------------------------------------------------------------- */
+
+  
+  /*]]>*/
+</style>
+</head>
+<body>
+<div container><center style="font-size:5em;">&#x231A;...</center></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+"use strict";
+var URL_BASE        = "https://gist.github.com/###GISTUSER###/###GISTID###.json?callback=ready_###GISTUSER###_###GISTID###"
+   ,body            = document.querySelector("body")
+   ,gistuser        = undefined  //must
+   ,gistid          = undefined  //must
+   ,origin          = "*"        //optionally can be overrided with '?origin=___' .
+   ,invert          = false      //optionally make the theme dark.
+   ,contenteditable = false      //optionally make the code-containers easier to copy/edit within.
+   ,script
+   ,gist_element    = document.querySelector("div[container]")
+   ,HEIGHT_FIX      = 35
+   ,message
+   ;
+
+function get_script(src){
+  var script = self.document.createElement("script");
+  //script.setAttribute("crossorigin" , "anonymous");         //https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
+  script.setAttribute("type"        , "text/javascript");   //prefered over "application/javascript" for legacy compatibility.
+  script.setAttribute("charset"     , "UTF-8");             //allow reading Unicode-characters (will not break characters to "binary-string").
+  script.setAttribute("loading"     , "eager");             //avoid native lazy-loading from delay-loading this script (new)
+  script.setAttribute("lazyload"    , "off");               //avoid native lazy-loading from delay-loading this script (old)
+  script.setAttribute("src"         , src);                 //
+  return script;
+}
+
+self.onload = function(){
+  console.log('[INFO] self.onload method');
+
+  try{gistuser = self.location.search.match(/[\?\&]gistuser=([^\&]+)/)[1];}catch(err){}
+  if(undefined === gistuser){console.error('[ERROR] missing \"gistuser=___\" argument... program ends.'); gist_element.innerHTML='missing \"gistuser=___\" argument'; return;}  //if it is missing we have to quit.
+
+  try{gistid   = self.location.search.match(/[\?\&]gistid=([^\&]+)/)[1];  }catch(err){}
+  if(undefined === gistid){  console.error('[ERROR] missing \"gistid=___\" argument... program ends.');   gist_element.innerHTML='missing \"gistid=___\" argument';   return;}  //if it is missing we have to quit.
+
+  try{origin   = self.location.search.match(/[\?\&]origin=([^\&]+)/)[1];  }catch(err){}
+  origin = /(\%3A|\%2F)/i.test(origin) ? self.decodeURIComponent(origin) : origin;
+  console.log('[INFO] origin (for cross-iframe-message) is set to [' + origin + ']');
+
+  try{invert   = self.location.search.match(/[\?\&]invert=([^\&]+)/)[1];  }catch(err){}
+  invert = (true === /^(true|y|yes)$/i.test(invert)); //normalize to boolean (user can use "true", "yes" or simply "y" (case does not matter). Anything else "n"/"false"/"nope!" will be normalized to false.
+  console.log('[INFO] use dark-theme? [' + invert + ']');
+  if(true === invert){document.documentElement.setAttribute("invert","");}
+  
+  try{contenteditable   = self.location.search.match(/[\?\&]contenteditable=([^\&]+)/)[1];  }catch(err){}
+  contenteditable = (true === /^(true|y|yes)$/i.test(contenteditable)); //normalize to boolean (user can use "true", "yes" or simply "y" (case does not matter). Anything else "n"/"false"/"nope!" will be normalized to false.
+  console.log('[INFO] use copyable and editable code-containers? [' + contenteditable + ']');
+  //----setting contenteditable=true attribute will be done next...
+
+  /* ------------------------------------------------ */
+  
+  message = {"gistuser"        : gistuser
+            ,"gistid"          : gistid
+            ,"origin"          : origin  //used only for postMessage
+            ,"invert"          : invert
+            ,"contenteditable" : contenteditable
+            ,"status"          : "error"
+            };
+
+  URL_BASE = URL_BASE.replace(/###GISTUSER###/g, gistuser).replace(/###GISTID###/g, gistid); //JSONP URL
+
+  console.log("[INFO] preparing reciving function: [" + "self." + "ready_" + gistuser + "_" + gistid + "] to-be JSONP-activated from the script: [" + URL_BASE + "]");
+  
+  self["ready_" + gistuser + "_" + gistid] = function(json_object){
+    var stylesheet;
+    
+    console.log("[INFO] JSON-string recived successfully", json_object);
+    
+    if("string" === typeof json_object["stylesheet"]){
+      stylesheet = document.createElement("link");
+      stylesheet.setAttribute("rel"         ,              "stylesheet");
+      //stylesheet.setAttribute("crossorigin" ,               "anonymous");
+      stylesheet.setAttribute("type"        ,                "text/css");
+      stylesheet.setAttribute("charset"     ,                   "UTF-8");
+      stylesheet.setAttribute("media"       ,                     "all");
+      stylesheet.setAttribute("href"        , json_object["stylesheet"]);
+      console.log("[INFO] applying stylesheet to document from: [" + json_object["stylesheet"] + "]");
+      body.appendChild(stylesheet);
+    }
+    
+    if("undefined" === typeof json_object["div"]){console.error('[ERROR] JSON structure is invalid, can not find \".div\" item');  return;}
+    console.log("[INFO] writing HTML-content to main-container.");
+    gist_element.innerHTML = json_object["div"];
+    gist_element = gist_element.firstElementChild;
+    
+    if(true === contenteditable){
+      gist_element.querySelectorAll("tbody:not([contenteditable])")
+                  .forEach(function(element){element.setAttribute("contenteditable", "true");});
+    }
+                        
+    message["status"] = "success";
+    message["height"] = String(self.document.documentElement.scrollHeight + HEIGHT_FIX) + "px"; //get semi-real height of the entire-content, adding a bit more since for some reason it will still show scroll-bar sometimes.
+    console.log("[INFO] the natural-height of the content is: [" + message["height"] + "] (added " + HEIGHT_FIX + "px for avoiding-scroll--height-fix)");
+
+    if(self.parent === self){console.log("[INFO] this page is not embedded in another one, not triggering postMessage"); return;}
+    console.log("[INFO] this page is embedded in another window, triggering \"postMessage\" to parent with message", message);
+    self.parent.postMessage(message,origin); //post information to parent-frame, it works even if they are from different domains. (if they are from the same domains you can also directly-access contentWindow of the parent frame looking for the IFRAME container and changing its-height manually).
+    console.log("[INFO] done. parent-window might dynamically adjust the height of the IFRAME-containing this page");
+  }
+
+  script = get_script(URL_BASE);
+  body.appendChild(script);
+}
+/*]]>*/
+</script>
+</body>
+</html>
+
+<!--
+suggestion on implementing a parent listener with resizer.
+the IFRAME initial height will be 300px which is a good starting-point, 
+along with scrolling ability for overflowing content,
+<body>
+......content.......
+....................
+
+*** place as many IFRAME elements you want around the page. ***
+
+<iframe type="text/html" charset="UTF-8" loading="eager" lazyload="off" importance="high"
+  src="https://icompile.eladkarako.com/_resources/embed_gist.html?gistuser=eladkarako&gistid=ef86a55b3b7adf4c3424156fdf6e990d" 
+  referrerpolicy="no-referrer" sandbox="allow-same-origin allow-scripts allow-top-navigation" 
+  seamless="false" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" 
+  style="height:300px;"
+></iframe>
+
+-----optionally add '&origin=_____'        to use it in the postMessage.
+-----optionally add '&invert=(true|yes|y)' to use dark-theme.
+-----optionally add '&contenteditable=(true|yes|y)' to be able to use CTRL+A for easy copy, or edit within the code-container.
+
+
+....................
+....................
+....................
+
+*** place just one message listener method near </BODY>. ***
+
+<script>
+NodeList.prototype.forEach = Array.prototype.forEach;
+
+function message_handler(ev){
+  var query = 'iframe[src*="gistuser=' + ev.gistuser + '"][src*="gistid=' + ev.gistid + '"]';
+  //console.log(arguments);
+  document.querySelectorAll(query)
+          .forEach(function(element){
+            element.style.cssText = "height:" + ev.height;
+          });
+}
+self.addEventListener("message", message_handler, false);
+<script>
+</body>
+</html>
+-->

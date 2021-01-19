@@ -1,0 +1,5 @@
+I love the idea of adding a criteria API to JPA, the only thing I hope that they do differently than Hibernate is to implement that API in addition to string queries.  In Gauntlet we had issues where we wanted to use EJB-QL for selecting the right data and then a criteria-like API for applying security and filtering constraints on the query.  We ended up writing a criteria-like API that augmented the WHERE clause of the query to get the behavior that we needed (like described <a href="http://www.javalobby.org/articles/hibernatequery102/">here</a>).  For example, you could do this:
+<pre>Query q = em.createQuery("SELECT p FROM Project p");
+q.addExpression(Expression.notEqual("id", 2));
+</pre>
+Or something like that. This would give you the best of both worlds, where you have the expressiveness of the textual query and the ability to further hone that query programmatically.

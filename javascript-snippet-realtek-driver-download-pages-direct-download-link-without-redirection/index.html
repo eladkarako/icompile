@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection</title>
+  <meta itemprop="name"                                content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+  <meta name="dcterms.title"                           content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+  <meta property="og:title"                            content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+  <meta name="twitter:title"                           content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+  <meta name="twitter:text:title"                      content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+  <meta name="application-name"                        content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+  <meta name="subject"                                 content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+  <meta name="apple-mobile-web-app-title"              content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+  <meta name="msapplication-tooltip"                   content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+  <meta itemprop="description"                         content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+  <meta name="dcterms.description"                     content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+  <meta name="twitter:description"                     content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+  <meta property="og:description"                      content="JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="alignnone,blank,bold,bookmarklet,cleanup,color,copy,direct,document,download,driver,element,font,foreach,ftppath,function,image,javascript,links,managers,match,null,onclick,onmouseover,pages,realteck,realtek,redirection,return,settimeout,size,snippet,strict,target,typeof,undefined,unfvck,void,weight,window,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="alignnone,blank,bold,bookmarklet,cleanup,color,copy,direct,document,download,driver,element,font,foreach,ftppath,function,image,javascript,links,managers,match,null,onclick,onmouseover,pages,realteck,realtek,redirection,return,settimeout,size,snippet,strict,target,typeof,undefined,unfvck,void,weight,window,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/gooooooooood-evening-good-evening-good-evening-good-evening-and-welcome-to-qi"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/gooooooooood-evening-good-evening-good-evening-good-evening-and-welcome-to-qi"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/chrome-extensions-with-javascript-on-pages-with-no-javascript"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/javascript-snippet-realtek-driver-download-pages-direct-download-link-without-redirection"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/javascript-snippet-realtek-driver-download-pages-direct-download-link-without-redirection"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/javascript-snippet-realtek-driver-download-pages-direct-download-link-without-redirection"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/javascript-snippet-realtek-driver-download-pages-direct-download-link-without-redirection"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/javascript-snippet-realtek-driver-download-pages-direct-download-link-without-redirection"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/javascript-snippet-realtek-driver-download-pages-direct-download-link-without-redirection"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-12-17T02:31:10+00:00"     />
+  <meta name="page-datetime"                           content="2016-12-17T02:31:10+00:00"     />
+  <meta property="article:published_time"              content="2016-12-17T02:31:10+00:00"     />
+  <meta name="dcterms.date"                            content="2016-12-17T02:31:10+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-12-17T03:34:38+00:00"    />
+  <meta property="article:modified_time"               content="2016-12-17T03:34:38+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/javascript-snippet-realtek-driver-download-pages-direct-download-link-without-redirection"
+,"url"             : "https://icompile.eladkarako.com/javascript-snippet-realtek-driver-download-pages-direct-download-link-without-redirection"
+,"headline"        : "JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"
+,"description"     : "JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection"
+,"datePosted"      : "2016-12-17T02:31:10+00:00"
+,"dateCreated"     : "2016-12-17T02:31:10+00:00"
+,"datePublished"   : "2016-12-17T02:31:10+00:00"
+,"dateModified"    : "2016-12-17T03:34:38+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0000781491841">
+  <header>
+    <h1 itemprop="headline">JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection</h1>
+    <sup>Posted at <time datetime="2016-12-17T03:34:38+00:00" itemprop="dateModified">Sat, 17 Dec 2016 03:34:38 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">Fix Realteck Driver-Download Pages <sup>(<a href="http://www.realtek.com.tw" target="_blank">http://www.realtek.com.tw/</a>)</sup><br/>
+To have direct-download links, which you may copy and use in download-managers.<br/>
+<br/>
+<!--more--><br/>
+<br/>
+Before<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/12/icompile.eladkarako.com_unfvck_realteck_download_pages_before-1.png" alt="" width="1121" height="641"/><br/>
+<br/>
+<pre><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>window<span style='color:#808030; '>,</span>document<span style='color:#808030; '>,</span>tmp<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>use strict</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+  document<span style='color:#808030; '>.</span>querySelectorAll<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>a[href*="void("][onclick*="FTPPath"]</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>forEach<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+    tmp <span style='color:#808030; '>=</span> element<span style='color:#808030; '>.</span>getAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>onclick</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span><span style='color:#0f4d75; '>null</span> <span style='color:#808030; '>===</span> tmp<span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span><br/>
+    <br/>
+    tmp <span style='color:#808030; '>=</span> tmp<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>match</span><span style='color:#808030; '>(</span><span style='color:#800000; '>/</span><span style='color:#0000e6; '>FTPPath</span><span style='color:#0f69ff; '>\\=</span><span style='color:#808030; '>(</span><span style='color:#808030; '>[</span><span style='color:#808030; '>^</span><span style='color:#0f69ff; '>\\'</span><span style='color:#808030; '>]</span><span style='color:#808030; '>+</span><span style='color:#808030; '>)</span><span style='color:#0f69ff; '>\\'</span><span style='color:#800000; '>/</span><span style='color:#800000; font-weight:bold; '>i</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span><span style='color:#0f4d75; '>null</span> <span style='color:#808030; '>===</span> tmp <span style='color:#808030; '>||</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>undefined</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>==</span> <span style='color:#800000; font-weight:bold; '>typeof</span> tmp<span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span><br/>
+    tmp <span style='color:#808030; '>=</span> tmp<span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span><br/>
+    tmp <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>decodeURIComponent</span><span style='color:#808030; '>(</span>tmp<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#800000; font-weight:bold; '>setTimeout</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+      element<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>href</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> tmp<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>         <span style='color:#696969; '>/* fix link */</span><br/>
+      element<span style='color:#808030; '>.</span>removeAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>onclick</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>        <span style='color:#696969; '>/* cleanup  */</span><br/>
+      element<span style='color:#808030; '>.</span>removeAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>onmouseover</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>    <span style='color:#696969; '>/* cleanup  */</span><br/>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>(</span><br/>
+  top<br/>
+<span style='color:#808030; '>,</span> top<span style='color:#808030; '>.</span>document<br/>
+<span style='color:#808030; '>,</span> <span style='color:#0f4d75; '>null</span><br/>
+<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+</pre><br/>
+<br/>
+-or bookmarklet:<br/>
+<pre>javascript<span style='color:#800080; '>:</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>window<span style='color:#808030; '>,</span>document<span style='color:#808030; '>,</span>tmp<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>document<span style='color:#808030; '>.</span>querySelectorAll<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>a[href*="void("][onclick*="FTPPath"]</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>forEach<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>tmp<span style='color:#808030; '>=</span>element<span style='color:#808030; '>.</span>getAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>onclick</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span><span style='color:#0f4d75; '>null</span><span style='color:#808030; '>===</span>tmp<span style='color:#808030; '>)</span><span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span>tmp<span style='color:#808030; '>=</span>tmp<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>match</span><span style='color:#808030; '>(</span><span style='color:#800000; '>/</span><span style='color:#0000e6; '>FTPPath</span><span style='color:#0f69ff; '>\\=</span><span style='color:#808030; '>(</span><span style='color:#808030; '>[</span><span style='color:#808030; '>^</span><span style='color:#0f69ff; '>\\'</span><span style='color:#808030; '>]</span><span style='color:#808030; '>+</span><span style='color:#808030; '>)</span><span style='color:#0f69ff; '>\\'</span><span style='color:#800000; '>/</span><span style='color:#800000; font-weight:bold; '>i</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span><span style='color:#0f4d75; '>null</span><span style='color:#808030; '>===</span>tmp<span style='color:#808030; '>||</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>undefined</span><span style='color:#800000; '>"</span><span style='color:#808030; '>==</span><span style='color:#800000; font-weight:bold; '>typeof</span> tmp<span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span>tmp<span style='color:#808030; '>=</span>tmp<span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>tmp<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>decodeURIComponent</span><span style='color:#808030; '>(</span>tmp<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><span style='color:#800000; font-weight:bold; '>setTimeout</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>element<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>href</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>tmp<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>element<span style='color:#808030; '>.</span>removeAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>onclick</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>element<span style='color:#808030; '>.</span>removeAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>onmouseover</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>(</span>top<span style='color:#808030; '>,</span>top<span style='color:#808030; '>.</span>document<span style='color:#808030; '>,</span><span style='color:#0f4d75; '>null</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+</pre><br/>
+<br/>
+After<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/12/icompile.eladkarako.com_unfvck_realteck_download_pages_after.png" alt="" width="1119" height="609" class="alignnone size-full wp-image-6965" /></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/gooooooooood-evening-good-evening-good-evening-good-evening-and-welcome-to-qi">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-extensions-with-javascript-on-pages-with-no-javascript">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-extensions-with-javascript-on-pages-with-no-javascript">On Pages With No JavaScript</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-format-as-unicode-string-u">JavaScript Snippet - Format As Unicode String ("\\u..")</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-the-state-of-window">JavaScript Ninja - The State Of Window</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-snippet-quickdirty-3d-uneven-shadow-effect">CSS Snippet - Quick&Dirty 3D Uneven Shadow-Effect</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/java-read-entire-file">Java Snippet - Read Entire File (Including EOL Characters!) Not Line-By-Line And Without Loops!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adobe-subdomains">Adobe SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wordpress-plugin-that-is-aware-of-where-it-runs">An Article Or A Page)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/dns-servers-for-012smilegolden-lines">DNS Servers For 012Smile/Golden-Lines</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-snippet-keyframe-animation-cursor-blinkpulse">CSS3 Snippet - Keyframe Animation - Cursor Blink/Pulse</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/downloading-directly-from-dailymotion">Downloading Directly From DailyMotion</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pure-css-tabs">Pure CSS Tabs</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/advised-config-for-linux-on-the-start">קינפוגים מומלצים ללינוקס על ההתחלה</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-10-hours-video">YouTube 10-Hours Video</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/aria2c-example-download-script-to-download-latest-ffmpeg">Aria2C Example Download Script To Download Latest FFMPEG</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/font-family-name">Font Family-Name</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video">FFMPEG - Merge Multiple Audio Files To A Single Video</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "ID": "6896"
+ ,"post_name": "cmd-system32-or-syswow64-execution"
+ ,"post_title": "CMD Snippet - Selective Executing From Either Windows System32 Or SysWOW64 Folders With Easy And Simple GOTO-State-Machine"
+ ,"post_date_gmt": "2016-12-13 19:14:29"
+ ,"post_modified_gmt": "2016-12-13 19:14:29"
+ ,"post_status": "publish"
+ ,"comment_status": "open"
+ ,"post_type": "post"
+}

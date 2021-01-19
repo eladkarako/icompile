@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Pixel Image Serving And Google's ModPageSpeed - Quick Checklist</title>
+  <meta itemprop="name"                                content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+  <meta name="dcterms.title"                           content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+  <meta property="og:title"                            content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+  <meta name="twitter:title"                           content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+  <meta name="twitter:text:title"                      content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+  <meta name="application-name"                        content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+  <meta name="subject"                                 content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+  <meta name="apple-mobile-web-app-title"              content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+  <meta name="msapplication-tooltip"                   content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+  <meta itemprop="description"                         content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+  <meta name="dcterms.description"                     content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+  <meta name="twitter:description"                     content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+  <meta property="og:description"                      content="Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accept,access,anytime,apcu,apis,archaic,assets,attribute,avoid,base,binary,blank,bold,bootstrap,border,browser,browsers,bytes,cache,caching,canvas,caring,cases,check,checklist,client,code,color,content,control,correct,cors,credentials,cross,data,decode,decoration,defer,deferring,developer,disk,disposition,docs,domain,domains,download,economy,enable,encoded,encoding,engine,ensure,etag,exclude,expires,extension,fallback,faster,favour,file,filename,finished,flag,folder,font,friendly,godaddy,google,handling,header,headers,hidden,hosting,html,image,images,include,includes,index,initial,inline,issues,jetty,lifetime,limitations,make,memcache,memcached,method,mimetype,minimal,mozilla,multi,navigator,nodejs,nofollow,noindex,nosniff,note,notifying,older,onced,options,origin,page,pagespeed,perfectly,persistence,pixel,placing,plan,plans,post,practices,pragma,prevent,pricey,processed,provide,ranges,read,reading,recognise,redis,remove,removed,rendered,rendering,request,requires,resolving,resource,resources,response,revalidate,running,send,sendbeacon,serve,server,servers,serving,sniffing,sort,source,state,static,status,store,strong,structure,stuff,superior,supported,syntax,tainting,target,timing,transfer,type,underline,variable,version,versions,visibility,weight,work,xhtml,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accept,access,anytime,apcu,apis,archaic,assets,attribute,avoid,base,binary,blank,bold,bootstrap,border,browser,browsers,bytes,cache,caching,canvas,caring,cases,check,checklist,client,code,color,content,control,correct,cors,credentials,cross,data,decode,decoration,defer,deferring,developer,disk,disposition,docs,domain,domains,download,economy,enable,encoded,encoding,engine,ensure,etag,exclude,expires,extension,fallback,faster,favour,file,filename,finished,flag,folder,font,friendly,godaddy,google,handling,header,headers,hidden,hosting,html,image,images,include,includes,index,initial,inline,issues,jetty,lifetime,limitations,make,memcache,memcached,method,mimetype,minimal,mozilla,multi,navigator,nodejs,nofollow,noindex,nosniff,note,notifying,older,onced,options,origin,page,pagespeed,perfectly,persistence,pixel,placing,plan,plans,post,practices,pragma,prevent,pricey,processed,provide,ranges,read,reading,recognise,redis,remove,removed,rendered,rendering,request,requires,resolving,resource,resources,response,revalidate,running,send,sendbeacon,serve,server,servers,serving,sniffing,sort,source,state,static,status,store,strong,structure,stuff,superior,supported,syntax,tainting,target,timing,transfer,type,underline,variable,version,versions,visibility,weight,work,xhtml,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/killdisk-subdomains"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/killdisk-subdomains"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/pagespeed-trim-urls-bug"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/pixel-serving-pagespeed"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/pixel-serving-pagespeed"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/pixel-serving-pagespeed"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/pixel-serving-pagespeed"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/pixel-serving-pagespeed"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/pixel-serving-pagespeed"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-07-30T23:27:46+00:00"     />
+  <meta name="page-datetime"                           content="2016-07-30T23:27:46+00:00"     />
+  <meta property="article:published_time"              content="2016-07-30T23:27:46+00:00"     />
+  <meta name="dcterms.date"                            content="2016-07-30T23:27:46+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-07-30T23:38:43+00:00"    />
+  <meta property="article:modified_time"               content="2016-07-30T23:38:43+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/pixel-serving-pagespeed"
+,"url"             : "https://icompile.eladkarako.com/pixel-serving-pagespeed"
+,"headline"        : "Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"
+,"description"     : "Pixel Image Serving And Google's ModPageSpeed - Quick Checklist"
+,"datePosted"      : "2016-07-30T23:27:46+00:00"
+,"dateCreated"     : "2016-07-30T23:27:46+00:00"
+,"datePublished"   : "2016-07-30T23:27:46+00:00"
+,"dateModified"    : "2016-07-30T23:38:43+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006621299641">
+  <header>
+    <h1 itemprop="headline">Pixel Image Serving And Google's ModPageSpeed - Quick Checklist</h1>
+    <sup>Posted at <time datetime="2016-07-30T23:38:43+00:00" itemprop="dateModified">Sat, 30 Jul 2016 23:38:43 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><br/>
+<br/>
+This is all about PIXEL-IMAGES,<br/>
+<br/>
+<blockquote><br/>
+While pixel-images themselves are all about an out-going request,<br/>
+with little to none caring of the actual response -<br/>
+<br/>
+- Due to <strong>compatibility issues</strong>, <strong>browser pre-rendering enhancements</strong>,<br/>
+<strong>mimetype-sniffing</strong>, <strong>client-side caching</strong>, <strong>cross-domain limitations</strong>,<br/>
+and content/visibility base loading such as <strong>lazy-loading and content-deferring</strong> -<br/>
+<br/>
+- In most cases we <strong>actually</strong> need to, also, (ridiculously) ensure that the pixel-image has rendered perfectly.<br/>
+</blockquote><br/>
+<br/>
+<!--more--><br/>
+<br/>
+<blockquote><br/>
+<sub>Note:<br/>
+Pixel-image is an archaic way of notifying the server-side of *stuff*.<br/>
+If possible, try avoid the pixel-image in favour of <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon" target="_blank">navigator.sendBeacon</a>, which is superior in every-way (for supported browsers). If you must- then at-least have the pixel-image as fallback to the sendBeacon method</sub><br/>
+</blockquote><br/>
+<br/>
+<hr/><br/>
+<br/>
+<h3 style="text-decoration:underline;"><em>PageSpeed </em>"no defer" attribute is a FLAG!</h3>.<br/>
+<br/>
+Including <code>data-pagespeed-no-defer</code> or <code>pagespeed_no_defer</code> (for older versions of <em>ModPageSpeed</em>)<br/>
+will exclude the image from the <em>PageSpeed</em> resource-defer engine,<br/>
+<br/>
+It has no use in the HTML itself, and is only a "flag" used for the <em>PageSpeed-extension</em> running at server-side,<br/>
+the attribute it will be removed from the HTML onced the source has finished processed, so if you want to make sure you've placed the attribute, load your page using <code>..../my_page.php?ModPagespeed=off</code> attribute (and view the page's source).<br/>
+<br/>
+Some web-hosting plans such as GoDaddy's economy-plan, includes an old-version of <em>ModPageSpeed</em>,<br/>
+which does not recognise the <code>data-pagespeed-no-defer</code> attribute,<br/>
+<br/>
+since <code>pagespeed_no_defer</code> won't be removed from the <em>ModPageSpeed</em> source <em>anytime soon</em>,<br/>
+you'll be better use that instead  -- it will be removed from HTML source anyway..<br/>
+<br/>
+HTML5, XHTML Compatibility, and client side rendering best-practices for image-pixel:<br/>
+<br/>
+<pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>span</span><span style='color:#274796; '> </span><span style='color:#074726; '>style</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"</span><span style='color:#bb7977; font-weight:bold; '>visibility</span><span style='color:#808030; '>:</span><span style='color:#074726; '>hidden</span><span style='color:#800080; '>;</span><span style='color:#274796; '> </span><span style='color:#bb7977; font-weight:bold; '>z-index</span><span style='color:#808030; '>:</span><span style='color:#808030; '>-</span><span style='color:#008c00; '>9999</span><span style='color:#800080; '>;</span><span style='color:#0000e6; '>"</span><span style='color:#a65700; '>&gt;</span><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>img</span><span style='color:#274796; '> </span><span style='color:#074726; '>data</span><span style='color:#274796; '>-pagespeed-no-</span><span style='color:#074726; '>defer</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"true"</span><span style='color:#274796; '> pagespeed_no_defer</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"true"</span><span style='color:#274796; '> </span><span style='color:#074726; '>width</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"1"</span><span style='color:#274796; '> </span><span style='color:#074726; '>height</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"1"</span><span style='color:#274796; '> </span><span style='color:#074726; '>border</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"0"</span><span style='color:#274796; '> </span><span style='color:#074726; '>alt</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>""</span><span style='color:#274796; '> </span><span style='color:#074726; '>rel</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"nofollow,noindex"</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"___PIXEL_URL___"</span><span style='color:#a65700; '>/></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>span</span><span style='color:#a65700; '>&gt;</span><br/>
+</pre><br/>
+<br/>
+<hr/><br/>
+<br/>
+<h3 style="text-decoration:underline;">And How About Some Pixel-Serving Checklist...</h3><br/>
+<br/>
+<ol><br/>
+  <li>Minimal (BUT True!) image-content:<br/>
+    <ul><br/>
+      <li><br/>
+        BASE64 decode this little thing <code>R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==</code><br/>
+        and serve it as is.<br/>
+      </li><br/>
+      <li><br/>
+        use correct response-mimetype: <code>image/gif</code><br/>
+      </li><br/>
+    </ul><br/>
+  </li><br/>
+  <li>Don't use <code>/assets/</code> folder for your pixel-image<br/>
+    IIS, NodeJS, Jetty and other servers might provide you a bootstrap folder structure with a <code>/static/</code>, <code>/resources/</code> or <code>/assets/</code> folder,<br/>
+    Placing your image under there might requires you of resolving all sort an caching issues:<br/>
+    <ul><br/>
+      <li><br/>
+        make sure to send the image with <code>HTTP Status 200</code> and not <code>HTTP Status 304</code><br/>
+      </li><br/>
+      <li><br/>
+        remove <code>ETAG</code><br/>
+      </li><br/>
+    </ul><br/>
+  </li><br/>
+  <li>Don't use a real GIF file<br/>
+      Reading an image file from disk is pricey!<br/>
+      decode the BASE64 above, And keep it in a variable,<br/>
+<br/>
+      If possible, place the content (either binary or BASE64-encoded) at a persistence state,<br/>
+      for the server-lifetime.<br/>
+      <br/>
+      RAM APIs that might also work for you: <code>APC</code>, <code>APCu</code>, <code>MemCache</code>, <code>Memcached</code> or <code>Redis</code><br/>
+  </li><br/>
+  <li>No cache headers:<br/>
+    <ul><br/>
+      <li><br/>
+        <code>Expires: Sat, 26 Jul 1997 05:00:00 GMT</code><br/>
+      </li><br/>
+      <li><br/>
+        <code>Cache-Control: no-store,no-cache,must-revalidate,pre-check=0,post-check=0</code><br/>
+      </li><br/>
+      <li><br/>
+        <code>Pragma: no-cache</code><br/>
+      </li><br/>
+    </ul><br/>
+  </li><br/>
+  <li>A browser-friendly binary content, explicitly:<br/>
+    <ul><br/>
+      <li>Include multi-part header for faster handling<br/>
+        <code>Accept-Ranges: bytes</code><br/>
+      </li><br/>
+      <li>prevent mimetype sniffing (first few bytes of the file) and just download the file.<br/>
+        <code>X-Content-Type-Options: nosniff</code><br/>
+      </li><br/>
+      <li>Include multi-part header for faster handling<br/>
+        <code>Content-Transfer-Encoding: binary</code><br/>
+      </li><br/>
+      <li>Include multi-part header for faster handling<br/>
+        <code>Content-Disposition: inline;filename="pixel.gif"</code><br/>
+      </li><br/>
+    </ul><br/>
+  </li><br/>
+  <li>CORS And Tainting Issues<br/>
+    If you'll serve a pixel-image to a different (sub-)domain,<br/>
+    Explicit enable the (sub-)domains using the CORS headers.<br/>
+    Since pixel-image are all about the initial-request, you might even use the <code>*</code> syntax:<br/>
+    <code>Access-Control-Allow-Origin: *</code>, <code>Access-Control-Allow-Credentials: true</code> and <code>Timing-Allow-Origin: *</code>.<br/>
+<br/>
+    *It will also ensure you serve a resource that will not cause canvas-tainting.<br/>
+    *Read more at https://developer.mozilla.org/en-US/docs/Web/HTML/CORS .<br/>
+  </li><br/>
+</ol><br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/killdisk-subdomains">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/pagespeed-trim-urls-bug">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pagespeed-trim-urls-bug">Google PageSpeed 'trim_urls' Rewrites HTML Incorrectly - URL With No Base - Bug</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pagespeed-defer-bug">PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vmware-vmvisor-installer-5-5-esxi-embedded-with-inter-nic-drivers">VMware VMvisor Installer 5.5 (ESXi) embedded with Inter NIC drivers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/parallel-curl-requests">Parallel cUrl Requests</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/python-patch-ignore-some-of-google-closure-jslinter-gjslint-errors">Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/latest-google-closure-jslinter-gjslint-download-and-extract">Latest Google-Closure-JSLinter (GJSLint) - Download and Extract</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/eclipse-kepler-and-lite-configurations">Eclipse Kepler and lite configurations</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-installer-download-latest-nightly-build-snapshot">Chromium Installer - Download Latest Nightly-Build Snapshot</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/mine-types-complete-list">Mine-Types Complete List</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-social-networking-icon-set">Free Social Networking Icon Set</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/fast-download-and-parse-http-archive-requests-file">Fast download and parse http-archive requests file</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/13-31-113-131-311-prime-numbers">311 Prime Numbers</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vb6-api-for-coinitializeex-and-couninitialize-of-ole32-dll">VB6 API For CoInitializeEx and CoUninitialize of ole32.dll</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/window-messeging-example">JavaScript Snippet - WordPress Window-Messaging Semi-Safe Example</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-robtex-com-sorted-lists">JavaScript Snippet - Robtex.com Sorted Lists</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-wordpress-plugin-tagclass-bgone">New WordPress Plugin - TagClass-B-Gone</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

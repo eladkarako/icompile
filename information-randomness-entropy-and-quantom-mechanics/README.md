@@ -1,0 +1,1 @@
+<iframe width="960" height="720" src="https://www.youtube-nocookie.com/embed/sMb00lz-IfE?rel=0&amp;showinfo=0&amp;showads=0" frameborder="0" allowfullscreen></iframe>', 'Information, Randomness

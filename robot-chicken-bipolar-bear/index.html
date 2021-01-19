@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)</title>
+  <meta itemprop="name"                                content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+  <meta name="dcterms.title"                           content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+  <meta property="og:title"                            content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+  <meta name="twitter:title"                           content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+  <meta name="twitter:text:title"                      content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+  <meta name="application-name"                        content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+  <meta name="subject"                                 content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+  <meta name="apple-mobile-web-app-title"              content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+  <meta name="msapplication-tooltip"                   content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+  <meta itemprop="description"                         content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+  <meta name="dcterms.description"                     content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+  <meta name="twitter:description"                     content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+  <meta property="og:description"                      content="Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="ability,accessible,action,adding,adultswim,align,animal,anonymous,antarctic,antialiased,appendchild,arctic,arguments,army,ascom,assets,avoiding,bear,bipolar,block,blocker,border,breaking,button,change,chicken,classname,click,code,collection,color,comedy,concept,credit,cursor,data,dear,decrypting,depressive,description,desires,display,disposed,document,download,duration,ease,easy,elements,encodeuri,escaped,evil,execute,executes,exhibits,females,figures,filled,font,function,funny,games,github,header,host,hover,image,info,inline,interesting,internal,javascript,json,latest,laugh,list,logic,logically,logo,made,maintenance,make,males,manic,margin,massive,memory,method,mime,minimal,minor,mood,motion,moving,nofollow,object,original,outline,page,parsed,pass,placement,player,pointer,polar,preparing,publicly,radius,refined,releases,removing,replace,required,return,rgba,robot,running,scientists,seconds,segments,settimeout,sexual,shadow,showads,showinfo,signature,size,sketch,slugged,small,smoothing,solid,sort,source,statements,static,stop,strict,strong,structure,stuff,stupid,stylesheet,subpixel,suggesting,survive,swings,target,technique,thumbnail,title,transition,trick,type,unneeded,variables,video,videos,voice,webkit,website,window,work,wrapper,youtube,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="ability,accessible,action,adding,adultswim,align,animal,anonymous,antarctic,antialiased,appendchild,arctic,arguments,army,ascom,assets,avoiding,bear,bipolar,block,blocker,border,breaking,button,change,chicken,classname,click,code,collection,color,comedy,concept,credit,cursor,data,dear,decrypting,depressive,description,desires,display,disposed,document,download,duration,ease,easy,elements,encodeuri,escaped,evil,execute,executes,exhibits,females,figures,filled,font,function,funny,games,github,header,host,hover,image,info,inline,interesting,internal,javascript,json,latest,laugh,list,logic,logically,logo,made,maintenance,make,males,manic,margin,massive,memory,method,mime,minimal,minor,mood,motion,moving,nofollow,object,original,outline,page,parsed,pass,placement,player,pointer,polar,preparing,publicly,radius,refined,releases,removing,replace,required,return,rgba,robot,running,scientists,seconds,segments,settimeout,sexual,shadow,showads,showinfo,signature,size,sketch,slugged,small,smoothing,solid,sort,source,statements,static,stop,strict,strong,structure,stuff,stupid,stylesheet,subpixel,suggesting,survive,swings,target,technique,thumbnail,title,transition,trick,type,unneeded,variables,video,videos,voice,webkit,website,window,work,wrapper,youtube,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/deadpool-is-my-favorite"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/deadpool-is-my-favorite"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/information-randomness-entropy-and-quantom-mechanics"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/robot-chicken-bipolar-bear"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/robot-chicken-bipolar-bear"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/robot-chicken-bipolar-bear"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/robot-chicken-bipolar-bear"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/robot-chicken-bipolar-bear"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/robot-chicken-bipolar-bear"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-11-01T14:40:06+00:00"     />
+  <meta name="page-datetime"                           content="2014-11-01T14:40:06+00:00"     />
+  <meta property="article:published_time"              content="2014-11-01T14:40:06+00:00"     />
+  <meta name="dcterms.date"                            content="2014-11-01T14:40:06+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-04-04T23:19:28+00:00"    />
+  <meta property="article:modified_time"               content="2016-04-04T23:19:28+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/robot-chicken-bipolar-bear"
+,"url"             : "https://icompile.eladkarako.com/robot-chicken-bipolar-bear"
+,"headline"        : "Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"
+,"description"     : "Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)"
+,"datePosted"      : "2014-11-01T14:40:06+00:00"
+,"dateCreated"     : "2014-11-01T14:40:06+00:00"
+,"datePublished"   : "2014-11-01T14:40:06+00:00"
+,"dateModified"    : "2016-04-04T23:19:28+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006082584141">
+  <header>
+    <h1 itemprop="headline">Robot-Chicken Bipolar Bear (and a JavaScript Download-Video Trick For adultswim Host-Website)</h1>
+    <sup>Posted at <time datetime="2016-04-04T23:19:28+00:00" itemprop="dateModified">Mon, 04 Apr 2016 23:19:28 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><blockquote><br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2014/11/thumbnail_4004255806221133014.jpg" alt="bipolar-bear" rem-width="423" rem-height="323" class="aligncenter size-full wp-image-2030" /><br/>
+<br/>
+<br/>
+<strong>Scientists</strong>:<br/>
+<ul><br/>
+<li>The escaped animal is a polar bear with the ability to survive in the Arctic and Antarctic.</li><br/>
+<li>It exhibits massive mood swings like that of a manic-depressive,</li><br/>
+<li>and has equal sexual desires for both males and females.</li><br/>
+</ul><br/>
+<br/>
+<strong>Army Guy</strong>:<br/>
+<ul><br/>
+<li>Dear god, are you suggesting what I think you're suggesting?</li><br/>
+</ul><br/>
+<br/>
+<strong>Scientists</strong>:<br/>
+<ul><br/>
+<li>That's right.. - </li><br/>
+<li>A bi-polar, bipolar, - bi polar bear.</li><br/>
+</ul><br/>
+<br/>
+<strong>Army Guy</strong>:<br/>
+<ul><br/>
+<li>That is very stupid..</li><br/>
+</ul><br/>
+<br/>
+<iframe loading="lazy" lazyload="on"  width="960" height="720" src="https://www.youtube-nocookie.com/embed/xnw4f2T9lZw?rel=0&amp;showinfo=0&amp;showads=0" frameborder="0" allowfullscreen></iframe><br/>
+</blockquote><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/bipolar_bear_rc_ep127-708_009_AS_HD_ascom_logo_720p.mp4">https://github.com/eladkarako/icompile/releases/download/latest/bipolar_bear_rc_ep127-708_009_AS_HD_ascom_logo_720p.mp4</a><br/>
+<br/>
+<hr/><br/>
+<br/>
+Robot Chicken (by adultswim.com) is a sketch-like comedy TV-show made with action-figures using stop-motion and a funny voice-over, usually filled with pun-games, which are the type of comedy that make me laugh the most :))<br/>
+<br/>
+Original website: <a href="http://www.adultswim.com/videos/robot-chicken/bipolar-bear">http://www.adultswim.com/videos/robot-chicken/bipolar-bear</a><br/>
+<br/>
+and running the following code, will add a <code style="display:inline;">download button</code>,<br/>
+<small>it just uses the video-url from the page's internal-source code, and isn't decrypting or breaking stuff or anything.. its publicly accessible (just don't use it in any evil doing sort..)</small><br/>
+<br/>
+<pre>
+(function(window,document, info){
+  "use strict";
+
+    window.setTimeout(function(){     //execute a non-blocker
+
+      info.link.href = info.vid_href;
+      info.link.download = info.vid_downloadfilename;
+      info.link.title = info.link.title
+                          .replace("##TITLE_FULL##", info.vid_title_full)
+                          .replace("##VID_TYPE##", info.vid_type)
+                          .replace("##VID_DURATION##", (~~info.vid_duration))
+                        ;
+
+      info.placement.insertBefore(info.link, info.placement.firstElementChild);
+
+    }, 200);
+
+  }(window,document, {"_":""
+    ,'placement':             document.querySelector("#video-player-object-wrapper")
+    ,'placement_first':       document.querySelector("#video-player-object-wrapper").firstElementChild
+    ,'link':                  (function(){
+                                 var a       = document.createElement('a');
+                                 a.target    = "_self";
+                                 a.rel       = "nofollow";
+                                 a.className = "download_button";
+                                 a.title     = "Click To Download \\"##TITLE_FULL##\\" (##VID_TYPE##: ##VID_DURATION## Seconds)";
+                                 a.appendChild(document.createTextNode("Download"));
+                                 return a;
+                              }())
+    ,'style':                  (function(){
+                                 var s  = document.createElement('style');
+                                 s.type = "text/css";
+                                 s.appendChild(document.createTextNode(
+                                 '.download_button{background-color:rgba(255,183,57,.8);border:3px solid rgba(255,183,57,.3);border-radius:10px;box-shadow:2px 2px 2px rgba(255,255,255,.3);cursor:pointer;display:block;height:30px;height:100% !important;margin:0px 0px 10px 0px;max-width:100px;outline:1px rgba(255,255,255,.3);text-align:center;transition:all .3s ease-in-out;-webkit-font-smoothing:subpixel-antialiased;}'
+                               + '.download_button:hover{background-color:rgba(255,237,142,.8);border:3px solid rgba(255,237,142,.3);}'
+                                 ));
+                                 document.getElementsByTagName("body")[0].appendChild(s); //already add this to the document (parsed into stylesheet)
+                                 return s; //unneeded..
+                              }())
+    ,'vid_href':              bootstrappedData.slugged_video.segments[0].assets[0].url
+    ,'vid_downloadfilename':  encodeURI((bootstrappedData.slugged_video.collection_title + " - " + bootstrappedData.slugged_video.title + " - " + bootstrappedData.slugged_video.description).replace("\
+","").replace("\
+","").replace(".","")) + ".flv"
+    ,'vid_title_full':        (bootstrappedData.slugged_video.collection_title + " - " + bootstrappedData.slugged_video.title + " - " + bootstrappedData.slugged_video.description).replace("\
+","").replace("\
+","").replace(".","")
+    ,'vid_duration':          bootstrappedData.slugged_video.segments[0].assets[0].duration
+    ,'vid_type':              bootstrappedData.slugged_video.segments[0].assets[0].mime_type
+ })
+);
+</pre><br/>
+<br/>
+q: what is so interesting about this code ?<br/>
+a: well..<br/>
+<ul><br/>
+<li>while the main logic is in the "big" anonymous method,</li><br/>
+<li>most of the minor work preparing the elements, or data, is done before the main-method executes,</li><br/>
+<li>kept to the minimal, the memory used is quickly disposed once its logically unneeded.</li><br/>
+<li>code uses a unique technique I've made and refined over the time, of not using <code style="display:inline;">var</code> statements overall in the main method <small>(pre-preparing..)</small>.</li><br/>
+<li>another concept is avoiding moving a long-list of arguments to the method, and using a data-structure such as json-like object to pass a static-data, variables, etc.. where they order is not important,</li><br/>
+<li>this way maintenance is easy <strong>adding, or removing ""arguments""- does not required "Function Signature (a.k.a Header) Change - Function looks the same.</strong> <br /><br/>
+:)</li><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2014/11/2014-11-01_183051.jpg" alt="2014-11-01_183051" rem-width="423" rem-height="140" class="aligncenter size-full wp-image-2044" /><br/>
+<br/>
+<br /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/img/credit.png" /><br/>
+<br /><br/>
+</ul></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/deadpool-is-my-favorite">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/information-randomness-entropy-and-quantom-mechanics">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/information-randomness-entropy-and-quantom-mechanics">Entropy and Quantom- Mechanics</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-polymer-nice">Google Polymer! Nice!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/simulate-winter-in-rain-less-israel">Simulate Winter In Rain-less Israel</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/outbrain-new-employee-orientation-film-hackathon-2012">Outbrain's New Employee Orientation Film - Hackathon 2012</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/embedded-smart-safe-project">Embedded Smart-Safe Project</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/xampp-installation-and-configuration">XAMPP Installation and Configuration</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/enable-xfade-overlapping-in-winamp">Enable XFade (Overlapping) in Winamp</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easy-support-for-protobuf-by-jax-rs-and-rest-api">Easy Support For Protobuf By JAX-RS And REST-API</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javadoc-searchmonkey-to-the-rescue">Javadoc? SearchMonkey To The Rescue</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/criteria-api-to-jpa">Criteria-API To JPA</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/i-saw-a-lovely-street-art-in-germany-today">I Saw A Lovely Street-Art In Germany Today!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-fastest-array-shuffle">JavaScript Ninja - Fastest Array Shuffle. No Loops.</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/fontconfig-building-under-cygwin">FontConfig Building Under Cygwin</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/all-mtk-modems-pdanet-samsungs-googles-official-adb-usb-drivers">Google's Official - ADB USB Drivers</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-extracting-text-content-using-old-school-xpath-query-evaluating">JavaScript Ninja - Extracting Text-Content Using Old-School XPATH Query-Evaluating</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-force-trigger-spell-check-on-an-element">JavaScript Ninja - Force Trigger Spell-Check On An Element</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

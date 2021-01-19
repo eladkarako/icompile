@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope</title>
+  <meta itemprop="name"                                content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+  <meta name="dcterms.title"                           content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+  <meta property="og:title"                            content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+  <meta name="twitter:title"                           content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+  <meta name="twitter:text:title"                      content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+  <meta name="application-name"                        content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+  <meta name="subject"                                 content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+  <meta name="apple-mobile-web-app-title"              content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+  <meta name="msapplication-tooltip"                   content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+  <meta itemprop="description"                         content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+  <meta name="dcterms.description"                     content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+  <meta name="twitter:description"                     content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+  <meta property="og:description"                      content="NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="access,action,altered,atime,birthtime,blank,bold,code,color,content,creation,ctime,delete,encoding,essentially,file,folder,font,gettime,github,high,internal,issue,issues,junk,keeping,libs,linking,lower,lstatsync,manually,mtime,named,nice,node,nodejs,operation,original,path,play,precision,preform,programs,read,reading,replace,require,resolution,resolve,restore,restoring,rewrite,scope,slash,snippet,stat,statsync,symbolic,system,target,times,timestamp,unix,unlink,unlinksync,utimes,utimessync,variety,weight,work,working,write,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="access,action,altered,atime,birthtime,blank,bold,code,color,content,creation,ctime,delete,encoding,essentially,file,folder,font,gettime,github,high,internal,issue,issues,junk,keeping,libs,linking,lower,lstatsync,manually,mtime,named,nice,node,nodejs,operation,original,path,play,precision,preform,programs,read,reading,replace,require,resolution,resolve,restore,restoring,rewrite,scope,slash,snippet,stat,statsync,symbolic,system,target,times,timestamp,unix,unlink,unlinksync,utimes,utimessync,variety,weight,work,working,write,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/css-snippet-the-magical-rotated-logo"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/css-snippet-the-magical-rotated-logo"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/github-branch-delete"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/nodejs-snippet-file-accessmodification-stat-and-utimes-one-second-scope"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/nodejs-snippet-file-accessmodification-stat-and-utimes-one-second-scope"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/nodejs-snippet-file-accessmodification-stat-and-utimes-one-second-scope"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/nodejs-snippet-file-accessmodification-stat-and-utimes-one-second-scope"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/nodejs-snippet-file-accessmodification-stat-and-utimes-one-second-scope"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/nodejs-snippet-file-accessmodification-stat-and-utimes-one-second-scope"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-04-17T21:31:34+00:00"     />
+  <meta name="page-datetime"                           content="2017-04-17T21:31:34+00:00"     />
+  <meta property="article:published_time"              content="2017-04-17T21:31:34+00:00"     />
+  <meta name="dcterms.date"                            content="2017-04-17T21:31:34+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-04-17T21:33:52+00:00"    />
+  <meta property="article:modified_time"               content="2017-04-17T21:33:52+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/nodejs-snippet-file-accessmodification-stat-and-utimes-one-second-scope"
+,"url"             : "https://icompile.eladkarako.com/nodejs-snippet-file-accessmodification-stat-and-utimes-one-second-scope"
+,"headline"        : "NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"
+,"description"     : "NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope"
+,"datePosted"      : "2017-04-17T21:31:34+00:00"
+,"dateCreated"     : "2017-04-17T21:31:34+00:00"
+,"datePublished"   : "2017-04-17T21:31:34+00:00"
+,"dateModified"    : "2017-04-17T21:33:52+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0004964642941">
+  <header>
+    <h1 itemprop="headline">NodeJS Snippet - File Access/Modification Stat And Utimes One-Second Scope</h1>
+    <sup>Posted at <time datetime="2017-04-17T21:33:52+00:00" itemprop="dateModified">Mon, 17 Apr 2017 21:33:52 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">You might get a high-precision (milliseconds) from the file-<code>stat</code>,<br/>
+but you have to use a lower-resolution value, for <code>utimes</code>.<br/>
+<br/>
+It is got to do with internal-linking to the operation-system's libs..<br/>
+<br/>
+but here is a nice working example for you to play-with,<br/>
+essentially just reading a file's content and last-modification/last-access times,<br/>
+and rewrite the file (delete/write new one) with some altered-content,<br/>
+but restoring the timestamp of the original file.<br/>
+<br/>
+for this example to work just place a text file named <code>file.txt</code>, with any content, and any timestamp (you can set timestamp manually using variety of programs..), and see that the file with the new content is keeping its timestamp after-all.<br/>
+<br/>
+<pre><br/>
+<span style='color:#696969; '>/* Working With NodeJS' 'utimes' and 'stat'.*/</span><br/>
+<span style='color:#800000; font-weight:bold; '>var</span> fs      <span style='color:#808030; '>=</span> require<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>fs</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><br/>
+   <span style='color:#808030; '>,</span>path    <span style='color:#808030; '>=</span> require<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>path</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><br/>
+   <span style='color:#808030; '>,</span>file    <span style='color:#808030; '>=</span> path<span style='color:#808030; '>.</span>resolve<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>./file.txt</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span>     <span style='color:#696969; '>//will work on every OS (even though it is a "Unix-slash").</span><br/>
+   <span style='color:#808030; '>,</span>stat    <span style='color:#808030; '>=</span> fs<span style='color:#808030; '>.</span>lstatSync<span style='color:#808030; '>(</span>file<span style='color:#808030; '>)</span>             <span style='color:#696969; '>//preform any action on symbolic-link itself. (for example unlink, to delete a symbolic-link without following it to delete the actual file)</span><br/>
+ <span style='color:#696969; '>//,stat    = fs.statSync(file)              //follow symbolic-link to where it points, file might be placed in another folder!</span><br/>
+   <span style='color:#808030; '>,</span>content<br/>
+   <span style='color:#800080; '>;</span><br/>
+<br/>
+content <span style='color:#808030; '>=</span> fs<span style='color:#808030; '>.</span>readFileSync<span style='color:#808030; '>(</span>file<span style='color:#808030; '>,</span> <span style='color:#800080; '>{</span>encoding<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>utf8</span><span style='color:#800000; '>"</span><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+content <span style='color:#808030; '>=</span> content<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><span style='color:#800000; '>/</span><span style='color:#0000e6; '>foo</span><span style='color:#800000; '>/</span><span style='color:#800000; font-weight:bold; '>g</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>bar</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0f69ff; '>\<br/>
+</span><span style='color:#0000e6; '>Some Junk...</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+<br/>
+fs<span style='color:#808030; '>.</span>unlinkSync<span style='color:#808030; '>(</span>file<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+fs<span style='color:#808030; '>.</span>writeFileSync<span style='color:#808030; '>(</span>file<span style='color:#808030; '>,</span> content<span style='color:#808030; '>,</span> <span style='color:#800080; '>{</span>encoding<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>utf8</span><span style='color:#800000; '>"</span><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<br/>
+fs<span style='color:#808030; '>.</span>utimesSync<span style='color:#808030; '>(</span>file<span style='color:#808030; '>,</span> stat<span style='color:#808030; '>.</span>atime<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>getTime</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>/</span><span style='color:#008c00; '>1000</span><span style='color:#808030; '>,</span> stat<span style='color:#808030; '>.</span>mtime<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>getTime</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>/</span><span style='color:#008c00; '>1000</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> <span style='color:#696969; '>//will restore the access/modification time of the original-file.</span><br/>
+<br/>
+<span style='color:#696969; '>/*</span><br/>
+<span style='color:#696969; '>.atime                access time</span><br/>
+<span style='color:#696969; '>.mtime                modification time</span><br/>
+<span style='color:#696969; '>.birthtime || .ctime  creation time     */</span><br/>
+</pre><br/>
+<br/>
+You can read about this issue on:<br/>
+<a href="https://github.com/nodejs/node/issues/2069#issuecomment-294596104" target="_blank">https://github.com/nodejs/node/issues/2069#issuecomment-294596104</a>.</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/css-snippet-the-magical-rotated-logo">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/github-branch-delete">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/github-branch-delete">GitHub - How To Delete A Branch</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/antivirus-exclude-list">Stuff You Should Exclude From Your Anti-Virus</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hebrew-unicode-range">Hebrew Unicode-Range</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/odin-3-10-7b3-patched-version">Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adding-noto-mono-courier-new-droid-sans-mono-roboto-mono-ubuntu-mono-to-windows-cmd">'Ubuntu Mono' To Windows' CMD</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/crowd-wisdom-ebay-enhancements">JavaScript Ninja - Crowd Wisdom eBay Enhancements</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-ebay-fetch-accurate-sold-amount-and-update-the-main-page">JavaScript Snippet - eBay - Fetch Accurate "Sold" Amount And Update The Main Page</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/feature-policy-header">Feature-Policy Header</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromereader-a-news-reader-right-in-your-mobile-google-chrome">ChromeReader - A News Reader Right In Your Mobile Google Chrome</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/block-chrome-content-suggestions">ChromeReader/Content-Suggestions - Yes You CAN Block It...</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/flat-namednodemap">But Flat!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/how-to-block-websockets-on-google-chrome">Block Sockets? Ask Me How!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/remove-nonstandard-placeholder">And The New Non-Standard Placeholder - And How To Remove It!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-fake-native-code">A.K.A: Obfuscation Magic Helper</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/websocket-killer">WebSocket Killer - For Real!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/rgba_4444-textures-doom">Google Message :] *Sign* RGBA_4444 Textures Still Does Not Works Perfectly...</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

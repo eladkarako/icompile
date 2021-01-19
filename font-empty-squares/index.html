@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>How To Avoid Web-Font From Showing Empty Squares</title>
+  <meta itemprop="name"                                content="How To Avoid Web-Font From Showing Empty Squares"       />
+  <meta name="dcterms.title"                           content="How To Avoid Web-Font From Showing Empty Squares"       />
+  <meta property="og:title"                            content="How To Avoid Web-Font From Showing Empty Squares"       />
+  <meta name="twitter:title"                           content="How To Avoid Web-Font From Showing Empty Squares"       />
+  <meta name="twitter:text:title"                      content="How To Avoid Web-Font From Showing Empty Squares"       />
+  <meta name="application-name"                        content="How To Avoid Web-Font From Showing Empty Squares"       />
+  <meta name="subject"                                 content="How To Avoid Web-Font From Showing Empty Squares"       />
+  <meta name="apple-mobile-web-app-title"              content="How To Avoid Web-Font From Showing Empty Squares"       />
+  <meta name="msapplication-tooltip"                   content="How To Avoid Web-Font From Showing Empty Squares"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="How To Avoid Web-Font From Showing Empty Squares"       />
+  <meta itemprop="description"                         content="How To Avoid Web-Font From Showing Empty Squares"       />
+  <meta name="dcterms.description"                     content="How To Avoid Web-Font From Showing Empty Squares"       />
+  <meta name="twitter:description"                     content="How To Avoid Web-Font From Showing Empty Squares"       />
+  <meta property="og:description"                      content="How To Avoid Web-Font From Showing Empty Squares"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="access,active,addressing,alpha,ammm,android,answer,ascii,avoid,avoiding,back,basic,blank,blog,boxes,break,browser,browsers,call,character,chinese,choose,clearity,code,comments,complete,computer,content,courier,customer,customers,days,dealing,dependency,deriving,designers,development,device,devices,displayed,download,droid,early,effective,elusive,encoding,european,existing,extended,family,filling,font,fonts,forked,form,found,github,glyph,glyphs,google,googlei,graphic,hebrew,hindi,includes,installed,japanese,korean,limited,makes,making,microsoft,mobile,mojibake,monospace,netscape,noto,notofu,occurs,operation,optimistic,party,people,phase,picked,picking,presented,problem,range,recent,removing,rendered,renders,represent,roboto,samsung,screens,scrips,scripts,september,showing,sibling,simple,simplified,slang,small,solution,squares,submitted,support,supports,symbol,symbols,system,target,term,thai,tofu,traditional,umoji,understand,unicode,usage,vendors,version,viewing,website,wide,wiki,wikipedia,windows,works,world,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="access,active,addressing,alpha,ammm,android,answer,ascii,avoid,avoiding,back,basic,blank,blog,boxes,break,browser,browsers,call,character,chinese,choose,clearity,code,comments,complete,computer,content,courier,customer,customers,days,dealing,dependency,deriving,designers,development,device,devices,displayed,download,droid,early,effective,elusive,encoding,european,existing,extended,family,filling,font,fonts,forked,form,found,github,glyph,glyphs,google,googlei,graphic,hebrew,hindi,includes,installed,japanese,korean,limited,makes,making,microsoft,mobile,mojibake,monospace,netscape,noto,notofu,occurs,operation,optimistic,party,people,phase,picked,picking,presented,problem,range,recent,removing,rendered,renders,represent,roboto,samsung,screens,scrips,scripts,september,showing,sibling,simple,simplified,slang,small,solution,squares,submitted,support,supports,symbol,symbols,system,target,term,thai,tofu,traditional,umoji,understand,unicode,usage,vendors,version,viewing,website,wide,wiki,wikipedia,windows,works,world,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/strip-youtube-xsrf"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/strip-youtube-xsrf"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/solved-chromes-tab-keeps-loading-forever-and-can-not-be-stopped-nor-closed"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/font-empty-squares"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/font-empty-squares"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/font-empty-squares"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/font-empty-squares"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/font-empty-squares"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/font-empty-squares"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-10-02T06:42:02+00:00"     />
+  <meta name="page-datetime"                           content="2016-10-02T06:42:02+00:00"     />
+  <meta property="article:published_time"              content="2016-10-02T06:42:02+00:00"     />
+  <meta name="dcterms.date"                            content="2016-10-02T06:42:02+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-10-02T06:53:37+00:00"    />
+  <meta property="article:modified_time"               content="2016-10-02T06:53:37+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/font-empty-squares"
+,"url"             : "https://icompile.eladkarako.com/font-empty-squares"
+,"headline"        : "How To Avoid Web-Font From Showing Empty Squares"
+,"description"     : "How To Avoid Web-Font From Showing Empty Squares"
+,"datePosted"      : "2016-10-02T06:42:02+00:00"
+,"dateCreated"     : "2016-10-02T06:42:02+00:00"
+,"datePublished"   : "2016-10-02T06:42:02+00:00"
+,"dateModified"    : "2016-10-02T06:53:37+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0002250935741">
+  <header>
+    <h1 itemprop="headline">How To Avoid Web-Font From Showing Empty Squares</h1>
+    <sup>Posted at <time datetime="2016-10-02T06:53:37+00:00" itemprop="dateModified">Sun, 02 Oct 2016 06:53:37 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">Those empty squares are known, among the font-glyph designers as TOFU<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_notofu_no_tofu_empty_squares0.png" alt="icompile.eladkarako.com_notofu_no_tofu_empty_squares0" width="985" height="608"/><br/>
+<br/>
+<blockquote><br/>
+From <a href="https://en.wikipedia.org/wiki/Tofu_(disambiguation)" target="_blank">Wikipedia</a>:<br/>
+<em>Slang term, for the empty-boxes shown in-place of undisplayable code-points in computer character encoding, a form of mojibake.</em><br/>
+</blockquote><br/>
+<br/>
+Now, there are several way of dealing with those empty-box-symbols,<br/>
+First of all, all of the basic european characters range, known as US-ASCII, is presented well by all of the browsers,<br/>
+going back to Netscape days,<br/>
+<br/>
+- making your website contains only US-ASCII characters, including any content submitted and presented by other people (such as comments on your blog)<br/>
+is, in fact a very simple and effective way of addressing (or avoiding..) the empty-squares problem,<br/>
+this, however makes your website very.. ammm... content-limited,<br/>
+<br/>
+the other end of the problem-solution, is the optimistic one - <br/>
+- If your website renders as <code>UTF-8</code>, or it's more extended sibling <code>Unicode</code>, and your 'customers' are viewing your website, using a browser that renders text-to-graphic (most of them do, with only dependency is your operation-system's installed-fonts),<br/>
+AND your customer has a font that supports, at-least, the same set of characters you are using on your website,<br/>
+Your content will be shown 100% of the time.<br/>
+<br/>
+let us take a break for a second and understand that elusive "TOFU" thing.<br/>
+When text is rendered by a computer, sometimes there will be characters in the text that can not be displayed, because no font that supports them is available to the computer. When this occurs, small boxes are shown to represent the characters. We call those small boxes "tofu".<br/>
+<br/>
+and example of Hand-picking your content (optimistic solution) can be found in the website <a href="http://umoji.eladkarako.com" target="_blank">umoji.eladkarako.com</a>, in which, <br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_notofu_no_tofu_empty_squares1.png" alt="icompile.eladkarako.com_notofu_no_tofu_empty_squares1" width="623" height="504"/><br/>
+<br/>
+I (really!) picked only the "symbol-like" characters which are shown well, on a Windows 7 with Courier-New monospace font, removing a lot of those characters shown as TOFU symbols.<br/>
+<br/>
+A Real world dealing with those small boxes/little squares/tofu symbols (middle solution)<br/>
+Choose a 3rd party font that includes enough scripts (or glyphs)<br/>
+<!--more--><br/>
+<br/>
+<br/>
+Google's <a href="https://en.wikipedia.org/wiki/Noto_fonts" target="_blank">Noto</a> <sup><a href="https://github.com/googlei18n/noto-fonts" target="_blank">github.com/googlei18n/noto-fonts</a> <a href="https://www.google.com/get/noto/" target="_blank">google.com/get/noto/</a> </sup> (short for No-TOFU) tries to answer this problem by filling the font with ALL THE SCRIPS/GLYPHS possible,<br/>
+(mostly by deriving from many already existing fonts, such as Droid fonts).<br/>
+<br/>
+<br/>
+<blockquote>Noto-font, has quite a wide support (including Chinese (simplified and traditional), Japanese, Korean, Thai and Hindi) a font that is also known for wide usage (especially in Android devices, and which is forked by many vendors such as Samsung and even Microsoft) is <a href="https://en.wikipedia.org/wiki/Roboto" target="_blank">Roboto</a> especially for it's clearity on mobile-device's screens.</blockquote><br/>
+<br/>
+The complete Noto-family is quite a big download for a website that shown a, usually, mostly, US-ASCII content (and some Hebrew from time to time..)<br/>
+<br/>
+Noto-font family is still under active development, but you can download and use it,<br/>
+it works quite well, although it is still in its early access (alpha) phase.<br/>
+<br/>
+as for support, although the current, most recent, Unicode version is ver9 (from 2016), The Noto-font will only support up until version 6.2 (Unicode 6.2.0 from September 26, 2012)</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/strip-youtube-xsrf">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-chromes-tab-keeps-loading-forever-and-can-not-be-stopped-nor-closed">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-chromes-tab-keeps-loading-forever-and-can-not-be-stopped-nor-closed">And Can-Not Be Stopped Nor Closed</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/jquery-nightly-builds">jQuery Nightly Builds</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-secret-domain-check-api-service">Google "Secret" Domain Check API Service</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ebay-page-fix">JavaScript Ninja - eBay Page Fix - Cleanup And Main Description</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-api-keys">Chromium API Keys</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vmware-subdomains">VMware-Related Sub-Domains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-ninja-css3-to-make-your-website-behave-and-render-faster-including-a-more-responsive-scrolling">Including A More Responsive Scrolling</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/reverse-engineering-extract-version-information-from-and-executable-using-reshacker">Reverse Engineering - Extract Version Information From And Executable Using ResHacker</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-script-runtime">PHP Snippet - Script Runtime</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-generate-random-bytes">PHP Snippet - Generate Random Bytes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-request-argument-from-either-post-or-get">PHP Snippet - Request-Argument From Either POST Or GET</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/thinapp-registry-export">Solved: ThinApp Registry Export</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-two-approaches-on-uniquefing-an-array-memory-wise">JavaScript Snippet - Two Approaches On Unique'fing An Array - Memory Wise</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hubic-secret-coupon">hubiC Secret Coupon</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-obfuscated-numbering-for-csrf">JavaScript Obfuscated Numbering For CSRF</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-event-isolation-with-documentation">JavaScript Snippet - Event Isolation With Documentation</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

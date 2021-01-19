@@ -1,0 +1,5 @@
+https://support.google.com/webmasters/answer/183668#addsitemap
+
+http://www.google.com/ping?sitemap=<complete_url_of_sitemap>
+
+http://www.google.com/ping?sitemap=https://icompile.eladkarako.com/sitemap.xml

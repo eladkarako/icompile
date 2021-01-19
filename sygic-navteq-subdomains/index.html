@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Sygic NavTeq SubDomains</title>
+  <meta itemprop="name"                                content="Sygic NavTeq SubDomains"       />
+  <meta name="dcterms.title"                           content="Sygic NavTeq SubDomains"       />
+  <meta property="og:title"                            content="Sygic NavTeq SubDomains"       />
+  <meta name="twitter:title"                           content="Sygic NavTeq SubDomains"       />
+  <meta name="twitter:text:title"                      content="Sygic NavTeq SubDomains"       />
+  <meta name="application-name"                        content="Sygic NavTeq SubDomains"       />
+  <meta name="subject"                                 content="Sygic NavTeq SubDomains"       />
+  <meta name="apple-mobile-web-app-title"              content="Sygic NavTeq SubDomains"       />
+  <meta name="msapplication-tooltip"                   content="Sygic NavTeq SubDomains"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Sygic NavTeq SubDomains"       />
+  <meta itemprop="description"                         content="Sygic NavTeq SubDomains"       />
+  <meta name="dcterms.description"                     content="Sygic NavTeq SubDomains"       />
+  <meta name="twitter:description"                     content="Sygic NavTeq SubDomains"       />
+  <meta property="og:description"                      content="Sygic NavTeq SubDomains"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="alpha,analytics,aura,auth,blog,careers,carrental,chicago,code,commuteapp,contacts,content,corporate,ctrl,cust,developer,developers,devforum,download,downloads,edge,eshop,friendly,imgqa,infonet,installed,lbsp,llnw,llnwd,local,machine,mail,mailing,mapcreator,mapreporter,maps,navteq,newsletter,outlook,partners,platform,press,prod,protection,report,robtex,sampledata,services,settings,sniffing,speedcams,speedometer,static,storage,store,subdomains,support,sygic,sygicas,test,tours,track,traffic,traps,travel,userservice,virustotal,weather,webcontrol,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="alpha,analytics,aura,auth,blog,careers,carrental,chicago,code,commuteapp,contacts,content,corporate,ctrl,cust,developer,developers,devforum,download,downloads,edge,eshop,friendly,imgqa,infonet,installed,lbsp,llnw,llnwd,local,machine,mail,mailing,mapcreator,mapreporter,maps,navteq,newsletter,outlook,partners,platform,press,prod,protection,report,robtex,sampledata,services,settings,sniffing,speedcams,speedometer,static,storage,store,subdomains,support,sygic,sygicas,test,tours,track,traffic,traps,travel,userservice,virustotal,weather,webcontrol,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/html5-image-loading-error-handling"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/html5-image-loading-error-handling"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/redgate-reflector-subdomains"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/sygic-navteq-subdomains"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/sygic-navteq-subdomains"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/sygic-navteq-subdomains"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/sygic-navteq-subdomains"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/sygic-navteq-subdomains"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/sygic-navteq-subdomains"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-12-06T09:21:07+00:00"     />
+  <meta name="page-datetime"                           content="2016-12-06T09:21:07+00:00"     />
+  <meta property="article:published_time"              content="2016-12-06T09:21:07+00:00"     />
+  <meta name="dcterms.date"                            content="2016-12-06T09:21:07+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-12-06T10:22:46+00:00"    />
+  <meta property="article:modified_time"               content="2016-12-06T10:22:46+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/sygic-navteq-subdomains"
+,"url"             : "https://icompile.eladkarako.com/sygic-navteq-subdomains"
+,"headline"        : "Sygic NavTeq SubDomains"
+,"description"     : "Sygic NavTeq SubDomains"
+,"datePosted"      : "2016-12-06T09:21:07+00:00"
+,"dateCreated"     : "2016-12-06T09:21:07+00:00"
+,"datePublished"   : "2016-12-06T09:21:07+00:00"
+,"dateModified"    : "2016-12-06T10:22:46+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007606101841">
+  <header>
+    <h1 itemprop="headline">Sygic NavTeq SubDomains</h1>
+    <sup>Posted at <time datetime="2016-12-06T10:22:46+00:00" itemprop="dateModified">Tue, 06 Dec 2016 10:22:46 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">Using <code>virustotal.com</code>, <code>www.robtex.com</code> and sniffing on local-machine w/ it installed on.<br/>
+<!--more--><br/>
+<br/>
+<br/>
+<sup><em>*[CTRL]+[A] Friendly.</em></sup><br/>
+<pre>
+aa21.sygic.ba.cust.gts.sk
+ac7.sygic.ba.cust.gts.sk
+ad.navteq.com
+ad.sygic.com
+ads.navteq.com
+ads.sygic.com
+alpha.travel.sygic.com
+analytics.sygic.com
+api.bls.sygic.com
+api.sygic.com
+aura.sygic.com
+auth.sygic.com
+blog.sygic.com
+bls.sygic.com
+careers.sygic.com
+carrental.sygic.com
+cdn.navteq.com
+cdn.sygic.com
+cdn.travel.sygic.com
+cdn-edge.sygic.com
+cdn-osc.sygic.com
+chicago-mx.navteq.com
+cmd.navteq.com
+commuteapp.navteq.com
+contacts.sygic.com
+content.navteq.com
+corporate.navteq.com
+corporate-prd.navteq.com
+corporate-prod.navteq.com
+corporate-test.navteq.com
+dev.sygic.com
+developer.navteq.com
+developer.sygic.com
+developers.navteq.com
+developers.sygic.com
+devforum.sygic.com
+download.navteq.com
+downloads.navteq.com
+edge.sygic.com
+eshop.sygic.com
+fcd.sygic.com
+help.sygic.com
+https-178-79-251-0.lcy.llnw.net
+https-178-79-251-128.lcy.llnw.net
+img.mapreporter.navteq.com
+img.navteq.com
+img.sygic.com
+imgqa.navteq.com
+infonet.navteq.com
+lbsp.navteq.com
+mailing.sygic.com
+mapcreator.navteq.com
+mapreporter.navteq.com
+mapreporter-prd.navteq.com
+mapreporter-prod.navteq.com
+mapreporter-services.navteq.com
+mapreporter-services-prd.navteq.com
+mapreporter-services-prod.navteq.com
+mapreporter-services-stg.navteq.com
+mapreporter-services-test.navteq.com
+mapreporter-stg.navteq.com
+mapreporter-test.navteq.com
+maps.sygic.com
+mx.navteq.com
+navteq.com
+newsletter.sygic.com
+notifications.sygic.com
+ns1.sygic.com
+ns2.sygic.com
+osc.sygic.com
+ovh.sygic.com
+ovh-cdn.sygic.com
+partners.sygic.com
+partnersportal.sygic.com
+platform.sygic.com
+prd.cmd.navteq.com
+prd.lbsp.navteq.com
+prductserver.sygic.com
+press.navteq.com
+press-it.navteq.com
+productserver.sygic.com
+report.navteq.com
+report.sygic.com
+sampledata.navteq.com
+sbs.sygic.com
+sdc.navteq.com
+settings.commuteapp.navteq.com
+settings.navteq.com
+speedcams.platform.sygic.com
+speedcams.sygic.com
+speedometer.platform.sygic.com
+speedometer.sygic.com
+ssl.navteq.com
+ssl.sygic.com
+sso.sygic.com
+static.sygic.com
+stg.cmd.navteq.com
+stg.lbsp.navteq.com
+stl.lbsp.navteq.com
+stl.navteq.com
+stl.prd.lbsp.navteq.com
+stl.stg.lbsp.navteq.com
+stl.test.lbsp.navteq.com
+storage.sygic.com
+store.navteq.com
+support.navteq.com
+support.sygic.com
+sygic.com
+sygic.sk
+sygicas.vo.llnwd.net
+sygic-com.mail.protection.outlook.com
+tcs.navteq.com
+test.cmd.navteq.com
+test.lbsp.navteq.com
+tours.sygic.com
+track.navteq.com
+traffic.sygic.com
+traffic2.sygic.com
+traps.sygic.com
+travel.sygic.com
+ts.sygic.com
+tst.cmd.navteq.com
+userservice.sygic.com
+weather.sygic.com
+webcontrol.sygic.com
+welcome.sygic.com
+www.blog.sygic.com
+www.navteq.com
+www.sygic.com
+www.sygic.sk
+www2.navteq.com
+www2-prd.navteq.com
+www2-prod.navteq.com
+www2-stg.navteq.com
+www2-test.navteq.com
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-image-loading-error-handling">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/redgate-reflector-subdomains">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/redgate-reflector-subdomains">RedGate-Reflector SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-resources-load-error-handling">JavaScript - Dynamic Resources Loading-Error Handling</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wordpress-a-better-article-datetime">WordPress - A Better Article DateTime</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/trackers-hosts-format">Trackers In HOSTS Format</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows7810-icon-files-handle-fixer">Windows7/8/10+ Icon Files Handle Fixer</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/contenteditable-css3-alternative">No JavaScript Pure CSS3 ContentEditable Alternative (Chrome-Based Browsers Only)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tools-that-work-with-graphite">Tools That Work With Graphite</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-emulate-click">JavaScript Ninja - Emulate A Click</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adding-stale-while-revalidate-and-stale-if-error">Adding Stale-While-Revalidate And Stale-If-Error</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/schema-for-your-website">Schema.org For Your WebSite</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-byte-string">PHP Byte String</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cmd-system32-or-syswow64-execution">CMD Snippet - Selective Executing From Either Windows System32 Or SysWOW64 Folders With Easy And Simple GOTO-State-Machine</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/umoji-unicode-emoji">UMOJI - Unicode Emoji</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/get-chrome-version-using-javascript">JavaScript Snippet - Get Chrome's Version Using JavaScript</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/github-because-those-who-can-not-do-fork">Fork.</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-proper-hard-subtitle">FFMPEG - Real Proper Hard-Burn Subtitle Onto A Video</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

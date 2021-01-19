@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope.</title>
+  <meta itemprop="name"                                content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+  <meta name="dcterms.title"                           content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+  <meta property="og:title"                            content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+  <meta name="twitter:title"                           content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+  <meta name="twitter:text:title"                      content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+  <meta name="application-name"                        content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+  <meta name="subject"                                 content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+  <meta name="apple-mobile-web-app-title"              content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+  <meta name="msapplication-tooltip"                   content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+  <meta itemprop="description"                         content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+  <meta name="dcterms.description"                     content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+  <meta name="twitter:description"                     content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+  <meta property="og:description"                      content="JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="action,apparently,array,attachment,avatars,block,bold,bunch,client,code,color,connections,container,containers,display,document,emails,emojis,events,feeds,floor,font,function,generate,gist,gists,github,html,image,images,imgs,index,inline,innerhtml,issue,issues,item,javascript,join,keys,limit,local,margin,math,nifty,ninja,nope,number,orgs,owner,padding,page,position,project,public,query,random,rate,refresh,replace,repo,repos,repository,return,rgba,script,search,settings,size,small,sort,split,starred,strict,styles,target,team,teams,techniques,template,type,user,users,weight,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="action,apparently,array,attachment,avatars,block,bold,bunch,client,code,color,connections,container,containers,display,document,emails,emojis,events,feeds,floor,font,function,generate,gist,gists,github,html,image,images,imgs,index,inline,innerhtml,issue,issues,item,javascript,join,keys,limit,local,margin,math,nifty,ninja,nope,number,orgs,owner,padding,page,position,project,public,query,random,rate,refresh,replace,repo,repos,repository,return,rgba,script,search,settings,size,small,sort,split,starred,strict,styles,target,team,teams,techniques,template,type,user,users,weight,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/javascript-basic-stuff-pages-html-view-source-programmatically"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/javascript-basic-stuff-pages-html-view-source-programmatically"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/youtube-video-thumbnail-resolutions"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/github-api-has-no-user-id-to-user-name"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/github-api-has-no-user-id-to-user-name"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/github-api-has-no-user-id-to-user-name"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/github-api-has-no-user-id-to-user-name"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/github-api-has-no-user-id-to-user-name"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/github-api-has-no-user-id-to-user-name"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2015-03-19T13:03:21+00:00"     />
+  <meta name="page-datetime"                           content="2015-03-19T13:03:21+00:00"     />
+  <meta property="article:published_time"              content="2015-03-19T13:03:21+00:00"     />
+  <meta name="dcterms.date"                            content="2015-03-19T13:03:21+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2015-03-19T13:54:33+00:00"    />
+  <meta property="article:modified_time"               content="2015-03-19T13:54:33+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/github-api-has-no-user-id-to-user-name"
+,"url"             : "https://icompile.eladkarako.com/github-api-has-no-user-id-to-user-name"
+,"headline"        : "JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."
+,"description"     : "JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope."
+,"datePosted"      : "2015-03-19T13:03:21+00:00"
+,"dateCreated"     : "2015-03-19T13:03:21+00:00"
+,"datePublished"   : "2015-03-19T13:03:21+00:00"
+,"dateModified"    : "2015-03-19T13:54:33+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0001020776241">
+  <header>
+    <h1 itemprop="headline">JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope.</h1>
+    <sup>Posted at <time datetime="2015-03-19T13:54:33+00:00" itemprop="dateModified">Thu, 19 Mar 2015 13:54:33 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">here is a small nifty code to generate a bunch of random github-user images (its part of a project..)<br/>
+<!--more--><br/>
+<br/>
+<br/>
+<hr /><br/>
+<br/>
+<pre><br/>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>n<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>use strict</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+<br/>
+  <span style='color:#800000; font-weight:bold; '>var</span> html <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+<br/>
+  <span style='color:#696969; '>/* styles */</span><br/>
+  html <span style='color:#808030; '>+=</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+    <span style='color:#800000; font-weight:bold; '>var</span> template <span style='color:#808030; '>=</span> <span style='color:#0000e6; '>'#img##ID##{background-image:url(</span><span style='color:#0f69ff; '>\\'</span><span style='color:#0000e6; '>https://avatars.githubusercontent.com/u/##RANDOM##?v=3</span><span style='color:#0f69ff; '>\\'</span><span style='color:#0000e6; '>)}'</span><span style='color:#800080; '>;</span><br/>
+<br/>
+    template <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#797997; '>Array</span><span style='color:#808030; '>(</span>n<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>join</span><span style='color:#808030; '>(</span><span style='color:#0000e6; '>','</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#0000e6; '>','</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>map<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>item</span><span style='color:#808030; '>,</span> <span style='color:#797997; '>index</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>return</span> template<br/>
+        <span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><span style='color:#0000e6; '>'##ID##'</span><span style='color:#808030; '>,</span> String<span style='color:#808030; '>(</span><span style='color:#797997; '>index</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><br/>
+        <span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><span style='color:#0000e6; '>'##RANDOM##'</span><span style='color:#808030; '>,</span> String<span style='color:#808030; '>(</span><span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>floor</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>2000</span> <span style='color:#808030; '>+</span> <span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>random</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>*</span> <span style='color:#008c00; '>4000</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><br/>
+        <span style='color:#800080; '>;</span><br/>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>join</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0f69ff; '>\<br/>
+</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<br/>
+    <span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>&lt;style></span><span style='color:#0f69ff; '>\<br/>
+</span><span style='color:#0000e6; '>div[id^=img]{display:inline-block;width:100px; height:100px; background-color:rgba(170,204,247,.7); background-repeat:no-repeat; background-position:center center; background-attachment:local; background-size:contain; padding:0; margin:0;}</span><span style='color:#0f69ff; '>\<br/>
+</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> template <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0f69ff; '>\<br/>
+</span><span style='color:#0000e6; '>&lt;/style></span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<br/>
+  <span style='color:#696969; '>/* containers */</span><br/>
+  html <span style='color:#808030; '>+=</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+    <span style='color:#800000; font-weight:bold; '>var</span> template <span style='color:#808030; '>=</span> <span style='color:#0000e6; '>'&lt;div id=</span><span style='color:#0f69ff; '>\\'</span><span style='color:#0000e6; '>img##ID##</span><span style='color:#0f69ff; '>\\'</span><span style='color:#0000e6; '>>&lt;/div>'</span><span style='color:#800080; '>;</span><br/>
+<br/>
+    template <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#797997; '>Array</span><span style='color:#808030; '>(</span>n<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>join</span><span style='color:#808030; '>(</span><span style='color:#0000e6; '>','</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#0000e6; '>','</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>map<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>item</span><span style='color:#808030; '>,</span> <span style='color:#797997; '>index</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>return</span> template<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><span style='color:#0000e6; '>'##ID##'</span><span style='color:#808030; '>,</span> String<span style='color:#808030; '>(</span><span style='color:#797997; '>index</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>join</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0f69ff; '>\<br/>
+</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<br/>
+    <span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#0000e6; '>'&lt;div id="container-imgs">'</span> <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0f69ff; '>\<br/>
+</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> template <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0f69ff; '>\<br/>
+</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> <span style='color:#0000e6; '>'&lt;/div>'</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<br/>
+  <span style='color:#800000; font-weight:bold; '>return</span> html<span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>10</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+</pre><br/>
+<br/>
+<hr /><br/>
+Here it is *in action* (every page-refresh you'll get new-ones)<br/>
+<pre><br/>
+<div id="github_random_user_images_container"></div><br/>
+<script><br/>
+(function(container, number){<br/>
+container.innerHTML = "";<br/>
+container.innerHTML = (function (n) {<br/>
+  "use strict";<br/>
+<br/>
+  var html = "";<br/>
+<br/>
+  /* styles */<br/>
+  html += (function () {<br/>
+    var template = '#img##ID##{background-image:url(\\'https://avatars.githubusercontent.com/u/##RANDOM##?v=3\\')}';<br/>
+<br/>
+    template = (new Array(n)).join(',').split(',').map(function (item, index) {<br/>
+      return template<br/>
+        .replace('##ID##', String(index))<br/>
+        .replace('##RANDOM##', String(Math.floor(2000 + Math.random() * 4000)))<br/>
+        ;<br/>
+    }).join("\<br/>
+");<br/>
+<br/>
+    return "<style>\
+div[id^=img]{display:inline-block;width:100px; height:100px; background-color:rgba(170,204,247,.7); background-repeat:no-repeat; background-position:center center; background-attachment:local; background-size:contain; padding:0; margin:0;}\
+" + template + "\
+</style>";<br/>
+  }());<br/>
+<br/>
+  /* containers */<br/>
+  html += (function () {<br/>
+    var template = '<div id=\\'img##ID##\\'></div>';<br/>
+<br/>
+    template = (new Array(n)).join(',').split(',').map(function (item, index) {<br/>
+      return template.replace('##ID##', String(index));<br/>
+    }).join("\<br/>
+");<br/>
+<br/>
+    return '<div id="container-imgs">' + "\<br/>
+" + template + "\<br/>
+" + '</div>';<br/>
+  }());<br/>
+<br/>
+  return html;<br/>
+}(number));<br/>
+<br/>
+}(<br/>
+document.querySelector('#github_random_user_images_container')<br/>
+, 10<br/>
+));<br/>
+</script><br/>
+</pre><br/>
+<br/>
+<hr /><br/>
+<br/>
+I would had want to link the user-id to actual user-name, but apparently,<br/>
+this is the whole API, that currently available:<br/>
+<pre><br/>
+<span style='color:#800080; '>{</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>current_user_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/user</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>current_user_authorizations_html_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://github.com/settings/connections/applications{/client_id}</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>authorizations_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/authorizations</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>code_search_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/search/code?q={query}{&amp;page,per_page,sort,order}</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>emails_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/user/emails</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>emojis_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/emojis</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>events_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/events</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>feeds_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/feeds</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>following_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/user/following{/target}</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>gists_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/gists{/gist_id}</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>hub_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/hub</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>issue_search_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/search/issues?q={query}{&amp;page,per_page,sort,order}</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>issues_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/issues</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>keys_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/user/keys</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>notifications_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/notifications</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>organization_repositories_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/orgs/{org}/repos{?type,page,per_page,sort}</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>organization_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/orgs/{org}</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>public_gists_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/gists/public</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>rate_limit_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/rate_limit</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>repository_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/repos/{owner}/{repo}</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>repository_search_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/search/repositories?q={query}{&amp;page,per_page,sort,order}</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>current_user_repositories_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/user/repos{?type,page,per_page,sort}</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>starred_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/user/starred{/owner}{/repo}</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>starred_gists_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/gists/starred</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>team_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/teams</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>user_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/users/{user}</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>user_organizations_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/user/orgs</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>user_repositories_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/users/{user}/repos{?type,page,per_page,sort}</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><br/>
+  <span style='color:#800000; '>"</span><span style='color:#0000e6; '>user_search_url</span><span style='color:#800000; '>"</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://api.github.com/search/users?q={query}{&amp;page,per_page,sort,order}</span><span style='color:#800000; '>"</span><br/>
+<span style='color:#800080; '>}</span><br/>
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-basic-stuff-pages-html-view-source-programmatically">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-video-thumbnail-resolutions">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-video-thumbnail-resolutions">YouTube Video-Thumbnail Resolutions</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/dangerdolan-theme-song">DangerDolan's Theme Song</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/android-luckypatcher-application">Android LuckyPatcher Application</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unshorten-console-log-with-console-dir">UnShorten console.log With console.dir</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-ninja-techniques-minimal-html-markup-needed-for-text">HTML5 Ninja Techniques - Minimal HTML Markup Needed For Text</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/spoof-javascript-debugging-of-your-secret-methods-code-tostringtosource-override">Spoof JavaScript Debugging Of Your Secret Methods Code - toString/toSource Override</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-executable-spoofed-code">But Totally Unreadable</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/shingeki-no-kyojin-attack-on-titan-manga-leaked-ending">進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/intellij-idea-run-faster-part-3-disable-internal-features-you-never-use">IntelliJ IDEA - Run Faster - Part #3 - Disable Internal Features You Never Use</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bad-email-domains">Used By Disposable-Email Services</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-blob-objecturl-real-data-conversion">JavaScript Blob-objectURL real data conversion</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disable-youtube-video-source-blob">Google Chrome/Chromium - Local Hack - Disable YouTube Video-Source-Blob</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/mobeam-beepngo-tracking-hosts">mobeam Beep'nGo - Tracking HOSTS</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/infinite-painter-users-showcase">JSON Resource - Android "Infinite Painter" From seanbrakefield.com - Users Showcase Images</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stocard-json-resources">Stocard JSON Resources</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-api-feed-and-autocomplete">YouTube Video-Search-Feed API And Auto-Compition API For YouTube</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

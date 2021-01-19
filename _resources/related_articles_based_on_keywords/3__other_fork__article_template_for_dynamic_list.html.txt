@@ -1,0 +1,18 @@
+<article id="post-###ID###">
+  <header>
+    <h2>###TITLE###</h2>
+    <sup>Posted at <time datetime="###MODIFIED###">###MODIFIED_FORMATTED###</time></sup>
+  </header>
+  <br/>
+  <div>###CONTENT###</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <h4>Other Articles You Might Like...</h4>
+    ###RELATED###
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>

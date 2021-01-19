@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Chocolate-Muffins - Sugar Free And Gluten-Free</title>
+  <meta itemprop="name"                                content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+  <meta name="dcterms.title"                           content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+  <meta property="og:title"                            content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+  <meta name="twitter:title"                           content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+  <meta name="twitter:text:title"                      content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+  <meta name="application-name"                        content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+  <meta name="subject"                                 content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+  <meta name="apple-mobile-web-app-title"              content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+  <meta name="msapplication-tooltip"                   content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+  <meta itemprop="description"                         content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+  <meta name="dcterms.description"                     content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+  <meta name="twitter:description"                     content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+  <meta property="og:description"                      content="Chocolate-Muffins - Sugar Free And Gluten-Free"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="absorb,adds,albumen,alignnone,amount,apple,applesauce,bake,baking,balanced,bananas,batch,bitter,bitterness,blank,blender,bottom,bought,bowl,buckwheat,burning,calories,canola,casein,cheese,chia,chicken,chocolate,choice,chopped,chuck,claims,click,cocoa,cold,color,consistency,cookies,cranberries,cups,dark,darker,defiantly,devouring,diabetes,diabetic,diet,dietary,disgusting,dishes,drain,early,easy,edit,eggs,estimation,fagopyrum,favor,feel,fibers,fine,flavor,flour,flower,free,genetic,glass,gluten,goodness,gooey,grain,handy,happen,harmful,high,hispanica,hold,hydrate,image,improve,july,kasha,leave,liter,make,maker,makes,management,mashed,meat,medium,milk,minimum,minutes,mixture,moisture,muffin,muffins,nutrition,oils,open,organic,oven,pack,parve,paste,pealed,percentage,phosvitin,plenty,pour,powder,prevent,processed,product,protein,proteins,pudding,pure,raisins,reading,receipt,recipe,replacement,rgba,rich,roughly,salvia,seeds,sesame,simply,size,small,soak,soft,softer,spoon,spoons,spray,stable,stick,store,strong,structure,substitute,sugar,sunflower,sweet,sweeteners,sweetness,table,tahini,target,taste,tastes,tehina,tehini,thickens,times,title,todo,update,vegan,vegetable,wait,walnuts,water,weat,white,wiki,wikipedia,yogurt,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="absorb,adds,albumen,alignnone,amount,apple,applesauce,bake,baking,balanced,bananas,batch,bitter,bitterness,blank,blender,bottom,bought,bowl,buckwheat,burning,calories,canola,casein,cheese,chia,chicken,chocolate,choice,chopped,chuck,claims,click,cocoa,cold,color,consistency,cookies,cranberries,cups,dark,darker,defiantly,devouring,diabetes,diabetic,diet,dietary,disgusting,dishes,drain,early,easy,edit,eggs,estimation,fagopyrum,favor,feel,fibers,fine,flavor,flour,flower,free,genetic,glass,gluten,goodness,gooey,grain,handy,happen,harmful,high,hispanica,hold,hydrate,image,improve,july,kasha,leave,liter,make,maker,makes,management,mashed,meat,medium,milk,minimum,minutes,mixture,moisture,muffin,muffins,nutrition,oils,open,organic,oven,pack,parve,paste,pealed,percentage,phosvitin,plenty,pour,powder,prevent,processed,product,protein,proteins,pudding,pure,raisins,reading,receipt,recipe,replacement,rgba,rich,roughly,salvia,seeds,sesame,simply,size,small,soak,soft,softer,spoon,spoons,spray,stable,stick,store,strong,structure,substitute,sugar,sunflower,sweet,sweeteners,sweetness,table,tahini,target,taste,tastes,tehina,tehini,thickens,times,title,todo,update,vegan,vegetable,wait,walnuts,water,weat,white,wiki,wikipedia,yogurt,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/solved-wordpress-minileven-5-posts-limit"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/solved-wordpress-minileven-5-posts-limit"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/how-to-wire-an-israeli-electrical-socket"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/sugar-free-gluten-free-chocolate-muffins"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/sugar-free-gluten-free-chocolate-muffins"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/sugar-free-gluten-free-chocolate-muffins"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/sugar-free-gluten-free-chocolate-muffins"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/sugar-free-gluten-free-chocolate-muffins"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/sugar-free-gluten-free-chocolate-muffins"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-07-17T01:50:43+00:00"     />
+  <meta name="page-datetime"                           content="2016-07-17T01:50:43+00:00"     />
+  <meta property="article:published_time"              content="2016-07-17T01:50:43+00:00"     />
+  <meta name="dcterms.date"                            content="2016-07-17T01:50:43+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-07-17T02:40:24+00:00"    />
+  <meta property="article:modified_time"               content="2016-07-17T02:40:24+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/sugar-free-gluten-free-chocolate-muffins"
+,"url"             : "https://icompile.eladkarako.com/sugar-free-gluten-free-chocolate-muffins"
+,"headline"        : "Chocolate-Muffins - Sugar Free And Gluten-Free"
+,"description"     : "Chocolate-Muffins - Sugar Free And Gluten-Free"
+,"datePosted"      : "2016-07-17T01:50:43+00:00"
+,"dateCreated"     : "2016-07-17T01:50:43+00:00"
+,"datePublished"   : "2016-07-17T01:50:43+00:00"
+,"dateModified"    : "2016-07-17T02:40:24+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003420278641">
+  <header>
+    <h1 itemprop="headline">Chocolate-Muffins - Sugar Free And Gluten-Free</h1>
+    <sup>Posted at <time datetime="2016-07-17T02:40:24+00:00" itemprop="dateModified">Sun, 17 Jul 2016 02:40:24 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.25.03.jpg"><img loading="lazy" lazyload="on"  class="aligncenter wp-image-5572 size-large" title="click to open in new-tab" src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.25.03.jpg" width="584" height="329" /></a><br/>
+<br/>
+Easy <strong><em>no-sugar</em></strong>, <strong><em>no gluten</em></strong> receipt for sweet&amp;gooey Cocoa muffins,<br/>
+with Chia seeds, walnuts, raisins and cranberries, the sweetness comes from two bananas and an apple,<br/>
+And it contains <strong>no processed-vegetable-oil</strong> (such as Canola or Sunflower..) in-favor of raw-whole organic sesame-seeds paste.<br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.25.24-1.jpg" target="_blank"><img loading="lazy" lazyload="on"  class="aligncenter wp-image-5568 size-large" title="click to open in new-tab" src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.25.24-1.jpg" width="584" height="329" /></a><br/>
+<br/>
+<!--more--><br/>
+<blockquote><em>More reading <sub>(Wikipedia)</sub> </em><br/>
+- <a title="https://en.wikipedia.org/wiki/Gluten-free_diet" href="https://en.wikipedia.org/wiki/Gluten-free_diet" target="_blank">Gluten-free diet</a>.<br/>
+- <a title="https://en.wikipedia.org/wiki/Tahini" href="https://en.wikipedia.org/wiki/Tahini" target="_blank">Sesame-seeds paste</a>.<br/>
+- <a title="https://en.wikipedia.org/wiki/Gluten-free_diet" href="https://en.wikipedia.org/wiki/Salvia_hispanica" target="_blank">Chia seeds</a>.<br/>
+- <a title="https://en.wikipedia.org/wiki/Diabetes_management" href="https://en.wikipedia.org/wiki/Diabetes_management" target="_blank">Diabetes management</a> and <a title="https://en.wikipedia.org/wiki/Diabetic_diet" href="https://en.wikipedia.org/wiki/Diabetic_diet" target="_blank">Diabetic Diet</a>.</blockquote><br/>
+I'm using a hand blender and the 1-liter cup that came with it,<br/>
+and a 180℃ non-stick muffin-maker. minimum dishes :]<br/>
+<br/>
+➀ Mix well, and chuck the mixture muffin-maker, or muffin-baking-pan.<br/>
+<br/>
+- two large eggs.<br/>
+- 2 spoons of Chia-seeds (adds dietary-fibers and thickens the mixture)<br/>
+- 4 spoons of low-fat Cocoa-powder (dark and chocolate goodness)<br/>
+- 3 spoons of Gluten-free flower-substitute (hold the whole thing together)<br/>
+- 5 spoons of <em>Tehina</em> (a.k.a Tehini or simply <em>sesame paste</em>) from full-grain sesame (it is darker in color and more rich in flavor)<br/>
+- 2 cups of cold-water (4℃). Alternatively you can use milk, instead (same amount).<br/>
+- 2 "right" medium-size bananas.<br/>
+- 1, pealed, small apple, or 1 pack of store-bought applesauce (mashed) with no-added sugar.<br/>
+- 1 spoon of baking-powder (add at the end)<br/>
+<br/>
+➁ Leave the mixture along for 10 minutes before getting it to the oven,<br/>
+it will make the Chia-seeds to absorb some of the moisture and make the mixture more-like a pudding consistency.<br/>
+<br/>
+➂ In a small bowl pre-soak <strong>cranberries</strong> and <strong>white and dark raisins</strong> and roughly chopped <strong>walnuts</strong>,<br/>
+in hot water (~80℃) and leave for 10 minutes (the cranberries and raisins with re-hydrate and the walnuts will get softer and will absorb some moisture which prevent them from burning early-on),<br/>
+drain the water, it will help to get rid of any added oils, sugar or preservative added to them (mostly cranberries and raisins had those).<br/>
+<br/>
+➃ use a bit of oil (the ones that comes in a spray are very handy), and put a little of the cranberries/raisins/walnuts at the bottom of muffin-pan, and pour the muffin-mixture on top.<br/>
+<br/>
+➄ bake for 10 minutes, until the mixture is dry and stable.<br/>
+<br/>
+➅ wait 10 minutes before devouring it all.. (needs to get cold)<br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.25.38.jpg"><img loading="lazy" lazyload="on"  class="aligncenter size-large wp-image-5576" title="click to open in new-tab" src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.25.38.jpg" width="584" height="329" /></a><br/>
+<br/>
+*************************************************<br/>
+<blockquote>Cocoa-powder is quite bitter. Normally it is balanced with plenty of sugar,<br/>
+but since this receipt has very few sweeteners, you will defiantly feel the bitterness<br/>
+<br/>
+I happen to like bitter-chocolate (high percentage of Cocoa)<br/>
+So I'm fine with it, but it tastes better with a cold glass of milk :]</blockquote><br/>
+*************************************************<br/>
+<br/>
+nutrition-value table time,<br/>
+I will probably add an estimation of the the calories/nutrition-values from each product I've used -times- the amount used in the recipe...<br/>
+<br/>
+<em>** <strong>TODO</strong>: update.. later.. :] ** </em><br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.26.18.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.26.18.jpg" width="169" height="300" /></a><a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.26.10.jpg"> <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.26.10.jpg" width="169" height="300" /></a><br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.26.50.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.26.50.jpg" width="169" height="300" /> </a><a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.27.12.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.27.12.jpg" width="169" height="300" /></a><br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.28.52.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.28.52.jpg" width="300" height="169" /></a> <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.29.09.jpg" width="300" height="169" /><br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.27.26.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.27.26.jpg" width="169" height="300" /> </a><a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.27.35.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.27.35.jpg" width="169" height="300" /></a><br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.27.47.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.27.47.jpg" width="169" height="300" /></a><a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.27.55.jpg"> <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.27.55.jpg" width="169" height="300" /></a><br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.28.18.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.28.18.jpg" width="300" height="169" /></a><a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.28.27.jpg"> <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.28.27.jpg" width="300" height="169" /></a><br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-10-04.13.51.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-10-04.13.51.jpg" width="169" height="300" /></a><a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-10-04.14.13.jpg"> <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-10-04.14.13.jpg" width="169" height="300" /></a><br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-10-04.13.25.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-10-04.13.25.jpg" width="169" height="300" /> </a><a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-10-04.13.34.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-10-04.13.34.jpg" width="169" height="300" /></a><br/>
+<br/>
+And those..<br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.29.21.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/Chicken-Egg.png" width="300" height="174" /></a><a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.26.34.jpg"> <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.26.34.jpg" width="169" height="300" /></a><a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.29.21.jpg"> <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-09-23.29.21.jpg" width="300" height="169" /></a><br/>
+<br/>
+----<br/>
+Edit:<br/>
+[July 17, 2016]<br/>
+<br/>
+yet another disgusting batch.. :)<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-17-00.08.03.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-17-00.08.03.jpg" alt="2016-07-17 00.08.03" width="300" height="169" class="alignnone size-medium wp-image-5653" /></a><br/>
+<br/>
+but this time I've added 1 table-spoon of whole-buckwheat (also known as kasha or <em>Fagopyrum</em>)-flour,<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-16-23.31.06.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/2016-07-16-23.31.06.jpg" alt="2016-07-16 23.31.06" width="169" height="300" class="alignnone size-medium wp-image-5652" /></a><br/>
+<br/>
+<blockquote style="background:none rgba(245,206,206,.6);">****<br/>
+it makes it <strong>NOT AS gluten-free</strong>, since buckwheat's protein is quite similar to Gluten in its structure (but some claims that it does not as harmful as Gluten due to far less genetic modifications) anyway, your choice..<br/>
+****</blockquote><br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2016/07/icompile.eladkarako.com_gluten_free_cookies_with_buckwheat_without_buckwheat.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/07/icompile.eladkarako.com_gluten_free_cookies_with_buckwheat_without_buckwheat.jpg"  width="623" height="489" /></a><br/>
+<br/>
+Anyway, 'till not it way pure PARVE' (not contains meat not milk) and Vegan [well.. almost (except the eggs)],<br/>
+but to improve the taste and constituency a yogurt or soft white cheese since the Casein-protein will be added to the mix egg-proteins (Albumen/Phosvitin) and whatever the weat-like protein in buckwheat and that flour-replacement I've used....<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-wordpress-minileven-5-posts-limit">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/how-to-wire-an-israeli-electrical-socket">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/how-to-wire-an-israeli-electrical-socket">How To Wire An Israeli Electrical-Socket</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/globes-undocumented-api">Globes Undocumented API</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/beating-heart-css3">Beating Heart CSS3</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-generated-table-with-example">JavaScript Snippet: A Table Generated By JavaScript; With Example - Rigid Structure Full-Page HTML Table</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/mass-apk-installer-wo-adb-install-multi">Make The Previous Post A Mass APK Installer That Does Not Uses ADB Install-Multi Syntax</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/protocols-prefix">Protocols Prefix</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-scrape-html-table-into-its-javascript-data-object-representative">JavaScript - Scrape HTML Table Into Its JavaScript Data-Object Representative</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-add-commas-to-number-by-regular-expression">JavaScript Snippet: Add Commas to Number By Regular-Expression</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/create-excels-spreadsheet-left-to-right-by-default">Create Excel's Spreadsheet Left-To-Right By Default</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/json-of-dom-events-from-w3schools">JSON Of DOM-Events From W3Schools</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/iframe-as-html-to-dom-parser">JavaScript Ninja - IFRAME As HTML-To-DOM Parser</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/url-source-attributes-of-html4-1-and-html5">URL Source Attributes Of HTML4.1 And HTML5</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/speedy-mobile-friendly-website">Speedy Mobile Friendly Website</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/killdisk-subdomains">KillDisk-Related Sub-Domains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pixel-serving-pagespeed">Pixel Image Serving And Google's ModPageSpeed - Quick Checklist</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pagespeed-trim-urls-bug">Google PageSpeed 'trim_urls' Rewrites HTML Incorrectly - URL With No Base - Bug</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

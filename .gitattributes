@@ -1,0 +1,37 @@
+*.exe                     binary
+
+*.7z                      binary
+
+*.pdn                     binary
+
+*.ico                     binary
+
+*.png                     binary
+
+*.gif                     binary
+
+*.jpg                     binary
+
+*.cmd                     text    eol=crlf
+
+*.css                     text    eol=crlf
+
+*.js                      text    eol=crlf
+
+*.txt                     text    eol=crlf
+
+*.text                    text    eol=crlf
+
+*.xml                     text    eol=crlf
+
+*.nfo                     text    eol=crlf
+
+*.html                    text    eol=crlf
+
+*.json                    text    eol=crlf
+
+*.csv                     text    eol=crlf
+
+LICENSE                   text    eol=crlf
+
+README.md                         eol=crlf

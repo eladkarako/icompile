@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files</title>
+  <meta itemprop="name"                                content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+  <meta name="dcterms.title"                           content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+  <meta property="og:title"                            content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+  <meta name="twitter:title"                           content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+  <meta name="twitter:text:title"                      content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+  <meta name="application-name"                        content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+  <meta name="subject"                                 content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+  <meta name="apple-mobile-web-app-title"              content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+  <meta name="msapplication-tooltip"                   content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+  <meta itemprop="description"                         content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+  <meta name="dcterms.description"                     content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+  <meta name="twitter:description"                     content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+  <meta property="og:description"                      content="Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accessory,allshare,android,antradio,apache,appops,appwidget,bbccommon,blank,bmgr,bobuiz,boot,broadcom,common,complete,conscrypt,content,core,device,download,effects,ethernet,extras,feature,file,files,firmware,folder,framework,future,galaxy,google,gsma,html,hugefiles,imsmanager,input,internal,javax,junit,libart,library,local,location,maps,media,mediadrm,minimode,mirror,monkey,msgwrapper,multiwindow,nofollow,note,obex,odex,official,okhttp,platform,policy,provider,rcsopenapi,requestsync,rgil,runner,saiv,samsung,scamera,scrollpause,seccamera,secemailbc,sechardware,secimaging,secocsp,secvision,sendmyway,service,services,settings,signer,simageis,simalliance,smatlib,smpsmanager,software,solidfiles,speedyshare,sprengine,ssrm,strong,system,target,telephony,test,turbobit,twframework,tzgs,uiautomator,util,voip,widevine,wifi,zavv,zippyshare,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accessory,allshare,android,antradio,apache,appops,appwidget,bbccommon,blank,bmgr,bobuiz,boot,broadcom,common,complete,conscrypt,content,core,device,download,effects,ethernet,extras,feature,file,files,firmware,folder,framework,future,galaxy,google,gsma,html,hugefiles,imsmanager,input,internal,javax,junit,libart,library,local,location,maps,media,mediadrm,minimode,mirror,monkey,msgwrapper,multiwindow,nofollow,note,obex,odex,official,okhttp,platform,policy,provider,rcsopenapi,requestsync,rgil,runner,saiv,samsung,scamera,scrollpause,seccamera,secemailbc,sechardware,secimaging,secocsp,secvision,sendmyway,service,services,settings,signer,simageis,simalliance,smatlib,smpsmanager,software,solidfiles,speedyshare,sprengine,ssrm,strong,system,target,telephony,test,turbobit,twframework,tzgs,uiautomator,util,voip,widevine,wifi,zavv,zippyshare,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/javascript-ninja-quick-and-dirty-clickjacking-iframe-embedding-protection"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/javascript-ninja-quick-and-dirty-clickjacking-iframe-embedding-protection"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/repo-help"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2015-12-28T08:36:47+00:00"     />
+  <meta name="page-datetime"                           content="2015-12-28T08:36:47+00:00"     />
+  <meta property="article:published_time"              content="2015-12-28T08:36:47+00:00"     />
+  <meta name="dcterms.date"                            content="2015-12-28T08:36:47+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-02-26T23:40:05+00:00"    />
+  <meta property="article:modified_time"               content="2016-02-26T23:40:05+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files"
+,"url"             : "https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files"
+,"headline"        : "Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"
+,"description"     : "Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files"
+,"datePosted"      : "2015-12-28T08:36:47+00:00"
+,"dateCreated"     : "2015-12-28T08:36:47+00:00"
+,"datePublished"   : "2015-12-28T08:36:47+00:00"
+,"dateModified"    : "2016-02-26T23:40:05+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007081921541">
+  <header>
+    <h1 itemprop="headline">Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files</h1>
+    <sup>Posted at <time datetime="2016-02-26T23:40:05+00:00" itemprop="dateModified">Fri, 26 Feb 2016 23:40:05 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">Taken from system/framework folder of the official firmware.<br/>
+<br/>
+<!--more--><br/>
+<strong>Download <em>samsung_galaxy_note5_sm-n920c_android5.1.1_complete_framework_from_system_framework_folder.7z</em> (86.4MiB)</strong><br/>
+<a href="#" target="_blank">(no local download.. sorry..)</a><br/>
+<a mirror rel="nofollow" href="http://www47.zippyshare.com/v/bFq8RgIL/file.html" target="_blank">http://www47.zippyshare.com/v/bFq8RgIL/file.html</a><br/>
+<a mirror rel="nofollow" href="http://www.solidfiles.com/d/61221cf6c3" target="_blank">http://www.solidfiles.com/d/61221cf6c3</a><br/>
+<a mirror rel="nofollow" href="http://hugefiles.net/zavv87c78tjx" target="_blank">http://hugefiles.net/zavv87c78tjx</a><br/>
+<a mirror rel="nofollow" href="https://www.sendmyway.com/27m3d6qf2ko1" target="_blank">https://www.sendmyway.com/27m3d6qf2ko1</a><br/>
+<a mirror rel="nofollow" href="http://turbobit.net/3bobuiz79pkv.html" target="_blank">http://turbobit.net/3bobuiz79pkv.html</a><br/>
+<a mirror rel="nofollow" href="http://www.speedyshare.com/file/tZGs3/samsung_galaxy_note5_sm-n920c_android5.1.1_complete_framework_from_system_framework_folder.7z" target="_blank">http://www.speedyshare.com/file/tZGs3/samsung_galaxy_note5_sm-n920c_android5.1.1_complete_framework_from_system_framework_folder.7z</a><br/>
+<br/>
+contains:<br/>
+<pre>
+----framework
+    |   allshare.jar
+    |   am.jar
+    |   android.policy.jar
+    |   android.test.runner.jar
+    |   apache-xml.jar
+    |   appops.jar
+    |   appwidget.jar
+    |   bmgr.jar
+    |   bouncycastle.jar
+    |   bu.jar
+    |   clocinfoservice.jar
+    |   com.android.future.usb.accessory.jar
+    |   com.android.location.provider.jar
+    |   com.android.media.remotedisplay.jar
+    |   com.android.mediadrm.signer.jar
+    |   com.android.nfc_extras.jar
+    |   com.broadcom.bt.jar
+    |   com.broadcom.nfc.jar
+    |   com.dsi.ant.antradio_library.jar
+    |   com.google.android.maps.jar
+    |   com.google.android.media.effects.jar
+    |   com.google.widevine.software.drm.jar
+    |   com.gsma.services.nfc.jar
+    |   com.samsung.bbccommon.jar
+    |   com.samsung.device.jar
+    |   commonimsinterface.jar
+    |   conscrypt.jar
+    |   content.jar
+    |   core-junit.jar
+    |   core-libart.jar
+    |   dcm.jar
+    |   dpm.jar
+    |   ethernet-service.jar
+    |   ext.jar
+    |   fipstimakeystore.jar
+    |   framework-res.apk
+    |   framework.jar
+    |   ime.jar
+    |   ims-common.jar
+    |   imsmanager-internal.jar
+    |   imsmanager.jar
+    |   input.jar
+    |   javax.obex.jar
+    |   knoxvpnuidtag.jar
+    |   libvtmanagerjar.jar
+    |   media_cmd.jar
+    |   minimode.jar
+    |   mms-common.jar
+    |   monkey.jar
+    |   motionrecognitionservice.jar
+    |   msgwrapper.jar
+    |   multiwindow.jar
+    |   okhttp.jar
+    |   org.simalliance.openmobileapi.jar
+    |   pm.jar
+    |   rcsopenapi.jar
+    |   requestsync.jar
+    |   sagearpolicymanager.jar
+    |   saiv.jar
+    |   scamera_sdk_util.jar
+    |   scrollpause.jar
+    |   seccamera.jar
+    |   secEmailBC.jar
+    |   sechardware.jar
+    |   secimaging.jar
+    |   secmediarecorder.jar
+    |   secocsp.jar
+    |   secsmartcard.jar
+    |   secvision.jar
+    |   secvisualeffect.jar
+    |   sec_edm.jar
+    |   sec_feature.jar
+    |   sec_platform_library.jar
+    |   sec_sdp_sdk.jar
+    |   services.jar
+    |   settings.jar
+    |   sgi.jar
+    |   simageis.jar
+    |   SLinkNTSManager.jar
+    |   smartbondingservice.jar
+    |   smartfaceservice.jar
+    |   smartfaceserviceapi.jar
+    |   smatlib.jar
+    |   SmpsManager.jar
+    |   sprengine.jar
+    |   ssrm.jar
+    |   stayrotation.jar
+    |   svc.jar
+    |   sws.jar
+    |   telephony-common.jar
+    |   timakeystore.jar
+    |   twframework-res.apk
+    |   twframework.jar
+    |   uiautomator.jar
+    |   voip-common.jar
+    |   wifi-service.jar
+    |   wm.jar
+    |   
+    +---arm
+    |       allshare.odex
+    |       am.odex
+    |       android.test.runner.odex
+    |       appops.odex
+    |       appwidget.odex
+    |       bmgr.odex
+    |       boot.art
+    |       boot.oat
+    |       bu.odex
+    |       clocinfoservice.odex
+    |       com.android.future.usb.accessory.odex
+    |       com.android.location.provider.odex
+    |       com.android.media.remotedisplay.odex
+    |       com.android.mediadrm.signer.odex
+    |       com.android.nfc_extras.odex
+    |       com.broadcom.bt.odex
+    |       com.broadcom.nfc.odex
+    |       com.dsi.ant.antradio_library.odex
+    |       com.google.widevine.software.drm.odex
+    |       com.gsma.services.nfc.odex
+    |       com.samsung.bbccommon.odex
+    |       content.odex
+    |       dcm.odex
+    |       dpm.odex
+    |       ethernet-service.odex
+    |       ime.odex
+    |       imsmanager-internal.odex
+    |       input.odex
+    |       javax.obex.odex
+    |       libvtmanagerjar.odex
+    |       media_cmd.odex
+    |       minimode.odex
+    |       monkey.odex
+    |       motionrecognitionservice.odex
+    |       msgwrapper.odex
+    |       multiwindow.odex
+    |       org.simalliance.openmobileapi.odex
+    |       pm.odex
+    |       rcsopenapi.odex
+    |       requestsync.odex
+    |       saiv.odex
+    |       scamera_sdk_util.odex
+    |       sechardware.odex
+    |       secimaging.odex
+    |       secmediarecorder.odex
+    |       secsmartcard.odex
+    |       secvision.odex
+    |       secvisualeffect.odex
+    |       sec_feature.odex
+    |       sec_platform_library.odex
+    |       services.odex
+    |       settings.odex
+    |       sgi.odex
+    |       SLinkNTSManager.odex
+    |       smartfaceserviceapi.odex
+    |       smatlib.odex
+    |       SmpsManager.odex
+    |       ssrm.odex
+    |       svc.odex
+    |       sws.odex
+    |       twframework.odex
+    |       uiautomator.odex
+    |       wifi-service.odex
+    |       wm.odex
+    |       
+    \\---arm64
+            allshare.odex
+            am.odex
+            android.test.runner.odex
+            appops.odex
+            appwidget.odex
+            bmgr.odex
+            boot.art
+            boot.oat
+            bu.odex
+            clocinfoservice.odex
+            com.android.future.usb.accessory.odex
+            com.android.location.provider.odex
+            com.android.media.remotedisplay.odex
+            com.android.mediadrm.signer.odex
+            com.android.nfc_extras.odex
+            com.broadcom.bt.odex
+            com.broadcom.nfc.odex
+            com.dsi.ant.antradio_library.odex
+            com.google.widevine.software.drm.odex
+            com.gsma.services.nfc.odex
+            com.samsung.bbccommon.odex
+            content.odex
+            dcm.odex
+            dpm.odex
+            ethernet-service.odex
+            ime.odex
+            imsmanager-internal.odex
+            input.odex
+            javax.obex.odex
+            libvtmanagerjar.odex
+            media_cmd.odex
+            minimode.odex
+            monkey.odex
+            motionrecognitionservice.odex
+            msgwrapper.odex
+            multiwindow.odex
+            org.simalliance.openmobileapi.odex
+            pm.odex
+            rcsopenapi.odex
+            requestsync.odex
+            saiv.odex
+            scamera_sdk_util.odex
+            sechardware.odex
+            secimaging.odex
+            secmediarecorder.odex
+            secsmartcard.odex
+            secvision.odex
+            secvisualeffect.odex
+            sec_feature.odex
+            sec_platform_library.odex
+            services.odex
+            settings.odex
+            sgi.odex
+            SLinkNTSManager.odex
+            smartfaceserviceapi.odex
+            smatlib.odex
+            SmpsManager.odex
+            ssrm.odex
+            svc.odex
+            sws.odex
+            twframework.odex
+            uiautomator.odex
+            wifi-service.odex
+            wm.odex
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-quick-and-dirty-clickjacking-iframe-embedding-protection">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/repo-help">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/repo-help">repo Help</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/everything-to-html-entity-bookmarklet">Everything To HTML-Entity Bookmarklet</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/network-traffic-analyze-tools">Network Traffic Analyze Tϕϕls</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/file-sharing-hosts-logos">File-Sharing Hosts Logos</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/efficient-json-table-data-representation">Efficient JSON-Table Data Representation</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/clockwork-recovery-img-to-tar-md5">Clockwork Recovery img to tar.md5</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-implement-select-for-all-html-elements">JavaScript Ninja - Implement .select() For All HTML-Elements</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/android-synapse-dynamic-translation-layer-color">Android Synapse - Dynamic Translation Layer Color</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/reverse-engineer-and-modify-d-link-binary-firmware-file">Reverse Engineer And Modify D-Link Binary Firmware File</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/marshmallow-deepsleep-fix">Android Marshmallow 6.0.1 - DeepSleep Fix For Samsung Galaxy Note 5 SM-N920C noblelte</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-6-0-1-arm-arm64-jar-files">Complete Framework Files - Samsung Galaxy Note 5 - Android 6.0.1 - ARM + ARM64 + JAR Files</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/samsung-bloatware">Samsung Bloatware</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hola-and-luminati-network-subdomains">Hola And Luminati-Network SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/examples-of-accuweather-api-from-the-android-application">Examples Of AccuWeather-API From The Android-Application Including API-Key</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bi-cure-laser-nope">בי-קיור לייזר = חרטה ברטה ?</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-for-external-links">A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

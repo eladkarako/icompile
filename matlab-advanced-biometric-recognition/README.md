@@ -1,0 +1,2 @@
+<img src="https://icompile.eladkarako.com/_uploads/2010-07-28_122922.jpg" alt="" title="2010-07-28_122922" width="135" height="71" class="alignnone size-full wp-image-98" />
+<a href="http://www.advancedsourcecode.com/">http://www.advancedsourcecode.com/</a>

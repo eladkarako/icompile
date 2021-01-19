@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>YouTube 10-Hours Video</title>
+  <meta itemprop="name"                                content="YouTube 10-Hours Video"       />
+  <meta name="dcterms.title"                           content="YouTube 10-Hours Video"       />
+  <meta property="og:title"                            content="YouTube 10-Hours Video"       />
+  <meta name="twitter:title"                           content="YouTube 10-Hours Video"       />
+  <meta name="twitter:text:title"                      content="YouTube 10-Hours Video"       />
+  <meta name="application-name"                        content="YouTube 10-Hours Video"       />
+  <meta name="subject"                                 content="YouTube 10-Hours Video"       />
+  <meta name="apple-mobile-web-app-title"              content="YouTube 10-Hours Video"       />
+  <meta name="msapplication-tooltip"                   content="YouTube 10-Hours Video"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="YouTube 10-Hours Video"       />
+  <meta itemprop="description"                         content="YouTube 10-Hours Video"       />
+  <meta name="dcterms.description"                     content="YouTube 10-Hours Video"       />
+  <meta name="twitter:description"                     content="YouTube 10-Hours Video"       />
+  <meta property="og:description"                      content="YouTube 10-Hours Video"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accuracy,acodec,align,aligned,amount,analyse,apos,area,aresample,ascii,asetpts,async,atom,audio,auto,avstream,back,banner,base,beginning,bframes,bitrate,bitstream,blank,bluray,borders,brand,brands,buffer,builds,cabac,calc,calculate,call,care,change,changed,channel,character,check,chroma,classic,click,clicking,close,code,codec,codecp,coded,comma,command,commands,commat,comp,compat,compatible,complete,compressing,compression,concat,console,constrained,content,continue,convertion,copied,copy,copyleft,core,couple,create,creating,crutial,ctrl,cure,cutting,cycle,data,date,deadzone,deblock,debug,decimate,default,dejudder,delta,deprecated,desktop,developers,diff,double,download,duplicate,duration,easier,easy,echo,efficient,elad,elegantly,encode,encoded,encoder,execute,executing,export,extream,fair,fast,faster,fastseek,faststart,feed,feeding,feel,fflags,ffmpeg,file,files,filters,filterx,finish,fixes,fixing,flags,flipbookit,fltp,fmts,folder,forced,format,found,fpssync,frame,frames,framing,function,genpts,gethours,getminutes,getseconds,giga,github,global,good,grand,guess,guides,handler,headers,heard,hide,high,hour,hours,hrhbxrzy,html,identify,ignorecrop,illusions,improving,increase,info,initial,input,inserting,inter,interlace,interlaced,internal,intra,isom,isomiso,javascript,join,jump,jumpy,kbits,keyboard,keyint,latest,lavc,lavf,lengthy,lets,level,libx,limit,line,lines,literately,loglevel,lookahead,loop,loose,lossless,lsize,major,make,manually,mapping,math,matters,maximum,mbtree,media,message,metadata,minimal,minor,minute,minutes,mixed,moov,moved,movflags,movie,moving,mpdecimate,mpeg,muxers,muxing,named,names,native,nice,nope,note,notepad,notice,null,number,offset,open,options,opts,output,overhead,overnight,painfully,panel,parameters,pass,paste,path,pause,pick,play,player,playing,practically,prepare,preset,press,price,process,processing,profile,program,progress,prompt,propely,properly,pskip,qavg,qcomp,qpmax,qpmin,qpstep,quality,range,rate,ratio,readout,reasonable,refresh,refs,releases,repeate,repeated,repeating,repetitive,replace,required,respecting,return,round,safe,sapareted,save,scenecut,seconds,seeking,segments,setpts,settings,shortcut,shortcuts,showall,simple,single,size,skip,sliced,slices,slightly,slow,small,smart,software,source,space,speed,split,ssse,stage,start,starting,startpts,stats,stay,stereo,stop,stream,streams,subme,subq,substr,subtitle,switch,switches,sync,takes,target,test,testing,threads,times,timing,tiny,toannexb,tools,total,transform,trellis,tricks,trim,tune,type,ultrafast,unicode,unsafe,userin,users,uvac,uvdc,vcodec,version,veryslow,video,videolan,videos,visual,vsync,weighted,weightp,weird,wiki,wikipedia,windows,wordshop,workshop,wrap,yadif,youtube,zeranoe,zerolatency,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accuracy,acodec,align,aligned,amount,analyse,apos,area,aresample,ascii,asetpts,async,atom,audio,auto,avstream,back,banner,base,beginning,bframes,bitrate,bitstream,blank,bluray,borders,brand,brands,buffer,builds,cabac,calc,calculate,call,care,change,changed,channel,character,check,chroma,classic,click,clicking,close,code,codec,codecp,coded,comma,command,commands,commat,comp,compat,compatible,complete,compressing,compression,concat,console,constrained,content,continue,convertion,copied,copy,copyleft,core,couple,create,creating,crutial,ctrl,cure,cutting,cycle,data,date,deadzone,deblock,debug,decimate,default,dejudder,delta,deprecated,desktop,developers,diff,double,download,duplicate,duration,easier,easy,echo,efficient,elad,elegantly,encode,encoded,encoder,execute,executing,export,extream,fair,fast,faster,fastseek,faststart,feed,feeding,feel,fflags,ffmpeg,file,files,filters,filterx,finish,fixes,fixing,flags,flipbookit,fltp,fmts,folder,forced,format,found,fpssync,frame,frames,framing,function,genpts,gethours,getminutes,getseconds,giga,github,global,good,grand,guess,guides,handler,headers,heard,hide,high,hour,hours,hrhbxrzy,html,identify,ignorecrop,illusions,improving,increase,info,initial,input,inserting,inter,interlace,interlaced,internal,intra,isom,isomiso,javascript,join,jump,jumpy,kbits,keyboard,keyint,latest,lavc,lavf,lengthy,lets,level,libx,limit,line,lines,literately,loglevel,lookahead,loop,loose,lossless,lsize,major,make,manually,mapping,math,matters,maximum,mbtree,media,message,metadata,minimal,minor,minute,minutes,mixed,moov,moved,movflags,movie,moving,mpdecimate,mpeg,muxers,muxing,named,names,native,nice,nope,note,notepad,notice,null,number,offset,open,options,opts,output,overhead,overnight,painfully,panel,parameters,pass,paste,path,pause,pick,play,player,playing,practically,prepare,preset,press,price,process,processing,profile,program,progress,prompt,propely,properly,pskip,qavg,qcomp,qpmax,qpmin,qpstep,quality,range,rate,ratio,readout,reasonable,refresh,refs,releases,repeate,repeated,repeating,repetitive,replace,required,respecting,return,round,safe,sapareted,save,scenecut,seconds,seeking,segments,setpts,settings,shortcut,shortcuts,showall,simple,single,size,skip,sliced,slices,slightly,slow,small,smart,software,source,space,speed,split,ssse,stage,start,starting,startpts,stats,stay,stereo,stop,stream,streams,subme,subq,substr,subtitle,switch,switches,sync,takes,target,test,testing,threads,times,timing,tiny,toannexb,tools,total,transform,trellis,tricks,trim,tune,type,ultrafast,unicode,unsafe,userin,users,uvac,uvdc,vcodec,version,veryslow,video,videolan,videos,visual,vsync,weighted,weightp,weird,wiki,wikipedia,windows,wordshop,workshop,wrap,yadif,youtube,zeranoe,zerolatency,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/advised-config-for-linux-on-the-start"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/advised-config-for-linux-on-the-start"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/aria2c-example-download-script-to-download-latest-ffmpeg"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/youtube-10-hours-video"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/youtube-10-hours-video"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/youtube-10-hours-video"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/youtube-10-hours-video"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/youtube-10-hours-video"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/youtube-10-hours-video"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-01-07T12:21:16+00:00"     />
+  <meta name="page-datetime"                           content="2017-01-07T12:21:16+00:00"     />
+  <meta property="article:published_time"              content="2017-01-07T12:21:16+00:00"     />
+  <meta name="dcterms.date"                            content="2017-01-07T12:21:16+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-01-07T15:59:20+00:00"    />
+  <meta property="article:modified_time"               content="2017-01-07T15:59:20+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/youtube-10-hours-video"
+,"url"             : "https://icompile.eladkarako.com/youtube-10-hours-video"
+,"headline"        : "YouTube 10-Hours Video"
+,"description"     : "YouTube 10-Hours Video"
+,"datePosted"      : "2017-01-07T12:21:16+00:00"
+,"dateCreated"     : "2017-01-07T12:21:16+00:00"
+,"datePublished"   : "2017-01-07T12:21:16+00:00"
+,"dateModified"    : "2017-01-07T15:59:20+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006761973841">
+  <header>
+    <h1 itemprop="headline">YouTube 10-Hours Video</h1>
+    <sup>Posted at <time datetime="2017-01-07T15:59:20+00:00" itemprop="dateModified">Sat, 07 Jan 2017 15:59:20 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">How to create a 1/2/...10/... hours video by repeating a segments of a long playing video,<br/>
+using minimal amount of tools (ie. <em>software</em>), mainly <a href="https://en.wikipedia.org/wiki/FFmpeg" target="_blank">ffmpeg</a>.<br/>
+<br/>
+<!--more--><br/>
+<hr/><br/>
+<br/>
+<blockquote><br/>
+You may download ffmpeg from here: <a href="https://ffmpeg.zeranoe.com/builds/" target="_blank">#1</a> <a href="https://ffmpeg.zeranoe.com/builds/win32/" target="_blank">#2</a> <a href="https://ffmpeg.zeranoe.com/builds/win64/" target="_blank">#3</a> <sup><em>(Windows)</em></sup> or from here: <a href="https://ffmpeg.org/download.html#releases" target="_blank">#4</a> <sup><em>(Everything else..)</em></sup>.<br/>
+also, those quick guides might be useful for <em>FFMPEG-N00bs</em>.. :]<br/>
+- <a href="https://icompile.eladkarako.com/ffmpeg-fixes-your-video-files/" target="_blank">FFMPEG Fixes Your Video Files</a><br/>
+- <a href="https://icompile.eladkarako.com/ffmpeg-time-range-to-time-diff-using-javascript/" target="_blank">FFMPEG Time-Range To Time-Diff Using JavaScript</a><br/>
+</blockquote><br/>
+<br/>
+<br/>
+<br/>
+I use the <a href="https://www.youtube.com/watch?v=Ui4hrHBxrZY" target="_blank"><em>Flipbookit</em></a> out of Tim's Grand Illusions YouTube channel.<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2017/01/2017-01-06_223541.png" alt="" width="459" height="341" /><br/>
+<br/>
+<hr/><br/>
+<br/>
+Using high-accuracy player to identify (manually) the maximum amount of raw/initial v/a stream,<br/>
+I'm using 'Subtitle-Wordshop' because I like its keyboard-shortcuts (ctrl+space=play/pause alt+left/right=quick jump).<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2017/01/2017-01-06_230257.png" alt="" width="769" height="382" /><br/>
+<br/>
+Media-Player-Classic is fair too..<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2017/01/2017-01-07_004843.png" alt="" width="323" height="256" /><br/>
+<br/>
+I've found a nice long-part of the video: from <code>00:01:05.376</code> until <code>00:01:16.077</code>,<br/>
+next, we'll going to use FFMPEG to cut this area into a new mp4 file, for that we need the delta, in seconds or in time-string (as above) <br/>
+<br/>
+if you don't want to calculate it yourself, you can copy&paste the following code into the developers-panel's console,<br/>
+(and feed-in your values of course..)<br/>
+<br/>
+<pre>
+javascript:(function(zero,base,a,b,c,userin){if(null===userin)return;userin=userin.replace(/\\s*/g,"").split("-");a=Number(new Date(base+userin[0]));b=Number(new Date(base+userin[1]));c=new Date(b-a+zero);c=("00"+c.getHours()).substr(-2)+":"+("00"+c.getMinutes()).substr(-2)+":"+("00"+c.getSeconds()).substr(-2)+"."+("000"+c.getMilliseconds()).substr(-3);prompt("☆ RANGE: "+userin.join("→")+"\
+"+"∆ DIFF: "+c+"\
+",c)})(Number(new Date("2016-01-01 "+"00:00:00.000")),"2016-01-01 ",null,null,null,prompt("FFMPEG Compatible Range2Diff","00:01:05.376-00:01:16.077"));
+</pre><br/>
+the delta came out as <code>00:00:10.701</code><br/>
+<br/>
+Now.. you may cut quickly (will take about ~1 second) using:<br/>
+<pre>
+ffmpeg -i input.mp4 -threads 16 -vcodec copy -acodec copy -sn -ss 00:01:05.376 -t 00:00:10.701 out.mp4
+</pre><br/>
+<br/>
+but you might loose audio sync and few frames in the process,<br/>
+<br/>
+since this can be consider a "raw source", and the total-time is tiny, as long we'll be using some smart switches we can-keep audio and video sync, and high-quality end result,<br/>
+<br/>
+<pre>
+call ffmpeg.exe -y                                                                     ^
+-hide_banner -loglevel "info" -stats                                                   ^
+-i  "input.mp4"                                                                        ^
+-threads 16                                                                            ^
+-flags     "-loop+naq+low_delay"                                                       ^
+-flags2    "+fast+ignorecrop+showall+export_mvs"                                       ^
+-fflags    "+genpts+discardcorrupt+fastseek"                                           ^
+-movflags  "+faststart"                                                                ^
+-tune      "zerolatency"                                                               ^
+-pix_fmt   "yuv420p"                                                                   ^
+-profile:v "high" -level "5.0"                                                         ^
+ ^
+-x264opts  "keyint=4" -g "2" -forced-idr "true" -refs "25" -rc-lookahead "25"          ^
+-preset    "veryslow" -crf "23" -subq "9" -qcomp "0.60"                                ^
+ ^
+-ss        "00:00:00.001"                                                              ^
+-af        "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000" -vsync "1"  ^
+-vf        "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,fps=fps=25,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p"   ^
+-map_metadata "-1"                                                                     ^
+-sn -ss 00:01:05.376 -t 00:00:10.701                                                   ^
+out.mp4
+</pre><br/>
+<br/>
+the command-line is a bit-lengthy, since it propely de-interlace the video-frames and elegantly cure double-framing, while still try to keep the v/a in-sync :)<br/>
+still took only about 1 minute to finish executing :]<br/>
+<br/>
+Now, there is a quite hard, repetitive process of trying to make the audio repeate without it looking jumpy or weird,<br/>
+it is quite hard since you have to do it all by yourself, manually,<br/>
+and it is crutial to pick, at the first stage (above) a long-enough, good-quality video,<br/>
+that can be aligned upon itself,<br/>
+again- without make it look or heard to jumpy or weird,<br/>
+for that you <del>might</del> WOULD need to repeate the about process of cutting from the "raw source" with literately (not figuratively!) milliseconds of accuracy, <br/>
+<br/>
+while respecting the initial "borders" of <code>00:01:05.376 -to- 00:01:16.077</code>, <br/>
+you can make the video start later (for example <code>00:01:05.500</code>)<br/>
+- NOTE that you have to calculate <code>00:01:05.500-00:01:16.077</code> delta-duration, AGAIN!!<br/>
+AND/OR - trim out of the end of the video, which is easier (since you keep the starting point, and don't have to re-calc anything, so if you're lazy try it first..)<br/>
+<br/>
+<br/>
+but first lets align couple of videos start-end-start-end...<br/>
+<br/>
+prepare a small text file named 'streams.txt' with this content:<br/>
+<pre>
+# testing good quality repeat
+# ---------------------------------
+file 'c:/users/elad/desktop/out.mp4'
+file 'c:/users/elad/desktop/out.mp4'
+file 'c:/users/elad/desktop/out.mp4'
+# ---------------------------------
+</pre><br/>
+<br/>
+-- the file's-path must be absolute (even if you run the whole-thing from the same folder..)<br/>
+-- instead of <code>\\</code> use <code>/</code>.<br/>
+-- wrap the path with <code>'</code> character<br/>
+-- if you see 'file-name' unsafe, set safe to <code>0</code>, to allow processing every type of file. (use <code>-safe "0"</code> before the <code>-i ....</code> part)<br/>
+-- the file may be ASCII or UTF-8/Unicode encoded (if required due to file names, but better keep it simple!), if you run FFMPEG on Windows, make sure it the EOL is Windows' style (CR+LF) - you can use notepad++/notepad2 for that.<br/>
+<br/>
+for a quick "feel", we'll use stream-copy (faster!) the command <br/>
+'ffmpeg -safe 0 -f concat -i "streams.txt" -threads 16 -vcodec copy -acodec copy  "out_repeat.mp4"'<br/>
+<br/>
+------<br/>
+tip: You may use new subtitle file named <code>input.srt</code> at the same folder as <code>input.mp4</code>, double clicking the <code>input.srt</code> will quickly open the Subtitle-Workshop program, you can then double click the first subtitle to quickly jump the the start-point,<br/>
+it is just a "shortcut", we don't need the subtitle itself or its content in any-way..<br/>
+<br/>
+--- it should be UTF-8 without BOM, Windows EOL, with two empty lines at its end,<br/>
+the milliseconds are sapareted by comma, not dot!  - like so:<br/>
+<pre>
+1
+00:01:05,376 --> 00:01:16,077
+hello...
+
+
+</pre><br/>
+<br/>
+<br/>
+--------------<br/>
+to make things faster, concat the following commands into a single file named 'run.cmd' and save it at the same folder as 'input.mp4':<br/>
+<br/>
+<pre>
+@echo off
+call ffmpeg.exe -y                                                                     ^
+-hide_banner -loglevel "info" -stats                                                   ^
+-ss 00:01:05.0                                                                         ^
+-i  "input.mp4"                                                                        ^
+-threads 16                                                                            ^
+-flags     "-loop+naq+low_delay"                                                       ^
+-flags2    "+fast+ignorecrop+showall+export_mvs"                                       ^
+-fflags    "+genpts+discardcorrupt+fastseek"                                           ^
+-movflags  "+faststart"                                                                ^
+-tune      "zerolatency"                                                               ^
+-pix_fmt   "yuv420p"                                                                   ^
+-profile:v "high" -level "5.0"                                                         ^
+ ^
+-x264opts  "keyint=4" -g "2" -forced-idr "true" -refs "25" -rc-lookahead "25"          ^
+-preset    "ultrafast" -crf "1" -subq "9" -qcomp "0.60"                                ^
+ ^
+-af        "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000" -vsync "1"  ^
+-vf        "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,fps=fps=25,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p"   ^
+-map_metadata "-1"                                                                     ^
+-sn -ss 00:00:00.376 -t 00:00:10.701                                                   ^
+out.mp4
+
+
+ffmpeg -safe 0 -f concat -i "streams.txt" -threads 16 -vcodec copy -acodec copy  "out_repeat.mp4"
+
+pause
+pause
+</pre><br/>
+<br/>
+tricks:<br/>
+notice we've changes the preset to <code>ultrafast</code>, and the crf to 1 (almost lossless but not! since 0 will change the processing of the video..),<br/>
+to make seeking faster I've moved the most of the seeking before the <code>-i ... </code> and the milliseconds, after it..<br/>
+<br/>
+later we could make things more efficient...<br/>
+<br/>
+now, all left to do is to, painfully, trim milliseconds away from the delta-duration number in the <code>-t</code> part of the command, save and execute the 'cmd' file, and check the "out_repeat.mp4" result.<br/>
+<br/>
+keep the <code>"pause, pause" for quick debug..</code><br/>
+<br/>
+TRYING:<br/>
+<code>00:01:05.376-00:01:14.752   ---   -ss 00:01:05.376 -t 00:00:09.376</code><br/>
+<pre>
+@echo off
+call ffmpeg.exe -y                                                                     ^
+-hide_banner -loglevel "info" -stats                                                   ^
+-ss 00:01:05.0                                                                         ^
+-i  "input.mp4"                                                                        ^
+-threads 16                                                                            ^
+-flags     "-loop+naq+low_delay"                                                       ^
+-flags2    "+fast+ignorecrop+showall+export_mvs"                                       ^
+-fflags    "+genpts+discardcorrupt+fastseek"                                           ^
+-movflags  "+faststart"                                                                ^
+-tune      "zerolatency"                                                               ^
+-pix_fmt   "yuv420p"                                                                   ^
+-profile:v "high" -level "5.0"                                                         ^
+ ^
+-x264opts  "keyint=4" -g "2" -forced-idr "true" -refs "25" -rc-lookahead "25"          ^
+-preset    "ultrafast" -crf "1" -subq "9" -qcomp "0.60"                                ^
+ ^
+-af        "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000" -vsync "1"  ^
+-vf        "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,fps=fps=25,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p"   ^
+-map_metadata "-1"                                                                     ^
+-sn -ss 00:00:00.376 -t 00:00:09.376                                                   ^
+out.mp4
+
+
+ffmpeg -safe 0 -y -hide_banner -loglevel "info" -stats -f concat -i "streams.txt" -threads 16 -vcodec copy -acodec copy  "out_repeat.mp4"
+
+pause
+pause
+</pre><br/>
+<br/>
+-- <code>00:09:376</code> to <code>00:08.777</code><br/>
+-- <code>00:08.777</code> to <code>00:08.100</code><br/>
+nope. too much!<br/>
+-- <code>00:08.777</code> to <code>00:08.200</code><br/>
+still. too much!<br/>
+-- <code>00:08.777</code> to <code>00:08.500</code><br/>
+almost!. still too much!<br/>
+-- <code>00:08.777</code> to <code>00:08.550</code><br/>
+very close!<br/>
+-- <code>00:08.777</code> to <code>00:08.565</code><br/>
+<br/>
+to increase accuracy (at a price of speed) I've changed <br/>
+<code>-fflags "+genpts+discardcorrupt+fastseek"</code> to <code>-fflags "+genpts+discardcorrupt-fastseek"</code><br/>
+<br/>
+very close!<br/>
+-- <code>00:08.777</code> to <code>00:08.585</code><br/>
+<br/>
+finally <code>.573</code> was the best visual and audio sync result, but now it is time to test it with full encode process so the 'out.mp4' can stay (for now) with the speed tricks, but 'ffmpeg -safe 0 -y -hide_banner -loglevel "info" -stats -f concat -i "streams.txt" -threads 16 -vcodec copy -acodec copy  "out_repeat.mp4"'<br/>
+<br/>
+will be transform to <br/>
+<pre>
+call ffmpeg.exe -y                                                                     ^
+-hide_banner -loglevel "info" -stats                                                   ^
+-f concat -i "streams.txt"                                                             ^
+-threads 16                                                                            ^
+-flags     "-loop+naq+low_delay"                                                       ^
+-flags2    "+fast+ignorecrop+showall+export_mvs"                                       ^
+-fflags    "+genpts+discardcorrupt-fastseek"                                           ^
+-movflags  "+faststart"                                                                ^
+-tune      "zerolatency"                                                               ^
+-pix_fmt   "yuv420p"                                                                   ^
+-profile:v "high" -level "5.0"                                                         ^
+ ^
+-x264opts  "keyint=4" -g "2" -forced-idr "true" -refs "25" -rc-lookahead "25"          ^
+-preset    "ultrafast" -crf "1" -subq "9" -qcomp "0.60"                                ^
+ ^
+-af        "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000" -vsync "1"  ^
+-vf        "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,fps=fps=25,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p"   ^
+-map_metadata "-1"                                                                     ^
+out_repeat.mp4
+</pre><br/>
+<br/>
+so the complete 'cmd' file name is now:<br/>
+<br/>
+<pre>
+@echo off
+call ffmpeg.exe -y                                                                     ^
+-hide_banner -loglevel "info" -stats                                                   ^
+-ss 00:01:05.0                                                                         ^
+-i  "input.mp4"                                                                        ^
+-threads 16                                                                            ^
+-flags     "-loop+naq+low_delay"                                                       ^
+-flags2    "+fast+ignorecrop+showall+export_mvs"                                       ^
+-fflags    "+genpts+discardcorrupt-fastseek"                                           ^
+-movflags  "+faststart"                                                                ^
+-tune      "zerolatency"                                                               ^
+-pix_fmt   "yuv420p"                                                                   ^
+-profile:v "high" -level "5.0"                                                         ^
+ ^
+-x264opts  "keyint=4" -g "2" -forced-idr "true" -refs "25" -rc-lookahead "25"          ^
+-preset    "ultrafast" -crf "1" -subq "9" -qcomp "0.60"                                ^
+ ^
+-af        "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000" -vsync "1"  ^
+-vf        "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,fps=fps=25,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p"   ^
+-map_metadata "-1"                                                                     ^
+-sn -ss 00:00:00.376 -t 00:00:08.573                                                   ^
+out.mp4
+
+
+::ffmpeg -safe 0 -y -hide_banner -loglevel "info" -stats -f concat -i "streams.txt" -threads 16 -vcodec copy -acodec copy  "out_repeat.mp4"
+
+
+call ffmpeg.exe  -y -safe "0"                                                          ^
+-hide_banner -loglevel "info" -stats                                                   ^
+-f "concat" -i "streams.txt"                                                           ^
+-threads 16                                                                            ^
+-flags     "-loop+naq+low_delay"                                                       ^
+-flags2    "+fast+ignorecrop+showall+export_mvs"                                       ^
+-fflags    "+genpts+discardcorrupt-fastseek"                                           ^
+-movflags  "+faststart"                                                                ^
+-tune      "zerolatency"                                                               ^
+-pix_fmt   "yuv420p"                                                                   ^
+-profile:v "high" -level "5.0"                                                         ^
+ ^
+-x264opts  "keyint=4" -g "2" -forced-idr "true" -refs "25" -rc-lookahead "25"          ^
+-preset    "ultrafast" -crf "1" -subq "9" -qcomp "0.60"                                ^
+ ^
+-af        "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000" -vsync "1"  ^
+-vf        "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,fps=fps=25,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p"   ^
+-map_metadata "-1"                                                                     ^
+out_repeat.mp4
+
+pause
+pause
+</pre><br/>
+<br/>
+we've just doing 'concat' for two files, still testing..<br/>
+<br/>
+since it is "full processing" the timing might be changed (slightly- <code>.573</code> to <code>.572</code> in this case..) again while there is internal convertion/readout of the stream as 'mp4toannexb bitstream' ("Auto-inserting h264_mp4toannexb bitstream filterx")<br/>
+<br/>
+<br/>
+<hr/><br/>
+<br/>
+math time..<br/>
+<br/>
+creating a 1/2/.../10 hours video is a matter of multiplication the duration of the single video, <br/>
+for example, <code>8</code> seconds currently..<br/>
+<br/>
+start with 1 hour.. <br/>
+1 hour is 60 minutes, or 3600 seconds, which are 3600/8 === x450 times of the video,<br/>
+<br/>
+for accuracy... the video's duration is actually 8.596 which is slightly like 8.600 which are about 8600 milliseconds..<br/>
+3600 seconds are 3600000 / 8600 are 418 times the movie... round it up to 420...<br/>
+<br/>
+so in-order to make a 1-hour video, we have to make a text file with 420 lines (copied over and over)<br/>
+easy enough use notepad2 and ctrl+d to fast duplicate a single line, and once you have enough, start copy&paste&copy&paste... :)<br/>
+<br/>
+<hr/><br/>
+<br/>
+* the 1 hour long 'cmd' file is quite similar to the previous "two files concat" "cmd file",<br/>
+other than changed the name of txt file feeding it to the second command, it practically the same..<br/>
+<br/>
+<br/>
+'25fpssync_cut_x1hour.cmd':<br/>
+<pre>
+@echo off
+call ffmpeg.exe -y                                                                     ^
+-hide_banner -loglevel "info" -stats                                                   ^
+-ss 00:01:05.0                                                                         ^
+-i  "input.mp4"                                                                        ^
+-threads 16                                                                            ^
+-flags     "-loop+naq+low_delay"                                                       ^
+-flags2    "+fast+ignorecrop+showall+export_mvs"                                       ^
+-fflags    "+genpts+discardcorrupt-fastseek"                                           ^
+-movflags  "+faststart"                                                                ^
+-tune      "zerolatency"                                                               ^
+-pix_fmt   "yuv420p"                                                                   ^
+-profile:v "high" -level "5.0"                                                         ^
+ ^
+-x264opts  "keyint=4" -g "2" -forced-idr "true" -refs "25" -rc-lookahead "25"          ^
+-preset    "ultrafast" -crf "1" -subq "9" -qcomp "0.60"                                ^
+ ^
+-af        "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000" -vsync "1"  ^
+-vf        "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,fps=fps=25,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p"   ^
+-map_metadata "-1"                                                                     ^
+-sn -ss 00:00:00.376 -t 00:00:08.572                                                   ^
+out.mp4
+
+
+::ffmpeg -safe 0 -y -hide_banner -loglevel "info" -stats -f concat -i "streams.txt" -threads 16 -vcodec copy -acodec copy  "out_repeat.mp4"
+
+
+call ffmpeg.exe  -y -safe "0"                                                          ^
+-hide_banner -loglevel "info" -stats                                                   ^
+-f "concat" -i "streams_1hour.txt"                                                           ^
+-threads 16                                                                            ^
+-flags     "-loop+naq+low_delay"                                                       ^
+-flags2    "+fast+ignorecrop+showall+export_mvs"                                       ^
+-fflags    "+genpts+discardcorrupt-fastseek"                                           ^
+-movflags  "+faststart"                                                                ^
+-tune      "zerolatency"                                                               ^
+-pix_fmt   "yuv420p"                                                                   ^
+-profile:v "high" -level "5.0"                                                         ^
+ ^
+-x264opts  "keyint=4" -g "2" -forced-idr "true" -refs "25" -rc-lookahead "25"          ^
+-preset    "ultrafast" -crf "1" -subq "9" -qcomp "0.60"                                ^
+ ^
+-af        "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000" -vsync "1"  ^
+-vf        "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,fps=fps=25,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p"   ^
+-map_metadata "-1"                                                                     ^
+out_repeat.mp4
+
+pause
+pause
+</pre><br/>
+<br/>
+we don't care too much about compression so crf and preset switches don't have extream processing set on at all..<br/>
+<br/>
+anyway...<br/>
+let it run, it won't show you too much of a progress but it will take time, there are filters processing the video/audio improving the output and fixing bad-framing.. <br/>
+<br/>
+without compressing.. about 2 minutes are 2 giga.. :/<br/>
+<br/>
+it is also very slow, lets try to concat the first file, and then, to fix the 1 hour file,<br/>
+<pre>
+@echo off
+call ffmpeg.exe -y                                                                     ^
+-hide_banner -loglevel "info" -stats                                                   ^
+-ss 00:01:05.0                                                                         ^
+-i  "input.mp4"                                                                        ^
+-threads 16                                                                            ^
+-flags     "-loop+naq+low_delay"                                                       ^
+-flags2    "+fast+ignorecrop+showall+export_mvs"                                       ^
+-fflags    "+genpts+discardcorrupt-fastseek"                                           ^
+-movflags  "+faststart"                                                                ^
+-tune      "zerolatency"                                                               ^
+-pix_fmt   "yuv420p"                                                                   ^
+-profile:v "high" -level "5.0"                                                         ^
+ ^
+-x264opts  "keyint=4" -g "2" -forced-idr "true" -refs "25" -rc-lookahead "25"          ^
+-preset    "ultrafast" -crf "1" -subq "9" -qcomp "0.60"                                ^
+ ^
+-af        "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000" -vsync "1"  ^
+-vf        "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,fps=fps=25,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p"   ^
+-map_metadata "-1"                                                                     ^
+-sn -ss 00:00:00.376 -t 00:00:08.572                                                   ^
+out.mp4
+
+
+ffmpeg -y -hide_banner -loglevel "info" -stats -safe "0" -f concat -i "streams_1hour.txt" -threads 16 -vcodec copy -acodec copy  "out_repeat.mp4"
+
+
+call ffmpeg.exe -safe "0" -y                                                           ^
+-hide_banner -loglevel "info" -stats                                                   ^
+-i  "out_repeat.mp4"                                                                   ^
+-threads 16                                                                            ^
+-flags     "-loop+naq+low_delay"                                                       ^
+-flags2    "+fast+ignorecrop+showall+export_mvs"                                       ^
+-fflags    "+genpts+discardcorrupt-fastseek"                                           ^
+-movflags  "+faststart"                                                                ^
+-tune      "zerolatency"                                                               ^
+-pix_fmt   "yuv420p"                                                                   ^
+-profile:v "high" -level "5.0"                                                         ^
+ ^
+-ss 00:00:00.005                                                                       ^
+-x264opts  "keyint=4" -g "2" -forced-idr "true" -refs "25" -rc-lookahead "25"          ^
+-preset    "ultrafast" -crf "1" -subq "9" -qcomp "0.60"                                ^
+ ^
+-af        "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000" -vsync "1"  ^
+-vf        "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,fps=fps=25,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p"   ^
+-map_metadata "-1"                                                                     ^
+out_repeat_1hour.mp4
+
+pause
+pause
+</pre><br/>
+<br/>
+it is far more time efficient but the audio/video might get out out sync due to frames that are put before the first video/audio-frames... :/<br/>
+<hr/><br/>
+<br/>
+amm... but it takes too much HD-space, so you might as well use high-quality settings, with a bit more compression in mind,<br/>
+switch back preset to <code>veryslow</code> (it only matters in file-size), and put a slightly more reasonable crf value of <code>23</code>.<br/>
+<br/>
+<pre>
+@echo off
+call ffmpeg.exe -y                                                                     ^
+-hide_banner -loglevel "info" -stats                                                   ^
+-ss 00:01:05.0                                                                         ^
+-i  "input.mp4"                                                                        ^
+-threads 16                                                                            ^
+-flags     "-loop+naq+low_delay"                                                       ^
+-flags2    "+fast+ignorecrop+showall+export_mvs"                                       ^
+-fflags    "+genpts+discardcorrupt-fastseek"                                           ^
+-movflags  "+faststart"                                                                ^
+-tune      "zerolatency"                                                               ^
+-pix_fmt   "yuv420p"                                                                   ^
+-profile:v "high" -level "5.0"                                                         ^
+ ^
+-x264opts  "keyint=4" -g "2" -forced-idr "true" -refs "25" -rc-lookahead "25"          ^
+-preset    "veryslow" -crf "23" -subq "9" -qcomp "0.60"                                ^
+ ^
+-af        "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000" -vsync "1"  ^
+-vf        "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,fps=fps=25,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p"   ^
+-map_metadata "-1"                                                                     ^
+-sn -ss 00:00:00.376 -t 00:00:08.572                                                   ^
+out.mp4
+
+
+ffmpeg -y -hide_banner -loglevel "info" -stats -safe "0" -f concat -i "streams_1hour.txt" -threads 16 -vcodec copy -acodec copy  "out_repeat.mp4"
+
+
+call ffmpeg.exe -y                                                                     ^
+-hide_banner -loglevel "info" -stats                                                   ^
+-i  "out_repeat.mp4"                                                                   ^
+-threads 16                                                                            ^
+-flags     "-loop+naq+low_delay"                                                       ^
+-flags2    "+fast+ignorecrop+showall+export_mvs"                                       ^
+-fflags    "+genpts+discardcorrupt-fastseek"                                           ^
+-movflags  "+faststart"                                                                ^
+-tune      "zerolatency"                                                               ^
+-pix_fmt   "yuv420p"                                                                   ^
+-profile:v "high" -level "5.0"                                                         ^
+ ^
+-ss 00:00:00.005                                                                       ^
+-x264opts  "keyint=4" -g "2" -forced-idr "true" -refs "25" -rc-lookahead "25"          ^
+-preset    "veryslow" -crf "23" -subq "9" -qcomp "0.60"                                ^
+ ^
+-af        "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000" -vsync "1"  ^
+-vf        "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,fps=fps=25,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p"   ^
+-map_metadata "-1"                                                                     ^
+out_repeat_1hour.mp4
+
+pause
+pause
+</pre> <br/>
+<br/>
+here is a link to download the text file of 1 hour (and 10 seconds) video <a href="https://github.com/eladkarako/icompile/releases/download/latest/streams_1hour_txt.zip">https://github.com/eladkarako/icompile/releases/download/latest/streams_1hour_txt.zip</a><br/>
+and the 8 seconds output from the source-video (the first "cutting" command): <a href="https://github.com/eladkarako/icompile/releases/download/latest/8second_video_to_10hours_video.mp4">https://github.com/eladkarako/icompile/releases/download/latest/8second_video_to_10hours_video.mp4</a><br/>
+<hr/><br/>
+<br/>
+for the example file here is the last output...<br/>
+<pre>
+[mov,mp4,m4a,3gp,3g2,mj2 &commat; 0000000000508820] Auto-inserting h264_mp4toannexb bitstream filterx
+frame=89880 fps=2758 q=-1.0 Lsize= 3307403kB time=01:00:10.33 bitrate=7504.6kbits&sol;s speed= 111x
+video:3248703kB audio:56358kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.070867%
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from &apos;out_repeat.mp4&apos;:
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.40.101
+  Duration: 01:00:10.34, start: 0.000000, bitrate: 7504 kb&sol;s
+    Stream #0:0(und): Video: h264 (High) (avc1 &sol; 0x31637661), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], 7371 kb&sol;s, 24.
+90 fps, 25 tbr, 12800 tbn, 50 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+    Stream #0:1(und): Audio: aac (LC) (mp4a &sol; 0x6134706D), 44100 Hz, stereo, fltp, 127 kb&sol;s (default)
+    Metadata:
+      handler_name    : SoundHandler
+[libx264 &commat; 0000000000581840] using SAR=1&sol;1
+[libx264 &commat; 0000000000581840] DPB size (16 frames, 130560 mbs) &gt; level limit (13 frames, 110400 mbs)
+[libx264 &commat; 0000000000581840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX
+[libx264 &commat; 0000000000581840] profile High, level 5.0
+[libx264 &commat; 0000000000581840] 264 - core 148 r2694 3b70645 - H.264&sol;MPEG-4 AVC codec - Copyleft 2003-2016 - http:&sol;&sol;ww
+w.videolan.org&sol;x264.html - options: cabac=1 ref=16 deblock=1:0:0 analyse=0x3:0x133 me=umh subme=9 psy=1 psy_rd=1.00
+:0.00 mixed_ref=1 me_range=24 chroma_me=1 trellis=2 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2
+threads=16 lookahead_threads=16 sliced_threads=1 slices=16 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained
+_intra=0 bframes=0 weightp=2 keyint=4 keyint_min=1 scenecut=40 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60
+qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+[mp4 &commat; 0000000000582440] Using AVStream.codec to pass codec parameters to muxers is deprecated, use AVStream.codecp
+ar instead.
+    Last message repeated 1 times
+Output #0, mp4, to &apos;out_repeat_1hour.mp4&apos;:
+  Metadata:
+    encoder         : Lavf57.40.101
+    Stream #0:0: Video: h264 (libx264) ([33][0][0][0] &sol; 0x0021), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], q=-1--1, 25
+ fps, 12800 tbn, 25 tbc (default)
+    Metadata:
+      encoder         : Lavc57.46.100 libx264
+    Side data:
+      cpb: bitrate max&sol;min&sol;avg: 0&sol;0&sol;0 buffer size: 0 vbv_delay: -1
+    Stream #0:1: Audio: aac (LC) ([64][0][0][0] &sol; 0x0040), 44100 Hz, stereo, fltp, 128 kb&sol;s (default)
+    Metadata:
+      encoder         : Lavc57.46.100 aac
+Stream mapping:
+  Stream #0:0 -&gt; #0:0 (h264 (native) -&gt; h264 (libx264))
+  Stream #0:1 -&gt; #0:1 (aac (native) -&gt; aac (native))
+Press [q] to stop, [?] for help
+[mp4 &commat; 0000000000582440] Starting second pass: moving the moov atom to the beginning of the file
+frame=90257 fps=7.0 q=22.0 Lsize= 3196966kB time=01:00:10.44 bitrate=7253.8kbits&sol;s speed=0.281x
+video:3133602kB audio:59701kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.114719%
+[libx264 &commat; 0000000000581840] frame I:22565 Avg QP:17.73  size: 79770
+[libx264 &commat; 0000000000581840] frame P:67692 Avg QP:20.26  size: 20812
+[libx264 &commat; 0000000000581840] mb I  I16..4: 15.8% 76.0%  8.1%
+[libx264 &commat; 0000000000581840] mb P  I16..4:  6.7% 15.4%  0.8%  P16..4: 32.7%  4.0%  2.4%  0.0%  0.0%    skip:38.0%
+[libx264 &commat; 0000000000581840] 8x8 transform intra:72.4% inter:87.6%
+[libx264 &commat; 0000000000581840] coded y,uvDC,uvAC intra: 54.9% 52.7% 5.9% inter: 7.8% 18.5% 0.0%
+[libx264 &commat; 0000000000581840] i16 v,h,dc,p: 17% 39% 19% 25%
+[libx264 &commat; 0000000000581840] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 15% 21% 17%  6%  6%  6%  8%  8% 14%
+[libx264 &commat; 0000000000581840] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 19% 21% 12%  6%  8%  7%  9%  7% 12%
+[libx264 &commat; 0000000000581840] i8c dc,h,v,p: 53% 29% 14%  4%
+[libx264 &commat; 0000000000581840] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 &commat; 0000000000581840] ref P L0: 76.9%  6.6% 13.4%  3.1%
+[libx264 &commat; 0000000000581840] kb&sol;s:7110.38
+[aac &commat; 0000000002892fa0] Qavg: 573.163
+Press any key to continue . . .
+</pre><br/>
+<br/>
+I left it overnight, so I don't know how much long did it take, it was about ~3 hour I guess..<br/>
+final result was 3.04GB mp4, properly encoded.<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/advised-config-for-linux-on-the-start">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/aria2c-example-download-script-to-download-latest-ffmpeg">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/aria2c-example-download-script-to-download-latest-ffmpeg">Aria2C Example Download Script To Download Latest FFMPEG</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/font-family-name">Font Family-Name</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video">FFMPEG - Merge Multiple Audio Files To A Single Video</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-get-doctype-as-string">JavaScript Snippet - Get DOCTYPE As String</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-convert-camelcase-to-snake_case">JavaScript Snippet - Convert CamelCase to snake_case</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/json-stringify-with-escape-for-unicode-characters">JSON.stringify With Escape For Unicode-Characters</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ebay-pulsar-user-behavioral-tracking">JavaScript Ninja - eBay's PULSAR A.K.A User-Behavioral-Tracking</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-document-write-alternative">JavaScript Ninja - document.write Alternative</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-most-popular-adblock-lists">The Most Popular Adblock Lists</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-kitty-algorithm">You're Giving Me Far Too Many Kitten-Videos! And I Love It!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-snippet-everything-to-button">CSS3 Snippet - Everything To Button</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/imagemagick-nightly-builds">ImageMagick Nightly Builds</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vuze-subdomains">Vuze SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-domain2ip">Google Domain2IP (DNS Over HTTPS)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-entity-unicode-escape">HTML Entity - Unicode Escape</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unicode-character-sequence-with-zero-left-padding">Unicode Character Sequence With Zero Left-Padding</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

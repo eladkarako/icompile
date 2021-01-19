@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Adding Stale-While-Revalidate And Stale-If-Error</title>
+  <meta itemprop="name"                                content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+  <meta name="dcterms.title"                           content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+  <meta property="og:title"                            content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+  <meta name="twitter:title"                           content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+  <meta name="twitter:text:title"                      content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+  <meta name="application-name"                        content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+  <meta name="subject"                                 content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+  <meta name="apple-mobile-web-app-title"              content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+  <meta name="msapplication-tooltip"                   content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+  <meta itemprop="description"                         content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+  <meta name="dcterms.description"                     content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+  <meta name="twitter:description"                     content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+  <meta property="og:description"                      content="Adding Stale-While-Revalidate And Stale-If-Error"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="access,adding,apache,appcache,append,application,assume,atom,audio,binary,blank,blog,bold,browser,browsing,cache,chrome,code,color,comma,command,commands,component,content,control,customers,data,date,default,delta,developer,document,dont,downloaded,error,etag,etags,expires,extension,familiar,fast,faster,favicon,feed,fetched,fetching,fileetag,filenames,files,firefox,flags,font,fontobject,fresh,future,header,headers,helps,highlight,htaccess,html,icon,ifmodule,image,images,improve,include,internet,introducing,javascript,jpeg,json,latest,lower,make,makes,manifest,media,minutes,miscache,month,months,newer,octet,opentype,outdated,page,pages,params,performance,plugin,prefer,pretty,prevent,proxies,query,querystring,readers,removal,remove,remy,renamed,repeating,request,requesting,requests,resource,resources,response,revalidate,revving,rules,script,scripts,seconds,sending,separator,serve,server,setting,snippet,space,speeds,stale,static,stream,streaming,strong,target,transfer,trick,trigger,truetype,unset,user,vcard,version,versioning,video,wait,webfonts,webm,webp,website,week,weight,whitelist,whitespace,woff,xpinstall,yahoo,year,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="access,adding,apache,appcache,append,application,assume,atom,audio,binary,blank,blog,bold,browser,browsing,cache,chrome,code,color,comma,command,commands,component,content,control,customers,data,date,default,delta,developer,document,dont,downloaded,error,etag,etags,expires,extension,familiar,fast,faster,favicon,feed,fetched,fetching,fileetag,filenames,files,firefox,flags,font,fontobject,fresh,future,header,headers,helps,highlight,htaccess,html,icon,ifmodule,image,images,improve,include,internet,introducing,javascript,jpeg,json,latest,lower,make,makes,manifest,media,minutes,miscache,month,months,newer,octet,opentype,outdated,page,pages,params,performance,plugin,prefer,pretty,prevent,proxies,query,querystring,readers,removal,remove,remy,renamed,repeating,request,requesting,requests,resource,resources,response,revalidate,revving,rules,script,scripts,seconds,sending,separator,serve,server,setting,snippet,space,speeds,stale,static,stream,streaming,strong,target,transfer,trick,trigger,truetype,unset,user,vcard,version,versioning,video,wait,webfonts,webm,webp,website,week,weight,whitelist,whitespace,woff,xpinstall,yahoo,year,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/javascript-emulate-click"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/javascript-emulate-click"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/schema-for-your-website"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/adding-stale-while-revalidate-and-stale-if-error"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/adding-stale-while-revalidate-and-stale-if-error"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/adding-stale-while-revalidate-and-stale-if-error"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/adding-stale-while-revalidate-and-stale-if-error"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/adding-stale-while-revalidate-and-stale-if-error"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/adding-stale-while-revalidate-and-stale-if-error"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-12-10T04:46:43+00:00"     />
+  <meta name="page-datetime"                           content="2016-12-10T04:46:43+00:00"     />
+  <meta property="article:published_time"              content="2016-12-10T04:46:43+00:00"     />
+  <meta name="dcterms.date"                            content="2016-12-10T04:46:43+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-12-10T04:54:49+00:00"    />
+  <meta property="article:modified_time"               content="2016-12-10T04:54:49+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/adding-stale-while-revalidate-and-stale-if-error"
+,"url"             : "https://icompile.eladkarako.com/adding-stale-while-revalidate-and-stale-if-error"
+,"headline"        : "Adding Stale-While-Revalidate And Stale-If-Error"
+,"description"     : "Adding Stale-While-Revalidate And Stale-If-Error"
+,"datePosted"      : "2016-12-10T04:46:43+00:00"
+,"dateCreated"     : "2016-12-10T04:46:43+00:00"
+,"datePublished"   : "2016-12-10T04:46:43+00:00"
+,"dateModified"    : "2016-12-10T04:54:49+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003025431841">
+  <header>
+    <h1 itemprop="headline">Adding Stale-While-Revalidate And Stale-If-Error</h1>
+    <sup>Posted at <time datetime="2016-12-10T04:54:49+00:00" itemprop="dateModified">Sat, 10 Dec 2016 04:54:49 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><blockquote><strong><br/>
+This little trick speeds up browsing for repeating-customers/readers of any website!<br/>
+(Also improve background data-transfer and streaming!! and makes your browser faster!)<br/>
+</strong></blockquote><br/>
+<br/>
+You're probably familiar with <code>Cache-Control</code> header, setting max-age (seconds) for each response-resources (image, pages, scripts),<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/12/icompile.eladkarako.com_http_request.png" alt="" width="349" height="253"/> <br/>
+Usually similar to <code>Expires</code> header which specify a target date instead of a delta (but the same).<br/>
+<br/>
+by default, when a resource expires, it does so while the user is requesting the page (again),<br/>
+the resource is fetched (fresh) but makes the user wait while the page is downloaded at that point in-time,<br/>
+all to prevent stale resource.<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/12/icompile.eladkarako.com_http_cache_control.png" alt="" width="474" height="215"/><br/>
+The <code>stale-while-revalidate</code> addition to the <code>Cache-Control</code> header allows the current view to STILL be the old/stale one, but at the same time trigger the background fetching the newer resources,<br/>
+so the user may get the latest one next time.<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/12/icompile.eladkarako.com_http_cache_control_highlight.png" alt="" width="356" height="259" /><br/>
+<br/>
+<!--more--><br/>
+<hr/><br/>
+<br/>
+You don't have to use <code>Cache-Control</code> with the <code>max-age</code> if you don't like to,<br/>
+you can just use the flags <code>stale-while-revalidate</code> and <code>stale-if-error</code>,<br/>
+by specifying (on Apache) <code>Header append "Cache-Control" "stale-while-revalidate=86400"</code> and <code>Header append "Cache-Control" "stale-if-error=259200"</code>,<br/>
+which would not remove the old (if any) header.<br/>
+<br/>
+I now serve every-resource using the additional flags, which <em>helps to make the internet fast for everyone :)</em><br/>
+<br/>
+Here is a part (snippet) of the <code>.htaccess</code> I'm using with all of <a href="https://eladkarako.com" target="_blank">eladkarako.com</a> resources (as of now..)<br/>
+<br/>
+<pre><span style='color:#696969; '>###  #####################</span><br/>
+<span style='color:#696969; '>###  ##  E X P I R E S  ##</span><br/>
+<span style='color:#696969; '>###  #####################</span><br/>
+<span style='color:#696969; '>###      # ----------------------------------------------------------------------</span><br/>
+<span style='color:#696969; '>###      # Expires headers (for better cache control)</span><br/>
+<span style='color:#696969; '>###      # ----------------------------------------------------------------------</span><br/>
+<span style='color:#696969; '>###  </span><br/>
+<span style='color:#696969; '>###      # These are pretty far-future expires headers.</span><br/>
+<span style='color:#696969; '>###      # They assume you control versioning with cachebusting query params like</span><br/>
+<span style='color:#696969; '>###      #   &lt;script src="application.js?20100608"&gt;</span><br/>
+<span style='color:#696969; '>###      # Additionally, consider that outdated proxies may miscache </span><br/>
+<span style='color:#696969; '>###      #   www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring/</span><br/>
+<span style='color:#696969; '>###  </span><br/>
+<span style='color:#696969; '>###      # If you don't use filenames to version, lower the CSS  and JS to something like</span><br/>
+<span style='color:#696969; '>###      #   "access plus 1 week" or so.</span><br/>
+<span style='color:#696969; '>###  </span><br/>
+      <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>IfModule</span> <span style='color:#0000e6; '>mod_expires.c</span><span style='color:#a65700; '>&gt;</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresActive</span> <span style='color:#074726; '>on</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#Perhaps better to whitelist expires rules? Perhaps.</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresDefault</span>                               <span style='color:#0000e6; '>"access plus 1 month"</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#cache.appcache needs re-requests in FF 3.6 (thanks Remy ~Introducing HTML5)</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"text/cache-manifest"</span>            <span style='color:#0000e6; '>"access plus 0 seconds"</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#Your document html </span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"text/html"</span>                      <span style='color:#0000e6; '>"access plus 2 minutes"</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#Data</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"text/xml"</span>                       <span style='color:#0000e6; '>"access plus 2 minutes"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"application/xml"</span>                <span style='color:#0000e6; '>"access plus 2 minutes"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"application/json"</span>               <span style='color:#0000e6; '>"access plus 2 minutes"</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#Feed</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"application/rss+xml"</span>            <span style='color:#0000e6; '>"access plus 2 minutes"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"application/atom+xml"</span>           <span style='color:#0000e6; '>"access plus 2 minutes"</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#vCard</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"text/x-vcard"</span>                   <span style='color:#0000e6; '>"access plus 2 minutes"</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#Favicon (cannot be renamed)</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"image/x-icon"</span>                   <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#Media: images, video, audio</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"image/webp"</span>                     <span style='color:#0000e6; '>"access plus 2 months"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"image/gif"</span>                      <span style='color:#0000e6; '>"access plus 2 months"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"image/png"</span>                      <span style='color:#0000e6; '>"access plus 2 months"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"image/jpg"</span>                      <span style='color:#0000e6; '>"access plus 2 months"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"image/jpeg"</span>                     <span style='color:#0000e6; '>"access plus 2 months"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"video/ogg"</span>                      <span style='color:#0000e6; '>"access plus 2 months"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"audio/ogg"</span>                      <span style='color:#0000e6; '>"access plus 2 months"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"video/mp4"</span>                      <span style='color:#0000e6; '>"access plus 2 months"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"video/webm"</span>                     <span style='color:#0000e6; '>"access plus 2 months"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"audio/mp4"</span>                      <span style='color:#0000e6; '>"access plus 2 months"</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#HTC files  (css3pie)</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"text/x-component"</span>               <span style='color:#0000e6; '>"access plus 2 months"</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#binary (exe and other)</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"application/octet-stream"</span>       <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#chrome extension</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"application/x-chrome-extension"</span> <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#firefox plugin</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"application/x-xpinstall"</span>        <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#Webfonts</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"application/x-font-ttf"</span>         <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"font/truetype"</span>                  <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"font/opentype"</span>                  <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"application/x-font-woff"</span>        <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"application/font-woff"</span>          <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"image/svg+xml"</span>                  <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"application/vnd.ms-fontobject"</span>  <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+<br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;#CSS and JavaScript</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"text/css"</span>                       <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"text/javascript"</span>                <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+        <span style='color:#800000; font-weight:bold; '>ExpiresByType</span> <span style='color:#0000e6; '>"application/javascript"</span>         <span style='color:#0000e6; '>"access plus 1 year"</span><br/>
+<br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;# ----------------------------------------------------------------------</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;# ETag removal</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;# ----------------------------------------------------------------------</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;# Since we're sending far-future expires, we don't need ETags for static content. developer.yahoo.com/performance/rules.html#etags</span><br/>
+        FileETag <span style='color:#074726; '>None</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;# FileETag None is not enough for every server.</span><br/>
+        <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>IfModule</span> <span style='color:#0000e6; '>mod_headers.c</span><span style='color:#a65700; '>&gt;</span><br/>
+          <span style='color:#800000; font-weight:bold; '>Header</span> <span style='color:#074726; '>unset</span> ETag<br/>
+        <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>IfModule</span><span style='color:#a65700; '>&gt;</span><br/>
+    <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;# ----------------------------------------------------------------------</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;# Cache-Control (with only stale flags, no need for max-age.. for now..)</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;# ----------------------------------------------------------------------</span><br/>
+        <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>IfModule</span> <span style='color:#0000e6; '>mod_headers.c</span><span style='color:#a65700; '>&gt;</span><br/>
+          <span style='color:#800000; font-weight:bold; '>Header</span> <span style='color:#074726; '>append</span> Cache<span style='color:#808030; '>-</span>Control <span style='color:#0000e6; '>"stale-while-revalidate=86400,stale-if-error=259200"</span><br/>
+        <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>IfModule</span><span style='color:#a65700; '>&gt;</span><br/>
+      <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>IfModule</span><span style='color:#a65700; '>&gt;</span><br/>
+</pre><br/>
+<br/>
+p.s. you can use one <code>append</code> command (with comma as separator) or two <code>append</code> commands.<br/>
+- I use one, since I can control the space added after the comma (I prefer the HTTP-header's values to do not include whitespace-characters, as much as possible...:\\)<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-emulate-click">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/schema-for-your-website">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/schema-for-your-website">Schema.org For Your WebSite</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-byte-string">PHP Byte String</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cmd-system32-or-syswow64-execution">CMD Snippet - Selective Executing From Either Windows System32 Or SysWOW64 Folders With Easy And Simple GOTO-State-Machine</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/umoji-unicode-emoji">UMOJI - Unicode Emoji</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/get-chrome-version-using-javascript">JavaScript Snippet - Get Chrome's Version Using JavaScript</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/github-because-those-who-can-not-do-fork">Fork.</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-proper-hard-subtitle">FFMPEG - Real Proper Hard-Burn Subtitle Onto A Video</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/how-to-update-your-gist-file">How To Update Your Gist File</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/gooooooooood-evening-good-evening-good-evening-good-evening-and-welcome-to-qi">Gooooooooood Evening.. Good Evening.. Good Evening.. Good Evening.. And Welcome To QI</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-realtek-driver-download-pages-direct-download-link-without-redirection">JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-extensions-with-javascript-on-pages-with-no-javascript">On Pages With No JavaScript</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-format-as-unicode-string-u">JavaScript Snippet - Format As Unicode String ("\\u..")</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-the-state-of-window">JavaScript Ninja - The State Of Window</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-snippet-quickdirty-3d-uneven-shadow-effect">CSS Snippet - Quick&Dirty 3D Uneven Shadow-Effect</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/java-read-entire-file">Java Snippet - Read Entire File (Including EOL Characters!) Not Line-By-Line And Without Loops!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adobe-subdomains">Adobe SubDomains</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Re-Encode - Faster!</title>
+  <meta itemprop="name"                                content="Re-Encode - Faster!"       />
+  <meta name="dcterms.title"                           content="Re-Encode - Faster!"       />
+  <meta property="og:title"                            content="Re-Encode - Faster!"       />
+  <meta name="twitter:title"                           content="Re-Encode - Faster!"       />
+  <meta name="twitter:text:title"                      content="Re-Encode - Faster!"       />
+  <meta name="application-name"                        content="Re-Encode - Faster!"       />
+  <meta name="subject"                                 content="Re-Encode - Faster!"       />
+  <meta name="apple-mobile-web-app-title"              content="Re-Encode - Faster!"       />
+  <meta name="msapplication-tooltip"                   content="Re-Encode - Faster!"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Re-Encode - Faster!"       />
+  <meta itemprop="description"                         content="Re-Encode - Faster!"       />
+  <meta name="dcterms.description"                     content="Re-Encode - Faster!"       />
+  <meta name="twitter:description"                     content="Re-Encode - Faster!"       />
+  <meta property="og:description"                      content="Re-Encode - Faster!"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accurate,acodec,ages,benefit,blank,builds,choppy,code,color,command,copy,default,encode,encoding,fancy,fast,faster,ffmpeg,find,frame,frames,framing,group,heavy,info,inter,intra,jumpy,leap,lengthy,make,minutes,nightmare,phase,picture,pictures,prefer,readme,replacing,required,rgba,saves,searching,seeking,size,source,switch,target,terminalogy,terminology,threads,trim,vcodec,video,wiki,wikipedia,work,youtube,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accurate,acodec,ages,benefit,blank,builds,choppy,code,color,command,copy,default,encode,encoding,fancy,fast,faster,ffmpeg,find,frame,frames,framing,group,heavy,info,inter,intra,jumpy,leap,lengthy,make,minutes,nightmare,phase,picture,pictures,prefer,readme,replacing,required,rgba,saves,searching,seeking,size,source,switch,target,terminalogy,terminology,threads,trim,vcodec,video,wiki,wikipedia,work,youtube,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/git-update-sub-modules-too"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/git-update-sub-modules-too"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/deadpool-oh-boy-oh-boy-oh-boy"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/ffmpeg-cut-copy-re-encode-faster"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/ffmpeg-cut-copy-re-encode-faster"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/ffmpeg-cut-copy-re-encode-faster"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/ffmpeg-cut-copy-re-encode-faster"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/ffmpeg-cut-copy-re-encode-faster"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/ffmpeg-cut-copy-re-encode-faster"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-02-08T13:55:35+00:00"     />
+  <meta name="page-datetime"                           content="2016-02-08T13:55:35+00:00"     />
+  <meta property="article:published_time"              content="2016-02-08T13:55:35+00:00"     />
+  <meta name="dcterms.date"                            content="2016-02-08T13:55:35+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-02-08T13:55:35+00:00"    />
+  <meta property="article:modified_time"               content="2016-02-08T13:55:35+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/ffmpeg-cut-copy-re-encode-faster"
+,"url"             : "https://icompile.eladkarako.com/ffmpeg-cut-copy-re-encode-faster"
+,"headline"        : "Re-Encode - Faster!"
+,"description"     : "Re-Encode - Faster!"
+,"datePosted"      : "2016-02-08T13:55:35+00:00"
+,"dateCreated"     : "2016-02-08T13:55:35+00:00"
+,"datePublished"   : "2016-02-08T13:55:35+00:00"
+,"dateModified"    : "2016-02-08T13:55:35+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0005379394541">
+  <header>
+    <h1 itemprop="headline">Re-Encode - Faster!</h1>
+    <sup>Posted at <time datetime="2016-02-08T13:55:35+00:00" itemprop="dateModified">Mon, 08 Feb 2016 13:55:35 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">I've got a long video from YouTube (MP4), which I want to trim to just a two minutes,<br/>
+<br/>
+this command is accurate, but will take ages since the video is quite lengthy.. so frame-seeking is a nightmare..<br/>
+<pre>
+ffmpeg -i SOURCE.MP4 -ss 24:30:00 -t 00:02:00.00 TARGET.MP4
+</pre><br/>
+<br/>
+this will work very fast, since it won't encode anything, but unpredictable-framing (I/P/B....) will make the video jumpy and heavy on C/GPU<br/>
+<pre>
+ffmpeg -threads 4 -i SOURCE.MP4 -ss 00:24:30 -t 00:02:00.00 -vcodec copy -acodec copy TARGET.MP4
+</pre><br/>
+<br/>
+so a re-encoding is required, nothing fancy:<br/>
+<pre>
+ffmpeg -i TARGET.MP4 TARGET_FINAL.MP4
+</pre><br/>
+<br/>
+regarding video-encoding you might have head of i-frames (a.k.a "<a href="https://en.wikipedia.org/wiki/Intra-frame" target="_blank">intra-</a>", "<a href="https://en.wikipedia.org/wiki/Intra-frame" target="_blank">intra-frames</a>" or "<a href="https://en.wikipedia.org/wiki/Inter_frame" target="_blank">inter-frame</a>" or GOP [in FFMPEG terminalogy] ), by default- every ~12 frames you'll find one, but you can also set the size of the group to <code>1</code> using <code>-g 1</code> in an alternative re-encoding phase:<br/>
+<pre><br/>
+  -g                 <int>        E..V.... set the group of picture (GOP) size (from INT_MIN to INT_MAX) (default 12)<br/>
+</int></pre><br/>
+<pre>
+ffmpeg -threads 4 -i TARGET.MP4 -g 1 TARGET_FINAL.MP4
+</pre><br/>
+<br/>
+it might benefit you somehow, although I prefer the default of <code>/12/</code> which is much less choppy..<br/>
+<br/>
+anyway,<br/>
+since <code>GOP</code> is quite new in the FFMPEG-terminology replacing that old <code>-intra</code> switch which does not work in new builds, and "Group Of Pictures" is not quite a intermediate leap to i-frames anyway.. hope it saves anyone some searching time :)<br/>
+<br/>
+<br/>
+although you can always <code style="background-color:rgba(255,255,160,.8);">ffmpeg -h full 2>&1 >readme.info</code> for the fun of it ;)<br/>
+', 'FFMPEG - Cut, Copy</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/git-update-sub-modules-too">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/deadpool-oh-boy-oh-boy-oh-boy">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/deadpool-oh-boy-oh-boy-oh-boy">#Deadpool Oh Boy Oh Boy Oh Boy</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-faster-powerset-%f0%9f%99%86">JavaScript Ninja - Faster PowerSet &#x1f646;</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adblock-rules-hide-rules-addition">AdBlock Rules - Hide-Rules Addition</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unix-ninja-use-sed-to-wrap-line">Unix Ninja - Use SED to wrap line</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stuff-and-cache-you-should-probably-delete-from-your-google-chrome">Stuff And Cache You Should Probably Delete From Your Google-Chrome</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/rare-tvcard-pci-drivers-msi-tvanywhere-plus-utilities-and-wdm-drivers-installation">Rare TVCard PCI Drivers -  MSI TV@Anywhere Plus Utilities And WDM Drivers Installation</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/download-host-logos">Download Host Logos</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-reverse-engineer-loncat-in-anti-adblock">JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/flash-player-download-links">Flash Player Download Links</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/last-chromium-that-worked-on-windows-xp-adobe-flash-guide">Last Chromium That Worked On Windows XP + Adobe Flash Guide</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/waze-related-urls">Waze Related URLs</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/properly-send-response-with-base64-content">Properly Send-Response With Base64-Content</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bootclasspath-for-note-5-lollipop-sm-n920c">BOOTCLASSPATH For Note 5 Lollipop SM-N920C</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/http-response-status-codes">HTTP Response Status-Codes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/android-6-0-1-marshmallow-for-samsung-note-5-sm-n920c">Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/making-xda-code-readable-using-javascript-css3">Making XDA Code Readable Using JavaScript && CSS3</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

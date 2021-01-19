@@ -1,0 +1,3 @@
+https://raw.githubusercontent.com/googlei18n/noto-emoji/master/fonts/LICENSE
+https://raw.githubusercontent.com/googlei18n/noto-emoji/master/fonts/NotoColorEmoji.ttf
+https://raw.githubusercontent.com/googlei18n/noto-emoji/master/fonts/NotoEmoji-Regular.ttf

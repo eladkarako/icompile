@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Last Chromium That Worked On Windows XP + Adobe Flash Guide</title>
+  <meta itemprop="name"                                content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+  <meta name="dcterms.title"                           content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+  <meta property="og:title"                            content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+  <meta name="twitter:title"                           content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+  <meta name="twitter:text:title"                      content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+  <meta name="application-name"                        content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+  <meta name="subject"                                 content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+  <meta name="apple-mobile-web-app-title"              content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+  <meta name="msapplication-tooltip"                   content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+  <meta itemprop="description"                         content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+  <meta name="dcterms.description"                     content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+  <meta name="twitter:description"                     content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+  <meta property="og:description"                      content="Last Chromium That Worked On Windows XP + Adobe Flash Guide"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accurate,activex,admdownload,adobe,application,attributes,azagvz,blank,browser,bundled,cffdkxc,change,check,chrome,chromium,cjwmkhtd,clean,click,code,command,continuous,cvhgvc,data,dbfed,debugging,dfac,disable,dobs,documents,download,edxpzoo,elad,eqhjuvvf,ersschok,evol,explorer,fedsdwum,file,files,firefox,fkvdch,flash,flashplayer,format,fuiga,fyvun,gamefront,gazng,googleapis,guide,helpx,hnut,html,htof,hugefiles,hwraybhnl,ihxkj,image,index,information,install,installer,internet,jhges,kaon,kxywrzya,latest,lciq,line,live,local,logs,lwjddzv,macromed,match,mini,mirror,mirrors,mohtj,naming,nofollow,npapi,nzqqb,open,opera,orhzs,outdated,path,pepf,pepfla,pion,player,plugins,ppapi,prefix,properly,qczy,qmuxu,qqxexp,rghost,safari,sendmyway,settings,simple,size,solidfiles,speedyshare,storage,system,target,title,tnsl,turbobit,tusfiles,type,ubusv,uninstall,uninstaller,userscloud,verify,version,versions,vista,windows,worked,works,xwtgy,ywlalh,zippyshare,zveyyft,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accurate,activex,admdownload,adobe,application,attributes,azagvz,blank,browser,bundled,cffdkxc,change,check,chrome,chromium,cjwmkhtd,clean,click,code,command,continuous,cvhgvc,data,dbfed,debugging,dfac,disable,dobs,documents,download,edxpzoo,elad,eqhjuvvf,ersschok,evol,explorer,fedsdwum,file,files,firefox,fkvdch,flash,flashplayer,format,fuiga,fyvun,gamefront,gazng,googleapis,guide,helpx,hnut,html,htof,hugefiles,hwraybhnl,ihxkj,image,index,information,install,installer,internet,jhges,kaon,kxywrzya,latest,lciq,line,live,local,logs,lwjddzv,macromed,match,mini,mirror,mirrors,mohtj,naming,nofollow,npapi,nzqqb,open,opera,orhzs,outdated,path,pepf,pepfla,pion,player,plugins,ppapi,prefix,properly,qczy,qmuxu,qqxexp,rghost,safari,sendmyway,settings,simple,size,solidfiles,speedyshare,storage,system,target,title,tnsl,turbobit,tusfiles,type,ubusv,uninstall,uninstaller,userscloud,verify,version,versions,vista,windows,worked,works,xwtgy,ywlalh,zippyshare,zveyyft,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/flash-player-download-links"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/flash-player-download-links"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/waze-related-urls"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/last-chromium-that-worked-on-windows-xp-adobe-flash-guide"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/last-chromium-that-worked-on-windows-xp-adobe-flash-guide"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/last-chromium-that-worked-on-windows-xp-adobe-flash-guide"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/last-chromium-that-worked-on-windows-xp-adobe-flash-guide"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/last-chromium-that-worked-on-windows-xp-adobe-flash-guide"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/last-chromium-that-worked-on-windows-xp-adobe-flash-guide"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-02-13T07:32:17+00:00"     />
+  <meta name="page-datetime"                           content="2016-02-13T07:32:17+00:00"     />
+  <meta property="article:published_time"              content="2016-02-13T07:32:17+00:00"     />
+  <meta name="dcterms.date"                            content="2016-02-13T07:32:17+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-02-13T07:49:37+00:00"    />
+  <meta property="article:modified_time"               content="2016-02-13T07:49:37+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/last-chromium-that-worked-on-windows-xp-adobe-flash-guide"
+,"url"             : "https://icompile.eladkarako.com/last-chromium-that-worked-on-windows-xp-adobe-flash-guide"
+,"headline"        : "Last Chromium That Worked On Windows XP + Adobe Flash Guide"
+,"description"     : "Last Chromium That Worked On Windows XP + Adobe Flash Guide"
+,"datePosted"      : "2016-02-13T07:32:17+00:00"
+,"dateCreated"     : "2016-02-13T07:32:17+00:00"
+,"datePublished"   : "2016-02-13T07:32:17+00:00"
+,"dateModified"    : "2016-02-13T07:49:37+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007378435541">
+  <header>
+    <h1 itemprop="headline">Last Chromium That Worked On Windows XP + Adobe Flash Guide</h1>
+    <sup>Posted at <time datetime="2016-02-13T07:49:37+00:00" itemprop="dateModified">Sat, 13 Feb 2016 07:49:37 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">Download and install Chromium version 45.0.2444.0 - the x32 version.<br/>
+<br/>
+<ul><br/>
+<li><ol><br/>
+<li>open <a href="https://storage.googleapis.com/chromium-browser-continuous/index.html?prefix=Win/336678/" target="_blank">https://storage.googleapis.com/chromium-browser-continuous/index.html?prefix=Win/336678/</a></li><br/>
+<li>click on: <code>mini_installer.exe</code></li><br/>
+</ol></li><br/>
+<br/>
+<li><br/>
+or <code>mini_installer_chromium_y2015_m06_d30__45.0.2444.0_(336678)_en.exe (35.1MB)</code> from one of those mirrors:<br/>
+<a mirror href="http://www75.zippyshare.com/v/fKVdcH3h/file.html" target="_blank" >http://www75.zippyshare.com/v/fKVdcH3h/file.html</a><br/>
+<a mirror href="https://www.sendmyway.com/0crf928mohtj" target="_blank" >https://www.sendmyway.com/0crf928mohtj</a><br/>
+<a mirror href="http://hugefiles.net/lciq7p1sqa8i" target="_blank" >http://hugefiles.net/lciq7p1sqa8i</a><br/>
+<a mirror href="http://www.solidfiles.com/d/92a9339bb0" target="_blank" >http://www.solidfiles.com/d/92a9339bb0</a><br/>
+<a mirror href="http://pion.rghost.net/7cJwMKHtD" target="_blank" >http://pion.rghost.net/7cJwMKHtD</a><br/>
+<a mirror href="http://turbobit.net/fedsdwum9v12.html" target="_blank" >http://turbobit.net/fedsdwum9v12.html</a><br/>
+<a mirror href="http://www.gamefront.com/files/25481512/mini_installer_chromium_y2015_m06_d30__45.0.2444.0_%28336678%29_en.exe" target="_blank" >http://www.gamefront.com/files/25481512/mini_installer_chromium_y2015_m06_d30__45.0.2444.0_%28336678%29_en.exe</a><br/>
+<a mirror href="https://tusfiles.net/w97wmz3z9tat" target="_blank" >https://tusfiles.net/w97wmz3z9tat</a><br/>
+<a mirror href="http://www.speedyshare.com/file/NZQqB/mini_installer_chromium_y2015_m06_d30__45.0.2444.0_(336678)_en.exe" target="_blank" >http://www.speedyshare.com/file/NZQqB/mini_installer_chromium_y2015_m06_d30__45.0.2444.0_(336678)_en.exe</a><br/>
+<a mirror href="https://files.fm/u/gazng3hu" target="_blank" >https://files.fm/u/gazng3hu</a><br/>
+<a mirror href="https://userscloud.com/lwjddzv5u4mq" target="_blank" >https://userscloud.com/lwjddzv5u4mq</a><br/>
+</li><br/>
+</ul><br/>
+<br/>
+after the installation clean-up any old FLASH versions using the flash uninstaller<br/>
+from here: <a href="https://helpx.adobe.com/flash-player/kb/uninstall-flash-player-windows.html" target="_blank">https://helpx.adobe.com/flash-player/kb/uninstall-flash-player-windows.html</a><br/>
+or here:<br/>
+<a mirror rel="nofollow" target="_blank" href="http://www115.zippyshare.com/v/eRSschOK/file.html">http://www115.zippyshare.com/v/eRSschOK/file.html</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://turbobit.net/65x53ubusv1u.html">http://turbobit.net/65x53ubusv1u.html</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://www.solidfiles.com/d/cdd02cab4c">http://www.solidfiles.com/d/cdd02cab4c</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://www.sendmyway.com/qk70i7n2hnut">https://www.sendmyway.com/qk70i7n2hnut</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://hugefiles.net/1tnsl3no8ky1">http://hugefiles.net/1tnsl3no8ky1</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://pion.rghost.net/">http://pion.rghost.net/</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://www.gamefront.com/files/25481517/uninstall_flash_player.exe">http://www.gamefront.com/files/25481517/uninstall_flash_player.exe</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://tusfiles.net/ed4g6q6fuiga">https://tusfiles.net/ed4g6q6fuiga</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://www.speedyshare.com/file/Vt7nW/uninstall_flash_player.exe">http://www.speedyshare.com/file/Vt7nW/uninstall_flash_player.exe</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://files.fm/u/kxywrzya">https://files.fm/u/kxywrzya</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://userscloud.com/53yqs4wn9xzt">https://userscloud.com/53yqs4wn9xzt</a><br/>
+<br/>
+install latest flash - all 3 versions:<br/>
+  Windows 7/Vista/XP   -   ActiveX -   Internet Explorer<br/>
+    <a target="_blank" href="https://admdownload.adobe.com/bin/live/flashplayer20ax_ha_install.exe" title="https://admdownload.adobe.com/bin/live/flashplayer20ax_ha_install.exe">https://admdownload.adobe.com/bin/live/flashplayer20ax_ha_install.exe</a><br/>
+mirror:<br/>
+<a mirror rel="nofollow" target="_blank" href="http://www62.zippyshare.com/v/b6YWLAlh/file.html">http://www62.zippyshare.com/v/b6YWLAlh/file.html</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://turbobit.net/j54232gyj26k.html">http://turbobit.net/j54232gyj26k.html</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://www.solidfiles.com/d/23fe469c10">http://www.solidfiles.com/d/23fe469c10</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://tusfiles.net/6azagvz56ql6">https://tusfiles.net/6azagvz56ql6</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://hugefiles.net/1p91v61rth1w">http://hugefiles.net/1p91v61rth1w</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://www.sendmyway.com/wt54r0bvi0ps">https://www.sendmyway.com/wt54r0bvi0ps</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://pion.rghost.net/">http://pion.rghost.net/</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://www.gamefront.com/files/25481589/flashplayer20ax_ha_install.exe">http://www.gamefront.com/files/25481589/flashplayer20ax_ha_install.exe</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://files.fm/u/3zveyyft">https://files.fm/u/3zveyyft</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://www.speedyshare.com/file/jWK7d/flashplayer20ax_ha_install.exe">http://www.speedyshare.com/file/jWK7d/flashplayer20ax_ha_install.exe</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://userscloud.com/bup95edxpzoo">https://userscloud.com/bup95edxpzoo</a><br/>
+<br/>
+<br/>
+  followed by:<br/>
+  Windows 7/Vista/XP   -   PPAPI   -   Opera, Chrome, Chromium<br/>
+    <a target="_blank" href="https://admdownload.adobe.com/bin/live/flashplayer20pp_ha_install.exe" title="https://admdownload.adobe.com/bin/live/flashplayer20pp_ha_install.exe">https://admdownload.adobe.com/bin/live/flashplayer20pp_ha_install.exe</a><br/>
+mirror:<br/>
+<a mirror rel="nofollow" target="_blank" href="http://www71.zippyshare.com/v/VA9qmUxu/file.html">http://www71.zippyshare.com/v/VA9qmUxu/file.html</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://www.gamefront.com/files/25481578/flashplayer20pp_ha_install.exe">http://www.gamefront.com/files/25481578/flashplayer20pp_ha_install.exe</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://tusfiles.net/qczy4h78s5fu">https://tusfiles.net/qczy4h78s5fu</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://www.solidfiles.com/d/51d4dbfed6">http://www.solidfiles.com/d/51d4dbfed6</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://hugefiles.net/y5fnv4ihxkj6">http://hugefiles.net/y5fnv4ihxkj6</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://www.sendmyway.com/qqxexp59lwv0">https://www.sendmyway.com/qqxexp59lwv0</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://turbobit.net/gopkhxutjpes.html">http://turbobit.net/gopkhxutjpes.html</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://kaon.rghost.net/">http://kaon.rghost.net/</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://www.speedyshare.com/file/fyvuN/flashplayer20pp_ha_install.exe">http://www.speedyshare.com/file/fyvuN/flashplayer20pp_ha_install.exe</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://files.fm/u/8pmz7498">https://files.fm/u/8pmz7498</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://userscloud.com/hwraybhnl8g0">https://userscloud.com/hwraybhnl8g0</a><br/>
+<br/>
+  and last:<br/>
+  Windows 7/Vista/XP   -   NPAPI   -   Safari and Firefox<br/>
+    <a target="_blank" href="https://admdownload.adobe.com/bin/live/flashplayer20_ha_install.exe"   title="https://admdownload.adobe.com/bin/live/flashplayer20_ha_install.exe"  >https://admdownload.adobe.com/bin/live/flashplayer20_ha_install.exe</a><br/>
+mirror:<br/>
+<a mirror rel="nofollow" target="_blank" href="http://www98.zippyshare.com/v/EQhjUvvf/file.html">http://www98.zippyshare.com/v/EQhjUvvf/file.html</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://turbobit.net/08sc3cffdkxc.html">http://turbobit.net/08sc3cffdkxc.html</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://www.solidfiles.com/d/d0d83dfac2">http://www.solidfiles.com/d/d0d83dfac2</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://tusfiles.net/evol8vc2wq71">https://tusfiles.net/evol8vc2wq71</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://hugefiles.net/id1htof1dobs">http://hugefiles.net/id1htof1dobs</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://www.sendmyway.com/orhzs733b5im">https://www.sendmyway.com/orhzs733b5im</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://pion.rghost.net/">http://pion.rghost.net/</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://www.gamefront.com/files/25481594/flashplayer20_ha_install.exe">http://www.gamefront.com/files/25481594/flashplayer20_ha_install.exe</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://files.fm/u/cvhgvc3b">https://files.fm/u/cvhgvc3b</a><br/>
+<a mirror rel="nofollow" target="_blank" href="http://www.speedyshare.com/file/JHGES/flashplayer20_ha_install.exe">http://www.speedyshare.com/file/JHGES/flashplayer20_ha_install.exe</a><br/>
+<a mirror rel="nofollow" target="_blank" href="https://userscloud.com/yqf09i9xwtgy">https://userscloud.com/yqf09i9xwtgy</a><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+you can look in <a href="https://icompile.eladkarako.com" target="_blank">icompile.eladkarako.com</a> for more information about the command line,<br/>
+but the end result should look like this:<br/>
+<pre>
+"C:\\Documents and Settings\\Elad\\Local Settings\\Application Data\\Chromium\\Application\\chrome.exe" --disable-bundled-ppapi-flash --ppapi-flash-path="C:\\Windows\\System32\\Macromed\\Flash\\PEPFLA~1.DLL" --allow-outdated-plugins --ppapi-flash-version=20.0.0.306
+</pre><br/>
+<br/>
+you probably don't need to change anything, since the short 8.3 dos format of the DLL naming, will match probably every version of the dll.<br/>
+you might want to specify the flash version to help the Chrome logs and debugging be more accurate - it does not really matter.<br/>
+<br/>
+you can look for the DLL file under the windows\\sy...\\pepf... .dll right click and check the attributes to see the version<br/>
+<br/>
+finally simple enough type <code>chrome://flash</code> to verify everything works properly, for example:<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/02/icompile.eladkarako.com_windows_xp_chromium_with_flash_2016-02-13_084125.png" alt="icompile.eladkarako.com_windows_xp_chromium_with_flash_2016-02-13_084125" width="836" height="643" class="aligncenter size-full wp-image-4646" /><br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/flash-player-download-links">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/waze-related-urls">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/waze-related-urls">Waze Related URLs</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/properly-send-response-with-base64-content">Properly Send-Response With Base64-Content</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bootclasspath-for-note-5-lollipop-sm-n920c">BOOTCLASSPATH For Note 5 Lollipop SM-N920C</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/http-response-status-codes">HTTP Response Status-Codes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/android-6-0-1-marshmallow-for-samsung-note-5-sm-n920c">Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/making-xda-code-readable-using-javascript-css3">Making XDA Code Readable Using JavaScript && CSS3</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cygwin-repo-on-top-of-git">Cygwin Repo On Top Of Git</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-better-uuid-using-chromes-crypto">JavaScript Ninja - Better UUID Using Chrome's Crypto</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cygwin-ctrl-left-to-jump-word-backward">Cygwin CTRL+Left To Jump Word Backward</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-quick-and-dirty-clickjacking-iframe-embedding-protection">JavaScript Ninja - Quick And Dirty ClickJacking IFRAME-Embedding Protection</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files">Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/repo-help">repo Help</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/everything-to-html-entity-bookmarklet">Everything To HTML-Entity Bookmarklet</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/network-traffic-analyze-tools">Network Traffic Analyze Tϕϕls</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/file-sharing-hosts-logos">File-Sharing Hosts Logos</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/efficient-json-table-data-representation">Efficient JSON-Table Data Representation</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

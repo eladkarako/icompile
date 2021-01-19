@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending</title>
+  <meta itemprop="name"                                content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+  <meta name="dcterms.title"                           content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+  <meta property="og:title"                            content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+  <meta name="twitter:title"                           content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+  <meta name="twitter:text:title"                      content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+  <meta name="application-name"                        content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+  <meta name="subject"                                 content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+  <meta name="apple-mobile-web-app-title"              content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+  <meta name="msapplication-tooltip"                   content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+  <meta itemprop="description"                         content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+  <meta name="dcterms.description"                     content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+  <meta name="twitter:description"                     content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+  <meta property="og:description"                      content="進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="ackerman,actions,agreed,aiding,allied,analyze,approached,army,attack,attacks,avoid,base,basement,battle,befalling,began,built,burnt,change,changed,completely,conducting,confident,constructed,continue,create,created,cured,danger,death,decided,defend,defense,destroy,destroying,destruction,develop,discovered,doctor,easily,eliminated,ending,engage,enormous,entrance,equipped,eren,evident,exile,existence,failed,family,father,feeling,fell,fellow,fighters,fire,followers,force,form,found,gave,giving,goal,grisha,ground,group,handful,hate,heart,hidden,highly,home,hopes,horror,house,human,humanity,humans,image,individuals,initial,injected,inside,introduced,involves,kichirou,killed,killers,killing,knew,kyojin,laboratory,leaked,life,lives,location,longer,losing,love,major,make,manga,maria,meant,mikasa,military,mindless,motivation,moto,murder,murdered,mutant,mutations,needed,night,notified,number,numbers,obtain,passed,plague,plan,planned,pose,potion,prepared,prevent,problem,race,recipe,regular,religious,relocate,remaining,research,returning,revenge,rose,saving,sensing,shape,share,shift,shifter,shifters,shifting,shingeki,sides,sina,sizable,size,skilled,smaller,spies,spoilers,stay,story,stronger,supply,surrounding,tactics,threat,times,titan,titans,total,turn,vaccine,viewed,wait,wall,walls,watched,water,weakness,weapon,weapons,wife,yeager,years,zealots,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="ackerman,actions,agreed,aiding,allied,analyze,approached,army,attack,attacks,avoid,base,basement,battle,befalling,began,built,burnt,change,changed,completely,conducting,confident,constructed,continue,create,created,cured,danger,death,decided,defend,defense,destroy,destroying,destruction,develop,discovered,doctor,easily,eliminated,ending,engage,enormous,entrance,equipped,eren,evident,exile,existence,failed,family,father,feeling,fell,fellow,fighters,fire,followers,force,form,found,gave,giving,goal,grisha,ground,group,handful,hate,heart,hidden,highly,home,hopes,horror,house,human,humanity,humans,image,individuals,initial,injected,inside,introduced,involves,kichirou,killed,killers,killing,knew,kyojin,laboratory,leaked,life,lives,location,longer,losing,love,major,make,manga,maria,meant,mikasa,military,mindless,motivation,moto,murder,murdered,mutant,mutations,needed,night,notified,number,numbers,obtain,passed,plague,plan,planned,pose,potion,prepared,prevent,problem,race,recipe,regular,religious,relocate,remaining,research,returning,revenge,rose,saving,sensing,shape,share,shift,shifter,shifters,shifting,shingeki,sides,sina,sizable,size,skilled,smaller,spies,spoilers,stay,story,stronger,supply,surrounding,tactics,threat,times,titan,titans,total,turn,vaccine,viewed,wait,wall,walls,watched,water,weakness,weapon,weapons,wife,yeager,years,zealots,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/javascript-executable-spoofed-code"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/javascript-executable-spoofed-code"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/intellij-idea-run-faster-part-3-disable-internal-features-you-never-use"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/shingeki-no-kyojin-attack-on-titan-manga-leaked-ending"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/shingeki-no-kyojin-attack-on-titan-manga-leaked-ending"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/shingeki-no-kyojin-attack-on-titan-manga-leaked-ending"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/shingeki-no-kyojin-attack-on-titan-manga-leaked-ending"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/shingeki-no-kyojin-attack-on-titan-manga-leaked-ending"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/shingeki-no-kyojin-attack-on-titan-manga-leaked-ending"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2015-03-25T07:12:31+00:00"     />
+  <meta name="page-datetime"                           content="2015-03-25T07:12:31+00:00"     />
+  <meta property="article:published_time"              content="2015-03-25T07:12:31+00:00"     />
+  <meta name="dcterms.date"                            content="2015-03-25T07:12:31+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2015-03-25T17:26:20+00:00"    />
+  <meta property="article:modified_time"               content="2015-03-25T17:26:20+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/shingeki-no-kyojin-attack-on-titan-manga-leaked-ending"
+,"url"             : "https://icompile.eladkarako.com/shingeki-no-kyojin-attack-on-titan-manga-leaked-ending"
+,"headline"        : "進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"
+,"description"     : "進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending"
+,"datePosted"      : "2015-03-25T07:12:31+00:00"
+,"dateCreated"     : "2015-03-25T07:12:31+00:00"
+,"datePublished"   : "2015-03-25T07:12:31+00:00"
+,"dateModified"    : "2015-03-25T17:26:20+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0001557627241">
+  <header>
+    <h1 itemprop="headline">進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending</h1>
+    <sup>Posted at <time datetime="2015-03-25T17:26:20+00:00" itemprop="dateModified">Wed, 25 Mar 2015 17:26:20 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/03/icompile.eladkarako.com_shingeki_no_kyojin_manga.jpg" alt="icompile.eladkarako.com_shingeki_no_kyojin_manga" rem-width="260" rem-height="388" class="alignright size-full wp-image-2823" /> ENTIRE STORY OF ATTACK ON TITAN DOWN BELOW<br/>
+MAJOR SPOILERS ! (Down Below) !!<br/>
+<br/>
+<!--more--><br/>
+<br/>
+<blockquote><br/>
+The titans were created over a hundred years ago as a weapon against humanity by Dr. Kichirou Moto. His motivation was revenge for his murdered wife and son from religious zealots that did not like the fact that Dr. Kichirou Moto was conducting research that could be viewed as being sacrilegious. On the night of the murder, Dr. Kichirou Moto home was set on fire by a religious group in the hopes of killing Dr. Moto. Unfortunately for the zealots, Dr. Kichirou Moto was still at his laboratory conducting research throughout the night. Upon returning home, Dr. Kichirou Moto watched in horror as his house burnt to the ground with religious zealots surrounding it. He knew that if he approached them it would mean certain death and he could no longer obtain revenge for his murdered family. <br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/03/icompile.eladkarako.com_shingeki_no_kyojin_manga2.jpg" alt="icompile.eladkarako.com_shingeki_no_kyojin_manga2" width="284" height="177" class="alignleft size-full wp-image-2825" /><br/>
+He went into exile and constructed a hidden laboratory so that he could continue his research. He was able to develop a mutant potion that could be introduced into the water supply so that it would turn humans into enormous, but mindless killers. His justification for his actions was that humanity was becoming too religious and needed to be exterminated. In place of humanity, the doctor created a new race with individuals who were not a part of any religious order and who did not believe in the existence of a god. To avoid being killed by the titans that he created, he gave his followers as well as himself a potion that would allow them to shift into titan form that was many times stronger than normal titans.<br/>
+<br/>
+These shape shifting titans built a base so that normal titans could not pose a danger to the shape shifting titans. Their goal was to wait within the walls until humans were all eliminated by the titans. This plan would allow the shape shifting titans to avoid battle with humans and thus saving them from losing lives on their already low numbers. The problem was that their hidden location was discovered by a sizable human army which could have meant the total destruction of these shape shifting titans. To avoid this, it was agreed that the shape shifting titans should stay in human form and relocate to a new location.<br/>
+<br/>
+At the time, these shape shifting titans could not destroy the humans completely because they had well equipped and highly skilled fighters within their army. As time passed, humans began to take their titan threat less seriously so that their defense force were smaller in number and were less skilled. Sensing this weakness, the shape shifting titans decided it was the right time to attack and make an entrance for the regular titans.<br/>
+<br/>
+Dr. Grisha Yeager is a shape shifter himself who fell in love with a non-shape shifter. Although Dr. Yeager is a shape shifter, he did not share the hate that his fellow shape shifters had for humanity. This is evident when he cured a plague that was befalling humanity. After the attacks on wall rose which he was not notified beforehand, he injected his son with the shape shifting potion so that he would not die as easily as his wife did.<br/>
+<br/>
+After the initial attacks, Dr. Kichirou Moto sent in spies into the human military to analyze human tactics, weapons, and military numbers. Feeling confident that humanity was still not prepared to engage the titans, a second and third attack were planned on walls maria and sina.<br/>
+<br/>
+The attack on wall sina failed due to a change of heart from a handful of shape shifting spies who changed sides.<br/>
+<br/>
+Eren Yeager discovered that his father, Dr. Grisha Yeager was murdered for aiding humanity and giving Eren along with others the shape shifting potion to defend against Dr. Kichirou Moto.<br/>
+<br/>
+The recipe to a vaccine was found inside the basement of Eren's old house to prevent further titan mutations during battle. Dr. Grisha Yeager was able to create the vaccine before losing his life to Dr. Kichirou Moto.<br/>
+<br/>
+The ending involves Eren Yeager, Mikasa Ackerman, allied shape shifters, and the remaining human military destroying Dr. Kichirou Moto and his followers."</blockquote><br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-executable-spoofed-code">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/intellij-idea-run-faster-part-3-disable-internal-features-you-never-use">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/intellij-idea-run-faster-part-3-disable-internal-features-you-never-use">IntelliJ IDEA - Run Faster - Part #3 - Disable Internal Features You Never Use</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bad-email-domains">Used By Disposable-Email Services</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-blob-objecturl-real-data-conversion">JavaScript Blob-objectURL real data conversion</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disable-youtube-video-source-blob">Google Chrome/Chromium - Local Hack - Disable YouTube Video-Source-Blob</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/mobeam-beepngo-tracking-hosts">mobeam Beep'nGo - Tracking HOSTS</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/infinite-painter-users-showcase">JSON Resource - Android "Infinite Painter" From seanbrakefield.com - Users Showcase Images</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stocard-json-resources">Stocard JSON Resources</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-api-feed-and-autocomplete">YouTube Video-Search-Feed API And Auto-Compition API For YouTube</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/http-link-header">HTTP Link Header</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/overriding-wordpress-built-in-title-method-wo-filter-to-fix-messy-title-tag">Overriding WordPress Built-In Title-Method W/O Filter To Fix Messy &lt;TITLE&gt; Tag</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/everycaller-com-api">everycaller.com API</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-bitwise-shenanigans">JavaScript-Bitwise-Shenanigans</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-analytics-trick-nojs-image-only-server-side">Google-Analytics Trick - NoJS - Image Only - Server-Side</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-analytics-trick-email-tracking">Google Analytics Trick - Email Tracking</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/facebook-client-protection-part-1">JavaScript Ninja Technics - Reverse Engineer Facebook Client-Protection #1 - Console Rewrite-Disable</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disabling-google-translate-icon-on-selected-text">Disabling Google-Translate Icon On Selected Text</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

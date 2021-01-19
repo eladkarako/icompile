@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors</title>
+  <meta itemprop="name"                                content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+  <meta name="dcterms.title"                           content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+  <meta property="og:title"                            content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+  <meta name="twitter:title"                           content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+  <meta name="twitter:text:title"                      content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+  <meta name="application-name"                        content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+  <meta name="subject"                                 content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+  <meta name="apple-mobile-web-app-title"              content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+  <meta name="msapplication-tooltip"                   content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+  <meta itemprop="description"                         content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+  <meta name="dcterms.description"                     content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+  <meta name="twitter:description"                     content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+  <meta property="og:description"                      content="Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="agreed,annotation,apache,applicable,apply,appspot,author,authors,based,basis,beep,blank,boolean,braces,camelcase,cases,cellpadding,cellspacing,chars,check,closure,code,codereview,codes,color,combine,comma,command,compiling,completely,compliance,conditions,config,conventions,copy,copyright,debug,define,diff,disable,dislike,distributed,docs,double,download,error,errorrules,errors,executable,expected,extra,file,files,flag,flags,font,format,formed,found,gclosure,gflags,github,gjslint,gjslinter,google,governing,great,html,ignore,ilia,implied,import,indentation,integer,interesting,javascript,jetbrains,jsdoc,jslint,jslinter,kind,language,latest,license,licensed,licenses,limitations,line,linter,list,mark,marker,member,members,mirkin,missing,myfile,mynumber,named,nbsp,needed,nicely,nobeep,nocheck,nodebug,nosummary,note,notes,notice,notime,number,numbers,obtain,optional,original,padding,param,parameter,parser,patch,patched,path,period,permissions,preferred,prefix,prefixed,private,punctuation,python,questions,quoted,ready,releases,report,reported,required,reserved,return,returns,rights,robbyw,robert,rubbish,rules,running,semicolon,separated,single,size,software,somejsfile,space,specific,strict,strong,suffix,switch,switches,table,takes,target,tbody,title,trunk,type,underscore,unified,unused,user,valid,version,walker,warranties,webstorm,windows,work,works,writing,wrong,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="agreed,annotation,apache,applicable,apply,appspot,author,authors,based,basis,beep,blank,boolean,braces,camelcase,cases,cellpadding,cellspacing,chars,check,closure,code,codereview,codes,color,combine,comma,command,compiling,completely,compliance,conditions,config,conventions,copy,copyright,debug,define,diff,disable,dislike,distributed,docs,double,download,error,errorrules,errors,executable,expected,extra,file,files,flag,flags,font,format,formed,found,gclosure,gflags,github,gjslint,gjslinter,google,governing,great,html,ignore,ilia,implied,import,indentation,integer,interesting,javascript,jetbrains,jsdoc,jslint,jslinter,kind,language,latest,license,licensed,licenses,limitations,line,linter,list,mark,marker,member,members,mirkin,missing,myfile,mynumber,named,nbsp,needed,nicely,nobeep,nocheck,nodebug,nosummary,note,notes,notice,notime,number,numbers,obtain,optional,original,padding,param,parameter,parser,patch,patched,path,period,permissions,preferred,prefix,prefixed,private,punctuation,python,questions,quoted,ready,releases,report,reported,required,reserved,return,returns,rights,robbyw,robert,rubbish,rules,running,semicolon,separated,single,size,software,somejsfile,space,specific,strict,strong,suffix,switch,switches,table,takes,target,tbody,title,trunk,type,underscore,unified,unused,user,valid,version,walker,warranties,webstorm,windows,work,works,writing,wrong,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/parallel-curl-requests"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/parallel-curl-requests"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/latest-google-closure-jslinter-gjslint-download-and-extract"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/python-patch-ignore-some-of-google-closure-jslinter-gjslint-errors"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/python-patch-ignore-some-of-google-closure-jslinter-gjslint-errors"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/python-patch-ignore-some-of-google-closure-jslinter-gjslint-errors"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/python-patch-ignore-some-of-google-closure-jslinter-gjslint-errors"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/python-patch-ignore-some-of-google-closure-jslinter-gjslint-errors"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/python-patch-ignore-some-of-google-closure-jslinter-gjslint-errors"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2013-04-01T14:38:16+00:00"     />
+  <meta name="page-datetime"                           content="2013-04-01T14:38:16+00:00"     />
+  <meta property="article:published_time"              content="2013-04-01T14:38:16+00:00"     />
+  <meta name="dcterms.date"                            content="2013-04-01T14:38:16+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-08-01T23:32:42+00:00"    />
+  <meta property="article:modified_time"               content="2016-08-01T23:32:42+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/python-patch-ignore-some-of-google-closure-jslinter-gjslint-errors"
+,"url"             : "https://icompile.eladkarako.com/python-patch-ignore-some-of-google-closure-jslinter-gjslint-errors"
+,"headline"        : "Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"
+,"description"     : "Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors"
+,"datePosted"      : "2013-04-01T14:38:16+00:00"
+,"dateCreated"     : "2013-04-01T14:38:16+00:00"
+,"datePublished"   : "2013-04-01T14:38:16+00:00"
+,"dateModified"    : "2016-08-01T23:32:42+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006907284631">
+  <header>
+    <h1 itemprop="headline">Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors</h1>
+    <sup>Posted at <time datetime="2016-08-01T23:32:42+00:00" itemprop="dateModified">Mon, 01 Aug 2016 23:32:42 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">By Running From Command-Line:<br/>
+<pre><span style="color: #333399;">gjslint.exe --strict C:\\work\\trunk\\someJSFile.js</span></pre><br/>
+I'm getting some important notes like:<br/>
+<pre><span style="color: #ff6600;">:: Line 9, E:0010: Missing semicolon at end of line</span></pre><br/>
+some less interesting but still important to keep the GClosure parser happy<br/>
+<pre><span style="color: #ff6600;">:: Line 6, E:0220: No docs found for member '........'</span><br/>
+<span style="color: #ff6600;">:: Line 44, E:0240: @param descriptions must end with valid punctuation such as a period.</span></pre><br/>
+some are just for conventions, but still important to keep our code unified in format:<br/>
+<pre><span style="color: #ff6600;">:: Line 7, E:0131: Single-quoted string preferred over double-quoted string.</span></pre><br/>
+<pre><span style="color: #ff6600;">:: Line 10, E:0001: Extra space after "......"</span></pre><br/>
+but some are completely rubbish like:<br/>
+<pre><span style="color: #ff6600;">:: Line 17, E:0006: Wrong indentation: expected any of {2, 14} but got 4</span></pre><br/>
+<pre><span style="color: #ff6600;">:: Line 73, E:0110: Line too long (89 characters).</span></pre><br/>
+<pre><span style="color: #ff6600;">:: Line 142, E:0233: Optional parameter name ..... must be prefixed with opt_.</span></pre><br/>
+I especially dislike the long-line notice and the opt_ prefix needed,<br/>
+since I work in <a title="why-use-camelcase-in-javascript" href="http://stackoverflow.com/questions/8789656/why-use-camelcase-in-javascript" target="_blank">camelCase</a>, I keep underscore to very few and specific cases.<br/>
+<br/>
+and as long I am using "=" suffix in the annotation to mark the parameter optional<br/>
+<pre>---&gt;   *   <span style="color: #333399;">@param {number<strong>=</strong>} myNumber</span></pre><br/>
+<h2><span style="font-size: 1.5em;">its ok!</span></h2><br/>
+&nbsp;<br/>
+<h3>Python Patch:</h3><br/>
+<p style="padding-left: 30px;">well, Python files are text based-on, but the Windows-Installation of <strong>GJSLinter<br/>
+</strong>is compiling an executable file named <strong>gjslint.exe</strong></p><br/>
+<p style="padding-left: 30px;">1. download the latest version of the <strong>GJSLinter</strong>.</p><br/>
+<p style="padding-left: 30px;">2. apply the following patch</p><br/>
+Left file: \\closure_linter\\errorrules_original.py<br/>
+Right file: \\closure_linter\\errorrules_patched.py<br/>
+<table cellspacing="0" cellpadding="0"><br/>
+<tbody><br/>
+<tr><br/>
+<td>22</td><br/>
+<td>from closure_linter import errors</td><br/>
+<td>=</td><br/>
+<td>22</td><br/>
+<td>from closure_linter import errors</td><br/>
+</tr><br/>
+<tr><br/>
+<td>23</td><br/>
+<td></td><br/>
+<td></td><br/>
+<td>23</td><br/>
+<td></td><br/>
+</tr><br/>
+<tr><br/>
+<td>24</td><br/>
+<td></td><br/>
+<td></td><br/>
+<td>24</td><br/>
+<td></td><br/>
+</tr><br/>
+<tr><br/>
+<td>25</td><br/>
+<td>FLAGS = flags.FLAGS</td><br/>
+<td></td><br/>
+<td>25</td><br/>
+<td>FLAGS = flags.FLAGS</td><br/>
+</tr><br/>
+<tr><br/>
+<td>26</td><br/>
+<td>flags.DEFINE_boolean('jsdoc', True,</td><br/>
+<td></td><br/>
+<td>26</td><br/>
+<td>flags.DEFINE_boolean('jsdoc', True,</td><br/>
+</tr><br/>
+<tr><br/>
+<td>27</td><br/>
+<td>                     'Whether to report errors for missing JsDoc.')</td><br/>
+<td></td><br/>
+<td>27</td><br/>
+<td>                     'Whether to report errors for missing JsDoc.')</td><br/>
+</tr><br/>
+<tr><br/>
+<td>28</td><br/>
+<td></td><br/>
+<td>&lt;&gt;</td><br/>
+<td>28</td><br/>
+<td><strong><span style="color: #ff0000;">flags.DEFINE_list('ignore_errors', [], 'List of error codes to ignore.')</span></strong></td><br/>
+</tr><br/>
+<tr><br/>
+<td>29</td><br/>
+<td></td><br/>
+<td>=</td><br/>
+<td>29</td><br/>
+<td></td><br/>
+</tr><br/>
+<tr><br/>
+<td>30</td><br/>
+<td>def ShouldReportError(error):</td><br/>
+<td></td><br/>
+<td>30</td><br/>
+<td>def ShouldReportError(error):</td><br/>
+</tr><br/>
+<tr><br/>
+<td>31</td><br/>
+<td>  """Whether the given error should be reported.</td><br/>
+<td></td><br/>
+<td>31</td><br/>
+<td>  """Whether the given error should be reported.</td><br/>
+</tr><br/>
+<tr><br/>
+<td>32</td><br/>
+<td></td><br/>
+<td></td><br/>
+<td>32</td><br/>
+<td></td><br/>
+</tr><br/>
+<tr><br/>
+<td>33</td><br/>
+<td>  Returns:</td><br/>
+<td></td><br/>
+<td>33</td><br/>
+<td>  Returns:</td><br/>
+</tr><br/>
+<tr><br/>
+<td>34</td><br/>
+<td>    True for all errors except missing documentation errors.  For these,</td><br/>
+<td></td><br/>
+<td>34</td><br/>
+<td>    True for all errors except missing documentation errors.  For these,</td><br/>
+</tr><br/>
+<tr><br/>
+<td>35</td><br/>
+<td>    it returns the value of the jsdoc flag.</td><br/>
+<td></td><br/>
+<td>35</td><br/>
+<td>    it returns the value of the jsdoc flag.</td><br/>
+</tr><br/>
+<tr><br/>
+<td>36</td><br/>
+<td>  """</td><br/>
+<td></td><br/>
+<td>36</td><br/>
+<td>  """</td><br/>
+</tr><br/>
+<tr><br/>
+<td>37</td><br/>
+<td>  return FLAGS.jsdoc or error not in (</td><br/>
+<td>&lt;&gt;</td><br/>
+<td>37</td><br/>
+<td>  return <strong><span style="color: #ff0000;">(</span></strong>FLAGS.jsdoc or error not in (</td><br/>
+</tr><br/>
+<tr><br/>
+<td>38</td><br/>
+<td>      errors.MISSING_PARAMETER_DOCUMENTATION,</td><br/>
+<td>=</td><br/>
+<td>38</td><br/>
+<td>      errors.MISSING_PARAMETER_DOCUMENTATION,</td><br/>
+</tr><br/>
+<tr><br/>
+<td>39</td><br/>
+<td>      errors.MISSING_RETURN_DOCUMENTATION,</td><br/>
+<td></td><br/>
+<td>39</td><br/>
+<td>      errors.MISSING_RETURN_DOCUMENTATION,</td><br/>
+</tr><br/>
+<tr><br/>
+<td>40</td><br/>
+<td>      errors.MISSING_MEMBER_DOCUMENTATION,</td><br/>
+<td></td><br/>
+<td>40</td><br/>
+<td>      errors.MISSING_MEMBER_DOCUMENTATION,</td><br/>
+</tr><br/>
+<tr><br/>
+<td>41</td><br/>
+<td>      errors.MISSING_PRIVATE,</td><br/>
+<td></td><br/>
+<td>41</td><br/>
+<td>      errors.MISSING_PRIVATE,</td><br/>
+</tr><br/>
+<tr><br/>
+<td>42</td><br/>
+<td>      errors.MISSING_JSDOC_TAG_THIS)</td><br/>
+<td>&lt;&gt;</td><br/>
+<td>42</td><br/>
+<td>      errors.MISSING_JSDOC_TAG_THIS)<span style="color: #ff0000;"><strong>) and str(error) not in FLAGS.ignore_errors</strong></span></td><br/>
+</tr><br/>
+</tbody><br/>
+</table><br/>
+&nbsp;<br/>
+<br/>
+or:<br/>
+<br/>
+Before<br/>
+<pre>#!/usr/bin/env python
+#
+# Copyright 2010 The Closure Linter Authors. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS-IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"""Linter error rules class for Closure Linter."""
+
+__author__ = 'robbyw@google.com (Robert Walker)'
+
+import gflags as flags
+from closure_linter import errors
+
+FLAGS = flags.FLAGS
+flags.DEFINE_boolean('jsdoc', True,
+                     'Whether to report errors for missing JsDoc.')
+
+def ShouldReportError(error):
+  """Whether the given error should be reported.
+
+  Returns:
+    True for all errors except missing documentation errors.  For these,
+    it returns the value of the jsdoc flag.
+  """
+  return FLAGS.jsdoc or error not in (
+      errors.MISSING_PARAMETER_DOCUMENTATION,
+      errors.MISSING_RETURN_DOCUMENTATION,
+      errors.MISSING_MEMBER_DOCUMENTATION,
+      errors.MISSING_PRIVATE,
+      errors.MISSING_JSDOC_TAG_THIS)</pre><br/>
+and<br/>
+after:<br/>
+<pre>#!/usr/bin/env python
+#
+# Copyright 2010 The Closure Linter Authors. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS-IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"""Linter error rules class for Closure Linter."""
+
+__author__ = 'robbyw@google.com (Robert Walker)'
+
+import gflags as flags
+from closure_linter import errors
+
+FLAGS = flags.FLAGS
+flags.DEFINE_boolean('jsdoc', True,
+                     'Whether to report errors for missing JsDoc.')
+flags.DEFINE_list('ignore_errors', [], 'List of error codes to ignore.')
+
+def ShouldReportError(error):
+  """Whether the given error should be reported.
+
+  Returns:
+    True for all errors except missing documentation errors.  For these,
+    it returns the value of the jsdoc flag.
+  """
+  return (FLAGS.jsdoc or error not in (
+      errors.MISSING_PARAMETER_DOCUMENTATION,
+      errors.MISSING_RETURN_DOCUMENTATION,
+      errors.MISSING_MEMBER_DOCUMENTATION,
+      errors.MISSING_PRIVATE,
+      errors.MISSING_JSDOC_TAG_THIS)) and str(error) not in FLAGS.ignore_errors</pre><br/>
+<h2></h2><br/>
+<h3><a href="https://codereview.appspot.com/4291044/diff/1/errorrules.py" target="_blank">View Changes Side-By-Side in Google-Code (By Great <strong></strong></a><strong><a href="https://codereview.appspot.com/user/Ilia%20Mirkin">Ilia Mirkin</a></strong>)</h3><br/>
+Use it:<br/>
+without:<br/>
+<pre>gjslint.exe --strict C:\\work\\trunk\\myFile.js</pre><br/>
+with:<br/>
+<pre>gjslint.exe --strict --ignore_errors 6,110,233 C:\\work\\trunk\\myFile.js
+
+:: disable:
+::         6:    Wrong indentation
+::         110:  Line too long (the max is 80chars).
+::         233:  Optional parameter name ..... must be prefixed with opt_.</pre><br/>
+Note:<br/>
+it takes comma-separated list of the integer error numbers<br/>
+for example "line too long" is marked as "E0110" so you should use integer value of: 110.<br/>
+<br/>
+also!<br/>
+put the --ignore_errors switch before the files path,<br/>
+just as the example, you can combine all switches you would like to, even ones you'll ignore,<br/>
+it works nicely... :)<br/>
+<br/>
+This will also works with JetBrains WebStorm IDE,<br/>
+here is my CONFIG FILE:<br/>
+<pre>--strict
+--jslint_error=braces_around_type 
+--jslint_error=unused_private_members
+--jslint_error=optional_type_marker
+--jslint_error=well_formed_author
+--jsdoc
+--summary
+--beep
+--check_html
+--multiprocess
+--debug_indentation
+--time</pre><br/>
+you should add the switch to it<br/>
+<pre>--strict
+--ignore_errors=6
+--ignore_errors=110
+--ignore_errors=233
+--jslint_error=braces_around_type 
+--jslint_error=unused_private_members
+--jslint_error=optional_type_marker
+--jslint_error=well_formed_author
+--jsdoc
+--nosummary
+--nobeep
+--nocheck_html
+--multiprocess
+--nodebug_indentation
+--notime</pre><br/>
+&nbsp;<br/>
+<h2>Download a Ready To Use Patched Version</h2><br/>
+<br/>
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/closure_linter_2_3_9_with_patch.rar">https://github.com/eladkarako/icompile/releases/download/latest/closure_linter_2_3_9_with_patch.rar</a></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/parallel-curl-requests">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/latest-google-closure-jslinter-gjslint-download-and-extract">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/latest-google-closure-jslinter-gjslint-download-and-extract">Latest Google-Closure-JSLinter (GJSLint) - Download and Extract</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/eclipse-kepler-and-lite-configurations">Eclipse Kepler and lite configurations</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-installer-download-latest-nightly-build-snapshot">Chromium Installer - Download Latest Nightly-Build Snapshot</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/mine-types-complete-list">Mine-Types Complete List</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-social-networking-icon-set">Free Social Networking Icon Set</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/fast-download-and-parse-http-archive-requests-file">Fast download and parse http-archive requests file</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/13-31-113-131-311-prime-numbers">311 Prime Numbers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vb6-api-for-coinitializeex-and-couninitialize-of-ole32-dll">VB6 API For CoInitializeEx and CoUninitialize of ole32.dll</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/window-messeging-example">JavaScript Snippet - WordPress Window-Messaging Semi-Safe Example</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-robtex-com-sorted-lists">JavaScript Snippet - Robtex.com Sorted Lists</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-wordpress-plugin-tagclass-bgone">New WordPress Plugin - TagClass-B-Gone</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wordpress-script-style-killer">New WordPress Plugin - Script-Style-Killer</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/web-whatsapp-com-resources-inline-style-zero-and-custom">web.whatsapp.com Resources - Inline-Style - Zero And Custom</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/whatsapp-new-emoji-from-web-whatsapp-com">Whatsapp New Emoji - From web.whatsapp.com</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/whatsapp-new-emoji-from-android-apk">Whatsapp New Emoji – From Android-APK</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/firefox-disgrace">Firefox Is A F***ing Disgrace</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Tools That Work With Graphite</title>
+  <meta itemprop="name"                                content="Tools That Work With Graphite"       />
+  <meta name="dcterms.title"                           content="Tools That Work With Graphite"       />
+  <meta property="og:title"                            content="Tools That Work With Graphite"       />
+  <meta name="twitter:title"                           content="Tools That Work With Graphite"       />
+  <meta name="twitter:text:title"                      content="Tools That Work With Graphite"       />
+  <meta name="application-name"                        content="Tools That Work With Graphite"       />
+  <meta name="subject"                                 content="Tools That Work With Graphite"       />
+  <meta name="apple-mobile-web-app-title"              content="Tools That Work With Graphite"       />
+  <meta name="msapplication-tooltip"                   content="Tools That Work With Graphite"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Tools That Work With Graphite"       />
+  <meta itemprop="description"                         content="Tools That Work With Graphite"       />
+  <meta name="dcterms.description"                     content="Tools That Work With Graphite"       />
+  <meta name="twitter:description"                     content="Tools That Work With Graphite"       />
+  <meta property="og:description"                      content="Tools That Work With Graphite"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accepts,access,adds,admob,aesthetic,agent,aggregation,aimed,aims,alerting,allowing,android,animal,annotated,anthracite,appears,application,backbone,backbonejs,backend,backstop,based,basic,blogspot,bootstrap,bought,brightcove,broad,browse,bucky,build,built,caches,campfire,capable,carbon,cebailey,centralised,charcoal,chart,charts,checks,client,clients,cluster,clusters,code,codehaus,collaborate,collect,collectd,collecting,collection,collectl,collectors,collects,color,combination,compatible,complete,compose,composer,computing,config,configure,configured,constrained,contrib,convert,converts,coredump,correlate,counters,create,cubism,custom,daemon,daemons,dashboard,dashboards,data,datagrams,datapoint,datapoints,davis,default,demo,descartes,details,determine,developed,device,devices,diamond,dieterbe,dimensional,dimovelev,directly,directory,discarded,dishes,disk,display,displayed,displaying,disqus,distributed,driven,dumping,dusk,ease,easier,easily,easy,emphasizes,endpoint,environment,error,esper,etsy,evenflow,events,expand,expanded,explorer,exporting,exposes,expressions,fast,fdietz,features,fetep,file,files,filter,fleet,flexibility,flexible,flot,focus,focuses,folks,footprint,forks,found,framework,frontend,ganglia,gathering,gdash,generate,generating,generic,gingerlime,giraffe,github,google,graph,graphene,graphios,graphite,graphitejs,graphiti,graphitoid,graphitus,graphs,graphsky,gree,gregory,grids,grockets,hassle,herokuapp,hierarchial,high,hoardd,horizon,host,hostgroup,hosts,hotspots,html,hubot,huoxy,hyves,ideal,ifixit,images,implemented,include,includes,index,indygreg,info,inputs,inspection,inspired,installing,integration,interesting,interface,intuitive,isolating,java,javascript,jdbc,jmxtrans,joemiller,jondot,jordan,jquery,json,kenhub,language,latest,layouts,ledbetter,lets,library,lightweight,list,listener,listeners,local,loggly,logs,logster,made,makes,making,manage,manipulate,market,master,maximize,mbostock,mechanisms,memory,message,metadata,metric,metrics,miller,minimal,mixes,modern,monitor,monitoring,multi,multiple,mysql,nagios,names,namespace,netty,network,newrelic,node,number,obfuscurity,observer,occurrences,occurring,offer,open,opensource,options,oracle,orion,output,outputs,overview,paul,pencil,perfdata,performance,performs,perl,perryofpeek,pipe,plaintext,platform,plugin,plugins,polling,post,powerful,pretty,problem,problems,processing,program,project,protocol,proxies,proxy,publishes,pull,pushing,pypi,python,queries,query,rabbitmq,read,reading,readthedocs,ready,realtime,receive,recovery,redis,regular,regularly,related,relay,released,relic,renames,report,requires,response,results,review,rich,rickshaw,ripienaar,rocksteady,rooms,route,running,runs,sampler,sanitized,saved,scala,scalability,scalable,scales,scobal,screen,script,scripts,searching,selects,send,sending,sends,sensu,sensuapp,series,server,servers,service,sets,setup,seyren,sflow,shared,shawn,shell,shinken,simple,simply,sinatra,single,sissel,slightly,small,solution,source,sourceforge,space,specific,square,standard,state,statistics,stats,statsd,status,sterling,storage,store,stored,stores,streaming,structure,structured,submitting,subscribe,subscribing,substring,subsystems,support,supported,supports,symlinked,system,systems,szorc,tags,targets,tasseo,tattle,team,template,term,therry,thousands,ties,timeseries,tool,toolkit,tools,translating,tree,trends,tweaking,twitters,type,types,underscore,underway,updated,updating,urls,users,utility,variety,vimeo,visualize,visualizing,wayfair,ways,webpages,webserver,wiki,windows,work,write,writes,written,yaml,zooming,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accepts,access,adds,admob,aesthetic,agent,aggregation,aimed,aims,alerting,allowing,android,animal,annotated,anthracite,appears,application,backbone,backbonejs,backend,backstop,based,basic,blogspot,bootstrap,bought,brightcove,broad,browse,bucky,build,built,caches,campfire,capable,carbon,cebailey,centralised,charcoal,chart,charts,checks,client,clients,cluster,clusters,code,codehaus,collaborate,collect,collectd,collecting,collection,collectl,collectors,collects,color,combination,compatible,complete,compose,composer,computing,config,configure,configured,constrained,contrib,convert,converts,coredump,correlate,counters,create,cubism,custom,daemon,daemons,dashboard,dashboards,data,datagrams,datapoint,datapoints,davis,default,demo,descartes,details,determine,developed,device,devices,diamond,dieterbe,dimensional,dimovelev,directly,directory,discarded,dishes,disk,display,displayed,displaying,disqus,distributed,driven,dumping,dusk,ease,easier,easily,easy,emphasizes,endpoint,environment,error,esper,etsy,evenflow,events,expand,expanded,explorer,exporting,exposes,expressions,fast,fdietz,features,fetep,file,files,filter,fleet,flexibility,flexible,flot,focus,focuses,folks,footprint,forks,found,framework,frontend,ganglia,gathering,gdash,generate,generating,generic,gingerlime,giraffe,github,google,graph,graphene,graphios,graphite,graphitejs,graphiti,graphitoid,graphitus,graphs,graphsky,gree,gregory,grids,grockets,hassle,herokuapp,hierarchial,high,hoardd,horizon,host,hostgroup,hosts,hotspots,html,hubot,huoxy,hyves,ideal,ifixit,images,implemented,include,includes,index,indygreg,info,inputs,inspection,inspired,installing,integration,interesting,interface,intuitive,isolating,java,javascript,jdbc,jmxtrans,joemiller,jondot,jordan,jquery,json,kenhub,language,latest,layouts,ledbetter,lets,library,lightweight,list,listener,listeners,local,loggly,logs,logster,made,makes,making,manage,manipulate,market,master,maximize,mbostock,mechanisms,memory,message,metadata,metric,metrics,miller,minimal,mixes,modern,monitor,monitoring,multi,multiple,mysql,nagios,names,namespace,netty,network,newrelic,node,number,obfuscurity,observer,occurrences,occurring,offer,open,opensource,options,oracle,orion,output,outputs,overview,paul,pencil,perfdata,performance,performs,perl,perryofpeek,pipe,plaintext,platform,plugin,plugins,polling,post,powerful,pretty,problem,problems,processing,program,project,protocol,proxies,proxy,publishes,pull,pushing,pypi,python,queries,query,rabbitmq,read,reading,readthedocs,ready,realtime,receive,recovery,redis,regular,regularly,related,relay,released,relic,renames,report,requires,response,results,review,rich,rickshaw,ripienaar,rocksteady,rooms,route,running,runs,sampler,sanitized,saved,scala,scalability,scalable,scales,scobal,screen,script,scripts,searching,selects,send,sending,sends,sensu,sensuapp,series,server,servers,service,sets,setup,seyren,sflow,shared,shawn,shell,shinken,simple,simply,sinatra,single,sissel,slightly,small,solution,source,sourceforge,space,specific,square,standard,state,statistics,stats,statsd,status,sterling,storage,store,stored,stores,streaming,structure,structured,submitting,subscribe,subscribing,substring,subsystems,support,supported,supports,symlinked,system,systems,szorc,tags,targets,tasseo,tattle,team,template,term,therry,thousands,ties,timeseries,tool,toolkit,tools,translating,tree,trends,tweaking,twitters,type,types,underscore,underway,updated,updating,urls,users,utility,variety,vimeo,visualize,visualizing,wayfair,ways,webpages,webserver,wiki,windows,work,write,writes,written,yaml,zooming,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/contenteditable-css3-alternative"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/contenteditable-css3-alternative"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javascript-emulate-click"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/tools-that-work-with-graphite"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/tools-that-work-with-graphite"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/tools-that-work-with-graphite"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/tools-that-work-with-graphite"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/tools-that-work-with-graphite"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/tools-that-work-with-graphite"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2013-12-29T07:14:29+00:00"     />
+  <meta name="page-datetime"                           content="2013-12-29T07:14:29+00:00"     />
+  <meta property="article:published_time"              content="2013-12-29T07:14:29+00:00"     />
+  <meta name="dcterms.date"                            content="2013-12-29T07:14:29+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-12-10T01:35:25+00:00"    />
+  <meta property="article:modified_time"               content="2016-12-10T01:35:25+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/tools-that-work-with-graphite"
+,"url"             : "https://icompile.eladkarako.com/tools-that-work-with-graphite"
+,"headline"        : "Tools That Work With Graphite"
+,"description"     : "Tools That Work With Graphite"
+,"datePosted"      : "2013-12-29T07:14:29+00:00"
+,"dateCreated"     : "2013-12-29T07:14:29+00:00"
+,"datePublished"   : "2013-12-29T07:14:29+00:00"
+,"dateModified"    : "2016-12-10T01:35:25+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0009621038831">
+  <header>
+    <h1 itemprop="headline">Tools That Work With Graphite</h1>
+    <sup>Posted at <time datetime="2016-12-10T01:35:25+00:00" itemprop="dateModified">Sat, 10 Dec 2016 01:35:25 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><!--more--><br/>
+<h2></h2><br/>
+<style type="text/css"> .info1{ background-color:#E8F7FF; } </style><br/>
+<div id="tools-that-work-with-graphite"><br/>
+<div id="backstop"><br/>
+<h2>Backstop</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/obfuscurity/backstop">Backstop</a> is a simple endpoint for submitting metrics to Graphite. It accepts JSON data via HTTP POST and proxies the data to one or more Carbon/Graphite listeners.<br/>
+</span><br/>
+</div><br/>
+<div id="bucky"><br/>
+<h2>Bucky</h2><br/>
+<span class="info1"><br/>
+<a href="http://pypi.python.org/pypi/bucky">Bucky</a> is a small service implemented in Python for collecting and translating metrics for Graphite. It can current collect metric data from CollectD daemons and from StatsD clients.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="collectd"><br/>
+<h2>collectd</h2><br/>
+<span class="info1"><br/>
+<a href="http://collectd.org/">collectd</a> is a daemon which collects system performance statistics periodically and provides mechanisms to store the values in a variety of ways, including RRD. To send collectd metrics into carbon/graphite, use collectd's <a href="http://collectd.org/wiki/index.php/Plugin:Write_Graphite">write-graphite</a> plugin (available as of 5.1). Other options include:<br/>
+<ul><br/>
+	<li>Jordan Sissel's node <a href="https://github.com/loggly/collectd-to-graphite">collectd-to-graphite</a> proxy</li><br/>
+	<li>Joe Miller's perl <a href="https://github.com/joemiller/collectd-graphite">collectd-graphite</a> plugin</li><br/>
+	<li>Gregory Szorc's python <a href="https://github.com/indygreg/collectd-carbon">collectd-carbon</a> plugin</li><br/>
+	<li>Paul J. Davis's <a href="http://pypi.python.org/pypi/bucky">Bucky</a> service</li><br/>
+</ul><br/>
+Graphite can also read directly from <a href="http://collectd.org/">collectd</a>'s RRD files. RRD files can simply be added to <tt>STORAGE_DIR/rrd</tt> (as long as directory names and files do not contain any <tt>.</tt> characters). For example, collectd's <tt>host.name/load/load.rrd</tt> can be symlinked to <tt>rrd/collectd/host_name/load/load.rrd</tt> to graph <tt>collectd.host_name.load.load.{short,mid,long}term</tt>.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="collectl"><br/>
+<h2>Collectl</h2><br/>
+<span class="info1"><br/>
+<a href="http://collectl.sourceforge.net/">Collectl</a> is a collection tool for system metrics that can be run both interactively and as a daemon and has support for collecting from a broad set of subsystems. Collectl includes a Graphite interface which allows data to easily be fed to Graphite for storage.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="charcoal"><br/>
+<h2>Charcoal</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/cebailey59/charcoal">Charcoal</a> is a simple Sinatra dashboarding frontend for Graphite or any other system status service which can generate images directly from a URL. Charcoal configuration is driven by a YAML config file.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="cubism-js"><br/>
+<h2>Cubism.js</h2><br/>
+<span class="info1"><br/>
+<a href="http://square.github.io/cubism/">Cubism.js</a> is a D3 plugin for visualizing time series data in real time, and can pull data from Graphite.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="descartes"><br/>
+<h2>Descartes</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/obfuscurity/descartes">Descartes</a> is a Sinatra-based dashboard that allows users to correlate multiple metrics in a single chart, review long-term trends across one or more charts, and to collaborate with other users through a combination of shared dashboards and rich layouts.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="diamond"><br/>
+<h2>Diamond</h2><br/>
+<span class="info1"><br/>
+<a href="http://opensource.brightcove.com/project/Diamond/">Diamond</a> is a Python daemon that collects system metrics and publishes them to Graphite. It is capable of collecting cpu, memory, network, I/O, load and disk metrics. Additionally, it features an API for implementing custom collectors for gathering metrics from almost any source.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="dusk"><br/>
+<h2>Dusk</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/obfuscurity/dusk">Dusk</a> is a simple dashboard for isolating "hotspots" across a fleet of systems. It incorporates horizon charts using Cubism.js to maximize data visualization in a constrained space.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="evenflow"><br/>
+<h2>Evenflow</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/github/evenflow">Evenflow</a> is a simple service for submitting sFlow datagrams to Graphite. It accepts sFlow datagrams from multiple network devices and proxies the data to a Carbon listener. Currently only Generic Interface Counters are supported. All other message types are discarded.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="ganglia"><br/>
+<h2>Ganglia</h2><br/>
+<span class="info1"><br/>
+<a href="http://ganglia.info/">Ganglia</a> is a scalable distributed monitoring system for high-performance computing systems such as clusters and Grids. It collects system performance metrics and stores them in RRD, but now there is an <a href="https://github.com/ganglia/ganglia_contrib/tree/master/graphite_integration/">add-on</a> that allows Ganglia to send metrics directly to Graphite. Further integration work is underway.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="gdash"><br/>
+<h2>GDash</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/ripienaar/gdash.git">Gdash</a> is a simple Graphite dashboard built using Twitters Bootstrap driven by a small DSL.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="giraffe"><br/>
+<h2>Giraffe</h2><br/>
+<span class="info1"><br/>
+<a href="http://kenhub.github.com/giraffe/">Giraffe</a> is a Graphite real-time dashboard based on <a href="http://code.shutterstock.com/rickshaw/">Rickshaw</a> and requires no server backend. Inspired by <a href="https://github.com/ripienaar/gdash.git">Gdash</a>, <a href="https://github.com/obfuscurity/tasseo">Tasseo</a> and <a href="http://jondot.github.com/graphene/">Graphene</a> it mixes features from all three into a slightly different animal.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="graphitus"><br/>
+<h2>Graphitus</h2><br/>
+<span class="info1"><br/>
+<a href="http://graphite.readthedocs.org/en/latest/tools.html#graphitus">graphitus</a> is a client side dashboard for graphite built using bootstrap and underscore.js.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="graph-explorer"><br/>
+<h2>Graph-Explorer</h2><br/>
+<span class="info1"><br/>
+<a href="http://vimeo.github.io/graph-explorer">Graph-Explorer</a> is a graphite dashboard which uses plugins to add tags and metadata to metrics and a query language with lets you filter through them and compose/manipulate graphs on the fly. Also aims for high interactivity using <a href="https://github.com/Dieterbe/timeserieswidget">TimeseriesWidget</a> and minimal hassle to set up and get running.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="graph-index"><br/>
+<h2>Graph-Index</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/huoxy/graph-index">Graph-Index</a> is index of graphs for <a href="http://opensource.brightcove.com/project/Diamond/">Diamond</a><br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="graphene"><br/>
+<h2>Graphene</h2><br/>
+<span class="info1"><br/>
+<a href="http://jondot.github.com/graphene/">Graphene</a> is a Graphite dashboard toolkit based on <a href="http://mbostock.github.com/d3/">D3.js</a> and <a href="http://backbonejs.org/">Backbone.js</a> which was made to offer a very aesthetic realtime dashboard. Graphene provides a solution capable of displaying thousands upon thousands of datapoints all updated in realtime.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="graphite-newrelic"><br/>
+<h2>Graphite-Newrelic</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/gingerlime/graphite-newrelic">Graphite-Newrelic</a> - Get your graphite data into <a href="https://newrelic.com/platform">New Relic</a> via a New Relic Platform plugin.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="graphite-observer"><br/>
+<h2>Graphite-Observer</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/huoxy/graphite-observer">Graphite-Observer</a> is a real-time monitor dashboard for Graphite.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="graphite-relay"><br/>
+<h2>Graphite-relay</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/markchadwick/graphite-relay">Graphite-relay</a> is a fast Graphite relay written in Scala with the Netty framework.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="graphite-tattle"><br/>
+<h2>Graphite-Tattle</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/wayfair/Graphite-Tattle">Graphite-Tattle</a> is a self-service dashboard frontend for Graphite and <a href="http://ganglia.info/">Ganglia</a>.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="graphiti"><br/>
+<h2>Graphiti</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/paperlesspost/graphiti">Graphiti</a> is a powerful dashboard front end with a focus on ease of access, ease of recovery and ease of tweaking and manipulation.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="graphitoid"><br/>
+<h2>Graphitoid</h2><br/>
+<span class="info1"><br/>
+<a href="https://market.android.com/details?id=com.tnc.android.graphite">Graphitoid</a> is an Android app which allows one to browse and display Graphite graphs on an Android device.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="graphios"><br/>
+<h2>Graphios</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/shawn-sterling/graphios">Graphios</a> is a small Python daemon to send Nagios performance data (perfdata) to Graphite.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="graphitejs"><br/>
+<h2>Graphitejs</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/prestontimmons/graphitejs">Graphitejs</a> is a jQuery plugin for easily making and displaying graphs and updating them on the fly using the Graphite URL api.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="graphsky"><br/>
+<h2>Graphsky</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/hyves-org/graphsky">Graphsky</a> is flexible and easy to configure PHP based dashboard. It uses JSON template files to build graphs and specify which graphs need to be displayed when, similar to Ganglia-web. Just like Ganglia, it uses a hierarchial structure: Environment/Cluster/Host/Metric to be able to display overview graphs and host-specific metrics. It communicates directly to the Graphite API to determine which Environments, Clusters, Hosts and Metrics are currently stored in Graphite.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="grockets"><br/>
+<h2>Grockets</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/disqus/grockets">Grockets</a> is a node.js application which provides streaming JSON data over HTTP from Graphite.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="hoardd"><br/>
+<h2>HoardD</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/coredump/hoardd">HoardD</a> is a Node.js app written in CoffeeScript to send data from servers to Graphite, much like collectd does, but aimed at being easier to expand and with less footprint. It comes by default with basic collectors plus Redis and MySQL metrics, and can be expanded with Javascript or CoffeeScript.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="host-sflow"><br/>
+<h2>Host sFlow</h2><br/>
+<span class="info1"><br/>
+<a href="http://host-sflow.sourceforge.net/">Host sFlow</a> is an open source implementation of the sFlow protocol (<a href="http://www.sflow.org">http://www.sflow.org</a>), exporting a standard set of host cpu, memory, disk and network I/O metrics. The sflow2graphite utility converts sFlow to Graphite's plaintext protocol, allowing Graphite to receive sFlow metrics.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="hubot-scripts"><br/>
+<h2>hubot-scripts</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/github/hubot">Hubot</a> is a Campfire bot written in Node.js and CoffeeScript. The related <a href="https://github.com/github/hubot-scripts">hubot-scripts</a> project includes a Graphite script which supports searching and displaying saved graphs from the Composer directory in your Campfire rooms.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="jmxtrans"><br/>
+<h2>jmxtrans</h2><br/>
+<span class="info1"><br/>
+<a href="http://code.google.com/p/jmxtrans/">jmxtrans</a> is a powerful tool that performs JMX queries to collect metrics from Java applications. It is requires very little configuration and is capable of sending metric data to several backend applications, including Graphite.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="ledbetter"><br/>
+<h2>Ledbetter</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/github/ledbetter">Ledbetter</a> is a simple script for gathering Nagios problem statistics and submitting them to Graphite. It focuses on summary (overall, servicegroup and hostgroup) statistics and writes them to the nagios.problems metrics namespace within Graphite.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="logster"><br/>
+<h2>Logster</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/etsy/logster">Logster</a> is a utility for reading log files and generating metrics in Graphite or Ganglia. It is ideal for visualizing trends of events that are occurring in your application/system/error logs. For example, you might use logster to graph the number of occurrences of HTTP response code that appears in your web server logs.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="orion"><br/>
+<h2>Orion</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/gree/Orion">Orion</a> is powerful tool to create, view and manage dashboards for your Graphite data. It allows easy implementation of custom authentication to manage access to the dashboard.<br/>
+</span><br/>
+</div><br/>
+<div id="metrics-sampler"><br/>
+<h2>metrics-sampler</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/dimovelev/metrics-sampler">metrics-sampler</a> is a java program which regularly queries metrics from a configured set of inputs, selects and renames them using regular expressions and sends them to a configured set of outputs. It supports JMX and JDBC as inputs and Graphite as output out of the box.<br/>
+</span><br/>
+</div><br/>
+<div id="pencil"><br/>
+<h2>Pencil</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/fetep/pencil">Pencil</a> is a monitoring frontend for graphite. It runs a webserver that dishes out pretty Graphite URLs in interesting and intuitive layouts.<br/>
+</span><br/>
+</div><br/>
+<div id="pipe-to-graphite"><br/>
+<h2>pipe-to-graphite</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/iFixit/pipe-to-graphite">pipe-to-graphite</a> is a small shell script that makes it easy to report the output of any other cli program to Graphite.<br/>
+</span><br/>
+</div><br/>
+<div id="rocksteady"><br/>
+<h2>Rocksteady</h2><br/>
+<span class="info1"><br/>
+<a href="http://code.google.com/p/rocksteady/">Rocksteady</a> is a system that ties together Graphite, <a href="http://www.rabbitmq.com/">RabbitMQ</a>, and <a href="http://esper.codehaus.org/">Esper</a>. Developed by AdMob (who was then bought by Google), this was released by Google as open source (<a href="http://google-opensource.blogspot.com/2010/09/get-ready-to-rocksteady.html">http://google-opensource.blogspot.com/2010/09/get-ready-to-rocksteady.html</a>).<br/>
+</span><br/>
+</div><br/>
+<div id="scales"><br/>
+<h2>Scales</h2><br/>
+<span class="info1"><br/>
+<a href="http://graphite.readthedocs.org/en/latest/tools.html#scales">Scales</a> is a Python server state and statistics library that can output its data to Graphite.<br/>
+</span><br/>
+</div><br/>
+<div id="sensu"><br/>
+<h2>Sensu</h2><br/>
+<span class="info1"><br/>
+<a href="http://sensuapp.org/">Sensu</a> is a monitoring framework that can route metrics to Graphite. Servers subscribe to sets of checks, so getting metrics from a new server to Graphite is as simple as installing the Sensu client and subscribing.<br/>
+</span><br/>
+</div><br/>
+<div id="seyren"><br/>
+<h2>Seyren</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/scobal/seyren">Seyren</a> is an alerting dashboard for Graphite.<br/>
+</span><br/>
+</div><br/>
+<div id="shinken"><br/>
+<h2>Shinken</h2><br/>
+<span class="info1"><br/>
+<a href="http://www.shinken-monitoring.org/">Shinken</a> is a system monitoring solution compatible with Nagios which emphasizes scalability, flexibility, and ease of setup. Shinken provides complete integration with Graphite for processing and display of performance data.<br/>
+</span><br/>
+</div><br/>
+<div id="sqltographite"><br/>
+<h2>SqlToGraphite</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/perryofpeek/SqlToGraphite/">SqlToGraphite</a> is an agent for windows written in .net to collect metrics using plugins (WMI, SQL Server, Oracle) by polling an endpoint with a SQL query and pushing the results into graphite. It uses either a local or a centralised configuration over HTTP.<br/>
+</span><br/>
+</div><br/>
+<div id="statsd"><br/>
+<h2>statsd</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/etsy/statsd">statsd</a> is a simple daemon for easy stats aggregation, developed by the folks at Etsy. A list of forks and alternative implementations can be found at &lt;<a href="http://joemiller.me/2011/09/21/list-of-statsd-server-implementations/">http://joemiller.me/2011/09/21/list-of-statsd-server-implementations/</a>&gt;<br/>
+</span><br/>
+</div><br/>
+<div id="structured-metrics"><br/>
+<h2>Structured Metrics</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/vimeo/graph-explorer/tree/master/structured_metrics">structured_metrics</a> is a lightweight python library that uses plugins to read in Graphite's list of metric names and convert it into a multi-dimensional tag space of clear, sanitized targets.<br/>
+</span><br/>
+</div><br/>
+<div id="tasseo"><br/>
+<h2>Tasseo</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/obfuscurity/tasseo">Tasseo</a> is a lightweight, easily configurable, real-time dashboard for Graphite metrics.<br/>
+</span><br/>
+</div><br/>
+<div id="therry"><br/>
+<h2>Therry</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/obfuscurity/therry">Therry</a> ia s simple web service that caches Graphite metrics and exposes an endpoint for dumping or searching against them by substring.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="timeserieswidget"><br/>
+<h2>TimeseriesWidget</h2><br/>
+<span class="info1"><br/>
+<a href="https://github.com/Dieterbe/timeserieswidget">TimeseriesWidget</a> adds timeseries graphs to your webpages/dashboards using a simple api, focuses on high interactivity and modern features (realtime zooming, datapoint inspection, annotated events, etc). Supports Graphite, flot, rickshaw and anthracite.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<div id="team_dashboard"><br/>
+<h2>team_dashboard</h2><br/>
+<span class="info1"><br/>
+<a href="http://fdietz.github.io/team_dashboard/">team_dashboard</a> Team Dashboard lets you visualize your team's metrics all in one place. It is build to be shown on a big screen in your team's space.. <a href="http://team-dashboard.herokuapp.com/">demo</a>.<br/>
+</span><br/>
+</div><br/>
+<br/>
+<br/>
+</div></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/contenteditable-css3-alternative">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-emulate-click">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-emulate-click">JavaScript Ninja - Emulate A Click</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adding-stale-while-revalidate-and-stale-if-error">Adding Stale-While-Revalidate And Stale-If-Error</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/schema-for-your-website">Schema.org For Your WebSite</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-byte-string">PHP Byte String</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cmd-system32-or-syswow64-execution">CMD Snippet - Selective Executing From Either Windows System32 Or SysWOW64 Folders With Easy And Simple GOTO-State-Machine</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/umoji-unicode-emoji">UMOJI - Unicode Emoji</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/get-chrome-version-using-javascript">JavaScript Snippet - Get Chrome's Version Using JavaScript</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/github-because-those-who-can-not-do-fork">Fork.</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-proper-hard-subtitle">FFMPEG - Real Proper Hard-Burn Subtitle Onto A Video</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/how-to-update-your-gist-file">How To Update Your Gist File</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/gooooooooood-evening-good-evening-good-evening-good-evening-and-welcome-to-qi">Gooooooooood Evening.. Good Evening.. Good Evening.. Good Evening.. And Welcome To QI</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-realtek-driver-download-pages-direct-download-link-without-redirection">JavaScript Snippet - Realtek Driver-Download Pages - Direct Download Link Without Redirection</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-extensions-with-javascript-on-pages-with-no-javascript">On Pages With No JavaScript</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-format-as-unicode-string-u">JavaScript Snippet - Format As Unicode String ("\\u..")</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-the-state-of-window">JavaScript Ninja - The State Of Window</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-snippet-quickdirty-3d-uneven-shadow-effect">CSS Snippet - Quick&Dirty 3D Uneven Shadow-Effect</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

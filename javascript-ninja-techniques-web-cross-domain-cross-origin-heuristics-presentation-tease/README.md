@@ -1,0 +1,1 @@
+<a href="https://icompile.eladkarako.com/_uploads/2015/01/cdmn.png"><img class="alignnone size-full wp-image-2387" src="https://icompile.eladkarako.com/_uploads/2015/01/cdmn.png" alt="cdmn" rem-width="1023" rem-height="590" /></a>

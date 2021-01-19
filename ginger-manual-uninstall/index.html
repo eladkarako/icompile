@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Ginger Manual Uninstall</title>
+  <meta itemprop="name"                                content="Ginger Manual Uninstall"       />
+  <meta name="dcterms.title"                           content="Ginger Manual Uninstall"       />
+  <meta property="og:title"                            content="Ginger Manual Uninstall"       />
+  <meta name="twitter:title"                           content="Ginger Manual Uninstall"       />
+  <meta name="twitter:text:title"                      content="Ginger Manual Uninstall"       />
+  <meta name="application-name"                        content="Ginger Manual Uninstall"       />
+  <meta name="subject"                                 content="Ginger Manual Uninstall"       />
+  <meta name="apple-mobile-web-app-title"              content="Ginger Manual Uninstall"       />
+  <meta name="msapplication-tooltip"                   content="Ginger Manual Uninstall"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Ginger Manual Uninstall"       />
+  <meta itemprop="description"                         content="Ginger Manual Uninstall"       />
+  <meta name="dcterms.description"                     content="Ginger Manual Uninstall"       />
+  <meta name="twitter:description"                     content="Ginger Manual Uninstall"       />
+  <meta property="og:description"                      content="Ginger Manual Uninstall"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="abeba,acatts,accff,activex,adapter,addins,address,adobe,aeec,alignnone,appdata,appid,avast,badef,baece,bafd,bcbaaa,bfcf,binary,bitmaps,blank,blogs,browser,cabf,called,canary,cebcd,cefcd,cfeea,cfeef,checking,chrome,chromium,classes,clientui,clsid,components,content,controlset,data,declaring,deece,default,delivering,deployment,development,directx,eaef,easy,ecbed,ecef,editor,elad,engines,eset,experience,explorer,extensions,extra,faff,fbcb,fbdf,feaa,features,febe,files,firebug,firefox,flash,folder,folders,ginger,gingersetup,good,graham,graphics,great,heather,hkcr,hkey,image,install,installer,interaction,interface,internet,junk,keys,labs,license,local,localhost,lucy,machine,macromedia,make,makes,malware,manual,medium,menu,microsoft,misc,mozilla,native,nature,nice,node,nofollow,office,outlook,overflow,plain,platform,player,plugins,pointers,products,program,programdata,programs,provide,rasapi,rasmancs,recursive,registry,related,replace,required,rights,roaming,root,ryan,scroll,selector,services,settings,shared,shareddlls,size,slow,software,standalon,start,stop,storage,stuff,system,target,team,tech,temporary,title,tracing,type,typelib,uninstall,unstable,updates,upgrade,user,userdata,username,users,vadm,version,windows,wordaddin,work,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="abeba,acatts,accff,activex,adapter,addins,address,adobe,aeec,alignnone,appdata,appid,avast,badef,baece,bafd,bcbaaa,bfcf,binary,bitmaps,blank,blogs,browser,cabf,called,canary,cebcd,cefcd,cfeea,cfeef,checking,chrome,chromium,classes,clientui,clsid,components,content,controlset,data,declaring,deece,default,delivering,deployment,development,directx,eaef,easy,ecbed,ecef,editor,elad,engines,eset,experience,explorer,extensions,extra,faff,fbcb,fbdf,feaa,features,febe,files,firebug,firefox,flash,folder,folders,ginger,gingersetup,good,graham,graphics,great,heather,hkcr,hkey,image,install,installer,interaction,interface,internet,junk,keys,labs,license,local,localhost,lucy,machine,macromedia,make,makes,malware,manual,medium,menu,microsoft,misc,mozilla,native,nature,nice,node,nofollow,office,outlook,overflow,plain,platform,player,plugins,pointers,products,program,programdata,programs,provide,rasapi,rasmancs,recursive,registry,related,replace,required,rights,roaming,root,ryan,scroll,selector,services,settings,shared,shareddlls,size,slow,software,standalon,start,stop,storage,stuff,system,target,team,tech,temporary,title,tracing,type,typelib,uninstall,unstable,updates,upgrade,user,userdata,username,users,vadm,version,windows,wordaddin,work,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/chromeflagsenable-app-window-controls"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/chromeflagsenable-app-window-controls"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/make-windows-7-sp1-use-microsoft-update"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/ginger-manual-uninstall"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/ginger-manual-uninstall"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/ginger-manual-uninstall"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/ginger-manual-uninstall"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/ginger-manual-uninstall"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/ginger-manual-uninstall"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-09-26T22:50:24+00:00"     />
+  <meta name="page-datetime"                           content="2014-09-26T22:50:24+00:00"     />
+  <meta property="article:published_time"              content="2014-09-26T22:50:24+00:00"     />
+  <meta name="dcterms.date"                            content="2014-09-26T22:50:24+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2014-10-31T17:52:50+00:00"    />
+  <meta property="article:modified_time"               content="2014-10-31T17:52:50+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/ginger-manual-uninstall"
+,"url"             : "https://icompile.eladkarako.com/ginger-manual-uninstall"
+,"headline"        : "Ginger Manual Uninstall"
+,"description"     : "Ginger Manual Uninstall"
+,"datePosted"      : "2014-09-26T22:50:24+00:00"
+,"dateCreated"     : "2014-09-26T22:50:24+00:00"
+,"datePublished"   : "2014-09-26T22:50:24+00:00"
+,"dateModified"    : "2014-10-31T17:52:50+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0004281771141">
+  <header>
+    <h1 itemprop="headline">Ginger Manual Uninstall</h1>
+    <sup>Posted at <time datetime="2014-10-31T17:52:50+00:00" itemprop="dateModified">Fri, 31 Oct 2014 17:52:50 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">I like Ginger.<br/>
+-&gt;Uninstall in-order to re-install later:<br/>
+<!--more--><br/>
+<br/>
+<br/>
+<pre><style type="text/css">
+pre {  
+ max-height: 400px;  
+ overflow-y: scroll;  
+}  
+</style></pre><br/>
+<br/>
+Part 1 is Registry big-keys (recursive)<br/>
+<pre>
+Windows Registry Editor Version 5.00
+[-HKEY_CLASSES_ROOT\\AppID\\{1B550834-8EAD-4B3A-9D91-17168D967B0F}]
+[-HKEY_CLASSES_ROOT\\AppID\\{5C036125-28A2-4107-AF44-36405B3053BF}]
+[-HKEY_CLASSES_ROOT\\AppID\\{8EF1B0EC-EC88-412A-9EEC-88F49E572B48}]
+[-HKEY_CLASSES_ROOT\\AppID\\{BA946A3B-9681-48E0-A7DA-DD890FEAA62E}]
+[-HKEY_CLASSES_ROOT\\AppID\\GingerMSOutlookAddin.DLL]
+[-HKEY_CLASSES_ROOT\\AppID\\GingerMSWordAddin.DLL]
+[-HKEY_CLASSES_ROOT\\AppID\\GingerServices.EXE]
+[-HKEY_CLASSES_ROOT\\AppID\\GingerUpdateService.EXE]
+[-HKEY_CLASSES_ROOT\\GingerMSOutlookAddin.GingerOutlookAdd.1]
+[-HKEY_CLASSES_ROOT\\GingerMSOutlookAddin.GingerOutlookAddIn]
+[-HKEY_CLASSES_ROOT\\GingerMSWordAddin.WordAddin]
+[-HKEY_CLASSES_ROOT\\GingerMSWordAddin.WordAddin.1]
+[-HKEY_CLASSES_ROOT\\GingerServices.ClientUI]
+[-HKEY_CLASSES_ROOT\\GingerServices.ClientUI.1]
+[-HKEY_CLASSES_ROOT\\GingerServices.GCorrectionServices]
+[-HKEY_CLASSES_ROOT\\GingerServices.GCorrectionServices.1]
+[-HKEY_CLASSES_ROOT\\GingerServices.GCorrectionServicesFac.1]
+[-HKEY_CLASSES_ROOT\\GingerServices.GCorrectionServicesFacto]
+[-HKEY_CLASSES_ROOT\\GingerServices.GTrackingManager]
+[-HKEY_CLASSES_ROOT\\GingerServices.GTrackingManager.1]
+[-HKEY_CLASSES_ROOT\\GingerServices.GUserManagement]
+[-HKEY_CLASSES_ROOT\\GingerServices.GUserManagement.1]
+[-HKEY_CLASSES_ROOT\\GingerServices.ServicesController]
+[-HKEY_CLASSES_ROOT\\GingerServices.ServicesController.1]
+[-HKEY_CLASSES_ROOT\\GingerUpdateService.AutoUpdateControl.1]
+[-HKEY_CLASSES_ROOT\\GingerUpdateService.AutoUpdateControlle]
+[-HKEY_CLASSES_ROOT\\Installer\\Features\\95A9FBE13E4F7AE4AB796707C341236F]
+[-HKEY_CLASSES_ROOT\\Installer\\Products\\95A9FBE13E4F7AE4AB796707C341236F]
+[-HKEY_CLASSES_ROOT\\Interface\\{87906C04-8BBB-4B03-A350-7046290E20C1}]
+[-HKEY_CLASSES_ROOT\\Software\\Microsoft\\Office\\Outlook\\Addins\\GingerMSOutlookAddin.GingerOutlookAddIn]
+[-HKEY_CLASSES_ROOT\\Software\\Microsoft\\Office\\Word\\Addins\\GingerMSWordAddin.WordAddin]
+[-HKEY_CLASSES_ROOT\\TypeLib\\{0E3E58F0-D250-4B5C-9E1D-DD5CEFCD60A8}]
+[-HKEY_CLASSES_ROOT\\TypeLib\\{A22E5EF4-B1DD-440A-A81F-ABEBA3213EDD}]
+[-HKEY_CLASSES_ROOT\\TypeLib\\{C262CE30-E227-4799-8DAE-0539EE482CF9}]
+[-HKEY_CLASSES_ROOT\\TypeLib\\{D604EAEF-CD0C-45B0-A0AC-6F8572B434D4}]
+[-HKEY_CLASSES_ROOT\\Wow6432Node\\CLSID\\{36F6DA77-CED0-4166-9E94-F86338062139}]
+[-HKEY_CLASSES_ROOT\\Wow6432Node\\CLSID\\{7C5B98C9-B035-4B11-862A-CB519ECEF6A2}]
+[-HKEY_CLASSES_ROOT\\Wow6432Node\\CLSID\\{81404D30-8D69-4336-8B9D-9622DB90448F}]
+[-HKEY_CLASSES_ROOT\\Wow6432Node\\CLSID\\{87906C04-8BBB-4B03-A350-7046290E20C1}]
+[-HKEY_CLASSES_ROOT\\Wow6432Node\\CLSID\\{9B07E79B-E44D-49C1-909D-64810874210D}]
+[-HKEY_CLASSES_ROOT\\Wow6432Node\\CLSID\\{A53E6563-7A6F-4894-84A1-A1E81F283395}]
+[-HKEY_CLASSES_ROOT\\Wow6432Node\\CLSID\\{B7FCF448-00BA-4F1D-82C6-70E9111C41E3}]
+[-HKEY_CLASSES_ROOT\\Wow6432Node\\CLSID\\{BE84D713-6145-4345-B136-0E8CB032DA75}]
+[-HKEY_CLASSES_ROOT\\Wow6432Node\\CLSID\\{C7B563B9-04AC-40B9-B7C5-CDF8DED3CE69}]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\10.0\\Outlook\\Addins\\GingerMSOutlookAddin.GingerOutlookAddIn]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\10.0\\Outlook\\Addins\\Microsoft.VbaAddinForOutlook.1]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\11.0\\Outlook\\Addins\\GingerMSOutlookAddin.GingerOutlookAddIn]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\11.0\\Outlook\\Addins\\Microsoft.VbaAddinForOutlook.1]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\12.0\\Outlook\\Addins\\GingerMSOutlookAddin.GingerOutlookAddIn]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\12.0\\Outlook\\Addins\\Microsoft.VbaAddinForOutlook.1]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\13.0\\Outlook\\Addins\\GingerMSOutlookAddin.GingerOutlookAddIn]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\13.0\\Outlook\\Addins\\Microsoft.VbaAddinForOutlook.1]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\14.0\\Outlook\\Addins\\GingerMSOutlookAddin.GingerOutlookAddIn]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\14.0\\Outlook\\Addins\\Microsoft.VbaAddinForOutlook.1]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\15.0\\Outlook\\Addins\\GingerMSOutlookAddin.GingerOutlookAddIn]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\15.0\\Outlook\\Addins\\Microsoft.VbaAddinForOutlook.1]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\8.0\\Outlook\\Addins\\GingerMSOutlookAddin.GingerOutlookAddIn]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\8.0\\Outlook\\Addins\\Microsoft.VbaAddinForOutlook.1]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\9.0\\Outlook\\Addins\\GingerMSOutlookAddin.GingerOutlookAddIn]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\9.0\\Outlook\\Addins\\Microsoft.VbaAddinForOutlook.1]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\Outlook\\Addins\\GingerMSOutlookAddin.GingerOutlookAddIn]
+[-HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\Word\\Addins\\GingerMSWordAddin.WordAddin]
+[-HKEY_CURRENT_USER\\Software\\MozillaPlugins\\gingersoftware.com/gingerPlugin]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\0AD83FF0E739F23489805E44D46263D2]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\0BD6CF1772ABF584EA31499E3D246BF1]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\156FAE81ACCFF564AB579B30B037E9F4]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\157B77D836CF6F7438CB9CCD5F50965D]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\2A84E5DC4BA57F2459E8019C5DF5AA2E]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\37B860248459AA0419800831183E3901]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\396BAECE50232AE0FF86C807B22A3A4E]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\3C2E0F1322A42714694F07A7123A0145]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\66E198D15F6787340896E6523FBCB7C4]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\687B6238FAFF9F74D84DE79606589909]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\6AEB31D7DD2AA1B4AAD964BED03E7F97]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\6EE0A1139ABC84A479886997FCD1EA43]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\7CC891A272B4377419A6DFD39B2E889A]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\9892E173EF5C0574AAB984BAFD7AEEC9]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\9A3E14C2299B94D4E936A7A5034E77CF]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\C4D0E4F205DB3344A89CEBCD0FD94A1C]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\C6D56C676D1A1D547A2C0B49D364544C]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\C909793CFEEA98E41B4E6B4FE0C3AC8D]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\D0FF7924A18998244A42BCBAAA83CABF]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\D2BF35B7C9F38344EB0AEB0AE49F552B]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\E91D69C96074A9D468553C2D4D05B7E6]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\F8F68B08FBDF654E007ECC7C1E5444D0]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\FEBE457251ECBED44A81CAD258B4B9D9]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Products\\95A9FBE13E4F7AE4AB796707C341236F]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Ginger]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Internet Explorer\\Low Rights\\ElevationPolicy\\{0877c1fc-19c6-4fe2-8e3d-699d8edb2964}]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Internet Explorer\\Low Rights\\ElevationPolicy\\{A12A9634-D0B4-4a2b-9BCB-75B3C088700A}]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Office\\Outlook\\Addins\\GingerMSOutlookAddin.GingerOutlookAddIn]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Office\\Word\\Addins\\GingerMSWordAddin.WordAddin]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Tracing\\Ginger_RASAPI32]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Tracing\\Ginger_RASMANCS]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Tracing\\GingerClient_RASAPI32]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Tracing\\GingerClient_RASMANCS]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Tracing\\GingerServices_RASAPI32]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Tracing\\GingerServices_RASMANCS]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Tracing\\GingerUpdateService_RASAPI32]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Tracing\\GingerUpdateService_RASMANCS]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{1EBF9A59-F4E3-4EA7-BA97-76703C1432F6}]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\InstallShield_{1EBF9A59-F4E3-4EA7-BA97-76703C1432F6}]
+[-HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\services\\GingerUpdateService]
+[-HKCR\\Interface\\{A8BADEF9-6BBC-454F-8EC7-6703B24F57D1}]
+[-HKCR\\Interface\\{F38F42D7-6C80-43AC-92FA-B635B5346140}]
+[-HKCR\\Interface\\{3CF81C1C-36DD-4825-B1DA-B49378F119FD}]
+[-HKCR\\Interface\\{5715B9F3-0755-44F7-BC8A-FF65BE491C98}]
+[-HKCR\\Interface\\{8E27E6D6-6B38-4491-9182-A88DB29354DE}]
+[-HKCR\\Interface\\{959CFEEF-EA13-4047-8F69-D077D429299B}]
+[-HKCR\\Interface\\{A4C10641-F32B-4B51-86B5-6A56F6C7732A}]
+[-HKCR\\Interface\\{EF7F83E0-DD35-44DF-A7B3-DEECE92F67F0}]
+[-HKCR\\Interface\\{F2503986-4D05-4441-BFCF-E9F5D0618F4C}]
+</pre><br/>
+<br/>
+<br/>
+Part 2 is Registry values within shared keys<br/>
+<pre>
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\\Installer\\Features\\95A9FBE13E4F7AE4AB796707C341236F]
+"GingerOutlookAddin"=-
+"GingerServices"=-
+"GingerWordAddin"=-
+
+[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\SharedDLLs]
+"C:\\\\Program Files (x86)\\\\Ginger\\\\GingerClient.exe"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\GingerOutlookAddin\\\\GingerMSOutlookAddin.dll"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\GingerServices\\\\GingerServices.exe"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\GingerServices\\\\GingerServicesProxy.dll"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\GingerUpdateService\\\\GingerUpdateService.exe"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\GingerWordAddin\\\\GingerMSWordAddin.dll"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\AcaTts.dll"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\Selector.dll"=-
+
+[HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Installer\\Folders]
+"C:\\\\Program Files (x86)\\\\Ginger"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\GingerServices"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\GingerUpdateService"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\Engines"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\Engines\\\\Graham22k_LF"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\Engines\\\\Heather22k_LF"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\Engines\\\\Lucy22k_LF"=-
+"C:\\\\Program Files (x86)\\\\Ginger\\\\Engines\\\\Ryan22k_LF"=-
+</pre><br/>
+<br/>
+<br/>
+<br/>
+part 3 are the files and folder left behind<br/>
+<pre>
+*replace 'Elad' with your username.
+
+C:\\GingerSetup.log
+C:\\GingerSetupHelper.log
+C:\\Program Files (x86)\\Ginger
+C:\\Program Files (x86)\\Mozilla Firefox\\extensions\\adapter@gingersoftware.com
+C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Ginger
+C:\\Users\\Elad\\AppData\\Local\\Chrome\\User Data\\Default\\Local Storage\\http_www.gingersoftware.com_0.localstorage
+C:\\Users\\Elad\\AppData\\Local\\Chromium\\User Data\\Default\\Local Storage\\http_www.gingersoftware.com_0.localstorage
+C:\\Users\\Elad\\AppData\\Local\\Microsoft\\Windows\\Temporary Internet Files\\Content.IE5\\VADM3819\\GingerClientConfigParams[1].xml
+C:\\Users\\Elad\\AppData\\Local\\Microsoft\\Windows\\Temporary Internet Files\\Content.IE5\\VADM3819\\GingerClientConfigParams[2].xml
+C:\\Windows\\Installer\\{1EBF9A59-F4E3-4EA7-BA97-76703C1432F6}
+C:\\Users\\Elad\\AppData\\Roaming\\Macromedia\\Flash Player\\#SharedObjects\\V9L95272\\cdn.gingersoftware.com
+C:\\Users\\Elad\\AppData\\Roaming\\Macromedia\\Flash Player\\#SharedObjects\\V9L95272\\localhost\\Program Files (x86)\\Ginger
+</pre><br/>
+<br/>
+---------------------<br/>
+<br/>
+<a href="http://www.gingersoftware.com/" rel="nofollow" target="_blank" title="http://www.gingersoftware.com/" alt="http://www.gingersoftware.com/"><img loading="lazy" lazyload="on"  alt="http://www.gingersoftware.com/" class="alignright wp-image-1838 size-full" src="https://icompile.eladkarako.com/_uploads/2014/09/2014-09-27_012535.gif" alt="ginger1" width="150" height="411" /></a><br/>
+<br/>
+<br/>
+<br/>
+<pre><br/>
+<br/>
+<blockquote>here are some pointers that will make Ginger into a great software (and not just a good one):<br/>
+<em><ul><br/>
+<li><br/>
+use windows installer to *install stuff* in windows, it will provide better deployment experience, if it required a license from MS, just buy it! your end-deployment is bad.<br/>
+</li><br/>
+<li><br/>
+use registry to keep all the settings,<br/>
+</li><br/>
+<li><br/>
+provide a way to install components instead of a whole lot of junk everywhere:<br/>
+ <ul><br/>
+  <li><br/>
+  browser related:<br/>
+    <ul><br/>
+    <li><br/>
+    Chrome extensions.<br/>
+    </li><br/>
+    <li><br/>
+    Firefox Add-Ons<br/>
+    </li><br/>
+    <li><br/>
+    Firebug binary plugins (those are not the same as add-ons)<br/>
+    </li><br/>
+    <li><br/>
+    for extra points: <br/>
+    please allow installation on Chromium, Chrome-Canary when those are not the default browser.<br/>
+    </li><br/>
+    </ul><br/>
+  </li> <br/>
+  <li><br/>
+  Office components: Outlook, Word, +?<br/>
+  </li><br/>
+  </ul> <br/>
+</li><br/>
+<li><br/>
+stop using Flash platform for standalon development, there is a real-platform that uses the same API, its called Adobe-AIR, but really, since you have nothing to do with browser to OS interaction, use GDI+, DirectX or even plain BitMaps for the nice graphics and NO FLASH components, it makes the program unstable and slow, due to its nature it uses IE version (ActiveX) Flash version. Native C# is just as good and really easy to work with.<br/>
+</li><br/>
+<li><br/>
+stop delivering all those background services for updates checking, upgrade and *misc*,<br/>
+both Avast and ESET SOC team-labs are half way through declaring *you* as a malware,<br/>
+several tech blogs are already being address you as such.<br/>
+</li><br/>
+<li><br/>
+and there are those stuff...<br/>
+<li><a href="https://icompile.eladkarako.com/_uploads/2014/09/2014-09-27_0214271.gif"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2014/09/2014-09-27_0214271.gif" alt="2014-09-27_0214271" width="262" height="300" class="alignnone size-medium wp-image-1856" /></a></li><br/>
+<li><a href="https://icompile.eladkarako.com/_uploads/2014/09/2014-09-27_022123.gif"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2014/09/2014-09-27_022123.gif" alt="2014-09-27_022123" width="300" height="199" class="alignnone size-medium wp-image-1853" /></a></li><br/>
+<li><br/>
+<li><a href="https://icompile.eladkarako.com/_uploads/2014/09/2014-09-27_022723.gif"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2014/09/2014-09-27_022723.gif" alt="2014-09-27_022723" width="300" height="201" class="alignnone size-medium wp-image-1854" /></a></li><br/>
+<li><a href="https://icompile.eladkarako.com/_uploads/2014/09/2014-09-27_030045.gif"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2014/09/2014-09-27_030045.gif" alt="2014-09-27_030045" width="300" height="272" class="alignnone size-medium wp-image-1859" /></a></li><br/>
+</li><br/>
+</li><br/>
+</ul><br/>
+</em></blockquote><br/>
+<br/>
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/chromeflagsenable-app-window-controls">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/make-windows-7-sp1-use-microsoft-update">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/make-windows-7-sp1-use-microsoft-update">Make Windows 7 SP1 Use Microsoft Update</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/prototype-js-1-7-2-kills-console-log">Prototype.JS 1.7.2 Kills Console-Log!!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/lenovo-ultranav-trackpointtrackpad-scroll-is-not-working-fixed">Lenovo UltraNav TrackPoint/TrackPad - Scroll Is Not Working Fixed</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unicode-checkbox-check-characters">Unicode Checkbox / Check Characters</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/java_home-jdk_home-jre_home-for-compatible-android-sdk">JRE_HOME For Compatible Android SDK</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/why-ive-switched-from-wamp-to-wt-nmp">Why I've Switched From WAMP to WT-NMP</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/root-samsung-s3-gt-i9300-android-4-3">Root Samsung S3 GT-I9300 Android 4.3</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ad-block-lists">Ad-Block Lists</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/security-response-headers-content-security-policy-and-strict-transport-security">More Security Response-Headers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-inbox-insider-pre-review">Google Inbox - Insider Pre-Review</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/intel-graphics-and-media-control-panel-paths-and-registry-and-disable-screen-accidental-rotation-by-disabling-hot-keys-functionality">Intel Graphics And Media Control-Panel Paths And Registry And Disable Screen Accidental Rotation By Disabling Hot-Keys Functionality</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-android-developer-php-reverse-engineering-binary-androidmanifest-xml-and-apk-data">Google Android Developer // PHP Reverse Engineering Binary AndroidManifest.XML And APK Data</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/samsung-n900-home-button-stopped-working-solution">Samsung N900 Home-Button Stopped Working - solution</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ripping-developer-android-com-data-mining-from-manifest-permission-page">Ripping developer.android.com - Data Mining From Manifest / Permission Page</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/jquery-mobile-tip-ui-listview-causes-unwrappable-text-content">jQuery Mobile Tip - Fix .ui-listview Unwrappable Text-Content...</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-interview-pretty-funny">The Interview - Pretty Funny  :)</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

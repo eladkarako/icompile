@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>New Outbrain Widget For Bloggers</title>
+  <meta itemprop="name"                                content="New Outbrain Widget For Bloggers"       />
+  <meta name="dcterms.title"                           content="New Outbrain Widget For Bloggers"       />
+  <meta property="og:title"                            content="New Outbrain Widget For Bloggers"       />
+  <meta name="twitter:title"                           content="New Outbrain Widget For Bloggers"       />
+  <meta name="twitter:text:title"                      content="New Outbrain Widget For Bloggers"       />
+  <meta name="application-name"                        content="New Outbrain Widget For Bloggers"       />
+  <meta name="subject"                                 content="New Outbrain Widget For Bloggers"       />
+  <meta name="apple-mobile-web-app-title"              content="New Outbrain Widget For Bloggers"       />
+  <meta name="msapplication-tooltip"                   content="New Outbrain Widget For Bloggers"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="New Outbrain Widget For Bloggers"       />
+  <meta itemprop="description"                         content="New Outbrain Widget For Bloggers"       />
+  <meta name="dcterms.description"                     content="New Outbrain Widget For Bloggers"       />
+  <meta name="twitter:description"                     content="New Outbrain Widget For Bloggers"       />
+  <meta property="og:description"                      content="New Outbrain Widget For Bloggers"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="advanced,align,alignnone,android,answer,answering,article,asaph,basically,blank,blog,bloggers,blogs,blogspot,build,clean,content,cool,customized,developer,devices,dotclear,drupal,elad,engine,enhance,enriching,equivalent,evolution,excited,exist,experience,explorer,exposure,feel,free,grab,great,habari,idea,image,increasing,interesting,intro,introduced,iphone,javascript,joke,kung,latest,life,lifetype,lighten,live,livejournal,love,loveliest,made,matches,mobile,months,movable,natural,nbsp,nucleus,outbrain,people,permalink,pivotx,platform,posterous,pretty,prosper,providing,putting,reading,replacing,safe,serendipity,simply,site,size,smooth,spaces,squarespace,strong,system,takes,target,title,totally,traffic,tumbler,type,typepad,upgrade,variation,version,visitors,website,weebly,widget,wordpress,work,working,world,yeah,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="advanced,align,alignnone,android,answer,answering,article,asaph,basically,blank,blog,bloggers,blogs,blogspot,build,clean,content,cool,customized,developer,devices,dotclear,drupal,elad,engine,enhance,enriching,equivalent,evolution,excited,exist,experience,explorer,exposure,feel,free,grab,great,habari,idea,image,increasing,interesting,intro,introduced,iphone,javascript,joke,kung,latest,life,lifetype,lighten,live,livejournal,love,loveliest,made,matches,mobile,months,movable,natural,nbsp,nucleus,outbrain,people,permalink,pivotx,platform,posterous,pretty,prosper,providing,putting,reading,replacing,safe,serendipity,simply,site,size,smooth,spaces,squarespace,strong,system,takes,target,title,totally,traffic,tumbler,type,typepad,upgrade,variation,version,visitors,website,weebly,widget,wordpress,work,working,world,yeah,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/all-known-methods-of-sending-requests-using-pure-javascript"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/all-known-methods-of-sending-requests-using-pure-javascript"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/my-favorite-passover-movies"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2013-04-14T11:04:07+00:00"     />
+  <meta name="page-datetime"                           content="2013-04-14T11:04:07+00:00"     />
+  <meta property="article:published_time"              content="2013-04-14T11:04:07+00:00"     />
+  <meta name="dcterms.date"                            content="2013-04-14T11:04:07+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2013-04-19T16:17:18+00:00"    />
+  <meta property="article:modified_time"               content="2013-04-19T16:17:18+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers"
+,"url"             : "https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers"
+,"headline"        : "New Outbrain Widget For Bloggers"
+,"description"     : "New Outbrain Widget For Bloggers"
+,"datePosted"      : "2013-04-14T11:04:07+00:00"
+,"dateCreated"     : "2013-04-14T11:04:07+00:00"
+,"datePublished"   : "2013-04-14T11:04:07+00:00"
+,"dateModified"    : "2013-04-19T16:17:18+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007447395631">
+  <header>
+    <h1 itemprop="headline">New Outbrain Widget For Bloggers</h1>
+    <sup>Posted at <time datetime="2013-04-19T16:17:18+00:00" itemprop="dateModified">Fri, 19 Apr 2013 16:17:18 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><p style="text-align: left;"><!--more--><br/>
+<img loading="lazy" lazyload="on"  class="wp-image-747 alignleft" alt="bg-intro11" src="https://icompile.eladkarako.com/_uploads/2013/04/bg-intro.png" width="120" height="119" /></p><br/>
+In the last few months I've been working on Outbrain's new Widget for Bloggers,<br/>
+<br/>
+Introduced some time ago- Outbrain new widget for bloggers is better then ever.<br/>
+Build to enhance bloggers life all around the world, enriching their blog-visitors experience with the most advanced recommendation system exist, anywhere!<br/>
+<br/>
+Its free, totally 100% clean and safe, the widget provides you with the interesting content, contextually matches to what you are reading.<br/>
+<br/>
+&nbsp;<br/>
+<br/>
+It takes the style of your blog, look and feel can be further customized with CSS,<br/>
+plus Outbrain's new <em><strong>widget</strong></em> for bloggers (which is already available on Outbrain's <a title="http://my.outbrain.com" href="http://my.outbrain.com" target="_blank">website</a>.. by the way...) looks great on all mobile devices from iPhone to every variation of Android, providing a smooth, natural way to explorer great content, increasing your website exposure to the world of visitors (and also the in-site traffic).<br/>
+<br/>
+plus, its made of the loveliest JS-Kung-Fu (or if you are a developer, "Kung-Foo".. just a little joke.. lighten up..)  you'll ever seen, yeah you've got it..  :)<br/>
+<br/>
+<img loading="lazy" lazyload="on"  class="alignnone size-full wp-image-751" alt="Outbrain Love Bloggers" src="https://icompile.eladkarako.com/_uploads/2013/04/bg-intro211.png" width="310" height="310" /><br/>
+<br/>
+Get the latest version from Outbrain's website, upgrade your Wordpress, Blogspot, TypePad, SquareSpace...<br/>
+<h4><em><strong>plus, you can grab yourself the "JS version" which pretty much says it will work on ANY OTHER PLATFORM TOO</strong></em></h4><br/>
+lol... I'm a little bit excited :)<br/>
+<br/>
+the JS installation can be work by simply replacing the "put permalink here" with your php-engine's equivalent of permalink (which is basically means "the article's url"),<br/>
+<br/>
+you can even do it with javascript! <em>like</em> "on-the-fly.." how cool is that? (answer: very cool!)<br/>
+<br/>
+putting it on your blog.com, jux, Posterous Spaces, Weebly, LiveJournal, Movable Type, b2evolution, Drupal (YEAH!), Dotclear, Serendipity, Nucleus CMS, LifeType, Habari, PivotX, Asaph, Tumbler,... well you've got the idea...<br/>
+<br/>
+&nbsp;<br/>
+<br/>
+I'm also available on <a href="https://getsatisfaction.com/people/eladkarako">https://getsatisfaction.com/people/eladkarako</a><br/>
+answering on <a title="http://getsatisfaction.com/outbrain" href="http://getsatisfaction.com/outbrain" target="_blank">http://getsatisfaction.com/outbrain</a><br/>
+<br/>
+&nbsp;<br/>
+<br/>
+may your blogs live long and prosper :)<br/>
+<br/>
+Elad.<br/>
+<br/>
+&nbsp;<br/>
+<br/>
+&nbsp;</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/all-known-methods-of-sending-requests-using-pure-javascript">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/my-favorite-passover-movies">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/my-favorite-passover-movies">My Favorite Passover Movies</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sugru-arrived-happy-day">Adjust! Sugru Arrived - Happy Day!!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/oh-ye-of-little-faith-google-closure-2">oh ye of little faith Google-Closure</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-video-crop">FFMPEG Video Crop</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pandora-text-select-enabler-new-chrome-extension">Pandora Text-Select Enabler - New Chrome Extension </a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-extract-subtitle-file-from-mkv-video-file">FFMPEG extract subtitle file from mkv video file</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/playing-with-remote-desktop-sessions-1">playing with remote desktop sessions #1</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/i-really-love-javascript">I really love JavaScript</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/htaccess-forward-rewrite-rule">htaccess forward (rewrite) rule</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/altoids-taste-like-toothpaste-smells-like-bengay-and-anyhow-not-nearly-that-strong-anyway">and anyhow not nearly that strong anyway</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/big-data-machine-logstash-agent-daemon-pipe-to-perl-script-that-sends-to-elasticsearch-server-from-the-very-start">pipe to perl script that sends to ElasticSearch server - from the very start</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/graphite-maintenance-manual-services-running-plus-tips">plus tips</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/graphite-alt-complete-conf">graphite alt complete conf</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/i-lv-github">I <3 GitHub</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stuff-you-should-probably-uninstall-from-your-low-budget-server">Stuff you should probably uninstall from your low-budget server</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solve-missing-files-for-vmware-tools">Solve missing files for VMWare tools</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

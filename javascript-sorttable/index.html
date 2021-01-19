@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JavaScript - SortTable</title>
+  <meta itemprop="name"                                content="JavaScript - SortTable"       />
+  <meta name="dcterms.title"                           content="JavaScript - SortTable"       />
+  <meta property="og:title"                            content="JavaScript - SortTable"       />
+  <meta name="twitter:title"                           content="JavaScript - SortTable"       />
+  <meta name="twitter:text:title"                      content="JavaScript - SortTable"       />
+  <meta name="application-name"                        content="JavaScript - SortTable"       />
+  <meta name="subject"                                 content="JavaScript - SortTable"       />
+  <meta name="apple-mobile-web-app-title"              content="JavaScript - SortTable"       />
+  <meta name="msapplication-tooltip"                   content="JavaScript - SortTable"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JavaScript - SortTable"       />
+  <meta itemprop="description"                         content="JavaScript - SortTable"       />
+  <meta name="dcterms.description"                     content="JavaScript - SortTable"       />
+  <meta name="twitter:description"                     content="JavaScript - SortTable"       />
+  <meta property="og:description"                      content="JavaScript - SortTable"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="addevent,alpha,appendchild,april,arguments,array,basically,break,browser,bsortable,bsortbottom,bsorttable,call,callee,cells,childnodes,classname,click,code,columnindex,complete,customkey,date,ddmm,dean,default,delete,document,events,face,firstchild,fixevent,font,foreach,function,guesstype,guid,handleevent,hasinputs,headrow,html,init,innerhtml,innertext,input,instanceof,isnan,javascript,kryogenix,langridge,length,licence,licenced,loaded,match,mmdd,mtch,navigator,nbsp,newrows,nodename,nodetype,nodevalue,nosort,null,number,numeric,object,onload,override,parentnode,parsefloat,parseint,people,possdate,prototype,readystate,removechild,removeevent,replace,return,returnvalue,reverse,rows,search,setinterval,shaker,sort,sorted,sortfn,sortfwdind,sortrevind,sorttable,split,stisie,stuart,suggestions,switch,table,tbodies,tbody,test,textcontent,tfoot,thead,theadrow,timer,tolowercase,type,typeof,undefined,useragent,version,void,webdings,webkit,window,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="addevent,alpha,appendchild,april,arguments,array,basically,break,browser,bsortable,bsortbottom,bsorttable,call,callee,cells,childnodes,classname,click,code,columnindex,complete,customkey,date,ddmm,dean,default,delete,document,events,face,firstchild,fixevent,font,foreach,function,guesstype,guid,handleevent,hasinputs,headrow,html,init,innerhtml,innertext,input,instanceof,isnan,javascript,kryogenix,langridge,length,licence,licenced,loaded,match,mmdd,mtch,navigator,nbsp,newrows,nodename,nodetype,nodevalue,nosort,null,number,numeric,object,onload,override,parentnode,parsefloat,parseint,people,possdate,prototype,readystate,removechild,removeevent,replace,return,returnvalue,reverse,rows,search,setinterval,shaker,sort,sorted,sortfn,sortfwdind,sortrevind,sorttable,split,stisie,stuart,suggestions,switch,table,tbodies,tbody,test,textcontent,tfoot,thead,theadrow,timer,tolowercase,type,typeof,undefined,useragent,version,void,webdings,webkit,window,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/supersu-mods-no-systemless-no-bindsystemxbin-force-permissive"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/supersu-mods-no-systemless-no-bindsystemxbin-force-permissive"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/compile-schema-manifest-for-exe"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/javascript-sorttable"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/javascript-sorttable"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/javascript-sorttable"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/javascript-sorttable"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/javascript-sorttable"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/javascript-sorttable"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-06-25T19:06:56+00:00"     />
+  <meta name="page-datetime"                           content="2017-06-25T19:06:56+00:00"     />
+  <meta property="article:published_time"              content="2017-06-25T19:06:56+00:00"     />
+  <meta name="dcterms.date"                            content="2017-06-25T19:06:56+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-06-25T19:06:56+00:00"    />
+  <meta property="article:modified_time"               content="2017-06-25T19:06:56+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/javascript-sorttable"
+,"url"             : "https://icompile.eladkarako.com/javascript-sorttable"
+,"headline"        : "JavaScript - SortTable"
+,"description"     : "JavaScript - SortTable"
+,"datePosted"      : "2017-06-25T19:06:56+00:00"
+,"dateCreated"     : "2017-06-25T19:06:56+00:00"
+,"datePublished"   : "2017-06-25T19:06:56+00:00"
+,"dateModified"    : "2017-06-25T19:06:56+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006167148941">
+  <header>
+    <h1 itemprop="headline">JavaScript - SortTable</h1>
+    <sup>Posted at <time datetime="2017-06-25T19:06:56+00:00" itemprop="dateModified">Sun, 25 Jun 2017 19:06:56 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><!--more--><br/>
+<br/>
+<pre><br/>
+/*<br/>
+  SortTable<br/>
+  version 2<br/>
+  7th April 2007<br/>
+  Stuart Langridge, http://www.kryogenix.org/code/browser/sorttable/<br/>
+<br/>
+  Thanks to many, many people for contributions and suggestions.<br/>
+  Licenced as X11: http://www.kryogenix.org/code/browser/licence.html<br/>
+  This basically means: do what you want with it.<br/>
+*/<br/>
+function dean_addEvent(t, e, r) {<br/>
+  if (t.addEventListener) t.addEventListener(e, r, !1);<br/>
+  else {<br/>
+    r.$guid || (r.$guid = dean_addEvent.guid++), t.events || (t.events = {});<br/>
+    var o = t.events[e];<br/>
+    o || (o = t.events[e] = {}, t["on" + e] && (o[0] = t["on" + e])), o[r.$guid] = r, t["on" + e] = handleEvent<br/>
+  }<br/>
+}<br/>
+<br/>
+function removeEvent(t, e, r) {<br/>
+  t.removeEventListener ? t.removeEventListener(e, r, !1) : t.events && t.events[e] && delete t.events[e][r.$guid]<br/>
+}<br/>
+<br/>
+function handleEvent(t) {<br/>
+  var e = !0;<br/>
+  t = t || fixEvent(((this.ownerDocument || this.document || this)<br/>
+      .parentWindow || window)<br/>
+    .event);<br/>
+  var r = this.events[t.type];<br/>
+  for (var o in r) this.$handleEvent = r[o], this.$handleEvent(t) === !1 && (e = !1);<br/>
+  return e<br/>
+}<br/>
+<br/>
+function fixEvent(t) {<br/>
+  return t.preventDefault = fixEvent.preventDefault, t.stopPropagation = fixEvent.stopPropagation, t<br/>
+}<br/>
+var stIsIE = !1;<br/>
+if (sorttable = {<br/>
+    init: function () {<br/>
+      arguments.callee.done || (arguments.callee.done = !0, _timer && clearInterval(_timer), document.createElement && document.getElementsByTagName && (sorttable.DATE_RE = /^(\\d\\d?)[\\/\\.-](\\d\\d?)[\\/\\.-]((\\d\\d)?\\d\\d)$/, forEach(document.getElementsByTagName("table"), function (t) {<br/>
+        -1 != t.className.search(/\\bsortable\\b/) && sorttable.makeSortable(t)<br/>
+      })))<br/>
+    }<br/>
+    , makeSortable: function (t) {<br/>
+      if (0 == t.getElementsByTagName("thead")<br/>
+        .length && (the = document.createElement("thead"), the.appendChild(t.rows[0]), t.insertBefore(the, t.firstChild)), null == t.tHead && (t.tHead = t.getElementsByTagName("thead")[0]), 0 != t.tHead.rows.length) {<br/>
+        sortbottomrows = [];<br/>
+        for (var e = 0; e < t.rows.length; e++) - 1 != t.rows[e].className.search(/\\bsortbottom\\b/) && (sortbottomrows[sortbottomrows.length] = t.rows[e]);<br/>
+        if (sortbottomrows) {<br/>
+          null == t.tFoot && (tfo = document.createElement("tfoot"), t.appendChild(tfo));<br/>
+          for (var e = 0; e < sortbottomrows.length; e++) tfo.appendChild(sortbottomrows[e]);<br/>
+          delete sortbottomrows<br/>
+        }<br/>
+        headrow = t.tHead.rows[0].cells;<br/>
+        for (var e = 0; e < headrow.length; e++) headrow[e].className.match(/\\bsorttable_nosort\\b/) || (mtch = headrow[e].className.match(/\\bsorttable_([a-z0-9]+)\\b/), mtch && (override = mtch[1]), mtch && "function" == typeof sorttable["sort_" + override] ? headrow[e].sorttable_sortfunction = sorttable["sort_" + override] : headrow[e].sorttable_sortfunction = sorttable.guessType(t, e), headrow[e].sorttable_columnindex = e, headrow[e].sorttable_tbody = t.tBodies[0], dean_addEvent(headrow[e], "click", sorttable.innerSortFunction = function (t) {<br/>
+          if (-1 != this.className.search(/\\bsorttable_sorted\\b/)) return sorttable.reverse(this.sorttable_tbody), this.className = this.className.replace("sorttable_sorted", "sorttable_sorted_reverse"), this.removeChild(document.getElementById("sorttable_sortfwdind")), sortrevind = document.createElement("span"), sortrevind.id = "sorttable_sortrevind", sortrevind.innerHTML = stIsIE ? '&nbsp<font face="webdings">5</font>' : "&nbsp;&#x25BE;", void this.appendChild(sortrevind);<br/>
+          if (-1 != this.className.search(/\\bsorttable_sorted_reverse\\b/)) return sorttable.reverse(this.sorttable_tbody), this.className = this.className.replace("sorttable_sorted_reverse", "sorttable_sorted"), this.removeChild(document.getElementById("sorttable_sortrevind")), sortfwdind = document.createElement("span"), sortfwdind.id = "sorttable_sortfwdind", sortfwdind.innerHTML = stIsIE ? '&nbsp<font face="webdings">6</font>' : "&nbsp;&#x25B4;", void this.appendChild(sortfwdind);<br/>
+          theadrow = this.parentNode, forEach(theadrow.childNodes, function (t) {<br/>
+            1 == t.nodeType && (t.className = t.className.replace("sorttable_sorted_reverse", ""), t.className = t.className.replace("sorttable_sorted", ""))<br/>
+          }), sortfwdind = document.getElementById("sorttable_sortfwdind"), sortfwdind && sortfwdind.parentNode.removeChild(sortfwdind), sortrevind = document.getElementById("sorttable_sortrevind"), sortrevind && sortrevind.parentNode.removeChild(sortrevind), this.className += " sorttable_sorted", sortfwdind = document.createElement("span"), sortfwdind.id = "sorttable_sortfwdind", sortfwdind.innerHTML = stIsIE ? '&nbsp<font face="webdings">6</font>' : "&nbsp;&#x25B4;", this.appendChild(sortfwdind), row_array = [], col = this.sorttable_columnindex, rows = this.sorttable_tbody.rows;<br/>
+          for (var e = 0; e < rows.length; e++) row_array[row_array.length] = [sorttable.getInnerText(rows[e].cells[col]), rows[e]];<br/>
+          row_array.sort(this.sorttable_sortfunction), tb = this.sorttable_tbody;<br/>
+          for (var e = 0; e < row_array.length; e++) tb.appendChild(row_array[e][1]);<br/>
+          delete row_array<br/>
+        }))<br/>
+      }<br/>
+    }<br/>
+    , guessType: function (t, e) {<br/>
+      sortfn = sorttable.sort_alpha;<br/>
+      for (var r = 0; r < t.tBodies[0].rows.length; r++)<br/>
+        if (text = sorttable.getInnerText(t.tBodies[0].rows[r].cells[e]), "" != text) {<br/>
+          if (text.match(/^-?[£$¤]?[\\d,.]+%?$/)) return sorttable.sort_numeric;<br/>
+          if (possdate = text.match(sorttable.DATE_RE), possdate) {<br/>
+            if (first = parseInt(possdate[1]), second = parseInt(possdate[2]), first > 12) return sorttable.sort_ddmm;<br/>
+            if (second > 12) return sorttable.sort_mmdd;<br/>
+            sortfn = sorttable.sort_ddmm<br/>
+          }<br/>
+        }<br/>
+      return sortfn<br/>
+    }<br/>
+    , getInnerText: function (t) {<br/>
+      if (!t) return "";<br/>
+      if (hasInputs = "function" == typeof t.getElementsByTagName && t.getElementsByTagName("input")<br/>
+        .length, null != t.getAttribute("sorttable_customkey")) return t.getAttribute("sorttable_customkey");<br/>
+      if ("undefined" != typeof t.textContent && !hasInputs) return t.textContent.replace(/^\\s+|\\s+$/g, "");<br/>
+      if ("undefined" != typeof t.innerText && !hasInputs) return t.innerText.replace(/^\\s+|\\s+$/g, "");<br/>
+      if ("undefined" != typeof t.text && !hasInputs) return t.text.replace(/^\\s+|\\s+$/g, "");<br/>
+      switch (t.nodeType) {<br/>
+      case 3:<br/>
+        if ("input" == t.nodeName.toLowerCase()) return t.value.replace(/^\\s+|\\s+$/g, "");<br/>
+      case 4:<br/>
+        return t.nodeValue.replace(/^\\s+|\\s+$/g, "");<br/>
+      case 1:<br/>
+      case 11:<br/>
+        for (var e = "", r = 0; r < t.childNodes.length; r++) e += sorttable.getInnerText(t.childNodes[r]);<br/>
+        return e.replace(/^\\s+|\\s+$/g, "");<br/>
+      default:<br/>
+        return ""<br/>
+      }<br/>
+    }<br/>
+    , reverse: function (t) {<br/>
+      newrows = [];<br/>
+      for (var e = 0; e < t.rows.length; e++) newrows[newrows.length] = t.rows[e];<br/>
+      for (var e = newrows.length - 1; e >= 0; e--) t.appendChild(newrows[e]);<br/>
+      delete newrows<br/>
+    }<br/>
+    , sort_numeric: function (t, e) {<br/>
+      return aa = parseFloat(t[0].replace(/[^0-9.-]/g, "")), isNaN(aa) && (aa = 0), bb = parseFloat(e[0].replace(/[^0-9.-]/g, "")), isNaN(bb) && (bb = 0), aa - bb<br/>
+    }<br/>
+    , sort_alpha: function (t, e) {<br/>
+      return t[0] == e[0] ? 0 : t[0] < e[0] ? -1 : 1<br/>
+    }<br/>
+    , sort_ddmm: function (t, e) {<br/>
+      return mtch = t[0].match(sorttable.DATE_RE), y = mtch[3], m = mtch[2], d = mtch[1], 1 == m.length && (m = "0" + m), 1 == d.length && (d = "0" + d), dt1 = y + m + d, mtch = e[0].match(sorttable.DATE_RE), y = mtch[3], m = mtch[2], d = mtch[1], 1 == m.length && (m = "0" + m), 1 == d.length && (d = "0" + d), dt2 = y + m + d, dt1 == dt2 ? 0 : dt1 < dt2 ? -1 : 1<br/>
+    }<br/>
+    , sort_mmdd: function (t, e) {<br/>
+      return mtch = t[0].match(sorttable.DATE_RE), y = mtch[3], d = mtch[2], m = mtch[1], 1 == m.length && (m = "0" + m), 1 == d.length && (d = "0" + d), dt1 = y + m + d, mtch = e[0].match(sorttable.DATE_RE), y = mtch[3], d = mtch[2], m = mtch[1], 1 == m.length && (m = "0" + m), 1 == d.length && (d = "0" + d), dt2 = y + m + d, dt1 == dt2 ? 0 : dt1 < dt2 ? -1 : 1<br/>
+    }<br/>
+    , shaker_sort: function (t, e) {<br/>
+      for (var r = 0, o = t.length - 1, n = !0; n;) {<br/>
+        n = !1;<br/>
+        for (var s = r; o > s; ++s)<br/>
+          if (e(t[s], t[s + 1]) > 0) {<br/>
+            var a = t[s];<br/>
+            t[s] = t[s + 1], t[s + 1] = a, n = !0<br/>
+          }<br/>
+        if (o--, !n) break;<br/>
+        for (var s = o; s > r; --s)<br/>
+          if (e(t[s], t[s - 1]) < 0) {<br/>
+            var a = t[s];<br/>
+            t[s] = t[s - 1], t[s - 1] = a, n = !0<br/>
+          }<br/>
+        r++<br/>
+      }<br/>
+    }<br/>
+  }, document.addEventListener && document.addEventListener("DOMContentLoaded", sorttable.init, !1), /WebKit/i.test(navigator.userAgent)) var _timer = setInterval(function () {<br/>
+  /loaded|complete/.test(document.readyState) && sorttable.init()<br/>
+}, 10);<br/>
+window.onload = sorttable.init, dean_addEvent.guid = 1, fixEvent.preventDefault = function () {<br/>
+  this.returnValue = !1<br/>
+}, fixEvent.stopPropagation = function () {<br/>
+  this.cancelBubble = !0<br/>
+}, Array.forEach || (Array.forEach = function (t, e, r) {<br/>
+  for (var o = 0; o < t.length; o++) e.call(r, t[o], o, t)<br/>
+}), Function.prototype.forEach = function (t, e, r) {<br/>
+  for (var o in t) "undefined" == typeof this.prototype[o] && e.call(r, t[o], o, t)<br/>
+}, String.forEach = function (t, e, r) {<br/>
+  Array.forEach(t.split(""), function (o, n) {<br/>
+    e.call(r, o, n, t)<br/>
+  })<br/>
+};<br/>
+var forEach = function (t, e, r) {<br/>
+  if (t) {<br/>
+    var o = Object;<br/>
+    if (t instanceof Function) o = Function;<br/>
+    else {<br/>
+      if (t.forEach instanceof Function) return void t.forEach(e, r);<br/>
+      "string" == typeof t ? o = String : "number" == typeof t.length && (o = Array)<br/>
+    }<br/>
+    o.forEach(t, e, r)<br/>
+  }<br/>
+};<br/>
+<br/>
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/supersu-mods-no-systemless-no-bindsystemxbin-force-permissive">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/compile-schema-manifest-for-exe">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/compile-schema-manifest-for-exe">Compile Schema-Manifest For EXE</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/download-curl">Download cURL</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cmd-ninja-relative-to-fully-qualified-path-and-other-file-properties-without-directing-relative-path-to-another-cmd-file-as-an-argument">CMD Ninja - Relative To Fully Qualified Path And Other File Properties Without Directing Relative Path To Another CMD-File As An Argument</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-everything-to-webm-dragdrop">FFmpeg - Everything To WebM - Drag&Drop!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/download-latest-busybox-binary-for-android-ready-to-use">Download Latest BUSYBOX Binary For Android - Ready To Use!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/java-ninja-d-i-y-j-c-e-policy">Java Ninja - D.I.Y. J.C.E. Policy</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/fiddler4-direct-download-link">Fiddler4 Direct Download LInk</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/telerik-fiddler-subdomains">Telerik - Fiddler SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/autoit-subdomains">AutoIt SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/world-timezones-2017-ini-format">World Timezones 2017 - INI Format</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/any-relative-path-to-a-fully-qualified-8-3-old-dos-short-format-path-dragdrop-support">8.3 Old-DOS Short-Format PATH - Drag&Drop Support!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-entity-xml">HTML Entity - XML</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-fixes-your-video-files">FFMPEG Fixes Your Video Files</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-unicode-string-prototype-fromcharcode-fix-to-allow-more-than-2-bytes-unicode-chars-directly-a-k-a-unicode-surrogate-pair">JavaScript Ninja - Unicode - String.prototype.fromCharCode Fix To Allow More Than-2 Bytes Unicode Chars Directly (A.K.A Unicode-Surrogate-Pair)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/parsing-url-scheme">Parsing URL - Scheme</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nodejs-master-simple-request">NodeJS Master - Simple Request</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

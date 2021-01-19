@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Vary: Accept-Encoding</title>
+  <meta itemprop="name"                                content="Vary: Accept-Encoding"       />
+  <meta name="dcterms.title"                           content="Vary: Accept-Encoding"       />
+  <meta property="og:title"                            content="Vary: Accept-Encoding"       />
+  <meta name="twitter:title"                           content="Vary: Accept-Encoding"       />
+  <meta name="twitter:text:title"                      content="Vary: Accept-Encoding"       />
+  <meta name="application-name"                        content="Vary: Accept-Encoding"       />
+  <meta name="subject"                                 content="Vary: Accept-Encoding"       />
+  <meta name="apple-mobile-web-app-title"              content="Vary: Accept-Encoding"       />
+  <meta name="msapplication-tooltip"                   content="Vary: Accept-Encoding"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Vary: Accept-Encoding"       />
+  <meta itemprop="description"                         content="Vary: Accept-Encoding"       />
+  <meta name="dcterms.description"                     content="Vary: Accept-Encoding"       />
+  <meta name="twitter:description"                     content="Vary: Accept-Encoding"       />
+  <meta property="og:description"                      content="Vary: Accept-Encoding"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accept,access,agent,answer,apache,appeared,append,approach,archive,archived,aspx,back,backing,based,behavior,blank,blogs,browser,bugs,cache,caches,caching,careers,cases,cdns,challenges,choice,chrome,chromium,client,clients,code,combination,comment,comments,company,complicated,compressed,compression,content,context,contrived,control,cookie,cookies,copies,correct,correctly,count,couple,days,decide,decision,decisions,defines,deliberate,depending,describes,describing,determine,developers,devs,direct,directives,discussion,distinguish,dynamic,edit,encoding,engine,entries,entry,eran,eric,ericlaw,examples,excellent,excessively,explorer,figured,filesmatch,found,freshness,google,great,group,gzip,hammered,handle,happened,header,headers,hiring,hopeless,htaccess,html,identifies,ieinternals,ifmodule,image,include,incoming,information,insight,instructs,intended,internet,issue,issues,koli,landing,language,lawrence,lead,links,logic,making,manager,mark,matches,mechanism,medan,mixups,modern,modified,mouth,msdn,nbsp,netdna,networks,nginx,nofollow,origin,originally,outstanding,page,pages,perspective,posted,pragma,precisely,presents,prevents,primary,problem,problems,process,program,protocols,proxies,proxy,public,question,read,reading,related,remove,replicate,request,requested,requests,rescue,research,resource,resources,response,risk,send,sends,separate,served,server,servers,sidestepped,simple,sites,situations,size,slightly,small,solve,squid,store,strictly,strong,sufficient,support,system,target,taste,team,traffic,turn,type,types,unexpected,uniqueness,update,usage,user,users,valuable,vary,version,versions,visit,webserver,working,world,yikes,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accept,access,agent,answer,apache,appeared,append,approach,archive,archived,aspx,back,backing,based,behavior,blank,blogs,browser,bugs,cache,caches,caching,careers,cases,cdns,challenges,choice,chrome,chromium,client,clients,code,combination,comment,comments,company,complicated,compressed,compression,content,context,contrived,control,cookie,cookies,copies,correct,correctly,count,couple,days,decide,decision,decisions,defines,deliberate,depending,describes,describing,determine,developers,devs,direct,directives,discussion,distinguish,dynamic,edit,encoding,engine,entries,entry,eran,eric,ericlaw,examples,excellent,excessively,explorer,figured,filesmatch,found,freshness,google,great,group,gzip,hammered,handle,happened,header,headers,hiring,hopeless,htaccess,html,identifies,ieinternals,ifmodule,image,include,incoming,information,insight,instructs,intended,internet,issue,issues,koli,landing,language,lawrence,lead,links,logic,making,manager,mark,matches,mechanism,medan,mixups,modern,modified,mouth,msdn,nbsp,netdna,networks,nginx,nofollow,origin,originally,outstanding,page,pages,perspective,posted,pragma,precisely,presents,prevents,primary,problem,problems,process,program,protocols,proxies,proxy,public,question,read,reading,related,remove,replicate,request,requested,requests,rescue,research,resource,resources,response,risk,send,sends,separate,served,server,servers,sidestepped,simple,sites,situations,size,slightly,small,solve,squid,store,strictly,strong,sufficient,support,system,target,taste,team,traffic,turn,type,types,unexpected,uniqueness,update,usage,user,users,valuable,vary,version,versions,visit,webserver,working,world,yikes,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/normalize-inputtextarea-number-only"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/normalize-inputtextarea-number-only"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/apache-cordova-thank-you-hackathon-sponsors"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/vary-accept-encoding"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/vary-accept-encoding"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/vary-accept-encoding"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/vary-accept-encoding"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/vary-accept-encoding"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/vary-accept-encoding"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2015-12-11T03:40:44+00:00"     />
+  <meta name="page-datetime"                           content="2015-12-11T03:40:44+00:00"     />
+  <meta property="article:published_time"              content="2015-12-11T03:40:44+00:00"     />
+  <meta name="dcterms.date"                            content="2015-12-11T03:40:44+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2015-12-11T03:40:44+00:00"    />
+  <meta property="article:modified_time"               content="2015-12-11T03:40:44+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/vary-accept-encoding"
+,"url"             : "https://icompile.eladkarako.com/vary-accept-encoding"
+,"headline"        : "Vary: Accept-Encoding"
+,"description"     : "Vary: Accept-Encoding"
+,"datePosted"      : "2015-12-11T03:40:44+00:00"
+,"dateCreated"     : "2015-12-11T03:40:44+00:00"
+,"datePublished"   : "2015-12-11T03:40:44+00:00"
+,"dateModified"    : "2015-12-11T03:40:44+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0004425089441">
+  <header>
+    <h1 itemprop="headline">Vary: Accept-Encoding</h1>
+    <sup>Posted at <time datetime="2015-12-11T03:40:44+00:00" itemprop="dateModified">Fri, 11 Dec 2015 03:40:44 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><h4>Specify a Vary: Accept-Encoding header</h4><br/>
+<img loading="lazy" lazyload="on"  class="aligncenter size-full wp-image-3860" src="https://icompile.eladkarako.com/_uploads/2015/12/bootstrapcdn-vary-accept-encoding-2.png" alt="bootstrapcdn-vary-accept-encoding-2" width="393" height="427" /><br/>
+<br/>
+Bugs in some public proxies may lead to compressed versions of your resources being served to users that don't support compression. Specifying the <code>Vary: Accept-Encoding</code> header instructs the proxy to store both a compressed and uncompressed version of the resource.<br/>
+<!--more--><br/>
+<ul><br/>
+	<li>The <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9" rel="nofollow"><code>cache-control</code></a> header is the primary mechanism for an HTTP server to tell a caching proxy the "freshness" of a response. (i.e., how/if long to store the response in the cache)</li><br/>
+	<li>In some situations, <code>cache-control</code> directives are insufficient. A discussion from the HTTP working group is archived <a href="http://www.w3.org/Protocols/HTTP/Issues/vary-header.html" rel="nofollow">here,</a> describing a page that changes only with language. This is <em>not</em>the correct use case for the vary header, but the context is valuable for our discussion. (Although I believe the Vary header would solve the problem in that case, there is a Better Way.) From that page:</li><br/>
+</ul><br/>
+<blockquote><em><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44" rel="nofollow"><code>Vary</code></a> is strictly for those cases where it's hopeless or excessively complicated for a proxy to replicate what the server would do.</em></blockquote><br/>
+<ul><br/>
+	<li>This <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44" rel="nofollow">page</a> describes the header usage from the server perspective, this <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13.6" rel="nofollow">one</a> from a caching proxy perspective. It's intended to specify a set of HTTP request headers that determine uniqueness of a request.</li><br/>
+</ul><br/>
+A contrived example:<br/>
+<br/>
+Your HTTP server has a large landing page. You have two slightly different pages with the same URL, depending if the user has been there before. You distinguish between requests and a user's "visit count" based on Cookies. But -- since your server's landing page is so large, you want intermediary proxies to cache the response if possible.<br/>
+<br/>
+The URL, Last-Modified and Cache-Control headers are insufficient to give this insight to a caching proxy, but if you add <code>Vary: Cookie</code>, the cache engine will add the Cookie header to its caching decisions.<br/>
+<br/>
+Finally, for small traffic, dynamic web sites -- I have always found the simple <code>Cache-Control: no-cache, no-store</code> and <code>Pragma: no-cache</code> sufficient.<br/>
+<br/>
+Edit -- to more precisely answer your question: the HTTP request header 'Accept' defines the Content-Types a client can process. If you have two copies of the same content at the same URL, differing only in Content-Type, then using <code>Vary: Accept</code> could be appropriate.<br/>
+<br/>
+<strong>Update 11 Sep 12:</strong><br/>
+<br/>
+I'm including a couple links that have appeared in the comments since this comment was originally posted. They're both excellent resources for real-world examples (and problems) with Vary: Accept; Iif you're reading this answer you need to read those links as well.<br/>
+<br/>
+The first, from the outstanding EricLaw, on Internet Explorer's behavior with the Vary header and some of the challenges it presents to developers: <a href="http://blogs.msdn.com/ieinternals/archive/2009/06/17/Vary-Header-Prevents-Caching-in-IE.aspx" rel="nofollow">Vary Header Prevents Caching in IE</a>. In short, IE (pre IE9) does not cache any content that uses the Vary header because the request cache does not include HTTP Request headers. EricLaw (Eric Lawrence in the real world) is a Program Manager on the IE team.<br/>
+<br/>
+The second is from Eran Medan, and is an on-going discussion of Vary-related unexpected behavior in Chrome: <a href="http://code.google.com/p/chromium/issues/detail?id=94369" rel="nofollow">Backing doesn't handle Vary header correctly</a>. It's related to IE's behavior, except the Chrome devs took a different approach -- though it doesn't appear to have been a deliberate choice.<br/>
+<br/>
+<hr /><br/>
+<br/>
+&nbsp;<br/>
+<br/>
+That's great for direct access, but modern networks use intermediate caches and CDNs. And there's the problem: how does the cache use headers to decide what to send back? How can it replicate the server's decision-making logic?<br/>
+<br/>
+<strong>Vary</strong> to the rescue. The <strong>Vary</strong> header describes what information "uniquely" identifies a request — caches should only be used if the incoming request matches the <strong>Vary</strong> information in the cache.<br/>
+<br/>
+For example, if a server sends the <strong>Vary: User-Agent</strong> header, intermediate caches will store a separate cache entry for each User-Agent they see (every OS + browser combination, yikes). This behavior was an issue for me in support (<a href="http://www.netdna.com/company/careers/" target="_blank">we're hiring!</a>), because we saw origin servers getting hammered as each user-agent requested new content and sidestepped the cache. After some research, I figured out <a href="http://mark.koli.ch/2010/09/understanding-the-http-vary-header-and-caching-proxies-squid-etc.html" target="_blank">why this happened</a> (turn off <strong>Vary: User-Agent</strong>), but the header left a bad taste in my mouth.<br/>
+<br/>
+&nbsp;<br/>
+<br/>
+The fix is for the origin server to send back <strong>Vary: Accept-Encoding</strong>. Now the intermediate CDNs will keep separate cache entries (one for <strong>Accept-encoding: gzip</strong>, another if you didn't send the header). These days you're unlikely to have clients without compression, but why risk cache mixups?<br/>
+<br/>
+Origin servers should include <strong>Vary: Accept-Encoding</strong>, and here's how:<br/>
+<h3>Apache/.htaccess</h3><br/>
+<pre>&lt;IfModule mod_headers.c&gt;
+  &lt;FilesMatch ".(js|css|xml|gz|html)$"&gt;
+    Header append Vary: Accept-Encoding
+  &lt;/FilesMatch&gt;
+&lt;/IfModule&gt;</pre><br/>
+<h3>Nginx</h3><br/>
+<pre>gzip_vary on</pre><br/>
+<h3>IIS</h3><br/>
+<pre>&lt;system.webServer&gt;
+  &lt;httpProtocol&gt;
+    &lt;customHeaders&gt;
+    &lt;remove name="Vary"&gt;&lt;/remove&gt;
+    &lt;add name="Vary" value="Accept-Encoding"&gt;&lt;/add&gt;
+    &lt;/customHeaders&gt;
+  &lt;/httpProtocol&gt;
+&lt;/system.webServer&gt;</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/normalize-inputtextarea-number-only">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/apache-cordova-thank-you-hackathon-sponsors">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/apache-cordova-thank-you-hackathon-sponsors">Apache Cordova - Thank You Hackathon Sponsors!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/significant-terms-aggregation-elasticsearch">Significant Terms Aggregation - Elasticsearch</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/utf-8-string-to-byte-array">UTF-8 String To Byte Array</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/genymotion-processes">GenyMotion Processes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/another-take-on-label-design-pure-css3-and-html5-markers">Another Take On Label-Design Pure CSS3 and HTML5 Markers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/so-long-facebook-and-thanks-for-all-the-likes">and Thanks for All the Likes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/so-long-linkedin-and-thanks-for-all-the-nothing">and Thanks for All the ????</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/crossdomain-xml-and-clientaccesspolicy-xml-extremely-permissive">CrossDomain.xml And ClientAccessPolicy.xml - Extremely Permissive</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/so-long-twitter-and-thanks-for-all-the-hashtags">and Thanks for All The #s</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cmd-unlimited-arguments-identifying-directory-file-or-none">Identifying If File Or Directory</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/reverse-engineer-android-so-library">Android Ninja - Reverse Engineer SO Library?</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/yet-another-javascript-unicode-encodedecode">Yet Another JavaScript Unicode Encode/Decode</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-ecmascript6-string-fromcodepoint-polyfill">JavaScript Ninja - ECMAScript6 - String.fromCodePoint Polyfill</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unicode-pacman%c2%b7%c2%b7%c2%b7%c2%b7%c2%b7%e2%80%a2%c2%b7%c2%b7%c2%b7%c2%b7%c2%b7-%e1%97%a4-%e1%97%a3%e1%97%a3%e1%97%a3%e1%97%a3">Unicode PacMan·····•····· ᗤ ᗣᗣᗣᗣ</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-time-dif">Constants Passed As Scope :)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-ninja-pointer-events-attribute">CSS3 Ninja - pointer-events attribute</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

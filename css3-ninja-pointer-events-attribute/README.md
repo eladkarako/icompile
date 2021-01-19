@@ -1,0 +1,29 @@
+The CSS property<strong> <code>pointer-events</code></strong> allows authors to control under what circumstances (if any) a particular graphic element can become the <a href="https://developer.mozilla.org/en-US/docs/Web/API/event.target">target</a> of mouse events. When this property is unspecified, the same characteristics of the<code>visiblePainted</code> value apply to SVG content.
+
+In addition to indicating that the element is not the target of mouse events, the value <code>none</code> instructs the mouse event to go "through" the element and target whatever is "underneath" that element instead.
+
+<!--more-->
+
+
+<dl><dd>nt can only be the target of a mouse event when the pointer is over the interior (i.e., fill) of the element. The values of the <code>fill</code> and <code>visibility</code> properties do not affect event processing.</dd><dt><code>stroke</code></dt><dd>SVG only. The element can only be the target of a mouse event when the pointer is over the perimeter (i.e., stroke) of the element. The values of the <code>stroke</code> and <code>visibility</code> properties do not affect event processing.</dd><dt><code>all</code></dt><dd>SVG only. The element can only be the target of a mouse event when the pointer is over the interior (i.e., fill) or the perimeter (i.e., stroke) of the element. The values of the <code>fill</code>, <code>stroke</code> and <code>visibility</code> properties do not affect event processing.</dd></dl>
+<h3 id="Example_1">Example 1</h3>
+<pre><code class=" language-css"><span class="token comment" spellcheck="true">/* Example 1: Makes all the img non-reactive to any mouse events such as dragging, hovering, clicking etc */</span>
+<span class="token selector">img </span><span class="token punctuation">{</span>
+  <span class="token property">pointer-events</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="Example_2">Example 2</h3>
+Makes the link to http://example.com non-reactive.
+<pre><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://developer.mozilla.org<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>MDN<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://example.com<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>example.com<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span></code></pre>
+<pre><code class=" language-css"><span class="token selector">a[href="http://example<span class="token class">.com</span>"] </span><span class="token punctuation">{</span>
+  <span class="token property">pointer-events</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<div><iframe id="frame_Example_2" class="live-sample-frame sample-code-frame" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/pointer-events$samples/Example_2?revision=983179" width="500" height="100" frameborder="0"></iframe>
+<div class="open-in-host-container"><button class="open-in-host">OPEN IN CODEPEN <i class="icon-codepen"></i></button><button class="open-in-host">OPEN IN JSFIDDLE <i class="icon-jsfiddle"></i></button></div>
+</div>
+<h2 id="Notes">Notes</h2>
+Note that preventing an element from being the target of mouse events by using <code>pointer-events</code> does <em>not</em>necessarily mean that mouse event listeners on that element <em>cannot</em> or <em>will not</em> be triggered. If one of the element's children has <code>pointer-events</code> explicitly set to <em>allow</em> that child to be the target of mouse events, then any events targeting that child will pass through the parent as the event travels along the parent chain, and trigger event listeners on the parent as appropriate. Of course any mouse activity at a point on the screen that is covered by the parent but not by the child will not be caught by either the child or the parent (it will go "through" the parent and target whatever is underneath).
+
+Its extension to HTML elements, though present in early drafts of CSS Basic User Interface Module Level 3, has been pushed to its <a class="external external-icon" href="http://wiki.csswg.org/spec/css4-ui#pointer-events">level 4</a>.

@@ -1,0 +1,3 @@
+Just updated to newest Chromium version <small>(Chromium is the cutting-edge open-source version of Google-Chrome)</small>
+
+<a target="_blank" href="https://icompile.eladkarako.com/_uploads/2014/08/2014-08-11_121251.jpg"><img class="alignnone wp-image-1688" src="https://icompile.eladkarako.com/_uploads/2014/08/2014-08-11_121251.jpg" alt="2014-08-11_121251" width="500" height="305" /></a>', 'New Google-Chrome Developer-Tools

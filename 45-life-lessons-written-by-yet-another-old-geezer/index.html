@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>written by yet another old geezer</title>
+  <meta itemprop="name"                                content="written by yet another old geezer"       />
+  <meta name="dcterms.title"                           content="written by yet another old geezer"       />
+  <meta property="og:title"                            content="written by yet another old geezer"       />
+  <meta name="twitter:title"                           content="written by yet another old geezer"       />
+  <meta name="twitter:text:title"                      content="written by yet another old geezer"       />
+  <meta name="application-name"                        content="written by yet another old geezer"       />
+  <meta name="subject"                                 content="written by yet another old geezer"       />
+  <meta name="apple-mobile-web-app-title"              content="written by yet another old geezer"       />
+  <meta name="msapplication-tooltip"                   content="written by yet another old geezer"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="written by yet another old geezer"       />
+  <meta itemprop="description"                         content="written by yet another old geezer"       />
+  <meta name="dcterms.description"                     content="written by yet another old geezer"       />
+  <meta name="twitter:description"                     content="written by yet another old geezer"       />
+  <meta property="og:description"                      content="written by yet another old geezer"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accept,alignnone,angry,answer,argument,audit,back,beats,blink,blinks,blogs,brain,breath,burn,business,called,calms,candles,care,change,charge,childhood,children,chocolate,choose,clutter,cornell,crying,deep,disaster,dress,dying,eccentric,enjoy,envy,fair,family,fancy,feel,files,fingers,flow,forget,forgive,frame,friends,futile,geezer,gift,good,grab,growing,happiness,healing,heals,idea,journey,kill,lessons,life,lingerie,love,loved,loves,make,matters,miracles,nice,occasion,organ,overprepare,past,peace,people,pile,problems,purple,resistance,roselby,save,screw,secret,sheets,sick,situation,small,special,stay,step,stronger,stuff,threw,tied,today,wait,waiting,waste,ways,wear,weighs,worry,written,years,yield,young,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accept,alignnone,angry,answer,argument,audit,back,beats,blink,blinks,blogs,brain,breath,burn,business,called,calms,candles,care,change,charge,childhood,children,chocolate,choose,clutter,cornell,crying,deep,disaster,dress,dying,eccentric,enjoy,envy,fair,family,fancy,feel,files,fingers,flow,forget,forgive,frame,friends,futile,geezer,gift,good,grab,growing,happiness,healing,heals,idea,journey,kill,lessons,life,lingerie,love,loved,loves,make,matters,miracles,nice,occasion,organ,overprepare,past,peace,people,pile,problems,purple,resistance,roselby,save,screw,secret,sheets,sick,situation,small,special,stay,step,stronger,stuff,threw,tied,today,wait,waiting,waste,ways,wear,weighs,worry,written,years,yield,young,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/wow-adblock-for-firefox-blocks-requests-too"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/wow-adblock-for-firefox-blocks-requests-too"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/from-the-beginning-what-are-the-ten-radical-isotopes"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/45-life-lessons-written-by-yet-another-old-geezer"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/45-life-lessons-written-by-yet-another-old-geezer"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/45-life-lessons-written-by-yet-another-old-geezer"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/45-life-lessons-written-by-yet-another-old-geezer"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/45-life-lessons-written-by-yet-another-old-geezer"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/45-life-lessons-written-by-yet-another-old-geezer"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2013-03-20T20:38:25+00:00"     />
+  <meta name="page-datetime"                           content="2013-03-20T20:38:25+00:00"     />
+  <meta property="article:published_time"              content="2013-03-20T20:38:25+00:00"     />
+  <meta name="dcterms.date"                            content="2013-03-20T20:38:25+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2013-03-20T20:39:41+00:00"    />
+  <meta property="article:modified_time"               content="2013-03-20T20:39:41+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/45-life-lessons-written-by-yet-another-old-geezer"
+,"url"             : "https://icompile.eladkarako.com/45-life-lessons-written-by-yet-another-old-geezer"
+,"headline"        : "written by yet another old geezer"
+,"description"     : "written by yet another old geezer"
+,"datePosted"      : "2013-03-20T20:38:25+00:00"
+,"dateCreated"     : "2013-03-20T20:38:25+00:00"
+,"datePublished"   : "2013-03-20T20:38:25+00:00"
+,"dateModified"    : "2013-03-20T20:39:41+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0005091183631">
+  <header>
+    <h1 itemprop="headline">written by yet another old geezer</h1>
+    <sup>Posted at <time datetime="2013-03-20T20:39:41+00:00" itemprop="dateModified">Wed, 20 Mar 2013 20:39:41 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><h2></h2><br/>
+1. Life isn't fair, but it's still good.<br/>
+<br/>
+2. When in doubt, just take the next small step.<br/>
+<br/>
+3. Life is too short not to enjoy it.<br/>
+<br/>
+4. Your job won't take care of you when you are sick. Your friends and family will.<br/>
+<br/>
+<img loading="lazy" lazyload="on"  class="alignnone" alt="" src="http://blogs.cornell.edu/roselby/files/2013/01/friends-fingers-p49j1w.jpg" width="441" height="280" /><br/>
+<br/>
+5. Don't buy stuff you don't need.<br/>
+<br/>
+6. You don't have to win every argument. Stay true to yourself.<br/>
+<br/>
+7. Cry with someone. It's more healing than crying alone.<br/>
+<br/>
+8. It's OK to get angry with God. He can take it.<br/>
+<br/>
+9. Save for things that matter.<br/>
+<br/>
+10. When it comes to chocolate, resistance is futile.<br/>
+<br/>
+11. Make peace with your past so it won't screw up the present.<br/>
+<br/>
+12. It's OK to let your children see you cry.<br/>
+<br/>
+13. Don't compare your life to others. You have no idea what their journey is all about.<br/>
+<br/>
+14. If a relationship has to be a secret, you shouldn't be in it.<br/>
+<br/>
+15. Everything can change in the blink of an eye… But don't worry; God never blinks.<br/>
+<br/>
+16. Take a deep breath. It calms the mind.<br/>
+<br/>
+17. Get rid of anything that isn't useful.  Clutter weighs you down in many ways.<br/>
+<br/>
+18. Whatever doesn't kill you really does make you stronger.<br/>
+<br/>
+19. It's never too late to be happy.  But it's all up to you and no one else.<br/>
+<br/>
+20. When it comes to going after what you love in life, don't take no for an answer.<br/>
+<br/>
+21. Burn the candles, use the nice sheets, wear the fancy lingerie. Don't save it for a special occasion. Today is special.<br/>
+<br/>
+22. Overprepare, then go with the flow.<br/>
+<br/>
+23. Be eccentric now. Don't wait for old age to wear purple.<br/>
+<br/>
+24. The most important sex organ is the brain.<br/>
+<br/>
+25. No one is in charge of your happiness but you.<br/>
+<br/>
+26. Frame every so-called disaster with these words, 'In five years, will this matter?'<br/>
+<br/>
+27. Always choose Life.<br/>
+<br/>
+28. Forgive but don't forget.<br/>
+<br/>
+29. What other people think of you is none of your business.<br/>
+<br/>
+30. Time heals almost everything. Give Time time.<br/>
+<br/>
+31. However good or bad a situation is, it will change.<br/>
+<br/>
+32. Don't take yourself so seriously. No one else does.<br/>
+<br/>
+33. Believe in miracles.<br/>
+<br/>
+34. God loves you because of who God is, not because of anything you did or didn't do.<br/>
+<br/>
+35. Don't audit life. Show up and make the most of it now.<br/>
+<br/>
+36. Growing old beats the alternative — dying young.<br/>
+<br/>
+37. Your children get only one childhood.<br/>
+<br/>
+38. All that truly matters in the end is that you loved.<br/>
+<br/>
+39. Get outside every day. Miracles are waiting everywhere.<br/>
+<br/>
+40. If we all threw our problems in a pile and saw everyone else's, we'd<br/>
+grab ours back.<br/>
+<br/>
+41. Envy is a waste of time. Accept what you already have, not what you think you need.<br/>
+<br/>
+42. The best is yet to come…<br/>
+<br/>
+43. No matter how you feel, get up, dress up and show up.<br/>
+<br/>
+44. Yield.<br/>
+<br/>
+45. Life isn't tied with a bow, but it's still a gift.', '45 Life Lessons</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/wow-adblock-for-firefox-blocks-requests-too">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/from-the-beginning-what-are-the-ten-radical-isotopes">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/from-the-beginning-what-are-the-ten-radical-isotopes">what are the ten radical isotopes?</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-prime-pages-prime-number-research-records-and-resources">records and resources</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-python-x64-installer-not-found">Solved: Python x64 Modules-Installer: "not found"</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows-7-install-gjslint-google-closure-jslinter-into-python">Windows 7 - Install gjslint (Google Closure JSLinter) into Python</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/optimise-speed-tip-jetbrains-webstorm-a-java-based-tweak">Optimise Speed Tip - JetBrains WebStorm (a Java-based tweak)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-minifier-based-on-javascript-algorithm-steps-and-design-example-for-efficiency">based on Javascript - Algorithm Steps and Design Example For Efficiency</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adding-gjslinter-to-webstorm-google-closure-jslinter-jetbrains-webstorm-integration">Adding GJSLinter to WebStorm - Google-Closure-JSLinter JetBrains WebStorm Integration</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/shell-svn-from-php">Shell SVN From PHP</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/more-wamp-php-tricks-increase-limits">More WAMP PHP Tricks - Increase Limits</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/all-known-methods-of-sending-requests-using-pure-javascript">All Known Methods Of Sending Requests Using Pure JavaScript</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers">New Outbrain Widget For Bloggers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/my-favorite-passover-movies">My Favorite Passover Movies</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sugru-arrived-happy-day">Adjust! Sugru Arrived - Happy Day!!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/oh-ye-of-little-faith-google-closure-2">oh ye of little faith Google-Closure</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-video-crop">FFMPEG Video Crop</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pandora-text-select-enabler-new-chrome-extension">Pandora Text-Select Enabler - New Chrome Extension </a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

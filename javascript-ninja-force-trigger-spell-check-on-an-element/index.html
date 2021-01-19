@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JavaScript Ninja - Force Trigger Spell-Check On An Element</title>
+  <meta itemprop="name"                                content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+  <meta name="dcterms.title"                           content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+  <meta property="og:title"                            content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+  <meta name="twitter:title"                           content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+  <meta name="twitter:text:title"                      content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+  <meta name="application-name"                        content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+  <meta name="subject"                                 content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+  <meta name="apple-mobile-web-app-title"              content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+  <meta name="msapplication-tooltip"                   content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+  <meta itemprop="description"                         content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+  <meta name="dcterms.description"                     content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+  <meta name="twitter:description"                     content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+  <meta property="og:description"                      content="JavaScript Ninja - Force Trigger Spell-Check On An Element"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="area,array,attribute,backup,blur,bold,call,callback,check,clean,color,delete,display,document,editor,element,execute,false,focus,focused,font,force,foreach,forward,function,guaranty,hide,index,innerhtml,innertext,input,javascript,length,logic,made,match,method,modify,move,ninja,null,number,original,page,post,preform,return,selection,skip,spell,spellcheck,stuff,task,textarea,times,trigger,uint,unhide,walk,weight,whitespace,window,wordpress,work,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="area,array,attribute,backup,blur,bold,call,callback,check,clean,color,delete,display,document,editor,element,execute,false,focus,focused,font,force,foreach,forward,function,guaranty,hide,index,innerhtml,innertext,input,javascript,length,logic,made,match,method,modify,move,ninja,null,number,original,page,post,preform,return,selection,skip,spell,spellcheck,stuff,task,textarea,times,trigger,uint,unhide,walk,weight,whitespace,window,wordpress,work,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/javascript-ninja-extracting-text-content-using-old-school-xpath-query-evaluating"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/javascript-ninja-extracting-text-content-using-old-school-xpath-query-evaluating"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/vcf-format-dev-hub-notes"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/javascript-ninja-force-trigger-spell-check-on-an-element"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/javascript-ninja-force-trigger-spell-check-on-an-element"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/javascript-ninja-force-trigger-spell-check-on-an-element"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/javascript-ninja-force-trigger-spell-check-on-an-element"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/javascript-ninja-force-trigger-spell-check-on-an-element"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/javascript-ninja-force-trigger-spell-check-on-an-element"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-01-31T23:08:33+00:00"     />
+  <meta name="page-datetime"                           content="2016-01-31T23:08:33+00:00"     />
+  <meta property="article:published_time"              content="2016-01-31T23:08:33+00:00"     />
+  <meta name="dcterms.date"                            content="2016-01-31T23:08:33+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-04-09T22:23:15+00:00"    />
+  <meta property="article:modified_time"               content="2016-04-09T22:23:15+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/javascript-ninja-force-trigger-spell-check-on-an-element"
+,"url"             : "https://icompile.eladkarako.com/javascript-ninja-force-trigger-spell-check-on-an-element"
+,"headline"        : "JavaScript Ninja - Force Trigger Spell-Check On An Element"
+,"description"     : "JavaScript Ninja - Force Trigger Spell-Check On An Element"
+,"datePosted"      : "2016-01-31T23:08:33+00:00"
+,"dateCreated"     : "2016-01-31T23:08:33+00:00"
+,"datePublished"   : "2016-01-31T23:08:33+00:00"
+,"dateModified"    : "2016-04-09T22:23:15+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003171824541">
+  <header>
+    <h1 itemprop="headline">JavaScript Ninja - Force Trigger Spell-Check On An Element</h1>
+    <sup>Posted at <time datetime="2016-04-09T22:23:15+00:00" itemprop="dateModified">Sat, 09 Apr 2016 22:23:15 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><pre><span style='color:#696969; '>/* words in the general matter of "stuff that are not whitespace" */</span><br/>
+<span style='color:#800000; font-weight:bold; '>function</span> get_number_of_words<span style='color:#808030; '>(</span><span style='color:#797997; '>input</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+  <span style='color:#797997; '>input</span> <span style='color:#808030; '>=</span> <span style='color:#797997; '>input</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>match</span><span style='color:#808030; '>(</span><span style='color:#800000; '>/</span><span style='color:#797997; '>\\S</span><span style='color:#808030; '>+</span><span style='color:#800000; '>/</span><span style='color:#800000; font-weight:bold; '>g</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#797997; '>input</span> <span style='color:#808030; '>=</span> <span style='color:#797997; '>input</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>hasOwnProperty</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>length</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>?</span> <span style='color:#797997; '>input</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#800080; '>:</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#797997; '>input</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><br/>
+<br/>
+<span style='color:#696969; '>/* preform a task, n times */</span><br/>
+<span style='color:#800000; font-weight:bold; '>function</span> do_n<span style='color:#808030; '>(</span>n<span style='color:#808030; '>,</span> callback<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+  <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> Uint8Array<span style='color:#808030; '>(</span>n<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>forEach<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> <span style='color:#797997; '>index</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+    callback<span style='color:#808030; '>.</span>call<span style='color:#808030; '>(</span><span style='color:#0f4d75; '>null</span><span style='color:#808030; '>,</span> <span style='color:#797997; '>index</span><span style='color:#808030; '>,</span> n<span style='color:#808030; '>-</span><span style='color:#797997; '>index</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><br/>
+<br/>
+<span style='color:#696969; '>/* main logic */</span><br/>
+<span style='color:#800000; font-weight:bold; '>function</span> guaranty_spellcheck<span style='color:#808030; '>(</span>element<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+  <span style='color:#800000; font-weight:bold; '>var</span> <br/>
+    backup_current_focused_element <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>:focus</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><br/>
+  <span style='color:#808030; '>,</span> selection <span style='color:#808030; '>=</span> window<span style='color:#808030; '>.</span>getSelection<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><br/>
+  <span style='color:#808030; '>,</span> number_of_words <span style='color:#808030; '>=</span> get_number_of_words<span style='color:#808030; '>(</span>element<span style='color:#808030; '>.</span>value<span style='color:#808030; '>)</span><br/>
+  <span style='color:#800080; '>;</span><br/>
+  <br/>
+  <span style='color:#696969; '>/* hide, add attribute, unhide */</span><br/>
+  element<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>backup_display <span style='color:#808030; '>=</span> element<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>display<span style='color:#800080; '>;</span><br/>
+  element<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>display <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>none</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+  element<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>spellcheck</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>spellcheck</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  element<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>display <span style='color:#808030; '>=</span> element<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>backup_display<span style='color:#800080; '>;</span><br/>
+  <span style='color:#800000; font-weight:bold; '>delete</span> element<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>backup_display<span style='color:#800080; '>;</span><br/>
+  <br/>
+  <span style='color:#696969; '>/* focus and skip around words, clean focus when done */</span><br/>
+  element<span style='color:#808030; '>.</span>focus<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  do_n<span style='color:#808030; '>(</span>number_of_words<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+    selection<span style='color:#808030; '>.</span>modify<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>move</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>forward</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>word</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  element<span style='color:#808030; '>.</span>blur<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <br/>
+  <span style='color:#696969; '>/* return focus to original page's focused element (may cause false-trigger of it's focus-method!) */</span><br/>
+  <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span><span style='color:#0f4d75; '>null</span> <span style='color:#808030; '>!==</span> backup_current_focused_element<span style='color:#808030; '>)</span> backup_current_focused_element<span style='color:#808030; '>.</span>focus<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><br/>
+<br/>
+<br/>
+<br/>
+<span style='color:#696969; '>/* execute */</span><br/>
+<br/>
+guaranty_spellcheck<span style='color:#808030; '>(</span> document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>.wp-editor-area</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>)</span><br/>
+</pre><br/>
+<br/>
+example is given for the textarea in the wordpress post-editor, and would work on any element with .value attribute, you may modify it to walk over "innerText" or even "innerHTML".. which is most likely will only be useful if you've made a div or something 'contentEditable="true"'...</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-extracting-text-content-using-old-school-xpath-query-evaluating">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/vcf-format-dev-hub-notes">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vcf-format-dev-hub-notes">VCF Format Dev Hub Notes</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/animated-israel-flag">Animated Israel Flag</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disable-youtube-spf">Disable YouTube SPF</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/urls-google-tia-text-input-assistant">URLs - Google TIA - Text Input Assistant</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-parse-time-format-into-number-of-seconds">JavaScript Snippet - Parse Time Format Into Number Of Seconds</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-123-cookie-to-hash-enumerator">JavaScript Snippet - 123 Cookie To Hash Enumerator</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stackoverflow-subdomains">Stackoverflow-Related Sub-Domains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/gae-script-headers">Google-App-Engine PHP - Script With Headers</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/other-google-app-engine-insights">Other Google App Engine Insights</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/happy-star-wars-day-2016">Happy Star-Wars Day! 2016</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-better-font-face-loader">CSS3 Better Font-Face Loader</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hebrew-html5-synthesis-api">Hebrew HTML5 Synthesis API</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-proxy-configuration-for-apache">HTML Proxy Configuration For Apache</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/http-non-standard-methods">HTTP Non-Standard Methods</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/you-cant-really-adblock-google-analytics-on-chrome">You Can't Really AdBlock Google-Analytics On Chrome</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/supersu-systemless-false">SuperSU SYSTEMLESS=false</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

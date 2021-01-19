@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>oh ye of little faith Google-Closure</title>
+  <meta itemprop="name"                                content="oh ye of little faith Google-Closure"       />
+  <meta name="dcterms.title"                           content="oh ye of little faith Google-Closure"       />
+  <meta property="og:title"                            content="oh ye of little faith Google-Closure"       />
+  <meta name="twitter:title"                           content="oh ye of little faith Google-Closure"       />
+  <meta name="twitter:text:title"                      content="oh ye of little faith Google-Closure"       />
+  <meta name="application-name"                        content="oh ye of little faith Google-Closure"       />
+  <meta name="subject"                                 content="oh ye of little faith Google-Closure"       />
+  <meta name="apple-mobile-web-app-title"              content="oh ye of little faith Google-Closure"       />
+  <meta name="msapplication-tooltip"                   content="oh ye of little faith Google-Closure"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="oh ye of little faith Google-Closure"       />
+  <meta itemprop="description"                         content="oh ye of little faith Google-Closure"       />
+  <meta name="dcterms.description"                     content="oh ye of little faith Google-Closure"       />
+  <meta name="twitter:description"                     content="oh ye of little faith Google-Closure"       />
+  <meta property="og:description"                      content="oh ye of little faith Google-Closure"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accessing,accident,active,adding,address,adores,afford,allowed,allowing,annoyances,appspot,audience,avoiding,bachelor,back,bettering,blogs,bottom,build,canada,cheat,cheating,choice,closure,code,community,companies,company,comparing,compiler,computer,constantly,counting,couple,degree,deleting,description,designed,desire,developer,downloads,drivers,ease,elements,enable,engineer,engineering,exist,extending,facebook,faith,firefox,forms,found,free,fully,games,good,google,greatly,hebrew,helpdesk,helping,home,hosting,hundreds,images,improve,improving,incoming,insisted,install,installing,iterations,java,javascript,joining,keen,lame,language,learn,learned,learning,life,local,longer,looked,made,magically,make,making,mathematics,medium,modifying,mozilla,named,nice,noob,online,overflow,page,parts,paste,people,pesky,photos,platform,platypus,playing,popups,problems,process,product,programming,programs,quality,registered,relocating,removing,results,reuse,reverse,roughly,rules,science,script,scripts,shifting,sites,skipping,small,software,stack,started,stuff,thinking,tool,uglifyjs,uploaded,user,users,userscripts,variations,version,visited,waiting,weapon,website,websites,wonderful,work,worked,workflow,working,world,writing,written,yeah,years,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accessing,accident,active,adding,address,adores,afford,allowed,allowing,annoyances,appspot,audience,avoiding,bachelor,back,bettering,blogs,bottom,build,canada,cheat,cheating,choice,closure,code,community,companies,company,comparing,compiler,computer,constantly,counting,couple,degree,deleting,description,designed,desire,developer,downloads,drivers,ease,elements,enable,engineer,engineering,exist,extending,facebook,faith,firefox,forms,found,free,fully,games,good,google,greatly,hebrew,helpdesk,helping,home,hosting,hundreds,images,improve,improving,incoming,insisted,install,installing,iterations,java,javascript,joining,keen,lame,language,learn,learned,learning,life,local,longer,looked,made,magically,make,making,mathematics,medium,modifying,mozilla,named,nice,noob,online,overflow,page,parts,paste,people,pesky,photos,platform,platypus,playing,popups,problems,process,product,programming,programs,quality,registered,relocating,removing,results,reuse,reverse,roughly,rules,science,script,scripts,shifting,sites,skipping,small,software,stack,started,stuff,thinking,tool,uglifyjs,uploaded,user,users,userscripts,variations,version,visited,waiting,weapon,website,websites,wonderful,work,worked,workflow,working,world,writing,written,yeah,years,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/sugru-arrived-happy-day"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/sugru-arrived-happy-day"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/ffmpeg-video-crop"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/oh-ye-of-little-faith-google-closure-2"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/oh-ye-of-little-faith-google-closure-2"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/oh-ye-of-little-faith-google-closure-2"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/oh-ye-of-little-faith-google-closure-2"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/oh-ye-of-little-faith-google-closure-2"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/oh-ye-of-little-faith-google-closure-2"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2013-06-28T04:43:41+00:00"     />
+  <meta name="page-datetime"                           content="2013-06-28T04:43:41+00:00"     />
+  <meta property="article:published_time"              content="2013-06-28T04:43:41+00:00"     />
+  <meta name="dcterms.date"                            content="2013-06-28T04:43:41+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2013-07-20T20:45:43+00:00"    />
+  <meta property="article:modified_time"               content="2013-07-20T20:45:43+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/oh-ye-of-little-faith-google-closure-2"
+,"url"             : "https://icompile.eladkarako.com/oh-ye-of-little-faith-google-closure-2"
+,"headline"        : "oh ye of little faith Google-Closure"
+,"description"     : "oh ye of little faith Google-Closure"
+,"datePosted"      : "2013-06-28T04:43:41+00:00"
+,"dateCreated"     : "2013-06-28T04:43:41+00:00"
+,"datePublished"   : "2013-06-28T04:43:41+00:00"
+,"dateModified"    : "2013-07-20T20:45:43+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0001264932731">
+  <header>
+    <h1 itemprop="headline">oh ye of little faith Google-Closure</h1>
+    <sup>Posted at <time datetime="2013-07-20T20:45:43+00:00" itemprop="dateModified">Sat, 20 Jul 2013 20:45:43 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">Google-Closure, UglifyJS...  UglifyJS, Google-Closure...<br/>
+<br/>
+I've come to first use a Google - Closure, years ago, in some way, by accident, wonderful wonderful accident,<br/>
+<br/>
+See, years ago<!--more--> I was a writing every now and then in helpdesk blogs helping the world, well, at least those parts of the world whom can afford a medium computer and constantly had problems install drivers.. :)<br/>
+<br/>
+As I've visited most frequently stack-overflow, (as well of few local Hebrew-written blogs) I've come across so many annoyances in the forms of ads popups, big-A$ GIF images, I've started thinking of a way to make them go away,<br/>
+<br/>
+Started small, I've looked into a language known as GreaseMonkey- installing an add-on in Firefox, had enable you, as a user to have fun, modifying websites, removing elements, deleting parts, relocating other, along with another add-on named platypus, even a noob, could have cut&amp;paste the web to his/her desire,<br/>
+<br/>
+After a while I've also found out that GreaseMonkey has a very active community hosting their little programs known as 'user-scripts' in the http://userscripts.org/ website, allowing other registered users to reuse their's work,<br/>
+<br/>
+Started small adding one little script at a time, I have a couple of hundreds of scripts uploaded to userscripts.org, each one with own page description photos etc..  Most of them removing ads in various sites, some skipping the waiting process or avoiding counting down before downloads, some cheating in Facebook games, allowing automatically playing those pesky games automatically without the need to actually be near the computer.. :) those stuff...<br/>
+<br/>
+I was making a good generalization of rules in other people's programming, allowing me to roughly reverse-engineer websites workflow,<br/>
+All this started shifting to a very good place,<br/>
+<br/>
+I am a more of a back-end developer, greatly adores the infrastructure, JAVA and PHP (and ASP.Net) are (still are..) my weapon of choice,<br/>
+(C#oh Yeah!) but I've started get very keen of the ease of 'see immediate results' in front-end programming (although at first, and sometimes it still is, seems lame in comparing to back-end engineering)<br/>
+<br/>
+Started to look for a way to cheat my way into bettering my code quality I've come across the Google-Closure-Compiler, <em>Online Version</em>,<br/>
+Which still exist in this address: http://closure-compiler.appspot.com/home<br/>
+Magically Google-Closure-Compiler took my code, and make it better, it allowed me to learn variations that gets the same results, how to improve my writing, and through many wonderful iterations learn more of the JavaScript language, from the language itself,<br/>
+<br/>
+I was later learned to build a Firefox Add-Ons and joining them with my userscripts learning, and got a few hundreds of downloads from the Mozilla Add-Ons community, and even got one of the first incoming bottom-up software engineering add-on to several companies, and worked with another company in Canada, extending my add-ons to a fully working platform to enable their audience accessing their product, I've insisted on doing that for free ;) - they still use it :)<br/>
+<br/>
+Years later, no longer a kid (...), after my bachelor of science degree in Computer Science and Mathematics, I still remember Google Closure as a wonderful self-learning self-improving tool, even though it wasn't probably designed to be one :)<br/>
+<br/>
+Life is what you've made of it. Nice, isn't?</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/sugru-arrived-happy-day">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-video-crop">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-video-crop">FFMPEG Video Crop</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pandora-text-select-enabler-new-chrome-extension">Pandora Text-Select Enabler - New Chrome Extension </a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-extract-subtitle-file-from-mkv-video-file">FFMPEG extract subtitle file from mkv video file</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/playing-with-remote-desktop-sessions-1">playing with remote desktop sessions #1</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/i-really-love-javascript">I really love JavaScript</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/htaccess-forward-rewrite-rule">htaccess forward (rewrite) rule</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/altoids-taste-like-toothpaste-smells-like-bengay-and-anyhow-not-nearly-that-strong-anyway">and anyhow not nearly that strong anyway</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/big-data-machine-logstash-agent-daemon-pipe-to-perl-script-that-sends-to-elasticsearch-server-from-the-very-start">pipe to perl script that sends to ElasticSearch server - from the very start</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/graphite-maintenance-manual-services-running-plus-tips">plus tips</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/graphite-alt-complete-conf">graphite alt complete conf</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/i-lv-github">I <3 GitHub</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stuff-you-should-probably-uninstall-from-your-low-budget-server">Stuff you should probably uninstall from your low-budget server</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solve-missing-files-for-vmware-tools">Solve missing files for VMWare tools</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/firefox-front-end-test-checklist">Firefox Front-End Test Checklist</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bunch-of-links-regarding-javascript-testing-i-continues-deployment">headless JavaScript Testing with PhJS /i Continues Deployment</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/driver-boot-test-signing-off-windows-7">driver boot - test signing off - Windows 7</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

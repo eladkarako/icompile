@@ -1,0 +1,10 @@
+{
+  "ID"                : "49"
+ ,"post_name"         : "php-javascript-ajax-form-submit-with-sanitize-and-fallback-nojquery"
+ ,"post_title"        : "A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML"
+ ,"post_date_gmt"     : "2019-10-13 19:54:11"
+ ,"post_modified_gmt" : "2019-10-13 19:54:11"
+ ,"post_status"       : "publish"
+ ,"comment_status"    : "open"
+ ,"post_type"         : "post"
+}

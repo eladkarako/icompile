@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4</title>
+  <meta itemprop="name"                                content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+  <meta name="dcterms.title"                           content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+  <meta property="og:title"                            content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+  <meta name="twitter:title"                           content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+  <meta name="twitter:text:title"                      content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+  <meta name="application-name"                        content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+  <meta name="subject"                                 content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+  <meta name="apple-mobile-web-app-title"              content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+  <meta name="msapplication-tooltip"                   content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+  <meta itemprop="description"                         content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+  <meta name="dcterms.description"                     content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+  <meta name="twitter:description"                     content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+  <meta property="og:description"                      content="Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="adipiscing,adjust,align,amet,animation,animations,appearance,arial,article,augue,auto,banner,bibendum,block,blog,bold,border,bottom,button,cell,child,classes,collapse,color,colors,column,condimentum,consectetur,container,content,contentinfo,convallis,dapibus,decoration,description,design,diam,dictum,display,dolor,ease,elit,enim,eros,etiam,fadeout,featured,feugiat,field,fieldset,figure,fixed,float,fluid,focus,font,footer,form,global,gray,grid,group,header,helvetica,hgroup,hidden,home,homepage,hover,html,images,imperdiet,inactive,indent,index,inline,input,intro,ipsum,keyframes,layout,legend,letter,line,linkedin,links,list,logo,lorem,margin,massa,media,medium,molestie,nisl,nunc,object,outline,overflow,padding,pattern,patterns,permalink,placeholder,position,post,posts,practices,prev,queries,quis,quisque,radius,reset,responsive,rgba,risus,role,sans,screens,scroll,search,section,serif,sidebar,size,sizing,small,social,solid,spacing,sprite,stlyes,structure,syntax,table,tags,target,textarea,tincidunt,transition,turpis,twitter,type,vertical,vestibulum,video,vitae,webkit,weight,wufoo,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="adipiscing,adjust,align,amet,animation,animations,appearance,arial,article,augue,auto,banner,bibendum,block,blog,bold,border,bottom,button,cell,child,classes,collapse,color,colors,column,condimentum,consectetur,container,content,contentinfo,convallis,dapibus,decoration,description,design,diam,dictum,display,dolor,ease,elit,enim,eros,etiam,fadeout,featured,feugiat,field,fieldset,figure,fixed,float,fluid,focus,font,footer,form,global,gray,grid,group,header,helvetica,hgroup,hidden,home,homepage,hover,html,images,imperdiet,inactive,indent,index,inline,input,intro,ipsum,keyframes,layout,legend,letter,line,linkedin,links,list,logo,lorem,margin,massa,media,medium,molestie,nisl,nunc,object,outline,overflow,padding,pattern,patterns,permalink,placeholder,position,post,posts,practices,prev,queries,quis,quisque,radius,reset,responsive,rgba,risus,role,sans,screens,scroll,search,section,serif,sidebar,size,sizing,small,social,solid,spacing,sprite,stlyes,structure,syntax,table,tags,target,textarea,tincidunt,transition,turpis,twitter,type,vertical,vestibulum,video,vitae,webkit,weight,wufoo,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/cool-javascript-compenent-handsontable-and-pikaday"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/cool-javascript-compenent-handsontable-and-pikaday"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/eset-anti-virus-8-free-beta-trial"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/web-design-best-practices-css3-responsive-style-fluid-layout-4"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/web-design-best-practices-css3-responsive-style-fluid-layout-4"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/web-design-best-practices-css3-responsive-style-fluid-layout-4"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/web-design-best-practices-css3-responsive-style-fluid-layout-4"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/web-design-best-practices-css3-responsive-style-fluid-layout-4"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/web-design-best-practices-css3-responsive-style-fluid-layout-4"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-09-25T20:12:43+00:00"     />
+  <meta name="page-datetime"                           content="2014-09-25T20:12:43+00:00"     />
+  <meta property="article:published_time"              content="2014-09-25T20:12:43+00:00"     />
+  <meta name="dcterms.date"                            content="2014-09-25T20:12:43+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2014-09-26T00:35:57+00:00"    />
+  <meta property="article:modified_time"               content="2014-09-26T00:35:57+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/web-design-best-practices-css3-responsive-style-fluid-layout-4"
+,"url"             : "https://icompile.eladkarako.com/web-design-best-practices-css3-responsive-style-fluid-layout-4"
+,"headline"        : "Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"
+,"description"     : "Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4"
+,"datePosted"      : "2014-09-25T20:12:43+00:00"
+,"dateCreated"     : "2014-09-25T20:12:43+00:00"
+,"datePublished"   : "2014-09-25T20:12:43+00:00"
+,"dateModified"    : "2014-09-26T00:35:57+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003695761141">
+  <header>
+    <h1 itemprop="headline">Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4</h1>
+    <sup>Posted at <time datetime="2014-09-26T00:35:57+00:00" itemprop="dateModified">Fri, 26 Sep 2014 00:35:57 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><pre><style type="text/css">
+.wp_syntax pre{
+max-height: 300px;
+overflow-y: scroll !important;
+}
+</style></pre><br/>
+<br/>
+<pre>
+/*
+colors
+red: #e51837; rgb(229,24,55)
+gray: #808080;
+*/
+
+/************Reset**************/
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+html, body, div, object, iframe, fieldset { 
+	margin: 0; 
+	padding: 0; 
+	border: 0;
+} 
+ol, ul { 
+	list-style: none;
+	margin: 0;
+	padding: 0;
+} 
+table { 
+	border-collapse: collapse; 
+	border-spacing: 0; 
+}
+header, footer, nav, section, article, hgroup, figure {
+	display: block;	
+}
+legend {
+	display: none;
+}
+/************End Reset**************/
+
+/************Global**************/
+body {
+	background: #fff;
+	color: #000;
+	font: 100%/1.4 "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+	padding: 0;
+	-webkit-text-size-adjust: none;
+}
+a {
+	color: #808080;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	color: #e51837;
+}
+p {
+	margin: 0 0 1em;
+}
+img, object, video {
+	max-width: 100%;
+	border: 0;
+}
+a img {
+	border: 0;
+	outline: 0;
+}
+h1 {
+	font-size: 3em;
+	line-height: 1;
+	letter-spacing: -0.02em;
+	margin-bottom: 0.2em;
+}
+h2 {
+	font-size: 2em;
+	line-height: 1.1;
+	margin-bottom: 0.2em;
+}
+h3 {
+	font-weight: normal;
+	line-height: 1.1;
+	padding-bottom: 0.4em;
+	border-bottom: 1px solid #ccc;
+}
+h1 a, h2 a, h3 a {
+	display: block;
+	color: #000;
+}
+h1 a:hover, h2 a:hover, h3 a:hover {
+	color: #e51837;
+}
+blockquote {
+	border-left: 0.5em solid #ddd;
+	padding-left: 1em;
+	margin-left: 1em;
+}
+small {
+	color: #e51837;
+}
+
+input, textarea {
+	border: 1px solid #000;
+}
+
+input[type=search] {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+::-webkit-input-placeholder {
+	color: #808080;
+}
+:-moz-placeholder {  
+    color: #808080;
+}
+/************End Global**************/
+
+/************Classes**************/
+.inactive {
+	color: #ddd;
+}
+/************End Classes**************/
+
+/************Structure**************/
+.container {
+	max-width: 70em;
+	margin: 0 auto;
+	padding: 0 1em;
+	overflow: hidden;
+}
+div[role=main] {
+	padding-bottom: 1em;
+}
+
+/*Footer*/
+footer[role=contentinfo] {
+	color: #fff;
+	background: #000;
+	margin: 0 -1em;
+	position: relative;
+	z-index: 2;
+}
+footer[role=contentinfo] > div {
+	max-width: 70em;
+	padding: 0 1em;
+	margin: 0 auto;
+	overflow: hidden;
+}
+footer[role=contentinfo] p {
+	margin: 0;
+}
+footer[role=contentinfo] .nav li a {
+	display: block;
+	border-bottom: 1px solid #808080;
+	padding: 1em;
+	margin: 0 -1em;
+}
+footer[role=contentinfo] a {
+	display: inline-block;
+	padding: 0.5em 0;
+}
+footer[role=contentinfo] a.nav-home {
+	color: #fff;
+}
+footer[role=contentinfo] .f-rga {
+	padding: 0.6em 0;
+}
+footer[role=contentinfo] img {
+	max-width: 4.4em;
+	display: inline-block;
+	margin-bottom: -0.22em;
+}
+/*End Footer*/
+
+/*Grid*/
+.grid {
+	margin: 0 -1em;
+	overflow: hidden;
+}
+.grid:target {
+	-webkit-animation: fadeout 5s 1 ease-out;
+    -moz-animation: fadeout 5s 1 ease-out; 
+    -o-animation: fadeout 5s 1 ease-out;
+    animation: fadeout 5s 1 ease-out; 
+}
+.grid > h2 {
+	margin-left: 0.45em;
+}
+.grid > section {
+	padding: 1em 1em 0.5em;
+}
+.grid > section:target {
+	-webkit-animation: fadeout 5s 1 ease-out;
+    -moz-animation: fadeout 5s 1 ease-out; 
+    -o-animation: fadeout 5s 1 ease-out;
+    animation: fadeout 5s 1 ease-out; 
+}
+.grid ul {
+	overflow: hidden;
+}
+.grid ul li {
+	margin-bottom: 0.3em;
+}
+.featured:after {
+	content: "*";
+	color: #e51837;
+}
+
+/*Fluid*/
+.fluid {
+	display: block;
+	margin: 0 auto;
+	max-width: 40em;
+}
+
+/*Homepage*/
+.home h1 {
+	margin-bottom: 0.2em;
+}
+.intro {
+	font-size: 1.8em;
+	line-height: 1.2;
+	margin: 0 auto;
+}
+.intro a:hover ,.intro a:focus {
+	color: #000;
+	border-bottom-color: #000;
+}
+
+.ani {
+	position: relative;
+	height: 15em;
+	margin: 1em 0 0;
+	width: 100%;
+	z-index: 0;
+}
+.ani div {
+	width: 100%;
+}
+.ani div b {
+	display: block;
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	bottom: 5%;
+	left: 5%;
+	background: rgba(229,24,55,0.22);
+}
+
+/* Button Stlyes */
+.block-btn {
+	color: #fff;
+	background: #000;
+	display: inline-block;
+	margin: 1.5em 0;
+	font-size: 110%;
+	padding: 1em;
+}
+.block-btn:hover, .block-btn:focus {
+	color: #fff;
+	background: #e51837;
+}
+
+/*Patterns*/
+.mod {
+	padding: 1em;
+}
+.pattern {
+	background: #f7f7f7;
+	border-bottom: 1px solid #808080;
+	margin-bottom: 1em;
+	overflow: hidden;
+}
+.pattern-description h1 {
+	font-size: 3.4em;
+	margin-bottom: 0.5em;
+}
+.pattern-description {
+	max-width: 40em;
+	margin: 0 auto;
+}
+.pattern-description ul, .pattern-description ol {
+	margin-bottom: 2em;
+}
+.pattern-description li {
+	margin-bottom: 1em;
+}
+
+
+/*Blog*/
+/*Blog Header*/
+.blog .container {
+	max-width: 62em;
+}
+.blog header[role=banner] {
+	overflow: hidden;
+	margin-bottom: 2em;
+	padding: 2em 0 1em;
+	border-bottom: 1px solid #000;
+}
+.blog-logo {
+	font-weight: normal;
+	font-size: 1.2em;
+	margin: 0 0 1em;
+}
+.blog-logo img {
+	width: 3.3em;
+}
+.blog-logo a {
+	color: #000;
+}
+.search-form {
+	width: 100%;
+	margin-bottom: 1em;
+}
+.search-field {
+	width: 100%;
+	padding: 0.5em 0;
+	border: 0;
+	border-bottom: 1px solid #808080;
+	outline: none;
+}
+.search-field:focus {
+	background: #e51837;
+	color: #fff;
+}
+.search-field:focus::-webkit-input-placeholder {
+   color: #fff;
+}
+
+.search-field:focus :-moz-placeholder {  
+   color: #fff; 
+}
+
+.blog .nav {
+	clear: both;
+}
+.blog .nav a {
+	display: block;
+	font-weight: bold;
+	color: #000;
+}
+.blog .nav a:hover {
+	color: #e51837;
+}
+
+/*Posts*/
+.posts ol > li {
+	padding-bottom: 1em;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 1em;
+	overflow: hidden;
+} 
+.posts h2 {
+	font-size: 1.4em;
+	margin: 0.28em 0 0.1em;
+	font-weight: normal;
+}
+.posts h2 a {
+	color: #000;
+}
+.posts h2 a:hover, .posts h2 a:focus {
+	color: #e51837;
+}
+.permalink {
+	display: block;
+	font-size: 0.8em;
+	margin-bottom: 1.2em;
+}
+.post-body a {
+	border-bottom: 1px solid #ccc;
+}
+.posts blockquote {
+	margin: 0 0 1em;
+	color: #666;
+	border-left: 0.25em solid #ccc;
+	padding-left: 1em;
+}
+.tags {
+	float: left;
+}
+.tags li {
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 0.5em;
+}
+
+.posts ol > li .tags a, .permalink {
+	color: #ccc;
+	-webkit-transition: color 0.3s ease-out;  
+     -moz-transition: color 0.3s ease-out;  
+      -ms-transition: color 0.3s ease-out;  
+       -o-transition: color 0.3s ease-out;  
+          transition: color 0.3s ease-out;
+}
+.posts ol > li:hover .tags a, .posts ol > li:hover .permalink {
+	color: #808080;
+}
+.blog-nav {
+	text-align: center;
+	overflow: hidden;
+	padding: 1em 0;
+}
+.posts .blog-nav a {
+	border: 0;
+}
+.nav-next {
+	float: right;
+}
+.nav-prev {
+	float: left;
+}
+
+/* Sidebar */
+.sidebar {
+	font-size: 0.8em;
+	padding-bottom: 1.4em;
+}
+.sidebar div {
+	margin-bottom: 2em;
+}
+.sidebar h3 {
+	font-weight: bold;
+	font-size: 0.9em;
+	line-height: 1;
+	border-bottom: 1px solid #000;
+}
+.sidebar a {
+	color: #808080;
+}
+.sidebar a:hover, .sidebar a:focus {
+	color: #e51837;
+}
+.social-links {
+	overflow: hidden;
+}
+.social-links li {
+	float: left;
+	margin-right: 1.2em;
+}
+.social-links li a {
+	display: block;
+	height: 17px;
+	width: 16px;
+	text-indent: -99999em;
+	background: url(images/sprite_social.png) no-repeat;
+}
+.social-links li a.s-fb {
+	background-position: -0px -76px;
+}
+.social-links li a.s-fb:hover {
+	background-position: -16px -76px;
+}
+.social-links li a.s-twitter {
+	background-position: -0px -37px;
+}
+.social-links li a.s-twitter:hover {
+	background-position: -16px -37px;
+}
+.social-links li a.s-linkedin {
+	background-position: -0px -113px;
+}
+.social-links li a.s-linkedin:hover {
+	background-position: -16px -113px;
+}
+.social-links li a.s-rss {
+	background-position: -0px -0px;
+}
+.social-links li a.s-rss:hover {
+	background-position: -16px -0px;
+}
+
+
+
+.top {
+	clear: both;
+	display: block;
+	padding: 1em 0;
+}
+.top:before {
+	content: '▲';
+}
+
+
+/* Wufoo Form */
+.wufoo-form {
+	margin: 2em 0;
+}
+
+/******Media Queries*******/
+
+/* Medium Screens*/
+@media all and (min-width: 35em) {
+	.blog-logo {
+		float: left;
+		font-size: 2em;
+		margin: 0 0 1em;
+	}
+	.blog-logo img {
+		width: auto;
+	}
+}
+@media all and (min-width:40em) {
+	h1 {
+		font-size: 5.6em;
+	}
+	.container {
+		padding-bottom: 4em;
+	}
+	footer[role=contentinfo] {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		margin: 0;
+	}
+	footer[role=contentinfo] .nav {
+		float: left;
+	}
+	footer[role=contentinfo] .nav li {
+		display: inline-block;
+		margin-right: 0.8em;
+	}
+	footer[role=contentinfo] .nav li a {
+		border: 0;
+	}
+	footer[role=contentinfo] .f-rga {
+		float: right;
+	}
+	.grid ul li {
+		width: 50%;
+		float: left;
+	}
+	.grid ul li:nth-child(odd) {
+		padding-right: 1em;
+		clear: left;
+	}
+	.ani {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 4em;
+		left: 0;
+		width: 100%;
+		height: 90%;
+		margin: 0;
+		z-index: 0;
+	}
+	.home {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 5em;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		height: 90%;
+		display: table;
+		text-align: center;
+		color: #fff;
+		color: rgba(255,255,255,0.7);
+	}
+	.home > div {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.home .intro a {
+		color: #fff;
+		color: rgba(255,255,255,0.8);
+		border-bottom: 1px solid rgba(255,255,255,0.8);
+	}
+	.home .intro a:hover, .home .intro a:focus {
+		color: #000;
+		border-bottom-color: #000;
+	}
+	
+	
+	/*Blog*/
+	
+	.search-form {
+		float: right;
+		width: 30%;
+		max-width: 16em;
+		padding-left: 0.8em;
+		margin-top: 0.4em;
+	}
+	
+	.posts {
+		float: left;
+		width: 64%;
+	}
+	.sidebar {
+		float: right;
+		width: 30%;
+		max-width: 21em;
+		margin: 0 0 1em;
+		padding-left: 0.8em;
+	}
+}
+
+
+/* Large Screens */
+@media all and (min-width: 54em) {
+	h1 {
+		font-size: 6.4em;
+	}
+	.grid > section {
+		float: left;
+		width: 33.3333333%;
+	}
+	.grid > section:nth-of-type(3n+1) {
+		clear: left;
+	}
+	.grid ul li {
+		width: auto;
+		float: none;
+	}
+	.grid ul li:nth-child(odd) {
+		padding-right: 0;
+	}
+}	
+
+
+/* CSS Animations */
+@-webkit-keyframes fadeout {
+  0%   { background: #fff; }
+  10%   { background: #eee; }
+  100% { background: #fff; }
+}
+@-moz-keyframes fadeout {
+  0%   { background: #fff; }
+  10%   { background: #eee; }
+  100% { background: #fff; }
+}
+@-o-keyframes fadeout {
+  0%   { background: #fff; }
+  10%   { background: #eee; }
+  100% { background: #fff; }
+}
+@keyframes fadeout {
+  0%   { background: #fff; }
+  10%   { background: #eee; }
+  100% { background: #fff; }
+}
+</pre><br/>
+<pre><br/>
+<div id="pattern" class="pattern"><br/>
+  <div class="col-group"><br/>
+    <div><br/>
+      <h2>Here's a column of text</h2><br/>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque turpis diam, tincidunt nec convallis vitae, dapibus vitae enim. Nam bibendum nisl in risus imperdiet vestibulum.</p><br/>
+    </div><br/>
+    <div><br/>
+      <h2>Here's another column of text</h2><br/>
+      <p>Sed sit amet molestie diam. Etiam adipiscing dictum eros, vitae feugiat augue convallis sit amet. Nunc quis massa non dolor dictum condimentum.</p><br/>
+    </div><br/>
+    <div><br/>
+      <h2>Here's the third column</h2><br/>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque turpis diam, tincidunt nec convallis vitae, dapibus vitae enim. Nam bibendum nisl in risus imperdiet vestibulum.</p><br/>
+    </div><br/>
+    <div><br/>
+      <h2>Here's a fourth column</h2><br/>
+      <p>Sed sit amet molestie diam. Etiam adipiscing dictum eros, vitae feugiat augue convallis sit amet. Nunc quis massa non dolor dictum condimentum.</p><br/>
+    </div><br/>
+<br/>
+  </div><br/>
+</div><br/>
+</pre><br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/cool-javascript-compenent-handsontable-and-pikaday">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/eset-anti-virus-8-free-beta-trial">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/eset-anti-virus-8-free-beta-trial">ESET Anti-Virus 8 Free Beta Trial</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/three-wishes-rule">Three Wishes Rule</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easy-html-css3-table-6-columns">Easy HTML-CSS3 Table 6-Columns</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-solutions-aggregate-elements-positioning-and-size-with-an-additional-quick-recursive-tree-enumerator">JavaScript Ninja Solutions - Aggregate Element's Positioning And Size With An Additional Quick Recursive Tree Enumerator</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/industrys-top-6-most-commonly-used-vector-graphics-formats-today">Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-non-linear-random-numbers">JavaScript Non-Linear Random Numbers</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/loose-cross-domain-xml-policy">Loose Cross-Domain XML Policy</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/morfix-melingo-android-application-request-response">Morfix Melingo Android Application Request/Response</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bbc-iplayer-android-application-request-response">BBC iPlayer Android Application Request-Response</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-quick-and-dirty-pure-client-side-qr-code-rendering-playground">JavaScript Quick And Dirty - Pure Client-Side QR Code Rendering Playground</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows-7-test-mode-onoff">Windows 7 Test Mode ON/OFF</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bash-rename-all-files-lower-case">bash rename all files lower-case</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/constantine-vs-hellblazer-success">Constantine vs. Hellblazer - Success! </a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/lenovo-x220-model-42914cg-direct-link-drivers-to-lenovo-website">Lenovo X220 Model 42914CG - Direct Link Drivers To Lenovo Website</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-techniques-discovering-ad-block-implementation-example">JavaScript Ninja Techniques - Discovering Ad-Block + Implementation Example</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromeflagsenable-app-window-controls">chrome://flags/#enable-app-window-controls</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html itemscope="" itemtype="http://schema.org/WebPage" dir="ltr" lang="en-US" language="English" charset="UTF-8" encoding="UTF-8">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta http-equiv="Content-Type"    content="text/html;charset=UTF-8"/>
+  <meta name="fragment"              content="!"/>
+  <meta name="viewport"              content="width=device-width,minimal-ui"/>
+  <style type="text/css" media="all">
+  /*<![CDATA[*/
+  @charset "UTF-8";
+  @namespace "http://www.w3.org/1999/xhtml";
+  *{
+    box-sizing:                   border-box;
+    text-size-adjust:                   auto;
+  }
+  html,body{
+    height:                             100%;
+    width:                              100%;
+    padding:                               0;
+    margin:                                0;
+  }
+  html{ 
+    font:      20pt 'Courier New', monospace;
+  }
+  body{
+    background:               none lightblue;
+  }
+  /*]]>*/
+</style>
+
+<style>
+ input[type="radio"]{ display:none; }
+ input[type="radio"]          + label[up]:before{  content:'▲︎'; color:lightgray; -webkit-text-stroke: 1px transparent;}
+ input[type="radio"]:checked  + label[up]:before{  content:'▲︎'; color:gold;      -webkit-text-stroke: 3px gold;}
+ input[type="radio"]          + label[down]:before{content:'▼︎'; color:lightgray; -webkit-text-stroke: 1px transparent;}
+ input[type="radio"]:checked  + label[down]:before{content:'▼︎'; color:gold;      -webkit-text-stroke: 3px gold;}
+</style>
+
+</head>
+<body>
+<table>
+  <thead>
+    <tr align="center">
+      <td>Number    <br/> <input checked type="radio" name="sort" id="radio1"/><label up for="radio1">&nbsp;</label>&nbsp;<input type="radio" name="sort" id="radio2"/><label down for="radio2">&nbsp;</label>     </td>
+      <td>Article   <br/> <input         type="radio" name="sort" id="radio3"/><label up for="radio3">&nbsp;</label>&nbsp;<input type="radio" name="sort" id="radio4"/><label down for="radio4">&nbsp;</label>     </td>
+      <td>Created   <br/> <input         type="radio" name="sort" id="radio5"/><label up for="radio5">&nbsp;</label>&nbsp;<input type="radio" name="sort" id="radio6"/><label down for="radio6">&nbsp;</label>     </td>
+      <td>Modified  <br/> <input         type="radio" name="sort" id="radio7"/><label up for="radio7">&nbsp;</label>&nbsp;<input type="radio" name="sort" id="radio8"/><label down for="radio8">&nbsp;</label>     </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>  
+      <!-- number   --> <td>1</td>
+      <!-- article  --> <td>criteria-api-to-jpa</td>
+      <!-- created  --> <td><time datetime="2008-08-14T00:13:29.000Z">Tue, 14 Aug 2008 00:13:29 GMT</time></td>
+      <!-- modified --> <td><time datetime="2016-04-05T00:15:26.000Z">Tue, 05 Apr 2016 00:15:26 GMT</time></td>
+    </tr>
+    <tr>  
+      <!-- number   --> <td>2</td>
+      <!-- article  --> <td>free-icons-for-developers</td>
+      <!-- created  --> <td><time datetime="2010-07-26T15:21:25.000Z">Tue, 26 Jul 2010 15:21:25 GMT</time></td>
+      <!-- modified --> <td><time datetime="2010-07-27T18:25:01.000Z">Tue, 27 Jul 2010 18:25:01 GMT</time></td>
+    </tr>
+    <tr>  
+      <!-- number   --> <td>3</td>
+      <!-- article  --> <td>notepad2-and-notepad</td>
+      <!-- created  --> <td><time datetime="2010-08-11T16:23:38.000Z">Tue, 11 Aug 2010 16:23:38 GMT</time></td>
+      <!-- modified --> <td><time datetime="2011-09-12T18:15:35.000Z">Tue, 12 Sep 2011 18:15:35 GMT</time></td>
+    </tr>
+  </tbody>
+</table>
+<script>"use strict";
+NodeList.prototype.map     = Array.prototype.map;
+NodeList.prototype.forEach = Array.prototype.forEach;
+
+function change_handler(ev){
+  var NATURAL_COMPARE    = function(a,b){var ax=[],bx=[];NATURAL_COMPARE.modifier=NATURAL_COMPARE.modifier||function(x){return x};a=NATURAL_COMPARE.modifier(a);b=NATURAL_COMPARE.modifier(b);a=String(a);b=String(b);a.replace(/(\d+)|(\D+)/g,function(_,$1,$2){ax.push([$1||Infinity,$2||""])});b.replace(/(\d+)|(\D+)/g,function(_,$1,$2){bx.push([$1||Infinity,$2||""])});while(ax.length&&bx.length){var an,bn,nn;an=ax.shift();bn=bx.shift();nn=an[0]-bn[0]||an[1].localeCompare(bn[1]);if(0!==nn)return nn}return ax.length-bx.length}
+     ,element = ev.target || ev.srcElement || ev.path[0]
+     ,index   = (function(){
+                  var td = element.parentElement;
+                  document.querySelectorAll('thead td').forEach(function(e,i){if(e===element) return i + 1;}); //find its index in the total head-titles(1 based).
+                  return undefined;
+                })
+     ,rows    = document.querySelectorAll("tbody tr").map(function(e){return e;})
+     ;
+
+  NATURAL_COMPARE.modifier = function(element){return element.querySelectorAll("td:nth-of-type(" + index + ")").innerText;};  //sort row by value of specific cell in the 'index'ed-column.
+  rows = rows.sort(NATURAL_COMPARE);
+  console.log(element)
+     
+     
+  //console.log(element.previousElementSibling);
+  
+//sort <tr> by value of <td>
+}
+
+document.querySelectorAll('input[type="radio"][name="sort"] + label[for]')
+        .forEach(function(button){
+           button.onmouseup = change_handler;
+           button.onkeyup   = change_handler;
+        })
+        ;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<blockquote>
+It is keyless, so one may query it quite a lot, 
+although it <strong>WILL</strong> drag-with-it <strong>every cookie you have on the same Google domain</strong>, so be cautious if you're going to try it from the same-browser you normally read emails from gmail or access other Google related services (YouTube..)
+
+You may wrap it will a PHP/server-side service or use a plain-cURL script in which you have a full control on the sent-data.
+</blockquote>
+
+<blockquote>
+Since I'm doing every request from me PC out in Tel-Aviv, Israel- the domain's data will surely include the <code>.co.il</code> Google-variation. You may encounter other variations such as <code>.co.uk</code>, <code>.ru</code> or <code>.cn</code> if you are from China <sup>just kidding, there is no Google in China :/</sup>
+</blockquote>
+
+<!--more-->
+<hr/>
+
+<ul>
+<li>
+OpenSearch Format <sup>(probably the least known variation..)</sup>
+<a href="https://www.google.com/searchdomaincheck?format=opensearch&type=chrome" target="_blank">https://www.google.com/searchdomaincheck?format=opensearch&type=chrome</a>
+<pre><span style='color:#004a43; '>&lt;?</span><span style='color:#800000; font-weight:bold; '>xml</span><span style='color:#004a43; '> </span><span style='color:#074726; '>version</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#7d0045; '>1.0</span><span style='color:#800000; '>"</span><span style='color:#004a43; '> </span><span style='color:#074726; '>encoding</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>UTF-8</span><span style='color:#800000; '>"</span><span style='color:#004a43; '>?></span><span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>OpenSearchDescription</span> <span style='color:#666616; '>xmlns</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#666616; '>http</span><span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>//</span><span style='color:#5555dd; '>a9.com</span><span style='color:#40015a; '>/-/spec/opensearch/1.1/</span><span style='color:#800000; '>"</span><span style='color:#a65700; '>&gt;</span><span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>ShortName</span><span style='color:#a65700; '>&gt;</span>Google<span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>ShortName</span><span style='color:#a65700; '>&gt;</span><span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>Description</span><span style='color:#a65700; '>&gt;</span>Google Search<span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>Description</span><span style='color:#a65700; '>&gt;</span><span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>Image</span> <span style='color:#274796; '>height</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>16</span><span style='color:#800000; '>"</span> <span style='color:#274796; '>width</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>16</span><span style='color:#800000; '>"</span> <span style='color:#274796; '>type</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>image/icon</span><span style='color:#800000; '>"</span><span style='color:#a65700; '>&gt;</span>https://www.google.co.il/favicon.ico<span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>Image</span><span style='color:#a65700; '>&gt;</span><span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>Url</span> <span style='color:#274796; '>rel</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>self</span><span style='color:#800000; '>"</span> <span style='color:#274796; '>type</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>application/opensearchdescription+xml</span><span style='color:#800000; '>"</span> <span style='color:#274796; '>template</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://www.google.com/searchdomaincheck?format=opensearch</span><span style='color:#800000; '>"</span> <span style='color:#a65700; '>/&gt;</span><span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>Url</span> <span style='color:#274796; '>rel</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>suggestions</span><span style='color:#800000; '>"</span> <span style='color:#274796; '>type</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>application/x-suggestions+json</span><span style='color:#800000; '>"</span> <span style='color:#274796; '>template</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://www.google.co.il/complete/search?q={searchTerms}</span><span style='color:#074726; '>&amp;</span><span style='color:#074726; '>amp</span><span style='color:#074726; '>;</span><span style='color:#0000e6; '>inputencoding={inputEncoding}</span><span style='color:#074726; '>&amp;</span><span style='color:#074726; '>amp</span><span style='color:#074726; '>;</span><span style='color:#0000e6; '>outputencoding={outputEncoding}</span><span style='color:#800000; '>"</span> <span style='color:#a65700; '>/&gt;</span><span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>Url</span> <span style='color:#274796; '>type</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>text/html</span><span style='color:#800000; '>"</span> <span style='color:#666616; '>xmlns</span><span style='color:#800080; '>:</span><span style='color:#074726; '>referrer</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#666616; '>http</span><span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>//</span><span style='color:#5555dd; '>a9.com</span><span style='color:#40015a; '>/-/opensearch/extensions/referrer/1.0/</span><span style='color:#800000; '>"</span> <span style='color:#274796; '>template</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://www.google.co.il/search?q={searchTerms}</span><span style='color:#074726; '>&amp;</span><span style='color:#074726; '>amp</span><span style='color:#074726; '>;</span><span style='color:#0000e6; '>ie={inputEncoding?}</span><span style='color:#074726; '>&amp;</span><span style='color:#074726; '>amp</span><span style='color:#074726; '>;</span><span style='color:#0000e6; '>oe={outputEncoding?}</span><span style='color:#800000; '>"</span> <span style='color:#a65700; '>/&gt;</span><span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>OpenSearchDescription</span><span style='color:#a65700; '>&gt;</span>
+</pre>
+</li>
+<li>
+Fully Qualified URL
+<a href="https://www.google.com/searchdomaincheck?format=url&type=chrome" target="_blank">https://www.google.com/searchdomaincheck?format=url&type=chrome</a>
+<pre>
+https://www.google.co.il/
+</pre>
+</li>
+<li>
+Domain Only (not even with the <code>www</code> prefix)
+<a href="https://www.google.com/searchdomaincheck?format=domain&type=chrome" target="_blank">https://www.google.com/searchdomaincheck?format=domain&type=chrome</a>
+<pre>
+.google.co.il
+</pre>
+</li>
+</ul>
+
+<blockquote>
+Similar to <a target="_blank" href="https://icompile.eladkarako.com/whatsapps-status-api/" target="_blank">WhatsAPP’s Status API</a> <sub>see <a href="https://icompile.eladkarako.com/whatsapps-status-api/" target="_blank">https://icompile.eladkarako.com/whatsapps-status-api/</a></sub>,
+It is a HTTPS (ssl) or HTTP base service which may prove to be useful to you if you wish to check internet-connection, without maintaining the server yourself, allowing <code>text/xml; charset=UTF-8</code> or plain text response. It still obey the SAMEORIGIN and CORS rules, so either run it from Google's domain (for example for a Chrome extension that runs on those domains) or wrap it with a secondary server-side service.
+</blockquote>
+

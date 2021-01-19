@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Removing Ads From Android Applications By Nullifying LIBs</title>
+  <meta itemprop="name"                                content="Removing Ads From Android Applications By Nullifying LIBs"       />
+  <meta name="dcterms.title"                           content="Removing Ads From Android Applications By Nullifying LIBs"       />
+  <meta property="og:title"                            content="Removing Ads From Android Applications By Nullifying LIBs"       />
+  <meta name="twitter:title"                           content="Removing Ads From Android Applications By Nullifying LIBs"       />
+  <meta name="twitter:text:title"                      content="Removing Ads From Android Applications By Nullifying LIBs"       />
+  <meta name="application-name"                        content="Removing Ads From Android Applications By Nullifying LIBs"       />
+  <meta name="subject"                                 content="Removing Ads From Android Applications By Nullifying LIBs"       />
+  <meta name="apple-mobile-web-app-title"              content="Removing Ads From Android Applications By Nullifying LIBs"       />
+  <meta name="msapplication-tooltip"                   content="Removing Ads From Android Applications By Nullifying LIBs"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Removing Ads From Android Applications By Nullifying LIBs"       />
+  <meta itemprop="description"                         content="Removing Ads From Android Applications By Nullifying LIBs"       />
+  <meta name="dcterms.description"                     content="Removing Ads From Android Applications By Nullifying LIBs"       />
+  <meta name="twitter:description"                     content="Removing Ads From Android Applications By Nullifying LIBs"       />
+  <meta property="og:description"                      content="Removing Ads From Android Applications By Nullifying LIBs"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="abstract,actualy,android,automated,automating,automation,back,backup,basic,batch,break,call,calling,calls,client,code,commenting,conditions,content,cycle,database,deleting,digging,drag,dragging,drop,dropping,emptying,ending,execute,execution,executions,explained,ffmpeg,file,files,fixes,function,functions,gather,github,google,helped,ication,idea,initialize,internally,invoke,kind,leaving,length,libs,life,limited,limits,lines,locals,locate,location,locations,logic,manifested,manual,method,methods,modify,modifying,multiple,named,nice,nodejs,nullifier,nullify,nullifying,objects,original,parallel,path,private,process,program,reading,registers,removing,require,requires,returns,rule,script,semi,showad,signature,smali,small,start,supports,switching,trick,type,understand,unlimited,updating,void,walking,ways,windows,work,wrapped,writing,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="abstract,actualy,android,automated,automating,automation,back,backup,basic,batch,break,call,calling,calls,client,code,commenting,conditions,content,cycle,database,deleting,digging,drag,dragging,drop,dropping,emptying,ending,execute,execution,executions,explained,ffmpeg,file,files,fixes,function,functions,gather,github,google,helped,ication,idea,initialize,internally,invoke,kind,leaving,length,libs,life,limited,limits,lines,locals,locate,location,locations,logic,manifested,manual,method,methods,modify,modifying,multiple,named,nice,nodejs,nullifier,nullify,nullifying,objects,original,parallel,path,private,process,program,reading,registers,removing,require,requires,returns,rule,script,semi,showad,signature,smali,small,start,supports,switching,trick,type,understand,unlimited,updating,void,walking,ways,windows,work,wrapped,writing,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/levenshtein-distance-and-a-real-world-use-in-finding-similar-words"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/levenshtein-distance-and-a-real-world-use-in-finding-similar-words"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/modified-perseus-kernel-for-samsung-galaxy-s4-i9500"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/removing-ads-from-apk-by-nullifying-libs"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/removing-ads-from-apk-by-nullifying-libs"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/removing-ads-from-apk-by-nullifying-libs"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/removing-ads-from-apk-by-nullifying-libs"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/removing-ads-from-apk-by-nullifying-libs"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/removing-ads-from-apk-by-nullifying-libs"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2019-12-10T11:50:10+00:00"     />
+  <meta name="page-datetime"                           content="2019-12-10T11:50:10+00:00"     />
+  <meta property="article:published_time"              content="2019-12-10T11:50:10+00:00"     />
+  <meta name="dcterms.date"                            content="2019-12-10T11:50:10+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2019-12-10T11:50:10+00:00"    />
+  <meta property="article:modified_time"               content="2019-12-10T11:50:10+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/removing-ads-from-apk-by-nullifying-libs"
+,"url"             : "https://icompile.eladkarako.com/removing-ads-from-apk-by-nullifying-libs"
+,"headline"        : "Removing Ads From Android Applications By Nullifying LIBs"
+,"description"     : "Removing Ads From Android Applications By Nullifying LIBs"
+,"datePosted"      : "2019-12-10T11:50:10+00:00"
+,"dateCreated"     : "2019-12-10T11:50:10+00:00"
+,"datePublished"   : "2019-12-10T11:50:10+00:00"
+,"dateModified"    : "2019-12-10T11:50:10+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0000168795751">
+  <header>
+    <h1 itemprop="headline">Removing Ads From Android Applications By Nullifying LIBs</h1>
+    <sup>Posted at <time datetime="2019-12-10T11:50:10+00:00" itemprop="dateModified">Tue, 10 Dec 2019 11:50:10 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">Walking-through the main-program-smali-code, <br/>
+and commenting-out calls to ads-methods, or switching if-conditions, <br/>
+requires some understanding of the code, and manual-work, <br/>
+since there are various ways and location a 'call to an ad' can be manifested in the code, <br/>
+<br/>
+this means the process as explained in <a href="https://icompile.eladkarako.com/removing-ads-from-apk">https://icompile.eladkarako.com/removing-ads-from-apk</a> can not be automated.<br/>
+<br/>
+there is another way, <br/>
+and (as far as I can tell) I am the first-one that came-up with that alternative, <br/>
+nullifying the actual methods, not in the main-program's smali, <br/>
+but in the lib. that is used.<br/>
+<br/>
+For example, <br/>
+if the main-program calls for a method named <code>showAd</code> in <code>com/google/gms/ads</code>, <br/>
+instead of commenting-out that <code>invoke</code>, <br/>
+I will empty-out the content of the method <code>showAd</code>, leaving just the function signature (function name), <br/>
+<br/>
+There few "rule" that helped this process be semi-automated (I'll explain later about process-automation), <br/>
+first, I don't want to modify functions that returns a value of any kind, <br/>
+so modification will only be done on VOID-methods (this way you don't need to understand the type of objects and the way it is used in the program life-cycle - no digging into logic), <br/>
+next - no modifying <code>abstract</code> methods since there isn't much of a point modifying that anyway..<br/>
+<br/>
+To modify that VOID-methods we need to keep the function name ("signature") any lines including <code>.locals</code> (or <code>.registers</code>) and that's it!<br/>
+<br/>
+emptying up VOID-methods can still break the code, <br/>
+but it usually won't...<br/>
+<br/>
+the basic idea of emptying-up VOID-methods in the lib.s is that, <br/>
+it won't require digging up in various locations in the actual main-program smali-code, <br/>
+the main-program can still execute (<code>invoke</code>) a call to that method, <br/>
+but it won't initialize anything, <br/>
+plus, private methods, used internally in the lib. itself will act the same (calling, ending, with nothing actualy done).<br/>
+<br/>
+<br/>
+<a href="https://github.com/eladkarako/smali_void_method_nullifier">https://github.com/eladkarako/smali_void_method_nullifier</a><br/>
+<br/>
+<br/>
+Automating the nullify'ication process requires nothing-more than reading a file's content, <br/>
+some string-manipulations, and writing it back.<br/>
+<br/>
+I've wrapped the functionality in a small NodeJS-client script, <br/>
+and few Windows batch-files, one to backup the original file to a <code>.bak</code>-file, <br/>
+and one to allow unlimited-parallel executions of the first-batch file using <code>start cmd /c "..."</code> trick, <br/>
+similar to one used in:<br/>
+<a href="https://icompile.eladkarako.com/ffmpeg-fixes-your-everything/">https://icompile.eladkarako.com/ffmpeg-fixes-your-everything/</a>.<br/>
+<br/>
+<br/>
+parallel-execution batch-file supports drag&amp;drop of multiple files, <br/>
+it is not limited but usually it is best to keep it under 50 files at a time, due to files-path-length limits.<br/>
+<br/>
+A nice way to gather just the files is to use Locate32, and look for smali-files, <br/>
+dragging and dropping ~50-100 files at a time on the parallel-execution batch file, <br/>
+then updating the database of locate32 (again) and looking for the '.bak' files, and deleting them.<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/levenshtein-distance-and-a-real-world-use-in-finding-similar-words">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/modified-perseus-kernel-for-samsung-galaxy-s4-i9500">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/modified-perseus-kernel-for-samsung-galaxy-s4-i9500">Modified Perseus-UNIVERSAL5410 Kernel For Samsung Galaxy S4 (i9500)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/prevent-mouse-movement-from-waking-up-the-computer">Prevent Mouse Movement From Waking Up The Computer</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/opensearch-for-static-hosted-websites-using-google-search">OpenSearch For A Static-Hosted Websites Using Google-Search</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tech-buzzwords">Tech-BuzzWords</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unofficial-apktool">Unofficial ApkTool &#x1f527;</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/splitmix64-js">splitmix64.js</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chanu-app-in-android9">Chanu App In Android 9</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adguard-dns">AdGuard-DNS</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/topazlabs-subdomains">TopazLabs SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/playbuzz-subdomains">playbuzz SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sphereup-subdomains">SphereUP SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/download-hls-streaming-videos-with-ffmpeg-no-encoding">Download HLS Streaming-Videos With FFMPEG. No-Encoding!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easy-native-lazyloading-support-for-your-website">Easy Native-LazyLoading Support For Your Website</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/you-do-not-need-jekyll">You Don't Need Jekyll!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/you-do-not-need-jekyll">You Don't Need Jekyll!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/you-do-not-need-jekyll">You Don't Need Jekyll!</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

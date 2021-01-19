@@ -1,0 +1,2 @@
+<a href="https://icompile.eladkarako.com/_uploads/2014/10/Screenshot_2014-10-26-13-20-17.png"><img src="https://icompile.eladkarako.com/_uploads/2014/10/Screenshot_2014-10-26-13-20-17.png" alt="Screenshot_2014-10-26-13-20-17" width="300" height="168" class="aligncenter size-medium wp-image-2007" /></a>
+<img src="http://static.comicvine.com/uploads/original/11112/111125902/3318410-1615427213-JohnC.jpg" alt="" />

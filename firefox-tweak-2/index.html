@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Firefox Tweak #2</title>
+  <meta itemprop="name"                                content="Firefox Tweak #2"       />
+  <meta name="dcterms.title"                           content="Firefox Tweak #2"       />
+  <meta property="og:title"                            content="Firefox Tweak #2"       />
+  <meta name="twitter:title"                           content="Firefox Tweak #2"       />
+  <meta name="twitter:text:title"                      content="Firefox Tweak #2"       />
+  <meta name="application-name"                        content="Firefox Tweak #2"       />
+  <meta name="subject"                                 content="Firefox Tweak #2"       />
+  <meta name="apple-mobile-web-app-title"              content="Firefox Tweak #2"       />
+  <meta name="msapplication-tooltip"                   content="Firefox Tweak #2"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Firefox Tweak #2"       />
+  <meta itemprop="description"                         content="Firefox Tweak #2"       />
+  <meta name="dcterms.description"                     content="Firefox Tweak #2"       />
+  <meta name="twitter:description"                     content="Firefox Tweak #2"       />
+  <meta property="og:description"                      content="Firefox Tweak #2"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="action,activate,address,alert,allowed,alltabs,amount,author,auto,autofill,autohide,automatic,autoupdate,avoid,backsups,backups,blink,block,bookmark,bookmarks,boolean,boot,boundaries,breakpad,browser,browsing,buffer,build,button,cache,capacity,care,change,channel,chars,check,checking,chrome,click,clicking,close,code,color,command,config,confirm,connection,connections,console,container,content,count,crash,create,ctrl,cursor,darker,data,dblclk,decoration,default,defaulturl,defined,defining,depand,desktop,determined,devices,devtools,dialogs,directories,disable,disabled,disableipv,disabling,disk,dnscache,docs,document,domain,download,downloads,draw,easier,editor,enable,enabled,encode,ensure,entries,execution,exist,extension,extensions,false,faster,feature,features,ffffff,fiddler,firefox,flushdns,frequency,fullscreen,generic,gfns,google,grouping,header,health,helpful,helps,hidden,hide,history,home,homepage,host,hover,html,image,images,impact,include,index,infobar,initiated,insecure,install,installed,intact,integer,interval,ipconfig,item,keys,keyword,kill,launch,leaving,letter,limit,line,linux,list,listeners,locale,location,longer,make,manager,maximum,maxrequests,media,memory,menubar,minimizable,minimize,minimized,minutes,mode,mozilla,mozillazine,navclient,navigating,navigation,needed,network,newline,newlines,nglayout,number,offline,open,opening,operation,optionally,outdated,override,page,pages,paste,persistent,personalbar,pings,pipelining,plugin,plugincheck,plugins,policy,popup,popups,prefer,prefs,prevent,prevents,preview,previews,privacy,process,processing,product,program,prompt,properties,proxy,query,read,redirection,referer,referrer,refresh,reload,report,reporter,reports,reporturl,required,reset,resizable,resizing,resource,restore,restoring,results,resume,rights,safe,saves,screen,script,scripts,scroll,scrollbars,seamonkey,search,seconds,secure,security,select,send,separate,server,service,session,sessions,settings,sevenforums,shell,signature,signatures,singleline,site,sites,size,skip,slightly,small,smooth,sourceid,special,standard,start,startup,stats,status,stop,stuff,submit,submitting,suite,support,system,systems,tabs,target,taskbar,telemetry,theme,thumbnail,timeout,timeoutsecs,title,titlebar,toolbar,toolkit,trim,turbo,turn,tutorials,tweak,unicode,unload,update,updater,updates,upload,urlbar,user,version,warn,warnonclose,warnonquit,white,whitelisted,window,windows,works,xpinstall,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="action,activate,address,alert,allowed,alltabs,amount,author,auto,autofill,autohide,automatic,autoupdate,avoid,backsups,backups,blink,block,bookmark,bookmarks,boolean,boot,boundaries,breakpad,browser,browsing,buffer,build,button,cache,capacity,care,change,channel,chars,check,checking,chrome,click,clicking,close,code,color,command,config,confirm,connection,connections,console,container,content,count,crash,create,ctrl,cursor,darker,data,dblclk,decoration,default,defaulturl,defined,defining,depand,desktop,determined,devices,devtools,dialogs,directories,disable,disabled,disableipv,disabling,disk,dnscache,docs,document,domain,download,downloads,draw,easier,editor,enable,enabled,encode,ensure,entries,execution,exist,extension,extensions,false,faster,feature,features,ffffff,fiddler,firefox,flushdns,frequency,fullscreen,generic,gfns,google,grouping,header,health,helpful,helps,hidden,hide,history,home,homepage,host,hover,html,image,images,impact,include,index,infobar,initiated,insecure,install,installed,intact,integer,interval,ipconfig,item,keys,keyword,kill,launch,leaving,letter,limit,line,linux,list,listeners,locale,location,longer,make,manager,maximum,maxrequests,media,memory,menubar,minimizable,minimize,minimized,minutes,mode,mozilla,mozillazine,navclient,navigating,navigation,needed,network,newline,newlines,nglayout,number,offline,open,opening,operation,optionally,outdated,override,page,pages,paste,persistent,personalbar,pings,pipelining,plugin,plugincheck,plugins,policy,popup,popups,prefer,prefs,prevent,prevents,preview,previews,privacy,process,processing,product,program,prompt,properties,proxy,query,read,redirection,referer,referrer,refresh,reload,report,reporter,reports,reporturl,required,reset,resizable,resizing,resource,restore,restoring,results,resume,rights,safe,saves,screen,script,scripts,scroll,scrollbars,seamonkey,search,seconds,secure,security,select,send,separate,server,service,session,sessions,settings,sevenforums,shell,signature,signatures,singleline,site,sites,size,skip,slightly,small,smooth,sourceid,special,standard,start,startup,stats,status,stop,stuff,submit,submitting,suite,support,system,systems,tabs,target,taskbar,telemetry,theme,thumbnail,timeout,timeoutsecs,title,titlebar,toolbar,toolkit,trim,turbo,turn,tutorials,tweak,unicode,unload,update,updater,updates,upload,urlbar,user,version,warn,warnonclose,warnonquit,white,whitelisted,window,windows,works,xpinstall,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/chromium-code-search"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/chromium-code-search"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/html5-no-js-and-internet-explorer-flags"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/firefox-tweak-2"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/firefox-tweak-2"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/firefox-tweak-2"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/firefox-tweak-2"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/firefox-tweak-2"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/firefox-tweak-2"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-06-10T08:05:03+00:00"     />
+  <meta name="page-datetime"                           content="2014-06-10T08:05:03+00:00"     />
+  <meta property="article:published_time"              content="2014-06-10T08:05:03+00:00"     />
+  <meta name="dcterms.date"                            content="2014-06-10T08:05:03+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-11-06T08:51:21+00:00"    />
+  <meta property="article:modified_time"               content="2016-11-06T08:51:21+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/firefox-tweak-2"
+,"url"             : "https://icompile.eladkarako.com/firefox-tweak-2"
+,"headline"        : "Firefox Tweak #2"
+,"description"     : "Firefox Tweak #2"
+,"datePosted"      : "2014-06-10T08:05:03+00:00"
+,"dateCreated"     : "2014-06-10T08:05:03+00:00"
+,"datePublished"   : "2014-06-10T08:05:03+00:00"
+,"dateModified"    : "2016-11-06T08:51:21+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003057832041">
+  <header>
+    <h1 itemprop="headline">Firefox Tweak #2</h1>
+    <sup>Posted at <time datetime="2016-11-06T08:51:21+00:00" itemprop="dateModified">Sun, 06 Nov 2016 08:51:21 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><!--more--><br/>
+read more: http://kb.mozillazine.org/About:config_entries<br/>
+<br/>
+<pre>
+about:config
+</pre><br/>
+<br/>
+disable DNS cache<br/>
+(add new number item when needed)<br/>
+<pre>
+network.dnsCacheExpiration=0
+network.dnsCacheEntries=0
+</pre><br/>
+<br/>
+optionally followed with<br/>
+<pre>
+ipconfig /flushdns
+net stop dnscache
+net start dnscache
+</pre><br/>
+<br/>
+<hr/><br/>
+<pre>
+browser.shell.checkDefaultBrowser            [boolean]   false   (false) // Disable checking if firefox is default browser
+browser.sessionstore.resume_from_crash       [boolean]   false   (true) // Disable restoring session
+xpinstall.signatures.required                [boolean]   false   (not exist) // Disable extension signature check
+extensions.lastAppVersion                    [string ]   ""      (3.6.28)// Disable Add-ons compatibility checking
+
+//////extensions.autoDisableScopes                 [integer]   0       (not exist)// Allow extensions to be installed without user prompt
+//////extensions.enabledScopes                     [integer]   15      (not exist)
+
+extensions.update.autoUpdate  false (false) //explicit do not automatically download and install available updates
+extensions.update.autoUpdateEnabled  false (true) //no automatic checking for updates at the specified interval (must click check) - saves some processing cpu..
+app.update.enabled                           [boolean]   false   (true)// Disable updater
+app.update.auto                              [boolean]   false   (true)
+app.update.mode                              [integer]   0       (1)
+app.update.service.enabled                   [boolean]   false   (not exist)
+app.update.url                               [string ]   "https://0.0.0.0/" (https://aus2.mozilla.org/update/3/%PRODUCT%/%VERSION%/%BUILD_ID%/%BUILD_TARGET%/%LOCALE%/%CHANNEL%/%OS_VERSION%/%DISTRIBUTION%/%DISTRIBUTION_VERSION%/update.xml)
+plugins.hide_infobar_for_outdated_plugin     [boolean]   true    (false) // Disable plugin checking
+plugins.update.url                           [string ]   "https://0.0.0.0/"      (https://www.mozilla.com/%LOCALE%/plugincheck/)
+
+browser.showQuitWarning                      [boolean]   false  (not exist) // Prevent closing dialogs
+browser.warnOnQuit                           [boolean]   false  (true)
+browser.tabs.warnOnClose                     [boolean]   false  (true)
+browser.tabs.warnOnCloseOtherTabs            [boolean]   false  (not exist)
+
+browser.rights.3.shown                       [boolean]   true    (not exist) // Don't show 'know your rights' on first run
+datareporting.healthreport.service.enabled   [boolean]   false   (not exist) // Disable health reporter
+datareporting.policy.dataSubmissionEnabled   [boolean]   false   (not exist) // Disable all data upload (Telemetry and FHR)
+
+toolkit.crashreporter.enabled                [boolean]   false   (not exist) // Disable crash reporter
+breakpad.reportURL                           [string ]   "https://0.0.0.0/" (http://crash-stats.mozilla.com/report/index/)  // disable crash reports
+security.warn_leaving_secure                 [boolean]   true    (false)     // warn when leaving secure domain to insecure
+security.warn_submit_insecure                [boolean]   true    (false)     // warn when submitting data to insecure domain
+devtools.chrome.enabled                      [boolean]   true    (not exist) // Browser Console command line</pre><br/>
+<br/>
+<pre>
+browser.cache.disk.enable                    [boolean]   false   // Browser cache
+browser.cache.disk_cache_ssl                 [boolean]   false
+browser.cache.memory.enable                  [boolean]   false
+browser.cache.offline.capacity               [integer]   0
+browser.cache.offline.enable                 [boolean]   false
+image.cache.size                             [integer]   0
+media.cache_size                             [integer]   0
+network.buffer.cache.count                   [integer]   0              (24)
+network.buffer.cache.size                    [integer]   0              (4096)
+network.http.use-cache                       [boolean]   false
+browser.cache.disk.capacity                  [integer]   0              (51200)
+browser.cache.check_doc_frequency            1                        (3) // Make browser to skip cache on each reload.
+</pre><br/>
+<br/>
+<br/>
+<pre>
+browser.urlbar.doubleClickSelectsAll true  (false)
+accessibility.blockautorefresh       true (false) // prevent browser from auto refresh, show confirm
+accessibility.browsewithcaret        true (false) // easier navigation with cursor keys in pages
+browser.bookmarks.max_backups        1    (5)    // less bookmarks backsups
+browser.bookmarks.restore_default_bookmarks  false (not exist) // explicit turn off bookmark restore/reset default on safe-mode
+browser.startup.homepage             https://www.google.co.il/ (resource:/browserconfig.properties) //change the home page [a.k.a first tab]
+
+general.smoothScroll                  true  (false)   // allow smooth scroll on pages
+accelerometer.enabled                 false (true)    // not used in desktop anyway..
+</pre><br/>
+<br/>
+might not be useful, if you like the default way firefox url bar works<br/>
+<pre>
+browser.urlbar.clickSelectsAll        false (true)    // so you could select just one word if you want
+browser.urlbar.doubleClickSelectsAll  true  (false)   // dblclk nav-bar
+browser.urlbar.autoFill               true  (false)   // autofill the first autocomplete 
+browser.fullscreen.autohide     false (true) //still show tabs on full screen
+</pre><br/>
+<br/>
+you can enable windows 7 feature using: http://www.sevenforums.com/tutorials/52265-taskbar-thumbnail-previews-enable-disable.html<br/>
+then activate the preview and taskbar preview. might have performances-impact.<br/>
+<pre>
+browser.allTabs.previews              true  (false)   // add an additional "List all Tabs" or "Preview all tab" button, use click+[CTRL] to get list and without [CTRL] for the preview.
+browser.taskbar.previews.enable       true  (false)   // allow preview support on operation-systems such as windows 7+
+</pre><br/>
+<br/>
+<pre>
+browser.blink_allowed                 false (true) // do not allow css feature  "text-decoration: blink"
+browser.download.manager.closeWhenDone  true (false) //close the download manager when all downloads are done
+browser.enable_automatic_image_resizing  false (true)  //show images as is
+</pre><br/>
+<br/>
+<pre>
+network.standard-url.encode-query-utf8  true (false) //keep Unicode chars safe on send
+browser.history.showSessions            true (false) // allow grouping history by sessions for easier browsing
+//////browser.history.grouping    [string ]  "Host name"  ("day")  // allow grouping by domain, together with show sessions it is very helpful 
+
+browser.search.defaulturl       [string]  "https://www.google.co.il/search?q=" ("http://www.google.com/search?lr=&ie=UTF-8&oe=UTF-8&q=")
+keyword.URL                     [string] "https://www.google.co.il/search?q=" ("http://www.google.com/search?ie=UTF-8&oe=UTF-8&sourceid=navclient&gfns=1&q=")
+
+browser.shell.checkDefaultBrowser   boolean false (true) // don't show alert of firefox not being default browser
+</pre><br/>
+<br/>
+<pre>
+browser.turbo.enabled   boolean true (not exist, false)  
+
+Determined whether to load browser in "Turbo Mode" (aka "quick launch") (Windows/Mozilla Suite only)
+True: Load some Mozilla code into memory on Windows boot
+False (default): Load browser normally on program execution
+</pre><br/>
+<br/>
+<pre>
+browser.urlbar.matchBehavior  integer 0  (not exist, 1)  //Search anywhere within available text, irrespective of word boundaries
+browser.urlbar.search.timeout  integer 10 (not exist, 100) //faster autocomplete in the url-bar
+
+browser.windows.loadOnNewWindow  integer 0 (not exist, 1)  // instead of home-page, open empty page on new windows
+
+config.trim_on_minimize  boolean true (not exist, false)  // unload some stuff from memory to disk while window is minimized, might create a small delay when restoring the window.
+
+config.use_system_prefs  boolean true (false)  // prefer to use the system proxy and accessibility features instead of defining them on firefox itself, helps using fiddler and other proxy listeners. if you don't care about 'accessibility' settings from the os, keep 'config.use_system_prefs.accessibility' false.
+
+config.use_system_prefs.accessibility  boolean true (false)  //prefer to use accessibility settings such as theme, or special devices, as defined by the operation system.
+</pre><br/>
+<br/>
+<pre>
+// override the author's settings and ensure that that feature is enabled and present in any popup window.
+dom.disable_window_open_feature.close         true  // Prevents the close button from being disabled.
+dom.disable_window_open_feature.directories   true  // Prevents the bookmarks toolbar from being hidden.
+dom.disable_window_open_feature.location      true  // Prevents the address bar from being hidden
+dom.disable_window_open_feature.menubar      true  // Prevents the menubar from being hidden.
+dom.disable_window_open_feature.minimizable      true  // Prevents popup window minimization from being disabled.
+dom.disable_window_open_feature.personalbar      true  // Prevents the bookmarks toolbar from being hidden.
+dom.disable_window_open_feature.resizable      true  // Prevents popup window resizing from being disabled.
+dom.disable_window_open_feature.scrollbars      true  // Prevents the scrollbars on a popup from being disabled.
+dom.disable_window_open_feature.status      true  // Prevents the status bar from being hidden.
+dom.disable_window_open_feature.titlebar      true  // Prevents the title bar from being hidden.
+dom.disable_window_open_feature.toolbar      true  // Prevents the navigation toolbar from being hidden.
+</pre><br/>
+<br/>
+<pre><br/>
+dom.ipc.plugins.enabled                  true (false in version < 4.0)  run plugins in a separate "plugin-container" process. <br/>
+dom.ipc.plugins.enabled.timeoutSecs      -1 (45)  don't kill the plugin-container. ever.<br/>
+<br/>
+dom.max_chrome_script_run_time   integer  60  (20) //allow longer run from scripts both browser and page<br/>
+dom.max_script_run_time          integer  60  (10)<br/>
+<br/>
+dom.popup_maximum              1 (20)  // maximum amount of popups a page can open at once<br/>
+</pre><br/>
+<br/>
+<pre>
+editor.background_color "#F0F0F0" boolean by docs, but I think it's a string (#FFFFFF) //editor slightly darker white
+
+editor.singleLine.pasteNewlines  integer  0 //Paste content intact (include newlines)
+
+(0 default in Linux): Paste content intact (include newlines)
+(1 default everywhere else): Paste the content only up to (but not including) the first newline
+
+</pre><br/>
+<br/>
+<br/>
+<pre>
+extensions.checkCompatibility      false (not set, true)  //generic disable extension compatibility checking
+extensions.checkCompatibility.3.6  false (not set, true)  // using extensions.checkCompatibility.x.yy including the letter (a, b, pre) but not the 3rd number: Firefox 3.6.6 -> extensions.checkCompatibility.3.6
+
+extensions.checkUpdateSecurity  false  (not set, true)  // allow insecure updates, update.rdf from insecure server.
+extensions.disabledObsolete false (not set, true)  //avoid disabling old plugins/extension
+</pre><br/>
+<br/>
+<pre>
+geo.enabled false (true) //more secure browsing
+</pre><br/>
+<br/>
+<pre>
+network.http.max-connections                              int     (30)     -> 128
+network.http.max-connections-per-server                   int     (15)     -> 32
+network.http.max-persistent-connections-per-server        int     (6)      -> 16
+network.http.max-persistent-connections-per-proxy         int     (8)      -> 32
+network.http.pipelining                                   boolean (false)  -> true   //faster connection
+network.http.pipelining.maxrequests                       int     (4)      -> 16
+network.http.pipelining.ssl                               boolean (false)  -> true   //faster connection
+network.http.proxy.pipelining                             boolean (false)  -> true   //faster connection
+network.http.pipelining.firstrequest                      boolean (false, not exist) -> true //faster opening connection
+
+nglayout.initialpaint.delay                               int     (250)    -> 10     //faster draw
+ui.submenuDelay                                           int     (os depand not exist)    -> 100     //delay from hover to action
+
+network.dnsCacheExpiration                                int (60, not exist) -> 300          //The number of seconds to cache DNS results. (Default: 60) 300 == 5 minutes
+network.dnsCacheEntries                                   int (20, not exist) -> 100          //The number of DNS results to cache. (Default: 20) 
+</pre><br/>
+<br/>
+<pre>
+//more secure
+network.http.sendRefererHeader                            int (2)                   -> 0      // 0 Never send the Referer header or set document.referrer. 1 Send the Referer header when clicking on a link, and set document.referrer for the following page.  2 Send the Referer header when clicking on a link or loading an image, and set document.referrer for the following page. (Default) 
+network.http.sendSecureXSiteReferrer                      boolean (true)            -> false  // Don't send the Referer header when navigating from a https site to another https site. 
+browser.send_pings                                        boolean (true, not exist) -> false  // don't send pings
+network.http.redirection-limit                            int (20)                  -> 3
+privacy.popups.disable_from_plugins                       int (not exist)           -> 2     //Block all plugin initiated popups. (whitelisted sites will still be able to open popups) (Default in Firefox 1.5 and above and SeaMonkey) 
+network.dns.disableIPv6                                   boolean (false)           -> true
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-code-search">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-no-js-and-internet-explorer-flags">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-no-js-and-internet-explorer-flags">HTML5 No-JS and Internet-Explorer Flags</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/f6drivers-img">f6drivers.img</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-comma-first-procon">The Comma-First Pro/Con</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-make-stored-base64-content-harder-to-reverse-engineer">JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/web-of-trust-wot-subdomains">Web of Trust (WOT) SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/comodo-subdomains">Comodo SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/embymedia-subdomains">emby.media SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/7zip">7Zip</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/js-heuristics-tip-element-distribution">JavaScript Ninja - Heuristic-Algorithms Tip: Page Element Spread/Distribution</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-human-readable-time-diff">"Will Be In A Day",...)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-human-readable-time-diff">"Will Be In A Day",...)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-a-human-readable-memory-formatter-add-commas-to-a-number-by-regular-expression">Add Commas To A Number By Regular-Expression</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nodejs-nightly">NodeJS Nightly</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/android-sdk">Android SDK</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/remove-k-lites-annoying-folders-context-menu">Remove K-Lite's Annoying Folder's Context-Menu</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/codecs">Codecs</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

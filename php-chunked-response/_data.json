@@ -1,0 +1,10 @@
+{
+  "ID"                : "49"
+ ,"post_name"         : "php-chunked-response"
+ ,"post_title"        : "Trying To Send A Chunk-ed Response With Plain-PHP"
+ ,"post_date_gmt"     : "2019-10-13 19:58:11"
+ ,"post_modified_gmt" : "2019-10-13 19:58:11"
+ ,"post_status"       : "publish"
+ ,"comment_status"    : "open"
+ ,"post_type"         : "post"
+}

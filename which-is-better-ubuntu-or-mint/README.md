@@ -1,0 +1,2 @@
+<!--more-->
+<h2 style="padding: 40px; text-align: center; background-color: black;"><em><span style="color: #ffff00;">   ✨</span> <span style="color: #00ff00;">Ubuntu❕❕❕</span> <span style="color: #ffff00;">✨</span>   </em><span style="color: #ffffff;">&#x1f454;ᶴᶥᵏᵄ ᶛ ᵇᵒᶳᶳ</span></h2>

@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup</title>
+  <meta itemprop="name"                                content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+  <meta name="dcterms.title"                           content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+  <meta property="og:title"                            content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+  <meta name="twitter:title"                           content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+  <meta name="twitter:text:title"                      content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+  <meta name="application-name"                        content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+  <meta name="subject"                                 content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+  <meta name="apple-mobile-web-app-title"              content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+  <meta name="msapplication-tooltip"                   content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+  <meta itemprop="description"                         content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+  <meta name="dcterms.description"                     content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+  <meta name="twitter:description"                     content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+  <meta property="og:description"                      content="Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="adfe,appdatalow,browser,cafeefac,ccleaner,classes,clean,cleanup,clsid,components,control,controlset,definition,download,drive,dtplugin,editor,enum,environment,essentially,ffff,file,find,folder,handlers,hidden,hkey,home,installer,java,javapath,javara,javasoft,javaw,keys,links,local,locate,machine,manager,microsoft,node,nofollow,oracle,path,places,plugins,radar,references,registry,remove,root,rude,running,saving,session,settings,software,stuff,symbolic,system,uninstall,uninstaller,useless,user,userdata,variables,version,windows,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="adfe,appdatalow,browser,cafeefac,ccleaner,classes,clean,cleanup,clsid,components,control,controlset,definition,download,drive,dtplugin,editor,enum,environment,essentially,ffff,file,find,folder,handlers,hidden,hkey,home,installer,java,javapath,javara,javasoft,javaw,keys,links,local,locate,machine,manager,microsoft,node,nofollow,oracle,path,places,plugins,radar,references,registry,remove,root,rude,running,saving,session,settings,software,stuff,symbolic,system,uninstall,uninstaller,useless,user,userdata,variables,version,windows,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/uninstall-visual-studio"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/uninstall-visual-studio"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/useful-char-map"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/uninstall-java-javara-ccleaner-additional-reg-cleanup"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/uninstall-java-javara-ccleaner-additional-reg-cleanup"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/uninstall-java-javara-ccleaner-additional-reg-cleanup"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/uninstall-java-javara-ccleaner-additional-reg-cleanup"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/uninstall-java-javara-ccleaner-additional-reg-cleanup"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/uninstall-java-javara-ccleaner-additional-reg-cleanup"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-01-13T06:57:09+00:00"     />
+  <meta name="page-datetime"                           content="2016-01-13T06:57:09+00:00"     />
+  <meta property="article:published_time"              content="2016-01-13T06:57:09+00:00"     />
+  <meta name="dcterms.date"                            content="2016-01-13T06:57:09+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-01-13T08:20:56+00:00"    />
+  <meta property="article:modified_time"               content="2016-01-13T08:20:56+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/uninstall-java-javara-ccleaner-additional-reg-cleanup"
+,"url"             : "https://icompile.eladkarako.com/uninstall-java-javara-ccleaner-additional-reg-cleanup"
+,"headline"        : "Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"
+,"description"     : "Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup"
+,"datePosted"      : "2016-01-13T06:57:09+00:00"
+,"dateCreated"     : "2016-01-13T06:57:09+00:00"
+,"datePublished"   : "2016-01-13T06:57:09+00:00"
+,"dateModified"    : "2016-01-13T08:20:56+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0009228662541">
+  <header>
+    <h1 itemprop="headline">Uninstall Java - JavaRa + CCleaner + Additional Reg Cleanup</h1>
+    <sup>Posted at <time datetime="2016-01-13T08:20:56+00:00" itemprop="dateModified">Wed, 13 Jan 2016 08:20:56 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">uninstalling java using the given uninstallers (first JDK, than JRE), using JavaRa, Locate32 to help you find all sun,oracle and java places in your c-drive (a lot of hidden links under c:\\windows), that javapath symbolic link folder, that addition stuff in PATH, the *_HOME definition, following with CCleaner reg clean and saving the following text as .reg file and running it to remove additional (left out) keys..<br/>
+<!--more--><br/>
+<br/>
+<br/>
+<pre>
+Windows Registry Editor Version 5.00
+
+;OS handlers
+[-HKEY_CLASSES_ROOT\\.java]
+
+;Essentially an enum for every(!) java version till now (1.3.1.*-1.9.*) useless and rude!
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0031-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0031-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0032-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0032-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0033-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0033-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0034-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0034-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0035-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0035-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0036-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0036-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0037-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0037-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0038-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0038-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0039-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0039-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0040-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0040-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0041-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0041-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0042-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0042-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0043-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0043-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0044-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0044-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0045-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0045-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0046-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0046-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0047-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0047-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0048-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0048-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0049-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0049-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0050-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0050-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0051-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0051-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0052-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0052-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0053-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0053-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0054-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0054-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0055-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0055-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0056-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0056-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0057-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0057-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0058-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0058-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0059-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0059-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0060-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0060-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0061-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0061-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0062-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0062-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0063-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0063-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0064-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0064-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0065-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0065-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0066-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0066-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0067-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0067-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0068-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0068-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0069-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0069-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0070-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0070-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0071-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0071-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0072-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0072-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0073-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0073-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0074-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0074-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0075-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0075-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0076-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0076-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0077-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0077-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0078-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0078-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0079-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0079-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0080-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0080-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0081-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0081-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0082-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0082-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0083-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0083-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0084-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0084-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0085-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0085-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0086-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0086-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0087-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0087-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0088-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0088-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0089-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0089-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0090-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0090-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0091-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0091-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0092-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0092-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0093-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0093-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0094-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0094-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0095-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0095-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0096-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0096-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0097-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0097-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0098-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0098-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0099-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0013-0001-0099-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0014-0002-0039-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0014-0002-0039-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0014-0002-0040-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0014-0002-0040-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0014-0002-0041-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0014-0002-0041-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0014-0002-0042-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0014-0002-0042-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0014-0002-0043-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0014-0002-0043-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0037-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0037-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0037-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0038-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0038-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0038-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0039-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0039-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0039-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0040-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0040-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0040-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0041-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0041-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0041-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0042-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0042-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0042-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0043-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0043-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0043-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0044-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0044-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0044-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0045-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0045-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0045-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0046-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0046-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0046-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0047-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0047-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0047-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0048-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0048-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0048-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0049-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0049-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0049-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0050-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0050-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0050-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0051-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0051-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0051-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0052-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0052-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0052-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0053-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0053-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0053-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0054-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0054-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0054-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0055-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0055-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0055-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0056-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0056-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0056-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0057-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0057-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0057-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0058-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0058-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0058-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0059-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0059-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0059-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0060-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0060-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0060-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0061-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0061-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0061-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0062-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0062-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0062-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0063-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0063-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0063-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0064-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0064-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0064-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0065-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0065-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0065-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0066-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0066-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0066-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0067-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0067-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0067-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0068-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0068-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0068-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0069-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0069-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0069-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0070-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0070-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0070-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0071-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0071-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0071-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0072-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0072-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0072-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0073-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0073-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0073-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0074-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0074-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0074-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0075-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0075-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0075-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0076-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0076-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0076-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0077-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0077-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0077-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0078-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0078-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0078-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0079-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0079-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0079-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0080-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0080-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0080-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0081-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0081-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0081-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0082-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0082-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0082-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0083-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0083-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0083-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0084-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0084-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0084-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0085-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0085-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0015-0000-0085-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0039-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0039-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0039-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0040-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0040-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0040-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0041-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0041-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0041-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0042-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0042-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0042-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0043-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0043-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0043-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0044-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0044-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0044-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0046-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0046-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0046-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0047-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0047-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0047-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0048-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0048-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0048-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0049-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0049-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0049-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0050-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0050-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0050-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0051-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0051-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0051-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0052-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0052-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0052-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0053-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0053-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0053-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0054-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0054-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0054-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0055-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0055-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0055-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0056-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0056-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0056-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0057-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0057-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0057-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0058-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0058-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0058-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0059-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0059-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0059-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0060-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0060-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0060-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0061-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0061-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0061-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0062-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0062-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0062-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0063-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0063-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0063-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0064-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0064-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0064-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0065-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0065-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0065-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0066-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0066-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0066-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0067-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0067-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0067-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0068-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0068-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0068-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0069-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0069-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0069-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0070-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0070-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0070-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0071-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0071-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0071-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0072-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0072-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0072-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0073-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0073-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0073-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0074-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0074-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0074-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0075-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0075-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0075-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0076-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0076-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0076-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0077-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0077-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0077-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0078-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0078-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0078-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0079-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0079-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0079-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0080-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0080-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0080-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0081-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0081-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0081-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0082-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0082-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0082-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0083-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0083-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0083-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0084-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0084-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0084-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0085-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0085-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0085-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0086-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0086-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0086-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0087-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0087-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0087-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0088-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0088-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0088-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0089-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0089-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0089-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0090-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0090-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0090-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0091-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0091-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0091-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0092-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0092-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0092-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0093-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0093-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0093-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0094-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0094-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0094-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0095-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0095-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0016-0000-0095-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0013-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0013-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0013-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0014-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0014-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0014-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0015-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0015-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0015-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0016-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0016-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0016-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0017-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0017-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0017-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0018-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0018-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0018-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0019-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0019-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0019-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0020-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0020-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0020-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0021-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0021-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0021-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0022-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0022-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0022-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0023-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0023-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0023-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0024-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0024-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0024-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0025-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0025-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0025-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0026-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0026-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0026-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0027-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0027-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0027-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0028-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0028-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0028-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0029-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0029-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0029-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0030-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0030-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0030-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0031-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0031-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0031-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0032-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0032-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0032-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0033-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0033-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0033-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0034-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0034-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0034-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0035-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0035-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0035-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0036-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0036-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0036-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0037-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0037-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0037-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0038-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0038-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0038-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0039-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0039-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0039-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0040-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0040-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0040-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0041-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0041-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0041-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0042-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0042-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0042-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0043-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0043-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0043-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0044-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0044-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0044-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0045-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0045-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0045-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0046-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0046-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0046-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0047-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0047-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0047-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0048-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0048-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0048-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0049-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0049-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0049-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0050-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0050-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0050-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0051-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0051-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0051-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0052-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0052-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0052-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0053-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0053-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0053-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0054-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0054-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0054-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0055-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0055-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0055-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0056-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0056-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0056-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0057-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0057-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0057-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0058-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0058-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0058-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0059-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0059-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0059-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0060-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0060-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0060-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0061-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0061-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0061-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0062-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0062-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0062-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0063-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0063-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0063-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0064-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0064-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0064-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0065-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0065-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0065-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0066-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0066-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0066-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0067-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0067-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0067-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0068-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0068-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0068-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0069-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0069-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0069-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0070-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0070-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0070-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0071-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0071-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0071-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0072-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0072-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0072-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0073-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0073-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0073-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0074-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0074-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0074-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0075-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0075-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0075-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0076-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0076-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0076-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0077-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0077-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0077-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0078-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0078-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0078-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0079-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0079-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-0079-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0017-0000-FFFF-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0000-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0000-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0000-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0001-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0001-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0001-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0002-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0002-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0002-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0003-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0003-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0003-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0004-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0004-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0004-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0005-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0005-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0005-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0006-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0006-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0006-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0007-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0007-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0007-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0008-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0008-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0008-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0009-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0009-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0009-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0010-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0010-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0010-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0011-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0011-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0011-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0012-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0012-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0012-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0013-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0013-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0013-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0014-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0014-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0014-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0015-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0015-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0015-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0016-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0016-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0016-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0017-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0017-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0017-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0018-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0018-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0018-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0019-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0019-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0019-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0020-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0020-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0020-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0021-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0021-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0021-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0022-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0022-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0022-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0023-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0023-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0023-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0024-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0024-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0024-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0025-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0025-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0025-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0026-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0026-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0026-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0027-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0027-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0027-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0028-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0028-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0028-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0029-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0029-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0029-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0030-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0030-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0030-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0031-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0031-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0031-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0032-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0032-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0032-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0033-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0033-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0033-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0034-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0034-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0034-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0035-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0035-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-0035-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0018-0000-FFFF-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0019-0000-0000-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0019-0000-0000-ABCDEFFEDCBB}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0019-0000-0000-ABCDEFFEDCBC}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{CAFEEFAC-0019-0000-FFFF-ABCDEFFEDCBA}]
+[-HKEY_CLASSES_ROOT\\CLSID\\{E19F9331-3110-11D4-991C-005004D3B3DB}]
+
+;settings
+[-HKEY_CURRENT_USER\\Software\\JavaSoft]
+[-HKEY_LOCAL_MACHINE\\Software\\JavaSoft]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\JavaSoft]
+[-HKEY_CURRENT_USER\\Software\\AppDataLow\\Software\\JavaSoft]
+
+;browser plugins
+[-HKEY_CURRENT_USER\\SOFTWARE\\MozillaPlugins\\@java.com/DTPlugin]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\MozillaPlugins\\@java.com/DTPlugin]
+
+;OS references
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\RADAR\\HeapLeakDetection\\DiagnosedApplications\\java.exe]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\RADAR\\HeapLeakDetection\\DiagnosedApplications\\JAVAW.EXE]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\64888346ADFE6D117AD8000B0D614005]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\64888346ADFE6D117AD8000B0D717001]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\64888346ADFE6D117AD8000B0D812005]
+[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Components\\64888346ADFE6D117AD8000B0D910000]
+
+;System variables
+[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment]
+"JAVA_HOME"=-
+"JRE_HOME"=-
+
+[HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet000\\Control\\Session Manager\\Environment]
+"JAVA_HOME"=-
+"JRE_HOME"=-
+
+[HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Session Manager\\Environment]
+"JAVA_HOME"=-
+"JRE_HOME"=-
+
+[HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Control\\Session Manager\\Environment]
+"JAVA_HOME"=-
+"JRE_HOME"=-
+</pre><br/>
+<br/>
+<br/>
+<br/>
+<blockquote>or,<br/>
+download it here: <a rel="nofollow" download="java_uninstaller.reg" href="https://icompile.eladkarako.com/_uploads/2016/01/java_uninstaller.reg"rel="">java_uninstaller.reg</a> (52.6KB)</blockquote><br/>
+<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/uninstall-visual-studio">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/useful-char-map">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/useful-char-map">Useful Char-Map</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easy-router-ad-block">Easy Router Ad-Block</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adblock-advanced-selectors">AdBlock Advanced Selectors</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-fundamentals-tracking-impressions">JavaScript Ninja Fundamentals - Tracking Impressions</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/forbes-top-stories-unofficial-json-api">Forbes Top-Stories Unofficial JSON API</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/prebuilt-binwalk">Prebuilt Binwalk v2.1.1 - Ready To Use</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/virtualbox-additions-install-workaround">VirtualBox Additions Install Workaround</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/how-to-query-for-visible-elements-using-javascript">JavaScript - Visible Elements ?</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/which-is-better-ubuntu-or-mint">Which Is Better Ubuntu Or Mint?</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/virtualbox-ssh-support-for-internal-vm">VirtualBox - SSH Support For Internal VM</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/global-scope-state-after-script-load">JavaScript - Quick And Dirty Way To Check The State Of Global Scope After A Script Has Done Loading (+30ms)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-controllable-multiple-jquery-callback-hell">Multiple jQuery - Callback Hell</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/shoe-clothes-size-conversion-table">Shoe & Clothes Size-Conversion-Table</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/on-vacation-email-autoreply">Well.. Not Vacation Vacation..</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-remove-rude-redirects">JavaScript Ninja - Remove Rude Redirects</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-so-you-want-document-readystate-changes-to-be-an-event-sure-you-do-mutationobserver-to-the-rescue">JavaScript Ninja - So You Want document.readyState Changes To Be An Event ? Sure You Do! MutationObserver To The Rescue</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

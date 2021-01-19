@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Chromium API Keys</title>
+  <meta itemprop="name"                                content="Chromium API Keys"       />
+  <meta name="dcterms.title"                           content="Chromium API Keys"       />
+  <meta property="og:title"                            content="Chromium API Keys"       />
+  <meta name="twitter:title"                           content="Chromium API Keys"       />
+  <meta name="twitter:text:title"                      content="Chromium API Keys"       />
+  <meta name="application-name"                        content="Chromium API Keys"       />
+  <meta name="subject"                                 content="Chromium API Keys"       />
+  <meta name="apple-mobile-web-app-title"              content="Chromium API Keys"       />
+  <meta name="msapplication-tooltip"                   content="Chromium API Keys"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Chromium API Keys"       />
+  <meta itemprop="description"                         content="Chromium API Keys"       />
+  <meta name="dcterms.description"                     content="Chromium API Keys"       />
+  <meta name="twitter:description"                     content="Chromium API Keys"       />
+  <meta property="og:description"                      content="Chromium API Keys"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="ability,access,accessing,accounts,accuracy,activate,address,addresses,algorithms,allowing,alter,analytics,analyze,android,apis,application,apps,appsmarket,australia,automate,backed,backend,based,benefit,billing,blacklists,blank,bookmarks,browser,browsing,build,built,businesses,calculation,caldav,calendar,calendars,calls,carddav,categories,cell,change,channels,check,chicago,chrome,chromium,clicks,client,clients,cloud,cloudapis,code,collection,commonly,compatible,component,compromise,consists,console,constantly,contact,contacts,control,convenience,convert,coordinate,coordinates,copresence,create,created,creation,custom,customer,customize,cycling,darwin,data,database,default,depth,description,detailed,detect,developer,developers,development,device,devices,direct,directions,disabling,display,docs,domains,download,drags,drive,driving,duration,earlier,earth,easily,easy,elevation,enable,enabled,enables,enabling,engine,events,exchanging,extensions,extra,features,find,firebase,flood,floor,free,fully,functional,future,gathered,generate,geocoding,geographic,geolocation,gestures,gmail,google,googleapis,guide,handles,hangouts,harness,helper,helps,identity,include,information,inside,insights,integrate,integrating,intend,interest,interests,issue,javascript,json,keys,kind,labels,latitude,learning,legacy,lets,libraries,licensing,list,listings,local,location,locations,longer,longitude,lookups,machine,mailbox,make,malware,manage,management,manages,managing,manually,maps,markers,marketplace,matrix,messages,messaging,meta,mobile,mode,moderated,multiple,names,necessarily,needed,nightly,note,ocean,offer,offers,offset,optimize,options,ordered,origins,overview,owner,ownership,page,pages,pagespeed,pair,paths,paying,people,performance,phishing,photos,phrase,phrases,picker,places,platform,playlists,plusdomains,position,power,powerful,prediction,primarily,process,profiles,programs,project,projects,properly,provide,providing,public,query,questions,radius,range,recommended,records,related,reports,request,requests,resources,respond,response,restful,results,return,returned,reverse,route,routes,routing,rows,running,safe,sales,sampled,search,secret,servers,service,services,simple,site,skip,slice,smart,solutions,sort,sorted,sources,specific,speech,start,storage,store,storing,streams,street,strings,strongly,stuff,suggestions,support,supported,surface,suspected,synchronize,syncing,table,tailored,target,threads,timezone,today,tools,towers,translate,travel,updated,upgrade,urls,user,users,valid,verified,verify,version,videos,walking,waypoints,webmasters,website,websites,wide,wifi,workflow,youtube,zone,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="ability,access,accessing,accounts,accuracy,activate,address,addresses,algorithms,allowing,alter,analytics,analyze,android,apis,application,apps,appsmarket,australia,automate,backed,backend,based,benefit,billing,blacklists,blank,bookmarks,browser,browsing,build,built,businesses,calculation,caldav,calendar,calendars,calls,carddav,categories,cell,change,channels,check,chicago,chrome,chromium,clicks,client,clients,cloud,cloudapis,code,collection,commonly,compatible,component,compromise,consists,console,constantly,contact,contacts,control,convenience,convert,coordinate,coordinates,copresence,create,created,creation,custom,customer,customize,cycling,darwin,data,database,default,depth,description,detailed,detect,developer,developers,development,device,devices,direct,directions,disabling,display,docs,domains,download,drags,drive,driving,duration,earlier,earth,easily,easy,elevation,enable,enabled,enables,enabling,engine,events,exchanging,extensions,extra,features,find,firebase,flood,floor,free,fully,functional,future,gathered,generate,geocoding,geographic,geolocation,gestures,gmail,google,googleapis,guide,handles,hangouts,harness,helper,helps,identity,include,information,inside,insights,integrate,integrating,intend,interest,interests,issue,javascript,json,keys,kind,labels,latitude,learning,legacy,lets,libraries,licensing,list,listings,local,location,locations,longer,longitude,lookups,machine,mailbox,make,malware,manage,management,manages,managing,manually,maps,markers,marketplace,matrix,messages,messaging,meta,mobile,mode,moderated,multiple,names,necessarily,needed,nightly,note,ocean,offer,offers,offset,optimize,options,ordered,origins,overview,owner,ownership,page,pages,pagespeed,pair,paths,paying,people,performance,phishing,photos,phrase,phrases,picker,places,platform,playlists,plusdomains,position,power,powerful,prediction,primarily,process,profiles,programs,project,projects,properly,provide,providing,public,query,questions,radius,range,recommended,records,related,reports,request,requests,resources,respond,response,restful,results,return,returned,reverse,route,routes,routing,rows,running,safe,sales,sampled,search,secret,servers,service,services,simple,site,skip,slice,smart,solutions,sort,sorted,sources,specific,speech,start,storage,store,storing,streams,street,strings,strongly,stuff,suggestions,support,supported,surface,suspected,synchronize,syncing,table,tailored,target,threads,timezone,today,tools,towers,translate,travel,updated,upgrade,urls,user,users,valid,verified,verify,version,videos,walking,waypoints,webmasters,website,websites,wide,wifi,workflow,youtube,zone,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/ebay-page-fix"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/ebay-page-fix"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/vmware-subdomains"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/chromium-api-keys"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/chromium-api-keys"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/chromium-api-keys"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/chromium-api-keys"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/chromium-api-keys"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/chromium-api-keys"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-10-04T22:32:02+00:00"     />
+  <meta name="page-datetime"                           content="2016-10-04T22:32:02+00:00"     />
+  <meta property="article:published_time"              content="2016-10-04T22:32:02+00:00"     />
+  <meta name="dcterms.date"                            content="2016-10-04T22:32:02+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-10-06T22:26:45+00:00"    />
+  <meta property="article:modified_time"               content="2016-10-06T22:26:45+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/chromium-api-keys"
+,"url"             : "https://icompile.eladkarako.com/chromium-api-keys"
+,"headline"        : "Chromium API Keys"
+,"description"     : "Chromium API Keys"
+,"datePosted"      : "2016-10-04T22:32:02+00:00"
+,"dateCreated"     : "2016-10-04T22:32:02+00:00"
+,"datePublished"   : "2016-10-04T22:32:02+00:00"
+,"dateModified"    : "2016-10-06T22:26:45+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0002230265741">
+  <header>
+    <h1 itemprop="headline">Chromium API Keys</h1>
+    <sup>Posted at <time datetime="2016-10-06T22:26:45+00:00" itemprop="dateModified">Thu, 06 Oct 2016 22:26:45 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">When you build Chromium yourself, or download a Chromium nightly-build, you need to provide API-key, a secret-phrase and a client-id,<br/>
+running Chromium without either of those three phrases will seriously compromise Chromium's functionality.<br/>
+<br/>
+The is a sort of "inner-Google" page on how to generate, and use the API-Keys needed to make Chromium a properly, fully functional Chrome-compatible browser (including Syncing your bookmarks and other stuff..)<br/>
+<br/>
+There is an issue, however, with that page (<code><a href="https://www.chromium.org/developers/how-tos/api-keys" target="blank">https://www.chromium.org/developers/how-tos/api-keys</a></code>) which has not been-updated for a while, especially on the names of the API-services, one, needs to enable in-order to use Chromium in a fully functional mode,<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_google_console_api_services_list_helper_for_chromium_api_keys.png" alt="icompile.eladkarako.com_google_console_api_services_list_helper_for_chromium_api_keys" width="523" height="484"/><br/>
+<br/>
+I've gathered those services (including a direct link for you to use in-order to activate it)<br/>
+the following list (Google API-console) is ordered as:<br/>
+<br/>
+  - Name.<br/>
+  - Description.<br/>
+  - URL.<br/>
+<br/>
+the list of API-services is sorted (A,B,C..) by the <code>Name</code> of the API-service.<br/>
+<br/>
+<!--more--><br/>
+<br/>
+<blockquote>*Note that there are *EXTRA* API-services here you probably not necessarily have to use, but they are FREE, and you might as well add those anyway (it is just a kind of note for me in that way, since *I* do use every one of those API-services...)</blockquote><br/>
+<br/>
+<blockquote>You still need to use the <a href="https://www.chromium.org/developers/how-tos/api-keys" target="blank">https://www.chromium.org/developers/how-tos/api-keys</a> page as a guide, but you can skip the API list and instead - just follow the list below, and enable each one.<br/>
+</blockquote><br/>
+<br/>
+Hope it helps anyone :]<br/>
+<br/>
+<ul><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Android Device Verification API</li><br/>
+      <li>The Android Device Verification API can be used to verify whether a device is a valid Android device.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/androidcheck-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/androidcheck-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>CalDAV API</li><br/>
+      <li>The CalDAV API lets you manage your Google calendars and events.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/caldav-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/caldav-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Chrome Web Store API</li><br/>
+      <li>The Chrome Web Store API provides access to data about apps and extensions, as well as developer tools for managing them.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/chromewebstore-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/chromewebstore-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Contacts API</li><br/>
+      <li>The Google Contacts API lets you manage your contacts.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/contacts-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/contacts-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Custom Search API</li><br/>
+      <li>Google Custom Search enables you to search over a slice of the web, such as your own website, or a collection of websites. You can harness the power of Google to create a search engine tailored to your needs and interests, and you can present the results in your website.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/customsearch-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/customsearch-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Gmail API</li><br/>
+      <li>The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/gmail/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/gmail/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Apps Marketplace API</li><br/>
+      <li>Lets your Apps Marketplace applications integrate with Google's licensing and billing services.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/appsmarket-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/appsmarket-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Calendar API</li><br/>
+      <li>The Google Calendar API lets you manage your calendars and events.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/calendar-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/calendar-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Cloud APIs</li><br/>
+      <li>This is a meta service for Google Cloud APIs for convenience. Enabling this service enables all commonly used Google Cloud APIs for the project. By default, it is enabled for all projects created through Google Cloud Console and Google Cloud SDK, and should be manually enabled for all other projects that intend to use Google Cloud APIs. Note: disabling this service has no effect on other services.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/cloudapis.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/cloudapis.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Cloud Messaging</li><br/>
+      <li>Firebase Cloud Messaging (FCM) (https://firebase.google.com/docs/cloud-messaging/) is the new version of GCM. If you are integrating messaging in a new app, start with FCM. GCM users are strongly recommended to upgrade to FCM in order to benefit from new FCM features today and in the future. Note that FCM and GCM are not supported by Cloud Platform Support; please check out our support page at https://firebase.google.com/support/ for related questions.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/googlecloudmessaging-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/googlecloudmessaging-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Cloud Speech API.</li><br/>
+      <li>Google Cloud Speech API.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/speech.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/speech.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Cloud Storage</li><br/>
+      <li>Google Cloud Storage is a RESTful service for storing and accessing your data on Google's infrastructure.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/storage-component-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/storage-component-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Contacts CardDAV API</li><br/>
+      <li>An API to synchronize contacts.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/carddav-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/carddav-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Drive API</li><br/>
+      <li>The Google Drive API allows clients to access resources from Google Drive.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/drive/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/drive/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Identity and Access Management (IAM) API</li><br/>
+      <li>Manages identity and access control for Google Cloud Platform resources, including the creation of service accounts, which you can use to authenticate to Google and make API calls.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/iam.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/iam.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Maps Android API</li><br/>
+      <li>Add maps based on Google Maps data to your Android application with the Google Maps Android API. The API automatically handles access to Google Maps servers, map display and response to user gestures such as clicks and drags.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/maps_android_backend/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/maps_android_backend/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Maps Coordinate API</li><br/>
+      <li>The Google Maps Coordinate API is no longer supported. If you are a current paying customer, please contact your sales representative for alternative options and solutions.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/coordinate-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/coordinate-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Maps Directions API</li><br/>
+      <li>Access driving, cycling, walking and public transportation routing with the Google Maps Directions API using an HTTP request. Waypoints offer the ability to alter a route through a specific location. Specify origins, destinations and waypoints either as text strings (e.g. "Chicago, IL" or "Darwin, NT, Australia") or as latitude/longitude coordinates.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/directions_backend/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/directions_backend/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Maps Distance Matrix API</li><br/>
+      <li>Access travel distance and time for a matrix of origins and destinations with the Google Maps Distance Matrix API. The information returned is based on the recommended route between start and end points and consists of rows containing duration and distance values for each pair.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/distance_matrix_backend/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/distance_matrix_backend/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Maps Elevation API</li><br/>
+      <li>Query all locations on the surface of earth, including depth locations on the ocean floor (which return negative values), for elevation data with the Google Maps Elevation API. Sampled requests are available for elevation data along paths, allowing elevation change calculation along routes.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/elevation_backend/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/elevation_backend/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Maps Geocoding API</li><br/>
+      <li>Convert addresses into geographic coordinates (geocoding), which you can use to place markers or position the map. This API also allows you to convert geographic coordinates into an address (reverse geocoding).</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/geocoding_backend/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/geocoding_backend/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Maps Geolocation API</li><br/>
+      <li>Find a location and accuracy radius based on information from things like cell towers and WiFi access points that a mobile client can detect with the Google Maps Geolocation API. This is primarily used where GPS is not possible or appropriate.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/geolocation/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/geolocation/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Maps JavaScript API</li><br/>
+      <li>Accessing local data and maps built from the same data sources as Google Maps, build and style a map onto your website using the Google Maps JavaScript API. Multiple libraries are available and services such as geocoding, directions, Street View and more to customize your maps to fit your needs.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/maps_backend/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/maps_backend/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Maps Time Zone API</li><br/>
+      <li>The Google Maps Time Zone API provides the time zone for a location on the earth, as well as that location's time offset from UTC.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/timezone_backend/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/timezone_backend/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google People API</li><br/>
+      <li>Provides access to information about profiles and contacts.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/people.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/people.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Places API for Android</li><br/>
+      <li>Find detailed information about places across a wide range of categories. Backed by the same database used by Google Maps and Google+, the Google Places API for Android features about 100 million businesses and points of interest that are updated frequently through owner-verified listings and user-moderated contributions. Key features include autocomplete, search, place picker, photos and add place.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/placesandroid/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/placesandroid/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Places API Web Service</li><br/>
+      <li>Find detailed information about places across a wide range of categories. Backed by the same database used by Google Maps and Google+, the Google Places API Web Service features about 100 million businesses and points of interest that are updated frequently through owner-verified listings and user-moderated contributions. Key features include autocomplete, search, place picker, photos and add place.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/places_backend/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/places_backend/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Search Console API</li><br/>
+      <li>The Search Console API provides access to Search Console data for your verified websites.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/webmasters-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/webmasters-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google Translate API</li><br/>
+      <li>The Google Translate API lets websites and programs integrate with Google Translate programatically.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/translate/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/translate/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google+ API</li><br/>
+      <li>The Google+ API enables developers to build on top of the Google+ platform.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/plus/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/plus/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google+ Domains API</li><br/>
+      <li>The Google+ Domains API enables developers to build on top of the Google+ platform for Google Apps domains.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/plusdomains-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/plusdomains-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Google+ Hangouts API</li><br/>
+      <li>The Google+ Hangouts API enables developers to build applications that run inside of Google+ Hangouts.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/plusHangouts/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/plusHangouts/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Nearby Messages API</li><br/>
+      <li>Api for exchanging messages with nearby devices.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/copresence-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/copresence-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>PageSpeed Insights API</li><br/>
+      <li>The PageSpeed Insights API lets you analyze the performance of your website with a simple API. It offers tailored suggestions for how you can optimize your site, and lets you easily integrate PageSpeed Insights analysis into your development tools and workflow.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/pagespeedonline-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/pagespeedonline-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Prediction API</li><br/>
+      <li>The Prediction API enables you to make smart applications that respond to all the streams of data that flood through your apps by providing quick and easy access to Google's powerful machine learning algorithms.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/prediction-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/prediction-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Safe Browsing API (Legacy)</li><br/>
+      <li>The Safe Browsing API (v3 and earlier) is an experimental API that allows client applications to check URLs against Google's constantly-updated blacklists of suspected phishing and malware pages. Your client application can use the API to download an encrypted table for local, client-side lookups of URLs.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/safebrowsing/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/safebrowsing/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Safe Browsing APIs</li><br/>
+      <li>The Safe Browsing API is an experimental API that allows client applications to check URLs against Google's constantly-updated blacklists of suspected phishing and malware pages. Your client application can use the API to download an encrypted table for local, client-side lookups of URLs.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/safebrowsing.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/safebrowsing.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>Site Verification API</li><br/>
+      <li>The Google Site Verification API lets applications automate the process of managing ownership records for websites and domains.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/siteverification-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/siteverification-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>YouTube Analytics API</li><br/>
+      <li>Provides access to YouTube Analytics reports.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/youtubeanalytics-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/youtubeanalytics-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+  <li><br/>
+    <ul><br/>
+      <li>YouTube Data API v3</li><br/>
+      <li>The YouTube Data API v3 is an API that provides access to YouTube data, such as videos, playlists, and channels.</li><br/>
+      <li><a href="https://console.cloud.google.com/apis/api/youtube-json.googleapis.com/overview?project=" target="_blank">https://console.cloud.google.com/apis/api/youtube-json.googleapis.com/overview?project=</a></li><br/>
+    </ul><br/>
+  </li><br/>
+</ol><br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/ebay-page-fix">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/vmware-subdomains">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vmware-subdomains">VMware-Related Sub-Domains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-ninja-css3-to-make-your-website-behave-and-render-faster-including-a-more-responsive-scrolling">Including A More Responsive Scrolling</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/reverse-engineering-extract-version-information-from-and-executable-using-reshacker">Reverse Engineering - Extract Version Information From And Executable Using ResHacker</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-script-runtime">PHP Snippet - Script Runtime</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-generate-random-bytes">PHP Snippet - Generate Random Bytes</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-request-argument-from-either-post-or-get">PHP Snippet - Request-Argument From Either POST Or GET</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/thinapp-registry-export">Solved: ThinApp Registry Export</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-two-approaches-on-uniquefing-an-array-memory-wise">JavaScript Snippet - Two Approaches On Unique'fing An Array - Memory Wise</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hubic-secret-coupon">hubiC Secret Coupon</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-obfuscated-numbering-for-csrf">JavaScript Obfuscated Numbering For CSRF</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-event-isolation-with-documentation">JavaScript Snippet - Event Isolation With Documentation</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/removing-eset-products-additional-notes">Removing ESET Products - Additional Notes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/noscript-subdomains">NoScript SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-download-calendar-emoji-image">Free Download - Graphics Of Old School Calendar Unicode Emoji</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-onmibox">You Can't!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-createdocument-with-doctype-example">JavaScript Ninja ☕ - createDocument With DocType - The Missing Example</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

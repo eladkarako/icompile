@@ -1,0 +1,29 @@
+http://primes.utm.edu/
+<a title="The Prime Pages" href="http://primes.utm.edu/" target="_blank">The Prime Pages</a>: prime number research, records and resources
+
+&nbsp;
+
+<img class="alignnone aligncenter" alt="" src="http://t2.gstatic.com/images?q=tbn:ANd9GcQAaOb-kPfv38uwsEnxb0Qjt3ORkyQOzJDuAhyImb_69eH0jOqTJg" width="225" height="225" />
+
+&nbsp;
+
+Here are a few of the many conjectures concerning primes:
+
+<b style="font-style: italic;">Goldbach's Conjecture: Every even <i>n</i> &gt; 2 is the sum of two primes.</b>
+
+<dl><dd>Goldbach wrote a letter to Euler in 1742 suggesting that <i>every integer n &gt; 5 is the sum of three primes</i>.  Euler replied that this is equivalent to <i>every even n &gt; 2 is the sum of two primes</i>--this is now known as Goldbach's conjecture.  Schnizel showed that Goldbach's conjecture is equivalent to <i>every integer n &gt; 17 is the sum of three </i>distinct<i> primes</i>.
+It has been proven that every even integer is the sum of at most six primes [<a href="http://primes.utm.edu/references/refs.cgi/Ramare95">Ramaré95</a>] (Goldbach's conjecture suggests two) and in 1966 Chen proved every sufficiently large even integer is the sum of a prime plus a number with no more than two prime factors (a P<sub>2</sub>).  In 1993 Sinisalo verified Goldbach's conjecture for all integers less than 4<sup>.</sup>10<sup>11</sup> [<a href="http://primes.utm.edu/references/refs.cgi/Sinisalo93">Sinisalo93</a>].  More recently Jean-Marc Deshouillers, Yannick Saouter and Herman te Riele have verified this up to 10<sup>14</sup> with the help, of a Cray C90 and various workstations.  In July 1998, Joerg Richstein completed a verification to 4<sup>.</sup>10<sup>14</sup> and placed a list of champions online. More recent work by Oliveira e Silva has extended this to at least 4<sup>.</sup>10<sup>17</sup>. See [<a href="http://primes.utm.edu/references/refs.cgi/Ribenboim95">Ribenboim95</a>] and [<a href="http://primes.utm.edu/references/refs.cgi/Wang84">Wang84</a>] for more information.&nbsp;
+
+</dd><dt><b>The Odd Goldbach Problem: Every odd <i>n</i> &gt; 5 is the sum of three primes.</b></dt><dd>There has been substantial progress on this, the easier case of Goldbach's conjecture. In 1937 Vinogradov proved that this is true for sufficiently large odd integers <i>n</i>.  In 1956 Borodzkin showed <i>n</i> &gt; 3<sup>14348907</sup> is sufficient (the exponent is 3<sup>15</sup>).  In 1989 Chen and Wang reduced this bound to 10<sup>43000</sup>.  The exponent still must be reduced dramatically before we can use computers to take care of all the small cases.&nbsp;
+
+</dd><dt><b>Every even number is the difference of two primes.</b></dt><dd>Chen's work mentioned in the discussion of the <a href="http://primes.utm.edu/notes/conjectures/#Goldbach">Goldbach conjecture</a> also showed that every even number is the difference between a prime and a P<sub>2</sub>.&nbsp;
+
+</dd><dt><b>For every even number 2<i>n</i> are there infinitely many pairs of <i>consecutive</i> primes which differ by 2<i>n</i>.</b></dt><dd>Conjectured by Polignac 1849.  When <i>n</i>=1 this is the <a href="http://primes.utm.edu/notes/conjectures/#twin">twin prime conjecture</a>. It is easy to show that for every positive integer <i>m</i> there is an even number 2<i>n</i> such that there are more than <i>m</i> pairs of consecutive primes with difference 2<i>n</i>.&nbsp;
+
+</dd><dt><b><a name="twin"></a>Twin Prime Conjecture: There are infinitely many twin primes.</b></dt><dd>In 1919 Brun proved that the sum of the reciprocals of the twin primes converges, as so the sum B = (1/3 + 1/5) + (1/5 + 1/7) + (1/11 + 1/13) + (1/17 + 1/19) + ... is <b>Brun's constant</b>.  B = 1.902160577783278...  See the Prime Glossary's entry on the <a title="glossary" href="http://primes.utm.edu/glossary/page.php?sort=TwinPrimeConjecture">twin prime conjecture</a>.&nbsp;
+
+</dd><dt><b>Are there infinitely many primes of the form <i>n</i><sup>2</sup>+1?</b></dt><dd>There are infinitely many of the forms <i>n</i><sup>2</sup>+<i>m</i><sup>2</sup> and <i>n</i><sup>2</sup>+<i>m</i><sup>2</sup>+1.  A more general form of this conjecture is <i>if a, b, c are relatively prime, a is positive, a+b and c are not both even,and b<sup>2</sup>-4ac is not a perfect square, then there are infinitely many primes an<sup>2</sup>+bn+c</i> [<a href="http://primes.utm.edu/references/refs.cgi/HW79">HW79</a>, p19].&nbsp;
+
+</dd><dt><b>The number of Fermat primes is finite.</b></dt><dd>Hardy and Wright give an argument for this conjecture in their well known footnote [<a href="http://primes.utm.edu/references/refs.cgi/HW79">HW79</a>, p15] which goes roughly as follows.  By the <a href="http://primes.utm.edu/howmany.shtml#pnt">prime number theorem</a> the probability that a random number <i>n</i> is prime is at most<i>a</i>/log(<i>n</i>) for some choice of <i>a</i>.  So the expected number of Fermat primes is at most the sum of <i>a</i>/log(<img alt="2^2^n+1" src="http://primes.utm.edu/gifs/Fermat_n.gif" width="35" height="18" />) &lt;<i>a</i>/2<sup><i>n</i></sup>, but this sum is <i>a</i>.  However, as Hardy and Wright note, the Fermat numbers do not behave "randomly" in that they are pairwise relatively prime...&nbsp;
+
+</dd><dt><b>Is there always a prime between <i>n</i><sup>2</sup> and (<i>n</i>+1)<sup>2</sup>?</b></dt><dd>In 1882 Opperman stated pi(<i>n</i><sup>2</sup>+<i>n</i>) &gt; pi(<i>n</i><sup>2</sup>) &gt; pi(<i>n</i><sup>2</sup>-<i>n</i>) (<i>n</i>&gt;1), which also seems very likely, but remains unproven [<a href="http://primes.utm.edu/references/refs.cgi/Ribenboim95">Ribenboim95</a>, p248].  Both of these conjectures would follow if we could prove the conjecture that the <a href="http://primes.utm.edu/notes/gaps.html">prime gap</a> following a prime <i>p</i> is bounded by a constant times (log <i>p</i>)<sup>2</sup>.</dd></dl>', 'The Prime Pages: prime number research

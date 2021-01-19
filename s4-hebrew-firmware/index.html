@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew</title>
+  <meta itemprop="name"                                content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+  <meta name="dcterms.title"                           content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+  <meta property="og:title"                            content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+  <meta name="twitter:title"                           content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+  <meta name="twitter:text:title"                      content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+  <meta name="application-name"                        content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+  <meta name="subject"                                 content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+  <meta name="apple-mobile-web-app-title"              content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+  <meta name="msapplication-tooltip"                   content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+  <meta itemprop="description"                         content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+  <meta name="dcterms.description"                     content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+  <meta name="twitter:description"                     content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+  <meta property="og:description"                      content="Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="alfafile,android,build,cellcom,changelist,date,defdd,details,device,download,exynos,file,fileom,firmware,firmwares,galaxy,hebrew,html,israel,kitkat,lollipop,model,octa,ojkfnd,ojkgni,ojkgnk,ojkhod,ojkhoi,rapidgator,region,sammobile,samsung,stock,tqsvwkjy,updates,xxuemj,xxuena,xxufnc,xxugnh,xxugnk,xxuhoc,xxuhoi,zuge,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="alfafile,android,build,cellcom,changelist,date,defdd,details,device,download,exynos,file,fileom,firmware,firmwares,galaxy,hebrew,html,israel,kitkat,lollipop,model,octa,ojkfnd,ojkgni,ojkgnk,ojkhod,ojkhoi,rapidgator,region,sammobile,samsung,stock,tqsvwkjy,updates,xxuemj,xxuena,xxufnc,xxugnh,xxugnk,xxuhoc,xxuhoi,zuge,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/some-md5-related-code-from-an-old-project"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/some-md5-related-code-from-an-old-project"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/the-trick-of-downgrading-lollipop-to-kitkat-sim-unidentified-solved"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/s4-hebrew-firmware"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/s4-hebrew-firmware"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/s4-hebrew-firmware"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/s4-hebrew-firmware"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/s4-hebrew-firmware"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/s4-hebrew-firmware"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2015-12-01T15:34:53+00:00"     />
+  <meta name="page-datetime"                           content="2015-12-01T15:34:53+00:00"     />
+  <meta property="article:published_time"              content="2015-12-01T15:34:53+00:00"     />
+  <meta name="dcterms.date"                            content="2015-12-01T15:34:53+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2015-12-02T20:33:22+00:00"    />
+  <meta property="article:modified_time"               content="2015-12-02T20:33:22+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/s4-hebrew-firmware"
+,"url"             : "https://icompile.eladkarako.com/s4-hebrew-firmware"
+,"headline"        : "Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"
+,"description"     : "Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew"
+,"datePosted"      : "2015-12-01T15:34:53+00:00"
+,"dateCreated"     : "2015-12-01T15:34:53+00:00"
+,"datePublished"   : "2015-12-01T15:34:53+00:00"
+,"dateModified"    : "2015-12-02T20:33:22+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003904898441">
+  <header>
+    <h1 itemprop="headline">Samsung Galaxy S4 (GT-I9500) (Exynos Octa) Stock Firmware - Cellcom Israel Hebrew</h1>
+    <sup>Posted at <time datetime="2015-12-02T20:33:22+00:00" itemprop="dateModified">Wed, 02 Dec 2015 20:33:22 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><pre>
+[
+  {
+     device_name: "Samsung Galaxy S4"
+   , model:       "GT-I9500 (Exynos Octa)"
+   , android_ver: "Android Lollipop 5.0.1"
+   , region:      "CEL (Cellcom)"
+   , build_date:  "02.09.2015"
+   , changelist:  "5727378"
+   , pda:         "I9500XXUHOI1"
+   , csc:         "I9500OJKHOI1"
+   , download:    [
+                    "http://www.sammobile.com/firmwares/download/57455/I9500XXUHOI1_I9500OJKHOI1_CEL/"
+                  , "http://samsung-updates.com/details/54365/Galaxy_S_4_Exynos_Octa/GT-I9500/CEL/I9500XXUHOI1.html"
+                  , "http://rapidgator.net/file/4837b13427653270256124b9527b6bff"
+                  , "http://alfafile.net/file/kyr"
+                  ] 
+  }
+ ,
+  {
+     device_name: "Samsung Galaxy S4"
+   , model:       "GT-I9500 (Exynos Octa)"
+   , android_ver: "Android Lollipop 5.0.1"
+   , region:      "CEL (Cellcom)"
+   , build_date:  "02.09.2015"
+   , changelist:  "4439001"
+   , pda:         "I9500XXUHOC5"
+   , csc:         "I9500OJKHOD2"
+   , download:    [
+                    "http://samsung-updates.com/details/45850/Galaxy_S_4_Exynos_Octa/GT-I9500/CEL/I9500XXUHOC5.html"
+                  , "http://rapidgator.net/file/91799c9dac954e001a8ad6dfe4118c09"
+                  ]
+  }
+ ,
+  {
+     device_name: "Samsung Galaxy S4"
+   , model:       "GT-I9500 (Exynos Octa)"
+   , android_ver: "Android KitKat 4.4.2"
+   , region:      "CEL (Cellcom)"
+   , build_date:  "21.11.2014"
+   , changelist:  "3327815"
+   , pda:         "I9500XXUGNK1"
+   , csc:         "I9500OJKGNK1"
+   , download:    [
+                    "http://samsung-updates.com/details/41144/Galaxy_S_4_Exynos_Octa/GT-I9500/CEL/I9500XXUGNK1.html"
+                  , "http://rapidgator.net/file/24d78706e582b11d781e1941e67a835b"
+                  ]
+  }
+ ,
+  {
+     device_name: "Samsung Galaxy S4"
+   , model:       "GT-I9500 (Exynos Octa)"
+   , android_ver: "Android KitKat 4.4.2"
+   , region:      "CEL (Cellcom)"
+   , build_date:  "19.08.2014"
+   , changelist:  "2548731"
+   , pda:         "I9500XXUGNH4"
+   , csc:         "I9500OJKGNI1"
+   , download:    [
+                    "http://samsung-updates.com/details/33941/Galaxy_S_4_Exynos_Octa/GT-I9500/CEL/I9500XXUGNH4.html"
+                  , "http://rapidgator.net/file/02de5389ee2d22247c11ecf32d7d96de"
+                  ]
+  }
+ ,
+  {
+     device_name: "Samsung Galaxy S4"
+   , model:       "GT-I9500 (Exynos Octa)"
+   , android_ver: "Android KitKat 4.4.2"
+   , region:      "CEL (Cellcom)"
+   , build_date:  "24.03.2014"
+   , changelist:  "1119314"
+   , pda:         "I9500XXUFNC2"
+   , csc:         "I9500OJKFND1"
+   , download:    [
+                    "http://samsung-updates.com/details/29399/Galaxy_S_4_Exynos_Octa/GT-I9500/CEL/I9500XXUFNC2.html"
+                  , "http://rapidgator.net/file/c512fee841c5076ccc62453141d12ebd"
+                  , "https://alfafile.net/file/http://fileom.com/k7k4tqsvwkjy/CEL-I9500XXUFNC2-20140616113323.zip.html"
+                  , "http://fileom.com/k7k4tqsvwkjy/CEL-I9500XXUFNC2-20140616113323.zip.html"
+                  ]
+  }
+ ,
+  {
+     device_name: "Samsung Galaxy S4"
+   , model:       "GT-I9500 (Exynos Octa)"
+   , android_ver: "Android KitKat 4.3"
+   , region:      "CEL (Cellcom)"
+   , build_date:  "10.01.2014"
+   , changelist:  "2092849"
+   , pda:         "I9500XXUENA2"
+   , csc:         "????????????"
+   , download:    [
+                    "http://samsung-updates.com/details/23451/Galaxy_S_4_Exynos_Octa/GT-I9500/CEL/I9500XXUENA2.html"
+                  , "http://rapidgator.net/file/cb9e8008defdd51a84885cc50c04d1bd"
+                  , "https://alfafile.net/file/http://fileom.com/x9ehk8zuge6v/CEL-I9500XXUENA2-20140129121123.zip.html"
+                  , "http://fileom.com/x9ehk8zuge6v/CEL-I9500XXUENA2-20140129121123.zip.html"
+                  ]
+  }
+]
+</pre><br/>
+<br/>
+<br/>
+<br/>
+<pre>
+ILO region:
+
+
+Galaxy S 4 (Exynos Octa)	GT-I9500	ILO	I9500XXUHOC5	Android	5.0.1	20.03.2015	4439001		
+(PDA: I9500XXUHOC5 CSC: I9500OJKHOD1 CHANGELIST: 4439001 BUILD DATE: 20.03.2015) 
+http://samsung-updates.com/details/44386/Galaxy_S_4_Exynos_Octa/GT-I9500/ILO/I9500XXUHOC5.html
+
+
+Galaxy S 4 (Exynos Octa)	GT-I9500	ILO	I9500XXUGNK1	Android	4.4.2	21.11.2014	3327815
+(PDA: I9500XXUGNK1 CSC: I9500OJKGNK1 CHANGELIST: 3327815 BUILD DATE: 21.11.2014) 
+http://samsung-updates.com/details/41158/Galaxy_S_4_Exynos_Octa/GT-I9500/ILO/I9500XXUGNK1.html
+
+Galaxy S 4 (Exynos Octa)	GT-I9500	ILO	I9500XXUGNH4	Android	4.4.2	19.08.2014	2548731
+(PDA: I9500XXUGNH4 CSC: I9500OJKGNI1 CHANGELIST: 2548731 BUILD DATE: 19.08.2014) 
+http://samsung-updates.com/details/33931/Galaxy_S_4_Exynos_Octa/GT-I9500/ILO/I9500XXUGNH4.html
+
+Galaxy S 4 (Exynos Octa)	GT-I9500	ILO	I9500XXUFNC2	Android	4.4.2	24.03.2014	1119314
+(PDA: I9500XXUFNC2 CSC: I9500OJKFND1 CHANGELIST: 1119314 BUILD DATE: 24.03.2014) 
+http://samsung-updates.com/details/27935/Galaxy_S_4_Exynos_Octa/GT-I9500/ILO/I9500XXUFNC2.html
+
+Galaxy S 4 (Exynos Octa)	GT-I9500	ILO	I9500XXUEMJ9	Android	4.3	25.10.2013	1984169
+(PDA: CSC: CHANGELIST: 1984169 BUILD DATE: 25.10.2013) 
+http://samsung-updates.com/details/16197/Galaxy_S_4_Exynos_Octa/GT-I9500/ILO/I9500XXUEMJ9.html
+
+
+</pre><br/>
+<br/>
+taken from http://samsung-updates.com/device/?id=GT-I9500</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/some-md5-related-code-from-an-old-project">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/the-trick-of-downgrading-lollipop-to-kitkat-sim-unidentified-solved">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-trick-of-downgrading-lollipop-to-kitkat-sim-unidentified-solved">The Trick Of Downgrading Lollipop To KitKat - SIM Unidentified Solved</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/im-dreaming-of-a-ffffff-christmas">I'm Dreaming Of A #FFFFFF Christmas...</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-update-for-note-5-android-5-1-1">New Update For Note 5 Android 5.1.1</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pure-cmd-windows-to-cygwin-path">Pure CMD - Windows To Cygwin Path</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/explorer-to-cygwin-open-in-folder">Explorer To Cygwin - Open In Folder</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unbelievable-useful-trick-to-prevent-laptop-2-floor-interface">Unbelievable Useful Trick To Prevent Laptop-2-Floor Interface</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cmd-utf-8-by-default">CMD UTF-8 By Default</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/reason-for-tortoisegit-credentials-store-error-github-not-found">Reason For TortoiseGit - "github --credentials store: github: command not found"</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/permanently-disable-windows-7810-driver-signature-enforcement">Permanently Disable Windows 7/8/10 Driver Signature Enforcement</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/normalize-inputtextarea-number-only">Normalize Input/Textarea - Number Only</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vary-accept-encoding">Vary: Accept-Encoding</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/apache-cordova-thank-you-hackathon-sponsors">Apache Cordova - Thank You Hackathon Sponsors!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/significant-terms-aggregation-elasticsearch">Significant Terms Aggregation - Elasticsearch</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/utf-8-string-to-byte-array">UTF-8 String To Byte Array</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/genymotion-processes">GenyMotion Processes</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/another-take-on-label-design-pure-css3-and-html5-markers">Another Take On Label-Design Pure CSS3 and HTML5 Markers</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

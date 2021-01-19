@@ -1,0 +1,8 @@
+<pre>
+<span style='color:#800000; '>"</span><span style='color:#0000e6; '>CheckMarkLegacy</span><span style='color:#800000; '>"</span>
+      <span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><span style='color:#800000; '>/</span><span style='color:#808030; '>(</span><span style='color:#808030; '>[</span><span style='color:#0000e6; '>A</span><span style='color:#808030; '>-</span><span style='color:#0000e6; '>Z</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800000; '>/</span><span style='color:#800000; font-weight:bold; '>g</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>_$1</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span>
+      <span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><span style='color:#800000; '>/</span><span style='color:#808030; '>^</span><span style='color:#0000e6; '>_</span><span style='color:#808030; '>*</span><span style='color:#800000; '>/</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>toLowerCase</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+      <span style='color:#800080; '>;</span>
+
+<span style='color:#696969; '>/* outputs: check_mark_legacy */</span>
+</pre>

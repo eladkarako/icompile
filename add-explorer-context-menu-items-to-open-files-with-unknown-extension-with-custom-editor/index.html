@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)</title>
+  <meta itemprop="name"                                content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+  <meta name="dcterms.title"                           content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+  <meta property="og:title"                            content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+  <meta name="twitter:title"                           content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+  <meta name="twitter:text:title"                      content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+  <meta name="application-name"                        content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+  <meta name="subject"                                 content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+  <meta name="apple-mobile-web-app-title"              content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+  <meta name="msapplication-tooltip"                   content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+  <meta itemprop="description"                         content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+  <meta name="dcterms.description"                     content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+  <meta name="twitter:description"                     content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+  <meta property="og:description"                      content="Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="action,actions,alignnone,assigned,back,bring,changed,classes,click,command,computer,context,copy,custom,customized,default,dialog,double,edit,editnotepad,editor,explorer,extension,extensions,file,files,folder,hkey,image,install,items,local,location,machine,make,menu,modified,named,nbsp,note,notepad,noticed,open,openas,otepad,paste,path,program,registry,relays,remove,root,save,script,secret,separated,shell,shows,sits,size,software,syntax,title,uninstall,unknown,version,windows,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="action,actions,alignnone,assigned,back,bring,changed,classes,click,command,computer,context,copy,custom,customized,default,dialog,double,edit,editnotepad,editor,explorer,extension,extensions,file,files,folder,hkey,image,install,items,local,location,machine,make,menu,modified,named,nbsp,note,notepad,noticed,open,openas,otepad,paste,path,program,registry,relays,remove,root,save,script,secret,separated,shell,shows,sits,size,software,syntax,title,uninstall,unknown,version,windows,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/remove-greasemonkey-script-install-dialog-delay"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/remove-greasemonkey-script-install-dialog-delay"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javascript-faster-sort"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/add-explorer-context-menu-items-to-open-files-with-unknown-extension-with-custom-editor"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/add-explorer-context-menu-items-to-open-files-with-unknown-extension-with-custom-editor"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/add-explorer-context-menu-items-to-open-files-with-unknown-extension-with-custom-editor"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/add-explorer-context-menu-items-to-open-files-with-unknown-extension-with-custom-editor"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/add-explorer-context-menu-items-to-open-files-with-unknown-extension-with-custom-editor"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/add-explorer-context-menu-items-to-open-files-with-unknown-extension-with-custom-editor"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2012-05-31T19:39:58+00:00"     />
+  <meta name="page-datetime"                           content="2012-05-31T19:39:58+00:00"     />
+  <meta property="article:published_time"              content="2012-05-31T19:39:58+00:00"     />
+  <meta name="dcterms.date"                            content="2012-05-31T19:39:58+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2012-05-31T19:41:51+00:00"    />
+  <meta property="article:modified_time"               content="2012-05-31T19:41:51+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/add-explorer-context-menu-items-to-open-files-with-unknown-extension-with-custom-editor"
+,"url"             : "https://icompile.eladkarako.com/add-explorer-context-menu-items-to-open-files-with-unknown-extension-with-custom-editor"
+,"headline"        : "Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"
+,"description"     : "Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)"
+,"datePosted"      : "2012-05-31T19:39:58+00:00"
+,"dateCreated"     : "2012-05-31T19:39:58+00:00"
+,"datePublished"   : "2012-05-31T19:39:58+00:00"
+,"dateModified"    : "2012-05-31T19:41:51+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0008913948331">
+  <header>
+    <h1 itemprop="headline">Add Explorer Context-Menu Items to Open Files with Unknown Extension with Custom Editor (For Example Notepad2 or Notepad++)</h1>
+    <sup>Posted at <time datetime="2012-05-31T19:41:51+00:00" itemprop="dateModified">Thu, 31 May 2012 19:41:51 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">copy &amp; paste this file to an empty file, name it "install.reg", save. double click the file, to "install it".<br/>
+<pre>Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\\Unknown\\shell\\editnotepad2]
+@="Edit with Notepad2"
+
+[HKEY_CLASSES_ROOT\\Unknown\\shell\\editnotepad2\\command]
+@="\\"D:\\\\Software\\\\Notepad 2.0\\\\Notepad2.exe\\" %1\\""
+
+[HKEY_CLASSES_ROOT\\Unknown\\shell\\editnotepadpp]
+@="Edit with Notepad++"
+
+[HKEY_CLASSES_ROOT\\Unknown\\shell\\editnotepadpp\\command]
+@="\\"D:\\\\Software\\\\Notepad++\\\
+otepad++.exe\\" \\"%1\\""</pre><br/>
+it will add two menu items, for files with extension, that isn't assigned to a program, or in other words,<br/>
+explorer won't know in which program to use to view those files.<br/>
+<br/>
+<img loading="lazy" lazyload="on"  class="alignnone size-full wp-image-511" title="add_right_click_edit_in_notepad_for_files_with_unknown_extension" src="https://icompile.eladkarako.com/_uploads/2012/05/add_right_click_edit_in_notepad_for_files_with_unknown_extension.png" alt="" width="363" height="131" /><br/>
+<br/>
+<hr /><br/>
+<br/>
+wish to remove it?<br/>
+<br/>
+<br/>
+copy &amp; paste this file to an empty file, name it "uninstall.reg", save. double click the file, to "uninstall it".<br/>
+<pre>Windows Registry Editor Version 5.00
+[-HKEY_CLASSES_ROOT\\Unknown\\shell\\editnotepad2]
+[-HKEY_CLASSES_ROOT\\Unknown\\shell\\editnotepadpp]</pre><br/>
+<br/>
+<hr /><br/>
+<br/>
+note:<br/>
+as you've probably noticed, notepad2 and notepad++ 'sits' in a custom folder under D:\\Software\\<br/>
+<br/>
+on your computer, you might want to use any other editor, or notepad++ from another location.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+if you want to use notepad++ from C:\\Program Files\\Notepad++ (for example), edit the install script so the path will use this path. remember: path in registry syntax uses two '\\'. so C:\\Program Files\\Notepad++\<br/>
+otepad++.exe will became C:\\\\Program Files\\\\Notepad++\\\<br/>
+otepad++.exe<br/>
+<br/>
+&nbsp;<br/>
+<br/>
+here is our modified install script:<br/>
+<pre>Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\\Unknown\\shell\\editnotepadpp]
+@="Edit with Notepad++"
+
+[HKEY_CLASSES_ROOT\\Unknown\\shell\\editnotepadpp\\command]
+@="\\"C:\\\\Program Files\\\\Notepad++\\\
+otepad++.exe\\" \\"%1\\""</pre><br/>
+and our uninstall script will be similar..<br/>
+<pre>Windows Registry Editor Version 5.00
+[-HKEY_CLASSES_ROOT\\Unknown\\shell\\editnotepadpp]</pre><br/>
+<br/>
+<hr /><br/>
+<br/>
+here is an illustration of the registry:<br/>
+<br/>
+<img loading="lazy" lazyload="on"  class="alignnone size-full wp-image-512" title="add_right_click_edit_in_notepad_for_files_with_unknown_extension_registry" src="https://icompile.eladkarako.com/_uploads/2012/05/add_right_click_edit_in_notepad_for_files_with_unknown_extension_registry.png" alt="" width="621" height="171" /><br/>
+<br/>
+<br/>
+<hr /><br/>
+<br/>
+note2:<br/>
+have you noticed that the default action is still the "Open", which shows the 'Open Dialog' for unknown extensions?<br/>
+you can set each of the actions under \\shell\\ to be the default one.<br/>
+<br/>
+the secret is using<br/>
+@="--the name of the key--" under \\shell\\<br/>
+<br/>
+for example we want to set the default to be notepad++, so (I've separated it to another script) run this one:<br/>
+<pre>Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\Unknown\\shell]
+@="editnotepadpp"</pre><br/>
+this relays on the fact that there is a key named editnotepadpp, if you've changed it / customized it, make sure to use your key name.<br/>
+<br/>
+to bring it back (uninstall it, or in another words make it use the default 'open' dialog) just use this script:<br/>
+<pre>Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\Unknown\\shell]
+@="openas"</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/remove-greasemonkey-script-install-dialog-delay">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-faster-sort">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-faster-sort">Javascript - faster sort</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wiki-media-rss-feed">Build-In Wiki-Media RSS or ATOM Feed </a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows-cmd-multi-process-example">Windows CMD Multi Process Example</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/making-your-wamp-apache-available-from-outside-of-the-computer">Making Your WAMP (Apache) available from Outside of the computer</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-string-of-x-latest-modified-files-in-a-js-supported-format">PHP snippet - string of X latest modified files in a JS supported format</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wamp-2-2-apache-2-4-2-ssl-support">Wamp 2.2 (Apache 2.4.2) SSL Support - the new version of wamp</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wow-adblock-for-firefox-blocks-requests-too">wow! AdBlock for Firefox Blocks Requests too..</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/45-life-lessons-written-by-yet-another-old-geezer">written by yet another old geezer</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/from-the-beginning-what-are-the-ten-radical-isotopes">what are the ten radical isotopes?</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-prime-pages-prime-number-research-records-and-resources">records and resources</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-python-x64-installer-not-found">Solved: Python x64 Modules-Installer: "not found"</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows-7-install-gjslint-google-closure-jslinter-into-python">Windows 7 - Install gjslint (Google Closure JSLinter) into Python</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/optimise-speed-tip-jetbrains-webstorm-a-java-based-tweak">Optimise Speed Tip - JetBrains WebStorm (a Java-based tweak)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-minifier-based-on-javascript-algorithm-steps-and-design-example-for-efficiency">based on Javascript - Algorithm Steps and Design Example For Efficiency</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adding-gjslinter-to-webstorm-google-closure-jslinter-jetbrains-webstorm-integration">Adding GJSLinter to WebStorm - Google-Closure-JSLinter JetBrains WebStorm Integration</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/shell-svn-from-php">Shell SVN From PHP</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock</title>
+  <meta itemprop="name"                                content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+  <meta name="dcterms.title"                           content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+  <meta property="og:title"                            content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+  <meta name="twitter:title"                           content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+  <meta name="twitter:text:title"                      content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+  <meta name="application-name"                        content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+  <meta name="subject"                                 content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+  <meta name="apple-mobile-web-app-title"              content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+  <meta name="msapplication-tooltip"                   content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+  <meta itemprop="description"                         content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+  <meta name="dcterms.description"                     content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+  <meta name="twitter:description"                     content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+  <meta property="og:description"                      content="JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="abisuq,adblock,adchain,adfootright,adplaceid,adscale,adsense,adshare,adsxml,adyard,aktifkan,align,anti,arial,attachevent,auto,block,bold,charat,childnodes,client,color,complete,decoration,defaultview,display,divtopad,document,enable,engineer,expression,filter,fixed,floor,font,function,getads,getstyle,google,image,images,impopup,innerhtml,insert,iqadtile,javascript,join,keywords,leftframead,length,loaded,location,loncat,margin,math,meme,miran,mirando,mohon,ninja,nodetype,null,onerror,onload,opacity,padding,page,pagead,parentnode,parsefloat,peel,position,prototype,rand,random,readystate,reload,removechild,return,reverse,sans,script,scrolltop,serif,settimeout,shift,slot,split,sticky,stop,substr,tobsidead,type,verdana,weight,window,write,writeln,zindex,zone,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="abisuq,adblock,adchain,adfootright,adplaceid,adscale,adsense,adshare,adsxml,adyard,aktifkan,align,anti,arial,attachevent,auto,block,bold,charat,childnodes,client,color,complete,decoration,defaultview,display,divtopad,document,enable,engineer,expression,filter,fixed,floor,font,function,getads,getstyle,google,image,images,impopup,innerhtml,insert,iqadtile,javascript,join,keywords,leftframead,length,loaded,location,loncat,margin,math,meme,miran,mirando,mohon,ninja,nodetype,null,onerror,onload,opacity,padding,page,pagead,parentnode,parsefloat,peel,position,prototype,rand,random,readystate,reload,removechild,return,reverse,sans,script,scrolltop,serif,settimeout,shift,slot,split,sticky,stop,substr,tobsidead,type,verdana,weight,window,write,writeln,zindex,zone,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/download-host-logos"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/download-host-logos"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/flash-player-download-links"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/javascript-ninja-reverse-engineer-loncat-in-anti-adblock"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/javascript-ninja-reverse-engineer-loncat-in-anti-adblock"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/javascript-ninja-reverse-engineer-loncat-in-anti-adblock"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/javascript-ninja-reverse-engineer-loncat-in-anti-adblock"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/javascript-ninja-reverse-engineer-loncat-in-anti-adblock"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/javascript-ninja-reverse-engineer-loncat-in-anti-adblock"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-02-13T06:31:07+00:00"     />
+  <meta name="page-datetime"                           content="2016-02-13T06:31:07+00:00"     />
+  <meta property="article:published_time"              content="2016-02-13T06:31:07+00:00"     />
+  <meta name="dcterms.date"                            content="2016-02-13T06:31:07+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-02-13T06:31:07+00:00"    />
+  <meta property="article:modified_time"               content="2016-02-13T06:31:07+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/javascript-ninja-reverse-engineer-loncat-in-anti-adblock"
+,"url"             : "https://icompile.eladkarako.com/javascript-ninja-reverse-engineer-loncat-in-anti-adblock"
+,"headline"        : "JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"
+,"description"     : "JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock"
+,"datePosted"      : "2016-02-13T06:31:07+00:00"
+,"dateCreated"     : "2016-02-13T06:31:07+00:00"
+,"datePublished"   : "2016-02-13T06:31:07+00:00"
+,"dateModified"    : "2016-02-13T06:31:07+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007605435541">
+  <header>
+    <h1 itemprop="headline">JavaScript Ninja - Reverse Engineer Loncat.in Anti-Adblock</h1>
+    <sup>Posted at <time datetime="2016-02-13T06:31:07+00:00" itemprop="dateModified">Sat, 13 Feb 2016 06:31:07 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><pre><span style='color:#696969; '>&lt;!-- Anti-Adblock --></span><br/>
+<span style='color:#696969; '>&lt;!-- By Loncat.in --></span><br/>
+<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>style</span><span style='color:#a65700; '>></span><br/>
+  <span style='color:#808030; '>#</span>h237<span style='color:#800080; '>{</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>position</span><span style='color:#808030; '>:</span><span style='color:#074726; '>fixed</span> <span style='color:#800000; font-weight:bold; '>!important</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>position</span><span style='color:#808030; '>:</span><span style='color:#074726; '>absolute</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>top</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>top</span><span style='color:#808030; '>:</span>expression<span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>t=document<span style='color:#008c00; '>.</span>documentElement<span style='color:#008c00; '>.</span>scrollTop?document<span style='color:#008c00; '>.</span>documentElement<span style='color:#008c00; '>.</span>scrollTop:document<span style='color:#008c00; '>.</span>body<span style='color:#008c00; '>.</span>scrollTop<span style='color:#808030; '>)</span>+<span style='color:#800000; '>"</span><span style='color:#0000e6; '>px</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>left</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>width</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>102</span><span style='color:#006600; '>%</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>height</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>102</span><span style='color:#006600; '>%</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>background-color</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>#</span><span style='color:#008000; '>f9f9f9</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>opacity</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>.97</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>block</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>10</span><span style='color:#006600; '>%</span> <span style='color:#008c00; '>0</span><br/>
+  <span style='color:#800080; '>}</span><br/>
+  <span style='color:#808030; '>#</span>h237 <span style='color:#808030; '>*</span><span style='color:#800080; '>{</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>text-align</span><span style='color:#808030; '>:</span><span style='color:#074726; '>center</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>margin</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span> <span style='color:#074726; '>auto</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>block</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#008484; '>filter</span><span style='color:#808030; '>:</span><span style='color:#074726; '>none</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>font</span><span style='color:#808030; '>:</span><span style='color:#074726; '>bold</span> <span style='color:#008c00; '>14</span><span style='color:#006600; '>px</span> Verdana<span style='color:#808030; '>,</span>Arial<span style='color:#808030; '>,</span><span style='color:#074726; '>sans-serif</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>text-decoration</span><span style='color:#808030; '>:</span><span style='color:#074726; '>none</span><br/>
+  <span style='color:#800080; '>}</span><br/>
+  <span style='color:#808030; '>#</span>h237 <span style='color:#808030; '>~</span> <span style='color:#808030; '>*</span><span style='color:#800080; '>{</span><span style='color:#bb7977; font-weight:bold; '>display</span><span style='color:#808030; '>:</span><span style='color:#074726; '>none</span><span style='color:#800080; '>}</span><br/>
+<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>style</span><span style='color:#a65700; '>></span><br/>
+<br/>
+<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"h237"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>span</span><span style='color:#a65700; '>></span>Please Enable JavaScript!<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>br</span><span style='color:#274796; '> </span><span style='color:#a65700; '>/></span>Mohon Aktifkan Javascript!<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"http://www.enable-javascript.com/"</span><span style='color:#a65700; '>></span>[ Enable JavaScript ]<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>span</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span><br/>
+<br/>
+<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span><br/>
+  window<span style='color:#808030; '>.</span>document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>h237</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>removeChild<span style='color:#808030; '>(</span>window<span style='color:#808030; '>.</span>document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>h237</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<br/>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>l<span style='color:#808030; '>,</span> m<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+  <span style='color:#800000; font-weight:bold; '>function</span> n<span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+    a <span style='color:#808030; '>&amp;&amp;</span> h237<span style='color:#808030; '>.</span>nextFunction<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><br/>
+  <span style='color:#800080; '>}</span><br/>
+  <span style='color:#800000; font-weight:bold; '>var</span> h <span style='color:#808030; '>=</span> l<span style='color:#808030; '>.</span>document<br/>
+    <span style='color:#808030; '>,</span> p <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>i</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>s</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>u</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span><br/>
+  n<span style='color:#808030; '>.</span><span style='color:#797997; '>prototype</span> <span style='color:#808030; '>=</span> <span style='color:#800080; '>{</span><br/>
+    rand<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>floor</span><span style='color:#808030; '>(</span><span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>random</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>*</span> a<span style='color:#808030; '>)</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#808030; '>,</span> getElementBy<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> b<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>return</span> a <span style='color:#800080; '>?</span> h<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span> <span style='color:#800080; '>:</span> h<span style='color:#808030; '>.</span>getElementsByTagName<span style='color:#808030; '>(</span>b<span style='color:#808030; '>)</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#808030; '>,</span> getStyle<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>var</span> b <span style='color:#808030; '>=</span> h<span style='color:#808030; '>.</span>defaultView<span style='color:#800080; '>;</span><br/>
+      <span style='color:#800000; font-weight:bold; '>return</span> b <span style='color:#808030; '>&amp;&amp;</span> b<span style='color:#808030; '>.</span>getComputedStyle <span style='color:#800080; '>?</span> b<span style='color:#808030; '>.</span>getComputedStyle<span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> <span style='color:#0f4d75; '>null</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>:</span> a<span style='color:#808030; '>.</span>currentStyle<br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#808030; '>,</span> deferExecution<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>setTimeout</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> <span style='color:#008c00; '>250</span><span style='color:#808030; '>)</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#808030; '>,</span> insert<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> b<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>var</span> e <span style='color:#808030; '>=</span> h<span style='color:#808030; '>.</span>createElement<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>span</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><br/>
+        <span style='color:#808030; '>,</span> d <span style='color:#808030; '>=</span> h<span style='color:#808030; '>.</span>body<br/>
+        <span style='color:#808030; '>,</span> c <span style='color:#808030; '>=</span> d<span style='color:#808030; '>.</span>childNodes<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span><br/>
+        <span style='color:#808030; '>,</span> g <span style='color:#808030; '>=</span> d<span style='color:#808030; '>.</span>style<br/>
+        <span style='color:#808030; '>,</span> f <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><br/>
+        <span style='color:#808030; '>,</span> k <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span><br/>
+      <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>h237</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>==</span> b<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+        e<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>id</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> b<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+        g<span style='color:#808030; '>.</span>margin <span style='color:#808030; '>=</span> g<span style='color:#808030; '>.</span>padding <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span><br/>
+        g<span style='color:#808030; '>.</span>height <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>100%</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+        <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span>c <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>rand<span style='color:#808030; '>(</span>c<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> f <span style='color:#808030; '>&lt;</span> c<span style='color:#800080; '>;</span> f<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span> <span style='color:#008c00; '>1</span> <span style='color:#808030; '>==</span> d<span style='color:#808030; '>.</span>childNodes<span style='color:#808030; '>[</span>f<span style='color:#808030; '>]</span><span style='color:#808030; '>.</span>nodeType <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#808030; '>(</span>k <span style='color:#808030; '>=</span> <span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>max</span><span style='color:#808030; '>(</span>k<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>parseFloat</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>getStyle<span style='color:#808030; '>(</span>d<span style='color:#808030; '>.</span>childNodes<span style='color:#808030; '>[</span>f<span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>zIndex<span style='color:#808030; '>)</span> <span style='color:#808030; '>||</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+        k <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#808030; '>(</span>e<span style='color:#808030; '>.</span>style<span style='color:#808030; '>.</span>zIndex <span style='color:#808030; '>=</span> k <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+        c<span style='color:#808030; '>++</span><br/>
+      <span style='color:#800080; '>}</span><br/>
+      e<span style='color:#808030; '>.</span>innerHTML <span style='color:#808030; '>=</span> a<span style='color:#800080; '>;</span><br/>
+      d<span style='color:#808030; '>.</span>insertBefore<span style='color:#808030; '>(</span>e<span style='color:#808030; '>,</span> d<span style='color:#808030; '>.</span>childNodes<span style='color:#808030; '>[</span>c <span style='color:#808030; '>-</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#808030; '>,</span> displayMessage<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>var</span> b <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#800080; '>;</span><br/>
+      a <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>abisuq</span><span style='color:#800000; '>"</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>charAt</span><span style='color:#808030; '>(</span>b<span style='color:#808030; '>.</span>rand<span style='color:#808030; '>(</span><span style='color:#008c00; '>5</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+      b<span style='color:#808030; '>.</span>insert<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>&lt;</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> a <span style='color:#808030; '>+</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>>&lt;img src="http://w3.loncat.in/images/da.png" height="350" width="699" alt="Stop-AdBlock" /> &lt;a href="JavaScript:window.location.reload()">[ Reload ]&lt;/a></span><span style='color:#800000; '>'</span> <span style='color:#808030; '>+</span> <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>&lt;/</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> a <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>></span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>h237</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+      h<span style='color:#808030; '>.</span>addEventListener <span style='color:#808030; '>&amp;&amp;</span> b<span style='color:#808030; '>.</span>deferExecution<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+        b<span style='color:#808030; '>.</span>getElementBy<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>h237</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>addEventListener<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>DOMNodeRemoved</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+          b<span style='color:#808030; '>.</span>displayMessage<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><br/>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> <span style='color:#808030; '>!</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><br/>
+      <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#808030; '>,</span> i<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>var</span> a <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>DivTopAd,ad-zone-1,ad_190x90,ads-sticky,iqadtile5,leftframeAD,tobsideAd,ad,ads,adsense</span><span style='color:#800000; '>"</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>,</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> b <span style='color:#808030; '>=</span> a<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span><span style='color:#808030; '>,</span> e <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> d <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>,</span> c <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> g <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>abisuq</span><span style='color:#800000; '>"</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>charAt</span><span style='color:#808030; '>(</span>d<span style='color:#808030; '>.</span>rand<span style='color:#808030; '>(</span><span style='color:#008c00; '>5</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> c <span style='color:#808030; '>&lt;</span> b<span style='color:#800080; '>;</span> c<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span> d<span style='color:#808030; '>.</span>getElementBy<span style='color:#808030; '>(</span>a<span style='color:#808030; '>[</span>c<span style='color:#808030; '>]</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>||</span> <span style='color:#808030; '>(</span>e <span style='color:#808030; '>+=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>&lt;</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> g <span style='color:#808030; '>+</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '> id="</span><span style='color:#800000; '>'</span> <span style='color:#808030; '>+</span> a<span style='color:#808030; '>[</span>c<span style='color:#808030; '>]</span> <span style='color:#808030; '>+</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>">&lt;/</span><span style='color:#800000; '>'</span> <span style='color:#808030; '>+</span> g <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>></span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+      d<span style='color:#808030; '>.</span>insert<span style='color:#808030; '>(</span>e<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+      d<span style='color:#808030; '>.</span>deferExecution<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+        <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span>c <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> c <span style='color:#808030; '>&lt;</span> b<span style='color:#800080; '>;</span> c<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span><br/>
+          <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#0f4d75; '>null</span> <span style='color:#808030; '>==</span> d<span style='color:#808030; '>.</span>getElementBy<span style='color:#808030; '>(</span>a<span style='color:#808030; '>[</span>c<span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>offsetParent <span style='color:#808030; '>||</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>none</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>==</span> d<span style='color:#808030; '>.</span>getStyle<span style='color:#808030; '>(</span>d<span style='color:#808030; '>.</span>getElementBy<span style='color:#808030; '>(</span>a<span style='color:#808030; '>[</span>c<span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>display<span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>return</span> d<span style='color:#808030; '>.</span>displayMessage<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>#</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> a<span style='color:#808030; '>[</span>c<span style='color:#808030; '>]</span> <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>(</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> c <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>)</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+        d<span style='color:#808030; '>.</span>nextFunction<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><br/>
+      <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#808030; '>,</span> s<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>var</span> a <span style='color:#808030; '>=</span> <span style='color:#800080; '>{</span><br/>
+          <span style='color:#800000; '>'</span><span style='color:#0000e6; '>pagead2.googlesyndic</span><span style='color:#800000; '>'</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>google_ad_client</span><span style='color:#800000; '>'</span><br/>
+          <span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>js.adscale.de/getads</span><span style='color:#800000; '>'</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>adscale_slot_id</span><span style='color:#800000; '>'</span><br/>
+          <span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>get.mirando.de/miran</span><span style='color:#800000; '>'</span><span style='color:#800080; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>adPlaceId</span><span style='color:#800000; '>'</span><br/>
+        <span style='color:#800080; '>}</span><br/>
+        <span style='color:#808030; '>,</span> b <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>this</span><br/>
+        <span style='color:#808030; '>,</span> e <span style='color:#808030; '>=</span> b<span style='color:#808030; '>.</span>getElementBy<span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>script</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><br/>
+        <span style='color:#808030; '>,</span> d <span style='color:#808030; '>=</span> e<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>-</span> <span style='color:#008c00; '>1</span><br/>
+        <span style='color:#808030; '>,</span> c<span style='color:#808030; '>,</span> g<span style='color:#808030; '>,</span> f<span style='color:#808030; '>,</span> k<span style='color:#800080; '>;</span><br/>
+      h<span style='color:#808030; '>.</span>write <span style='color:#808030; '>=</span> <span style='color:#0f4d75; '>null</span><span style='color:#800080; '>;</span><br/>
+      <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span>h<span style='color:#808030; '>.</span>writeln <span style='color:#808030; '>=</span> <span style='color:#0f4d75; '>null</span><span style='color:#800080; '>;</span> <span style='color:#008c00; '>0</span> <span style='color:#808030; '>&lt;=</span> d<span style='color:#800080; '>;</span> <span style='color:#808030; '>--</span>d<span style='color:#808030; '>)</span><br/>
+        <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>c <span style='color:#808030; '>=</span> e<span style='color:#808030; '>[</span>d<span style='color:#808030; '>]</span><span style='color:#808030; '>.</span>src<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>substr</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>7</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>20</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> a<span style='color:#808030; '>[</span>c<span style='color:#808030; '>]</span> <span style='color:#808030; '>!==</span> m<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+          f <span style='color:#808030; '>=</span> h<span style='color:#808030; '>.</span>createElement<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>script</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+          f<span style='color:#808030; '>.</span>type <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>text/javascript</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+          f<span style='color:#808030; '>.</span>src <span style='color:#808030; '>=</span> e<span style='color:#808030; '>[</span>d<span style='color:#808030; '>]</span><span style='color:#808030; '>.</span>src<span style='color:#800080; '>;</span><br/>
+          g <span style='color:#808030; '>=</span> a<span style='color:#808030; '>[</span>c<span style='color:#808030; '>]</span><span style='color:#800080; '>;</span><br/>
+          l<span style='color:#808030; '>[</span>g<span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> m<span style='color:#800080; '>;</span><br/>
+          f<span style='color:#808030; '>.</span>onload <span style='color:#808030; '>=</span> f<span style='color:#808030; '>.</span>onreadystatechange <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+            k <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#800080; '>;</span><br/>
+            l<span style='color:#808030; '>[</span>g<span style='color:#808030; '>]</span> <span style='color:#808030; '>!==</span> m <span style='color:#808030; '>||</span> k<span style='color:#808030; '>.</span>readyState <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>loaded</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>!==</span> k<span style='color:#808030; '>.</span>readyState <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>complete</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>!==</span> k<span style='color:#808030; '>.</span>readyState <span style='color:#808030; '>||</span> <span style='color:#808030; '>(</span>l<span style='color:#808030; '>[</span>g<span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> f<span style='color:#808030; '>.</span>onload <span style='color:#808030; '>=</span> f<span style='color:#808030; '>.</span>onreadystatechange <span style='color:#808030; '>=</span> <span style='color:#0f4d75; '>null</span><span style='color:#808030; '>,</span> e<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>removeChild<span style='color:#808030; '>(</span>f<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><br/>
+          <span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+          e<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>.</span>parentNode<span style='color:#808030; '>.</span>insertBefore<span style='color:#808030; '>(</span>f<span style='color:#808030; '>,</span> e<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+          b<span style='color:#808030; '>.</span>deferExecution<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+            <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>l<span style='color:#808030; '>[</span>g<span style='color:#808030; '>]</span> <span style='color:#808030; '>===</span> m<span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>return</span> b<span style='color:#808030; '>.</span>displayMessage<span style='color:#808030; '>(</span>f<span style='color:#808030; '>.</span>src<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+            b<span style='color:#808030; '>.</span>nextFunction<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><br/>
+          <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+          <span style='color:#800000; font-weight:bold; '>return</span><br/>
+        <span style='color:#800080; '>}</span><br/>
+      b<span style='color:#808030; '>.</span>nextFunction<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#808030; '>,</span> u<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>var</span> a <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>ad&amp;adv_keywords=,-page-peel/,/adchain.,/adfootright.,/adsxml/ad,/adyard300.,/impopup/ad,/loadadsparam.,/meme_ad.,_adshare.</span><span style='color:#800000; '>"</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>,</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><br/>
+        <span style='color:#808030; '>,</span> b <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>this</span><br/>
+        <span style='color:#808030; '>,</span> e <span style='color:#808030; '>=</span> b<span style='color:#808030; '>.</span>getElementBy<span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>img</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><br/>
+        <span style='color:#808030; '>,</span> d<span style='color:#808030; '>,</span> c<span style='color:#800080; '>;</span><br/>
+      e<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>!==</span> m <span style='color:#808030; '>&amp;&amp;</span> e<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>.</span>src <span style='color:#808030; '>!==</span> m <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#808030; '>(</span>d <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#797997; '>Image</span><span style='color:#808030; '>,</span> d<span style='color:#808030; '>.</span>onload <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+        c <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#800080; '>;</span><br/>
+        c<span style='color:#808030; '>.</span>onload <span style='color:#808030; '>=</span> <span style='color:#0f4d75; '>null</span><span style='color:#800080; '>;</span><br/>
+        c<span style='color:#808030; '>.</span>onerror <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+          p <span style='color:#808030; '>=</span> <span style='color:#0f4d75; '>null</span><span style='color:#800080; '>;</span><br/>
+          b<span style='color:#808030; '>.</span>displayMessage<span style='color:#808030; '>(</span>c<span style='color:#808030; '>.</span>src<span style='color:#808030; '>)</span><br/>
+        <span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+        c<span style='color:#808030; '>.</span>src <span style='color:#808030; '>=</span> e<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>.</span>src <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>#</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> a<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>join</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><br/>
+      <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> d<span style='color:#808030; '>.</span>src <span style='color:#808030; '>=</span> e<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>.</span>src<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+      b<span style='color:#808030; '>.</span>deferExecution<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+        b<span style='color:#808030; '>.</span>nextFunction<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><br/>
+      <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#808030; '>,</span> nextFunction<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>var</span> a <span style='color:#808030; '>=</span> p<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span><br/>
+      a <span style='color:#808030; '>!==</span> m <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#808030; '>(</span>p<span style='color:#808030; '>.</span>shift<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>[</span>a<span style='color:#808030; '>]</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+  <span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+  l<span style='color:#808030; '>.</span>h237 <span style='color:#808030; '>=</span> h237 <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> n<span style='color:#800080; '>;</span><br/>
+  h<span style='color:#808030; '>.</span>addEventListener <span style='color:#800080; '>?</span> l<span style='color:#808030; '>.</span>addEventListener<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>load</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> n<span style='color:#808030; '>,</span> <span style='color:#808030; '>!</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>:</span> l<span style='color:#808030; '>.</span>attachEvent<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>onload</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> n<span style='color:#808030; '>)</span><br/>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>(</span>window<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<br/>
+<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span><br/>
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/download-host-logos">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/flash-player-download-links">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/flash-player-download-links">Flash Player Download Links</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/last-chromium-that-worked-on-windows-xp-adobe-flash-guide">Last Chromium That Worked On Windows XP + Adobe Flash Guide</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/waze-related-urls">Waze Related URLs</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/properly-send-response-with-base64-content">Properly Send-Response With Base64-Content</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bootclasspath-for-note-5-lollipop-sm-n920c">BOOTCLASSPATH For Note 5 Lollipop SM-N920C</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/http-response-status-codes">HTTP Response Status-Codes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/android-6-0-1-marshmallow-for-samsung-note-5-sm-n920c">Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/making-xda-code-readable-using-javascript-css3">Making XDA Code Readable Using JavaScript && CSS3</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cygwin-repo-on-top-of-git">Cygwin Repo On Top Of Git</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-better-uuid-using-chromes-crypto">JavaScript Ninja - Better UUID Using Chrome's Crypto</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cygwin-ctrl-left-to-jump-word-backward">Cygwin CTRL+Left To Jump Word Backward</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-quick-and-dirty-clickjacking-iframe-embedding-protection">JavaScript Ninja - Quick And Dirty ClickJacking IFRAME-Embedding Protection</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files">Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/repo-help">repo Help</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/everything-to-html-entity-bookmarklet">Everything To HTML-Entity Bookmarklet</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/network-traffic-analyze-tools">Network Traffic Analyze Tϕϕls</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)</title>
+  <meta itemprop="name"                                content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+  <meta name="dcterms.title"                           content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+  <meta property="og:title"                            content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+  <meta name="twitter:title"                           content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+  <meta name="twitter:text:title"                      content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+  <meta name="application-name"                        content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+  <meta name="subject"                                 content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+  <meta name="apple-mobile-web-app-title"              content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+  <meta name="msapplication-tooltip"                   content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+  <meta itemprop="description"                         content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+  <meta name="dcterms.description"                     content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+  <meta name="twitter:description"                     content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+  <meta property="og:description"                      content="Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="adding,alignnone,ambiguity,android,antivirus,apoption,attachment,autoreboot,blank,bootloader,button,clearing,code,collected,connections,cosmetic,cpoption,description,download,dport,events,faster,file,find,fixed,flashlock,fresettime,github,gomu,govnmkty,graphics,handlers,hdphu,header,html,hugefiles,image,kies,latest,leaks,linguistics,logo,memory,microcable,mirror,mirros,mobile,mode,modem,modified,names,nanderase,nyrb,odin,official,option,page,patch,patched,phone,phones,popups,port,portarrange,pure,recently,recompiled,repartition,report,rghost,safe,samsung,sendmyway,size,solidfiles,sport,stuff,supplied,target,tflash,title,tusfiles,uioption,usable,userdata,vector,version,versions,zgimllfo,zippyshare,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="adding,alignnone,ambiguity,android,antivirus,apoption,attachment,autoreboot,blank,bootloader,button,clearing,code,collected,connections,cosmetic,cpoption,description,download,dport,events,faster,file,find,fixed,flashlock,fresettime,github,gomu,govnmkty,graphics,handlers,hdphu,header,html,hugefiles,image,kies,latest,leaks,linguistics,logo,memory,microcable,mirror,mirros,mobile,mode,modem,modified,names,nanderase,nyrb,odin,official,option,page,patch,patched,phone,phones,popups,port,portarrange,pure,recently,recompiled,repartition,report,rghost,safe,samsung,sendmyway,size,solidfiles,sport,stuff,supplied,target,tflash,title,tusfiles,uioption,usable,userdata,vector,version,versions,zgimllfo,zippyshare,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/hebrew-unicode-range"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/hebrew-unicode-range"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/adding-noto-mono-courier-new-droid-sans-mono-roboto-mono-ubuntu-mono-to-windows-cmd"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/odin-3-10-7b3-patched-version"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/odin-3-10-7b3-patched-version"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/odin-3-10-7b3-patched-version"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/odin-3-10-7b3-patched-version"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/odin-3-10-7b3-patched-version"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/odin-3-10-7b3-patched-version"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2015-12-26T09:12:40+00:00"     />
+  <meta name="page-datetime"                           content="2015-12-26T09:12:40+00:00"     />
+  <meta property="article:published_time"              content="2015-12-26T09:12:40+00:00"     />
+  <meta name="dcterms.date"                            content="2015-12-26T09:12:40+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-04-23T14:50:49+00:00"    />
+  <meta property="article:modified_time"               content="2017-04-23T14:50:49+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/odin-3-10-7b3-patched-version"
+,"url"             : "https://icompile.eladkarako.com/odin-3-10-7b3-patched-version"
+,"headline"        : "Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"
+,"description"     : "Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)"
+,"datePosted"      : "2015-12-26T09:12:40+00:00"
+,"dateCreated"     : "2015-12-26T09:12:40+00:00"
+,"datePublished"   : "2015-12-26T09:12:40+00:00"
+,"dateModified"    : "2017-04-23T14:50:49+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0000611211541">
+  <header>
+    <h1 itemprop="headline">Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)</h1>
+    <sup>Posted at <time datetime="2017-04-23T14:50:49+00:00" itemprop="dateModified">Sun, 23 Apr 2017 14:50:49 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><a href="https://icompile.eladkarako.com/_uploads/2015/12/256.png" rel="attachment wp-att-3970"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/12/256.png" alt="256" rem-width="256" rem-height="256" class="alignnone size-full wp-image-3970" /></a><br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/12/icompile.eladkarako.com_odin_logo_header.png" rel="attachment wp-att-3969"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/12/icompile.eladkarako.com_odin_logo_header.png" alt="icompile.eladkarako.com_odin_logo_header" rem-width="856" rem-height="72" class="alignnone size-full wp-image-3969" /></a><br/>
+<br/>
+I've patched some things up in the latest <code>ODIN 3.10.7</code> mostly cosmetic and linguistics,<br/>
+adding description to the recently modified button-names clearing up the ambiguity once and for all,<br/>
+also recompiled some of the handlers in pure ASM to find the PORT faster,<br/>
+and fixed few of memory leaks during "hot-events" - USB connections and such..<br/>
+<!--more--><br/>
+<br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/12/2015-12-26_105922.jpg" rel="attachment wp-att-3971"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/12/2015-12-26_105922.jpg" alt="2015-12-26_105922" width="905" height="670" class="alignnone size-full wp-image-3971" /></a><br/>
+<br/>
+DOWNLOAD: <br/>
+<br/>
+<a download="Odin3_v3.10.7b3.zip" href="https://icompile.eladkarako.com/_uploads/2015/12/Odin3_v3.10.7b3.zip"rel="">Odin3_v3.10.7b3.zip</a> (796KB)<br/>
+<a download="Odin3_v3.10.7b3.rar" href="https://icompile.eladkarako.com/_uploads/2015/12/Odin3_v3.10.7b3.rar"rel="">Odin3_v3.10.7b3.rar</a> (805KB)<br/>
+<br/>
+MIRROS:<br/>
+<a mirror href="http://www71.zippyshare.com/v/8C6hdPHU/file.html" target="_blank">http://www71.zippyshare.com/v/8C6hdPHU/file.html</a><br/>
+<a mirror href="http://ge.tt/5c4gOMU2" target="_blank">http://ge.tt/5c4gOMU2</a><br/>
+<a mirror href="http://rghost.net/8wPx8nYRB" target="_blank">http://rghost.net/8wPx8nYRB</a><br/>
+<a mirror href="http://www.sendmyway.com/govnmkty9rrk" target="_blank">http://www.sendmyway.com/govnmkty9rrk</a><br/>
+<a mirror href="http://hugefiles.net/u7d6zgimllfo" target="_blank">http://hugefiles.net/u7d6zgimllfo</a><br/>
+<a mirror href="http://www.solidfiles.com/d/5fa5bba42c/" target="_blank">http://www.solidfiles.com/d/5fa5bba42c/</a><br/>
+<a mirror href="http://tusfiles.net/avyafwvzbnul" target="_blank">http://tusfiles.net/avyafwvzbnul</a><br/>
+<a mirror href="http://www.datafilehost.com/d/637aec6c" target="_blank">http://www.datafilehost.com/d/637aec6c</a><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+Odin3.ini<br/>
+<pre>
+[Option]
+Title=OdinDownload.com
+FactoryResetTime=1
+OptionEnable=1
+SLP=0
+AuthorityKey=pw
+RtnForSprint=1
+
+[APOption]
+RePartition=0
+AutoReboot=1
+FResetTime=1
+FlashLock=0
+TFlash=0
+NandErase=0
+
+[CPOption]
+PhoneEFSClear=0
+PhoneBootUpdate=0k
+
+[UIOption]
+LED=0
+
+[ButtonOption]
+Bootloader=1
+PDA=1
+Phone=1
+CSC=1
+UMS/PATCH=0
+USERDATA=0
+
+[D300Jig]
+;[0] not use / COM [1~2] usable
+D300COM=0
+;[0] not use / [1] use
+MicroCable=0
+
+[PortArrange]
+;SAMSUNG Mobile Modem port (for Download mode)
+DPort0=
+DPort1= 
+DPort2=
+DPort3= 
+DPort4= 
+DPort5=
+DPort6=
+DPort7=
+;SAMSUNG Android USB Modem port (for Samsung Kies)
+SPort0=
+SPort1=
+SPort2=
+SPort3=
+SPort4=
+SPort5=
+SPort6=
+SPort7=
+</pre><br/>
+<br/>
+<hr /><br/>
+<br/>
+Vector graphics - logo && stuff..<br/>
+<pre><br/>
+<br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/12/odin.svg" rel="attachment wp-att-4050">SVG</a><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/12/odin.dxf"rel="">DXF</a><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/12/odin.ai"rel="">AI</a><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/12/odin__256.png" rel="attachment wp-att-4057"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/12/odin__256.png" alt="odin__256" rem-width="256" rem-height="256" class="alignnone size-full wp-image-4057" />256.png</a><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/12/odin__128.png" rel="attachment wp-att-4056"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/12/odin__128.png" alt="odin__128" rem-width="128" rem-height="128" class="alignnone size-full wp-image-4056" />128.png</a><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/12/odin__96.png" rel="attachment wp-att-4055"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/12/odin__96.png" alt="odin__96" rem-width="96" rem-height="96" class="alignnone size-full wp-image-4055" />96.png</a><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/12/odin__72.png" rel="attachment wp-att-4054"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/12/odin__72.png" alt="odin__72" rem-width="72" rem-height="72" class="alignnone size-full wp-image-4054" />72.png</a><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/12/odin__48.png" rel="attachment wp-att-4053"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/12/odin__48.png" alt="odin__48" rem-width="48" rem-height="48" class="alignnone size-full wp-image-4053" />48.png</a><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/12/odin__32.png" rel="attachment wp-att-4052"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/12/odin__32.png" alt="odin__32" rem-width="32" rem-height="32" class="alignnone size-full wp-image-4052" />32.png</a><br/>
+<a href="https://icompile.eladkarako.com/_uploads/2015/12/odin__16.png" rel="attachment wp-att-4051"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/12/odin__16.png" alt="odin__16" rem-width="16" rem-height="16" class="alignnone size-full wp-image-4051" />16.png</a><br/>
+</pre><br/>
+<br/>
+<br/>
+Looking for all of the official Samsung-Odin versions?<br/>
+I've collected the safe, official versions, into the following page at GitHub:<br/>
+<a href="https://eladkarako.github.io/odin" target="_blank">https://eladkarako.github.io/odin</a><br/>
+or <a href="https://www.github.com/eladkarako/odin/" target="_blank">https://www.github.com/eladkarako/odin/</a>, safe and quick download, no ads or popups, antivirus report supplied too :]<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/hebrew-unicode-range">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/adding-noto-mono-courier-new-droid-sans-mono-roboto-mono-ubuntu-mono-to-windows-cmd">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adding-noto-mono-courier-new-droid-sans-mono-roboto-mono-ubuntu-mono-to-windows-cmd">'Ubuntu Mono' To Windows' CMD</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/crowd-wisdom-ebay-enhancements">JavaScript Ninja - Crowd Wisdom eBay Enhancements</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-ebay-fetch-accurate-sold-amount-and-update-the-main-page">JavaScript Snippet - eBay - Fetch Accurate "Sold" Amount And Update The Main Page</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/feature-policy-header">Feature-Policy Header</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromereader-a-news-reader-right-in-your-mobile-google-chrome">ChromeReader - A News Reader Right In Your Mobile Google Chrome</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/block-chrome-content-suggestions">ChromeReader/Content-Suggestions - Yes You CAN Block It...</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/flat-namednodemap">But Flat!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/how-to-block-websockets-on-google-chrome">Block Sockets? Ask Me How!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/remove-nonstandard-placeholder">And The New Non-Standard Placeholder - And How To Remove It!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-fake-native-code">A.K.A: Obfuscation Magic Helper</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/websocket-killer">WebSocket Killer - For Real!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/rgba_4444-textures-doom">Google Message :] *Sign* RGBA_4444 Textures Still Does Not Works Perfectly...</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/make-chrome-faster">Make Chrome Faster</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/dont-use-chrome-command-line-switch-enable-gpu-memory-buffer-compositor-resources-it-will-break-your-html5-videos">Don't Use Chrome Command-Line Switch `enable-gpu-memory-buffer-compositor-resources` It Will Break Your HTML5 Videos!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/faster-youtube">Faster YouTube</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/minimal-base64-with-unicode-support">Minimal Base64 With Unicode Support</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

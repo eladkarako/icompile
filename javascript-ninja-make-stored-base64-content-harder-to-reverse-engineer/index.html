@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer</title>
+  <meta itemprop="name"                                content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+  <meta name="dcterms.title"                           content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+  <meta property="og:title"                            content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+  <meta name="twitter:title"                           content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+  <meta name="twitter:text:title"                      content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+  <meta name="application-name"                        content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+  <meta name="subject"                                 content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+  <meta name="apple-mobile-web-app-title"              content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+  <meta name="msapplication-tooltip"                   content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+  <meta itemprop="description"                         content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+  <meta name="dcterms.description"                     content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+  <meta name="twitter:description"                     content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+  <meta property="og:description"                      content="JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="amount,ascii,atob,avoid,base,bold,btoa,color,console,content,correctly,data,decipher,decoded,encoded,encryption,engineer,error,escape,execute,failed,fallbacks,fixed,font,function,good,grab,grapes,handling,happen,harder,hidden,hiding,iteration,iterations,javascript,join,larger,length,make,naturally,needed,nice,ninja,number,password,process,proper,replace,return,reverse,scrape,small,split,stored,strings,substring,textual,unescape,unicode,weight,window,wrong,yumm,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="amount,ascii,atob,avoid,base,bold,btoa,color,console,content,correctly,data,decipher,decoded,encoded,encryption,engineer,error,escape,execute,failed,fallbacks,fixed,font,function,good,grab,grapes,handling,happen,harder,hidden,hiding,iteration,iterations,javascript,join,larger,length,make,naturally,needed,nice,ninja,number,password,process,proper,replace,return,reverse,scrape,small,split,stored,strings,substring,textual,unescape,unicode,weight,window,wrong,yumm,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/the-comma-first-procon"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/the-comma-first-procon"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/web-of-trust-wot-subdomains"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/javascript-ninja-make-stored-base64-content-harder-to-reverse-engineer"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/javascript-ninja-make-stored-base64-content-harder-to-reverse-engineer"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/javascript-ninja-make-stored-base64-content-harder-to-reverse-engineer"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/javascript-ninja-make-stored-base64-content-harder-to-reverse-engineer"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/javascript-ninja-make-stored-base64-content-harder-to-reverse-engineer"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/javascript-ninja-make-stored-base64-content-harder-to-reverse-engineer"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-11-09T19:13:27+00:00"     />
+  <meta name="page-datetime"                           content="2016-11-09T19:13:27+00:00"     />
+  <meta property="article:published_time"              content="2016-11-09T19:13:27+00:00"     />
+  <meta name="dcterms.date"                            content="2016-11-09T19:13:27+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-11-09T19:48:28+00:00"    />
+  <meta property="article:modified_time"               content="2016-11-09T19:48:28+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/javascript-ninja-make-stored-base64-content-harder-to-reverse-engineer"
+,"url"             : "https://icompile.eladkarako.com/javascript-ninja-make-stored-base64-content-harder-to-reverse-engineer"
+,"headline"        : "JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"
+,"description"     : "JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer"
+,"datePosted"      : "2016-11-09T19:13:27+00:00"
+,"dateCreated"     : "2016-11-09T19:13:27+00:00"
+,"datePublished"   : "2016-11-09T19:13:27+00:00"
+,"dateModified"    : "2016-11-09T19:48:28+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007088178741">
+  <header>
+    <h1 itemprop="headline">JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer</h1>
+    <sup>Posted at <time datetime="2016-11-09T19:48:28+00:00" itemprop="dateModified">Wed, 09 Nov 2016 19:48:28 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">A good amount of in-app stored data <sup>(hopefully small-amount of text, unless there is something *wrong with you*)</sup> is "encrypted" as base64<br/>
+- and, while encryption is 'hardly the point', it would be nice to make stored data (textual! small amount!) harder to rip/decipher/scrape/grab/<em>grapes?</em><sup>(yumm!)</sup><br/>
+<br/>
+here is raw to "hidden" process (including proper Unicode handling and some "=" hiding, to avoid the most obvious base64 characteristics..)<br/>
+<!--more--><br/>
+<pre><span style='color:#800000; font-weight:bold; '>var</span> s<span style='color:#808030; '>,</span> fixed_length<span style='color:#800080; '>;</span><br/>
+s <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>my password1</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>                  <span style='color:#696969; '>/* raw data                       */</span><br/>
+s <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>unescape</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>encodeURIComponent</span><span style='color:#808030; '>(</span>    <span style='color:#696969; '>/* to bit string  (Unicode2ASCII) */</span><br/>
+      <span style='color:#800000; '>"</span><span style='color:#0000e6; '>my password</span><span style='color:#800000; '>"</span><br/>
+    <span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<br/>
+s <span style='color:#808030; '>=</span> btoa<span style='color:#808030; '>(</span>s<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+s <span style='color:#808030; '>=</span> s<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><span style='color:#800000; '>/</span><span style='color:#0f69ff; '>\\=</span><span style='color:#808030; '>+</span><span style='color:#808030; '>$</span><span style='color:#800000; '>/</span><span style='color:#800000; font-weight:bold; '>g</span><span style='color:#808030; '>,</span><span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<br/>
+s <span style='color:#808030; '>=</span> s<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>reverse<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>join</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>   <span style='color:#696969; '>/* make similar raw-strings significantly different (at first look)*/</span><br/>
+<br/>
+s <span style='color:#808030; '>=</span> btoa<span style='color:#808030; '>(</span>s<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+s <span style='color:#808030; '>=</span> s<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><span style='color:#800000; '>/</span><span style='color:#0f69ff; '>\\=</span><span style='color:#808030; '>+</span><span style='color:#808030; '>$</span><span style='color:#800000; '>/</span><span style='color:#800000; font-weight:bold; '>g</span><span style='color:#808030; '>,</span><span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<br/>
+console<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>log</span><span style='color:#808030; '>(</span><br/>
+s<br/>
+<span style='color:#808030; '>,</span>s<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span><br/>
+<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+</pre><br/>
+<br/>
+<hr/><br/>
+<br/>
+more function like, the only thing needed to remember is using same amount of "iterations"<br/>
+<br/>
+<pre><span style='color:#800000; font-weight:bold; '>function</span> enc<span style='color:#808030; '>(</span>s<span style='color:#808030; '>,</span> iteration<span style='color:#696969; '>/*==1*/</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+  s <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>unescape</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>encodeURIComponent</span><span style='color:#808030; '>(</span>s<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>  <span style='color:#696969; '>/* handling Unicode */</span><br/>
+  <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>var</span> i<span style='color:#808030; '>=</span><span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> i<span style='color:#808030; '>&lt;</span>iteration<span style='color:#800080; '>;</span> i<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span><br/>
+    s <span style='color:#808030; '>=</span> btoa<span style='color:#808030; '>(</span>s<span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><span style='color:#800000; '>/</span><span style='color:#0f69ff; '>\\=</span><span style='color:#808030; '>+</span><span style='color:#808030; '>$</span><span style='color:#800000; '>/</span><span style='color:#800000; font-weight:bold; '>g</span><span style='color:#808030; '>,</span><span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800000; font-weight:bold; '>return</span> s<span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>function</span> dec<span style='color:#808030; '>(</span>s<span style='color:#808030; '>,</span> iteration<span style='color:#696969; '>/*==1*/</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+  <span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>var</span> i<span style='color:#808030; '>=</span><span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> i<span style='color:#808030; '>&lt;</span>iteration<span style='color:#800080; '>;</span> i<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+    s <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>s <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>===</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>substring</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> s<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>+</span> s<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span> <span style='color:#808030; '>%</span> <span style='color:#008c00; '>4</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> <span style='color:#696969; '>/* re-(right-"="-)pad */</span><br/>
+    s <span style='color:#808030; '>=</span> atob<span style='color:#808030; '>(</span>s<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><br/>
+  s <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>decodeURIComponent</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>escape</span><span style='color:#808030; '>(</span>s<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>    <span style='color:#696969; '>/* handling Unicode */</span><br/>
+  <span style='color:#800000; font-weight:bold; '>return</span> s<span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><br/>
+</pre><br/>
+<br/>
+for example:<br/>
+<pre><br/>
+enc("a") or enc("a",0)<br/>
+"a"<br/>
+enc("a",1)<br/>
+"YQ"<br/>
+enc("a",2)<br/>
+"WVE"<br/>
+enc("a",3)<br/>
+"V1ZF"<br/>
+<hr/><br/>
+dec("a") or dec("a",0)<br/>
+"a"<br/>
+<hr/><br/>
+*** dec("a",1)<br/>
+*** "Failed to execute 'atob' on 'Window': The string to be decoded is not correctly encoded." (error)<br/>
+*** this will happen if used iteration number larger than what actually used in "enc" function. naturally you'll need some error handling and fallbacks :]<br/>
+<hr/><br/>
+dec("V1ZF",1)<br/>
+"WVE"<br/>
+dec("WVE",1)<br/>
+...<br/>
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/the-comma-first-procon">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/web-of-trust-wot-subdomains">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/web-of-trust-wot-subdomains">Web of Trust (WOT) SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/comodo-subdomains">Comodo SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/embymedia-subdomains">emby.media SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/7zip">7Zip</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/js-heuristics-tip-element-distribution">JavaScript Ninja - Heuristic-Algorithms Tip: Page Element Spread/Distribution</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-human-readable-time-diff">"Will Be In A Day",...)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-human-readable-time-diff">"Will Be In A Day",...)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-a-human-readable-memory-formatter-add-commas-to-a-number-by-regular-expression">Add Commas To A Number By Regular-Expression</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nodejs-nightly">NodeJS Nightly</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/android-sdk">Android SDK</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/remove-k-lites-annoying-folders-context-menu">Remove K-Lite's Annoying Folder's Context-Menu</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/codecs">Codecs</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vcf-format-android-phone-book-export-import-example-using-long-list-of-junkspam-phone-numbers">VCF Format - Android Phone Book Export Import - Example Using Long List Of Junk/Spam Phone Numbers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-float-formatter">JavaScript Snippet - A Much Required Float Formatter</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/prevent-blogspot-redirect">Solved: Sticky BlogSpot Domain - Prevent Gio-Location Redirection</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/how-to-install-jce">How To Install JCE</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

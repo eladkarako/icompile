@@ -1,0 +1,4 @@
+##Disable PHP Execution in Some WordPress Directories
+<Files *.php>
+  deny from all
+</Files>

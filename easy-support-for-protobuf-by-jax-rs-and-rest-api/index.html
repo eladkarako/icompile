@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Easy Support For Protobuf By JAX-RS And REST-API</title>
+  <meta itemprop="name"                                content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+  <meta name="dcterms.title"                           content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+  <meta property="og:title"                            content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+  <meta name="twitter:title"                           content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+  <meta name="twitter:text:title"                      content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+  <meta name="application-name"                        content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+  <meta name="subject"                                 content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+  <meta name="apple-mobile-web-app-title"              content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+  <meta name="msapplication-tooltip"                   content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+  <meta itemprop="description"                         content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+  <meta name="dcterms.description"                     content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+  <meta name="twitter:description"                     content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+  <meta property="og:description"                      content="Easy Support For Protobuf By JAX-RS And REST-API"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="aboutjava,accept,accepts,access,adding,addphone,addressbook,alas,amount,annotate,annotation,annotations,antrun,apache,apis,application,args,array,artifactid,aspect,assumption,back,baos,base,binary,blog,boolean,bottleneck,bring,buffer,buffers,build,builder,builds,byte,bytes,call,caller,calls,capability,catch,change,classes,classname,client,code,comment,complexity,complicated,config,connections,constraints,consumes,consuming,container,content,control,convinced,covers,create,data,default,define,definition,dependency,deploy,deployed,describe,description,deserialize,designed,developed,developer,development,direct,directly,docs,download,drastically,easier,easily,easy,email,embedded,endpoints,enter,entries,enum,enums,envelope,environment,exception,exec,executable,execute,execution,executions,expect,expected,expecting,extending,extensible,extension,fairly,fast,fastinfoset,features,file,files,find,form,format,forward,frameworks,fromuri,future,generate,generated,generictype,getclasses,getmethod,getname,getperson,getsize,goal,goals,google,graven,great,grizzly,groupid,hashmap,hide,high,home,homework,hoping,html,httpheaders,huge,idea,ideas,implement,implemented,implements,import,included,includes,incubator,index,information,infoset,initparams,inputstream,installed,instantiate,integration,intellij,interesting,invoke,ioexception,isreadable,iswritable,iswriteable,jars,java,javadoc,javax,jaxrs,jersey,jetbrains,json,junit,language,languages,latest,length,lets,limitation,localhost,love,make,makes,making,matches,maven,mediatype,mergefrom,message,messages,method,methods,mime,mismatched,mkdir,mobile,multiple,needed,newbuilder,nice,nonav,note,notice,number,object,open,option,optional,outer,outputs,override,overriding,overview,package,packages,pass,passed,passing,path,paths,performance,person,phase,phone,phonenumber,phonetype,plugin,port,post,print,println,private,produces,producing,product,production,project,property,proposed,protected,proto,protobuf,protobufs,protoc,protocol,protocols,provide,provider,providers,public,python,read,reader,readers,readfrom,reading,ready,receive,reduce,reduced,reflect,reflection,reflects,register,registered,release,remove,repeated,repeating,request,requests,required,resource,resources,rest,restricted,return,returning,round,running,safe,sampullara,satisfy,scanned,scanning,scope,sees,send,serializing,server,service,services,servlet,setdoinput,setdooutput,setemail,setid,setname,setnumber,settype,setup,sides,simple,size,slightly,small,socket,sort,sourceroot,sources,special,spent,spersonnhit,stable,stanza,start,started,starting,starts,static,step,stop,store,straight,strategy,stream,streaming,super,support,supported,surface,system,systems,table,talk,target,tasks,teardown,temporarily,test,testing,tests,thrift,throw,throws,tobytearray,total,touch,trip,tutorial,type,typed,types,underneath,unmodified,uribuilder,urlc,urllib,urlopen,valid,variety,verbose,verify,version,void,weak,weakhashmap,webresource,webserver,wire,work,working,works,worry,write,writer,writers,writeto,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="aboutjava,accept,accepts,access,adding,addphone,addressbook,alas,amount,annotate,annotation,annotations,antrun,apache,apis,application,args,array,artifactid,aspect,assumption,back,baos,base,binary,blog,boolean,bottleneck,bring,buffer,buffers,build,builder,builds,byte,bytes,call,caller,calls,capability,catch,change,classes,classname,client,code,comment,complexity,complicated,config,connections,constraints,consumes,consuming,container,content,control,convinced,covers,create,data,default,define,definition,dependency,deploy,deployed,describe,description,deserialize,designed,developed,developer,development,direct,directly,docs,download,drastically,easier,easily,easy,email,embedded,endpoints,enter,entries,enum,enums,envelope,environment,exception,exec,executable,execute,execution,executions,expect,expected,expecting,extending,extensible,extension,fairly,fast,fastinfoset,features,file,files,find,form,format,forward,frameworks,fromuri,future,generate,generated,generictype,getclasses,getmethod,getname,getperson,getsize,goal,goals,google,graven,great,grizzly,groupid,hashmap,hide,high,home,homework,hoping,html,httpheaders,huge,idea,ideas,implement,implemented,implements,import,included,includes,incubator,index,information,infoset,initparams,inputstream,installed,instantiate,integration,intellij,interesting,invoke,ioexception,isreadable,iswritable,iswriteable,jars,java,javadoc,javax,jaxrs,jersey,jetbrains,json,junit,language,languages,latest,length,lets,limitation,localhost,love,make,makes,making,matches,maven,mediatype,mergefrom,message,messages,method,methods,mime,mismatched,mkdir,mobile,multiple,needed,newbuilder,nice,nonav,note,notice,number,object,open,option,optional,outer,outputs,override,overriding,overview,package,packages,pass,passed,passing,path,paths,performance,person,phase,phone,phonenumber,phonetype,plugin,port,post,print,println,private,produces,producing,product,production,project,property,proposed,protected,proto,protobuf,protobufs,protoc,protocol,protocols,provide,provider,providers,public,python,read,reader,readers,readfrom,reading,ready,receive,reduce,reduced,reflect,reflection,reflects,register,registered,release,remove,repeated,repeating,request,requests,required,resource,resources,rest,restricted,return,returning,round,running,safe,sampullara,satisfy,scanned,scanning,scope,sees,send,serializing,server,service,services,servlet,setdoinput,setdooutput,setemail,setid,setname,setnumber,settype,setup,sides,simple,size,slightly,small,socket,sort,sourceroot,sources,special,spent,spersonnhit,stable,stanza,start,started,starting,starts,static,step,stop,store,straight,strategy,stream,streaming,super,support,supported,surface,system,systems,table,talk,target,tasks,teardown,temporarily,test,testing,tests,thrift,throw,throws,tobytearray,total,touch,trip,tutorial,type,typed,types,underneath,unmodified,uribuilder,urlc,urllib,urlopen,valid,variety,verbose,verify,version,void,weak,weakhashmap,webresource,webserver,wire,work,working,works,worry,write,writer,writers,writeto,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/enable-xfade-overlapping-in-winamp"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/enable-xfade-overlapping-in-winamp"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javadoc-searchmonkey-to-the-rescue"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/easy-support-for-protobuf-by-jax-rs-and-rest-api"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/easy-support-for-protobuf-by-jax-rs-and-rest-api"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/easy-support-for-protobuf-by-jax-rs-and-rest-api"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/easy-support-for-protobuf-by-jax-rs-and-rest-api"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/easy-support-for-protobuf-by-jax-rs-and-rest-api"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/easy-support-for-protobuf-by-jax-rs-and-rest-api"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2008-11-21T00:10:07+00:00"     />
+  <meta name="page-datetime"                           content="2008-11-21T00:10:07+00:00"     />
+  <meta property="article:published_time"              content="2008-11-21T00:10:07+00:00"     />
+  <meta name="dcterms.date"                            content="2008-11-21T00:10:07+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-04-05T00:10:44+00:00"    />
+  <meta property="article:modified_time"               content="2016-04-05T00:10:44+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/easy-support-for-protobuf-by-jax-rs-and-rest-api"
+,"url"             : "https://icompile.eladkarako.com/easy-support-for-protobuf-by-jax-rs-and-rest-api"
+,"headline"        : "Easy Support For Protobuf By JAX-RS And REST-API"
+,"description"     : "Easy Support For Protobuf By JAX-RS And REST-API"
+,"datePosted"      : "2008-11-21T00:10:07+00:00"
+,"dateCreated"     : "2008-11-21T00:10:07+00:00"
+,"datePublished"   : "2008-11-21T00:10:07+00:00"
+,"dateModified"    : "2016-04-05T00:10:44+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007026227221">
+  <header>
+    <h1 itemprop="headline">Easy Support For Protobuf By JAX-RS And REST-API</h1>
+    <sup>Posted at <time datetime="2016-04-05T00:10:44+00:00" itemprop="dateModified">Tue, 05 Apr 2016 00:10:44 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">One of the great things about the <a href="http://jcp.org/aboutJava/communityprocess/final/jsr311/index.html">JAX-RS specification</a> is that it is very extensible and adding new providers for different mime-types is very easy. One of the interesting binary protocols out there is <a href="http://code.google.com/apis/protocolbuffers/docs/overview.html">Google Protocol Buffers</a>. They are designed for high-performance systems and drastically reduce the amount of over-the-wire data and also the amount of CPU spent serializing and deserializing that data. There are other similar frameworks out there including <a href="http://java.sun.com/developer/technicalArticles/xml/fastinfoset/">Fast Infoset</a> and <a href="http://incubator.apache.org/thrift/">Thrift</a>.<br/>
+<br/>
+<!--more--><br/>
+<br/>
+Extending JAX-RS to support those protocols is nearly identical so all of the ideas I'll talk about are generally valid for those frameworks as well. The one limitation that we will table for now is that JAX-RS only works over HTTP and will not work for raw socket protocols and the high-performance aspect of protobufs is somewhat reduced by our dependency on the HTTP envelope. My assumption is that you have done your homework and know that message passing is your overriding bottleneck.<br/>
+<span id="more-955"></span><br/>
+The first thing you will need to do to get started is to download and build Protocol Buffers. You can get the latest stable release from <a href="http://code.google.com/p/protobuf/">here</a>. All the example code you will find in this blog post was developed against protobuf-2.0.3 and the JAX-RS 1.0 specification (using<a href="https://jersey.dev.java.net/">jersey-1.0.1</a>) though I don't expect the API to change very much going forward. Once you have <em>protoc</em> in your path you are ready to create your first JAX-RS / protobuf project.<br/>
+<br/>
+The dependencies you will need to create the application are actually quite small. I use<a href="http://maven.apache.org/">Maven</a> (and <a href="http://www.jetbrains.com/idea/download/">IntelliJ 8.0</a>) to do my development so that is how I'll describe what you need. For running the application you'll need these installed:<br/>
+<pre>    &lt;dependency&gt;
+      &lt;groupId&gt;com.sun.jersey&lt;/groupId&gt;
+      &lt;artifactId&gt;jersey-server&lt;/artifactId&gt;
+      &lt;version&gt;1.0.1&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.sun.grizzly&lt;/groupId&gt;
+      &lt;artifactId&gt;grizzly-servlet-webserver&lt;/artifactId&gt;
+      &lt;version&gt;1.8.6.3&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.google.protobuf&lt;/groupId&gt;
+      &lt;artifactId&gt;protobuf-java&lt;/artifactId&gt;
+      &lt;version&gt;2.0.3&lt;/version&gt;
+    &lt;/dependency&gt;
+
+</pre><br/>
+Then to execute the tests that we will create to verify that things are working as expected you'll need two additional test-time only dependencies:<br/>
+<pre>    &lt;dependency&gt;
+      &lt;groupId&gt;com.sun.jersey&lt;/groupId&gt;
+      &lt;artifactId&gt;jersey-client&lt;/artifactId&gt;
+      &lt;version&gt;1.0.1&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;4.5&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+
+</pre><br/>
+Not a huge set of dependencies on the surface but Maven does hide a lot of the complexity underneath — total is about 15 jars (mostly grizzly). The next step is to create a Protocol Buffer using their definition language. Instead of making one up myself, I'll just use the one from their <a href="http://code.google.com/apis/protocolbuffers/docs/javatutorial.html">example</a>, addressbook.proto:<br/>
+<pre>package tutorial;
+
+option java_package = "com.sampullara.jaxrsprotobuf.tutorial";
+option java_outer_classname = "AddressBookProtos";
+
+message Person {
+  required string name = 1;
+  required int32 id = 2;
+  optional string email = 3;
+
+  enum PhoneType {
+    MOBILE = 0;
+    HOME = 1;
+    WORK = 2;
+  }
+
+  message PhoneNumber {
+    required string number = 1;
+    optional PhoneType type = 2 [default = HOME];
+  }
+
+  repeated PhoneNumber phone = 4;
+}
+
+message AddressBook {
+  repeated Person person = 1;
+}
+
+</pre><br/>
+A fairly simple data description but it does touch on a lot of the features of Protocol Buffers including embedded messages, enums, repeating entries and their type system. Now lets define a simple service that we want to get to work using the <a href="https://jsr311.dev.java.net/nonav/javadoc/javax/ws/rs/ext/package-summary.html">extension SPI</a> of JAX-RS. This service will have two methods, a GET method for returning a new instance of a <em>Person</em> and a POST method that just reflects what is passed to it back to the caller unmodified. That will also let us do some round trip testing. Here is the proposed service:<br/>
+<pre>package com.sampullara.jaxrsprotobuf.tutorial;
+
+import javax.ws.rs.*;
+
+@Path("/person")
+public class AddressBookService {
+    @GET
+    @Produces("application/x-protobuf")
+    public AddressBookProtos.Person getPerson() {
+        return AddressBookProtos.Person.newBuilder()
+                .setId(1)
+                .setName("Sam")
+                .setEmail("sam@sampullara.com")
+                .addPhone(AddressBookProtos.Person.PhoneNumber.newBuilder()
+                        .setNumber("415-555-1212")
+                        .setType(AddressBookProtos.Person.PhoneType.MOBILE)
+                        .build())
+                .build();
+    }
+
+    @POST
+    @Consumes("application/x-protobuf")
+    @Produces("application/x-protobuf")
+    public AddressBookProtos.Person reflect(AddressBookProtos.Person person) {
+        return person;
+    }
+}
+
+</pre><br/>
+For each of these methods we've restricted them to either consuming or producing content of type <em>application/x-protobuf</em>. When JAX-RS sees a request that matches that type or a caller that accepts that type these will be valid endpoints to satisfy those requests. Out of the box, Jersey includes readers and writers for a variety of types including form data, XML and JSON. They also provide a way to register new mime-type readers and writers with a very simple set of annotations on classes that implement either MessageBodyReader or MessageBodyWriter. The class that implements reading is very straight forward, first it calls you back to see if you can read something, then it calls you to actually read it passing you the stream of data. Here is the implementation:<br/>
+<pre>    @Provider
+    @Consumes("application/x-protobuf")
+    public static class ProtobufMessageBodyReader implements MessageBodyReader&lt;Message&gt; {
+        public boolean isReadable(Class&lt;?&gt; type, Type genericType, Annotation[] annotations, MediaType mediaType) {
+            return Message.class.isAssignableFrom(type);
+        }
+
+        public Message readFrom(Class&lt;Message&gt; type, Type genericType, Annotation[] annotations,
+                    MediaType mediaType, MultivaluedMap&lt;String, String&gt; httpHeaders, 
+                    InputStream entityStream) throws IOException, WebApplicationException {
+            try {
+                Method newBuilder = type.getMethod("newBuilder");
+                GeneratedMessage.Builder builder = (GeneratedMessage.Builder) newBuilder.invoke(type);
+                return builder.mergeFrom(entityStream).build();
+            } catch (Exception e) {
+                throw new WebApplicationException(e);
+            }
+        }
+    }
+
+</pre><br/>
+This class either needs to be under a package that is registered to be scanned when the application starts or it could be explicitly registered by extending <em>Application</em>. You'll see in our Main method later we use the former strategy. You'll note that in order for us to instantiate a new Protocol Buffer builder we need to use reflection on the type that JAX-RS is expecting. I've convinced myself thats the best way to do it but please comment if you can think of a better way. If there were additional configuration information you needed to pass to the reader you could annotate the methods with that information and receive it here in the annotations array.<br/>
+<br/>
+The writer is a bit more complicated because in addition to the <em>isWritable</em> and <em>writeTo</em>methods you have to be able to return the size that you are going to write. I was hoping that Protocol Buffers supported a quick way to sum the size of an object but alas they do not so instead I actually do the write in <em>getSize</em> and temporarily store the result with a weak map. In the future I'd like to see streaming better supported. Here is how I implemented the writer:<br/>
+<pre>    @Provider
+    @Produces("application/x-protobuf")
+    public static class ProtobufMessageBodyWriter implements MessageBodyWriter&lt;Message&gt; {
+        public boolean isWriteable(Class&lt;?&gt; type, Type genericType, Annotation[] annotations, MediaType mediaType) {
+            return Message.class.isAssignableFrom(type);
+        }
+
+        private Map&lt;Object, byte[]&gt; buffer = new WeakHashMap&lt;Object, byte[]&gt;();
+
+        public long getSize(Message m, Class&lt;?&gt; type, Type genericType, Annotation[] annotations, MediaType mediaType) {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            try {
+                m.writeTo(baos);
+            } catch (IOException e) {
+                return -1;
+            }
+            byte[] bytes = baos.toByteArray();
+            buffer.put(m, bytes);
+            return bytes.length;
+        }
+
+        public void writeTo(Message m, Class type, Type genericType, Annotation[] annotations, 
+                    MediaType mediaType, MultivaluedMap httpHeaders,
+                    OutputStream entityStream) throws IOException, WebApplicationException {
+            entityStream.write(buffer.remove(m));
+        }
+    }
+
+</pre><br/>
+I'd love to get around the non-streaming limitation in this integration so if you have any ideas, send them my way. Now we also need to generate the code from the Protocol Buffer definition file. I again use Maven to do that with this additional stanza:<br/>
+<pre>      &lt;plugin&gt;
+        &lt;artifactId&gt;maven-antrun-plugin&lt;/artifactId&gt;
+        &lt;executions&gt;
+          &lt;execution&gt;
+            &lt;id&gt;generate-sources&lt;/id&gt;
+            &lt;phase&gt;generate-sources&lt;/phase&gt;
+            &lt;configuration&gt;
+              &lt;tasks&gt;
+                &lt;mkdir dir='target/generated-sources' /&gt;
+                &lt;exec executable='protoc'&gt;
+                  &lt;arg value='--java_out=target/generated-sources' /&gt;
+                  &lt;arg value='src/main/resources/addressbook.proto' /&gt;
+                &lt;/exec&gt;
+              &lt;/tasks&gt;
+              &lt;sourceRoot&gt;target/generated-sources&lt;/sourceRoot&gt;
+            &lt;/configuration&gt;
+            &lt;goals&gt;
+              &lt;goal&gt;run&lt;/goal&gt;
+            &lt;/goals&gt;
+          &lt;/execution&gt;
+        &lt;/executions&gt;
+      &lt;/plugin&gt;
+
+</pre><br/>
+That should now be enough to build the service itself along with the message readers and writers. The last thing to do on the production side is to show how you would deploy this using the <a href="https://grizzly.dev.java.net/">Grizzly</a> container:<br/>
+<pre>public class Main {
+    public static final URI BASE_URI = UriBuilder.fromUri("http://localhost/").port(9998).build();
+
+    public static void main(String[] args) throws IOException {
+        System.out.println("Starting grizzly...");
+        URI uri = BASE_URI;
+        SelectorThread threadSelector = createServer(uri);
+        System.out.println(String.format("Try out %spersonnHit enter to stop it...", uri));
+        System.in.read();
+        threadSelector.stopEndpoint();
+    }
+
+    public static SelectorThread createServer(URI uri) throws IOException {
+        Map&lt;String, String&gt; initParams = new HashMap&lt;String, String&gt;();
+        initParams.put("com.sun.jersey.config.property.packages", "com.sampullara");
+        return GrizzlyWebContainerFactory.create(uri, initParams);
+    }
+}
+
+</pre><br/>
+Jersey+Grizzly makes it very easy instantiate a new servlet container at a particular URI and immediately access the REST services that you have deployed. For testing, it is nice to be able to bring up an actual environment so easily. In our tests we are also going to make use of the REST client that is included with Jersey so that you can see the serialization on both sides of the wire. In order to get the server up and running during the test we need to implement <em>setUp</em>() and <em>tearDown</em>():<br/>
+<pre>    private SelectorThread threadSelector;
+    private WebResource r;
+
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+
+        //start the Grizzly web container and create the client
+        threadSelector = Main.createServer(Main.BASE_URI);
+
+        ClientConfig cc = new DefaultClientConfig();
+        cc.getClasses().add(ProtobufProviders.ProtobufMessageBodyReader.class);
+        cc.getClasses().add(ProtobufProviders.ProtobufMessageBodyWriter.class);
+        Client c = Client.create(cc);
+        r = c.resource(Main.BASE_URI);
+    }
+
+    @Override
+    protected void tearDown() throws Exception {
+        super.tearDown();
+        threadSelector.stopEndpoint();
+    }
+
+
+</pre><br/>
+The client doesn't have the special class scanning capability so we directly register our providers with the client and point it at the same URI that the server is running on. Being able to control those in your tests makes integration tests far easier as you don't have to worry about mismatched configurations. The first tests we will run will be using the Jersey client:<br/>
+<pre>    public void testUsingJerseyClient() {
+        WebResource wr = r.path("person");
+        AddressBookProtos.Person p = wr.get(AddressBookProtos.Person.class);
+        assertEquals("Sam", p.getName());
+
+        AddressBookProtos.Person p2 = wr.type("application/x-protobuf").post(AddressBookProtos.Person.class, p);
+        assertEquals(p, p2);
+    }
+
+</pre><br/>
+Notice how you can build up a web resource incrementally adding additional constraints or paths to it until ultimately you call one of the HTTP methods on that resource. We also see that using that client API we get typed access to the REST server. Slightly more complicated is another test using direct HTTP connections:<br/>
+<pre>    public void testUsingURLConnection() throws IOException {
+        AddressBookProtos.Person person;
+        {
+            URL url = new URL("http://localhost:9998/person");
+            URLConnection urlc = url.openConnection();
+            urlc.setDoInput(true);
+            urlc.setRequestProperty("Accept", "application/x-protobuf");
+            person = AddressBookProtos.Person.newBuilder().mergeFrom(urlc.getInputStream()).build();
+            assertEquals("Sam", person.getName());
+        }
+        {
+            URL url = new URL("http://localhost:9998/person");
+            HttpURLConnection urlc = (HttpURLConnection) url.openConnection();
+            urlc.setDoInput(true);
+            urlc.setDoOutput(true);
+            urlc.setRequestMethod("POST");
+            urlc.setRequestProperty("Accept", "application/x-protobuf");
+            urlc.setRequestProperty("Content-Type", "application/x-protobuf");
+            person.writeTo(urlc.getOutputStream());
+            AddressBookProtos.Person person2 = AddressBookProtos.Person.newBuilder().mergeFrom(urlc.getInputStream()).build();
+            assertEquals(person, person2);
+        }
+    }
+
+</pre><br/>
+This code looks more like what a non-Java client might do to access your REST service and deserialize the information using their Protocol Buffers. In fact, why don't we try this with some Python 2.5 code:<br/>
+<pre>import urllib
+import addressbook_pb2
+
+f = urllib.urlopen("http://localhost:9998/person")
+person = addressbook_pb2.Person()
+person.ParseFromString(f.read())
+print person.name
+
+</pre><br/>
+Works great and outputs "Sam" as expected. Very fast but still interoperable between multiple languages in a type-safe way. Once Thrift is further along I will likely make the same sort of interoperability possible.<br/>
+<br/>
+For those that just want to open up the final product and see how it all works, here is a <a href="http://buildandtest.com/files/jaxrs-protobuf.zip">link to download it</a>. You'll also note that I actually use <a href="http://code.google.com/p/graven/">graven</a> under the covers to do my builds as Maven's XML is a little too verbose for me.</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/enable-xfade-overlapping-in-winamp">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javadoc-searchmonkey-to-the-rescue">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javadoc-searchmonkey-to-the-rescue">Javadoc? SearchMonkey To The Rescue</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/criteria-api-to-jpa">Criteria-API To JPA</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/i-saw-a-lovely-street-art-in-germany-today">I Saw A Lovely Street-Art In Germany Today!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-fastest-array-shuffle">JavaScript Ninja - Fastest Array Shuffle. No Loops.</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/fontconfig-building-under-cygwin">FontConfig Building Under Cygwin</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/all-mtk-modems-pdanet-samsungs-googles-official-adb-usb-drivers">Google's Official - ADB USB Drivers</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-extracting-text-content-using-old-school-xpath-query-evaluating">JavaScript Ninja - Extracting Text-Content Using Old-School XPATH Query-Evaluating</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-force-trigger-spell-check-on-an-element">JavaScript Ninja - Force Trigger Spell-Check On An Element</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vcf-format-dev-hub-notes">VCF Format Dev Hub Notes</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/animated-israel-flag">Animated Israel Flag</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disable-youtube-spf">Disable YouTube SPF</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/urls-google-tia-text-input-assistant">URLs - Google TIA - Text Input Assistant</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-parse-time-format-into-number-of-seconds">JavaScript Snippet - Parse Time Format Into Number Of Seconds</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-123-cookie-to-hash-enumerator">JavaScript Snippet - 123 Cookie To Hash Enumerator</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stackoverflow-subdomains">Stackoverflow-Related Sub-Domains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/gae-script-headers">Google-App-Engine PHP - Script With Headers</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

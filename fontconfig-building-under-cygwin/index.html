@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>FontConfig Building Under Cygwin</title>
+  <meta itemprop="name"                                content="FontConfig Building Under Cygwin"       />
+  <meta name="dcterms.title"                           content="FontConfig Building Under Cygwin"       />
+  <meta property="og:title"                            content="FontConfig Building Under Cygwin"       />
+  <meta name="twitter:title"                           content="FontConfig Building Under Cygwin"       />
+  <meta name="twitter:text:title"                      content="FontConfig Building Under Cygwin"       />
+  <meta name="application-name"                        content="FontConfig Building Under Cygwin"       />
+  <meta name="subject"                                 content="FontConfig Building Under Cygwin"       />
+  <meta name="apple-mobile-web-app-title"              content="FontConfig Building Under Cygwin"       />
+  <meta name="msapplication-tooltip"                   content="FontConfig Building Under Cygwin"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="FontConfig Building Under Cygwin"       />
+  <meta itemprop="description"                         content="FontConfig Building Under Cygwin"       />
+  <meta name="dcterms.description"                     content="FontConfig Building Under Cygwin"       />
+  <meta name="twitter:description"                     content="FontConfig Building Under Cygwin"       />
+  <meta property="og:description"                      content="FontConfig Building Under Cygwin"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accept,accepts,aclocal,alignment,amount,anongit,ansi,archive,archiver,argument,arguments,array,associate,assuming,atomic,attribute,aumzszcj,auowtq,autoconf,autogen,autoheader,automake,auxiliary,avail,basetype,batch,bbfc,bigendian,binaries,binary,bitmap,bits,blank,blanks,brace,build,building,built,byte,cache,cached,call,ccld,char,checking,ciqhb,code,command,commands,compatible,compile,compiler,compiling,conf,config,configure,configured,conforming,const,content,convert,copy,copying,count,create,creating,cross,customised,cygdrive,cygming,cygwin,dangerous,dbnuj,ddll,declared,default,define,defines,depcomp,dependency,dependent,depfiles,deprecated,directory,dirent,dirs,dlfcn,dlltool,docbook,doprnt,double,download,dpic,drag,driver,drop,dynamic,echo,egrep,elad,emfr,entering,environment,error,exceptions,exec,executables,executing,exfun,exist,expat,export,extension,extensions,extract,fadvise,false,fcalias,fcaliastail,fcarch,fcatomic,fcblanks,fccache,fccase,fccfg,fccharset,fccompat,fcdbg,fcdefault,fcdir,fcformat,fcfreetype,fcfs,fcftalias,fcglyphname,fcinit,fclang,fclist,fcmatch,fcmatrix,fcname,fcntl,fcobjs,fcobjshash,fcpat,fcrange,fcserialize,fcstat,fcstdint,fcstr,fcweight,fcxml,fgrep,file,files,flag,flags,flexible,font,fontconfig,force,format,freedesktop,freetype,fstatfs,fstatvfs,fstypename,ftglue,func,function,gamefront,gawk,generated,getexecname,getopt,getpagesize,getprogname,github,gitignore,glyph,glyphname,goto,gperf,grep,guess,handles,hardcode,hcwjll,header,hobz,host,html,hugefiles,implib,import,include,included,info,inherit,inline,install,installing,intel,interface,inttypes,joinable,jwufd,karako,lang,leaving,length,libraries,library,libs,libtool,libtoolize,line,lines,linked,linker,list,lister,loop,loops,losp,lpthreads,lrand,lstat,ltmain,ltoptions,ltsugar,ltversion,macro,macros,magic,make,makefile,makes,making,mandir,manifest,match,maximum,meaningful,members,memory,migration,minix,mirror,missing,mkdir,mkdtemp,mkostemp,mkstemp,mktemp,mmap,module,mount,mtim,named,names,needed,nested,newer,nofollow,noop,note,objdir,objdump,object,obsolete,offset,opendir,operations,option,options,ordering,output,oxgy,packages,parallel,param,parse,passed,paths,pattern,pause,pion,pipes,platform,posix,postscript,ppem,prebuilt,prefix,presence,primitives,print,printf,prio,produce,programs,property,pthread,pthreads,putting,python,query,rand,random,ranlib,readlink,readme,ready,recognize,recursive,regex,reject,reload,rename,repository,required,rghost,rhcu,rhgizjcaz,rqwkq,rtti,running,runtime,safe,sane,scan,script,select,sendmyway,sets,sgml,share,shared,shift,site,size,skip,solaris,solidfiles,spec,special,speedyshare,stamp,stat,statfs,static,status,statvfs,stdint,stdio,stdlib,strings,strip,stripping,struct,subst,suffix,sunpro,support,supports,sysconfdir,sysroot,system,target,template,templatedir,test,tests,thread,thwf,title,tokens,tool,toolchain,truncate,turbobit,tusfiles,type,types,unchanged,understands,unescaped,unistd,unknown,usability,userscloud,utrjeezovd,validate,variable,variables,version,void,vprintf,warning,wdeprecated,werror,work,working,works,yurb,yvjggi,zippyshare,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accept,accepts,aclocal,alignment,amount,anongit,ansi,archive,archiver,argument,arguments,array,associate,assuming,atomic,attribute,aumzszcj,auowtq,autoconf,autogen,autoheader,automake,auxiliary,avail,basetype,batch,bbfc,bigendian,binaries,binary,bitmap,bits,blank,blanks,brace,build,building,built,byte,cache,cached,call,ccld,char,checking,ciqhb,code,command,commands,compatible,compile,compiler,compiling,conf,config,configure,configured,conforming,const,content,convert,copy,copying,count,create,creating,cross,customised,cygdrive,cygming,cygwin,dangerous,dbnuj,ddll,declared,default,define,defines,depcomp,dependency,dependent,depfiles,deprecated,directory,dirent,dirs,dlfcn,dlltool,docbook,doprnt,double,download,dpic,drag,driver,drop,dynamic,echo,egrep,elad,emfr,entering,environment,error,exceptions,exec,executables,executing,exfun,exist,expat,export,extension,extensions,extract,fadvise,false,fcalias,fcaliastail,fcarch,fcatomic,fcblanks,fccache,fccase,fccfg,fccharset,fccompat,fcdbg,fcdefault,fcdir,fcformat,fcfreetype,fcfs,fcftalias,fcglyphname,fcinit,fclang,fclist,fcmatch,fcmatrix,fcname,fcntl,fcobjs,fcobjshash,fcpat,fcrange,fcserialize,fcstat,fcstdint,fcstr,fcweight,fcxml,fgrep,file,files,flag,flags,flexible,font,fontconfig,force,format,freedesktop,freetype,fstatfs,fstatvfs,fstypename,ftglue,func,function,gamefront,gawk,generated,getexecname,getopt,getpagesize,getprogname,github,gitignore,glyph,glyphname,goto,gperf,grep,guess,handles,hardcode,hcwjll,header,hobz,host,html,hugefiles,implib,import,include,included,info,inherit,inline,install,installing,intel,interface,inttypes,joinable,jwufd,karako,lang,leaving,length,libraries,library,libs,libtool,libtoolize,line,lines,linked,linker,list,lister,loop,loops,losp,lpthreads,lrand,lstat,ltmain,ltoptions,ltsugar,ltversion,macro,macros,magic,make,makefile,makes,making,mandir,manifest,match,maximum,meaningful,members,memory,migration,minix,mirror,missing,mkdir,mkdtemp,mkostemp,mkstemp,mktemp,mmap,module,mount,mtim,named,names,needed,nested,newer,nofollow,noop,note,objdir,objdump,object,obsolete,offset,opendir,operations,option,options,ordering,output,oxgy,packages,parallel,param,parse,passed,paths,pattern,pause,pion,pipes,platform,posix,postscript,ppem,prebuilt,prefix,presence,primitives,print,printf,prio,produce,programs,property,pthread,pthreads,putting,python,query,rand,random,ranlib,readlink,readme,ready,recognize,recursive,regex,reject,reload,rename,repository,required,rghost,rhcu,rhgizjcaz,rqwkq,rtti,running,runtime,safe,sane,scan,script,select,sendmyway,sets,sgml,share,shared,shift,site,size,skip,solaris,solidfiles,spec,special,speedyshare,stamp,stat,statfs,static,status,statvfs,stdint,stdio,stdlib,strings,strip,stripping,struct,subst,suffix,sunpro,support,supports,sysconfdir,sysroot,system,target,template,templatedir,test,tests,thread,thwf,title,tokens,tool,toolchain,truncate,turbobit,tusfiles,type,types,unchanged,understands,unescaped,unistd,unknown,usability,userscloud,utrjeezovd,validate,variable,variables,version,void,vprintf,warning,wdeprecated,werror,work,working,works,yurb,yvjggi,zippyshare,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/javascript-fastest-array-shuffle"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/javascript-fastest-array-shuffle"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/all-mtk-modems-pdanet-samsungs-googles-official-adb-usb-drivers"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/fontconfig-building-under-cygwin"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/fontconfig-building-under-cygwin"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/fontconfig-building-under-cygwin"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/fontconfig-building-under-cygwin"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/fontconfig-building-under-cygwin"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/fontconfig-building-under-cygwin"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-02-03T11:40:22+00:00"     />
+  <meta name="page-datetime"                           content="2016-02-03T11:40:22+00:00"     />
+  <meta property="article:published_time"              content="2016-02-03T11:40:22+00:00"     />
+  <meta name="dcterms.date"                            content="2016-02-03T11:40:22+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-04-07T17:10:46+00:00"    />
+  <meta property="article:modified_time"               content="2016-04-07T17:10:46+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/fontconfig-building-under-cygwin"
+,"url"             : "https://icompile.eladkarako.com/fontconfig-building-under-cygwin"
+,"headline"        : "FontConfig Building Under Cygwin"
+,"description"     : "FontConfig Building Under Cygwin"
+,"datePosted"      : "2016-02-03T11:40:22+00:00"
+,"dateCreated"     : "2016-02-03T11:40:22+00:00"
+,"datePublished"   : "2016-02-03T11:40:22+00:00"
+,"dateModified"    : "2016-04-07T17:10:46+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0002269944541">
+  <header>
+    <h1 itemprop="headline">FontConfig Building Under Cygwin</h1>
+    <sup>Posted at <time datetime="2016-04-07T17:10:46+00:00" itemprop="dateModified">Thu, 07 Apr 2016 17:10:46 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">get the git-repository's content: <code>http://anongit.freedesktop.org/git/fontconfig</code>,<br/>
+run: <code>./autogen.sh --sysconfdir=/etc --prefix=/usr --mandir=/usr/share/man</code><br/>
+<pre><br/>
+Unescaped left brace in regex is deprecated, passed through in regex; marked by                                          < -- HERE in m/\\${ <-- HERE ([^ \\t=:+{}]+)}/ at /usr/bin/automake-1.14 line 3930.<br/>
+Running aclocal -I m4<br/>
+Running autoheader<br/>
+Running libtoolize --copy --force<br/>
+libtoolize: putting auxiliary files in '.'.<br/>
+libtoolize: copying file './ltmain.sh'<br/>
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.<br/>
+libtoolize: copying file 'm4/libtool.m4'<br/>
+libtoolize: copying file 'm4/ltoptions.m4'<br/>
+libtoolize: copying file 'm4/ltsugar.m4'<br/>
+libtoolize: copying file 'm4/ltversion.m4'<br/>
+libtoolize: copying file 'm4/lt~obsolete.m4'<br/>
+Running automake -a<br/>
+Unescaped left brace in regex is deprecated, passed through in regex; marked by                                          <-- HERE in m/\\${ <-- HERE ([^ \\t=:+{}]+)}/ at /usr/bin/automake-1.14 line 3930.<br/>
+configure.ac:45: installing './compile'<br/>
+configure.ac:70: installing './config.guess'<br/>
+configure.ac:70: installing './config.sub'<br/>
+configure.ac:37: installing './install-sh'<br/>
+configure.ac:37: installing './missing'<br/>
+Makefile.am:93: warning: subst $(BASECONFIGDIR: non-POSIX variable name<br/>
+Makefile.am:93: (probably a GNU make extension)<br/>
+doc/Makefile.am: installing './depcomp'<br/>
+parallel-tests: installing './test-driver'<br/>
+Running autoconf<br/>
+Running ./configure --sysconfdir=/etc --prefix=/usr --mandir=/usr/share/man<br/>
+configure: loading site script /usr/share/config.site<br/>
+checking for a BSD-compatible install... /usr/bin/install -c<br/>
+checking whether build environment is sane... yes<br/>
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p<br/>
+checking for gawk... gawk<br/>
+checking whether make sets $(MAKE)... yes<br/>
+checking whether make supports nested variables... yes<br/>
+checking whether make supports nested variables... (cached) yes<br/>
+checking for gcc... gcc<br/>
+checking whether the C compiler works... yes<br/>
+checking for C compiler default output file name... a.exe<br/>
+checking for suffix of executables... .exe<br/>
+checking whether we are cross compiling... no<br/>
+checking for suffix of object files... o<br/>
+checking whether we are using the GNU C compiler... yes<br/>
+checking whether gcc accepts -g... yes<br/>
+checking for gcc option to accept ISO C89... none needed<br/>
+checking whether gcc understands -c and -o together... yes<br/>
+checking for style of include used by make... GNU<br/>
+checking dependency style of gcc... gcc3<br/>
+checking how to run the C preprocessor... gcc -E<br/>
+checking for grep that handles long lines and -e... /usr/bin/grep<br/>
+checking for egrep... /usr/bin/grep -E<br/>
+checking for ANSI C header files... yes<br/>
+checking for sys/types.h... yes<br/>
+checking for sys/stat.h... yes<br/>
+checking for stdlib.h... yes<br/>
+checking for string.h... yes<br/>
+checking for memory.h... yes<br/>
+checking for strings.h... yes<br/>
+checking for inttypes.h... yes<br/>
+checking for stdint.h... yes<br/>
+checking for unistd.h... yes<br/>
+checking minix/config.h usability... no<br/>
+checking minix/config.h presence... no<br/>
+checking for minix/config.h... no<br/>
+checking whether it is safe to define __EXTENSIONS__... yes<br/>
+checking for special C compiler options needed for large files... no<br/>
+checking for _FILE_OFFSET_BITS value needed for large files... no<br/>
+checking whether ln -s works... yes<br/>
+checking whether make sets $(MAKE)... (cached) yes<br/>
+checking for pkg-config... /usr/bin/pkg-config<br/>
+checking pkg-config is at least version 0.9.0... yes<br/>
+checking for python... /usr/bin/python<br/>
+checking for python version... 2.7<br/>
+checking for python platform... cygwin<br/>
+checking for python script directory... ${prefix}/lib/python2.7/site-packages<br/>
+checking for python extension module directory... ${exec_prefix}/lib/python2.7/site-packages<br/>
+checking for RM macro... rm -f<br/>
+checking build system type... i686-pc-cygwin<br/>
+checking host system type... i686-pc-cygwin<br/>
+checking how to print strings... printf<br/>
+checking for a sed that does not truncate output... /usr/bin/sed<br/>
+checking for fgrep... /usr/bin/grep -F<br/>
+checking for ld used by gcc... /usr/i686-pc-cygwin/bin/ld.exe<br/>
+checking if the linker (/usr/i686-pc-cygwin/bin/ld.exe) is GNU ld... yes<br/>
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B<br/>
+checking the name lister (/usr/bin/nm -B) interface... BSD nm<br/>
+checking the maximum length of command line arguments... 8192<br/>
+checking how to convert i686-pc-cygwin file names to i686-pc-cygwin format... func_convert_file_noop<br/>
+checking how to convert i686-pc-cygwin file names to toolchain format... func_convert_file_noop<br/>
+checking for /usr/i686-pc-cygwin/bin/ld.exe option to reload object files... -r<br/>
+checking for objdump... objdump<br/>
+checking how to recognize dependent libraries... file_magic ^x86 archive import|^x86 DLL<br/>
+checking for dlltool... dlltool<br/>
+checking how to associate runtime and link libraries... func_cygming_dll_for_implib<br/>
+checking for ar... ar<br/>
+checking for archiver @FILE support... @<br/>
+checking for strip... strip<br/>
+checking for ranlib... ranlib<br/>
+checking command to parse /usr/bin/nm -B output from gcc object... ok<br/>
+checking for sysroot... no<br/>
+checking for a working dd... /usr/bin/dd<br/>
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1<br/>
+checking for mt... mt<br/>
+checking if mt is a manifest tool... no<br/>
+checking for dlfcn.h... yes<br/>
+checking for as... as<br/>
+checking for dlltool... (cached) dlltool<br/>
+checking for objdump... (cached) objdump<br/>
+checking for objdir... .libs<br/>
+checking if gcc supports -fno-rtti -fno-exceptions... no<br/>
+checking for gcc option to produce PIC... -DDLL_EXPORT -DPIC<br/>
+checking if gcc PIC flag -DDLL_EXPORT -DPIC works... yes<br/>
+checking if gcc static flag -static works... yes<br/>
+checking if gcc supports -c -o file.o... yes<br/>
+checking if gcc supports -c -o file.o... (cached) yes<br/>
+checking whether the gcc linker (/usr/i686-pc-cygwin/bin/ld.exe) supports shared libraries... yes<br/>
+checking whether -lc should be explicitly linked in... yes<br/>
+checking dynamic linker characteristics... Win32 ld.exe<br/>
+checking how to hardcode library paths into programs... immediate<br/>
+checking whether stripping libraries is possible... yes<br/>
+checking if libtool supports shared libraries... yes<br/>
+checking whether to build shared libraries... yes<br/>
+checking whether to build static libraries... no<br/>
+checking whether __SUNPRO_C is declared... no<br/>
+checking for dirent.h that defines DIR... yes<br/>
+checking for library containing opendir... none required<br/>
+checking for ANSI C header files... (cached) yes<br/>
+checking fcntl.h usability... yes<br/>
+checking fcntl.h presence... yes<br/>
+checking for fcntl.h... yes<br/>
+checking for stdlib.h... (cached) yes<br/>
+checking for string.h... (cached) yes<br/>
+checking for unistd.h... (cached) yes<br/>
+checking sys/statvfs.h usability... yes<br/>
+checking sys/statvfs.h presence... yes<br/>
+checking for sys/statvfs.h... yes<br/>
+checking sys/vfs.h usability... yes<br/>
+checking sys/vfs.h presence... yes<br/>
+checking for sys/vfs.h... yes<br/>
+checking sys/statfs.h usability... yes<br/>
+checking sys/statfs.h presence... yes<br/>
+checking for sys/statfs.h... yes<br/>
+checking sys/param.h usability... yes<br/>
+checking sys/param.h presence... yes<br/>
+checking for sys/param.h... yes<br/>
+checking sys/mount.h usability... yes<br/>
+checking sys/mount.h presence... yes<br/>
+checking for sys/mount.h... yes<br/>
+checking for stdint types... stdint.h (shortcircuit)<br/>
+make use of stdint.h in src/fcstdint.h (assuming C99 compatible system)<br/>
+checking for an ANSI C-conforming const... yes<br/>
+checking for inline... inline<br/>
+checking for flexible array members... yes<br/>
+checking for pid_t... yes<br/>
+checking for vprintf... yes<br/>
+checking for _doprnt... no<br/>
+checking for stdlib.h... (cached) yes<br/>
+checking for unistd.h... (cached) yes<br/>
+checking for sys/param.h... (cached) yes<br/>
+checking for getpagesize... yes<br/>
+checking for working mmap... yes<br/>
+checking for link... yes<br/>
+checking for mkstemp... yes<br/>
+checking for mkostemp... yes<br/>
+checking for _mktemp_s... no<br/>
+checking for mkdtemp... yes<br/>
+checking for getopt... yes<br/>
+checking for getopt_long... yes<br/>
+checking for getprogname... yes<br/>
+checking for getexecname... no<br/>
+checking for rand... yes<br/>
+checking for random... yes<br/>
+checking for lrand48... yes<br/>
+checking for random_r... no<br/>
+checking for rand_r... yes<br/>
+checking for readlink... yes<br/>
+checking for fstatvfs... yes<br/>
+checking for fstatfs... yes<br/>
+checking for lstat... yes<br/>
+checking for posix_fadvise in fcntl.h... fcntl.h<br/>
+checking for struct stat.st_mtim... yes<br/>
+checking for struct statvfs.f_basetype... no<br/>
+checking for struct statvfs.f_fstypename... no<br/>
+checking for struct statfs.f_flags... no<br/>
+checking for struct statfs.f_fstypename... no<br/>
+checking for struct dirent.d_type... yes<br/>
+checking for FREETYPE... yes<br/>
+checking for FT_Get_Next_Char... yes<br/>
+checking for FT_Get_BDF_Property... yes<br/>
+checking for FT_Get_PS_Font_Info... yes<br/>
+checking for FT_Has_PS_Glyph_Names... yes<br/>
+checking for FT_Get_X11_Font_Format... yes<br/>
+checking for FT_Select_Size... yes<br/>
+checking for FT_Bitmap_Size.y_ppem... yes<br/>
+checking for TT_OS2.usLowerOpticalPointSize... yes<br/>
+checking for TT_OS2.usUpperOpticalPointSize... yes<br/>
+checking for EXPAT... yes<br/>
+checking expat.h usability... yes<br/>
+checking expat.h presence... yes<br/>
+checking for expat.h... yes<br/>
+checking for XML_SetDoctypeDeclHandler... yes<br/>
+checking for Intel atomic primitives... true<br/>
+checking for Solaris atomic operations... false<br/>
+checking if compiler needs -Werror to reject unknown flags... no<br/>
+checking for the pthreads library -lpthreads... no<br/>
+checking whether pthreads work without any flags... yes<br/>
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE<br/>
+checking if more special flags are required for pthreads... no<br/>
+checking for PTHREAD_PRIO_INHERIT... no<br/>
+checking for docbook2html... no<br/>
+checking whether byte ordering is bigendian... no<br/>
+checking size of void *... 4<br/>
+checking alignment of double... 8<br/>
+checking alignment of void *... 4<br/>
+checking that generated files are newer than configure... done<br/>
+configure: creating ./config.status<br/>
+config.status: creating Makefile<br/>
+config.status: creating fontconfig/Makefile<br/>
+config.status: creating fc-lang/Makefile<br/>
+config.status: creating fc-glyphname/Makefile<br/>
+config.status: creating fc-blanks/Makefile<br/>
+config.status: creating fc-case/Makefile<br/>
+config.status: creating src/Makefile<br/>
+config.status: creating conf.d/Makefile<br/>
+config.status: creating fc-cache/Makefile<br/>
+config.status: creating fc-cat/Makefile<br/>
+config.status: creating fc-list/Makefile<br/>
+config.status: creating fc-match/Makefile<br/>
+config.status: creating fc-pattern/Makefile<br/>
+config.status: creating fc-query/Makefile<br/>
+config.status: creating fc-scan/Makefile<br/>
+config.status: creating fc-validate/Makefile<br/>
+config.status: creating doc/Makefile<br/>
+config.status: creating doc/version.sgml<br/>
+config.status: creating test/Makefile<br/>
+config.status: creating fontconfig.spec<br/>
+config.status: creating fontconfig.pc<br/>
+config.status: creating fontconfig-zip<br/>
+config.status: creating config.h<br/>
+config.status: executing depfiles commands<br/>
+config.status: executing libtool commands<br/>
+config.status: executing src/fcstdint.h commands<br/>
+config.status: creating src/fcstdint.h : _FONTCONFIG_SRC_FCSTDINT_H<br/>
+<br/>
+Now type 'make' to compile Fontconfig.<br/>
+</pre><br/>
+<br/>
+<br/>
+<br/>
+<blockquote>you can download the pre-configured (ready for make and make install) archive from here:<br/>
+<pre><br/>
+<a mirror href="http://www118.zippyshare.com/v/DbnuJ34V/file.html" title="http://www118.zippyshare.com/v/DbnuJ34V/file.html" rel="nofollow target="_blank">http://www118.zippyshare.com/v/DbnuJ34V/file.html</a><br/>
+<a mirror href="http://turbobit.net/utrjeezovd98.html" title="http://turbobit.net/utrjeezovd98.html" rel="nofollow target="_blank">http://turbobit.net/utrjeezovd98.html</a><br/>
+<a mirror href="http://www.solidfiles.com/d/d7853a10ef" title="http://www.solidfiles.com/d/d7853a10ef" rel="nofollow target="_blank">http://www.solidfiles.com/d/d7853a10ef</a><br/>
+<a mirror href="http://hugefiles.net/rhgizjcaz7ea" title="http://hugefiles.net/rhgizjcaz7ea" rel="nofollow target="_blank">http://hugefiles.net/rhgizjcaz7ea</a><br/>
+<a mirror href="https://www.sendmyway.com/rhcu39hcwjll" title="https://www.sendmyway.com/rhcu39hcwjll" rel="nofollow target="_blank">https://www.sendmyway.com/rhcu39hcwjll</a><br/>
+<a mirror href="http://pion.rghost.net/" title="http://pion.rghost.net/" rel="nofollow target="_blank">http://pion.rghost.net/</a><br/>
+<a mirror href="http://www.gamefront.com/files/25464306/cygwin_pre_configured__ready_to_make__fontconfig.7z" title="http://www.gamefront.com/files/25464306/cygwin_pre_configured__ready_to_make__fontconfig.7z" rel="nofollow target="_blank">http://www.gamefront.com/files/25464306/cygwin_pre_configured__ready_to_make__fontconfig.7z</a><br/>
+<a mirror href="https://tusfiles.net/z3z02ciqhb6q" title="https://tusfiles.net/z3z02ciqhb6q" rel="nofollow target="_blank">https://tusfiles.net/z3z02ciqhb6q</a><br/>
+<a mirror href="http://www.speedyshare.com/file/R9B7H/cygwin_pre_configured__ready_to_make__fontconfig.7z" title="http://www.speedyshare.com/file/R9B7H/cygwin_pre_configured__ready_to_make__fontconfig.7z" rel="nofollow target="_blank">http://www.speedyshare.com/file/R9B7H/cygwin_pre_configured__ready_to_make__fontconfig.7z</a><br/>
+<a mirror href="https://files.fm/u/aumzszcj" title="https://files.fm/u/aumzszcj" rel="nofollow target="_blank">https://files.fm/u/aumzszcj</a><br/>
+<a mirror href="https://userscloud.com/8rqwkq9hobz6" title="https://userscloud.com/8rqwkq9hobz6" rel="nofollow target="_blank">https://userscloud.com/8rqwkq9hobz6</a></pre></blockquote><br/>
+</pre><br/>
+<br/>
+next: run <code>make</code><br/>
+<pre>
+  GEN      .gitignore
+make[1]: Entering directory '/cygdrive/C/www/fontconfig/doc'
+  GEN      .gitignore
+make[1]: Leaving directory '/cygdrive/C/www/fontconfig/doc'
+make  all-recursive
+make[1]: Entering directory '/cygdrive/C/www/fontconfig'
+Making all in fontconfig
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/fontconfig'
+  GEN      .gitignore
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/fontconfig'
+Making all in fc-blanks
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/fc-blanks'
+  GEN      fcblanks.h
+  GEN      .gitignore
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/fc-blanks'
+Making all in fc-case
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/fc-case'
+  GEN      fcalias.h
+  GEN      fcaliastail.h
+  GEN      .gitignore
+make  all-am
+make[3]: Entering directory '/cygdrive/C/www/fontconfig/fc-case'
+  GEN      fccase.h
+make[4]: Entering directory '/cygdrive/C/www/fontconfig/fc-case'
+  GEN      fc-case.exe
+make[4]: Leaving directory '/cygdrive/C/www/fontconfig/fc-case'
+make[3]: Leaving directory '/cygdrive/C/www/fontconfig/fc-case'
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/fc-case'
+Making all in fc-lang
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/fc-lang'
+  GEN      fcalias.h
+  GEN      fcaliastail.h
+  GEN      .gitignore
+make  all-am
+make[3]: Entering directory '/cygdrive/C/www/fontconfig/fc-lang'
+  GEN      fclang.h
+make[4]: Entering directory '/cygdrive/C/www/fontconfig/fc-lang'
+  GEN      fc-lang.exe
+make[4]: Leaving directory '/cygdrive/C/www/fontconfig/fc-lang'
+make[3]: Leaving directory '/cygdrive/C/www/fontconfig/fc-lang'
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/fc-lang'
+Making all in fc-glyphname
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/fc-glyphname'
+  GEN      fcalias.h
+  GEN      fcaliastail.h
+  GEN      .gitignore
+make  all-am
+make[3]: Entering directory '/cygdrive/C/www/fontconfig/fc-glyphname'
+  GEN      fcglyphname.h
+make[4]: Entering directory '/cygdrive/C/www/fontconfig/fc-glyphname'
+  GEN      fc-glyphname.exe
+make[4]: Leaving directory '/cygdrive/C/www/fontconfig/fc-glyphname'
+make[3]: Leaving directory '/cygdrive/C/www/fontconfig/fc-glyphname'
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/fc-glyphname'
+Making all in src
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/src'
+  GEN      fcalias.h
+  GEN      fcftalias.h
+  GEN      stamp-fcstdint
+config.status: executing src/fcstdint.h commands
+config.status: creating src/fcstdint.h : _FONTCONFIG_SRC_FCSTDINT_H
+config.status: src/fcstdint.h is unchanged
+  GEN      fcobjshash.gperf
+  GEN      fcobjshash.h
+  GEN      .gitignore
+make  all-am
+make[3]: Entering directory '/cygdrive/C/www/fontconfig/src'
+  CC       fcatomic.lo
+  CC       fcblanks.lo
+  CC       fccache.lo
+  CC       fccfg.lo
+  CC       fccharset.lo
+  CC       fccompat.lo
+  CC       fcdbg.lo
+  CC       fcdefault.lo
+  CC       fcdir.lo
+  CC       fcformat.lo
+  CC       fcfreetype.lo
+  CC       fcfs.lo
+  CC       fcinit.lo
+  CC       fclang.lo
+  CC       fclist.lo
+  CC       fcmatch.lo
+  CC       fcmatrix.lo
+  CC       fcname.lo
+  CC       fcobjs.lo
+  CC       fcpat.lo
+  CC       fcrange.lo
+  CC       fcserialize.lo
+  CC       fcstat.lo
+  CC       fcstr.lo
+  CC       fcweight.lo
+  CC       fcxml.lo
+  CC       ftglue.lo
+  CCLD     libfontconfig.la
+  CC       fcarch.o
+  CCLD     fcarch.exe
+make[3]: Leaving directory '/cygdrive/C/www/fontconfig/src'
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/src'
+Making all in fc-cache
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/fc-cache'
+  CC       fc-cache.o
+  CCLD     fc-cache.exe
+  GEN      .gitignore
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/fc-cache'
+Making all in fc-cat
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/fc-cat'
+  CC       fc-cat.o
+  CCLD     fc-cat.exe
+  GEN      .gitignore
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/fc-cat'
+Making all in fc-list
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/fc-list'
+  CC       fc-list.o
+  CCLD     fc-list.exe
+  GEN      .gitignore
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/fc-list'
+Making all in fc-match
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/fc-match'
+  CC       fc-match.o
+  CCLD     fc-match.exe
+  GEN      .gitignore
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/fc-match'
+Making all in fc-pattern
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/fc-pattern'
+  CC       fc-pattern.o
+  CCLD     fc-pattern.exe
+  GEN      .gitignore
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/fc-pattern'
+Making all in fc-query
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/fc-query'
+  CC       fc-query.o
+  CCLD     fc-query.exe
+  GEN      .gitignore
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/fc-query'
+Making all in fc-scan
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/fc-scan'
+  CC       fc-scan.o
+  CCLD     fc-scan.exe
+  GEN      .gitignore
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/fc-scan'
+Making all in fc-validate
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/fc-validate'
+  CC       fc-validate.o
+  CCLD     fc-validate.exe
+  GEN      .gitignore
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/fc-validate'
+Making all in conf.d
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/conf.d'
+sed "s|\\@TEMPLATEDIR\\@|/usr/share/fontconfig/conf.avail|" README.in > README
+  GEN      .gitignore
+make  all-am
+make[3]: Entering directory '/cygdrive/C/www/fontconfig/conf.d'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/cygdrive/C/www/fontconfig/conf.d'
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/conf.d'
+Making all in test
+make[2]: Entering directory '/cygdrive/C/www/fontconfig/test'
+  CC       test-pthread.o
+  CCLD     test-pthread.exe
+  CC       test_bz89617-test-bz89617.o
+  CCLD     test-bz89617.exe
+  CC       test-migration.o
+test-migration.c: In function 'fc_mkdtemp':
+test-migration.c:44:5: warning: 'mktemp' is deprecated: the use of 'mktemp' is dangerous; use 'mkstemp' instead [-Wdeprecated-declarations]
+     if (!mktemp (template) || mkdir (template, 0700))
+     ^
+In file included from /usr/include/stdio.h:29:0,
+                 from test-migration.c:25:
+/usr/include/sys/unistd.h:251:8: note: declared here
+ char * _EXFUN(mktemp, (char *));
+        ^
+  CCLD     test-migration.exe
+  GEN      .gitignore
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig/test'
+make[2]: Entering directory '/cygdrive/C/www/fontconfig'
+make[2]: Leaving directory '/cygdrive/C/www/fontconfig'
+make[1]: Leaving directory '/cygdrive/C/www/fontconfig'
+</pre><br/>
+<br/>
+and if you want to copy the executables under usr, bin etc.. you can also use <code>make install</code> (I'll skip that)<br/>
+<br/>
+you can download the ready-to use exe, libs and dependencies from here:<br/>
+<pre><br/>
+<a mirror href="http://www21.zippyshare.com/v/5yUrb14Y/file.html" title="http://www21.zippyshare.com/v/5yUrb14Y/file.html" rel="nofollow target="_blank">http://www21.zippyshare.com/v/5yUrb14Y/file.html</a><br/>
+<a mirror href="http://hugefiles.net/thwf3sa2oxgy" title="http://hugefiles.net/thwf3sa2oxgy" rel="nofollow target="_blank">http://hugefiles.net/thwf3sa2oxgy</a><br/>
+<a mirror href="http://www.solidfiles.com/d/bbfc6b6e29" title="http://www.solidfiles.com/d/bbfc6b6e29" rel="nofollow target="_blank">http://www.solidfiles.com/d/bbfc6b6e29</a><br/>
+<a mirror href="http://turbobit.net/emfr81m7ux2r.html" title="http://turbobit.net/emfr81m7ux2r.html" rel="nofollow target="_blank">http://turbobit.net/emfr81m7ux2r.html</a><br/>
+<a mirror href="https://www.sendmyway.com/yvjggi76mh98" title="https://www.sendmyway.com/yvjggi76mh98" rel="nofollow target="_blank">https://www.sendmyway.com/yvjggi76mh98</a><br/>
+<a mirror href="http://pion.rghost.net/" title="http://pion.rghost.net/" rel="nofollow target="_blank">http://pion.rghost.net/</a><br/>
+<a mirror href="http://ge.tt/9M1x6VX2" title="http://ge.tt/9M1x6VX2" rel="nofollow target="_blank">http://ge.tt/9M1x6VX2</a><br/>
+<a mirror href="http://www.gamefront.com/files/25464315/prebuilt_with_cygwin_binary_exe_and_libs_full_fontconfig.7z" title="http://www.gamefront.com/files/25464315/prebuilt_with_cygwin_binary_exe_and_libs_full_fontconfig.7z" rel="nofollow target="_blank">http://www.gamefront.com/files/25464315/prebuilt_with_cygwin_binary_exe_and_libs_full_fontconfig.7z</a><br/>
+<a mirror href="http://www.speedyshare.com/file/jWufd/prebuilt_with_cygwin_binary_exe_and_libs_full_fontconfig.7z" title="http://www.speedyshare.com/file/jWufd/prebuilt_with_cygwin_binary_exe_and_libs_full_fontconfig.7z" rel="nofollow target="_blank">http://www.speedyshare.com/file/jWufd/prebuilt_with_cygwin_binary_exe_and_libs_full_fontconfig.7z</a><br/>
+<a mirror href="https://tusfiles.net/b9r9auowtq5d" title="https://tusfiles.net/b9r9auowtq5d" rel="nofollow target="_blank">https://tusfiles.net/b9r9auowtq5d</a><br/>
+<a mirror href="https://files.fm/u/b5j3xb7f" title="https://files.fm/u/b5j3xb7f" rel="nofollow target="_blank">https://files.fm/u/b5j3xb7f</a><br/>
+<a mirror href="https://userscloud.com/losp2537r0pe" title="https://userscloud.com/losp2537r0pe" rel="nofollow target="_blank">https://userscloud.com/losp2537r0pe</a><br/>
+</pre><br/>
+<br/>
+<br/>
+also the following GitHub repository is a mirror for the entire repository (pre-configured, pre-build binaries).<br/>
+<a href="https://github.com/eladkarako/prebuilt-FontConfig-binary" target="_blank">https://github.com/eladkarako/prebuilt-FontConfig-binary</a><br/>
+<br/>
+<br/>
+the following CMD script make use of the built exe above to extract the PostScript-name of the font-file,<br/>
+and rename the file to it, which makes a lot more meaningful name than what files name are usually named.<br/>
+<br/>
+<pre>
+@echo off
+
+:loop
+      ::-------------------------- has argument ?
+      if ["%~1"]==[""] (
+        echo done.
+        goto end
+      )
+      ::-------------------------- argument exist ?
+      if not exist %~s1 (
+        echo error "%~1" does not exist in file-system.
+      ) else (
+        echo "%~1" exist
+        if exist %~s1\\NUL (
+          echo "%~1" is a directory
+        ) else (
+          for /f "tokens=*" %%a in ('call c:\\cygwin\\bin\\fc-query.exe %~s1 "--format=%%{postscriptname}" 2^>^&1') do ( 
+            mv "%~s1" "%~dp1%^%%%a%~x1%"
+          )
+        )
+      )
+      ::--------------------------
+      shift
+      goto loop
+      
+      
+:end
+
+pause
+
+::: ###########################################################################
+::: ##                                                                       ##
+::: ##  1. drag&drop ANY amount of font-files (TTF,..) over this batch file, ##
+::: ##                                                                       ##
+::: ##       - it will rename each one to a more meaningful name.            ##
+::: ##       - currently using the "PostScriptName", it can be customised.   ##
+::: ##       - drag&drop instead of directory - safe (inf. loops- never!)    ##
+::: ##                                                                       ##
+::: ##                                   Elad Karako [Feb 3, 2016]           ##
+::: ##                                   https://icompile.eladkarako.com      ##
+::: ###########################################################################
+
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-fastest-array-shuffle">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/all-mtk-modems-pdanet-samsungs-googles-official-adb-usb-drivers">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/all-mtk-modems-pdanet-samsungs-googles-official-adb-usb-drivers">Google's Official - ADB USB Drivers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-extracting-text-content-using-old-school-xpath-query-evaluating">JavaScript Ninja - Extracting Text-Content Using Old-School XPATH Query-Evaluating</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-force-trigger-spell-check-on-an-element">JavaScript Ninja - Force Trigger Spell-Check On An Element</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vcf-format-dev-hub-notes">VCF Format Dev Hub Notes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/animated-israel-flag">Animated Israel Flag</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disable-youtube-spf">Disable YouTube SPF</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/urls-google-tia-text-input-assistant">URLs - Google TIA - Text Input Assistant</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-parse-time-format-into-number-of-seconds">JavaScript Snippet - Parse Time Format Into Number Of Seconds</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-123-cookie-to-hash-enumerator">JavaScript Snippet - 123 Cookie To Hash Enumerator</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stackoverflow-subdomains">Stackoverflow-Related Sub-Domains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/gae-script-headers">Google-App-Engine PHP - Script With Headers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/other-google-app-engine-insights">Other Google App Engine Insights</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/happy-star-wars-day-2016">Happy Star-Wars Day! 2016</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-better-font-face-loader">CSS3 Better Font-Face Loader</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hebrew-html5-synthesis-api">Hebrew HTML5 Synthesis API</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-proxy-configuration-for-apache">HTML Proxy Configuration For Apache</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

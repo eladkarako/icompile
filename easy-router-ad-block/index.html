@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Easy Router Ad-Block</title>
+  <meta itemprop="name"                                content="Easy Router Ad-Block"       />
+  <meta name="dcterms.title"                           content="Easy Router Ad-Block"       />
+  <meta property="og:title"                            content="Easy Router Ad-Block"       />
+  <meta name="twitter:title"                           content="Easy Router Ad-Block"       />
+  <meta name="twitter:text:title"                      content="Easy Router Ad-Block"       />
+  <meta name="application-name"                        content="Easy Router Ad-Block"       />
+  <meta name="subject"                                 content="Easy Router Ad-Block"       />
+  <meta name="apple-mobile-web-app-title"              content="Easy Router Ad-Block"       />
+  <meta name="msapplication-tooltip"                   content="Easy Router Ad-Block"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Easy Router Ad-Block"       />
+  <meta itemprop="description"                         content="Easy Router Ad-Block"       />
+  <meta name="dcterms.description"                     content="Easy Router Ad-Block"       />
+  <meta name="twitter:description"                     content="Easy Router Ad-Block"       />
+  <meta property="og:description"                      content="Easy Router Ad-Block"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="access,adding,address,adserver,adtech,adtechus,advanced,alignnone,applied,apply,assuming,atdmt,authorised,auto,banners,blank,block,blocking,blue,border,break,browsing,bulletproof,button,check,choose,click,client,clients,code,color,compatible,computers,control,dashed,deny,desktops,dlink,doubleclick,easy,enable,enjoy,enjoyable,experience,faster,ffffff,fill,filter,finish,font,free,googleads,image,input,instruction,letter,list,logging,make,margin,media,menu,method,minimal,mobile,oneliner,outbrain,overflow,padding,pagead,phones,play,pointroll,policy,popups,position,press,pubads,radius,reboot,restart,rgba,router,routers,safe,save,schedule,screenshot,scroll,select,sets,settings,sites,size,smart,smoother,solid,space,spacing,speeds,streaming,strong,super,tablets,target,title,tohtml,tracking,transparent,type,users,vendors,version,website,websites,white,widgets,wifi,wrap,youtube,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="access,adding,address,adserver,adtech,adtechus,advanced,alignnone,applied,apply,assuming,atdmt,authorised,auto,banners,blank,block,blocking,blue,border,break,browsing,bulletproof,button,check,choose,click,client,clients,code,color,compatible,computers,control,dashed,deny,desktops,dlink,doubleclick,easy,enable,enjoy,enjoyable,experience,faster,ffffff,fill,filter,finish,font,free,googleads,image,input,instruction,letter,list,logging,make,margin,media,menu,method,minimal,mobile,oneliner,outbrain,overflow,padding,pagead,phones,play,pointroll,policy,popups,position,press,pubads,radius,reboot,restart,rgba,router,routers,safe,save,schedule,screenshot,scroll,select,sets,settings,sites,size,smart,smoother,solid,space,spacing,speeds,streaming,strong,super,tablets,target,title,tohtml,tracking,transparent,type,users,vendors,version,website,websites,white,widgets,wifi,wrap,youtube,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/useful-char-map"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/useful-char-map"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/adblock-advanced-selectors"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/easy-router-ad-block"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/easy-router-ad-block"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/easy-router-ad-block"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/easy-router-ad-block"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/easy-router-ad-block"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/easy-router-ad-block"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-01-16T00:33:46+00:00"     />
+  <meta name="page-datetime"                           content="2016-01-16T00:33:46+00:00"     />
+  <meta property="article:published_time"              content="2016-01-16T00:33:46+00:00"     />
+  <meta name="dcterms.date"                            content="2016-01-16T00:33:46+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-01-16T19:14:07+00:00"    />
+  <meta property="article:modified_time"               content="2016-01-16T19:14:07+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/easy-router-ad-block"
+,"url"             : "https://icompile.eladkarako.com/easy-router-ad-block"
+,"headline"        : "Easy Router Ad-Block"
+,"description"     : "Easy Router Ad-Block"
+,"datePosted"      : "2016-01-16T00:33:46+00:00"
+,"dateCreated"     : "2016-01-16T00:33:46+00:00"
+,"datePublished"   : "2016-01-16T00:33:46+00:00"
+,"dateModified"    : "2016-01-16T19:14:07+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006244092541">
+  <header>
+    <h1 itemprop="headline">Easy Router Ad-Block</h1>
+    <sup>Posted at <time datetime="2016-01-16T19:14:07+00:00" itemprop="dateModified">Sat, 16 Jan 2016 19:14:07 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><blockquote><br/>
+<strong>✨ It Is Super Easy! ✨</strong><br/>
+✔ Enjoy A Faster, Smoother, Ad-Free Web-Browsing Experience,<br/>
+✔ YouTube Streaming Would Get Enjoyable Again,<br/>
+✔ No Banners, <br/>
+✔ No Popups!<br/>
+☕ Applied to Everyone At Once, <br/>
+&#x1f474; &#x1f475; &#x1f476; Transparent To Users, <strong>No Client-Configuration</strong> &#x1f44d;<br/>
+</blockquote><br/>
+<br/>
+<!--more--><br/>
+<br/>
+<br/>
+<pre><style type="text/css" media="all">
+  /* make [tohtml.com]'s PRE-tag look and scroll better */
+  pre[code-like]{
+    color: #000000;
+    background: #ffffff;
+    overflow-x: auto;
+    word-wrap: normal !important;
+    word-break: normal !important;
+    white-space: pre !important;
+    border: 1px dashed rgba(214,214,214,.7);
+    padding: 5px;
+    margin: 0;
+    border-radius: 2px;
+  }
+  input[oneliner]{
+    min-width: 80%;
+    padding: 5px 5px 5px 15px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgba(255,250,103,.8);
+    position: relative;
+    border: 2px solid blue;
+    letter-spacing: 1px;
+    font-size: 20pt;
+  }
+</style></pre><br/>
+<br/>
+Your WiFi users &#x1f4e1;, mobile phones&#x1f4f1; tablets and desktops, even smart-tv sets &#x1f4fa; can be ads-free!<br/>
+<strong>blocking ads this way speeds up browsing websites dramatically!</strong><br/>
+<br/>
+<hr /><br/>
+<strong>To the point! - End Result:</strong><br/>
+<a target="_blank" title="Click to see it full-size" href="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking2.jpg"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking2.jpg" alt="(Big Screenshot)" width="1388" height="701" class="alignnone size-full wp-image-4227" /></a><br/>
+<br/>
+<strong>Instructions:</strong><br/>
+<em>Below are instruction that would probably fit most router-vendors out there (<strong>D-Link</strong> compatible).</em><br/>
+<br/>
+Click <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking_button_advanced.jpg" alt="Advanced" width="205" height="66" class="alignnone size-full wp-image-4216" />,<br/>
+then <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking_button_website_filter.jpg" alt="Website-Filter" width="186" height="65" class="alignnone size-full wp-image-4217" />,<br/>
+choose <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking__deny_computers_access_to_only_those_sites.jpg" alt="DENY computers access to ONLY these sites" width="369" height="76" class="alignnone size-full wp-image-4218" /><br/>
+<br/>
+Fill the list with either the <em><strong>Minimal version</strong></em> or <em><strong>Almost bulletproof version</strong></em>,<br/>
+click the save button <strong>and you're done!</strong><br/>
+<br/>
+<em>(You may restart your router just to play it safe :) &#x1f453;)</em><br/>
+<br/>
+<ul><br/>
+<li><br/>
+<strong>Almost bulletproof:</strong><br/>
+<input oneliner value="pagead2.googlesyndication.com"/><br/>
+<input oneliner value="googleads.g.doubleclick.net"/><br/>
+<input oneliner value="pubads.g.doubleclick.net"/><br/>
+<input oneliner value="adserver.adtechus.com"/><br/>
+<input oneliner value="widgets.outbrain.com"/><br/>
+<input oneliner value="adserver.adtech.de"/><br/>
+<input oneliner value="ad.doubleclick.net"/><br/>
+<input oneliner value="ads.pointroll.com"/><br/>
+<input oneliner value="odb.outbrain.com"/><br/>
+<input oneliner value="ad.atdmt.com"/><br/>
+</li><br/>
+<li><br/>
+<strong>Minimal:</strong><br/>
+<input oneliner value="pagead2.googlesyndication.com"/><br/>
+<input oneliner value="googleads.g.doubleclick.net"/><br/>
+<input oneliner value="pubads.g.doubleclick.net"/><br/>
+</li><br/>
+</ul><br/>
+<br/>
+click <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking_button_access_control.jpg" alt="Access-Control" width="186" height="68" class="alignnone size-full wp-image-4237" />, check ☑ <strong>Enable Access Control</strong> and click add policy:<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking__add_policy.jpg" alt="Add Policy" width="790" height="361" class="alignnone size-full wp-image-4238" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking__add_policy2.jpg" alt="Next" width="540" height="344" class="alignnone size-full wp-image-4239" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking__add_policy3_name.jpg" alt="Name: No-Ads" width="565" height="277" class="alignnone size-full wp-image-4240" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking__add_policy4_schedule_always.jpg" alt="icompile.eladkarako.com_dlink_router_block_ads_and_tracking__add_policy4_schedule_always" width="552" height="268" class="alignnone size-full wp-image-4241" /><br/>
+<br/>
+Now, add your users &#x1f473; &#x1f471; &#x1f474; &#x1f475; &#x1f476; &#x1f477; :<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking__add_policy5_clients.jpg" alt="Adding clients" width="853" height="507" class="alignnone size-full wp-image-4242" /><br/>
+<br/>
+<strong>Address Type: &#x1f518; IP</strong><br/>
+<br/>
+<blockquote><em>Assuming you have authorised your users before, all you need to do is to select them from the menu,<br/>
+and press ok.<br/>
+</em></blockquote><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking__add_policy6_filter_web.jpg" alt="Filter web-access" width="783" height="312" class="alignnone size-full wp-image-4243" /><br/>
+<strong>Method: &#x1f518; Block Some Access<br/>
+Apply Web Filter: ☑<br/>
+</strong><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking__add_policy7_no_logging.jpg" alt="No Logging" width="577" height="236" class="alignnone size-full wp-image-4244" /><br/>
+<br/>
+finish by:<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking__add_policy8_save.jpg" alt="Save" width="543" height="223" class="alignnone size-full wp-image-4245" /><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/01/icompile.eladkarako.com_dlink_router_block_ads_and_tracking__reboot.jpg" alt="reboot" width="880" height="613" class="alignnone size-full wp-image-4246" /><br/>
+<br/>
+<hr /><br/>
+<br/>
+<blockquote><em>Non D-Link Routers:</em><br/>
+Most of router vendors provides similar settings, follow the instruction above, <br/>
+<em>and make you and your users ads-free!</em></blockquote></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/useful-char-map">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/adblock-advanced-selectors">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adblock-advanced-selectors">AdBlock Advanced Selectors</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-fundamentals-tracking-impressions">JavaScript Ninja Fundamentals - Tracking Impressions</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/forbes-top-stories-unofficial-json-api">Forbes Top-Stories Unofficial JSON API</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/prebuilt-binwalk">Prebuilt Binwalk v2.1.1 - Ready To Use</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/virtualbox-additions-install-workaround">VirtualBox Additions Install Workaround</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/how-to-query-for-visible-elements-using-javascript">JavaScript - Visible Elements ?</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/which-is-better-ubuntu-or-mint">Which Is Better Ubuntu Or Mint?</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/virtualbox-ssh-support-for-internal-vm">VirtualBox - SSH Support For Internal VM</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/global-scope-state-after-script-load">JavaScript - Quick And Dirty Way To Check The State Of Global Scope After A Script Has Done Loading (+30ms)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-controllable-multiple-jquery-callback-hell">Multiple jQuery - Callback Hell</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/shoe-clothes-size-conversion-table">Shoe & Clothes Size-Conversion-Table</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/on-vacation-email-autoreply">Well.. Not Vacation Vacation..</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-remove-rude-redirects">JavaScript Ninja - Remove Rude Redirects</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-so-you-want-document-readystate-changes-to-be-an-event-sure-you-do-mutationobserver-to-the-rescue">JavaScript Ninja - So You Want document.readyState Changes To Be An Event ? Sure You Do! MutationObserver To The Rescue</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/rory-gets-a-tardis">Rory Gets A Tardis!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/git-update-sub-modules-too">Sub-Modules Too</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

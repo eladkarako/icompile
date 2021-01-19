@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix</title>
+  <meta itemprop="name"                                content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+  <meta name="dcterms.title"                           content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+  <meta property="og:title"                            content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+  <meta name="twitter:title"                           content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+  <meta name="twitter:text:title"                      content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+  <meta name="application-name"                        content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+  <meta name="subject"                                 content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+  <meta name="apple-mobile-web-app-title"              content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+  <meta name="msapplication-tooltip"                   content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+  <meta itemprop="description"                         content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+  <meta name="dcterms.description"                     content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+  <meta name="twitter:description"                     content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+  <meta property="og:description"                      content="PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="adds,admin,analytics,appendchild,application,async,attribute,attributes,back,base,blank,blocking,blocks,bold,brainer,break,browser,bypass,cache,canonical,care,change,changing,cleanup,code,collapse,color,commas,comment,comments,compression,container,content,control,convenient,cookie,correct,crawler,create,custom,data,defer,deferred,defers,dimensions,document,dynamic,elements,embedded,enable,encode,ensuring,equiv,error,escaping,executes,execution,extend,faulty,ffffe,filename,filter,font,format,found,fully,function,github,google,googlebot,googleoff,googleon,gzip,handler,headers,helps,htaccess,html,ifmodule,image,images,incorrect,index,initially,inline,insert,inverted,issues,javascript,lack,letter,letters,limit,limiting,linkid,links,logic,longer,lower,markdown,meta,missing,modify,modifying,module,moving,newlines,nifty,ninja,noscript,older,onerror,onload,orig,page,pages,pagespeed,pageview,period,preety,prevent,print,psajs,qualified,refresh,related,remove,removing,replace,request,require,resources,retained,return,rewrite,rewritebase,rewritecond,rewriterule,rewritten,safe,scenario,script,scripts,send,server,session,sort,space,started,strong,support,tags,target,trick,trim,type,typeof,undefined,unset,urls,user,users,uuid,variation,viewport,weight,whitespace,window,wordpress,worked,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="adds,admin,analytics,appendchild,application,async,attribute,attributes,back,base,blank,blocking,blocks,bold,brainer,break,browser,bypass,cache,canonical,care,change,changing,cleanup,code,collapse,color,commas,comment,comments,compression,container,content,control,convenient,cookie,correct,crawler,create,custom,data,defer,deferred,defers,dimensions,document,dynamic,elements,embedded,enable,encode,ensuring,equiv,error,escaping,executes,execution,extend,faulty,ffffe,filename,filter,font,format,found,fully,function,github,google,googlebot,googleoff,googleon,gzip,handler,headers,helps,htaccess,html,ifmodule,image,images,incorrect,index,initially,inline,insert,inverted,issues,javascript,lack,letter,letters,limit,limiting,linkid,links,logic,longer,lower,markdown,meta,missing,modify,modifying,module,moving,newlines,nifty,ninja,noscript,older,onerror,onload,orig,page,pages,pagespeed,pageview,period,preety,prevent,print,psajs,qualified,refresh,related,remove,removing,replace,request,require,resources,retained,return,rewrite,rewritebase,rewritecond,rewriterule,rewritten,safe,scenario,script,scripts,send,server,session,sort,space,started,strong,support,tags,target,trick,trim,type,typeof,undefined,unset,urls,user,users,uuid,variation,viewport,weight,whitespace,window,wordpress,worked,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/pagespeed-trim-urls-bug"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/pagespeed-trim-urls-bug"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/vmware-vmvisor-installer-5-5-esxi-embedded-with-inter-nic-drivers"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/pagespeed-defer-bug"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/pagespeed-defer-bug"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/pagespeed-defer-bug"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/pagespeed-defer-bug"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/pagespeed-defer-bug"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/pagespeed-defer-bug"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-07-28T23:18:36+00:00"     />
+  <meta name="page-datetime"                           content="2016-07-28T23:18:36+00:00"     />
+  <meta property="article:published_time"              content="2016-07-28T23:18:36+00:00"     />
+  <meta name="dcterms.date"                            content="2016-07-28T23:18:36+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-07-31T01:12:13+00:00"    />
+  <meta property="article:modified_time"               content="2016-07-31T01:12:13+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/pagespeed-defer-bug"
+,"url"             : "https://icompile.eladkarako.com/pagespeed-defer-bug"
+,"headline"        : "PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"
+,"description"     : "PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix"
+,"datePosted"      : "2016-07-28T23:18:36+00:00"
+,"dateCreated"     : "2016-07-28T23:18:36+00:00"
+,"datePublished"   : "2016-07-28T23:18:36+00:00"
+,"dateModified"    : "2016-07-31T01:12:13+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006197479641">
+  <header>
+    <h1 itemprop="headline">PHP/HTML5 Ninja - Google PageSpeed - Defer Module - Quick Fix</h1>
+    <sup>Posted at <time datetime="2016-07-31T01:12:13+00:00" itemprop="dateModified">Sun, 31 Jul 2016 01:12:13 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><em>Sort of bypass 'till fix will be embedded in the module..</em><br/>
+<!--more--><br/>
+<a href="https://github.com/pagespeed/mod_pagespeed/issues/1367" target="_blank">https://github.com/pagespeed/mod_pagespeed/issues/1367</a><br/>
+<br/>
+<br/>
+<div class="comment-body markdown-body markdown-format js-comment-body">Found a bug on the way <code>SCRIPT</code> tags are rewritten on the page.<br/>
+<br/>
+On this scenario using <em>ModPageSpeed</em> with <em>defer_javascript</em>, where the script has an inline-event handler attribute (for example <code>onload</code>, <code>onerror</code>, etc..) will cause the page to break,<br><br/>
+due to incorrect uses of <strong>inverted commas</strong>.<br/>
+<br/>
+Here is just the faulty part <sup>(the full HTML will be added later)</sup><br/>
+<br/>
+<em>W/O ModPageSpeed</em><br/>
+<br/>
+<pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> async </span><span style='color:#074726; '>defer</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"application/javascript"</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://www.google-analytics.com/analytics.js"</span><span style='color:#274796; '> </span><span style='color:#074726; '>onload</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>'(function(ga){if("undefined" === typeof ga)return;  ga("create","UA-27302073-1","eladkarako.com");  ga("require","linkid","linkid.js");  ga("require","displayfeatures");  ga("set","&amp;uid","579a7f7610f4e");  ga("send","pageview");  }(window.ga));'</span><span style='color:#274796; '> </span><span style='color:#a65700; '>&gt;</span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>&gt;</span></pre><br/>
+<br/>
+<em>W/ ModPageSpeed</em><br/>
+<br/>
+<pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> async </span><span style='color:#074726; '>defer</span><span style='color:#274796; '> pagespeed_orig_type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"application/javascript"</span><span style='color:#274796; '> pagespeed_orig_src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://www.google-analytics.com/analytics.js"</span><span style='color:#274796; '> </span><span style='color:#074726; '>onload</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>'this.setAttribute('</span><span style='color:#274796; '>pagespeed_onload</span><span style='color:#0000e6; '>','</span><span style='color:#274796; '>(function(ga){if(</span><span style='color:#0000e6; '>"undefined"</span><span style='color:#274796; '> </span><span style='color:#808030; '>=</span><span style='color:#808030; '>=</span><span style='color:#808030; '>=</span><span style='color:#274796; '> typeof ga)return;  ga(</span><span style='color:#0000e6; '>"create"</span><span style='color:#274796; '>,</span><span style='color:#0000e6; '>"UA-27302073-1"</span><span style='color:#274796; '>,</span><span style='color:#0000e6; '>"eladkarako.com"</span><span style='color:#274796; '>);  ga(</span><span style='color:#0000e6; '>"require"</span><span style='color:#274796; '>,</span><span style='color:#0000e6; '>"linkid"</span><span style='color:#274796; '>,</span><span style='color:#0000e6; '>"linkid.js"</span><span style='color:#274796; '>);  ga(</span><span style='color:#0000e6; '>"require"</span><span style='color:#274796; '>,</span><span style='color:#0000e6; '>"displayfeatures"</span><span style='color:#274796; '>);  ga(</span><span style='color:#0000e6; '>"set"</span><span style='color:#274796; '>,</span><span style='color:#0000e6; '>"&amp;uid"</span><span style='color:#274796; '>,</span><span style='color:#0000e6; '>"579a7f7610f4e"</span><span style='color:#274796; '>);  ga(</span><span style='color:#0000e6; '>"send"</span><span style='color:#274796; '>,</span><span style='color:#0000e6; '>"pageview"</span><span style='color:#274796; '>);  }(window</span><span style='color:#008c00; '>.</span><span style='color:#274796; '>ga));</span><span style='color:#0000e6; '>');'</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text/psajs"</span><span style='color:#274796; '> orig_index</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"6"</span><span style='color:#a65700; '>&gt;</span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>&gt;</span><br/>
+</pre><br/>
+<br/>
+<hr><br/>
+<br/>
+<strong>here is my <code>.htaccess</code> (I'm preety sure its the <code>defer_javascript</code> functionality).</strong>:<br/>
+<br/>
+<pre><span style='color:#696969; '># BEGIN WordPress</span><br/>
+<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>IfModule</span> <span style='color:#0000e6; '>mod_rewrite.c</span><span style='color:#a65700; '>&gt;</span><br/>
+<span style='color:#800000; font-weight:bold; '>RewriteEngine</span> <span style='color:#074726; '>On</span><br/>
+<span style='color:#800000; font-weight:bold; '>RewriteBase</span> /<br/>
+<span style='color:#800000; font-weight:bold; '>RewriteRule</span> ^index\\.php$ <span style='color:#808030; '>-</span> [L]<br/>
+<span style='color:#800000; font-weight:bold; '>RewriteCond</span> %{REQUEST_URI}        !pagespeed<br/>
+<span style='color:#800000; font-weight:bold; '>RewriteCond</span> %{REQUEST_FILENAME}   !<span style='color:#808030; '>-</span>f<br/>
+<span style='color:#800000; font-weight:bold; '>RewriteCond</span> %{REQUEST_FILENAME}   !<span style='color:#808030; '>-</span>d<br/>
+<span style='color:#800000; font-weight:bold; '>RewriteRule</span> . /index.php [L]<br/>
+<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>IfModule</span><span style='color:#a65700; '>&gt;</span><br/>
+<span style='color:#696969; '># END WordPress</span><br/>
+<br/>
+ <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>IfModule</span> <span style='color:#0000e6; '>pagespeed_module</span><span style='color:#a65700; '>&gt;</span><br/>
+   ModPagespeed                <span style='color:#074726; '>on</span><br/>
+   ModPagespeedRunExperiment   <span style='color:#074726; '>on</span><br/>
+   <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#use PageSpeed to modify all of the pages/resources, but do not modify admin pages.</span><br/>
+   ModPagespeedAllow           <span style='color:#0000e6; '>"*"</span><br/>
+   ModPagespeedDisallow        <span style='color:#0000e6; '>"*/wp-admin/*"</span><br/>
+ <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;######################################################</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;# Prevent PageSpeed From Removing Or Modifying Those #</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;######################################################</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#keep googleoff/googleon comments used for googlebot-web-crawler (for example: &lt;!--googleoff: all-->&lt;!--googleon: all-->).</span><br/>
+   ModPagespeedRetainComment   <span style='color:#0000e6; '>"googleon*"</span><br/>
+   ModPagespeedRetainComment   <span style='color:#0000e6; '>"googleoff*"</span><br/>
+   <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#keep my custom comments.</span><br/>
+   ModPagespeedRetainComment <span style='color:#0000e6; '>" _*"</span><br/>
+ <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#don't add "Cache-Control: no-cache, max-age=0" headers.</span><br/>
+   ModPagespeedModifyCachingHeaders <span style='color:#074726; '>off</span><br/>
+ <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#############################################</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;# Allow PageSpeed To Remove Or Modify Those #</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#############################################</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#remove all (those whom were not retained..) HTML comments (will not modify JavaScript/CSS comments).</span><br/>
+   ModPagespeedEnableFilters remove_comments<br/>
+ <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#remove whitespace (space, tab, some newlines) from between attributes and HTML tags. the most important filter.</span><br/>
+   ModPagespeedEnableFilters collapse_whitespace<br/>
+ <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#modify links, from fully qualified to relative-links (will not modify META tags (canonical/og:url) but WILL change CSS/JS/IMG/etc..)</span><br/>
+   ModPagespeedEnableFilters trim_urls<br/>
+ <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#modify every image to only load, when container is in ViewPort. will add &lt;noscript> tag with this content &lt;meta HTTP-EQUIV="refresh" content="0;url='https://icompile.eladkarako.com/?ModPagespeed=noscript'" /> in-case user does not have JavaScript-support, to load the page without lazy-loading and other script-related enhancements.</span><br/>
+   ModPagespeedEnableFilters lazyload_images<br/>
+ <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#lower the letter-case of attributes in HTML tags, limiting variation of letters helps GZIP compression.</span><br/>
+   ModPagespeedLowercaseHtmlNames <span style='color:#074726; '>on</span><br/>
+ <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#Adds missing explicit width and height attributes to &lt;img> tags that lack them.</span><br/>
+   ModPagespeedEnableFilters insert_image_dimensions<br/>
+ <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#trim whitespace in inline CSS and JavaScript blocks.</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#ModPagespeedEnableFilters rewrite_css</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#ModPagespeedEnableFilters rewrite_javascript</span><br/>
+ <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#enable longer period of browser-cache for some resources (image, css, js,...)</span><br/>
+   ModPagespeedEnableFilters extend_cache<br/>
+ <br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;#defer JavaScript execution until page load. It defers this by changing the type and src attributes of &lt;script> elements on the HTML page to data-pagespeed-orig-type and data-pagespeed-orig-src respectively. It also adds a new type attribute whose value is set to text/psajs. A window.onload handler is added to the HTML, which executes all the deferred scripts.</span><br/>
+   ModPagespeedEnableFilters defer_javascript<br/>
+ <br/>
+ <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>IfModule</span><span style='color:#a65700; '>&gt;</span><br/>
+</pre><br/>
+<br/>
+<br/>
+here is the html before/after for your convenient:<br><br/>
+<a href="https://eladkarako.com/without.txt">https://eladkarako.com/without.txt</a><br><br/>
+<a href="https://eladkarako.com/with.txt">https://eladkarako.com/with.txt</a><br/>
+<br/>
+<hr/><br/>
+<br/>
+<strong>how it started?</strong><br/>
+<br/>
+while initially I didn't much care of the script being dynamic,<br/>
+so this worked quite well ensuring the page will not through <code>'ga' is undefined</code> error,<br/>
+if the user is blocking Google-Analytics (there is a server-side dynamic part of UUID the users by [safe] session cookie):<br/>
+<br/>
+<pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>&gt;</span><br/>
+<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>body<span style='color:#808030; '>,</span> script<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+  script<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>src</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>https://www.google-analytics.com/analytics.js</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  script<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>async</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  script<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>defer</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  script<span style='color:#808030; '>.</span>onload <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><br/>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>undefined</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>===</span> <span style='color:#800000; font-weight:bold; '>typeof</span> window<span style='color:#808030; '>.</span>ga<span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span><br/>
+    window<span style='color:#808030; '>.</span>ga<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>create</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>UA-27302073-1</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>eladkarako.com</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+    window<span style='color:#808030; '>.</span>ga<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>require</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>linkid</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>linkid.js</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+    window<span style='color:#808030; '>.</span>ga<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>require</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>displayfeatures</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+    window<span style='color:#808030; '>.</span>ga<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>set</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>&amp;uid</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#5f5035; background:#ffffe8; '>&lt;?php</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>print</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$_SESSION</span><span style='color:#808030; background:#ffffe8; '>[</span><span style='color:#0000e6; background:#ffffe8; '>'unique_id'</span><span style='color:#808030; background:#ffffe8; '>]</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#5f5035; background:#ffffe8; '>?></span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+    window<span style='color:#808030; '>.</span>ga<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>send</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>pageview</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+  body<span style='color:#808030; '>.</span>appendChild<span style='color:#808030; '>(</span>script<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>(</span><br/>
+ document<span style='color:#808030; '>.</span>querySelector<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>body</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><br/>
+<span style='color:#808030; '>,</span>document<span style='color:#808030; '>.</span>createElement<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>script</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><br/>
+<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>&gt;</span><br/>
+</pre><br/>
+<br/>
+moving the entire thing into an (although older) inline-event handler seems a no-brainer,<br/>
+but, due to the bug (above) the entire handler seems to break the page's HTML, by not using the correct<br/>
+escaping of inverted commas at the right place..<br/>
+<br/>
+so I've got back to PHP using a little <code>BASE64</code> trick, to limit the <em>on-page intervention</em> of Google PageSpeed with the actual content/logic of the script...<br/>
+<br/>
+<pre><span style='color:#696969; '>&lt;!-- safe google analytics --></span><br/>
+<span style='color:#5f5035; background:#ffffe8; '>&lt;?php</span><span style='color:#000000; background:#ffffe8; '></span><br/>
+<span style='color:#000000; background:#ffffe8; '>&#xa0;&#xa0;</span><span style='color:#797997; background:#ffffe8; '>$src</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800000; background:#ffffe8; '>&lt;&lt;&lt;</span><span style='color:#e34adc; background:#ffffe8; '>SRC</span><span style='color:#0000e6; background:#ffffe8; '></span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>(function(body, script){</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>&#xa0;&#xa0;script.setAttribute("src", "https://www.google-analytics.com/analytics.js");</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>&#xa0;&#xa0;script.setAttribute("async", "");</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>&#xa0;&#xa0;script.setAttribute("defer", "");</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>&#xa0;&#xa0;script.onload = function(){</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>&#xa0;&#xa0;&#xa0;&#xa0;if("undefined" === typeof window.ga) return;</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>&#xa0;&#xa0;&#xa0;&#xa0;window.ga("create", "UA-27302073-1", "eladkarako.com");</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>&#xa0;&#xa0;&#xa0;&#xa0;window.ga("require", "linkid", "linkid.js");</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>&#xa0;&#xa0;&#xa0;&#xa0;window.ga("require", "displayfeatures");</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>&#xa0;&#xa0;&#xa0;&#xa0;window.ga("set", "&amp;uid", "###REPLACE_WITH_SESSION_ID###");</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>&#xa0;&#xa0;&#xa0;&#xa0;window.ga("send", "pageview");</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>&#xa0;&#xa0;};</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>&#xa0;&#xa0;body.appendChild(script);</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>}(</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>&#xa0;document.querySelector("body")</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>,document.createElement("script")</span><br/>
+<span style='color:#0000e6; background:#ffffe8; '>));</span><br/>
+<span style='color:#e34adc; background:#ffffe8; '>SRC</span><span style='color:#0000e6; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span><br/>
+<span style='color:#000000; background:#ffffe8; '>&#xa0;&#xa0;</span><span style='color:#797997; background:#ffffe8; '>$src</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#400000; background:#ffffe8; '>str_replace</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#0000e6; background:#ffffe8; '>'</span><span style='color:#800000; background:#ffffe8; '>#</span><span style='color:#0000e6; background:#ffffe8; '>##REPLACE_WITH_SESSION_ID##</span><span style='color:#800000; background:#ffffe8; '>#</span><span style='color:#0000e6; background:#ffffe8; '>'</span><span style='color:#808030; background:#ffffe8; '>,</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#797997; background:#ffffe8; '>$_SESSION</span><span style='color:#808030; background:#ffffe8; '>[</span><span style='color:#0000e6; background:#ffffe8; '>'unique_id'</span><span style='color:#808030; background:#ffffe8; '>]</span><span style='color:#808030; background:#ffffe8; '>,</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#797997; background:#ffffe8; '>$src</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span><br/>
+<span style='color:#000000; background:#ffffe8; '>&#xa0;&#xa0;</span><span style='color:#797997; background:#ffffe8; '>$src</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#400000; background:#ffffe8; '>base64_encode</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$src</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span><br/>
+<span style='color:#5f5035; background:#ffffe8; '>?></span><br/>
+<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> async </span><span style='color:#074726; '>defer</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"application/javascript"</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"data:application/javascript;charset=UTF-8;base64,</span><span style='color:#5f5035; background:#ffffe8; '>&lt;?php</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>print</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$src</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#5f5035; background:#ffffe8; '>?></span><span style='color:#0000e6; '>"</span><span style='color:#a65700; '>&gt;</span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>&gt;</span><br/>
+<span style='color:#5f5035; background:#ffffe8; '>&lt;?php</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>unset</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$src</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#696969; background:#ffffe8; '>/* cleanup */</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#5f5035; background:#ffffe8; '>?></span><br/>
+</pre><br/>
+<br/>
+nifty little thing... ;)<br/>
+<br/>
+<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/pagespeed-trim-urls-bug">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/vmware-vmvisor-installer-5-5-esxi-embedded-with-inter-nic-drivers">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vmware-vmvisor-installer-5-5-esxi-embedded-with-inter-nic-drivers">VMware VMvisor Installer 5.5 (ESXi) embedded with Inter NIC drivers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/parallel-curl-requests">Parallel cUrl Requests</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/python-patch-ignore-some-of-google-closure-jslinter-gjslint-errors">Python Patch - Ignore Some Of Google-Closure-JSLinter (GJSLint) Errors</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/latest-google-closure-jslinter-gjslint-download-and-extract">Latest Google-Closure-JSLinter (GJSLint) - Download and Extract</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/eclipse-kepler-and-lite-configurations">Eclipse Kepler and lite configurations</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-installer-download-latest-nightly-build-snapshot">Chromium Installer - Download Latest Nightly-Build Snapshot</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/mine-types-complete-list">Mine-Types Complete List</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-social-networking-icon-set">Free Social Networking Icon Set</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/fast-download-and-parse-http-archive-requests-file">Fast download and parse http-archive requests file</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/13-31-113-131-311-prime-numbers">311 Prime Numbers</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vb6-api-for-coinitializeex-and-couninitialize-of-ole32-dll">VB6 API For CoInitializeEx and CoUninitialize of ole32.dll</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/window-messeging-example">JavaScript Snippet - WordPress Window-Messaging Semi-Safe Example</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-robtex-com-sorted-lists">JavaScript Snippet - Robtex.com Sorted Lists</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-wordpress-plugin-tagclass-bgone">New WordPress Plugin - TagClass-B-Gone</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wordpress-script-style-killer">New WordPress Plugin - Script-Style-Killer</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/web-whatsapp-com-resources-inline-style-zero-and-custom">web.whatsapp.com Resources - Inline-Style - Zero And Custom</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

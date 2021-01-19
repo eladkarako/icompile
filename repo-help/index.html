@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>repo Help</title>
+  <meta itemprop="name"                                content="repo Help"       />
+  <meta name="dcterms.title"                           content="repo Help"       />
+  <meta property="og:title"                            content="repo Help"       />
+  <meta name="twitter:title"                           content="repo Help"       />
+  <meta name="twitter:text:title"                      content="repo Help"       />
+  <meta name="application-name"                        content="repo Help"       />
+  <meta name="subject"                                 content="repo Help"       />
+  <meta name="apple-mobile-web-app-title"              content="repo Help"       />
+  <meta name="msapplication-tooltip"                   content="repo Help"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="repo Help"       />
+  <meta itemprop="description"                         content="repo Help"       />
+  <meta name="dcterms.description"                     content="repo Help"       />
+  <meta name="twitter:description"                     content="repo Help"       />
+  <meta property="og:description"                      content="repo Help"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="abandon,alternate,anchor,archive,args,argument,assumed,attempt,auto,back,behavior,binary,bootstrap,branch,branches,broken,build,bundle,change,checkout,cherry,click,client,clone,code,collection,command,commands,commit,commonly,compatible,complete,config,connecting,connection,connections,content,continue,create,credentials,custom,daemon,darwin,data,default,delete,delivery,depth,description,detach,detailed,development,diff,direcotry,directories,directory,disable,disabled,disables,display,domain,download,downloaded,early,element,enable,enables,environment,establish,exist,existing,exists,exit,export,fails,faster,feature,fetch,fetching,file,files,fixed,forall,force,gerrit,gitc,gitconfig,github,good,grep,group,groups,helpful,host,includes,info,information,init,initial,initialize,inspection,install,installed,insteadof,jobs,jump,label,lack,latest,line,lines,linked,linux,list,listed,local,locally,location,logging,loss,lost,mail,make,manifest,master,matching,menu,merged,message,minimal,mirror,mkdir,needed,netrc,network,object,objects,omni,optimized,option,optional,options,otherbranch,overheads,overview,overwrite,overwriting,password,path,pattern,perform,permanently,permits,pick,platform,platforms,print,problems,proceed,project,projects,prompt,protocol,proxy,prune,python,quiet,read,rebase,recognized,reducing,reference,refs,remote,removed,replica,repo,repository,required,restrict,resumeable,reuse,review,revision,rewrite,rewrites,saving,select,selfupdate,server,session,setup,shallow,shell,smart,smartsync,socket,source,specific,stage,start,status,submodules,support,switch,switching,sync,synchronize,syncing,syntax,tags,target,temporarily,temporary,title,topic,topics,tracking,traffic,tree,tunnel,twrp,unix,unmerged,update,updates,upload,upstream,usage,user,username,utility,variable,verify,version,warning,windows,working,works,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="abandon,alternate,anchor,archive,args,argument,assumed,attempt,auto,back,behavior,binary,bootstrap,branch,branches,broken,build,bundle,change,checkout,cherry,click,client,clone,code,collection,command,commands,commit,commonly,compatible,complete,config,connecting,connection,connections,content,continue,create,credentials,custom,daemon,darwin,data,default,delete,delivery,depth,description,detach,detailed,development,diff,direcotry,directories,directory,disable,disabled,disables,display,domain,download,downloaded,early,element,enable,enables,environment,establish,exist,existing,exists,exit,export,fails,faster,feature,fetch,fetching,file,files,fixed,forall,force,gerrit,gitc,gitconfig,github,good,grep,group,groups,helpful,host,includes,info,information,init,initial,initialize,inspection,install,installed,insteadof,jobs,jump,label,lack,latest,line,lines,linked,linux,list,listed,local,locally,location,logging,loss,lost,mail,make,manifest,master,matching,menu,merged,message,minimal,mirror,mkdir,needed,netrc,network,object,objects,omni,optimized,option,optional,options,otherbranch,overheads,overview,overwrite,overwriting,password,path,pattern,perform,permanently,permits,pick,platform,platforms,print,problems,proceed,project,projects,prompt,protocol,proxy,prune,python,quiet,read,rebase,recognized,reducing,reference,refs,remote,removed,replica,repo,repository,required,restrict,resumeable,reuse,review,revision,rewrite,rewrites,saving,select,selfupdate,server,session,setup,shallow,shell,smart,smartsync,socket,source,specific,stage,start,status,submodules,support,switch,switching,sync,synchronize,syncing,syntax,tags,target,temporarily,temporary,title,topic,topics,tracking,traffic,tree,tunnel,twrp,unix,unmerged,update,updates,upload,upstream,usage,user,username,utility,variable,verify,version,warning,windows,working,works,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/everything-to-html-entity-bookmarklet"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/repo-help"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/repo-help"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/repo-help"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/repo-help"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/repo-help"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/repo-help"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-02-26T14:54:07+00:00"     />
+  <meta name="page-datetime"                           content="2016-02-26T14:54:07+00:00"     />
+  <meta property="article:published_time"              content="2016-02-26T14:54:07+00:00"     />
+  <meta name="dcterms.date"                            content="2016-02-26T14:54:07+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-02-27T03:43:33+00:00"    />
+  <meta property="article:modified_time"               content="2016-02-27T03:43:33+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/repo-help"
+,"url"             : "https://icompile.eladkarako.com/repo-help"
+,"headline"        : "repo Help"
+,"description"     : "repo Help"
+,"datePosted"      : "2016-02-26T14:54:07+00:00"
+,"dateCreated"     : "2016-02-26T14:54:07+00:00"
+,"datePublished"   : "2016-02-26T14:54:07+00:00"
+,"dateModified"    : "2016-02-27T03:43:33+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007448946541">
+  <header>
+    <h1 itemprop="headline">repo Help</h1>
+    <sup>Posted at <time datetime="2016-02-27T03:43:33+00:00" itemprop="dateModified">Sat, 27 Feb 2016 03:43:33 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><!--more--><br/>
+<a anchor name="anchor_top"></a>Jump Menu:<br/>
+<ol><br/>
+<li><a target="_self" href="#anchor_minimal">minimal</a></li><br/>
+<li><a target="_self" href="#anchor_all">all</a></li><br/>
+<li><a target="_self" href="#anchor_sync">sync</a><br/>
+<ul><li>example:<br/>
+<pre>repo sync --force-broken --force-sync --jobs=32 --fetch-submodules --no-repo-verify</pre><br/>
+</li></ul><br/>
+</li><br/>
+<li><a href="#anchor_init">init</a><br/>
+<ul><li>example:<br/>
+<pre>
+mkdir twrp6
+cd twrp6/
+repo init -u git://github.com/lj50036/platform_manifest_twrp_omni.git -b twrp-6.0
+</pre><br/>
+</li></ul><br/>
+</li><br/>
+</ol><br/>
+<br/>
+<hr /><br/>
+<br/>
+<a anchor target="_self" name="anchor_minimal"   href="#anchor_top" title="click to go up ⇧">minimal</a>:<br/>
+<pre><br/>
+usage: repo COMMAND [ARGS]<br/>
+The most commonly used repo commands are:<br/>
+  abandon        Permanently abandon a development branch<br/>
+  branch         View current topic branches<br/>
+  branches       View current topic branches<br/>
+  checkout       Checkout a branch for development<br/>
+  cherry-pick    Cherry-pick a change.<br/>
+  diff           Show changes between commit and working tree<br/>
+  diffmanifests  Manifest diff utility<br/>
+  download       Download and checkout a change<br/>
+  grep           Print lines matching a pattern<br/>
+  info           Get info on the manifest branch, current branch or unmerged bra<br/>
+  init           Initialize repo in the current directory<br/>
+  list           List projects and their associated directories<br/>
+  overview       Display overview of unmerged project branches<br/>
+  prune          Prune (delete) already merged topics<br/>
+  rebase         Rebase local branches on upstream branch<br/>
+  smartsync      Update working tree to the latest known good revision<br/>
+  stage          Stage file(s) for commit<br/>
+  start          Start a new branch for development<br/>
+  status         Show the working tree status<br/>
+  sync           Update working tree to the latest revision<br/>
+  upload         Upload changes for code review<br/>
+See 'repo help <command />' for more information on a specific command.<br/>
+See 'repo help --all' for a complete list of recognized commands.<br/>
+</pre><br/>
+<br/>
+<hr /><br/>
+<br/>
+<a anchor target="_self" name="anchor_all"   href="#anchor_top" title="click to go up ⇧">all</a>:<br/>
+<pre><br/>
+usage: repo COMMAND [ARGS]<br/>
+The complete list of recognized repo commands are:<br/>
+  abandon        Permanently abandon a development branch<br/>
+  branch         View current topic branches<br/>
+  branches       View current topic branches<br/>
+  checkout       Checkout a branch for development<br/>
+  cherry-pick    Cherry-pick a change.<br/>
+  diff           Show changes between commit and working tree<br/>
+  diffmanifests  Manifest diff utility<br/>
+  download       Download and checkout a change<br/>
+  forall         Run a shell command in each project<br/>
+  gitc-delete    Delete a GITC Client.<br/>
+  gitc-init      Initialize a GITC Client.<br/>
+  grep           Print lines matching a pattern<br/>
+  help           Display detailed help on a command<br/>
+  info           Get info on the manifest branch, current branch or unmerged branches<br/>
+  init           Initialize repo in the current directory<br/>
+  list           List projects and their associated directories<br/>
+  manifest       Manifest inspection utility<br/>
+  overview       Display overview of unmerged project branches<br/>
+  prune          Prune (delete) already merged topics<br/>
+  rebase         Rebase local branches on upstream branch<br/>
+  selfupdate     Update repo to the latest version<br/>
+  smartsync      Update working tree to the latest known good revision<br/>
+  stage          Stage file(s) for commit<br/>
+  start          Start a new branch for development<br/>
+  status         Show the working tree status<br/>
+  sync           Update working tree to the latest revision<br/>
+  upload         Upload changes for code review<br/>
+  version        Display the version of repo<br/>
+See 'repo help <command />' for more information on a specific command.<br/>
+</pre><br/>
+<br/>
+<hr /><br/>
+<br/>
+<a anchor target="_self" name="anchor_sync"   href="#anchor_top" title="click to go up ⇧">sync</a>:<br/>
+<pre><br/>
+Summary<br/>
+-------<br/>
+Update working tree to the latest revision<br/>
+<br/>
+Usage: repo sync [<project>...]<br/>
+<br/>
+Options:<br/>
+  -h, --help            show this help message and exit<br/>
+  -f, --force-broken    continue sync even if a project fails to sync<br/>
+  --force-sync          overwrite an existing git directory if it needs to<br/>
+                        point to a different object directory. WARNING: this<br/>
+                        may cause loss of data<br/>
+  -l, --local-only      only update working tree, don't fetch<br/>
+  -n, --network-only    fetch only, don't update working tree<br/>
+  -d, --detach          detach projects back to manifest revision<br/>
+  -c, --current-branch  fetch only current branch from server<br/>
+  -q, --quiet           be more quiet<br/>
+  -j JOBS, --jobs=JOBS  projects to fetch simultaneously (default 4)<br/>
+  -m NAME.xml, --manifest-name=NAME.xml<br/>
+                        temporary manifest to use for this sync<br/>
+  --no-clone-bundle     disable use of /clone.bundle on HTTP/HTTPS<br/>
+  -u MANIFEST_SERVER_USERNAME, --manifest-server-username=MANIFEST_SERVER_USERNAME<br/>
+                        username to authenticate with the manifest server<br/>
+  -p MANIFEST_SERVER_PASSWORD, --manifest-server-password=MANIFEST_SERVER_PASSWORD<br/>
+                        password to authenticate with the manifest server<br/>
+  --fetch-submodules    fetch submodules from server<br/>
+  --no-tags             don't fetch tags<br/>
+  --optimized-fetch     only fetch projects fixed to sha1 if revision does not<br/>
+                        exist locally<br/>
+  -s, --smart-sync      smart sync using manifest from a known good build<br/>
+  -t SMART_TAG, --smart-tag=SMART_TAG<br/>
+                        smart sync using manifest from a known tag<br/>
+<br/>
+  repo Version options:<br/>
+    --no-repo-verify    do not verify repo source code<br/>
+<br/>
+Description<br/>
+-----------<br/>
+The 'repo sync' command synchronizes local project directories with the<br/>
+remote repositories specified in the manifest. If a local project does<br/>
+not yet exist, it will clone a new local directory from the remote<br/>
+repository and set up tracking branches as specified in the manifest. If<br/>
+the local project already exists, 'repo sync' will update the remote<br/>
+branches and rebase any new local changes on top of the new remote<br/>
+changes.<br/>
+<br/>
+'repo sync' will synchronize all projects listed at the command line.<br/>
+Projects can be specified either by name, or by a relative or absolute<br/>
+path to the project's local directory. If no projects are specified,<br/>
+'repo sync' will synchronize all projects listed in the manifest.<br/>
+<br/>
+The -d/--detach option can be used to switch specified projects back to<br/>
+the manifest revision. This option is especially helpful if the project<br/>
+is currently on a topic branch, but the manifest revision is temporarily<br/>
+needed.<br/>
+<br/>
+The -s/--smart-sync option can be used to sync to a known good build as<br/>
+specified by the manifest-server element in the current manifest. The<br/>
+-t/--smart-tag option is similar and allows you to specify a custom<br/>
+tag/label.<br/>
+<br/>
+The -u/--manifest-server-username and -p/--manifest-server-password<br/>
+options can be used to specify a username and password to authenticate<br/>
+with the manifest server when using the -s or -t option.<br/>
+<br/>
+If -u and -p are not specified when using the -s or -t option, 'repo<br/>
+sync' will attempt to read authentication credentials for the manifest<br/>
+server from the user's .netrc file.<br/>
+<br/>
+'repo sync' will not use authentication credentials from -u/-p or .netrc<br/>
+if the manifest server specified in the manifest file already includes<br/>
+credentials.<br/>
+<br/>
+The -f/--force-broken option can be used to proceed with syncing other<br/>
+projects if a project sync fails.<br/>
+<br/>
+The --force-sync option can be used to overwrite existing git<br/>
+directories if they have previously been linked to a different object<br/>
+direcotry. WARNING: This may cause data to be lost since refs may be<br/>
+removed when overwriting.<br/>
+<br/>
+The --no-clone-bundle option disables any attempt to use<br/>
+$URL/clone.bundle to bootstrap a new Git repository from a resumeable<br/>
+bundle file on a content delivery network. This may be necessary if<br/>
+there are problems with the local Python HTTP client or proxy<br/>
+configuration, but the Git binary works.<br/>
+<br/>
+The --fetch-submodules option enables fetching Git submodules of a<br/>
+project from server.<br/>
+<br/>
+The -c/--current-branch option can be used to only fetch objects that<br/>
+are on the branch specified by a project's revision.<br/>
+<br/>
+The --optimized-fetch option can be used to only fetch projects that are<br/>
+fixed to a sha1 revision if the sha1 revision does not already exist<br/>
+locally.<br/>
+<br/>
+SSH Connections<br/>
+---------------<br/>
+If at least one project remote URL uses an SSH connection (ssh://,<br/>
+git+ssh://, or user@host:path syntax) repo will automatically enable the<br/>
+SSH ControlMaster option when connecting to that host. This feature<br/>
+permits other projects in the same 'repo sync' session to reuse the same<br/>
+SSH tunnel, saving connection setup overheads.<br/>
+<br/>
+To disable this behavior on UNIX platforms, set the GIT_SSH environment<br/>
+variable to 'ssh'. For example:<br/>
+<br/>
+  export GIT_SSH=ssh<br/>
+  repo sync<br/>
+<br/>
+  Compatibility<br/>
+  ~~~~~~~~~~~~~<br/>
+This feature is automatically disabled on Windows, due to the lack of<br/>
+UNIX domain socket support.<br/>
+<br/>
+This feature is not compatible with url.insteadof rewrites in the user's<br/>
+~/.gitconfig. 'repo sync' is currently not able to perform the rewrite<br/>
+early enough to establish the ControlMaster tunnel.<br/>
+<br/>
+If the remote SSH daemon is Gerrit Code Review, version 2.0.10 or later<br/>
+is required to fix a server side protocol bug.<br/>
+</project></pre><br/>
+<br/>
+<hr /><br/>
+<br/>
+<a anchor target="_self" name="anchor_init"   href="#anchor_top" title="click to go up ⇧">init</a>:<br/>
+<pre>
+Summary
+-------
+Initialize repo in the current directory
+
+Usage: repo init [options]
+
+Options:
+  -h, --help            show this help message and exit
+
+  Logging options:
+    -q, --quiet         be quiet
+
+  Manifest options:
+    -u URL, --manifest-url=URL
+                        manifest repository location
+    -b REVISION, --manifest-branch=REVISION
+                        manifest branch or revision
+    -m NAME.xml, --manifest-name=NAME.xml
+                        initial manifest file
+    --mirror            create a replica of the remote repositories rather
+                        than a client working directory
+    --reference=DIR     location of mirror directory
+    --depth=DEPTH       create a shallow clone with given depth; see git clone
+    --archive           checkout an archive instead of a git repository for
+                        each project. See git archive.
+    -g GROUP, --groups=GROUP
+                        restrict manifest projects to ones with specified
+                        group(s) [default|all|G1,G2,G3|G4,-G5,-G6]
+    -p PLATFORM, --platform=PLATFORM
+                        restrict manifest projects to ones with a specified
+                        platform group [auto|all|none|linux|darwin|...]
+
+  repo Version options:
+    --repo-url=URL      repo repository location
+    --repo-branch=REVISION
+                        repo branch or revision
+    --no-repo-verify    do not verify repo source code
+
+  Other options:
+    --config-name       Always prompt for name/e-mail
+
+Description
+-----------
+The 'repo init' command is run once to install and initialize repo. The
+latest repo source code and manifest collection is downloaded from the
+server and is installed in the .repo/ directory in the current working
+directory.
+
+The optional -b argument can be used to select the manifest branch to
+checkout and use. If no branch is specified, master is assumed.
+
+The optional -m argument can be used to specify an alternate manifest to
+be used. If no manifest is specified, the manifest default.xml will be
+used.
+
+The --reference option can be used to point to a directory that has the
+content of a --mirror sync. This will make the working directory use as
+much data as possible from the local reference directory when fetching
+from the server. This will make the sync go a lot faster by reducing
+data traffic on the network.
+
+Switching Manifest Branches
+---------------------------
+To switch to another manifest branch, 'repo init -b otherbranch' may be
+used in an existing client. However, as this only updates the manifest,
+a subsequent 'repo sync' (or 'repo sync -d') is necessary to update the
+working directory files.
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/everything-to-html-entity-bookmarklet">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/everything-to-html-entity-bookmarklet">Everything To HTML-Entity Bookmarklet</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/network-traffic-analyze-tools">Network Traffic Analyze Tϕϕls</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/file-sharing-hosts-logos">File-Sharing Hosts Logos</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/efficient-json-table-data-representation">Efficient JSON-Table Data Representation</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/clockwork-recovery-img-to-tar-md5">Clockwork Recovery img to tar.md5</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-implement-select-for-all-html-elements">JavaScript Ninja - Implement .select() For All HTML-Elements</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/android-synapse-dynamic-translation-layer-color">Android Synapse - Dynamic Translation Layer Color</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/reverse-engineer-and-modify-d-link-binary-firmware-file">Reverse Engineer And Modify D-Link Binary Firmware File</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/marshmallow-deepsleep-fix">Android Marshmallow 6.0.1 - DeepSleep Fix For Samsung Galaxy Note 5 SM-N920C noblelte</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-6-0-1-arm-arm64-jar-files">Complete Framework Files - Samsung Galaxy Note 5 - Android 6.0.1 - ARM + ARM64 + JAR Files</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/samsung-bloatware">Samsung Bloatware</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hola-and-luminati-network-subdomains">Hola And Luminati-Network SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/examples-of-accuweather-api-from-the-android-application">Examples Of AccuWeather-API From The Android-Application Including API-Key</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bi-cure-laser-nope">בי-קיור לייזר = חרטה ברטה ?</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-for-external-links">A Pure-CSS3 Solution On How To Inform Your Users They Are Going To Click On An External-Link Using Unicode-Emoji Icons</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-ninja-techniques-external-links-icon-in-pure-css">CSS Ninja Techniques - External Links Icon In Pure CSS</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<article id="post-###ID###">
+  <header>
+    <h2>###TITLE###</h2>
+    <sup>Posted at <time datetime="###MODIFIED###">###MODIFIED_FORMATTED###</time></sup>
+  </header>
+  <br/>
+  <div>###CONTENT###</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+      ###NEXTARTICLES###
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>

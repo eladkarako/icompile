@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Reverse Engineering - Extract Version Information From And Executable Using ResHacker</title>
+  <meta itemprop="name"                                content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+  <meta name="dcterms.title"                           content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+  <meta property="og:title"                            content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+  <meta name="twitter:title"                           content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+  <meta name="twitter:text:title"                      content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+  <meta name="application-name"                        content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+  <meta name="subject"                                 content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+  <meta name="apple-mobile-web-app-title"              content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+  <meta name="msapplication-tooltip"                   content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+  <meta itemprop="description"                         content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+  <meta name="dcterms.description"                     content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+  <meta name="twitter:description"                     content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+  <meta property="og:description"                      content="Reverse Engineering - Extract Version Information From And Executable Using ResHacker"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="ambiguous,apostrophes,application,apply,ascii,aspx,assuming,attributes,badddd,batch,binary,blank,block,bold,build,built,call,called,care,cases,chain,character,checking,choose,choosing,chromium,clarity,code,color,combination,command,commands,comments,company,companyname,compile,compiled,computers,content,cool,copyright,corporation,created,cygwin,dates,defined,defines,depend,depends,description,desktop,determine,diagnostic,differs,ding,displayed,distributed,doomed,download,drag,driver,drop,dumped,dynamic,easily,easy,echo,enables,endlocal,engineering,english,enjoy,entry,escape,escaping,executable,exists,extension,extract,feed,fetch,file,fileflags,filename,files,fileversion,filter,filtered,font,format,found,generate,good,grep,hacker,handful,handle,hell,helpfile,highly,human,ignore,implemented,improved,include,included,info,information,input,install,installer,internal,issue,keyboard,keyboards,kind,language,leave,legal,library,linux,list,match,microsoft,mini,missing,modular,module,mouse,msdn,multiple,naturally,nice,nodejs,note,notepad,notice,notices,notpad,number,numbering,numbers,optional,ordered,original,output,overkill,page,parameter,path,plain,platforms,presented,private,problems,process,processing,produced,product,productname,programs,purposes,query,read,readable,reading,registered,renamed,replace,replacing,required,reshac,reshack,reshacker,resource,response,reverse,root,sake,script,separate,setlocal,shell,simple,single,slightly,software,solving,space,specific,standard,strong,stuff,symbols,syntax,system,target,test,testbed,tester,thattttt,tokens,tolerate,trademark,trademarks,tree,user,users,valid,variable,verifying,version,versioninfo,wait,walking,weight,white,wiki,wikipedia,windows,work,working,wrap,write,writing,wrong,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="ambiguous,apostrophes,application,apply,ascii,aspx,assuming,attributes,badddd,batch,binary,blank,block,bold,build,built,call,called,care,cases,chain,character,checking,choose,choosing,chromium,clarity,code,color,combination,command,commands,comments,company,companyname,compile,compiled,computers,content,cool,copyright,corporation,created,cygwin,dates,defined,defines,depend,depends,description,desktop,determine,diagnostic,differs,ding,displayed,distributed,doomed,download,drag,driver,drop,dumped,dynamic,easily,easy,echo,enables,endlocal,engineering,english,enjoy,entry,escape,escaping,executable,exists,extension,extract,feed,fetch,file,fileflags,filename,files,fileversion,filter,filtered,font,format,found,generate,good,grep,hacker,handful,handle,hell,helpfile,highly,human,ignore,implemented,improved,include,included,info,information,input,install,installer,internal,issue,keyboard,keyboards,kind,language,leave,legal,library,linux,list,match,microsoft,mini,missing,modular,module,mouse,msdn,multiple,naturally,nice,nodejs,note,notepad,notice,notices,notpad,number,numbering,numbers,optional,ordered,original,output,overkill,page,parameter,path,plain,platforms,presented,private,problems,process,processing,produced,product,productname,programs,purposes,query,read,readable,reading,registered,renamed,replace,replacing,required,reshac,reshack,reshacker,resource,response,reverse,root,sake,script,separate,setlocal,shell,simple,single,slightly,software,solving,space,specific,standard,strong,stuff,symbols,syntax,system,target,test,testbed,tester,thattttt,tokens,tolerate,trademark,trademarks,tree,user,users,valid,variable,verifying,version,versioninfo,wait,walking,weight,white,wiki,wikipedia,windows,work,working,wrap,write,writing,wrong,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/html5-ninja-css3-to-make-your-website-behave-and-render-faster-including-a-more-responsive-scrolling"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/html5-ninja-css3-to-make-your-website-behave-and-render-faster-including-a-more-responsive-scrolling"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/php-snippet-script-runtime"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/reverse-engineering-extract-version-information-from-and-executable-using-reshacker"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/reverse-engineering-extract-version-information-from-and-executable-using-reshacker"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/reverse-engineering-extract-version-information-from-and-executable-using-reshacker"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/reverse-engineering-extract-version-information-from-and-executable-using-reshacker"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/reverse-engineering-extract-version-information-from-and-executable-using-reshacker"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/reverse-engineering-extract-version-information-from-and-executable-using-reshacker"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-10-12T23:48:57+00:00"     />
+  <meta name="page-datetime"                           content="2016-10-12T23:48:57+00:00"     />
+  <meta property="article:published_time"              content="2016-10-12T23:48:57+00:00"     />
+  <meta name="dcterms.date"                            content="2016-10-12T23:48:57+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-10-12T23:49:54+00:00"    />
+  <meta property="article:modified_time"               content="2016-10-12T23:49:54+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/reverse-engineering-extract-version-information-from-and-executable-using-reshacker"
+,"url"             : "https://icompile.eladkarako.com/reverse-engineering-extract-version-information-from-and-executable-using-reshacker"
+,"headline"        : "Reverse Engineering - Extract Version Information From And Executable Using ResHacker"
+,"description"     : "Reverse Engineering - Extract Version Information From And Executable Using ResHacker"
+,"datePosted"      : "2016-10-12T23:48:57+00:00"
+,"dateCreated"     : "2016-10-12T23:48:57+00:00"
+,"datePublished"   : "2016-10-12T23:48:57+00:00"
+,"dateModified"    : "2016-10-12T23:49:54+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007316136741">
+  <header>
+    <h1 itemprop="headline">Reverse Engineering - Extract Version Information From And Executable Using ResHacker</h1>
+    <sup>Posted at <time datetime="2016-10-12T23:49:54+00:00" itemprop="dateModified">Wed, 12 Oct 2016 23:49:54 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">For the example I'll choose something I'm using every now and again.. Chromium exe installer<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_exe_info_from_windows_ui.png" alt="icompile.eladkarako.com_exe_info_from_windows_ui" width="614" height="550"/><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_exe_info_from_reshacker_ui.png" alt="icompile.eladkarako.com_exe_info_from_reshacker_ui" width="1132" height="699"/><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_exe_info_from_reshack_helpfile.png" alt="icompile.eladkarako.com_exe_info_from_reshack_helpfile" width="713" height="659" /><br/>
+<br/>
+<blockquote>Working with information dumped in text files is easy,<br/>
+you can use every GNU exe you'll like (grep, awk, sed) or even feed it NodeJS, <em>see if I'll care ;)</em><br/>
+But first you have to <strong>get</strong> it.<br/>
+...Here is how to.... </blockquote><br/>
+<br/>
+<!--more--><br/>
+<hr/><br/>
+<br/>
+You can choose to extract the resource as <code>plain <em>whatever</em></code> (for example bmp, wav, txt) or as windows-compiled resource (res file).<br/>
+It is all depend on if you give <code>RC</code> or <code>RES</code> as the output extension.<br/>
+<br/>
+Since I want to extract the version information (a.k.a <code>VERSIONINFO</code>) I'll use <code>.rc</code>:<br/>
+<pre>
+ResHacker.exe -extract "mini_installer.exe,mini_installer_version_information.rc,VERSIONINFO,1,1033"
+</pre><br/>
+<br/>
+<blockquote><br/>
+I am <strong>VERY specific</strong> on the sub-tree and language,<br/>
+..well because I can.<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_exe_info_from_reshack_extract_very_specific.png" alt="icompile.eladkarako.com_exe_info_from_reshack_extract_very_specific" width="423" height="205"/><br/>
+<br/>
+But,<br/>
+You might as well ignore and since version-information is (usually) just in plain US-ASCII English, or at least single language it should be OK to just extract everything <code>VERSIONINFO</code>,<br/>
+To do it, just don't specify the <code>1</code> or <code>1033</code> (in my example above).<br/>
+<br/>
+<pre>
+ResHacker.exe -extract "mini_installer.exe,mini_installer_version_information.rc,VERSIONINFO,,"
+</pre><br/>
+<br/>
+You <strong>MUST however</strong> still write those <code>,,</code> at the end, since it is part of reshacker's <sup>(ambiguous)</sup> syntax,<br/>
+<em>(will not work without those <code>,,</code> at the end).</em><br/>
+</blockquote><br/>
+<br/>
+Reading the "dumped" information (plain text) is quite easy using <strong>any notepad application</strong>.<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_reshack_read_raw_information.png" alt="icompile.eladkarako.com_reshack_read_raw_information" width="971" height="817" /><br/>
+<br/>
+<blockquote>p.s.<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_reshack_read_compiled_resource2.png" alt="icompile.eladkarako.com_reshack_read_compiled_resource2" width="762" height="536" /><br/>
+<br/>
+Reading the compiled resource is somewhat possible with notpad due to the predictability of the information,<br/>
+but not really human-readable, unless filtered. you can however feed it to <code>reshacker.exe</code> again, as an input, if you wish to..<br/>
+<sub>Or compile it yourself using the <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa381055(v=vs.85).aspx" target="_blank">RC command <sup>https://msdn.microsoft.com/en-us/library/windows/desktop/aa381055(v=vs.85).aspx</sup></a></sub><br/>
+</blockquote><br/>
+<br/>
+<hr/><br/>
+<br/>
+<br/>
+<br/>
+<blockquote><br/>
+Would You like to script-it? <br/>
+after you've dumped it to a (for example <code>versioninfo.rc</code>)<br/>
+use <code>grep</code> and <code>sed</code>, to filter out and leave you just with the version information itself.<br/>
+<br/>
+<pre>
+grep -m 1 "FileVersion" versioninfo.rc | sed -e "s@^.*FileVersion\\", \\"@@g" -e "s@\\"$@@"
+</pre><br/>
+<br/>
+Would you like to know what other stuff you can extract from the <code>VERSIONINFO</code> block of the file?<br/>
+Well..<br/>
+Assuming your target application has implemented the <code>VERSIONINFO</code> block as Microsoft had defined it<br/>
+There are only a handful of so called attributes you can "query" for, <sub>*Microsoft well-defines only a handful of platforms.</sub><br/>
+<br/>
+According to <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa381058(v=vs.85).aspx" target="_blank">VERSIONINFO resource<br/>
+ <sup>https://msdn.microsoft.com/en-us/library/windows/desktop/aa381058(v=vs.85).aspx</sup></a><br/>
+Those are (ordered a,b,c,... including the description as is from the msdn link above) <br/>
+<pre>
+Name	Description
+Comments	Additional information that should be displayed for diagnostic purposes.
+CompanyName	Company that produced the file?for example, "Microsoft Corporation" or "Standard Microsystems Corporation, Inc." This string is required.
+FileDescription	File description to be presented to users. This string may be displayed in a list box when the user is choosing files to install?for example, "Keyboard Driver for AT-Style Keyboards". This string is required.
+FileVersion	Version number of the file?for example, "3.10" or "5.00.RC2". This string is required.
+InternalName	Internal name of the file, if one exists?for example, a module name if the file is a dynamic-link library. If the file has no internal name, this string should be the original filename, without extension. This string is required.
+LegalCopyright	Copyright notices that apply to the file. This should include the full text of all notices, legal symbols, copyright dates, and so on. This string is optional.
+LegalTrademarks	Trademarks and registered trademarks that apply to the file. This should include the full text of all notices, legal symbols, trademark numbers, and so on. This string is optional.
+OriginalFilename	Original name of the file, not including a path. This information enables an application to determine whether a file has been renamed by a user. The format of the name depends on the file system for which the file was created. This string is required.
+PrivateBuild	Information about a private version of the file?for example, "Built by TESTER1 on \\TESTBED". This string should be present only if VS_FF_PRIVATEBUILD is specified in the fileflags parameter of the root block.
+ProductName	Name of the product with which the file is distributed. This string is required.
+ProductVersion	Version of the product with which the file is distributed?for example, "3.10" or "5.00.RC2". This string is required.
+SpecialBuild	Text that indicates how this version of the file differs from the standard version?for example, "Private build for TESTER1 solving mouse problems on M250 and M250E computers". This string should be present only if VS_FF_SPECIALBUILD is specified in the fileflags parameter of the root block.
+</pre><br/>
+<br/>
+so, for example, one may easily fetch the <code>CompanyName</code> value using the following commands-chain:<br/>
+<br/>
+<pre>
+grep -m 1 "CompanyName" versioninfo.rc | sed -e "s@^.*CompanyName\\", \\"@@g" -e "s@\\"$@@"
+</pre><br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+*note that due to grep/sed combination an empty grep match (for example, if <code>CompanyName</code> was not found) will result in an empty string,<br/>
+- which in this case is 100% valid output for those kind of things, <br/>
+<br/>
+naturally if you wish to know if the entry <code>CompanyName</code> is <strong>missing</strong> instead of just <strong>empty</strong>, you should probably query some more, for example wrap the grep value with characters such as apostrophes (<code>'</code>) or even pre-test the grep output before sed'ding. Overkill?<br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+The following (simple) batch file will generate a <code>rc</code> file for each exe you'll drag&drop on top of it<br/>
+(well actually it should even work even if instead of exe you will drag&drop a <code>res</code> file on top of the batch file since I'm not really verifying the content here at all...)<br/>
+<br/>
+<pre><span style='color:#808030; '>@</span><span style='color:#800000; font-weight:bold; '>echo off</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>set</span> FILE_INPUT<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"%~s1"</span><br/>
+<span style='color:#800000; font-weight:bold; '>set</span> FILE_OUTPUT<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"%~d1%~p1%~n1_versioninfo.rc"</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>call</span> C<span style='color:#808030; '>:</span><span style='color:#808030; '>\\</span>Software<span style='color:#808030; '>\\</span>ResHack<span style='color:#808030; '>\\</span>RESHAC~<span style='color:#008c00; '>1</span>.EXE <span style='color:#808030; '>-</span>extract <span style='color:#0000e6; '>"%FILE_INPUT%,%FILE_OUTPUT%,VERSIONINFO,,"</span><br/>
+</pre><br/>
+<br/>
+* fix the path to reshacker exe's path.<br/>
+* you can read|download resource-hacker from the wiki page <a target="_blank" href="https://en.wikipedia.org/wiki/Resource_Hacker">https://en.wikipedia.org/wiki/Resource_Hacker</a><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/10/icompile.eladkarako.com_batch_generate_rc_file.png" alt="icompile.eladkarako.com_batch_generate_rc_file" width="702" height="462"/><br/>
+</blockquote><br/>
+<br/>
+<br/>
+<hr/><br/>
+<blockquote><br/>
+Here is a slightly improved batch-file:<br/>
+<pre><span style='color:#808030; '>@</span><span style='color:#800000; font-weight:bold; '>echo off</span><br/>
+<span style='color:#800000; font-weight:bold; '>setlocal</span> enableextensions<br/>
+<br/>
+    <span style='color:#800000; font-weight:bold; '>set</span> FILE_INPUT<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"%~s1"</span><br/>
+    <span style='color:#800000; font-weight:bold; '>set</span> FILE_OUTPUT<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"%~d1%~p1%~n1_versioninfo.rc"</span><br/>
+<br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;::call D:\\DOS\\ResHack\\RESHAC~1.EXE -extract "%FILE_INPUT%,%FILE_OUTPUT%,VERSIONINFO,1,1033"</span><br/>
+    <span style='color:#800000; font-weight:bold; '>call</span> D<span style='color:#808030; '>:</span><span style='color:#808030; '>\\</span><span style='color:#800000; font-weight:bold; '>DOS</span><span style='color:#808030; '>\\</span>ResHack<span style='color:#808030; '>\\</span>RESHAC~<span style='color:#008c00; '>1</span>.EXE <span style='color:#808030; '>-</span>extract <span style='color:#0000e6; '>"%FILE_INPUT%,%FILE_OUTPUT%,VERSIONINFO,,"</span><br/>
+    <br/>
+    <span style='color:#800000; font-weight:bold; '>set</span> QUERY<span style='color:#808030; '>=</span>FileVersion<br/>
+    <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>/</span>f <span style='color:#0000e6; '>"tokens=*"</span> <span style='color:#797997; '>%%</span>a <span style='color:#800000; font-weight:bold; '>in</span> <span style='color:#808030; '>(</span>'grep <span style='color:#808030; '>-</span>o <span style='color:#0000e6; '>"%QUERY%.*$"</span> <span style='color:#797997; '>%FILE_OUTPUT%</span>  <span style='color:#808030; '>^</span><span style='color:#808030; '>|</span>  sed <span style='color:#808030; '>-</span>e <span style='color:#0000e6; '>"s@.*, @@g"</span> <span style='color:#808030; '>^</span><span style='color:#808030; '>|</span> tr <span style='color:#808030; '>-</span>d <span style='color:#0000e6; '>""</span><span style='color:#0000e6; '>""</span> '<span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>do</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>set</span> RESULT<span style='color:#808030; '>=</span><span style='color:#797997; '>%%</span>a<span style='color:#808030; '>)</span><span style='color:#808030; '>;</span><br/>
+    <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> file</span>'s version is <span style='color:#808030; '>[</span><span style='color:#797997; '>%RESULT%</span><span style='color:#808030; '>]</span>. Cool!<br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>endlocal</span><br/>
+</pre><br/>
+<sub>*again, please set the path to <strong>your</strong> reshack exe.</sub><br/>
+<br/>
+That will output <br/>
+<pre>
+file's version is [56.0.2886.0]. Cool!
+</pre><br/>
+<br/>
+You'll also may notice that the file is highly modular, in which you may replace the <code>FileVersion</code> with (for example) <code>ProductName</code>...<br/>
+<br/>
+<pre><span style='color:#808030; '>@</span><span style='color:#800000; font-weight:bold; '>echo off</span><br/>
+<span style='color:#800000; font-weight:bold; '>setlocal</span> enableextensions<br/>
+<br/>
+    <span style='color:#800000; font-weight:bold; '>set</span> FILE_INPUT<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"%~s1"</span><br/>
+    <span style='color:#800000; font-weight:bold; '>set</span> FILE_OUTPUT<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"%~d1%~p1%~n1_versioninfo.rc"</span><br/>
+<br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;::call D:\\DOS\\ResHack\\RESHAC~1.EXE -extract "%FILE_INPUT%,%FILE_OUTPUT%,VERSIONINFO,1,1033"</span><br/>
+    <span style='color:#800000; font-weight:bold; '>call</span> D<span style='color:#808030; '>:</span><span style='color:#808030; '>\\</span><span style='color:#800000; font-weight:bold; '>DOS</span><span style='color:#808030; '>\\</span>ResHack<span style='color:#808030; '>\\</span>RESHAC~<span style='color:#008c00; '>1</span>.EXE <span style='color:#808030; '>-</span>extract <span style='color:#0000e6; '>"%FILE_INPUT%,%FILE_OUTPUT%,VERSIONINFO,,"</span><br/>
+    <br/>
+    <span style='color:#800000; font-weight:bold; '>set</span> QUERY<span style='color:#808030; '>=</span>ProductName<br/>
+    <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>/</span>f <span style='color:#0000e6; '>"tokens=*"</span> <span style='color:#797997; '>%%</span>a <span style='color:#800000; font-weight:bold; '>in</span> <span style='color:#808030; '>(</span>'grep <span style='color:#808030; '>-</span>o <span style='color:#0000e6; '>"%QUERY%.*$"</span> <span style='color:#797997; '>%FILE_OUTPUT%</span>  <span style='color:#808030; '>^</span><span style='color:#808030; '>|</span>  sed <span style='color:#808030; '>-</span>e <span style='color:#0000e6; '>"s@.*, @@g"</span> <span style='color:#808030; '>^</span><span style='color:#808030; '>|</span> tr <span style='color:#808030; '>-</span>d <span style='color:#0000e6; '>""</span><span style='color:#0000e6; '>""</span> '<span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>do</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>set</span> RESULT<span style='color:#808030; '>=</span><span style='color:#797997; '>%%</span>a<span style='color:#808030; '>)</span><span style='color:#808030; '>;</span><br/>
+    <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> You are checking [%RESULT%]. Nice.</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>endlocal</span><br/>
+</pre><br/>
+<br/>
+which will then output:<br/>
+<pre>
+You are checking [ChromiumInstaller]. Nice.
+</pre><br/>
+<br/>
+but wait! something is wrong! the value of the <code>ProductName</code> is missing a space (should be <code>Chromium Installer</code>) the reason is that replacing the <code>"</code> character is doomed due to Windows' <code>escape</code> hell, you can escape using the <code>^</code> character for the batch (cmd) and <code>\\</code> for the GNU programs, but when included in multiple <code>'</code> and <code>"</code>, there is another way to escape... <code>""""</code>... for the sake of clarity of the script I will handle the only cases where <code>"</code> character and white-space is not an issue, such as version-like numbering.<br/>
+Windows cmd-shell is nothing like linux, or cygwin, in which escaping is (kind'a) possible.<br/>
+<br/>
+You are much better writing an application implementing a <code>DLL</code> to read the version-information block, through binary processing, than walking through the Windows-CMD-Escape hell.<br/>
+<br/>
+Anyway, if <code>"</code> characters are not an issue with the response, you may possible tolerate or process them otherwise (maybe in a separate batch or through cmd-variable-string-manipulation [GOOD GOD!.. <em>amm well it is not THATTTTT BADDDD...</em>] <br/>
+but you may still use this one:<br/>
+<pre>
+@echo off
+setlocal enableextensions
+
+    set FILE_INPUT="%~s1"
+    set FILE_OUTPUT="%~d1%~p1%~n1_versioninfo.rc"
+
+    ::call D:\\DOS\\ResHack\\RESHAC~1.EXE -extract "%FILE_INPUT%,%FILE_OUTPUT%,VERSIONINFO,1,1033"
+    call D:\\DOS\\ResHack\\RESHAC~1.EXE -extract "%FILE_INPUT%,%FILE_OUTPUT%,VERSIONINFO,,"
+    
+    set QUERY=FileVersion
+    for /f "tokens=*" %%a in ('grep -o "%QUERY%.*$" %FILE_OUTPUT%  ^|  sed -e "s@.*, @@g") do (set RESULT=%%a);
+    echo file's version is [%RESULT%]. Cool!
+
+endlocal
+</pre><br/>
+<br/>
+Enjoy :)<br/>
+</blockquote><br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-ninja-css3-to-make-your-website-behave-and-render-faster-including-a-more-responsive-scrolling">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-script-runtime">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-script-runtime">PHP Snippet - Script Runtime</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-generate-random-bytes">PHP Snippet - Generate Random Bytes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-request-argument-from-either-post-or-get">PHP Snippet - Request-Argument From Either POST Or GET</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/thinapp-registry-export">Solved: ThinApp Registry Export</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-two-approaches-on-uniquefing-an-array-memory-wise">JavaScript Snippet - Two Approaches On Unique'fing An Array - Memory Wise</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hubic-secret-coupon">hubiC Secret Coupon</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-obfuscated-numbering-for-csrf">JavaScript Obfuscated Numbering For CSRF</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-event-isolation-with-documentation">JavaScript Snippet - Event Isolation With Documentation</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/removing-eset-products-additional-notes">Removing ESET Products - Additional Notes</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/noscript-subdomains">NoScript SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-download-calendar-emoji-image">Free Download - Graphics Of Old School Calendar Unicode Emoji</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-onmibox">You Can't!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-createdocument-with-doctype-example">JavaScript Ninja ☕ - createDocument With DocType - The Missing Example</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows-update-exes-and-services">Windows Update EXEs And Services</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-snippet-example-on-multiple-language-resource">HTML Snippet - Example On Multiple Language Resource</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-ninja-centring-container-in-the-middle-of-viewport-with-css3-only-no-javascript">No JavaScript</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

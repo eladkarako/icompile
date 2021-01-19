@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Google-App-Engine PHP - Script With Headers</title>
+  <meta itemprop="name"                                content="Google-App-Engine PHP - Script With Headers"       />
+  <meta name="dcterms.title"                           content="Google-App-Engine PHP - Script With Headers"       />
+  <meta property="og:title"                            content="Google-App-Engine PHP - Script With Headers"       />
+  <meta name="twitter:title"                           content="Google-App-Engine PHP - Script With Headers"       />
+  <meta name="twitter:text:title"                      content="Google-App-Engine PHP - Script With Headers"       />
+  <meta name="application-name"                        content="Google-App-Engine PHP - Script With Headers"       />
+  <meta name="subject"                                 content="Google-App-Engine PHP - Script With Headers"       />
+  <meta name="apple-mobile-web-app-title"              content="Google-App-Engine PHP - Script With Headers"       />
+  <meta name="msapplication-tooltip"                   content="Google-App-Engine PHP - Script With Headers"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Google-App-Engine PHP - Script With Headers"       />
+  <meta itemprop="description"                         content="Google-App-Engine PHP - Script With Headers"       />
+  <meta name="dcterms.description"                     content="Google-App-Engine PHP - Script With Headers"       />
+  <meta name="twitter:description"                     content="Google-App-Engine PHP - Script With Headers"       />
+  <meta property="og:description"                      content="Google-App-Engine PHP - Script With Headers"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="access,action,adding,allowed,annoying,apache,appengine,appinfo,application,asia,attribute,auth,avoid,basically,behaviour,bother,browser,buffer,buffering,buffers,butter,client,cloud,code,collect,common,content,control,cors,curl,cycles,date,debug,defaults,defined,delaying,developing,digging,directives,disable,disabled,display,docs,dynamically,easy,echo,editing,enable,enabled,endpoint,ends,engine,entity,error,errors,expiration,expose,extension,extensions,fail,fields,file,fileinfo,files,find,flush,found,function,functions,gethandler,getmygid,getmyinode,getmypid,getmyuid,getrusage,google,handler,handlers,header,headers,helloworld,helps,highlight,htaccess,html,imagick,implicit,include,intl,issue,jerusalem,json,kind,languages,length,libxml,lifetime,limitation,limitations,limits,lines,lite,loadable,loader,login,longer,make,makes,manual,manually,mapping,matching,message,mime,mongodb,multi,named,nice,origin,output,parse,peanut,phpinfo,phpversion,ports,position,powered,project,protocols,providing,python,readable,recommend,redirect,remove,require,requires,response,runtime,sapi,save,script,scripting,scripts,secure,send,sending,server,skip,sockets,soft,solutions,sort,source,standard,startup,static,strong,stuff,super,support,thinking,timezone,timing,type,uname,unexpected,upload,user,validation,version,world,yaml,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="access,action,adding,allowed,annoying,apache,appengine,appinfo,application,asia,attribute,auth,avoid,basically,behaviour,bother,browser,buffer,buffering,buffers,butter,client,cloud,code,collect,common,content,control,cors,curl,cycles,date,debug,defaults,defined,delaying,developing,digging,directives,disable,disabled,display,docs,dynamically,easy,echo,editing,enable,enabled,endpoint,ends,engine,entity,error,errors,expiration,expose,extension,extensions,fail,fields,file,fileinfo,files,find,flush,found,function,functions,gethandler,getmygid,getmyinode,getmypid,getmyuid,getrusage,google,handler,handlers,header,headers,helloworld,helps,highlight,htaccess,html,imagick,implicit,include,intl,issue,jerusalem,json,kind,languages,length,libxml,lifetime,limitation,limitations,limits,lines,lite,loadable,loader,login,longer,make,makes,manual,manually,mapping,matching,message,mime,mongodb,multi,named,nice,origin,output,parse,peanut,phpinfo,phpversion,ports,position,powered,project,protocols,providing,python,readable,recommend,redirect,remove,require,requires,response,runtime,sapi,save,script,scripting,scripts,secure,send,sending,server,skip,sockets,soft,solutions,sort,source,standard,startup,static,strong,stuff,super,support,thinking,timezone,timing,type,uname,unexpected,upload,user,validation,version,world,yaml,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/stackoverflow-subdomains"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/stackoverflow-subdomains"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/other-google-app-engine-insights"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/gae-script-headers"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/gae-script-headers"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/gae-script-headers"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/gae-script-headers"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/gae-script-headers"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/gae-script-headers"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-04-30T07:46:09+00:00"     />
+  <meta name="page-datetime"                           content="2016-04-30T07:46:09+00:00"     />
+  <meta property="article:published_time"              content="2016-04-30T07:46:09+00:00"     />
+  <meta name="dcterms.date"                            content="2016-04-30T07:46:09+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-04-30T07:49:29+00:00"    />
+  <meta property="article:modified_time"               content="2016-04-30T07:49:29+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/gae-script-headers"
+,"url"             : "https://icompile.eladkarako.com/gae-script-headers"
+,"headline"        : "Google-App-Engine PHP - Script With Headers"
+,"description"     : "Google-App-Engine PHP - Script With Headers"
+,"datePosted"      : "2016-04-30T07:46:09+00:00"
+,"dateCreated"     : "2016-04-30T07:46:09+00:00"
+,"datePublished"   : "2016-04-30T07:46:09+00:00"
+,"dateModified"    : "2016-04-30T07:49:29+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0009632002641">
+  <header>
+    <h1 itemprop="headline">Google-App-Engine PHP - Script With Headers</h1>
+    <sup>Posted at <time datetime="2016-04-30T07:49:29+00:00" itemprop="dateModified">Sat, 30 Apr 2016 07:49:29 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><code>Unexpected attribute "http_headers" for mapping type script.</code> is especially annoying if you are developing some kind of all-in-one app which requires some headers sent, and you come from the world of Apache && .htaccess which makes this sort of stuff super easy..<br/>
+<br/>
+But as for GAE - There are limitations<br/>
+<br/>
+for <code>static files</code> you can use:<br/>
+<ul><br/>
+ 	<li><code>mime_type</code></li><br/>
+ 	<li><code>upload</code></li><br/>
+ 	<li><code>expiration</code></li><br/>
+ 	<li><code>require_matching_file</code></li><br/>
+ 	<li><code>http_headers</code></li><br/>
+ 	<li><code>application_readable</code></li><br/>
+</ul><br/>
+for <code>static dir</code> you can use<br/>
+<ul><br/>
+ 	<li><code>mime_type</code></li><br/>
+ 	<li><code>expiration</code></li><br/>
+ 	<li><code>require_matching_file</code></li><br/>
+ 	<li><code>http_headers</code></li><br/>
+ 	<li><code>application_readable</code></li><br/>
+</ul><br/>
+for <code>API endpoint</code> you can use:<br/>
+<ul><br/>
+ 	<li><code>position</code></li><br/>
+ 	<li>and <code>script</code></li><br/>
+</ul><br/>
+<!--more--><br/>
+<br/>
+<br/>
+<strong>but</strong> for <code>script</code> you can <strong>ONLY</strong> use:<br/>
+<ul><br/>
+ 	<li><code>position</code></li><br/>
+</ul><br/>
+Hope it helps a little,<br/>
+I've come around the same issue with PHP-scripting over <em>GAE</em>,<br/>
+After digging around I found those limits were defined in the <code>appinfo.py</code> (around lines ~960-970)...<br/>
+<div class="highlight highlight-source-python"><br/>
+<pre>  <span class="pl-c1">COMMON_FIELDS</span> <span class="pl-k">=</span> <span class="pl-c1">set</span>([<br/>
+      <span class="pl-c1">URL</span>, <span class="pl-c1">LOGIN</span>, <span class="pl-c1">AUTH_FAIL_ACTION</span>, <span class="pl-c1">SECURE</span>, <span class="pl-c1">REDIRECT_HTTP_RESPONSE_CODE</span>])<br/>
+<br/>
+<br/>
+<br/>
+  <span class="pl-c1">ALLOWED_FIELDS</span> <span class="pl-k">=</span> {<br/>
+      <span class="pl-c1">HANDLER_STATIC_FILES</span>: (<span class="pl-c1">MIME_TYPE</span>, <span class="pl-c1">UPLOAD</span>, <span class="pl-c1">EXPIRATION</span>,<br/>
+                             <span class="pl-c1">REQUIRE_MATCHING_FILE</span>, <span class="pl-c1">HTTP_HEADERS</span>,<br/>
+                             <span class="pl-c1">APPLICATION_READABLE</span>),<br/>
+      <span class="pl-c1">HANDLER_STATIC_DIR</span>: (<span class="pl-c1">MIME_TYPE</span>, <span class="pl-c1">EXPIRATION</span>, <span class="pl-c1">REQUIRE_MATCHING_FILE</span>,<br/>
+                           <span class="pl-c1">HTTP_HEADERS</span>, <span class="pl-c1">APPLICATION_READABLE</span>),<br/>
+      <span class="pl-c1">HANDLER_SCRIPT</span>: (<span class="pl-c1">POSITION</span>),<br/>
+      <span class="pl-c1">HANDLER_API_ENDPOINT</span>: (<span class="pl-c1">POSITION</span>, <span class="pl-c1">SCRIPT</span>),<br/>
+  }<br/>
+<br/>
+  <span class="pl-k">def</span> <span class="pl-en">GetHandler</span>(<span class="pl-smi"><span class="pl-smi">self</span></span>):<br/>
+    <span class="pl-s"><span class="pl-pds">"""</span>Get handler for mapping.</span></pre><br/>
+</div><br/>
+..But don't bother editing the file thinking it will remove the limitation <sub>(as I did..)</sub>,<br/>
+it will <em>just skip</em> the <strong>client-side</strong> validation of <code>appinfo.py</code>, but <em>will fail</em> on <strong>server-side validation</strong> with similar message:<br/>
+<blockquote>Error 400: --- begin server output ---<br/>
+Error when loading application configuration:<br/>
+Unexpected attribute "http_headers" for mapping type script.<br/>
+--- end server output ---</blockquote><br/>
+A nice alternative <sub>(for <code>PHP</code> at least..)</sub>,<br/>
+is delaying the output by providing an output buffer,<br/>
+which gives you a "long-time" (basically until you either flush the buffers or the scripts ends) to manually<a href="http://php.net/manual/en/function.header.php">send the headers yourself</a><br/>
+<br/>
+your code (again, in <code>PHP</code> but you can find similar solutions for other script-languages)<br/>
+should look something like this:<br/>
+<div class="highlight highlight-text-html-php"><br/>
+<pre><span class="pl-s1"><span class="pl-k">&lt;</span>?<span class="pl-c1">php</span> </span><br/>
+<span class="pl-s1"><span class="pl-c1">header</span>(<span class="pl-s"><span class="pl-pds">'</span>Access-Control-Allow-Origin: *<span class="pl-pds">'</span></span>); </span></pre><br/>
+</div><br/>
+and for delaying the output using an output buffer (I recommend using this way to avoid "sending headers after a content has already sent to browser")<br/>
+is by adding (again, in <code>PHP</code>) a file named <code>php.ini</code> with the following values:<br/>
+<div class="highlight highlight-source-ini"><br/>
+<pre><span class="pl-k">output_buffering</span>=On<br/>
+<span class="pl-k">implicit_flush</span>=0</pre><br/>
+</div><br/>
+<br/>
+<hr /><br/>
+<br/>
+full project:<br/>
+<code>app.yaml</code>:<br/>
+<div class="highlight highlight-source-yaml"><br/>
+<pre><span class="pl-s"><span class="pl-ent">application:</span> <span class="pl-s">helloworld</span></span><br/>
+<span class="pl-c1"><span class="pl-ent">version:</span> 1</span><br/>
+<span class="pl-s"><span class="pl-ent">runtime:</span> <span class="pl-s">php55</span></span><br/>
+<span class="pl-c1"><span class="pl-ent">api_version:</span> 1</span><br/>
+<br/>
+<span class="pl-s"><span class="pl-ent">handlers:</span></span><br/>
+<span class="pl-s">- <span class="pl-ent">url:</span> <span class="pl-s">/.*</span></span><br/>
+  <span class="pl-s"><span class="pl-ent">script:</span> <span class="pl-s">helloworld.php</span></span></pre><br/>
+</div><br/>
+<code>helloworld.php</code><br/>
+<div class="highlight highlight-text-html-php"><br/>
+<pre><span class="pl-pse">&lt;?php</span><br/>
+<span class="pl-s1">  <span class="pl-c">/* CORS Joy!!! */</span></span><br/>
+<span class="pl-s1">  <span class="pl-c1">header</span>(<span class="pl-s"><span class="pl-pds">'</span>Access-Control-Allow-Origin: *<span class="pl-pds">'</span></span>);</span><br/>
+<span class="pl-s1">  <span class="pl-c1">header</span>(<span class="pl-s"><span class="pl-pds">'</span>Access-Control-Allow-Headers: Content-Length<span class="pl-pds">'</span></span>);</span><br/>
+<span class="pl-s1">  <span class="pl-c1">header</span>(<span class="pl-s"><span class="pl-pds">'</span>Access-Control-Expose-Headers: Content-Length<span class="pl-pds">'</span></span>);</span><br/>
+<span class="pl-s1">  <span class="pl-c1">header</span>(<span class="pl-s"><span class="pl-pds">'</span>Timing-Allow-Origin: *<span class="pl-pds">'</span></span>);</span><br/>
+<br/>
+<span class="pl-s1">  <span class="pl-c">/* anything.. really... */</span></span><br/>
+<span class="pl-s1">  <span class="pl-c1">header</span>(<span class="pl-s"><span class="pl-pds">'</span>Content-Type: text/json;<span class="pl-pds">'</span></span>);</span><br/>
+<span class="pl-s1">  <span class="pl-c1">header</span>(<span class="pl-s"><span class="pl-pds">'</span>X-Powered-By: peanut-butter<span class="pl-pds">'</span></span>);</span><br/>
+<br/>
+<span class="pl-s1">  <span class="pl-c">/* output */</span></span><br/>
+<span class="pl-s1">  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>{"hello":"world"}<span class="pl-pds">'</span></span>;</span><br/>
+<br/>
+<span class="pl-s1">  <span class="pl-c">/* implicit flush... */</span></span><br/>
+<span class="pl-pse"><span class="pl-s1">?</span>&gt;</span></pre><br/>
+</div><br/>
+<code>php.ini</code><br/>
+<div class="highlight highlight-source-ini"><br/>
+<pre><span class="pl-c">;GOOGLE APP</span><br/>
+<span class="pl-c">;----------------------------------------------------------------------------------------------------------------------</span><br/>
+<span class="pl-c">; enable "soft-disabled functions"                                                              https://cloud.google.com/appengine/docs/php/runtime#PHP_Disabled_functions</span><br/>
+    <span class="pl-k">google_app_engine.enable_functions</span>    = <span class="pl-s"><span class="pl-pds">"</span>gc_collect_cycles, gc_disable, gc_enable, gc_enabled, get_current_user, getmygid, getmyinode, getmypid, getmyuid, getrusage, libxml_disable_entity_loader, parse_str, php_sapi_name, php_uname, phpinfo, phpversion<span class="pl-pds">"</span></span><br/>
+<br/>
+<span class="pl-c">; no sockets, no "curl_multi_*" functions, only standard protocols, only ports 80 and 443.      https://cloud.google.com/appengine/docs/php/runtime#PHP_cURL_support</span><br/>
+    <span class="pl-k">google_app_engine.enable_curl_lite</span>    = 1<br/>
+<span class="pl-c">;----------------------------------------------------------------------------------------------------------------------</span><br/>
+<br/>
+<br/>
+<br/>
+<span class="pl-c">;PHP</span><br/>
+<span class="pl-c">;----------------------------------------------------------------------------------------------------------------------</span><br/>
+<span class="pl-c">; no curl, no MongoDB (due to use of sockets).                                                  https://cloud.google.com/appengine/docs/php/runtime#dynamically_loadable_extensions</span><br/>
+    <span class="pl-k">extension</span>                             = <span class="pl-s"><span class="pl-pds">"</span>imagick.so<span class="pl-pds">"</span></span><br/>
+    <span class="pl-k">extension</span>                             = <span class="pl-s"><span class="pl-pds">"</span>intl.so<span class="pl-pds">"</span></span><br/>
+    <span class="pl-k">extension</span>                             = <span class="pl-s"><span class="pl-pds">"</span>fileinfo.so<span class="pl-pds">"</span></span><br/>
+<br/>
+<span class="pl-c">; set defaults for PHP engine.                                                                  https://cloud.google.com/appengine/docs/php/runtime#PHP_Directives_with_new_initialization_defaults</span><br/>
+    <span class="pl-k">date.timezone</span>                         = <span class="pl-s"><span class="pl-pds">"</span>Asia/Jerusalem<span class="pl-pds">"</span></span><br/>
+<br/>
+<span class="pl-c">; set defaults for PHP engine - for debug.</span><br/>
+    <span class="pl-k">display_errors</span>                        = 1<br/>
+    <span class="pl-k">display_startup_errors</span>                = 1<br/>
+    <span class="pl-k">html_errors</span>                           = 1<br/>
+    <span class="pl-k">allow_url_include</span>                     = 1<br/>
+    <span class="pl-k">expose_php</span>                            = On<br/>
+<br/>
+<br/>
+<span class="pl-c">; make sure headers could-be sent longer-in the PHP-script lifetime - normal behaviour.</span><br/>
+    <span class="pl-k">output_buffering</span>                      = On<br/>
+    <span class="pl-k">implicit_flush</span>                        = 0</pre><br/>
+</div><br/>
+<em><sub>Hope it will save someone some time :]</sub></em></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/stackoverflow-subdomains">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/other-google-app-engine-insights">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/other-google-app-engine-insights">Other Google App Engine Insights</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/happy-star-wars-day-2016">Happy Star-Wars Day! 2016</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-better-font-face-loader">CSS3 Better Font-Face Loader</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hebrew-html5-synthesis-api">Hebrew HTML5 Synthesis API</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-proxy-configuration-for-apache">HTML Proxy Configuration For Apache</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/http-non-standard-methods">HTTP Non-Standard Methods</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/you-cant-really-adblock-google-analytics-on-chrome">You Can't Really AdBlock Google-Analytics On Chrome</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/supersu-systemless-false">SuperSU SYSTEMLESS=false</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cast-senderadblock-finder">cast_sender.js - AdBlock finder</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/even-smaller-gif">Even Smaller GIF</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/eset-subdomains">ESet-Related Sub-Domains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sm-n920c_mm_skyhigh34_mod_eladkarako-zip">sm-n920c_mm_skyhigh34_mod_eladkarako.zip</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/backup-network-architecture">Windows Tech Ninja - Backup/Restore Your Network Architecture</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tcp-z">TCP-Z</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-high-interest-video-thumbnails">FFMPEG - High-Interest Video Thumbnails</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/save-songs-from-pandora-radio">Save Songs From Pandora Radio</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

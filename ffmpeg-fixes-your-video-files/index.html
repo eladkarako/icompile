@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>FFMPEG Fixes Your Video Files</title>
+  <meta itemprop="name"                                content="FFMPEG Fixes Your Video Files"       />
+  <meta name="dcterms.title"                           content="FFMPEG Fixes Your Video Files"       />
+  <meta property="og:title"                            content="FFMPEG Fixes Your Video Files"       />
+  <meta name="twitter:title"                           content="FFMPEG Fixes Your Video Files"       />
+  <meta name="twitter:text:title"                      content="FFMPEG Fixes Your Video Files"       />
+  <meta name="application-name"                        content="FFMPEG Fixes Your Video Files"       />
+  <meta name="subject"                                 content="FFMPEG Fixes Your Video Files"       />
+  <meta name="apple-mobile-web-app-title"              content="FFMPEG Fixes Your Video Files"       />
+  <meta name="msapplication-tooltip"                   content="FFMPEG Fixes Your Video Files"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="FFMPEG Fixes Your Video Files"       />
+  <meta itemprop="description"                         content="FFMPEG Fixes Your Video Files"       />
+  <meta name="dcterms.description"                     content="FFMPEG Fixes Your Video Files"       />
+  <meta name="twitter:description"                     content="FFMPEG Fixes Your Video Files"       />
+  <meta property="og:description"                      content="FFMPEG Fixes Your Video Files"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accurate,acodec,adaptive,adjust,agljacbjyxb,aglkzv,aguga,agugb,agugbw,agugc,agugsc,agugzmlyc,agugzw,agvuigv,ahrtbci,align,alignnone,allowing,amount,android,anytype,apple,applying,areas,aresample,args,argument,arguments,article,asetpts,async,attributes,audio,auto,avhcd,avoid,awjszsigy,awrlby,awxsig,awxsigxvb,awxsihvzzsb,axroicimyw,axroigegc,banner,base,baseline,batch,bdwvc,bhbj,bhkgymlnz,bhryys,binary,blank,blocking,blur,blurring,bmmgphnwyw,bmugphnwyw,bold,boundle,btcu,buffers,buggy,bugs,build,builds,bybjb,bzip,calculating,call,canon,cases,cdelfm,cdovl,cgop,cgugb,changing,chapters,chjlc,chjpbnrfzm,chosen,chpl,chroma,chrzpu,chrzpvbuuy,ciagicagig,ciagicb,ciagicbib,ciagicbodg,ciagpg,ciagphnwyw,cjwvagvhzd,cjxodg,cjxzcgfuihn,cmvhbt,cmvmcmvzaca,code,codec,colon,color,colors,columns,command,commands,comments,common,comp,compatible,compiled,compression,container,content,convert,converted,converting,converts,copy,correctly,corrects,corrupt,corrupted,count,cplxblur,csbmzm,cure,cures,curve,cyatyxn,cycle,damaging,data,dcaiywz,deblocking,decoding,decreased,default,deinterlace,dejudder,demand,demuxer,demuxing,detection,devices,dgluzybpdcb,dhatzxf,diagram,dibsawj,directory,disable,dlbnb,double,download,downloading,drag,drop,dump,duplicated,dxjlihrozsb,easily,echo,edit,encode,encoded,encoders,encoding,equals,error,errorlevel,escape,estimation,ewxlpsdjb,exbligh,exblpsj,exist,export,external,extra,factor,factors,false,fast,faster,fastseek,faststart,favor,fflags,ffmpeg,fiddled,file,files,filling,filmed,filter,filters,finish,fixed,fixer,fixes,fixing,flag,flags,flat,fmts,font,fontconfig,forbidding,force,forced,form,format,formats,forms,found,fragments,frame,frames,framing,free,freetype,frei,fsywjszt,fszt,ftzsb,fukfursu,fukfursuijy,fukfurv,fzzsb,gain,game,gchjlc,generation,genpts,gently,gica,glitches,global,gnutls,goto,gphnwyw,great,green,groups,guide,gukegbw,gukfnrv,gynkgb,hacks,hbgw,hbgxlcibudw,hbwu,hciagphnwyw,hdgusc,header,heca,helpful,helps,hhcnnldd,hide,hiedst,high,higher,hjsi,hours,hphnwyw,html,hvic,hvicvgrk,hvig,hvljwvc,hzgp,iagvpz,iahr,iaxrfcmf,ibxa,icagphnwyw,ichzbg,identified,idewmcu,idjowijwvc,idxzcgfuihn,iejvrlnjwku,iexv,iezjtevfsu,iezjtevft,iftuquddc,igaw,igcmv,igegchjpy,igluihrozsb,ignidx,ignorecrop,ignoring,igzpbgutc,igzvbnqtd,igzyyw,ihrozsbjb,ihrozsbzyw,ihrvidugc,ihrvigvuc,iiatigrvig,iitmyxn,iitnzw,ijeipc,ijixijwvc,ijudst,ijuzsqu,ijvnijwvc,ijwvc,ilbc,ilgtvuetq,ilme,ilvuri,image,imci,imda,imfsbci,imii,imjeipc,imjhc,impossible,imsi,imtlewludd,imvycm,imzyywdtzw,inaccurate,include,included,includes,incorrectly,increase,increasing,index,indexing,infinite,info,inplcm,input,inrva,interlace,interprets,intra,invention,inzpzxdwb,iphnwyw,iphone,ipod,isuu,iwza,izsa,izxigb,izxigpt,jcmvhc,jcmygphnwyw,jcmzfbwf,jesi,jhchblcnm,jjaw,jjzwq,jkzxitym,jlzw,jpvvbft,jtyxrpb,july,jumpy,jutfwulovcu,juzjtevfsu,juzsqu,jvdw,jyxrlbmf,kcgokcgo,kcyb,kczwvc,kdwvc,keyint,kiagim,kicbodg,kmsv,kpgjvzhk,kphnwyw,ktwvc,kwkzwvc,kzsaobnvtig,kzxzpy,lame,landscape,larsu,latency,latest,lcmf,lcxvpdj,lcybwzxiga,lcyk,ldgegahr,leftovers,length,level,lgpl,libass,libbluray,libbs,libcaca,libebur,libiconv,libmfx,libs,libsoxr,licensed,lich,ligj,ligxpbwl,lijwvc,line,lined,list,ljtwvc,ljwvc,lkaw,locally,lock,logic,logical,loglevel,logo,lookahead,loop,loss,lost,loufvujtwvc,lqlvgu,lquresvrjt,lrklmrv,lsbcbzd,ltwvc,luyya,luzyb,lvbikupc,lwzyyw,lzdgfudc,lzwvc,made,make,matrix,mawx,maximum,mcwumyk,mdawmda,mdgwmza,mdmwoyanpi,mdmwoyanpig,mdmwoyanpik,mdmwoyanpj,mdmwoyanpjo,mdmwoyanpjs,mdotmtoww,media,mess,messed,meta,metadata,method,mgphnwyw,migzyyw,minimal,mjbwijwvc,mjwvc,mobile,modals,mode,modifying,modplug,motion,movflags,mpdecimate,mtpub,mtwvc,music,muxer,muxing,mzjwvc,mzmxhz,mzwf,navigation,nbglzacigy,nbsp,ndiwcci,ndwfnzt,needed,newer,nightly,nigluchv,nigrpc,nigvhy,njagvtys,nlbmugy,nljwvc,nllxbyzwnpc,nofillin,noibib,note,november,nphnwyw,number,nuukloryb,nuukloryu,nvbg,nwyw,nzmzwcm,nzsgjz,october,ojoqicataw,ojoqicbmb,ojoqicbzdg,ojply,ojwvc,omits,omjvbgq,omvjag,online,open,opencore,openh,openjpeg,option,optional,opts,opus,organised,orientation,origin,original,otsgjz,oukwk,outdated,output,overkill,overrides,owogicagdw,owogih,owokicagic,oyanpii,oyanpiilr,oyanpiiymsi,oyanpij,oyanpijbmdp,oyanpjo,ozwlnahqsaw,ozwvc,package,packets,padding,parallel,parse,parts,paste,patpc,pause,pbia,pbjwvc,pbmcgd,pbmltdw,pcfkb,pdglhbc,percnt,perfect,period,phbyzt,phnwyw,phone,phones,pink,pixel,play,playback,player,players,playing,pointer,popups,portrait,power,preset,pretending,prevent,problems,process,processing,profile,program,provide,psapc,psbzdhjlyw,ptwvc,pvvrqvvqlpc,pwrldmljzs,pzhigphnwyw,pzjwvc,qcomp,qdwvc,qgchjhy,qijwvc,qlwogidwvc,qphnwyw,qrucxjtwvc,qrucxphnwyw,qrucyjtwvc,qrucyphnwyw,qsunuvvjfid,quality,quot,qvfmtu,qvvq,qvvqlpc,ranges,rate,reach,read,reading,ready,recommended,reduce,reduces,reducing,reference,refresh,refs,remove,removed,replicate,require,rhbcaoz,rhcnqipc,rlccb,rows,rssu,rtmpdump,rvcnrpb,rvuku,rvukulijwvc,ryzwftcya,rzdgfydci,rzxlpbnq,samsung,sandbox,save,screen,script,scripts,scrolling,seamless,seconds,semi,send,september,setpts,setting,sharing,shift,showall,sigf,sigl,sihskicagic,simplify,simply,site,sites,size,slgjvzhl,slightly,slowness,smaller,smoothly,snappy,software,solve,specific,speed,speeded,speeds,speex,spgo,sqvrfl,stab,stamp,start,starting,startpts,state,static,stats,step,strategy,stream,streaming,strength,strict,strong,structure,stubborn,stuck,stuff,subq,subs,success,support,supported,supports,switch,switches,sync,syxrlbmn,szdsgjz,szxzlbca,target,tcgf,tcgxleca,textured,theora,threads,thumbnail,tile,title,tlcyb,tldhmsigj,tlet,tlsbqdxn,tltwvc,touch,trac,transformed,trick,trimmmmmm,tune,tuquddijwvc,tvefsvfbuu,twolame,tyxagphnwyw,ubyx,udgvudc,udgvudd,ugbmv,uiig,ujtptaw,ujtwvc,ulii,ultrafast,unaligned,unlimited,unsafe,uoibsdhi,update,utils,uywwtdw,uywxdie,uywxdihjlzm,uzsahaw,uzxigphnwyw,variable,variance,variation,vbmu,vchjpbnrfd,vcmcvmtk,vcmcvv,vcmuga,vcmugcmvzcg,vcmugy,vcmugyw,vcodec,vdcbnzw,vdcbydw,vdghpbmc,vdgvzljwvc,version,versions,veryslow,video,videos,vidout,visualon,vkaw,vkphnwyw,vlxnjzw,vnbwvudhmgd,vorbis,vsaw,vsync,vsyxrpbmcgr,vszcbizsb,vtdwvc,vucz,vujsi,vyigzpbgutc,vyzsb,vzcbmb,vzierly,vzljwvc,vzsu,warning,wavpack,waxhfzm,wbgv,wdhmgphnwyw,wdhmipc,wdxqvb,webm,webp,websites,weight,weird,whitespace,wijwvc,wiki,windows,wmdaipc,wmdeipc,wnci,work,works,woyzhbxa,wozwvc,wyxvzztwvc,wzgvjaw,xavs,xijwvc,xkoyanpk,xkoyanpm,xljasbwf,xljasbwluaw,xljasdxnlci,xmdawpc,xmms,xvcjojmda,xvcjojnjk,xvcjojnzk,xvcjojoda,xvdzwvc,xvid,xxnldhb,yadif,ybwf,ygas,yigjlc,yijwvc,yjxzcgfuihn,ynqgphnwyw,ynvmc,yoim,youtube,yuvj,ywrpzj,ywwgymv,ywxpdhkppc,yxjpywjszsb,yyxrlig,yzawoyanpje,yzawoyanpjm,yzxzcgfuihn,zaxplichjb,zaxppbmc,zcgfupgo,zcgfupia,zcgfupibgrk,zcgfupm,zcgfupmegr,zcgfupmfzew,zcgfupmj,zcgfupmm,zcgfupnbhc,zcgfupnbyb,zcgfupnr,zcgfupnzzew,zcya,zdcbjb,zeranoe,zerolatency,zlcibhdcb,zlib,zmbgfncya,zmxhz,znjhbwvzid,zpbgu,zpegvklm,zsbpbib,zsxzzxrwdhm,ztdca,ztogchjly,zwjraxqtzm,zwlnahq,zwnobybhuk,zwqgyxvkaw,zxhpc,zxigdg,zxigdghlic,zxigdghlig,zxjfy,zxjvbgf,zxmgdg,zzwxly,zzxq,zzxrwdhm,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accurate,acodec,adaptive,adjust,agljacbjyxb,aglkzv,aguga,agugb,agugbw,agugc,agugsc,agugzmlyc,agugzw,agvuigv,ahrtbci,align,alignnone,allowing,amount,android,anytype,apple,applying,areas,aresample,args,argument,arguments,article,asetpts,async,attributes,audio,auto,avhcd,avoid,awjszsigy,awrlby,awxsig,awxsigxvb,awxsihvzzsb,axroicimyw,axroigegc,banner,base,baseline,batch,bdwvc,bhbj,bhkgymlnz,bhryys,binary,blank,blocking,blur,blurring,bmmgphnwyw,bmugphnwyw,bold,boundle,btcu,buffers,buggy,bugs,build,builds,bybjb,bzip,calculating,call,canon,cases,cdelfm,cdovl,cgop,cgugb,changing,chapters,chjlc,chjpbnrfzm,chosen,chpl,chroma,chrzpu,chrzpvbuuy,ciagicagig,ciagicb,ciagicbib,ciagicbodg,ciagpg,ciagphnwyw,cjwvagvhzd,cjxodg,cjxzcgfuihn,cmvhbt,cmvmcmvzaca,code,codec,colon,color,colors,columns,command,commands,comments,common,comp,compatible,compiled,compression,container,content,convert,converted,converting,converts,copy,correctly,corrects,corrupt,corrupted,count,cplxblur,csbmzm,cure,cures,curve,cyatyxn,cycle,damaging,data,dcaiywz,deblocking,decoding,decreased,default,deinterlace,dejudder,demand,demuxer,demuxing,detection,devices,dgluzybpdcb,dhatzxf,diagram,dibsawj,directory,disable,dlbnb,double,download,downloading,drag,drop,dump,duplicated,dxjlihrozsb,easily,echo,edit,encode,encoded,encoders,encoding,equals,error,errorlevel,escape,estimation,ewxlpsdjb,exbligh,exblpsj,exist,export,external,extra,factor,factors,false,fast,faster,fastseek,faststart,favor,fflags,ffmpeg,fiddled,file,files,filling,filmed,filter,filters,finish,fixed,fixer,fixes,fixing,flag,flags,flat,fmts,font,fontconfig,forbidding,force,forced,form,format,formats,forms,found,fragments,frame,frames,framing,free,freetype,frei,fsywjszt,fszt,ftzsb,fukfursu,fukfursuijy,fukfurv,fzzsb,gain,game,gchjlc,generation,genpts,gently,gica,glitches,global,gnutls,goto,gphnwyw,great,green,groups,guide,gukegbw,gukfnrv,gynkgb,hacks,hbgw,hbgxlcibudw,hbwu,hciagphnwyw,hdgusc,header,heca,helpful,helps,hhcnnldd,hide,hiedst,high,higher,hjsi,hours,hphnwyw,html,hvic,hvicvgrk,hvig,hvljwvc,hzgp,iagvpz,iahr,iaxrfcmf,ibxa,icagphnwyw,ichzbg,identified,idewmcu,idjowijwvc,idxzcgfuihn,iejvrlnjwku,iexv,iezjtevfsu,iezjtevft,iftuquddc,igaw,igcmv,igegchjpy,igluihrozsb,ignidx,ignorecrop,ignoring,igzpbgutc,igzvbnqtd,igzyyw,ihrozsbjb,ihrozsbzyw,ihrvidugc,ihrvigvuc,iiatigrvig,iitmyxn,iitnzw,ijeipc,ijixijwvc,ijudst,ijuzsqu,ijvnijwvc,ijwvc,ilbc,ilgtvuetq,ilme,ilvuri,image,imci,imda,imfsbci,imii,imjeipc,imjhc,impossible,imsi,imtlewludd,imvycm,imzyywdtzw,inaccurate,include,included,includes,incorrectly,increase,increasing,index,indexing,infinite,info,inplcm,input,inrva,interlace,interprets,intra,invention,inzpzxdwb,iphnwyw,iphone,ipod,isuu,iwza,izsa,izxigb,izxigpt,jcmvhc,jcmygphnwyw,jcmzfbwf,jesi,jhchblcnm,jjaw,jjzwq,jkzxitym,jlzw,jpvvbft,jtyxrpb,july,jumpy,jutfwulovcu,juzjtevfsu,juzsqu,jvdw,jyxrlbmf,kcgokcgo,kcyb,kczwvc,kdwvc,keyint,kiagim,kicbodg,kmsv,kpgjvzhk,kphnwyw,ktwvc,kwkzwvc,kzsaobnvtig,kzxzpy,lame,landscape,larsu,latency,latest,lcmf,lcxvpdj,lcybwzxiga,lcyk,ldgegahr,leftovers,length,level,lgpl,libass,libbluray,libbs,libcaca,libebur,libiconv,libmfx,libs,libsoxr,licensed,lich,ligj,ligxpbwl,lijwvc,line,lined,list,ljtwvc,ljwvc,lkaw,locally,lock,logic,logical,loglevel,logo,lookahead,loop,loss,lost,loufvujtwvc,lqlvgu,lquresvrjt,lrklmrv,lsbcbzd,ltwvc,luyya,luzyb,lvbikupc,lwzyyw,lzdgfudc,lzwvc,made,make,matrix,mawx,maximum,mcwumyk,mdawmda,mdgwmza,mdmwoyanpi,mdmwoyanpig,mdmwoyanpik,mdmwoyanpj,mdmwoyanpjo,mdmwoyanpjs,mdotmtoww,media,mess,messed,meta,metadata,method,mgphnwyw,migzyyw,minimal,mjbwijwvc,mjwvc,mobile,modals,mode,modifying,modplug,motion,movflags,mpdecimate,mtpub,mtwvc,music,muxer,muxing,mzjwvc,mzmxhz,mzwf,navigation,nbglzacigy,nbsp,ndiwcci,ndwfnzt,needed,newer,nightly,nigluchv,nigrpc,nigvhy,njagvtys,nlbmugy,nljwvc,nllxbyzwnpc,nofillin,noibib,note,november,nphnwyw,number,nuukloryb,nuukloryu,nvbg,nwyw,nzmzwcm,nzsgjz,october,ojoqicataw,ojoqicbmb,ojoqicbzdg,ojply,ojwvc,omits,omjvbgq,omvjag,online,open,opencore,openh,openjpeg,option,optional,opts,opus,organised,orientation,origin,original,otsgjz,oukwk,outdated,output,overkill,overrides,owogicagdw,owogih,owokicagic,oyanpii,oyanpiilr,oyanpiiymsi,oyanpij,oyanpijbmdp,oyanpjo,ozwlnahqsaw,ozwvc,package,packets,padding,parallel,parse,parts,paste,patpc,pause,pbia,pbjwvc,pbmcgd,pbmltdw,pcfkb,pdglhbc,percnt,perfect,period,phbyzt,phnwyw,phone,phones,pink,pixel,play,playback,player,players,playing,pointer,popups,portrait,power,preset,pretending,prevent,problems,process,processing,profile,program,provide,psapc,psbzdhjlyw,ptwvc,pvvrqvvqlpc,pwrldmljzs,pzhigphnwyw,pzjwvc,qcomp,qdwvc,qgchjhy,qijwvc,qlwogidwvc,qphnwyw,qrucxjtwvc,qrucxphnwyw,qrucyjtwvc,qrucyphnwyw,qsunuvvjfid,quality,quot,qvfmtu,qvvq,qvvqlpc,ranges,rate,reach,read,reading,ready,recommended,reduce,reduces,reducing,reference,refresh,refs,remove,removed,replicate,require,rhbcaoz,rhcnqipc,rlccb,rows,rssu,rtmpdump,rvcnrpb,rvuku,rvukulijwvc,ryzwftcya,rzdgfydci,rzxlpbnq,samsung,sandbox,save,screen,script,scripts,scrolling,seamless,seconds,semi,send,september,setpts,setting,sharing,shift,showall,sigf,sigl,sihskicagic,simplify,simply,site,sites,size,slgjvzhl,slightly,slowness,smaller,smoothly,snappy,software,solve,specific,speed,speeded,speeds,speex,spgo,sqvrfl,stab,stamp,start,starting,startpts,state,static,stats,step,strategy,stream,streaming,strength,strict,strong,structure,stubborn,stuck,stuff,subq,subs,success,support,supported,supports,switch,switches,sync,syxrlbmn,szdsgjz,szxzlbca,target,tcgf,tcgxleca,textured,theora,threads,thumbnail,tile,title,tlcyb,tldhmsigj,tlet,tlsbqdxn,tltwvc,touch,trac,transformed,trick,trimmmmmm,tune,tuquddijwvc,tvefsvfbuu,twolame,tyxagphnwyw,ubyx,udgvudc,udgvudd,ugbmv,uiig,ujtptaw,ujtwvc,ulii,ultrafast,unaligned,unlimited,unsafe,uoibsdhi,update,utils,uywwtdw,uywxdie,uywxdihjlzm,uzsahaw,uzxigphnwyw,variable,variance,variation,vbmu,vchjpbnrfd,vcmcvmtk,vcmcvv,vcmuga,vcmugcmvzcg,vcmugy,vcmugyw,vcodec,vdcbnzw,vdcbydw,vdghpbmc,vdgvzljwvc,version,versions,veryslow,video,videos,vidout,visualon,vkaw,vkphnwyw,vlxnjzw,vnbwvudhmgd,vorbis,vsaw,vsync,vsyxrpbmcgr,vszcbizsb,vtdwvc,vucz,vujsi,vyigzpbgutc,vyzsb,vzcbmb,vzierly,vzljwvc,vzsu,warning,wavpack,waxhfzm,wbgv,wdhmgphnwyw,wdhmipc,wdxqvb,webm,webp,websites,weight,weird,whitespace,wijwvc,wiki,windows,wmdaipc,wmdeipc,wnci,work,works,woyzhbxa,wozwvc,wyxvzztwvc,wzgvjaw,xavs,xijwvc,xkoyanpk,xkoyanpm,xljasbwf,xljasbwluaw,xljasdxnlci,xmdawpc,xmms,xvcjojmda,xvcjojnjk,xvcjojnzk,xvcjojoda,xvdzwvc,xvid,xxnldhb,yadif,ybwf,ygas,yigjlc,yijwvc,yjxzcgfuihn,ynqgphnwyw,ynvmc,yoim,youtube,yuvj,ywrpzj,ywwgymv,ywxpdhkppc,yxjpywjszsb,yyxrlig,yzawoyanpje,yzawoyanpjm,yzxzcgfuihn,zaxplichjb,zaxppbmc,zcgfupgo,zcgfupia,zcgfupibgrk,zcgfupm,zcgfupmegr,zcgfupmfzew,zcgfupmj,zcgfupmm,zcgfupnbhc,zcgfupnbyb,zcgfupnr,zcgfupnzzew,zcya,zdcbjb,zeranoe,zerolatency,zlcibhdcb,zlib,zmbgfncya,zmxhz,znjhbwvzid,zpbgu,zpegvklm,zsbpbib,zsxzzxrwdhm,ztdca,ztogchjly,zwjraxqtzm,zwlnahq,zwnobybhuk,zwqgyxvkaw,zxhpc,zxigdg,zxigdghlic,zxigdghlig,zxjfy,zxjvbgf,zxmgdg,zzwxly,zzxq,zzxrwdhm,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/html-entity-xml"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/html-entity-xml"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javascript-ninja-unicode-string-prototype-fromcharcode-fix-to-allow-more-than-2-bytes-unicode-chars-directly-a-k-a-unicode-surrogate-pair"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/ffmpeg-fixes-your-video-files"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/ffmpeg-fixes-your-video-files"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/ffmpeg-fixes-your-video-files"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/ffmpeg-fixes-your-video-files"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/ffmpeg-fixes-your-video-files"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/ffmpeg-fixes-your-video-files"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2013-04-20T02:11:37+00:00"     />
+  <meta name="page-datetime"                           content="2013-04-20T02:11:37+00:00"     />
+  <meta property="article:published_time"              content="2013-04-20T02:11:37+00:00"     />
+  <meta name="dcterms.date"                            content="2013-04-20T02:11:37+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-07-09T05:35:08+00:00"    />
+  <meta property="article:modified_time"               content="2017-07-09T05:35:08+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/ffmpeg-fixes-your-video-files"
+,"url"             : "https://icompile.eladkarako.com/ffmpeg-fixes-your-video-files"
+,"headline"        : "FFMPEG Fixes Your Video Files"
+,"description"     : "FFMPEG Fixes Your Video Files"
+,"datePosted"      : "2013-04-20T02:11:37+00:00"
+,"dateCreated"     : "2013-04-20T02:11:37+00:00"
+,"datePublished"   : "2013-04-20T02:11:37+00:00"
+,"dateModified"    : "2017-07-09T05:35:08+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007983246631">
+  <header>
+    <h1 itemprop="headline">FFMPEG Fixes Your Video Files</h1>
+    <sup>Posted at <time datetime="2017-07-09T05:35:08+00:00" itemprop="dateModified">Sun, 09 Jul 2017 05:35:08 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><a href="http://ffmpeg.org/"><img loading="lazy" lazyload="on"  class="alignnone size-full wp-image-769" alt="ffmpeg-logo" src="https://icompile.eladkarako.com/_uploads/2013/04/ffmpeg-logo.png" width="550" height="150" /></a><br/>
+<br/>
+FFMPEG's stream copy is a mode that is really helpful to solve video glitches, slowness due to bad video-index, etc..<br/>
+<br/>
+In that mode, ffmpeg omits the decoding and encoding step for the specified stream, so it does only demuxing and muxing (its very fast). It is useful for changing the container format or modifying container-level metadata. The diagram above will, in this case, simplify to this:<br/>
+<pre> _______              ______________            ________
+|       |            |              |          |        |
+| input |  demuxer   | encoded data |  muxer   | output |
+| file  | ---------&gt; | packets      | -------&gt; | file   |
+|_______|            |______________|          |________|</pre><br/>
+&nbsp;<br/>
+<br/>
+Since there is no decoding or encoding, it is very fast (few seconds for demuxing and muxing for full size 2 hours video), and there is no quality loss. However, it might not work in some cases because of many factors. Applying filters is obviously also impossible (since filters work on uncompressed data).<br/>
+<br/>
+<pre>ffmpeg <span style='color:#808030; '>-</span>threads <span style='color:#008c00; '>4</span> <span style='color:#808030; '>-</span>i vid.avi <span style='color:#808030; '>-</span>vcodec <span style='color:#800000; font-weight:bold; '>copy</span> <span style='color:#808030; '>-</span>acodec <span style='color:#800000; font-weight:bold; '>copy</span> vidout.avi<br/>
+</pre><br/>
+<br/>
+the <code>-threads 4</code> is optional, but recommended.<br/>
+<br/>
+<!--more--><br/>
+<hr/><br/>
+<br/>
+FFMPEG is free software licensed under the LGPL and you can download 'already build' binary files, ready to be used, at <a title="http://ffmpeg.zeranoe.com/builds/" href="http://ffmpeg.zeranoe.com/builds/" target="_blank"><em>Zeranoe FFmpeg builds</em></a><br/>
+<br/>
+this site is great since it builds FFMPEG with many useful external libs (and encoders) the current version of FFMPEG available for download has the following external libs compiled with ("boundle"): <em>bzip2, Fontconfig, FreeType, Frei0r, Game Music Emu, GnuTLS, GSM, iLBC, LAME, libass, libbluray, libbs2b, libcaca, libebur128, libiconv, libmfx, libsoxr, Modplug-XMMS, OpenCORE AMR, OpenH264, OpenJPEG, Opus, Package, RTMPDump, Schroedinger, Snappy, Speex, Theora, TwoLAME, vid.stab, VisualOn AMR-WB, Vorbis, vpx, WavPack, WebP, x264, x265, XAVS, Xvid, XZ Utils, z.lib, zlib</em><br/>
+<br/>
+this means the following formats are supported in the version of FFMPEG you'll be downloading,<br/>
+(if you've got x64 bit OS, download the x64 bit version..)<br/>
+<br/>
+<blockquote><br/>
+You can also download a pre-compiled version with many external libs from <a href="https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.zip" target="_blank"><em>here (x64)</em></a> or <a href="https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.zip" target="_blank"><em>here (x32)</em></a><br/>
+</blockquote><br/>
+<br/>
+<hr/><br/>
+<br/>
+<blockquote><br/>
+<em>September 15<sup>th</sup>, 2016- <strong>Edit</strong>:</em><br/>
+Video get stuck on playing, either <strong>locally</strong> or <strong>streaming</strong>? messed up colors? other weird stuff?? &#x1f440;︎<br/>
+<br/>
+You need an <strong>EXTRA FIXING POWER</strong>! &#x1f4aa;︎&#x1f4aa;︎ <br/>
+<br/>
+The following command line will cure &#x1f489;︎ your video file (<em>anytype</em> to mp4)<br/>
+<br/>
+<pre>ffmpeg <span style='color:#808030; '>-</span>y <span style='color:#808030; '>-</span>hide_banner <span style='color:#808030; '>-</span>i <span style='color:#0000e6; '>"input.mp4"</span> <span style='color:#808030; '>-</span>bt 50M <span style='color:#808030; '>-</span>vf "mpdecimate<span style='color:#808030; '>,</span>setpts<span style='color:#808030; '>=</span>N<span style='color:#808030; '>/</span>FRAME_RATE<span style='color:#808030; '>/</span>TB<span style='color:#0000e6; '>" -preset veryslow -crf 21 -tune zerolatency -pix_fmt yuv420p -movflags "</span>+faststart<span style='color:#0000e6; '>" "</span>output.mp4"<br/>
+</pre><br/>
+<br/>
+<ul><br/>
+<li><br/>
+☞︎ <strong>Cures double frames</strong>, without damaging the video frame-rate or length (bug in Some HD Samsung phones).<br/>
+</li><br/>
+<li><br/>
+Fixes &#x1f527;︎ video/audio sync problems ⌚︎, if needed.<br/>
+</li><br/>
+<li><br/>
+Will &#x1f320;︎ load much faster, both locally and on online streaming websites.<br/>
+</li><br/>
+<li><br/>
+YouTube will process your video faster ⚡︎.<br/>
+</li><br/>
+<li><br/>
+Your video will play smoothly &#x1f680;︎ on all players and mobile devices.<br/>
+</li><br/>
+<li><br/>
+Un-mess-up videos, that are shown with messed-up colors ☜︎ (mostly green'ish and pink, on Windows Media-Player).<br/>
+  <ul><br/>
+    <li><br/>
+It is well known that WMP, incorrectly interprets <code>H.264</code>'s <code>yuvj420p</code> as <code>yuv420p</code><br/>
+If you'll try to convert from/to a <code>wmv</code>-file you could probably see the following warning:<br/>
+<pre>
+No pixel format specified, yuvj420p for H.264 encoding chosen.
+Use -pix_fmt yuv420p for compatibility with outdated media players.
+</pre><br/>
+    </li><br/>
+  </ul><br/>
+</li><br/>
+<li><br/>
+Will take some time to run but end-result will be minimal in size and maximum quality, as much as possible.<br/>
+</li><br/>
+<li><br/>
+Read more<br/>
+  <ul><br/>
+    <li><a href="https://trac.ffmpeg.org/wiki/Encode/H.264" target="_blank">FFmpeg and H.264 Encoding Guide</a></li><br/>
+    <li><a href="https://trac.ffmpeg.org/wiki/Encode/YouTube" target="_blank">How to Encode Videos for YouTube and other Video Sharing Sites</a></li><br/>
+  </ul><br/>
+</li><br/>
+</blockquote><br/>
+<br/>
+<hr/><br/>
+<br/>
+<blockquote><br/>
+<em>September 24<sup>th</sup>, 2016- <strong>Edit #1</strong>:</em><br/>
+Make your video compatible with ALL mobile devices<br/>
+Add :<br/>
+<ol><br/>
+<li><code>-profile:v "baseline"</code></li><br/>
+<li><code>-level "3.0"</code></li><br/>
+</ol><br/>
+<sup>Without it, Android 4, Apple TV below 2.0, iPhone 3 and iPod touch 1<sup>st</sup> generation will not support playback of your video.</sup><br/>
+<br/>
+so the final command is:<br/>
+<pre>ffmpeg <span style='color:#808030; '>-</span>y <span style='color:#808030; '>-</span>hide_banner <span style='color:#808030; '>-</span>i <span style='color:#0000e6; '>"input.mp4"</span> <span style='color:#808030; '>-</span>profile<span style='color:#808030; '>:</span>v <span style='color:#0000e6; '>"baseline"</span> <span style='color:#808030; '>-</span>level <span style='color:#0000e6; '>"3.0"</span> <span style='color:#808030; '>-</span>bt 50M <span style='color:#808030; '>-</span>vf <span style='color:#0000e6; '>"mpdecimate,setpts=N/FRAME_RATE/TB"</span> <span style='color:#808030; '>-</span>preset veryslow <span style='color:#808030; '>-</span>crf <span style='color:#008c00; '>21</span> <span style='color:#808030; '>-</span>tune zerolatency <span style='color:#808030; '>-</span>movflags <span style='color:#0000e6; '>"+faststart"</span> <span style='color:#808030; '>-</span>pix_fmt yuv420p <span style='color:#0000e6; '>"output.mp4"</span><br/>
+</pre><br/>
+</blockquote><br/>
+<br/>
+<hr/><br/>
+<br/>
+<blockquote><br/>
+<em>September 24<sup>th</sup>, 2016- <strong>Edit #2</strong>:</em><br/>
+Make FFMPEG to parse correctly the frames-per-second from videos you've filmed using either Samsung's UHD or Canon 1080i AVHCD, set for <code>60</code> FPS.<br/>
+Add: <br/>
+<ol><br/>
+<li><br/>
+<code>-r 60</code> before the <code>-i</code>.<br/>
+<ul><li>It overrides FFMPEG's input's frame-rate-detection.</li></ul><br/>
+</li><br/>
+<li><br/>
+<code>-r 60</code> right after the <code>-i</code>.<br/>
+<ul><li>To set the output's frame-rate.</li></ul><br/>
+</li><br/>
+</ol><br/>
+so the final command is:<br/>
+<pre>ffmpeg <span style='color:#808030; '>-</span>y <span style='color:#808030; '>-</span>hide_banner <span style='color:#808030; '>-</span>r <span style='color:#008c00; '>60</span> <span style='color:#808030; '>-</span>i <span style='color:#0000e6; '>"input.mp4"</span> <span style='color:#808030; '>-</span>r <span style='color:#008c00; '>60</span> <span style='color:#808030; '>-</span>profile<span style='color:#808030; '>:</span>v <span style='color:#0000e6; '>"baseline"</span> <span style='color:#808030; '>-</span>level <span style='color:#0000e6; '>"3.0"</span> <span style='color:#808030; '>-</span>bt 50M <span style='color:#808030; '>-</span>vf <span style='color:#0000e6; '>"mpdecimate,setpts=N/FRAME_RATE/TB"</span> <span style='color:#808030; '>-</span>preset veryslow <span style='color:#808030; '>-</span>crf <span style='color:#008c00; '>21</span> <span style='color:#808030; '>-</span>tune zerolatency <span style='color:#808030; '>-</span>movflags <span style='color:#0000e6; '>"+faststart"</span> <span style='color:#808030; '>-</span>pix_fmt yuv420p <span style='color:#0000e6; '>"output.mp4"</span><br/>
+</pre><br/>
+</blockquote><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<blockquote><br/>
+October 24<sup>th</sup>, 2016: edit.<br/>
+This is a batch script I've fiddled with, constructing a high-end mp4 file, with very little latency, perfect for streaming. it also "tries" to very gently fix bad indexing, double-frames and other common bugs.<br/>
+<sub><br/>
+in order to use it one must download the <strong>latest</strong> nightly binary build of ffmpeg from <a href="https://ffmpeg.zeranoe.com/builds/" target="_blank">https://ffmpeg.zeranoe.com/builds/</a>, and copy&paste the following into a new file, save it with the name <code>video_fixer.cmd</code><br/>
+</sub><br/>
+<iframe loading="lazy" lazyload="on"  style="width:90%;height:500px;" allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" target="" src="data:text/html;charset=UTF-8;base64,PCFkb2N0eXBlIGh0bWw+CjxodG1sIGl0ZW1zY29wZT0iIiBpdGVtdHlwZT0iaHR0cDovL3NjaGVtYS5vcmcvV2ViUGFnZSIgZGlyPSJsdHIiIGxhbmc9ImVuLVVTIiBsYW5ndWFnZT0iRW5nbGlzaCIgY2hhcnNldD0iVVRGLTgiIGVuY29kaW5nPSJVVEYtOCI+CjxoZWFkPgogIDxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSxjaHJvbWU9MSIvPgogIDxtZXRhIGNoYXJzZXQ9IlVURi04Ii8+CiAgPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiAgICBjb250ZW50PSJ0ZXh0L2h0bWw7Y2hhcnNldD1VVEYtOCIvPgogIDxtZXRhIG5hbWU9ImZyYWdtZW50IiAgICAgICAgICAgICAgY29udGVudD0iISIvPgogIDxtZXRhIG5hbWU9InZpZXdwb3J0IiAgICAgICAgICAgICAgY29udGVudD0iaGVpZ2h0PWRldmljZS1oZWlnaHQsaW5pdGlhbC1zY2FsZT0xLjAsbWF4aW11bS1zY2FsZT0xLjAsbWluaW11bS1zY2FsZT0xLjAsdXNlci1zY2FsYWJsZT1ubyx3aWR0aD1kZXZpY2Utd2lkdGgsbWluaW1hbC11aSIvPgogIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyIgbWVkaWE9ImFsbCI+CiAgICAvKjwhW0NEQVRBWyovCiAgICBAY2hhcnNldCAiVVRGLTgiOwogICAgQG5hbWVzcGFjZSAiaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI7CiAgICBodG1sLGJvZHl7CiAgICAgIGhlaWdodDogICAgICAgICAgICAgICAgICAgICAgICAgICAgIDEwMCU7CiAgICAgIHdpZHRoOiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDEwMCU7CiAgICAgIHBhZGRpbmc6ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDA7CiAgICAgIG1hcmdpbjogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDA7CiAgICAgIGJveC1zaXppbmc6ICAgICAgICAgICAgICAgICAgIGJvcmRlci1ib3g7CiAgICAgIHRleHQtc2l6ZS1hZGp1c3Q6ICAgICAgICAgICAgICAgICAgIDEwMCU7CiAgICAgIGZvbnQ6IDE0cHQvMTZwdCAnQ291cmllciBOZXcnLCBtb25vc3BhY2U7CiAgICB9CiAgKnsKICAgIHRleHQtc2l6ZS1hZGp1c3Q6IDEwMCU7CiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94OwogIH0KICBodG1sIHsKICAgIC8qIHRoaXMgaGVscHMgdG8gb3ZlcnJpZGUgYmktZGlyZWN0aW9uYWwtdW5pY29kZS1jaGFycyAoaWYgYW55KSAqLwogICAgZGlyZWN0aW9uOiBsdHI7CiAgICB0ZXh0LWFsaWduOiBsZWZ0OwogICAgdW5pY29kZS1iaWRpOiBiaWRpLW92ZXJyaWRlOwoKICAgIGZvbnQ6IDQwcHQvODBwdCAnQ291cmllciBOZXcnLCBtb25vc3BhY2U7CiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94OwoKICAgIHRleHQtc2l6ZS1hZGp1c3Q6IDEwMCU7CiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94OwoKICAgIC13ZWJraXQtZm9udC1zbW9vdGhpbmc6IG5vbmU7CiAgICB0ZXh0LXJlbmRlcmluZzogb3B0aW1pemVTcGVlZDsKICAgIAogICAgZm9udC1zdHJldGNoOiB1bHRyYS1leHBhbmRlZDsKICAgIAogICAgZm9udC1mZWF0dXJlLXNldHRpbmdzOiAia2VybiIgMDsKICAgIGZvbnQta2VybmluZzogbm9uZSAhaW1wb3J0YW50OwogIH0KICAgIGJvZHl7CiAgICAgIHdoaXRlLXNwYWNlOiAgICAgICAgICAgICAgICAgICAgIGluaXRpYWw7CiAgICAgIHdvcmQtYnJlYWs6ICAgICAgICAgICAgICAgICAgICBicmVhay1hbGw7CiAgICB9CiAgICBib2R5ewogICAgICBiYWNrZ3JvdW5kOiAgICAgICAgICAgICAgIG5vbmUgcmdiYSgyNDAsMjQwLDI0MCwuMyk7IAogICAgfQogICAgLypdXT4qLwogIDwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+PHByZT4KPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+QDwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzgwMDAwMDsgZm9udC13ZWlnaHQ6Ym9sZDsgJz5lY2hvIG9mZjwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjrilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpEgaW5wdXQvb3V0cHV0IGZpbGUgbmFtZXMuPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzgwMDAwMDsgZm9udC13ZWlnaHQ6Ym9sZDsgJz5zZXQ8L3NwYW4+IEZJTEVfSU5QVVQ8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz49PC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIlfjEiPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzgwMDAwMDsgZm9udC13ZWlnaHQ6Ym9sZDsgJz5zZXQ8L3NwYW4+IEZJTEVfT1VUUFVUPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+PTwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iJX5kMSV+cDElfm4xX2ZpeGVkLm1wNCI8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo64paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paTPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzY5Njk2OTsgJz46OuKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkSBncmFiIFJBVyBkYXRhIGZyb20gdGhlIHZpZGVvIGZpbGUuIEZSQU1FUkFURSBzdWNoIGFzIDIzLjkzNyB3aWxsIGJlIHRydW5jIHRvIDIzLiBpdCBpcyBzdGlsbCBPSyBmb3IgY2FsY3VsYXRpbmcgR09QIGFuZCBLRVlJTlQgYnV0IHRoZSBlbmQgZnJhbWVyYXRlIG5lZWRzIHRvIGJlIHRoZSBzYW1lLCBzbyBhdCB0aGUgZmZtcGVnIGNvbWFuZChzKSB3ZSB3aWxsIHVzZSB0aGUgRlJBTUVSQVRFX1NUUklORyB3aGljaCBjYXB0dXJlIHRoZSB2YWx1ZSAiQVMtSVMiLjwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDAwMDA7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+Zm9yPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4vPC9zcGFuPmYgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+InRva2Vucz0qIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM3OTc5OTc7ICc+JSU8L3NwYW4+YSA8c3BhbiBzdHlsZT0nY29sb3I6IzgwMDAwMDsgZm9udC13ZWlnaHQ6Ym9sZDsgJz5pbjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+KDwvc3Bhbj4nZmZwcm9iZSA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmkgPHNwYW4gc3R5bGU9J2NvbG9yOiM3OTc5OTc7ICc+JUZJTEVfSU5QVVQlPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPnYgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+ImVycm9yIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5zZWxlY3Rfc3RyZWFtcyA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4idjowIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5zaG93X2VudHJpZXMgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+InN0cmVhbT1hdmdfZnJhbWVfcmF0ZSI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+cHJpbnRfZm9ybWF0IDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiJkZWZhdWx0PW5vcHJpbnRfd3JhcHBlcnM9MTpub2tleT0xIjwvc3Bhbj4nPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+KTwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDAwMDA7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+ZG88L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPig8L3NwYW4+CiAgPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDAwMDA7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+c2V0PC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4vPC9zcGFuPmEgRlJBTUVSQVRFPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+PTwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6Izc5Nzk5NzsgJz4lJTwvc3Bhbj5hCiAgPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDAwMDA7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+c2V0PC9zcGFuPiAgICBGUkFNRVJBVEVfU1RSSU5HPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+PTwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6Izc5Nzk5NzsgJz4lJTwvc3Bhbj5hCjxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPik8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+Ozwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDAwMDA7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+Zm9yPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4vPC9zcGFuPmYgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+InRva2Vucz0qIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM3OTc5OTc7ICc+JSU8L3NwYW4+YSA8c3BhbiBzdHlsZT0nY29sb3I6IzgwMDAwMDsgZm9udC13ZWlnaHQ6Ym9sZDsgJz5pbjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+KDwvc3Bhbj4nZmZwcm9iZSA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmkgPHNwYW4gc3R5bGU9J2NvbG9yOiM3OTc5OTc7ICc+JUZJTEVfSU5QVVQlPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPnYgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+ImVycm9yIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5zZWxlY3Rfc3RyZWFtcyA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4idjowIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5zaG93X2VudHJpZXMgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+InN0cmVhbT1iaXRfcmF0ZSI8L3NwYW4+ICAgICAgIDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+cHJpbnRfZm9ybWF0IDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiJkZWZhdWx0PW5vcHJpbnRfd3JhcHBlcnM9MTpub2tleT0xIjwvc3Bhbj4nPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+KTwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDAwMDA7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+ZG88L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPig8L3NwYW4+CiAgPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDAwMDA7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+c2V0PC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4vPC9zcGFuPmEgQklUUkFURTxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPj08L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM3OTc5OTc7ICc+JSU8L3NwYW4+YQo8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4pPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPjs8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo64paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paTPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzY5Njk2OTsgJz46OuKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkSBjYWxjdWxhdGlvbiB1c2VzIFtGUkFNRVJBVEVdIGFuZCBbQklUUkFURV0gZm9yIGJlc3QgcHJhY3RpY2VzLjwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDAwMDA7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+c2V0PC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4vPC9zcGFuPmEgR1JPVVBfT0ZfUElDVFVSRTxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPj08L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiMwMDhjMDA7ICc+Mjwvc3Bhbj4qPHNwYW4gc3R5bGU9J2NvbG9yOiM3OTc5OTc7ICc+JUZSQU1FUkFURSU8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojODAwMDAwOyBmb250LXdlaWdodDpib2xkOyAnPnNldDwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+Lzwvc3Bhbj5hIEtFWUlOVDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPj08L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiMwMDhjMDA7ICc+Mjwvc3Bhbj4qPHNwYW4gc3R5bGU9J2NvbG9yOiM3OTc5OTc7ICc+JUZSQU1FUkFURSU8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojODAwMDAwOyBmb250LXdlaWdodDpib2xkOyAnPnNldDwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+Lzwvc3Bhbj5hIEJVRlNJWkU8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz49PC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojNzk3OTk3OyAnPiVCSVRSQVRFJTwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4vPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMDA4YzAwOyAnPjM8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo64paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paTPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzY5Njk2OTsgJz46OuKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkSBbb3B0aW9uYWxdIHJlZm9ybWF0ICh0byB1c2UgS0IgaW5zdGVhZCBvZiBiaXRzLCB3aWxsIGxvb3NlLXByZWNpc2lvbikuPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzgwMDAwMDsgZm9udC13ZWlnaHQ6Ym9sZDsgJz5zZXQ8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi88L3NwYW4+YSBCSVRSQVRFPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+PTwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6Izc5Nzk5NzsgJz4lQklUUkFURSU8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+Lzwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzAwOGMwMDsgJz4xMDAwPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzgwMDAwMDsgZm9udC13ZWlnaHQ6Ym9sZDsgJz5zZXQ8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi88L3NwYW4+YSBCVUZTSVpFPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+PTwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6Izc5Nzk5NzsgJz4lQlVGU0laRSU8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+Lzwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzAwOGMwMDsgJz4xMDAwPC9zcGFuPgoKPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDAwMDA7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+c2V0PC9zcGFuPiBCSVRSQVRFPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+PTwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6Izc5Nzk5NzsgJz4lQklUUkFURSU8L3NwYW4+awo8c3BhbiBzdHlsZT0nY29sb3I6IzgwMDAwMDsgZm9udC13ZWlnaHQ6Ym9sZDsgJz5zZXQ8L3NwYW4+IEJVRlNJWkU8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz49PC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojNzk3OTk3OyAnPiVCVUZTSVpFJTwvc3Bhbj5rCjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo64paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paTPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzY5Njk2OTsgJz46OuKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkSBbb3B0aW9uYWxdIE9WRVJSSURFIEdPUDogc2ltdWxhdGUgSU5GUkEgbW9kZSAobnVtIG9mIGZyYW1lcyBwZXIga2V5LWZyYW1lcykuIEdPUCBpcyBudW1iZXIgb2YgZnJhbWVzIGJldHdlZW4ga2V5ZnJhbWVzLiAgU21hbGxlciBudW1iZXIgPT09IG1vcmUga2V5ZnJhbWVzID09PSBzdHJlYW1pbmcgd2lsbCByZWNvdmVyIGZhc3RlciBvbiBwYWNrZXRzIGRyb3AuIHdpbGwgaW5jcmVhc2UgZmlsZSBzaXplLCBhbmQgbG93ZXIgdGhlIG92ZXJhbGwgYWJpbGl0eSB0byBjb21wcmVzcyBkYXRhLCB0aHVzIChtdWNoKSBiaWdnZXIgZmlsZS1zaXplIChjb3VsZCBiZSB4MyB0aW1lcyk8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojODAwMDAwOyBmb250LXdlaWdodDpib2xkOyAnPnNldDwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+Lzwvc3Bhbj5hIEdST1VQX09GX1BJQ1RVUkU8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz49PC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMDA4YzAwOyAnPjE8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo64paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paT4paTPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzY5Njk2OTsgJz46OuKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkSBbb3B0aW9uYWxdIE9WRVJSSURFIGtleWludCB2YWx1ZXMgdG8gMSBzbyBldmVyeSBmcmFtZSB0aGF0IGlzIGktZnJhbWUgd2lsbCBiZSBJRFIuIGF2b2lkaW5nIGRpc3RvcnRpb24sIGF0IGEgcHJpY2Ugb2Ygc2xpZ2h0bHkgYmlnZ2VyIGZpbGUtc2l6ZS48L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojODAwMDAwOyBmb250LXdlaWdodDpib2xkOyAnPnNldDwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+Lzwvc3Bhbj5hIEtFWUlOVDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPj08L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiMwMDhjMDA7ICc+MTwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjrilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpM8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo64paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paRIFtvcHRpb25hbF0gcHJlc2V0IChzbG93PXNtYWxsZXIgZmlsZSkuIHVsdHJhZmFzdHx2ZXJ5c2xvdzwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDAwMDA7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+c2V0PC9zcGFuPiBQUkVTRVQ8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz49PC9zcGFuPnVsdHJhZmFzdAo8c3BhbiBzdHlsZT0nY29sb3I6IzY5Njk2OTsgJz46OuKWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWkzwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjrilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpEgW29wdGlvbmFsXSBzdHVmZiB5b3UgY2FuIGFkZCBhdCB0aGUgZW5kLiAgIFRoaXMgb25lIGxpbWl0cyB0aGUgb3V0cHV0IHRvIDUgc2Vjb25kcyB0b3RhbCAoZ29vZCBmb3IgcmV2aWV3aW5nIHRoZSBvdmVyYWxsIHF1YWxpdHkpPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzY5Njk2OTsgJz46OnNldCBBRERJVElPTkFMPS10ICI1Ijwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjrilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpM8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo64paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paRIFRoZSBGRk1QRUcgKGNvbXBpbGVkKSBjb21tYW5kczwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDAwMDA7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+c2V0PC9zcGFuPiBGRk1QRUcxPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+PTwvc3Bhbj5mZm1wZWcuZXhlIDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+eSA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmhpZGVfYmFubmVyIDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+ciA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iJUZSQU1FUkFURV9TVFJJTkclIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5zcyA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iMDA6MDA6MDAuMDAwIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5pIDxzcGFuIHN0eWxlPSdjb2xvcjojNzk3OTk3OyAnPiVGSUxFX0lOUFVUJTwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5wYXNzIDxzcGFuIHN0eWxlPSdjb2xvcjojMDA4YzAwOyAnPjE8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+ZiA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4ibXA0Ijwvc3Bhbj4gICA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPnNzIDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIwMDowMDowMC4wMDEiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmM8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz46PC9zcGFuPnYgbGlieDI2NCA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPnIgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+IiVGUkFNRVJBVEVfU1RSSU5HJSI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+ZyA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iJUdST1VQX09GX1BJQ1RVUkUlIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5pbnRyYTxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+cmVmcmVzaCA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iMCI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+Zm9yY2VkPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5pZHIgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+IjEiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmtleWludF9taW4gPHNwYW4gc3R5bGU9J2NvbG9yOiM3OTc5OTc7ICc+JUtFWUlOVCU8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+eDI2NG9wdHMgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+ImtleWludD0lS0VZSU5UJTptaW4ta2V5aW50PSVLRVlJTlQlOm5vLXNjZW5lY3V0Ijwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5mZmxhZ3MgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+IitnZW5wdHMiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmFzeW5jIDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIxIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj52c3luYyA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iMiI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+cHJlc2V0IDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIlUFJFU0VUJSI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+Y3JmIDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIyMSI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+Y3JmX21heCA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iMjEiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPnByb2ZpbGU8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz46PC9zcGFuPnYgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+ImJhc2VsaW5lIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5sZXZlbCA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iMy4wIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj50dW5lIDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiJ6ZXJvbGF0ZW5jeSI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+cGl4X2ZtdCA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4ieXV2NDIwcCI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+bW92ZmxhZ3MgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+IitmYXN0c3RhcnQiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmJ0IDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiI1TSI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+YjxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPjo8L3NwYW4+diA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iJUJJVFJBVEUlIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5tYXhyYXRlIDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIlQklUUkFURSUiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmJ1ZnNpemUgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+IiVCVUZTSVpFJSI8L3NwYW4+ICA8c3BhbiBzdHlsZT0nY29sb3I6Izc5Nzk5NzsgJz4lQURESVRJT05BTCU8L3NwYW4+ICAgPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5maWx0ZXJfY29tcGxleCA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iWzA6dl1zZXRwdHM9UFRTLVNUQVJUUFRTW1RBR107IFtUQUddeWFkaWY9MDotMTowW1RBR107IFtUQUddc2V0cHRzPVBUUy1TVEFSVFBUU1tUQUddOyBbVEFHXW1wZGVjaW1hdGUsc2V0cHRzPU4vRlJBTUVfUkFURS9UQltUQUddOyBbVEFHXXNldHB0cz1QVFMtU1RBUlRQVFNbVEFHXSI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+bWFwIDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiJbVEFHXSI8L3NwYW4+ICAgICAgICAgICAgIDxzcGFuIHN0eWxlPSdjb2xvcjojODAwMDAwOyBmb250LXdlaWdodDpib2xkOyAnPk5VTDwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDAwMDA7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+c2V0PC9zcGFuPiBGRk1QRUcyPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+PTwvc3Bhbj5mZm1wZWcuZXhlICAgIDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+aGlkZV9iYW5uZXIgPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5yIDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIlRlJBTUVSQVRFX1NUUklORyUiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPnNzIDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIwMDowMDowMC4wMDAiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmkgPHNwYW4gc3R5bGU9J2NvbG9yOiM3OTc5OTc7ICc+JUZJTEVfSU5QVVQlPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPnBhc3MgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDhjMDA7ICc+Mjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5mIDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiJtcDQiPC9zcGFuPiAgIDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+c3MgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+IjAwOjAwOjAwLjAwMSI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+YzxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPjo8L3NwYW4+diBsaWJ4MjY0IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+ciA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iJUZSQU1FUkFURV9TVFJJTkclIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5nIDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIlR1JPVVBfT0ZfUElDVFVSRSUiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmludHJhPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5yZWZyZXNoIDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIwIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5mb3JjZWQ8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmlkciA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iMSI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+a2V5aW50X21pbiA8c3BhbiBzdHlsZT0nY29sb3I6Izc5Nzk5NzsgJz4lS0VZSU5UJTwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj54MjY0b3B0cyA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4ia2V5aW50PSVLRVlJTlQlOm1pbi1rZXlpbnQ9JUtFWUlOVCU6bm8tc2NlbmVjdXQiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmZmbGFncyA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iK2dlbnB0cyI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+YXN5bmMgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+IjEiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPnZzeW5jIDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIyIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5wcmVzZXQgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+IiVQUkVTRVQlIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5jcmYgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+IjIxIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5jcmZfbWF4IDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIyMSI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+cHJvZmlsZTxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPjo8L3NwYW4+diA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iYmFzZWxpbmUiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmxldmVsIDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIzLjAiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPnR1bmUgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+Inplcm9sYXRlbmN5Ijwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5waXhfZm10IDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiJ5dXY0MjBwIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5tb3ZmbGFncyA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iK2Zhc3RzdGFydCI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+YnQgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+IjVNIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5iPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+Ojwvc3Bhbj52IDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiIlQklUUkFURSUiPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPm1heHJhdGUgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+IiVCSVRSQVRFJSI8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+YnVmc2l6ZSA8c3BhbiBzdHlsZT0nY29sb3I6IzAwMDBlNjsgJz4iJUJVRlNJWkUlIjwvc3Bhbj4gIDxzcGFuIHN0eWxlPSdjb2xvcjojNzk3OTk3OyAnPiVBRERJVElPTkFMJTwvc3Bhbj4gICA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4tPC9zcGFuPmZpbHRlcl9jb21wbGV4IDxzcGFuIHN0eWxlPSdjb2xvcjojMDAwMGU2OyAnPiJbMDp2XXNldHB0cz1QVFMtU1RBUlRQVFNbVEFHXTsgW1RBR115YWRpZj0wOi0xOjBbVEFHXTsgW1RBR11zZXRwdHM9UFRTLVNUQVJUUFRTW1RBR107IFtUQUddbXBkZWNpbWF0ZSxzZXRwdHM9Ti9GUkFNRV9SQVRFL1RCW1RBR107IFtUQUddc2V0cHRzPVBUUy1TVEFSVFBUU1tUQUddIjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj5tYXAgPHNwYW4gc3R5bGU9J2NvbG9yOiMwMDAwZTY7ICc+IltUQUddIjwvc3Bhbj4gICA8c3BhbiBzdHlsZT0nY29sb3I6Izc5Nzk5NzsgJz4lRklMRV9PVVRQVVQlPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzY5Njk2OTsgJz46OuKWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWk+KWkzwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjrilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpEgW29wdGlvbmFsXSBvbi1zY3JlZW4gaW5mb3JtYXRpb24uPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzY5Njk2OTsgJz46OmVjaG8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzY5Njk2OTsgJz46OmVjaG8gRlJBTUVSQVRFICAgICAgICA9JUZSQU1FUkFURSU8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo6ZWNobyBGUkFNRVJBVEVfU1RSSU5HID0lRlJBTUVSQVRFX1NUUklORyU8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo6ZWNobyBHUk9VUF9PRl9QSUNUVVJFID0lR1JPVVBfT0ZfUElDVFVSRSU8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo6ZWNobyBLRVlJTlQgICAgICAgICAgID0lS0VZSU5UJTwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjplY2hvIEJJVFJBVEUgICAgICAgICAgPSVCSVRSQVRFJTwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjplY2hvIEJVRlNJWkUgICAgICAgICAgPSVCVUZTSVpFJTwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjplY2hvIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLTwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjplY2hvIEZGTVBFRzEgICAgICAgICAgPTwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjplY2hvICVGRk1QRUcxJTwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjplY2hvLjwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjplY2hvIEZGTVBFRzIgICAgICAgICAgPTwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjplY2hvICVGRk1QRUcyJTwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjplY2hvIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLTwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjpwYXVzZTwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjrilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpM8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo64pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAPC9zcGFuPgoKPHNwYW4gc3R5bGU9J2NvbG9yOiM3OTc5OTc7ICc+JUZGTVBFRzElPC9zcGFuPiA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4mYW1wOzwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4mYW1wOzwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM3OTc5OTc7ICc+JUZGTVBFRzIlPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzgwMDAwMDsgZm9udC13ZWlnaHQ6Ym9sZDsgJz5wYXVzZTwvc3Bhbj4KCgoKCgo8c3BhbiBzdHlsZT0nY29sb3I6IzY5Njk2OTsgJz46OuKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkeKWkSBbb3B0aW9uYWxdIGNsZWFudXAuPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzgwMDAwMDsgZm9udC13ZWlnaHQ6Ym9sZDsgJz5pZjwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDAwMDA7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+ZXhpc3Q8L3NwYW4+IGZmbXBlZzJwYXNzPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+LTwvc3Bhbj4qLmxvZyAgIDxzcGFuIHN0eWxlPSdjb2xvcjojODAwMDAwOyBmb250LXdlaWdodDpib2xkOyAnPmRlbDwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiM4MDgwMzA7ICc+Lzwvc3Bhbj5mIDxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi88L3NwYW4+cSBmZm1wZWcycGFzczxzcGFuIHN0eWxlPSdjb2xvcjojODA4MDMwOyAnPi08L3NwYW4+Ki5sb2cgICAgICAgICA8c3BhbiBzdHlsZT0nY29sb3I6IzgwODAzMDsgJz4mZ3Q7PC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojODAwMDAwOyBmb250LXdlaWdodDpib2xkOyAnPm51bDwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjrilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpPilpM8L3NwYW4+Cgo8c3BhbiBzdHlsZT0nY29sb3I6IzY5Njk2OTsgJz46Ok5vdGVzLjwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjoqICBzdG9yaW5nIGVhY2ggY29tbWFuZCBpbiB2YXJpYWJsZSB0aGVuIGV4ZWN1dGluZyBpdCB3aXRoICImYW1wOyZhbXA7IiBtYWtlcyBzdXJlIHRoZSBzZWNvbmQtc3RlcCB3aWxsIG5vdCBydW4gZm9yIG5vLXJlYXNvbiwgaW4tY2FzZSB0aGUgZmlyc3Qgc3RlcCBmYWlsZWQgd2l0aCBhbnkgZXJyb3IgY29kZS48L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo6KiAgVGhlICctc3MgIjAwOjAwOjAwLjAwMCIgLWkuLi4gLXNzICIwMDowMDowMC4wMDEiJyBoZWxwcyBpZ25vcmUgYW5kIHJlYnVpbGQgdGhlIGluZGV4LiBbYSBiaXQgb2YgYSBoYWNrXTwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjoqICBmb3JjaW5nIGlucHV0IGZyYW1lcmF0ZTogcHJlY2VkaW5nICctciAiJUZSQU1FUkFURSUiJy4gICAgIGZvcmNpbmcgb3V0cHV0IC0tLSBqdXN0IHRoZSBzYW1lIGJ1dCAiYWZ0ZXIgdGhlIC1pIC4uLiI8L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo6KiAgIm5vLXNjZW5lY3V0IiAtIGRvIG5vdCBnZW5lcmF0ZSBhIGtleSBmcmFtZSB3aGVuIHRoZXJlIGlzIGEgc2NlbmUgY3V0IGluIHRoZSB2aWRlby4gVGhpcyBrZWVwcyB0aGUga2V5LWZyYW1lcy1yYXRlIG1vcmUgY29uc2lzdGFudC48L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo6KiAgVGhlICItZmxhZ3MgK2dlbnB0cyAtYXN5bmMgMSIgaXMgbmVjZXNzYXJ5IHRvIGVuc3VyZSB0aGF0IHRoZSBjb25jYXRlbmF0ZWQgYXVkaW8gc2VnbWVudHMgd2lsbCBzd2l0Y2ggb3ZlciBhdCB0aGUgc2FtZSB0aW1lIGFzIHRoZSB2aWRlbyBzZWdtZW50Ljwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjoqICAiLWtleWludF9taW4iIG1pbmltdW0gaW50ZXJ2YWwgYmV0d2VlbiBJRFItZnJhbWVzIChJbnN0YW50YW5lb3VzIERlY29kZXIgUmVmcmVzaCkuICAgIHNwZWNpYWwgdHlwZSBvZiBJLWZyYW1lIGluIEguMjY0LiBBbiBJRFIgZnJhbWUgc3BlY2lmaWVzIHRoYXQgbm8gZnJhbWUgYWZ0ZXIgdGhlIElEUiBmcmFtZSBjYW4gcmVmZXJlbmNlIGFueSBmcmFtZSBiZWZvcmUgaXQuIFRoaXMgbWFrZXMgc2Vla2luZyB0aGUgSC4yNjQgZmlsZSBlYXNpZXIgYW5kIG1vcmUgcmVzcG9uc2l2ZSBpbiB0aGUgcGxheWVyLiAgZGVmYXVsdCAyNS4gYnkgb3ZlcnJpZGluZyB0aGUgdmFsdWUgdG8gMSBldmVyeSBmcmFtZSB3aGljaCBpcyBhbiBpLWZyYW1lIHdpbGwgYmVjYW1lIGEgSURSIGZyYW1lICh3aGljaCBpcyBhIHR5cGUgb2YgaS1mcmFtZSksIGl0IHByZXZlbnRzIGRlY29kZXIgZnJvbSBzaG93aW5nIG5vbi1yZWZyZXNoZWQgYmxvY2tlcyB3aXRoIGEgc2xpZ2h0IGZpbGUtc2l6ZSBpbmNyZWFzZS48L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojNjk2OTY5OyAnPjo6KiAgLWZvcmNlZC1pZHIgaGVscHMgdGhlIGtleWludCBzZXR0aW5nLjwvc3Bhbj4KPHNwYW4gc3R5bGU9J2NvbG9yOiM2OTY5Njk7ICc+OjoqICAtaW50cmEtcmVmcmVzaCAiZmFsc2UiIG1ha2UgbmV2ZXIgdG8gdXNlIGludHJhIHBhY2tldHMsIGJ1dCB0aGUgbW9zdCBjb21wYXRpYmxlIElEUiBmcmFtZXMuPC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzY5Njk2OTsgJz46Oio8L3NwYW4+CjwvcHJlPjwvYm9keT4KPC9odG1sPgo="></iframe><br/>
+</blockquote><br/>
+<br/>
+<br/>
+<br/>
+<blockquote><br/>
+November 3<sup>rd</sup>, 2016 - edit:<br/>
+this CMD batch file is smaller, with less quality lost due using default framing attributes (GOP,I-frames),<br/>
+and also support drag&drop of AVI files which do not support the <code>-pix_fmt &#34;yuv420p&#34;</code> with <code>Option pixel_format not found</code><br/>
+<br/>
+<pre><span style='color:#808030; '>@</span><span style='color:#800000; font-weight:bold; '>echo off</span><br/>
+<span style='color:#800000; font-weight:bold; '>set</span> FILE_INPUT<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"%~s1"</span><br/>
+<span style='color:#800000; font-weight:bold; '>set</span> FILE_OUTPUT<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"%~d1%~p1%~n1_fixed.mp4"</span><br/>
+<br/>
+<span style='color:#696969; '>::--------------------------------------------------------------------------------</span><br/>
+<span style='color:#800000; font-weight:bold; '>call</span> ffmpeg.exe <span style='color:#808030; '>-</span>y <span style='color:#808030; '>-</span>hide_banner <span style='color:#808030; '>-</span>fflags <span style='color:#0000e6; '>"+genpts"</span>                               <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>pix_fmt <span style='color:#0000e6; '>"yuv420p"</span>                                                              <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>i <span style='color:#797997; '>%FILE_INPUT%</span>                                                                 <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>ss <span style='color:#0000e6; '>"00:00:00.001"</span>                                                              <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>filter<span style='color:#808030; '>:</span>v <span style='color:#0000e6; '>"yadif=0:-1:0,mpdecimate,setpts=N/FRAME_RATE/TB"</span>                      <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>preset <span style='color:#0000e6; '>"veryslow"</span> <span style='color:#808030; '>-</span>crf <span style='color:#0000e6; '>"21"</span>                                                    <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>profile<span style='color:#808030; '>:</span>v <span style='color:#0000e6; '>"baseline"</span> <span style='color:#808030; '>-</span>level <span style='color:#0000e6; '>"3.0"</span> <span style='color:#808030; '>-</span>tune <span style='color:#0000e6; '>"zerolatency"</span> <span style='color:#808030; '>-</span>movflags <span style='color:#0000e6; '>"+faststart"</span>   <span style='color:#808030; '>^</span><br/>
+<span style='color:#797997; '>%FILE_OUTPUT%</span><br/>
+<span style='color:#696969; '>::--------------------------------------------------------------------------------</span><br/>
+<br/>
+<br/>
+<span style='color:#696969; '>::--------------------------------------------------------------------------------</span><br/>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#797997; '>%errorlevel%</span><span style='color:#808030; '>=</span><span style='color:#808030; '>=</span><span style='color:#008c00; '>0</span> <span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>DONE_SUCCESS</span><span style='color:#808030; '>;</span><br/>
+<span style='color:#696969; '>::--------------------------------------------------------------------------------</span><br/>
+<br/>
+<br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------------------- error ("Option pixel_format not found." ??) , try again with no pix_fmt.</span><br/>
+<span style='color:#800000; font-weight:bold; '>call</span> ffmpeg.exe <span style='color:#808030; '>-</span>y <span style='color:#808030; '>-</span>hide_banner <span style='color:#808030; '>-</span>fflags <span style='color:#0000e6; '>"+genpts"</span>                               <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>i <span style='color:#797997; '>%FILE_INPUT%</span>                                                                 <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>ss <span style='color:#0000e6; '>"00:00:00.001"</span>                                                              <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>filter<span style='color:#808030; '>:</span>v <span style='color:#0000e6; '>"yadif=0:-1:0,mpdecimate,setpts=N/FRAME_RATE/TB"</span>                      <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>preset <span style='color:#0000e6; '>"veryslow"</span> <span style='color:#808030; '>-</span>crf <span style='color:#0000e6; '>"21"</span>                                                    <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>profile<span style='color:#808030; '>:</span>v <span style='color:#0000e6; '>"baseline"</span> <span style='color:#808030; '>-</span>level <span style='color:#0000e6; '>"3.0"</span> <span style='color:#808030; '>-</span>tune <span style='color:#0000e6; '>"zerolatency"</span> <span style='color:#808030; '>-</span>movflags <span style='color:#0000e6; '>"+faststart"</span>   <span style='color:#808030; '>^</span><br/>
+<span style='color:#797997; '>%FILE_OUTPUT%</span><br/>
+<span style='color:#696969; '>::--------------------------------------------------------------------------------</span><br/>
+<br/>
+<br/>
+<span style='color:#696969; '>::--------------------------------------------------------------------------------</span><br/>
+<span style='color:#e34adc; '>:DONE_SUCCESS</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>pause</span><br/>
+</pre><br/>
+</blockquote><br/>
+<br/>
+<hr/><br/>
+<br/>
+<br/>
+<br/>
+<blockquote><br/>
+November 3<sup>rd</sup> (#2) - edit:<br/>
+this variation will provide support for an infinite list of arguments (and will process them one by one, which you may replicate to use two, or more, in parallel...).<br/>
+..Plus, the IF/ELSE structure although more logical and stream-lined, converted to jumpy GOTO, since it works better in CMD for some reason... ;)<br/>
+<br/>
+<pre><span style='color:#808030; '>@</span><span style='color:#800000; font-weight:bold; '>echo off</span><br/>
+<br/>
+<span style='color:#e34adc; '>:LOOP</span><br/>
+<span style='color:#696969; '>::-------------------------- has argument ?</span><br/>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>[</span><span style='color:#0000e6; '>"%~1"</span><span style='color:#808030; '>]</span><span style='color:#808030; '>=</span><span style='color:#808030; '>=</span><span style='color:#808030; '>[</span><span style='color:#0000e6; '>""</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>(</span><br/>
+  <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> done.</span><br/>
+  <span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>END</span><span style='color:#808030; '>;</span><br/>
+<span style='color:#808030; '>)</span><br/>
+<span style='color:#696969; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;::-------------------------- argument exist ?</span><br/>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#800000; font-weight:bold; '>not</span> <span style='color:#800000; font-weight:bold; '>exist</span> <span style='color:#008c00; '>%~s1</span> <span style='color:#808030; '>(</span><br/>
+  <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> not exist</span><br/>
+  <span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>NEXT</span><span style='color:#808030; '>;</span><br/>
+<span style='color:#808030; '>)</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> exist</span><br/>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#800000; font-weight:bold; '>exist</span> <span style='color:#008c00; '>%~s1</span><span style='color:#808030; '>\\</span><span style='color:#800000; font-weight:bold; '>NUL</span> <span style='color:#808030; '>(</span><br/>
+  <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> is a directory</span><br/>
+  <span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>NEXT</span><span style='color:#808030; '>;</span><br/>
+<span style='color:#808030; '>)</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> is a file</span><br/>
+<span style='color:#800000; font-weight:bold; '>set</span> FILE_INPUT<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"%~s1"</span><br/>
+<span style='color:#800000; font-weight:bold; '>set</span> FILE_OUTPUT<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"%~d1%~p1%~n1_fixed.mp4"</span><br/>
+<span style='color:#696969; '>::--------------------------------------------------------------------------------</span><br/>
+<span style='color:#800000; font-weight:bold; '>call</span> ffmpeg.exe <span style='color:#808030; '>-</span>y <span style='color:#808030; '>-</span>hide_banner <span style='color:#808030; '>-</span>fflags <span style='color:#0000e6; '>"+genpts"</span>                               <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>pix_fmt <span style='color:#0000e6; '>"yuv420p"</span>                                                              <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>i <span style='color:#797997; '>%FILE_INPUT%</span>                                                                 <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>ss <span style='color:#0000e6; '>"00:00:00.001"</span>                                                              <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>filter<span style='color:#808030; '>:</span>v <span style='color:#0000e6; '>"yadif=0:-1:0,mpdecimate,setpts=N/FRAME_RATE/TB"</span>                      <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>preset <span style='color:#0000e6; '>"veryslow"</span> <span style='color:#808030; '>-</span>crf <span style='color:#0000e6; '>"21"</span>                                                    <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>profile<span style='color:#808030; '>:</span>v <span style='color:#0000e6; '>"baseline"</span> <span style='color:#808030; '>-</span>level <span style='color:#0000e6; '>"3.0"</span> <span style='color:#808030; '>-</span>tune <span style='color:#0000e6; '>"zerolatency"</span> <span style='color:#808030; '>-</span>movflags <span style='color:#0000e6; '>"+faststart"</span>   <span style='color:#808030; '>^</span><br/>
+<span style='color:#797997; '>%FILE_OUTPUT%</span><br/>
+<span style='color:#696969; '>::--------------------------------------------------------------------------------</span><br/>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#797997; '>%errorlevel%</span><span style='color:#808030; '>=</span><span style='color:#808030; '>=</span><span style='color:#008c00; '>0</span> <span style='color:#808030; '>(</span><br/>
+  <span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>NEXT</span><span style='color:#808030; '>;</span><br/>
+<span style='color:#808030; '>)</span><br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------------------- error ("Option pixel_format not found." ??) , try again with no pix_fmt.</span><br/>
+<span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> trying again without [-pix_fmt "yuv420p"]</span><br/>
+<span style='color:#800000; font-weight:bold; '>call</span> ffmpeg.exe <span style='color:#808030; '>-</span>y <span style='color:#808030; '>-</span>hide_banner <span style='color:#808030; '>-</span>fflags <span style='color:#0000e6; '>"+genpts"</span>                               <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>i <span style='color:#797997; '>%FILE_INPUT%</span>                                                                 <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>ss <span style='color:#0000e6; '>"00:00:00.001"</span>                                                              <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>filter<span style='color:#808030; '>:</span>v <span style='color:#0000e6; '>"yadif=0:-1:0,mpdecimate,setpts=N/FRAME_RATE/TB"</span>                      <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>preset <span style='color:#0000e6; '>"veryslow"</span> <span style='color:#808030; '>-</span>crf <span style='color:#0000e6; '>"21"</span>                                                    <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>profile<span style='color:#808030; '>:</span>v <span style='color:#0000e6; '>"baseline"</span> <span style='color:#808030; '>-</span>level <span style='color:#0000e6; '>"3.0"</span> <span style='color:#808030; '>-</span>tune <span style='color:#0000e6; '>"zerolatency"</span> <span style='color:#808030; '>-</span>movflags <span style='color:#0000e6; '>"+faststart"</span>   <span style='color:#808030; '>^</span><br/>
+<span style='color:#797997; '>%FILE_OUTPUT%</span><br/>
+<span style='color:#696969; '>::--------------------------------------------------------------------------------</span><br/>
+<br/>
+<span style='color:#e34adc; '>:NEXT</span><br/>
+<span style='color:#800000; font-weight:bold; '>shift</span><br/>
+<span style='color:#800000; font-weight:bold; '>goto </span><span style='color:#e34adc; '>LOOP</span><br/>
+<br/>
+<br/>
+<span style='color:#e34adc; '>:END</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>pause</span><br/>
+</pre><br/>
+</blockquote><br/>
+<hr/><br/>
+Nov13,2016:<br/>
+<pre><span style='color:#808030'>@</span><span style='color:#800000'>echo off</span><br/>
+<span style='color:#e34adc'>&colon;LOOP</span><br/>
+<span style='color:#696969'>&colon;&colon;has argument ?</span><br/>
+<span style='color:#800000'>if</span> <span style='color:#808030'>[</span><span style='color:#0000e6'>&quot;%~1&quot;</span><span style='color:#808030'>]</span><span style='color:#808030'>=</span><span style='color:#808030'>=</span><span style='color:#808030'>[</span><span style='color:#0000e6'>&quot;&quot;</span><span style='color:#808030'>]</span> <span style='color:#808030'>(</span><br/>
+  <span style='color:#800000'>echo</span><span style='color:#0000e6'> done&period;</span><br/>
+  <span style='color:#800000'>goto </span><span style='color:#e34adc'>END</span><span style='color:#808030'>&colon;</span><br/>
+<span style='color:#808030'>)</span><br/>
+<span style='color:#696969'>&colon;&colon;argument exist ?</span><br/>
+<span style='color:#800000'>if</span> <span style='color:#800000'>not</span> <span style='color:#800000'>exist</span> <span style='color:#008c00'>%~s1</span> <span style='color:#808030'>(</span><br/>
+  <span style='color:#800000'>echo</span><span style='color:#0000e6'> not exist</span><br/>
+  <span style='color:#800000'>goto </span><span style='color:#e34adc'>NEXT</span><span style='color:#808030'>&colon;</span><br/>
+<span style='color:#808030'>)</span><br/>
+<span style='color:#696969'>&colon;&colon;file exist ?</span><br/>
+<span style='color:#800000'>echo</span><span style='color:#0000e6'> exist</span><br/>
+<span style='color:#800000'>if</span> <span style='color:#800000'>exist</span> <span style='color:#008c00'>%~s1</span><span style='color:#808030'>\\</span><span style='color:#800000'>NUL</span> <span style='color:#808030'>(</span><br/>
+  <span style='color:#800000'>echo</span><span style='color:#0000e6'> is a directory</span><br/>
+  <span style='color:#800000'>goto </span><span style='color:#e34adc'>NEXT</span><span style='color:#808030'>&colon;</span><br/>
+<span style='color:#808030'>)</span><br/>
+<span style='color:#696969'>&colon;&colon;OK</span><br/>
+<span style='color:#800000'>echo</span><span style='color:#0000e6'> is a file</span><br/>
+<br/>
+<span style='color:#800000'>set</span> FILE_INPUT<span style='color:#808030'>=</span><span style='color:#0000e6'>&quot;%~s1&quot;</span><br/>
+<span style='color:#800000'>set</span> FILE_OUTPUT<span style='color:#808030'>=</span><span style='color:#0000e6'>&quot;%~d1%~p1%~n1_fixed&period;mkv&quot;</span><br/>
+<br/>
+<span style='color:#800000'>call</span> ffmpeg&period;exe <span style='color:#808030'>-</span>y <span style='color:#808030'>-</span>threads <span style='color:#008c00'>16</span>                                                         <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>hide_banner <span style='color:#808030'>-</span>loglevel <span style='color:#0000e6'>&quot;info&quot;</span> <span style='color:#808030'>-</span>stats                                                   <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>i <span style='color:#797997'>%FILE_INPUT%</span> <span style='color:#808030'>-</span>ss <span style='color:#0000e6'>&quot;00&colon;00&colon;00&period;001&quot;</span>                                                     <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>flags     <span style='color:#0000e6'>&quot;-loop+naq+low_delay&quot;</span>                                                       <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>fflags    <span style='color:#0000e6'>&quot;+genpts+discardcorrupt+fastseek&quot;</span>                                           <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>movflags  <span style='color:#0000e6'>&quot;+faststart&quot;</span>                                                                <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>pix_fmt   <span style='color:#0000e6'>&quot;yuv420p&quot;</span>                                                                   <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>tune      <span style='color:#0000e6'>&quot;zerolatency&quot;</span>                                                               <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>profile<span style='color:#808030'>&colon;</span>v <span style='color:#0000e6'>&quot;baseline&quot;</span> <span style='color:#808030'>-</span>level <span style='color:#0000e6'>&quot;3&period;0&quot;</span>                                                     <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>af <span style='color:#0000e6'>&quot;aresample=async=1&colon;min_hard_comp=0&period;100000&quot;</span>                                         <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>vf <span style='color:#0000e6'>&quot;yadif=0&colon;-1&colon;0,mpdecimate,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p&quot;</span>  <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>preset <span style='color:#0000e6'>&quot;ultrafast&quot;</span> <span style='color:#808030'>-</span>crf <span style='color:#0000e6'>&quot;23&quot;</span>                                                          <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#797997'>%FILE_OUTPUT%</span><br/>
+<br/>
+<span style='color:#e34adc'>&colon;NEXT</span><br/>
+<span style='color:#800000'>shift</span><br/>
+<span style='color:#800000'>goto </span><span style='color:#e34adc'>LOOP</span><br/>
+<br/>
+<span style='color:#e34adc'>&colon;END</span><br/>
+<span style='color:#800000'>pause</span><br/>
+</pre><br/>
+<hr/><br/>
+<br/>
+<blockquote><br/>
+Nov15,2016<br/>
+<pre><br/>
+<span style='color:#808030'>@</span><span style='color:#800000'>echo off</span><br/>
+<span style='color:#e34adc'>&colon;LOOP</span><br/>
+<span style='color:#696969'>&colon;&colon;has argument ?</span><br/>
+<span style='color:#800000'>if</span> <span style='color:#808030'>[</span><span style='color:#0000e6'>&quot;&percnt;~1&quot;</span><span style='color:#808030'>]</span><span style='color:#808030'>&equals;</span><span style='color:#808030'>&equals;</span><span style='color:#808030'>[</span><span style='color:#0000e6'>&quot;&quot;</span><span style='color:#808030'>]</span> <span style='color:#808030'>(</span><br/>
+  <span style='color:#800000'>echo</span><span style='color:#0000e6'> done.</span><br/>
+  <span style='color:#800000'>goto </span><span style='color:#e34adc'>END</span><span style='color:#808030'>&semi;</span><br/>
+<span style='color:#808030'>)</span><br/>
+<span style='color:#696969'>&colon;&colon;argument exist ?</span><br/>
+<span style='color:#800000'>if</span> <span style='color:#800000'>not</span> <span style='color:#800000'>exist</span> <span style='color:#008c00'>&percnt;~s1</span> <span style='color:#808030'>(</span><br/>
+  <span style='color:#800000'>echo</span><span style='color:#0000e6'> not exist</span><br/>
+  <span style='color:#800000'>goto </span><span style='color:#e34adc'>NEXT</span><span style='color:#808030'>&semi;</span><br/>
+<span style='color:#808030'>)</span><br/>
+<span style='color:#696969'>&colon;&colon;file exist ?</span><br/>
+<span style='color:#800000'>echo</span><span style='color:#0000e6'> exist</span><br/>
+<span style='color:#800000'>if</span> <span style='color:#800000'>exist</span> <span style='color:#008c00'>&percnt;~s1</span><span style='color:#808030'>\\</span><span style='color:#800000'>NUL</span> <span style='color:#808030'>(</span><br/>
+  <span style='color:#800000'>echo</span><span style='color:#0000e6'> is a directory</span><br/>
+  <span style='color:#800000'>goto </span><span style='color:#e34adc'>NEXT</span><span style='color:#808030'>&semi;</span><br/>
+<span style='color:#808030'>)</span><br/>
+<span style='color:#696969'>&colon;&colon;OK</span><br/>
+<span style='color:#800000'>echo</span><span style='color:#0000e6'> is a file</span><br/>
+<br/>
+<span style='color:#800000'>set</span> TARGET_FPS<span style='color:#808030'>&equals;</span><span style='color:#008c00'>25</span><br/>
+<br/>
+<span style='color:#800000'>set</span> FILE_INPUT<span style='color:#808030'>&equals;</span><span style='color:#0000e6'>&quot;&percnt;~s1&quot;</span><br/>
+<span style='color:#800000'>set</span> FILE_OUTPUT<span style='color:#808030'>&equals;</span><span style='color:#0000e6'>&quot;&percnt;~d1&percnt;~p1&percnt;~n1_fixed.mkv&quot;</span><br/>
+<br/>
+<span style='color:#800000'>call</span> ffmpeg.exe <span style='color:#808030'>-</span>y                                                                     <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>hide_banner <span style='color:#808030'>-</span>loglevel <span style='color:#0000e6'>&quot;info&quot;</span> <span style='color:#808030'>-</span>stats                                                   <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>i <span style='color:#797997'>&percnt;FILE_INPUT&percnt;</span>                                                                        <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>threads <span style='color:#008c00'>16</span>                                                                            <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>flags     <span style='color:#0000e6'>&quot;-loop+naq+low_delay&quot;</span>                                                       <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>flags2    <span style='color:#0000e6'>&quot;+fast+ignorecrop+showall+export_mvs&quot;</span>                                       <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>fflags    <span style='color:#0000e6'>&quot;+genpts+discardcorrupt+fastseek&quot;</span>                                           <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>movflags  <span style='color:#0000e6'>&quot;+faststart&quot;</span>                                                                <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>tune      <span style='color:#0000e6'>&quot;zerolatency&quot;</span>                                                               <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>pix_fmt   <span style='color:#0000e6'>&quot;yuv420p&quot;</span>                                                                   <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>profile<span style='color:#808030'>&colon;</span>v <span style='color:#0000e6'>&quot;high&quot;</span> <span style='color:#808030'>-</span>level <span style='color:#0000e6'>&quot;5.0&quot;</span>                                                         <span style='color:#808030'>&Hat;</span><br/>
+ <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>x264opts  <span style='color:#0000e6'>&quot;keyint&equals;4&quot;</span> <span style='color:#808030'>-</span>g <span style='color:#0000e6'>&quot;2&quot;</span> <span style='color:#808030'>-</span>forced<span style='color:#808030'>-</span>idr <span style='color:#0000e6'>&quot;true&quot;</span> <span style='color:#808030'>-</span>refs <span style='color:#0000e6'>&quot;16&quot;</span> <span style='color:#808030'>-</span>rc<span style='color:#808030'>-</span>lookahead <span style='color:#0000e6'>&quot;16&quot;</span>          <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>preset    <span style='color:#0000e6'>&quot;veryslow&quot;</span> <span style='color:#808030'>-</span>crf <span style='color:#0000e6'>&quot;23&quot;</span> <span style='color:#808030'>-</span>subq <span style='color:#0000e6'>&quot;9&quot;</span> <span style='color:#808030'>-</span>qcomp <span style='color:#0000e6'>&quot;0.60&quot;</span>                                <span style='color:#808030'>&Hat;</span><br/>
+ <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>ss        <span style='color:#0000e6'>&quot;00&colon;00&colon;00.001&quot;</span>                                                              <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>af        <span style='color:#0000e6'>&quot;aresample&equals;async&equals;1&colon;min_hard_comp&equals;0.100000&quot;</span> <span style='color:#808030'>-</span>vsync <span style='color:#0000e6'>&quot;1&quot;</span>                       <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>vf        <span style='color:#0000e6'>&quot;yadif&equals;0&colon;-1&colon;0,dejudder&equals;cycle&equals;20,mpdecimate,fps&equals;fps&equals;&percnt;TARGET_FPS&percnt;,setpts&equals;N/FRAME_RATE/TB-STARTPTS,format&equals;pix_fmts&equals;yuv420p&quot;</span>   <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#808030'>-</span>map_metadata <span style='color:#0000e6'>&quot;-1&quot;</span>                                                                     <span style='color:#808030'>&Hat;</span><br/>
+<span style='color:#797997'>&percnt;FILE_OUTPUT&percnt;</span><br/>
+<br/>
+<span style='color:#e34adc'>&colon;NEXT</span><br/>
+<span style='color:#800000'>shift</span><br/>
+<span style='color:#800000'>goto </span><span style='color:#e34adc'>LOOP</span><br/>
+<br/>
+<span style='color:#e34adc'>&colon;END</span><br/>
+<span style='color:#800000'>pause</span><br/>
+</pre><br/>
+the following can reach encoding-speeds of x6.5(++)<br/>
+due to using profile high level 5.0 and undocumented speed hacks (mostly extra buffers in RAM: -flags2 "+fast...")<br/>
+<ul><br/>
+  <li><br/>
+  audio sync transformed to the newer form: <code>-af "aresample=async=1:min_hard_comp=0.100000"</code> without the start=0 thing (<code>:first_pts=0</code>)which is buggy.. especially if you <em>trimmmmmm</em> the start.<br/>
+  </li><br/>
+  <li><br/>
+  using <code>-subq "9"</code> for a slightly better video-quality<br/>
+  </li><br/>
+  <li><br/>
+  using <code>yadif=0:-1:0</code> to deinterlace, <code>dejudder=cycle=20</code> to remove interlace leftovers from all the ranges of interlace data available <code>mpdecimate</code> to remove similar frames <code>fps=fps=%TARGET_FPS%</code> (use <code>25</code>/<code>30</code>/<code>60</code>) which is needed to prevent too much "speeded-up" video bug, the <code>setpts=N/FRAME_RATE/TB-STARTPTS</code> filter corrects the presentation time stamp (PTS) considering the starting point, <code>format=pix_fmts=yuv420p</code> (in additional to <code>-pix_fmt "yuv420p"</code> flag) actually converts whatever format there is to the compatible <code>yuv420p</code>.<br/>
+  </li><br/>
+  <li><br/>
+  <code>-ss "00:00:00.001"</code> along with the <code>-fflags "...-fastseek"</code> is a trick of my own invention to help "cure" stubborn files, by pretending to dump the first frame, using the encoding process in a  "hard-mode"..<br/>
+  note that if you'll use <code><strong>+</strong>fastseek</code> you'll gain a lot of speed (x5 to x6.5+) but the frame cut of the first image will be somewhat inaccurate..<br/>
+  </li><br/>
+  <li><br/>
+  <code>-profile:v "high" -level "5.0"</code> is substantially increasing the encoding time, but you might require a compatible video player (such as MX-Player, for Android). You may switch it to <code>-profile:v "baseline" -level "3.0"</code> if you require a more.. compatible (?) encoding. the high profile also allows reading <br/>
+  </li><br/>
+  <li><br/>
+  <code>-map_metadata "-1"</code> helps you to remove all meta-data, you may remove this switch, especially if you are converting video taken on a phone, which includes the screen-state to play the video-in (for example "portrait" or "landscape"). You can easily edit the meta-data (idv3 just like mp3) using the <a href="http://www.mp3tag.de" target="_blank">MP3Tag</a> program (even include a thumbnail).<br/>
+  </li><br/>
+</ul><br/>
+</blockquote><br/>
+<br/>
+<hr/><br/>
+<br/>
+The following command will simply use the demuxer without encoding,<br/>
+it is very similar to the original "fix all" command (first one in this article),<br/>
+but it also has support for every stream included, without being specific to audio/video/subs...<br/>
+and it supports drag&drop, of infinite-length list of files,<br/>
+<pre>
+@echo off
+:LOOP
+::has argument ?
+if ["%~1"]==[""] (
+  echo done.
+  goto END;
+)
+::argument exist ?
+if not exist %~s1 (
+  echo not exist
+  goto NEXT;
+)
+::file exist ?
+echo exist
+if exist %~s1\\NUL (
+  echo is a directory
+  goto NEXT;
+)
+::OK
+echo is a file
+
+set FILE_INPUT="%~s1"
+set FILE_OUTPUT="%~d1%~p1%~n1_fixed%~x1"
+
+call ffmpeg -y -hide_banner -loglevel "info" -stats -threads 8 -i %FILE_INPUT% -codec copy %FILE_OUTPUT%
+
+echo.
+echo.
+
+:NEXT
+shift
+goto LOOP
+
+:END
+pause
+</pre><br/>
+<br/>
+<br/>
+<hr/><br/>
+<br/>
+<br/>
+July 9th, 2017 update:<br/>
+ignoring corrupted parts, arguments are added to variable - which mean no more use of '^',<br/>
+and allowing comments (and reducing whitespace), organised commands in groups,<br/>
+identified a one command that factor the quality for deblocking, which was a bit overkill in<br/>
+the versions before (ffmpeg default) - decreased its default value from 8 to 1, added some blur fixing, removed '-pix_fmt' in favor of ',format=pix_fmts=yuv420p' video-filter, explicitly placed at the end of the filter list (and explicitly after all of the deinterlace and frame-setting fixes). made sure to use open_gop higher chroma level, used 'b_strategy' with I-frames (and to disable adaptive number of B-frames), forbidding unaligned content and negative time values and demand accurate calculating of several values from the video stream instead of filling it as a data input from the video data...<br/>
+<br/>
+you can still send unlimited amount of files too...<br/>
+<br/>
+<pre>
+@echo off
+:LOOP
+::has argument ?
+if ["%~1"]==[""] (
+  echo done.
+  goto END;
+)
+::argument exist ?
+if not exist %~s1 (
+  echo not exist
+  goto NEXT;
+)
+::file exist ?
+echo exist
+if exist %~s1\\NUL (
+  echo is a directory
+  goto NEXT;
+)
+::OK
+echo is a file
+
+::--------------------------------------------------------------------------------
+
+set FILE_INPUT="%~s1"
+set FILE_OUTPUT="%~d1%~p1%~n1_fixed.mkv"
+set ARGS=
+
+::program switches
+set ARGS=%ARGS%  -y  -hide_banner  -loglevel "info"  -stats  -threads "16"  -strict "experimental"
+
+::input
+set ARGS=%ARGS% -i %FILE_INPUT%
+
+::flags
+set ARGS=%ARGS% -flags              "+naq+low_delay+global_header-unaligned-ilme-cgop-loop-output_corrupt"
+set ARGS=%ARGS% -flags2             "+fast+ignorecrop+showall+export_mvs"
+set ARGS=%ARGS% -fflags             "+ignidx+genpts+nofillin+discardcorrupt-fastseek"
+set ARGS=%ARGS% -movflags           "+faststart+disable_chpl"
+set ARGS=%ARGS% -avoid_negative_ts  "make_zero"
+set ARGS=%ARGS% -tune               "zerolatency"
+set ARGS=%ARGS% -profile:v          "high"
+set ARGS=%ARGS% -level              "5.2"
+::set ARGS=%ARGS% -profile:v  "high" -level "5.0"
+::set ARGS=%ARGS% -pix_fmt            "yuv420p"
+
+::motion-estimation
+set ARGS=%ARGS% -subq      "9"
+set ARGS=%ARGS% -refs      "25"
+set ARGS=%ARGS% -me_method "full"
+
+::frames logic (I,IDR)
+set ARGS=%ARGS% -g               "2"
+set ARGS=%ARGS% -intra-refresh   "0"
+set ARGS=%ARGS% -forced-idr      "1"
+::                                          use I-frames (disable adaptive number of B-frames)
+set ARGS=%ARGS% -b_strategy      "0"
+set ARGS=%ARGS% -x264opts        "keyint=4"
+::                                          max B frames between reference frames
+set ARGS=%ARGS% -bf              "2"
+::                                          increase number of lookahead fragments
+set ARGS=%ARGS% -lookahead_count "4"
+
+
+::frames processing (mostly for WebM)
+::set ARGS=%ARGS% -lag-in-frames  "25"
+::set ARGS=%ARGS% -frame-parallel "1"
+::set ARGS=%ARGS% -tile-columns   "6"
+::set ARGS=%ARGS% -tile-rows      "2"
+::set ARGS=%ARGS% -auto-alt-ref   "1"
+
+::start/finish
+set ARGS=%ARGS% -ss "00:00:00.001"
+set ARGS=%ARGS% -to "00:00:30.000"
+
+::meta data processing
+set ARGS=%ARGS% -map_chapters  "-1"
+set ARGS=%ARGS% -map_metadata  "-1"
+
+::video processing
+set ARGS=%ARGS% -aq-mode      "variance"
+::                            (default 8 or -1 ??)   Reduces blocking and blurring in flat and textured areas. (from -1 to FLT_MAX) (default -1)
+set ARGS=%ARGS% -aq-strength  "1"
+::                            (default -1)           Reduce fluctuations in QP (before curve compression)
+set ARGS=%ARGS% -cplxblur     "10"
+
+set ARGS=%ARGS% -crf          "23"
+set ARGS=%ARGS% -preset       "veryslow"
+set ARGS=%ARGS% -qcomp        "0.60"
+set ARGS=%ARGS% -rc-lookahead "25"
+::              align, deinterlace, fix chroma, adjust frames to 16:9 by padding, accurate frame-rate and set video-step-speed according to the frame-rate.
+set ARGS=%ARGS% -vf "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,pad=width=ih*16/9:height=ih:x=(ow-iw)/2:y=(oh-ih)/2:color=#00000000,fps=fps=25,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p"
+
+::audio processing
+set ARGS=%ARGS% -af "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000" -vsync "1"
+
+call ffmpeg.exe %ARGS% %FILE_OUTPUT%
+
+echo.
+
+::--------------------------------------------------------------------------------
+
+:NEXT
+shift
+goto LOOP
+
+:END
+pause
+
+::-mpv_flags                "+strict_gop"
+::-force_duplicated_matrix  "1"
+::-strict_gop               "1"
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/html-entity-xml">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-unicode-string-prototype-fromcharcode-fix-to-allow-more-than-2-bytes-unicode-chars-directly-a-k-a-unicode-surrogate-pair">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-unicode-string-prototype-fromcharcode-fix-to-allow-more-than-2-bytes-unicode-chars-directly-a-k-a-unicode-surrogate-pair">JavaScript Ninja - Unicode - String.prototype.fromCharCode Fix To Allow More Than-2 Bytes Unicode Chars Directly (A.K.A Unicode-Surrogate-Pair)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/parsing-url-scheme">Parsing URL - Scheme</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nodejs-master-simple-request">NodeJS Master - Simple Request</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/advanced-font-typographics-disable-or-enable-everything">CSS Ninja - Advanced Font-Typographics - Disable/Enable Everything</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-snapshot-vs-continuous">Chromium: Snapshot vs. Continuous</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-with-webm-version-9-vp9">Chrome With WebM Version 9 (VP9)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/a-non-blocking-font-download-pure-css-no-javascript">No JavaScript!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-focus-within-is-a-one-step-closer-towards-a-parent-css">CSS3 :focus-within Is A One Step Closer Towards A Parent-CSS</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-lenovo-power-manager-pwmui-exe-slow-start-workaround">Solved: Lenovo Power Manager (PWMUI.EXE) Slow-Start Workaround</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/curl-latest-chromium-downloader">cURL - Latest Chromium Downloader</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/curl-download-list-of-urls-from-file-in-windows">cURL - Download List Of URLs From File - In Windows!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/schema-manifest-for-your-exe">Schema-Manifest For Your EXE</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/eyk-unagi">EYK Does Unagi!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sandbox-iframe-tell-me-now">JavaScript Ninja - How To Tell If You're Running Code From Within A SandBox'ed IFRAME</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/noto-alpha-latest-otf">From GitHub's Pipeling Of-Course!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cmd-architecture">CMD Architecture</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

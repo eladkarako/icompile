@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Explorer To Cygwin - Open In Folder</title>
+  <meta itemprop="name"                                content="Explorer To Cygwin - Open In Folder"       />
+  <meta name="dcterms.title"                           content="Explorer To Cygwin - Open In Folder"       />
+  <meta property="og:title"                            content="Explorer To Cygwin - Open In Folder"       />
+  <meta name="twitter:title"                           content="Explorer To Cygwin - Open In Folder"       />
+  <meta name="twitter:text:title"                      content="Explorer To Cygwin - Open In Folder"       />
+  <meta name="application-name"                        content="Explorer To Cygwin - Open In Folder"       />
+  <meta name="subject"                                 content="Explorer To Cygwin - Open In Folder"       />
+  <meta name="apple-mobile-web-app-title"              content="Explorer To Cygwin - Open In Folder"       />
+  <meta name="msapplication-tooltip"                   content="Explorer To Cygwin - Open In Folder"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Explorer To Cygwin - Open In Folder"       />
+  <meta itemprop="description"                         content="Explorer To Cygwin - Open In Folder"       />
+  <meta name="dcterms.description"                     content="Explorer To Cygwin - Open In Folder"       />
+  <meta name="twitter:description"                     content="Explorer To Cygwin - Open In Folder"       />
+  <meta property="og:description"                      content="Explorer To Cygwin - Open In Folder"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="adds,alignnone,argument,backward,bash,batch,bold,call,chcp,checks,classes,click,code,color,command,content,context,cygdrive,cygwin,directory,double,download,drive,dummy,echo,editor,exec,exit,explorer,file,folder,font,force,forward,goto,gwin,hkey,home,image,item,letter,menu,mintty,mounts,open,original,pass,path,prefix,registry,remove,replace,root,select,sendto,shell,shortcut,size,slash,standard,start,support,terminal,uninstall,version,weight,windows,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="adds,alignnone,argument,backward,bash,batch,bold,call,chcp,checks,classes,click,code,color,command,content,context,cygdrive,cygwin,directory,double,download,drive,dummy,echo,editor,exec,exit,explorer,file,folder,font,force,forward,goto,gwin,hkey,home,image,item,letter,menu,mintty,mounts,open,original,pass,path,prefix,registry,remove,replace,root,select,sendto,shell,shortcut,size,slash,standard,start,support,terminal,uninstall,version,weight,windows,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/pure-cmd-windows-to-cygwin-path"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/pure-cmd-windows-to-cygwin-path"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/unbelievable-useful-trick-to-prevent-laptop-2-floor-interface"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/explorer-to-cygwin-open-in-folder"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/explorer-to-cygwin-open-in-folder"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/explorer-to-cygwin-open-in-folder"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/explorer-to-cygwin-open-in-folder"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/explorer-to-cygwin-open-in-folder"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/explorer-to-cygwin-open-in-folder"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2015-12-05T02:14:14+00:00"     />
+  <meta name="page-datetime"                           content="2015-12-05T02:14:14+00:00"     />
+  <meta property="article:published_time"              content="2015-12-05T02:14:14+00:00"     />
+  <meta name="dcterms.date"                            content="2015-12-05T02:14:14+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2015-12-05T02:14:14+00:00"    />
+  <meta property="article:modified_time"               content="2015-12-05T02:14:14+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/explorer-to-cygwin-open-in-folder"
+,"url"             : "https://icompile.eladkarako.com/explorer-to-cygwin-open-in-folder"
+,"headline"        : "Explorer To Cygwin - Open In Folder"
+,"description"     : "Explorer To Cygwin - Open In Folder"
+,"datePosted"      : "2015-12-05T02:14:14+00:00"
+,"dateCreated"     : "2015-12-05T02:14:14+00:00"
+,"datePublished"   : "2015-12-05T02:14:14+00:00"
+,"dateModified"    : "2015-12-05T02:14:14+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0004561829441">
+  <header>
+    <h1 itemprop="headline">Explorer To Cygwin - Open In Folder</h1>
+    <sup>Posted at <time datetime="2015-12-05T02:14:14+00:00" itemprop="dateModified">Sat, 05 Dec 2015 02:14:14 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">replace the <code>Cygwin.bay</code> under <code>c:\\cygwin\\</code> with this content, <br/>
+<br/>
+<pre><span style='color:#3f7f59; '>@</span><span style='color:#7f0055; font-weight:bold; '>echo off</span><br/>
+<span style='color:#3f7f59; '>::force UTF-8 support</span><br/>
+<span style='color:#7f0055; font-weight:bold; '>chcp</span> 65001<br/>
+<br/>
+<span style='color:#7f0055; font-weight:bold; '>if</span> <span style='color:#2a00ff; '>"%1"</span>==<span style='color:#2a00ff; '>""</span> (<br/>
+  <span style='color:#7f0055; font-weight:bold; '>goto </span>START_STANDARD<br/>
+) else (<br/>
+  <span style='color:#7f0055; font-weight:bold; '>goto </span>START_IN_FOLDER<br/>
+)<br/>
+<br/>
+<br/>
+:START_STANDARD<br/>
+  <span style='color:#7f0055; font-weight:bold; '>call</span> C:\\cygwin\\bin\\mintty.exe -i /Cygwin-Terminal.ico -<br/>
+  <span style='color:#7f0055; font-weight:bold; '>goto </span>EXIT<br/>
+  <br/>
+<br/>
+:START_IN_FOLDER<br/>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;</span><span style='color:#7f0055; font-weight:bold; '>rem  </span><span style='color:#3f7f59; '>remove [\\'\\"] from first arg</span><br/>
+  <span style='color:#7f0055; font-weight:bold; '>set</span> CURRENT=%~1<br/>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;</span><span style='color:#7f0055; font-weight:bold; '>rem  </span><span style='color:#3f7f59; '>backward2forward slash</span><br/>
+  <span style='color:#7f0055; font-weight:bold; '>set</span> CURRENT=%CURRENT:\\=/%<br/>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;</span><span style='color:#7f0055; font-weight:bold; '>rem  </span><span style='color:#3f7f59; '>remove ":" after the drive letter</span><br/>
+  <span style='color:#7f0055; font-weight:bold; '>set</span> CURRENT=%CURRENT::/=/%<br/>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;</span><span style='color:#7f0055; font-weight:bold; '>rem  </span><span style='color:#3f7f59; '>adds prefix (used in cygwin as dummy drive-mounts)</span><br/>
+  <span style='color:#7f0055; font-weight:bold; '>set</span> CURRENT=/cygdrive/%CURRENT%<br/>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;</span><span style='color:#7f0055; font-weight:bold; '>rem  </span><span style='color:#3f7f59; '>------------------------------------------------------------</span><br/>
+  <span style='color:#7f0055; font-weight:bold; '>call</span> C:\\cygwin\\bin\\mintty.exe -i /Cygwin-Terminal.ico c:\\cygwin\\bin\\bash.exe -l -c <span style='color:#2a00ff; '>"cd \\"%CURRENT%\\" ; exec bash"</span> -<br/>
+  <span style='color:#7f0055; font-weight:bold; '>goto </span>EXIT<br/>
+<br/>
+<br/>
+:EXIT<br/>
+</pre><br/>
+<br/>
+or download the following file instead: <a download="Cygwin.bat" href="https://icompile.eladkarako.com/_uploads/2015/12/Cygwin.bat">Cygwin.bat</a> (here is the original file: <a download="Cygwin.bat.bak" href="https://icompile.eladkarako.com/_uploads/2015/12/Cygwin.bat_.bak">Cygwin.bat.bak</a>)<br/>
+<br/>
+if you'll pass a folder path as argument to the batch (no checks.. q&d..) it will open cygwin in this path, in any other case, just open cygwin  in home-directory (standard run..)<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/12/2015-12-05_034648.jpg" alt="2015-12-05_034648" width="657" height="404" class="alignnone size-full wp-image-3769" /><br/>
+<br/>
+place a shortcut in your SENDTO folder,<br/>
+and then right-click a folder and select the shortcut from the sendto-menu<br/>
+<br/>
+or better yet, download the following reg file: <a download="open_in_cygwin.reg" href="https://icompile.eladkarako.com/_uploads/2015/12/open_in_cygwin.reg">open_in_cygwin.reg</a> and double click it,<br/>
+<br/>
+<pre>
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\\Directory\\shell\\open_in_cygwin]
+@="Open In Cy&gwin"
+
+[HKEY_CLASSES_ROOT\\Directory\\shell\\open_in_cygwin\\command]
+@="\\"C:\\\\cygwin\\\\Cygwin.bat\\" \\"%1\\""
+</pre><br/>
+<br/>
+ it will add a new context-menu item for each folder:<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2015/12/2015-12-05_040001.jpg" alt="2015-12-05_040001" width="295" height="310" class="alignnone size-full wp-image-3771" /><br/>
+<br/>
+download and run the following file to uninstall the context-menu item: <a download="open_in_cygwin_uninstall.reg" href="https://icompile.eladkarako.com/_uploads/2015/12/open_in_cygwin_uninstall.reg">open_in_cygwin_uninstall.reg</a><br/>
+<pre>
+Windows Registry Editor Version 5.00
+
+[-HKEY_CLASSES_ROOT\\Directory\\shell\\open_in_cygwin]
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/pure-cmd-windows-to-cygwin-path">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/unbelievable-useful-trick-to-prevent-laptop-2-floor-interface">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unbelievable-useful-trick-to-prevent-laptop-2-floor-interface">Unbelievable Useful Trick To Prevent Laptop-2-Floor Interface</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cmd-utf-8-by-default">CMD UTF-8 By Default</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/reason-for-tortoisegit-credentials-store-error-github-not-found">Reason For TortoiseGit - "github --credentials store: github: command not found"</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/permanently-disable-windows-7810-driver-signature-enforcement">Permanently Disable Windows 7/8/10 Driver Signature Enforcement</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/normalize-inputtextarea-number-only">Normalize Input/Textarea - Number Only</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vary-accept-encoding">Vary: Accept-Encoding</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/apache-cordova-thank-you-hackathon-sponsors">Apache Cordova - Thank You Hackathon Sponsors!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/significant-terms-aggregation-elasticsearch">Significant Terms Aggregation - Elasticsearch</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/utf-8-string-to-byte-array">UTF-8 String To Byte Array</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/genymotion-processes">GenyMotion Processes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/another-take-on-label-design-pure-css3-and-html5-markers">Another Take On Label-Design Pure CSS3 and HTML5 Markers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/so-long-facebook-and-thanks-for-all-the-likes">and Thanks for All the Likes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/so-long-linkedin-and-thanks-for-all-the-nothing">and Thanks for All the ????</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/crossdomain-xml-and-clientaccesspolicy-xml-extremely-permissive">CrossDomain.xml And ClientAccessPolicy.xml - Extremely Permissive</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/so-long-twitter-and-thanks-for-all-the-hashtags">and Thanks for All The #s</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cmd-unlimited-arguments-identifying-directory-file-or-none">Identifying If File Or Directory</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

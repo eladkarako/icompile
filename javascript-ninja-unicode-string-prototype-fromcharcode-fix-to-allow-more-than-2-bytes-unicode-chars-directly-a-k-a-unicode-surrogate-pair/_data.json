@@ -1,0 +1,10 @@
+{
+  "ID": "7841"
+ ,"post_name": "javascript-ninja-unicode-string-prototype-fromcharcode-fix-to-allow-more-than-2-bytes-unicode-chars-directly-a-k-a-unicode-surrogate-pair"
+ ,"post_title": "JavaScript Ninja - Unicode - String.prototype.fromCharCode Fix To Allow More Than-2 Bytes Unicode Chars Directly (A.K.A Unicode-Surrogate-Pair)"
+ ,"post_date_gmt": "2017-07-09 06:41:37"
+ ,"post_modified_gmt": "2017-07-09 07:02:08"
+ ,"post_status": "publish"
+ ,"comment_status": "closed"
+ ,"post_type": "post"
+}

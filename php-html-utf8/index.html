@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>UTF-8</title>
+  <meta itemprop="name"                                content="UTF-8"       />
+  <meta name="dcterms.title"                           content="UTF-8"       />
+  <meta property="og:title"                            content="UTF-8"       />
+  <meta name="twitter:title"                           content="UTF-8"       />
+  <meta name="twitter:text:title"                      content="UTF-8"       />
+  <meta name="application-name"                        content="UTF-8"       />
+  <meta name="subject"                                 content="UTF-8"       />
+  <meta name="apple-mobile-web-app-title"              content="UTF-8"       />
+  <meta name="msapplication-tooltip"                   content="UTF-8"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="UTF-8"       />
+  <meta itemprop="description"                         content="UTF-8"       />
+  <meta name="dcterms.description"                     content="UTF-8"       />
+  <meta name="twitter:description"                     content="UTF-8"       />
+  <meta property="og:description"                      content="UTF-8"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="active,ajax,alignnone,application,applied,apply,assoc,backspace,based,break,browse,browser,browsers,buffer,buffering,button,cdns,check,click,close,code,coded,collate,command,common,connect,connection,content,convert,crawlers,critical,ctype,dbname,default,define,defined,delete,dialog,display,double,easily,echo,editor,encoded,encoding,ending,engine,engines,equiv,errno,error,excellent,existing,external,favorite,fetch,file,firewalls,flush,free,friend,friendly,godaddy,gzip,handler,header,headers,host,htaccess,html,ignoring,image,include,inline,innodb,input,installed,internal,isps,javascript,json,language,letter,line,list,make,messages,meta,methods,mime,modifying,modulators,monetary,mongodb,mysql,mysqli,needed,network,newest,nice,notepad,numeric,open,opening,option,optionally,output,overrite,page,pages,parse,parsing,party,passed,password,personal,plain,play,postgresql,preferences,print,problem,provide,providing,proxy,query,queryresult,querystr,regex,requires,round,safely,save,script,seamless,search,seemless,segment,select,separate,server,session,setlocale,settings,sftp,size,solving,source,splicing,start,starting,strange,strip,support,tags,template,thinking,tier,type,types,uploaded,user,username,website,weird,winscp,wise,work,writing,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="active,ajax,alignnone,application,applied,apply,assoc,backspace,based,break,browse,browser,browsers,buffer,buffering,button,cdns,check,click,close,code,coded,collate,command,common,connect,connection,content,convert,crawlers,critical,ctype,dbname,default,define,defined,delete,dialog,display,double,easily,echo,editor,encoded,encoding,ending,engine,engines,equiv,errno,error,excellent,existing,external,favorite,fetch,file,firewalls,flush,free,friend,friendly,godaddy,gzip,handler,header,headers,host,htaccess,html,ignoring,image,include,inline,innodb,input,installed,internal,isps,javascript,json,language,letter,line,list,make,messages,meta,methods,mime,modifying,modulators,monetary,mongodb,mysql,mysqli,needed,network,newest,nice,notepad,numeric,open,opening,option,optionally,output,overrite,page,pages,parse,parsing,party,passed,password,personal,plain,play,postgresql,preferences,print,problem,provide,providing,proxy,query,queryresult,querystr,regex,requires,round,safely,save,script,seamless,search,seemless,segment,select,separate,server,session,setlocale,settings,sftp,size,solving,source,splicing,start,starting,strange,strip,support,tags,template,thinking,tier,type,types,uploaded,user,username,website,weird,winscp,wise,work,writing,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/javascript-object-observe-for-string-too-observe-document-cookie-coolest-hack-ever-here-first"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/javascript-object-observe-for-string-too-observe-document-cookie-coolest-hack-ever-here-first"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/iis-unicode-php-utf8"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/php-html-utf8"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/php-html-utf8"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/php-html-utf8"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/php-html-utf8"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/php-html-utf8"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/php-html-utf8"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-07-18T12:03:55+00:00"     />
+  <meta name="page-datetime"                           content="2014-07-18T12:03:55+00:00"     />
+  <meta property="article:published_time"              content="2014-07-18T12:03:55+00:00"     />
+  <meta name="dcterms.date"                            content="2014-07-18T12:03:55+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2014-07-18T12:08:07+00:00"    />
+  <meta property="article:modified_time"               content="2014-07-18T12:08:07+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/php-html-utf8"
+,"url"             : "https://icompile.eladkarako.com/php-html-utf8"
+,"headline"        : "UTF-8"
+,"description"     : "UTF-8"
+,"datePosted"      : "2014-07-18T12:03:55+00:00"
+,"dateCreated"     : "2014-07-18T12:03:55+00:00"
+,"datePublished"   : "2014-07-18T12:03:55+00:00"
+,"dateModified"    : "2014-07-18T12:08:07+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0005305865041">
+  <header>
+    <h1 itemprop="headline">UTF-8</h1>
+    <sup>Posted at <time datetime="2014-07-18T12:08:07+00:00" itemprop="dateModified">Fri, 18 Jul 2014 12:08:07 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><pre><br/>
+<!-- help code tags play nice with template --><br/>
+<style type="text/css">code{ display:inline !important; }</style><br/>
+</pre><br/>
+<br/>
+put this on the top of your page, (just after the <code>&lt;?php</code> part)<br/>
+<pre>
+//Make PHP UTF-8 friendly --part #1:
+//-------------------------------
+define("U","UTF-8"); 
+
+mb_language("uni"); 
+mb_internal_encoding(U); 
+mb_http_input(U); 
+mb_http_output(U); 
+mb_regex_encoding(U); 
+</pre><br/>
+<br/>
+<pre>
+//Make PHP UTF-8 friendly --part #2:
+//-------------------------------
+define("UC", 'he_IL.' . U); //or 'en_US.' . U
+//setlocale(LC_COLLATE,UC); 
+//setlocale(LC_CTYPE,UC); 
+//setlocale(LC_MONETARY,UC); 
+//setlocale(LC_NUMERIC,UC); 
+//setlocale(LC_TIME,UC); 
+//defined("LC_MESSAGES") && setlocale(LC_MESSAGES,UC); 
+setlocale(LC_ALL,UC); //same as above
+</pre><br/>
+<br/>
+at this point just before starting using <code>echo</code> and <code>print</code><br/>
+add this line to start buffering it, as UTF-8 content.<br/>
+<pre>
+//Make PHP UTF-8 friendly --part #3:
+//-------------------------------
+ob_start("mb_output_handler");  //+ at script-end use:  ob_end_flush();
+</pre><br/>
+<br/>
+at the end of your PHP page, use <code>ob_end_flush();</code> to output it all, from the buffer (its also a best practice in general to apply way of thinking..).<br/>
+<br/>
+<br/>
+set your page to output the right charset in the right encoding out to page,<br/>
+also use the right mime-type to provide best browser compatibility,<br/>
+easily done, by header'ing round..<br/>
+and yes, it does requires separate charset and encoding (other wise on non-encoded HTML pages you'll see some very strange characters that.. may or may not.. break the HTML parsing)..<br/>
+<pre>
+//page's output
+define('CT','plain');  //html|json|javascript|xml|plain
+header('Content-Encoding: ' . U);
+header('Content-Type: text/' . CT . '; charset=' . U);
+</pre><br/>
+(for Ajax'ing a JSON, use text/json or application/json or text/plain).<br/>
+<br/>
+=-=-=-=<br/>
+<br/>
+for best practice, if you are writing a HTML page, using PHP,<br/>
+make sure that your template will include the few needed meta tags:<br/>
+<code>&lt;meta http-equiv='Content-Type' content='Type=text/html; charset=utf-8'&gt;</code><br/>
+and the newest HTML5 meta-tag: <code>&lt;meta charset="utf-8"&gt;</code>.<br/>
+why?<br/>
+<br/>
+=-=-=-=<br/>
+<br/>
+well, you can set the header using various way, from the <code>header</code> PHP-command,<br/>
+to .htaccess 's <code>Header set Content-Type "text/html; charset=utf-8"</code><br/>
+<br/>
+=-=-=-=<br/>
+<br/>
+3rd-party crawlers for search engines will parse your web-pages, letter by letter, from source, considering language from the meta tags, and ignoring the server's encoding headers,<br/>
+<br/>
+proxy'ing your website through several ISPs might even provide seemless gzip, splicing, or other types of compressions that should passed seamless without modifying anything,<br/>
+still - those methods (including Firewalls, CDNs or other Active-Network modulators) will sometimes strip HTTP-headers, providing with hard-coded addition will not effect the content on the page, but will provide the browse's parsing engine with enough alternatives to make your end-result support well on all browsers (IE too..).<br/>
+<br/>
+=-=-=-=<br/>
+<br/>
+plus, if a user will save your page, onto his/hers PC, he/she will have no problem opening it for later view without all the content break down..<br/>
+<br/>
+=-=-=-=<br/>
+<br/>
+last thing is to use db tier that will support UTF-8, there are the mongoDB and the most excellent PostgreSQL (personal favorite), but even on InnoDB (default mySQL based db) provided by GoDaddy, this will work.<br/>
+for this we will use <code>mysqli_set_charset</code><br/>
+<br/>
+<br/>
+here is a nice little code segment..<br/>
+<br/>
+<pre><br/>
+$link = @mysqli_connect('host', 'username', 'password', 'dbname');<br/>
+if (!$link){ die('Connect Error: ' . mysqli_connect_errno()); } //connection.<br/>
+<br/>
+@mysqli_set_charset($link, "utf8"); //not critical, so we don't even have to check its result (you may still do it if you please..)<br/>
+<br/>
+$queryStr = "SELECT 'id',......";<br/>
+$queryResult = mysqli_fetch_assoc(mysqli_query($link, $queryStr));<br/>
+<br/>
+print_r($queryResult);<br/>
+<br/>
+@mysqli_free_result($queryResult);<br/>
+@mysqli_close($link);<br/>
+<br/>
+<br/>
+@ob_end_flush(); //  <---- here is our friend from before.. ending the script..<br/>
+<br/>
+</pre><br/>
+<br/>
+<br/>
+very common problem solving..:<br/>
+------------------------------------<br/>
+after you've applied all the headers to use UTF-8, you see that the page's source including some weird characters:<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2014/07/2014-07-18_145116.jpg" alt="2014-07-18_145116" width="323" height="191" class="alignnone size-full wp-image-1502" /><br/>
+<br/>
+use WinSCP to connect to your FTP/SFTP/other web-server,<br/>
+on Option-> Preferences -> Editor.<br/>
+click: Add<br/>
+select: External Editor<br/>
+  provide the page to: Notepad++.exe (installed in your PC)<br/>
+  keep existing value of Editor Autoselection: *.*<br/>
+  click: OK.<br/>
+select: the new line you've just added<br/>
+click: the UP button to make this line the very top of the list.<br/>
+click: OK to close the Preferences dialog,<br/>
+optionally save (overrite) the session to save your settings for next time (Session->Save Session).<br/>
+<br/>
+double click your PHP file (it can be easily a HTML file too..)<br/>
+it will open in Notepad++ on your PC.<br/>
+<br/>
+<br/>
+click: Encoding-> Convert to UTF-8.<br/>
+<br/>
+if you see some weird characters that are not part of the page now,<br/>
+you can safely delete them, as you'll do with normal characters ([Backspace], [Delete]).<br/>
+save the file, it will be uploaded to the web-server, and.. you're done.<br/>
+', 'PHP, HTML</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-object-observe-for-string-too-observe-document-cookie-coolest-hack-ever-here-first">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/iis-unicode-php-utf8">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/iis-unicode-php-utf8">Cross-Servers Output - Make IIS ASP.Net Unicode Play Nice With PHP UTF-8</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/paypal-ebay-password-change-copypaste-and-right-click-menu-enabler">PayPal eBay Password Change - Copy&Paste and Right-Click Menu Enabler</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-session-help-store-users-unique-id-ssid-ssidv4-and-force-minimal-requests-frequency-by-using-request-time-header">SSIDv4) And Force Minimal Requests Frequency By Using Request-Time Header</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-accept-language-http-header">Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-check-if-session-started-compatible-with-every-php-version">PHP Snippet - Check If Session Started (Compatible With Every PHP Version)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-a-self-called-function-just-like-javascript">PHP Snippet - A Self-Called Function Just Like JavaScript</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-parse-http-headers-string-into-an-associative-array">PHP Snippet - Parse HTTP Headers String Into An Associative Array</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-array-by-reference">PHP Snippet - Array By-Reference</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ip2country-sql-download">IP2Country SQL Download</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-proper-utf-8-and-gzip-with-buffers-handling-and-content-length-header-and-ratio-information">PHP Snippet - Proper UTF-8 And GZip With Buffers-Handling And Content-Length Header And Ratio Information</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/a-better-wordpress-image-css">Better WordPress Post Image Display Using Block-Container And CSS3</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-google-chrome-developer-tools-wow-nice">Wow Nice!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-wil-wheaton-project">The Wil Wheaton Project</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/java-9">Java 9</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/doctor-who-season-8-12th-doctor-peter-capaldi">Doctor Who Season 8 - 12th Doctor - Peter Capaldi</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/putty-theme-and-logs">PUTTY Theme And Logs</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

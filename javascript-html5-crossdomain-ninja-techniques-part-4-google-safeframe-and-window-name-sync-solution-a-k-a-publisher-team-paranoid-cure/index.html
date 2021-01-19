@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)</title>
+  <meta itemprop="name"                                content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+  <meta name="dcterms.title"                           content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+  <meta property="og:title"                            content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+  <meta name="twitter:title"                           content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+  <meta name="twitter:text:title"                      content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+  <meta name="application-name"                        content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+  <meta name="subject"                                 content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+  <meta name="apple-mobile-web-app-title"              content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+  <meta name="msapplication-tooltip"                   content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+  <meta itemprop="description"                         content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+  <meta name="dcterms.description"                     content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+  <meta name="twitter:description"                     content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+  <meta property="og:description"                      content="JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="break,catch,charat,charcodeat,close,compat,compatmode,container,content,crossdomain,cure,data,doctype,document,exec,extract,floor,function,gecko,goog,google,html,indexof,javascript,join,lastindexof,length,location,math,msie,navigator,ninja,null,open,opera,paranoid,parse,parsefloat,parseint,product,publisher,regexp,replace,return,safeframe,script,serialized,solution,spaced,split,substr,sync,team,techniques,throw,title,trident,typeof,unescape,useragent,version,void,webkit,window,write,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="break,catch,charat,charcodeat,close,compat,compatmode,container,content,crossdomain,cure,data,doctype,document,exec,extract,floor,function,gecko,goog,google,html,indexof,javascript,join,lastindexof,length,location,math,msie,navigator,ninja,null,open,opera,paranoid,parse,parsefloat,parseint,product,publisher,regexp,replace,return,safeframe,script,serialized,solution,spaced,split,substr,sync,team,techniques,throw,title,trident,typeof,unescape,useragent,version,void,webkit,window,write,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/internet-explorers-domstorage-in-registry"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/internet-explorers-domstorage-in-registry"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/autohotkey-script-whitespace-cleanup"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/javascript-html5-crossdomain-ninja-techniques-part-4-google-safeframe-and-window-name-sync-solution-a-k-a-publisher-team-paranoid-cure"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/javascript-html5-crossdomain-ninja-techniques-part-4-google-safeframe-and-window-name-sync-solution-a-k-a-publisher-team-paranoid-cure"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/javascript-html5-crossdomain-ninja-techniques-part-4-google-safeframe-and-window-name-sync-solution-a-k-a-publisher-team-paranoid-cure"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/javascript-html5-crossdomain-ninja-techniques-part-4-google-safeframe-and-window-name-sync-solution-a-k-a-publisher-team-paranoid-cure"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/javascript-html5-crossdomain-ninja-techniques-part-4-google-safeframe-and-window-name-sync-solution-a-k-a-publisher-team-paranoid-cure"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/javascript-html5-crossdomain-ninja-techniques-part-4-google-safeframe-and-window-name-sync-solution-a-k-a-publisher-team-paranoid-cure"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-09-25T18:12:49+00:00"     />
+  <meta name="page-datetime"                           content="2014-09-25T18:12:49+00:00"     />
+  <meta property="article:published_time"              content="2014-09-25T18:12:49+00:00"     />
+  <meta name="dcterms.date"                            content="2014-09-25T18:12:49+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2014-09-25T18:15:12+00:00"    />
+  <meta property="article:modified_time"               content="2014-09-25T18:15:12+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/javascript-html5-crossdomain-ninja-techniques-part-4-google-safeframe-and-window-name-sync-solution-a-k-a-publisher-team-paranoid-cure"
+,"url"             : "https://icompile.eladkarako.com/javascript-html5-crossdomain-ninja-techniques-part-4-google-safeframe-and-window-name-sync-solution-a-k-a-publisher-team-paranoid-cure"
+,"headline"        : "JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"
+,"description"     : "JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)"
+,"datePosted"      : "2014-09-25T18:12:49+00:00"
+,"dateCreated"     : "2014-09-25T18:12:49+00:00"
+,"datePublished"   : "2014-09-25T18:12:49+00:00"
+,"dateModified"    : "2014-09-25T18:15:12+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0009678661141">
+  <header>
+    <h1 itemprop="headline">JavaScript HTML5 CrossDomain - Ninja Techniques (Part #4) - Google SafeFrame and Window Name Sync Solution (A.K.A Publisher-Team Paranoid Cure)</h1>
+    <sup>Posted at <time datetime="2014-09-25T18:15:12+00:00" itemprop="dateModified">Thu, 25 Sep 2014 18:15:12 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><!--more--><br/>
+<br/>
+<br/>
+http://tpc.googlesyndication.com/safeframe/1-0-0/html/container.html<br/>
+<br/>
+raw:<br/>
+<pre><br/>
+< ! DOCTYPE html><br/>
+<html><br/>
+  <head><br/>
+    <title>SafeFrame Container</title><br/>
+  </head><br/>
+  <body><br/>
+    <script><br/>
+      <br/>
+(function(){var c=this;var d=function(b,a){return b<a?-1:b>a?1:0};var e,f,g,h,m=function(){return c.navigator?c.navigator.userAgent:null};h=g=f=e=!1;var n;if(n=m()){var p=c.navigator;e=0==n.lastIndexOf("Opera",0);f=!e&&(-1!=n.indexOf("MSIE")||-1!=n.indexOf("Trident"));g=!e&&-1!=n.indexOf("WebKit");h=!e&&!g&&!f&&"Gecko"==p.product}var q=f,r=h,s=g,u=function(){var b=c.document;return b?b.documentMode:void 0},v;<br/>
+r:{var w="",x;if(e&&c.opera)var y=c.opera.version,w="function"==typeof y?y():y;else if(r?x=/rv\\:([^\\);]+)(\\)|;)/:q?x=/\\b(?:MSIE|rv)[: ]([^\\);]+)(\\)|;)/:s&&(x=/WebKit\\/(\\S+)/),x)var z=x.exec(m()),w=z?z[1]:"";if(q){var A=u();if(A>parseFloat(w)){v=String(A);break r}}v=w}<br/>
+var B=v,C={},D=function(b){var a;if(!(a=C[b])){a=0;for(var N=String(B).replace(/^[\\s\\xa0]+|[\\s\\xa0]+$/g,"").split("."),O=String(b).replace(/^[\\s\\xa0]+|[\\s\\xa0]+$/g,"").split("."),T=Math.max(N.length,O.length),t=0;0==a&&t<T;t++){var U=N[t]||"",V=O[t]||"",W=RegExp("(\\\\d*)(\\\\D*)","g"),X=RegExp("(\\\\d*)(\\\\D*)","g");do{var k=W.exec(U)||["","",""],l=X.exec(V)||["","",""];if(0==k[0].length&&0==l[0].length)break;a=d(0==k[1].length?0:parseInt(k[1],10),0==l[1].length?0:parseInt(l[1],10))||d(0==k[2].length,0==<br/>
+l[2].length)||d(k[2],l[2])}while(0==a)}a=C[b]=0<=a}return a},E=c.document,F=E&&q?u()||("CSS1Compat"==E.compatMode?parseInt(B,10):5):void 0;if(r||q){var G;if(G=q)G=q&&9<=F;G||r&&D("1.9.1")}q&&D("9");s&&document.createElement("iframe");var H=r||s;var I=/^([^;]+);(\\d+);([\\s\\S]*)$/;try{var J=I.exec(window.name);if(null===J)throw"Cannot parse serialized data to extract content.";var K=J[3].substr(0,parseInt(J[2],10)),L=window;if(H){var M=L.document;M.open("text/html","replace");M.write(K);M.close()}else{var P=K,Q;if(Q=q&&D(7)&&!D(10))r:{for(var R=0;R<P.length;++R)if(127<P.charCodeAt(R)){Q=!0;break r}Q=!1}if(Q){for(var S=unescape(encodeURIComponent(P)),Y=Math.floor(S.length/2),Z=[],$=0;$<Y;++$)Z[$]=String.fromCharCode(256*S.charCodeAt(2*$+1)+S.charCodeAt(2*$));1==S.length%2&&<br/>
+(Z[Y]=S.charAt(S.length-1));P=Z.join("")}L.goog_content=P;L.location.replace("javascript:window.goog_content")}}catch(aa){};})();<br/>
+    </script><br/>
+  </body><br/>
+</html><br/>
+<br/>
+</pre><br/>
+<br/>
+<br/>
+spaced out:<br/>
+<br/>
+<pre><br/>
+<br/>
+(function() {<br/>
+    var c = this;<br/>
+    var d = function(b, a) {<br/>
+        return b < a ? -1 : b > a ? 1 : 0<br/>
+    };<br/>
+    var e, f, g, h, m = function() {<br/>
+        return c.navigator ? c.navigator.userAgent : null<br/>
+    };<br/>
+    h = g = f = e = !1;<br/>
+    var n;<br/>
+    if (n = m()) {<br/>
+        var p = c.navigator;<br/>
+        e = 0 == n.lastIndexOf("Opera", 0);<br/>
+        f = !e && (-1 != n.indexOf("MSIE") || -1 != n.indexOf("Trident"));<br/>
+        g = !e && -1 != n.indexOf("WebKit");<br/>
+        h = !e && !g && !f && "Gecko" == p.product<br/>
+    }<br/>
+    var q = f,<br/>
+        r = h,<br/>
+        s = g,<br/>
+        u = function() {<br/>
+            var b = c.document;<br/>
+            return b ? b.documentMode : void 0<br/>
+        },<br/>
+        v;<br/>
+    r: {<br/>
+        var w = "",<br/>
+            x;<br/>
+        if (e && c.opera) var y = c.opera.version,<br/>
+            w = "function" == typeof y ? y() : y;<br/>
+        else if (r ? x = /rv\\:([^\\);]+)(\\)|;)/ : q ? x = /\\b(?:MSIE|rv)[: ]([^\\);]+)(\\)|;)/ : s && (x = /WebKit\\/(\\S+)/), x) var z = x.exec(m()),<br/>
+            w = z ? z[1] : "";<br/>
+        if (q) {<br/>
+            var A = u();<br/>
+            if (A > parseFloat(w)) {<br/>
+                v = String(A);<br/>
+                break r<br/>
+            }<br/>
+        }<br/>
+        v = w<br/>
+    }<br/>
+    var B = v,<br/>
+        C = {},<br/>
+        D = function(b) {<br/>
+            var a;<br/>
+            if (!(a = C[b])) {<br/>
+                a = 0;<br/>
+                for (var N = String(B).replace(/^[\\s\\xa0]+|[\\s\\xa0]+$/g, "").split("."), O = String(b).replace(/^[\\s\\xa0]+|[\\s\\xa0]+$/g, "").split("."), T = Math.max(N.length, O.length), t = 0; 0 == a && t < T; t++) {<br/>
+                    var U = N[t] || "",<br/>
+                        V = O[t] || "",<br/>
+                        W = RegExp("(\\\\d*)(\\\\D*)", "g"),<br/>
+                        X = RegExp("(\\\\d*)(\\\\D*)", "g");<br/>
+                    do {<br/>
+                        var k = W.exec(U) || ["", "", ""],<br/>
+                            l = X.exec(V) || ["", "", ""];<br/>
+                        if (0 == k[0].length && 0 == l[0].length) break;<br/>
+                        a = d(0 == k[1].length ? 0 : parseInt(k[1], 10), 0 == l[1].length ? 0 : parseInt(l[1], 10)) || d(0 == k[2].length, 0 ==<br/>
+                            l[2].length) || d(k[2], l[2])<br/>
+                    } while (0 == a)<br/>
+                }<br/>
+                a = C[b] = 0 <= a<br/>
+            }<br/>
+            return a<br/>
+        },<br/>
+        E = c.document,<br/>
+        F = E && q ? u() || ("CSS1Compat" == E.compatMode ? parseInt(B, 10) : 5) : void 0;<br/>
+    if (r || q) {<br/>
+        var G;<br/>
+        if (G = q) G = q && 9 <= F;<br/>
+        G || r && D("1.9.1")<br/>
+    }<br/>
+    q && D("9");<br/>
+    s && document.createElement("iframe");<br/>
+    var H = r || s;<br/>
+    var I = /^([^;]+);(\\d+);([\\s\\S]*)$/;<br/>
+    try {<br/>
+        var J = I.exec(window.name);<br/>
+        if (null === J) throw "Cannot parse serialized data to extract content.";<br/>
+        var K = J[3].substr(0, parseInt(J[2], 10)),<br/>
+            L = window;<br/>
+        if (H) {<br/>
+            var M = L.document;<br/>
+            M.open("text/html", "replace");<br/>
+            M.write(K);<br/>
+            M.close()<br/>
+        } else {<br/>
+            var P = K,<br/>
+                Q;<br/>
+            if (Q = q && D(7) && !D(10)) r: {<br/>
+                for (var R = 0; R < P.length; ++R)<br/>
+                    if (127 < P.charCodeAt(R)) {<br/>
+                        Q = !0;<br/>
+                        break r<br/>
+                    }<br/>
+                Q = !1<br/>
+            }<br/>
+            if (Q) {<br/>
+                for (var S = unescape(encodeURIComponent(P)), Y = Math.floor(S.length / 2), Z = [], $ = 0; $ < Y; ++$) Z[$] = String.fromCharCode(256 * S.charCodeAt(2 * $ + 1) + S.charCodeAt(2 * $));<br/>
+                1 == S.length % 2 &&<br/>
+                    (Z[Y] = S.charAt(S.length - 1));<br/>
+                P = Z.join("")<br/>
+            }<br/>
+            L.goog_content = P;<br/>
+            L.location.replace("javascript:window.goog_content")<br/>
+        }<br/>
+    } catch (aa) {};<br/>
+})();<br/>
+<br/>
+</pre><br/>
+<br/>
+<br/>
+ </div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/internet-explorers-domstorage-in-registry">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/autohotkey-script-whitespace-cleanup">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/autohotkey-script-whitespace-cleanup">AutoHotKey Script - WhiteSpace Cleanup</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-jquery-input-select-all-onfocus-override-mouseup-block">JavaScript - jQuery input select all onFocus override mouseup block</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/coldfusion-and-javascript-data-js-better-date-formats">ColdFusion and JavaScript data.js - Better Date-Formats</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-dynamic-html5-iframe-attributes-with-backward-compatibility">New Dynamic HTML5 IFrame-Attributes With Backward Compatibility</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/anti-anti-debugging-techniques-in-win32napolar-solarbot">Anti- Anti-debugging Techniques in Win32/Napolar solarbot </a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cool-javascript-compenent-handsontable-and-pikaday">Cool UI Compenents - HandsOnTable and PikaDay</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/web-design-best-practices-css3-responsive-style-fluid-layout-4">Web-Design Best Practices - CSS3 Responsive Style - Fluid Layout #4</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/eset-anti-virus-8-free-beta-trial">ESET Anti-Virus 8 Free Beta Trial</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/three-wishes-rule">Three Wishes Rule</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easy-html-css3-table-6-columns">Easy HTML-CSS3 Table 6-Columns</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-solutions-aggregate-elements-positioning-and-size-with-an-additional-quick-recursive-tree-enumerator">JavaScript Ninja Solutions - Aggregate Element's Positioning And Size With An Additional Quick Recursive Tree Enumerator</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/industrys-top-6-most-commonly-used-vector-graphics-formats-today">Industry's Top-6 Most Commonly-Used Vector-Graphics Formats Today</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-non-linear-random-numbers">JavaScript Non-Linear Random Numbers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/loose-cross-domain-xml-policy">Loose Cross-Domain XML Policy</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/morfix-melingo-android-application-request-response">Morfix Melingo Android Application Request/Response</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bbc-iplayer-android-application-request-response">BBC iPlayer Android Application Request-Response</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

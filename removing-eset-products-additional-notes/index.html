@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Removing ESET Products - Additional Notes</title>
+  <meta itemprop="name"                                content="Removing ESET Products - Additional Notes"       />
+  <meta name="dcterms.title"                           content="Removing ESET Products - Additional Notes"       />
+  <meta property="og:title"                            content="Removing ESET Products - Additional Notes"       />
+  <meta name="twitter:title"                           content="Removing ESET Products - Additional Notes"       />
+  <meta name="twitter:text:title"                      content="Removing ESET Products - Additional Notes"       />
+  <meta name="application-name"                        content="Removing ESET Products - Additional Notes"       />
+  <meta name="subject"                                 content="Removing ESET Products - Additional Notes"       />
+  <meta name="apple-mobile-web-app-title"              content="Removing ESET Products - Additional Notes"       />
+  <meta name="msapplication-tooltip"                   content="Removing ESET Products - Additional Notes"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Removing ESET Products - Additional Notes"       />
+  <meta itemprop="description"                         content="Removing ESET Products - Additional Notes"       />
+  <meta name="dcterms.description"                     content="Removing ESET Products - Additional Notes"       />
+  <meta name="twitter:description"                     content="Removing ESET Products - Additional Notes"       />
+  <meta property="og:description"                      content="Removing ESET Products - Additional Notes"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="access,adapter,adapters,admin,advfirewall,allprofiles,ansi,antivirus,appdata,archive,back,blank,bold,branchcache,cache,callmsi,ccleaner,classes,cleaning,cleanup,click,code,color,computer,connection,controlset,copy,default,delete,desktop,direct,disable,disabled,download,drivers,driverstore,eamonm,echo,ecls,ecmd,edevmon,editor,eeclnt,effectively,egui,ehdrv,ehttpsrv,ekrn,elad,enum,epfwwfpr,eset,execute,extra,extract,feature,file,files,firewall,flush,folder,font,forget,github,hardcore,hkey,httpstunnel,identified,included,inherited,interface,interfaces,keys,latest,layers,leftovers,legacy,lists,local,locale,loosing,machine,make,microsoft,missed,mode,named,netsh,network,neutral,node,noncritical,notes,official,open,operation,opmode,optimize,ownership,parent,paste,pause,permission,product,products,profile,program,proxy,quarantine,radar,rasapi,rasmancs,reboot,rebooted,rebooting,rebuild,registry,related,releases,remove,removing,reportqueue,reset,restore,root,routing,safe,safely,server,services,shutdown,software,state,step,support,surprised,sysrescue,system,taking,target,temp,timeout,timeouttype,tracing,traffic,typelib,uninstall,uninstaller,user,users,version,weight,windows,winhttp,winsock,work,works,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="access,adapter,adapters,admin,advfirewall,allprofiles,ansi,antivirus,appdata,archive,back,blank,bold,branchcache,cache,callmsi,ccleaner,classes,cleaning,cleanup,click,code,color,computer,connection,controlset,copy,default,delete,desktop,direct,disable,disabled,download,drivers,driverstore,eamonm,echo,ecls,ecmd,edevmon,editor,eeclnt,effectively,egui,ehdrv,ehttpsrv,ekrn,elad,enum,epfwwfpr,eset,execute,extra,extract,feature,file,files,firewall,flush,folder,font,forget,github,hardcore,hkey,httpstunnel,identified,included,inherited,interface,interfaces,keys,latest,layers,leftovers,legacy,lists,local,locale,loosing,machine,make,microsoft,missed,mode,named,netsh,network,neutral,node,noncritical,notes,official,open,operation,opmode,optimize,ownership,parent,paste,pause,permission,product,products,profile,program,proxy,quarantine,radar,rasapi,rasmancs,reboot,rebooted,rebooting,rebuild,registry,related,releases,remove,removing,reportqueue,reset,restore,root,routing,safe,safely,server,services,shutdown,software,state,step,support,surprised,sysrescue,system,taking,target,temp,timeout,timeouttype,tracing,traffic,typelib,uninstall,uninstaller,user,users,version,weight,windows,winhttp,winsock,work,works,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/javascript-snippet-event-isolation-with-documentation"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/javascript-snippet-event-isolation-with-documentation"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/noscript-subdomains"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/removing-eset-products-additional-notes"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/removing-eset-products-additional-notes"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/removing-eset-products-additional-notes"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/removing-eset-products-additional-notes"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/removing-eset-products-additional-notes"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/removing-eset-products-additional-notes"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-10-20T05:36:04+00:00"     />
+  <meta name="page-datetime"                           content="2016-10-20T05:36:04+00:00"     />
+  <meta property="article:published_time"              content="2016-10-20T05:36:04+00:00"     />
+  <meta name="dcterms.date"                            content="2016-10-20T05:36:04+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-10-20T05:36:04+00:00"    />
+  <meta property="article:modified_time"               content="2016-10-20T05:36:04+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/removing-eset-products-additional-notes"
+,"url"             : "https://icompile.eladkarako.com/removing-eset-products-additional-notes"
+,"headline"        : "Removing ESET Products - Additional Notes"
+,"description"     : "Removing ESET Products - Additional Notes"
+,"datePosted"      : "2016-10-20T05:36:04+00:00"
+,"dateCreated"     : "2016-10-20T05:36:04+00:00"
+,"datePublished"   : "2016-10-20T05:36:04+00:00"
+,"dateModified"    : "2016-10-20T05:36:04+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0004671496741">
+  <header>
+    <h1 itemprop="headline">Removing ESET Products - Additional Notes</h1>
+    <sup>Posted at <time datetime="2016-10-20T05:36:04+00:00" itemprop="dateModified">Thu, 20 Oct 2016 05:36:04 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><ol><br/>
+<li><br/>
+First open up your ESET product, go to "quarantine" and either restore or "copy to" every file you would not want to see 'go away'. You'll be surprised how many users forget about *this thing* until they uninstall the software, and cleaning up all of the ESET related folder, effectively loosing missed-identified files *along the way*.<br/>
+</li><br/>
+<li><br/>
+Download the official uninstaller<sup>either <a href="http://support.eset.com/kb2289/?locale=en_US" target="_blank">#1</a>, <a href="http://support.eset.com/kb146/?locale=en_US" target="_blank">#2</a> or this <a href="https://github.com/eladkarako/icompile/releases/download/latest/official_eset_uninstaller_v4_0_14_DEV.zip">https://github.com/eladkarako/icompile/releases/download/latest/official_eset_uninstaller_v4_0_14_DEV.zip</a>[208KB]</sup> to your desktop, extract the file from the archive, shutdown your computer, rebooting it into safe mode, right click the file <code>ESETUninstaller.exe</code> on your desktop and run it as administrator. follow the instructions removing every product, follow with next step to remove some registry leftovers.<br/>
+</li><br/>
+<li><br/>
+Extra registry keys/values/etc.. leftovers you can safely delete. Copy&Paste into a file named <code>cleanup.reg</code>. Additional notes included in the body of the file (may be ignored).<br/>
+<br/>
+run the file once after the previous step still in safe-mode, and once after you've rebooted your computer back to normal operation-system.<br/>
+<br/>
+<pre><span style='color:#e34adc; '>Windows Registry Editor Version 5.00</span><br/>
+<br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_CURRENT_USER</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Software</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ESET</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SOFTWARE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ESET</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_USERS</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>.DEFAULT</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Software</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ESET</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_USERS</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>S-1-5-18</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Software</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ESET</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_USERS</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>S-1-5-19</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Software</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ESET</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_USERS</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>S-1-5-20</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Software</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ESET</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SYSTEM</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ControlSet002</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Enum</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Root</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>LEGACY_EAMONM</span><span style='color:#a65700; '>]</span><br/>
+<br/>
+<br/>
+<span style='color:#696969; '>;drivers:  "eamonm", "edevmon", "ehdrv", "epfwwfpr"</span><br/>
+<br/>
+<span style='color:#696969; '>;needs taking-ownership and full-permission (not parent-inherited). might not work.</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SYSTEM</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ControlSet002</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Enum</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Root</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>LEGACY_EAMONM</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SYSTEM</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ControlSet002</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>services</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>eamonm</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SYSTEM</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>CurrentControlSet</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Enum</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Root</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>LEGACY_EAMONM</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SYSTEM</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ControlSet002</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>services</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>edevmon</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SYSTEM</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ControlSet002</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Enum</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Root</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>LEGACY_EHDRV</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SYSTEM</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ControlSet002</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>services</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ehdrv</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SYSTEM</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ControlSet002</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Enum</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Root</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>LEGACY_EPFWWFPR</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SYSTEM</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ControlSet002</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>services</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>epfwwfpr</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SOFTWARE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Microsoft</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Tracing</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ekrn_RASAPI32</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SOFTWARE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Microsoft</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Tracing</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ekrn_RASMANCS</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SYSTEM</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ControlSet002</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>services</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ekrn</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SOFTWARE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Wow6432Node</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Microsoft</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Tracing</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ekrn_RASAPI32</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800080; '>-</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SOFTWARE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Microsoft</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>RADAR</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>HeapLeakDetection</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>DiagnosedApplications</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>ekrn.exe</span><span style='color:#a65700; '>]</span><br/>
+<br/>
+<br/>
+<span style='color:#696969; '>;remove access execute-permission of Eset-exe files</span><br/>
+<span style='color:#a65700; '>[</span><span style='color:#800000; font-weight:bold; '>HKEY_LOCAL_MACHINE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>SOFTWARE</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Microsoft</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Windows NT</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>CurrentVersion</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>AppCompatFlags</span><span style='color:#800080; '>\\</span><span style='color:#5f5035; '>Layers</span><span style='color:#a65700; '>]</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>callmsi.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ecls.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ecmd.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>eeclnt.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>egui.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>eh64.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>EHttpSrv.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>SysInspector.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>SysRescue.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>x86</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ekrn.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files (x86)</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>callmsi.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files (x86)</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ecls.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files (x86)</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ecmd.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files (x86)</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>eeclnt.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files (x86)</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>egui.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files (x86)</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>eh64.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files (x86)</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>EHttpSrv.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files (x86)</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>SysInspector.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files (x86)</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>SysRescue.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<span style='color:#274796; '>"</span><span style='color:#40015a; '>C:</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>Program Files (x86)</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ESET NOD32 Antivirus</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>x86</span><span style='color:#0f69ff; '>\\\\</span><span style='color:#40015a; '>ekrn.exe</span><span style='color:#274796; '>"</span><span style='color:#808030; '>=</span><span style='color:#008000; '>-</span><br/>
+<br/>
+<span style='color:#696969; '>;C:\\Users\\Elad\\Desktop\\ESETUninstaller.exe</span><br/>
+<span style='color:#696969; '>;[-HKEY_CLASSES_ROOT\\TypeLib\\{C9E0F815-DD95-11DD-A6A2-000FFE7FA963}]</span><br/>
+<span style='color:#696969; '>;[-HKEY_CLASSES_ROOT\\Wow6432Node\\TypeLib\\{C9E0F815-DD95-11DD-A6A2-000FFE7FA963}\\1.0\\0\\win32]</span><br/>
+<span style='color:#696969; '>;[-HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Classes\\Interface\\{F85E2D65-207D-48DB-84B1-915E1735DB17}]</span><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<span style='color:#696969; '>;C:\\Windows\\System32\\drivers\\eamonm.sys</span><br/>
+<span style='color:#696969; '>;C:\\Windows\\System32\\DriverStore\\FileRepository\\eamonm.inf_amd64_neutral_2b9b28a2f23da3d2</span><br/>
+<span style='color:#696969; '>;C:\\Windows\\System32\\DriverStore\\FileRepository\\eamonm.inf_amd64_neutral_2b9b28a2f23da3d2\\eamonm.cat</span><br/>
+<span style='color:#696969; '>;C:\\Users\\Elad\\AppData\\Local\\Microsoft\\Windows\\WER\\ReportQueue\\NonCritical_ekrn.exe_9e282afd4c553fda81672596d78a29ecb189c0f9_cab_09498087</span><br/>
+</pre><br/>
+</li><br/>
+<li><br/>
+Consider cleaning up using CCleaner (file-system and registry) and maybe reset your network adapters:<br/>
+(copy to a cmd or bat file run as admin and reboot when done)<br/>
+<pre><span style='color:#808030; '>@</span><span style='color:#800000; font-weight:bold; '>echo on</span><br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------Firewall Reset (firewall works on XP,7,8+, advfirewall work on 7,8+)</span><br/>
+netsh firewall reset<br/>
+netsh advfirewall reset<br/>
+<br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------Disable Firewall (firewall works on XP,7,8+, advfirewall work on 7,8+)</span><br/>
+netsh firewall <span style='color:#800000; font-weight:bold; '>set</span> opmode <span style='color:#800000; font-weight:bold; '>mode</span><span style='color:#808030; '>=</span>DISABLE profile<span style='color:#808030; '>=</span>ALL<br/>
+netsh advfirewall <span style='color:#800000; font-weight:bold; '>set</span> allprofiles state <span style='color:#800000; font-weight:bold; '>off</span><br/>
+<br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------delete http cache</span><br/>
+netsh nap reset<br/>
+netsh rpc reset<br/>
+netsh winhttp reset<br/>
+netsh http flush<br/>
+netsh http delete timeout timeouttype<span style='color:#808030; '>=</span>idleconnectiontimeout<br/>
+netsh http delete timeout timeouttype<span style='color:#808030; '>=</span>headerwaittimeout<br/>
+<br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------make connection direct</span><br/>
+netsh winhttp reset proxy<br/>
+<br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------disable tracing (default = disabled, ansi, 65535)</span><br/>
+netsh winhttp reset tracing<br/>
+<br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------delete http cache</span><br/>
+<br/>
+netsh http delete cache<br/>
+<br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------BranchCache Optimize WAN traffic (Windows Server 2008 R2 and Windows® 7)</span><br/>
+netsh branchcache reset<br/>
+<br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------Routing Lists Clear</span><br/>
+netsh routing reset<br/>
+<br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------Network-Adapter's Software Default (Winsock Reset and Rebuild)</span><br/>
+netsh winsock reset<br/>
+<br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------BranchCache is a new feature of Windows Server 2008 R2 and Windows® 7. BranchCache </span><br/>
+netsh interface ipv4 reset<br/>
+netsh interface ipv6 reset<br/>
+<br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------Network-Interfaces Reset</span><br/>
+netsh interface reset all<br/>
+<br/>
+netsh interface httpstunnel reset<br/>
+<br/>
+<br/>
+<span style='color:#696969; '>::-------------------------------------------------------------------Hardcore TCP/IP Reset and Rebuild</span><br/>
+netsh int ip reset c<span style='color:#808030; '>:</span><span style='color:#808030; '>\\</span>temp<span style='color:#808030; '>\\</span>netsh_ip_reset_log.txt<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>pause</span><br/>
+</pre><br/>
+</li><br/>
+</ol></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-event-isolation-with-documentation">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/noscript-subdomains">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/noscript-subdomains">NoScript SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-download-calendar-emoji-image">Free Download - Graphics Of Old School Calendar Unicode Emoji</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-onmibox">You Can't!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-createdocument-with-doctype-example">JavaScript Ninja ☕ - createDocument With DocType - The Missing Example</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows-update-exes-and-services">Windows Update EXEs And Services</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-snippet-example-on-multiple-language-resource">HTML Snippet - Example On Multiple Language Resource</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-ninja-centring-container-in-the-middle-of-viewport-with-css3-only-no-javascript">No JavaScript</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/full-on-centering-panel-css">HTML5 Ninja Techniques - Minimal HTML/CSS3 Markup Needed For Full-On Centering-Panel - With/Without CSS-Table</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/multi-language-version-info-resource-for-your-exe">Multi-Language Version-Info Resource For Your EXE</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/faster-copying-files-to-sd-card">Faster Copying Files To SD-Card</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-code-search">Chromium Code-Search</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/firefox-tweak-2">Firefox Tweak #2</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-no-js-and-internet-explorer-flags">HTML5 No-JS and Internet-Explorer Flags</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/f6drivers-img">f6drivers.img</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-comma-first-procon">The Comma-First Pro/Con</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-make-stored-base64-content-harder-to-reverse-engineer">JavaScript Ninja - Make Stored Base64 Content Harder To Reverse-Engineer</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

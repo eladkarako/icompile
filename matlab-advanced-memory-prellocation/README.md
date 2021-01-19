@@ -1,0 +1,1 @@
+MATLAB hides the tedious process of allocating memory for variables. This generosity, while often highly convenient, can cause you to waste a lot of run-time. Consider the following code, which implements Euler

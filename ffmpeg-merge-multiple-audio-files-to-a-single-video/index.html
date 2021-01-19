@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>FFMPEG - Merge Multiple Audio Files To A Single Video</title>
+  <meta itemprop="name"                                content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+  <meta name="dcterms.title"                           content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+  <meta property="og:title"                            content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+  <meta name="twitter:title"                           content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+  <meta name="twitter:text:title"                      content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+  <meta name="application-name"                        content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+  <meta name="subject"                                 content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+  <meta name="apple-mobile-web-app-title"              content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+  <meta name="msapplication-tooltip"                   content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+  <meta itemprop="description"                         content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+  <meta name="dcterms.description"                     content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+  <meta name="twitter:description"                     content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+  <meta property="og:description"                      content="FFMPEG - Merge Multiple Audio Files To A Single Video"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accept,aresample,asetpts,async,audio,avoid,banner,blank,bold,build,call,chapters,chpl,code,color,comp,concat,cover,dash,data,date,demo,disable,download,echo,edit,encoded,export,fast,fastseek,faststart,fflags,ffmpeg,file,files,flac,flags,folder,font,force,generate,genpts,global,header,hide,high,html,ignore,ignorecrop,image,index,info,kbps,lame,level,libmp,libx,lines,list,loglevel,loop,make,maxrate,media,merge,meta,minrate,modify,movflags,multiple,output,pause,preset,profile,properly,proportions,qcomp,quality,remove,rtphint,safe,scheme,script,setpts,showall,single,speed,startpts,stats,stillimage,stream,strong,subq,target,testing,threads,tune,tweaks,type,veryslow,video,vsync,weight,youtube,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accept,aresample,asetpts,async,audio,avoid,banner,blank,bold,build,call,chapters,chpl,code,color,comp,concat,cover,dash,data,date,demo,disable,download,echo,edit,encoded,export,fast,fastseek,faststart,fflags,ffmpeg,file,files,flac,flags,folder,font,force,generate,genpts,global,header,hide,high,html,ignore,ignorecrop,image,index,info,kbps,lame,level,libmp,libx,lines,list,loglevel,loop,make,maxrate,media,merge,meta,minrate,modify,movflags,multiple,output,pause,preset,profile,properly,proportions,qcomp,quality,remove,rtphint,safe,scheme,script,setpts,showall,single,speed,startpts,stats,stillimage,stream,strong,subq,target,testing,threads,tune,tweaks,type,veryslow,video,vsync,weight,youtube,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/font-family-name"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/font-family-name"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javascript-snippet-get-doctype-as-string"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-01-17T00:21:06+00:00"     />
+  <meta name="page-datetime"                           content="2017-01-17T00:21:06+00:00"     />
+  <meta property="article:published_time"              content="2017-01-17T00:21:06+00:00"     />
+  <meta name="dcterms.date"                            content="2017-01-17T00:21:06+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-01-17T01:24:47+00:00"    />
+  <meta property="article:modified_time"               content="2017-01-17T01:24:47+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video"
+,"url"             : "https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video"
+,"headline"        : "FFMPEG - Merge Multiple Audio Files To A Single Video"
+,"description"     : "FFMPEG - Merge Multiple Audio Files To A Single Video"
+,"datePosted"      : "2017-01-17T00:21:06+00:00"
+,"dateCreated"     : "2017-01-17T00:21:06+00:00"
+,"datePublished"   : "2017-01-17T00:21:06+00:00"
+,"dateModified"    : "2017-01-17T01:24:47+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006642164841">
+  <header>
+    <h1 itemprop="headline">FFMPEG - Merge Multiple Audio Files To A Single Video</h1>
+    <sup>Posted at <time datetime="2017-01-17T01:24:47+00:00" itemprop="dateModified">Tue, 17 Jan 2017 01:24:47 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2017/01/icompile.eladkarako.com_ffmpeg_concat_audio_to_video_raw_mp3_scheme.png" alt="" width="555" height="208" /><br/>
+<!--more--><br/>
+<br/>
+<ul><br/>
+  <li><br/>
+  Place all of your audio files and and image in the same folder as the script,<br/>
+  run the script to get properly encoded, stream'able video file.<br/>
+  </li><br/>
+  <li><br/>
+   You may edit the script to accept any type of media-file,<br/>
+   and any name for the image other than <code>cover.jpg</code>.<br/>
+  </li><br/>
+</ul><br/>
+<br/>
+<pre><br/>
+<span style='color:#808030; '>@</span><span style='color:#800000; font-weight:bold; '>echo off</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> # MP3 LIST(%DATE% %TIME%) </span><span style='color:#808030; '>&gt;</span>list.txt<br/>
+<span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#797997; '>%%</span>e <span style='color:#800000; font-weight:bold; '>in</span> <span style='color:#808030; '>(</span>*.mp3 *.m4a *.oga *.flac<span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>do</span> <span style='color:#808030; '>(</span><br/>
+  <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> file </span>'<span style='color:#797997; '>%%</span>e' <span style='color:#808030; '>&gt;</span><span style='color:#808030; '>&gt;</span>list.txt<br/>
+<span style='color:#808030; '>)</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>call</span> ffmpeg.exe <span style='color:#808030; '>-</span>y <span style='color:#808030; '>-</span>hide_banner <span style='color:#808030; '>-</span>loglevel <span style='color:#0000e6; '>"info"</span> <span style='color:#808030; '>-</span>stats     <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>threads <span style='color:#008c00; '>16</span>                                                 <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>flags     <span style='color:#0000e6; '>"+loop+global_header+naq+low_delay"</span>              <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>fflags    <span style='color:#0000e6; '>"+genpts+discardcorrupt+fastseek"</span>                <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>flags2    <span style='color:#0000e6; '>"+fast+ignorecrop+showall+export_mvs"</span>            <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>avoid_negative_ts make_zero                                <span style='color:#808030; '>^</span><br/>
+ <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>safe <span style='color:#0000e6; '>"0"</span>  <span style='color:#808030; '>-</span>f concat  <span style='color:#808030; '>-</span>i <span style='color:#0000e6; '>"list.txt"</span>                         <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>r <span style='color:#008c00; '>1</span>       <span style='color:#808030; '>-</span>loop <span style='color:#008c00; '>1</span>    <span style='color:#808030; '>-</span>i <span style='color:#0000e6; '>"cover.jpg"</span>                        <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>movflags  <span style='color:#0000e6; '>"+rtphint+dash+disable_chpl+faststart"</span>           <span style='color:#808030; '>^</span><br/>
+ <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>ss        <span style='color:#0000e6; '>"00:00:00.001"</span>                                   <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>to        <span style='color:#0000e6; '>"00:00:10.000"</span>                                   <span style='color:#808030; '>^</span><br/>
+ <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>s <span style='color:#0000e6; '>"1280x720"</span>                                               <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>ignore_chapters   <span style='color:#008c00; '>1</span>                                        <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>profile<span style='color:#808030; '>:</span>v <span style='color:#0000e6; '>"high"</span> <span style='color:#808030; '>-</span>level <span style='color:#0000e6; '>"5.0"</span>                              <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>pix_fmt   <span style='color:#0000e6; '>"yuv420p"</span>                                        <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>tune      <span style='color:#0000e6; '>"stillimage"</span>                                     <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>preset    <span style='color:#0000e6; '>"veryslow"</span> <span style='color:#808030; '>-</span>crf <span style='color:#0000e6; '>"23"</span> <span style='color:#808030; '>-</span>subq <span style='color:#0000e6; '>"9"</span> <span style='color:#808030; '>-</span>qcomp <span style='color:#0000e6; '>"0.60"</span>     <span style='color:#808030; '>^</span><br/>
+ <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>af        <span style='color:#0000e6; '>"asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000"</span>  <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>vf        <span style='color:#0000e6; '>"setpts=PTS-STARTPTS"</span> <span style='color:#808030; '>-</span>vsync <span style='color:#0000e6; '>"1"</span>                                 <span style='color:#808030; '>^</span><br/>
+ <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>c<span style='color:#808030; '>:</span>a  aac      <span style='color:#808030; '>-</span>b<span style='color:#808030; '>:</span>a 128k <span style='color:#808030; '>-</span>ar <span style='color:#008c00; '>44100</span>                          <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>c<span style='color:#808030; '>:</span>v  libx264  <span style='color:#808030; '>-</span>b<span style='color:#808030; '>:</span>v 1k <span style='color:#808030; '>-</span>minrate 1k <span style='color:#808030; '>-</span>maxrate 1k              <span style='color:#808030; '>^</span><br/>
+ <span style='color:#808030; '>^</span><br/>
+output.mkv<br/>
+<br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>del</span> <span style='color:#808030; '>/</span>f <span style='color:#808030; '>/</span>q list.txt <span style='color:#808030; '>&gt;</span><span style='color:#800000; font-weight:bold; '>nul</span><br/>
+<br/>
+<span style='color:#696969; '>::https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video/#more-7102</span><br/>
+<span style='color:#800000; font-weight:bold; '>pause</span><br/>
+</pre><br/>
+<br/>
+<blockquote><br/>
+The proportions of the video are YouTube's <code>720p</code>, and the audio quality is 128KBPS,<br/>
+Which you also may modify for your needs.<br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+You may want to <strong>remove the following lines</strong> from the script:<br/>
+<pre>
+-ss        "00:00:00.001"                                   ^
+-to        "00:00:10.000"                                   ^
+</pre><br/>
+the <code>-to</code> is to output a quick demo (testing quality),<br/>
+the <code>-ss</code> is to force re-build the index without using some of ffmpeg's bug'gy speed tweaks.<br/>
+</blockquote><br/>
+<br/>
+<hr/><br/>
+<br/>
+In a similar way, this will just generate an audio file,<br/>
+<br/>
+<pre><span style='color:#808030; '>@</span><span style='color:#800000; font-weight:bold; '>echo off</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> # MP3 LIST(%DATE% %TIME%) </span><span style='color:#808030; '>&gt;</span>list.txt<br/>
+<span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#797997; '>%%</span>e <span style='color:#800000; font-weight:bold; '>in</span> <span style='color:#808030; '>(</span>*.mp3 *.m4a *.oga *.flac<span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>do</span> <span style='color:#808030; '>(</span><br/>
+  <span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#0000e6; '> file </span>'<span style='color:#797997; '>%%</span>e' <span style='color:#808030; '>&gt;</span><span style='color:#808030; '>&gt;</span>list.txt<br/>
+<span style='color:#808030; '>)</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>call</span> ffmpeg.exe <span style='color:#808030; '>-</span>y <span style='color:#808030; '>-</span>hide_banner <span style='color:#808030; '>-</span>loglevel <span style='color:#0000e6; '>"info"</span> <span style='color:#808030; '>-</span>stats     <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>threads <span style='color:#008c00; '>16</span>                                                 <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>flags     <span style='color:#0000e6; '>"+loop+global_header+naq+low_delay"</span>              <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>fflags    <span style='color:#0000e6; '>"+genpts+discardcorrupt+fastseek"</span>                <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>flags2    <span style='color:#0000e6; '>"+fast+ignorecrop+showall+export_mvs"</span>            <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>avoid_negative_ts make_zero                                <span style='color:#808030; '>^</span><br/>
+ <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>safe <span style='color:#0000e6; '>"0"</span>  <span style='color:#808030; '>-</span>f concat  <span style='color:#808030; '>-</span>i <span style='color:#0000e6; '>"list.txt"</span>                         <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>vn <span style='color:#808030; '>-</span>sn                                                     <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>movflags  <span style='color:#0000e6; '>"+rtphint+dash+disable_chpl+faststart"</span>           <span style='color:#808030; '>^</span><br/>
+ <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>ss        <span style='color:#0000e6; '>"00:00:00.001"</span>                                   <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>to        <span style='color:#0000e6; '>"00:00:10.000"</span>                                   <span style='color:#808030; '>^</span><br/>
+ <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>af        <span style='color:#0000e6; '>"asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000"</span>  <span style='color:#808030; '>^</span><br/>
+ <span style='color:#808030; '>^</span><br/>
+<span style='color:#808030; '>-</span>c<span style='color:#808030; '>:</span>a  aac      <span style='color:#808030; '>-</span>b<span style='color:#808030; '>:</span>a 128k <span style='color:#808030; '>-</span>ar <span style='color:#008c00; '>44100</span>                          <span style='color:#808030; '>^</span><br/>
+ <span style='color:#808030; '>^</span><br/>
+output.aac<br/>
+<br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>del</span> <span style='color:#808030; '>/</span>f <span style='color:#808030; '>/</span>q list.txt <span style='color:#808030; '>&gt;</span><span style='color:#800000; font-weight:bold; '>nul</span><br/>
+<br/>
+<span style='color:#696969; '>::https://icompile.eladkarako.com/ffmpeg-merge-multiple-audio-files-to-a-single-video/#more-7102</span><br/>
+<span style='color:#800000; font-weight:bold; '>pause</span><br/>
+</pre><br/>
+<br/>
+Want a <code>mp3</code> file?<br/>
+use <code>-c:a libmp3lame -b:a 128k -ar 44100                       ^</code> instead.<br/>
+<br/>
+<hr/><br/>
+<br/>
+I use <a href="http://www.mp3tag.de/en/download.html" target="_blank">mp3tag</a> to add useful meta-data (aka. IDv3) to the result video or audio file.<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/font-family-name">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-get-doctype-as-string">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-get-doctype-as-string">JavaScript Snippet - Get DOCTYPE As String</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-convert-camelcase-to-snake_case">JavaScript Snippet - Convert CamelCase to snake_case</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/json-stringify-with-escape-for-unicode-characters">JSON.stringify With Escape For Unicode-Characters</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ebay-pulsar-user-behavioral-tracking">JavaScript Ninja - eBay's PULSAR A.K.A User-Behavioral-Tracking</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-document-write-alternative">JavaScript Ninja - document.write Alternative</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-most-popular-adblock-lists">The Most Popular Adblock Lists</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-kitty-algorithm">You're Giving Me Far Too Many Kitten-Videos! And I Love It!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-snippet-everything-to-button">CSS3 Snippet - Everything To Button</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/imagemagick-nightly-builds">ImageMagick Nightly Builds</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/vuze-subdomains">Vuze SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-domain2ip">Google Domain2IP (DNS Over HTTPS)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-entity-unicode-escape">HTML Entity - Unicode Escape</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unicode-character-sequence-with-zero-left-padding">Unicode Character Sequence With Zero Left-Padding</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/java-snippet-port-finder">Java Snippet - Port Finder</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-extension-snippet-modify-response-header">Chrome Extension Snippet - Modify Response Header</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-pre-fill-file-duration-into-ffmpegs-mp3-concatenation-file-list-using-ffprobe">Using FFPROBE</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

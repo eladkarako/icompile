@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>records and resources</title>
+  <meta itemprop="name"                                content="records and resources"       />
+  <meta name="dcterms.title"                           content="records and resources"       />
+  <meta property="og:title"                            content="records and resources"       />
+  <meta name="twitter:title"                           content="records and resources"       />
+  <meta name="twitter:text:title"                      content="records and resources"       />
+  <meta name="application-name"                        content="records and resources"       />
+  <meta name="subject"                                 content="records and resources"       />
+  <meta name="apple-mobile-web-app-title"              content="records and resources"       />
+  <meta name="msapplication-tooltip"                   content="records and resources"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="records and resources"       />
+  <meta itemprop="description"                         content="records and resources"       />
+  <meta name="dcterms.description"                     content="records and resources"       />
+  <meta name="twitter:description"                     content="records and resources"       />
+  <meta property="og:description"                      content="records and resources"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="alignnone,argument,behave,blank,borodzkin,bound,bounded,brun,care,cases,champions,chen,choice,completed,computers,conjecture,conjectured,conjectures,consecutive,constant,converges,cray,differ,difference,discussion,distinct,easier,easy,entry,equivalent,euler,expected,exponent,extended,factors,fermat,finite,font,footnote,form,forms,gaps,gcqaaob,gifs,glossary,goldbach,gstatic,hardy,herman,howmany,html,images,infinitely,information,integer,integers,italic,jean,joerg,joqtjg,july,kpfv,letter,list,marc,mentioned,nbsp,note,notes,number,numbers,oliveira,online,opperman,page,pages,pairs,pairwise,perfect,polignac,prime,primes,probability,problem,progress,prove,proved,proven,ramar,ramare,random,randomly,recent,recently,reciprocals,records,reduced,references,refs,remains,replied,research,resources,ribenboim,richstein,riele,roughly,saouter,schnizel,showed,shtml,silva,sinisalo,small,sort,square,stated,substantial,sufficient,suggesting,suggests,target,theorem,times,title,twin,unproven,uwsenxb,verified,vinogradov,wang,work,wright,wrote,yannick,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="alignnone,argument,behave,blank,borodzkin,bound,bounded,brun,care,cases,champions,chen,choice,completed,computers,conjecture,conjectured,conjectures,consecutive,constant,converges,cray,differ,difference,discussion,distinct,easier,easy,entry,equivalent,euler,expected,exponent,extended,factors,fermat,finite,font,footnote,form,forms,gaps,gcqaaob,gifs,glossary,goldbach,gstatic,hardy,herman,howmany,html,images,infinitely,information,integer,integers,italic,jean,joerg,joqtjg,july,kpfv,letter,list,marc,mentioned,nbsp,note,notes,number,numbers,oliveira,online,opperman,page,pages,pairs,pairwise,perfect,polignac,prime,primes,probability,problem,progress,prove,proved,proven,ramar,ramare,random,randomly,recent,recently,reciprocals,records,reduced,references,refs,remains,replied,research,resources,ribenboim,richstein,riele,roughly,saouter,schnizel,showed,shtml,silva,sinisalo,small,sort,square,stated,substantial,sufficient,suggesting,suggests,target,theorem,times,title,twin,unproven,uwsenxb,verified,vinogradov,wang,work,wright,wrote,yannick,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/from-the-beginning-what-are-the-ten-radical-isotopes"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/from-the-beginning-what-are-the-ten-radical-isotopes"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/solved-python-x64-installer-not-found"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/the-prime-pages-prime-number-research-records-and-resources"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/the-prime-pages-prime-number-research-records-and-resources"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/the-prime-pages-prime-number-research-records-and-resources"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/the-prime-pages-prime-number-research-records-and-resources"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/the-prime-pages-prime-number-research-records-and-resources"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/the-prime-pages-prime-number-research-records-and-resources"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2013-03-20T23:38:41+00:00"     />
+  <meta name="page-datetime"                           content="2013-03-20T23:38:41+00:00"     />
+  <meta property="article:published_time"              content="2013-03-20T23:38:41+00:00"     />
+  <meta name="dcterms.date"                            content="2013-03-20T23:38:41+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2013-03-20T23:38:41+00:00"    />
+  <meta property="article:modified_time"               content="2013-03-20T23:38:41+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/the-prime-pages-prime-number-research-records-and-resources"
+,"url"             : "https://icompile.eladkarako.com/the-prime-pages-prime-number-research-records-and-resources"
+,"headline"        : "records and resources"
+,"description"     : "records and resources"
+,"datePosted"      : "2013-03-20T23:38:41+00:00"
+,"dateCreated"     : "2013-03-20T23:38:41+00:00"
+,"datePublished"   : "2013-03-20T23:38:41+00:00"
+,"dateModified"    : "2013-03-20T23:38:41+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0001272283631">
+  <header>
+    <h1 itemprop="headline">records and resources</h1>
+    <sup>Posted at <time datetime="2013-03-20T23:38:41+00:00" itemprop="dateModified">Wed, 20 Mar 2013 23:38:41 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">http://primes.utm.edu/<br/>
+<a title="The Prime Pages" href="http://primes.utm.edu/" target="_blank">The Prime Pages</a>: prime number research, records and resources<br/>
+<br/>
+&nbsp;<br/>
+<br/>
+<img loading="lazy" lazyload="on"  class="alignnone aligncenter" alt="" src="http://t2.gstatic.com/images?q=tbn:ANd9GcQAaOb-kPfv38uwsEnxb0Qjt3ORkyQOzJDuAhyImb_69eH0jOqTJg" width="225" height="225" /><br/>
+<br/>
+&nbsp;<br/>
+<br/>
+Here are a few of the many conjectures concerning primes:<br/>
+<br/>
+<b style="font-style: italic;">Goldbach's Conjecture: Every even <i>n</i> &gt; 2 is the sum of two primes.</b><br/>
+<br/>
+<dl><dd>Goldbach wrote a letter to Euler in 1742 suggesting that <i>every integer n &gt; 5 is the sum of three primes</i>.  Euler replied that this is equivalent to <i>every even n &gt; 2 is the sum of two primes</i>--this is now known as Goldbach's conjecture.  Schnizel showed that Goldbach's conjecture is equivalent to <i>every integer n &gt; 17 is the sum of three </i>distinct<i> primes</i>.<br/>
+It has been proven that every even integer is the sum of at most six primes [<a href="http://primes.utm.edu/references/refs.cgi/Ramare95">Ramaré95</a>] (Goldbach's conjecture suggests two) and in 1966 Chen proved every sufficiently large even integer is the sum of a prime plus a number with no more than two prime factors (a P<sub>2</sub>).  In 1993 Sinisalo verified Goldbach's conjecture for all integers less than 4<sup>.</sup>10<sup>11</sup> [<a href="http://primes.utm.edu/references/refs.cgi/Sinisalo93">Sinisalo93</a>].  More recently Jean-Marc Deshouillers, Yannick Saouter and Herman te Riele have verified this up to 10<sup>14</sup> with the help, of a Cray C90 and various workstations.  In July 1998, Joerg Richstein completed a verification to 4<sup>.</sup>10<sup>14</sup> and placed a list of champions online. More recent work by Oliveira e Silva has extended this to at least 4<sup>.</sup>10<sup>17</sup>. See [<a href="http://primes.utm.edu/references/refs.cgi/Ribenboim95">Ribenboim95</a>] and [<a href="http://primes.utm.edu/references/refs.cgi/Wang84">Wang84</a>] for more information.&nbsp;<br/>
+<br/>
+</dd><dt><b>The Odd Goldbach Problem: Every odd <i>n</i> &gt; 5 is the sum of three primes.</b></dt><dd>There has been substantial progress on this, the easier case of Goldbach's conjecture. In 1937 Vinogradov proved that this is true for sufficiently large odd integers <i>n</i>.  In 1956 Borodzkin showed <i>n</i> &gt; 3<sup>14348907</sup> is sufficient (the exponent is 3<sup>15</sup>).  In 1989 Chen and Wang reduced this bound to 10<sup>43000</sup>.  The exponent still must be reduced dramatically before we can use computers to take care of all the small cases.&nbsp;<br/>
+<br/>
+</dd><dt><b>Every even number is the difference of two primes.</b></dt><dd>Chen's work mentioned in the discussion of the <a href="http://primes.utm.edu/notes/conjectures/#Goldbach">Goldbach conjecture</a> also showed that every even number is the difference between a prime and a P<sub>2</sub>.&nbsp;<br/>
+<br/>
+</dd><dt><b>For every even number 2<i>n</i> are there infinitely many pairs of <i>consecutive</i> primes which differ by 2<i>n</i>.</b></dt><dd>Conjectured by Polignac 1849.  When <i>n</i>=1 this is the <a href="http://primes.utm.edu/notes/conjectures/#twin">twin prime conjecture</a>. It is easy to show that for every positive integer <i>m</i> there is an even number 2<i>n</i> such that there are more than <i>m</i> pairs of consecutive primes with difference 2<i>n</i>.&nbsp;<br/>
+<br/>
+</dd><dt><b><a name="twin"></a>Twin Prime Conjecture: There are infinitely many twin primes.</b></dt><dd>In 1919 Brun proved that the sum of the reciprocals of the twin primes converges, as so the sum B = (1/3 + 1/5) + (1/5 + 1/7) + (1/11 + 1/13) + (1/17 + 1/19) + ... is <b>Brun's constant</b>.  B = 1.902160577783278...  See the Prime Glossary's entry on the <a title="glossary" href="http://primes.utm.edu/glossary/page.php?sort=TwinPrimeConjecture">twin prime conjecture</a>.&nbsp;<br/>
+<br/>
+</dd><dt><b>Are there infinitely many primes of the form <i>n</i><sup>2</sup>+1?</b></dt><dd>There are infinitely many of the forms <i>n</i><sup>2</sup>+<i>m</i><sup>2</sup> and <i>n</i><sup>2</sup>+<i>m</i><sup>2</sup>+1.  A more general form of this conjecture is <i>if a, b, c are relatively prime, a is positive, a+b and c are not both even,and b<sup>2</sup>-4ac is not a perfect square, then there are infinitely many primes an<sup>2</sup>+bn+c</i> [<a href="http://primes.utm.edu/references/refs.cgi/HW79">HW79</a>, p19].&nbsp;<br/>
+<br/>
+</dd><dt><b>The number of Fermat primes is finite.</b></dt><dd>Hardy and Wright give an argument for this conjecture in their well known footnote [<a href="http://primes.utm.edu/references/refs.cgi/HW79">HW79</a>, p15] which goes roughly as follows.  By the <a href="http://primes.utm.edu/howmany.shtml#pnt">prime number theorem</a> the probability that a random number <i>n</i> is prime is at most<i>a</i>/log(<i>n</i>) for some choice of <i>a</i>.  So the expected number of Fermat primes is at most the sum of <i>a</i>/log(<img loading="lazy" lazyload="on"  alt="2^2^n+1" src="http://primes.utm.edu/gifs/Fermat_n.gif" width="35" height="18" />) &lt;<i>a</i>/2<sup><i>n</i></sup>, but this sum is <i>a</i>.  However, as Hardy and Wright note, the Fermat numbers do not behave "randomly" in that they are pairwise relatively prime...&nbsp;<br/>
+<br/>
+</dd><dt><b>Is there always a prime between <i>n</i><sup>2</sup> and (<i>n</i>+1)<sup>2</sup>?</b></dt><dd>In 1882 Opperman stated pi(<i>n</i><sup>2</sup>+<i>n</i>) &gt; pi(<i>n</i><sup>2</sup>) &gt; pi(<i>n</i><sup>2</sup>-<i>n</i>) (<i>n</i>&gt;1), which also seems very likely, but remains unproven [<a href="http://primes.utm.edu/references/refs.cgi/Ribenboim95">Ribenboim95</a>, p248].  Both of these conjectures would follow if we could prove the conjecture that the <a href="http://primes.utm.edu/notes/gaps.html">prime gap</a> following a prime <i>p</i> is bounded by a constant times (log <i>p</i>)<sup>2</sup>.</dd></dl>', 'The Prime Pages: prime number research</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/from-the-beginning-what-are-the-ten-radical-isotopes">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-python-x64-installer-not-found">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-python-x64-installer-not-found">Solved: Python x64 Modules-Installer: "not found"</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows-7-install-gjslint-google-closure-jslinter-into-python">Windows 7 - Install gjslint (Google Closure JSLinter) into Python</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/optimise-speed-tip-jetbrains-webstorm-a-java-based-tweak">Optimise Speed Tip - JetBrains WebStorm (a Java-based tweak)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css-minifier-based-on-javascript-algorithm-steps-and-design-example-for-efficiency">based on Javascript - Algorithm Steps and Design Example For Efficiency</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adding-gjslinter-to-webstorm-google-closure-jslinter-jetbrains-webstorm-integration">Adding GJSLinter to WebStorm - Google-Closure-JSLinter JetBrains WebStorm Integration</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/shell-svn-from-php">Shell SVN From PHP</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/more-wamp-php-tricks-increase-limits">More WAMP PHP Tricks - Increase Limits</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/all-known-methods-of-sending-requests-using-pure-javascript">All Known Methods Of Sending Requests Using Pure JavaScript</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers">New Outbrain Widget For Bloggers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/my-favorite-passover-movies">My Favorite Passover Movies</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sugru-arrived-happy-day">Adjust! Sugru Arrived - Happy Day!!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/oh-ye-of-little-faith-google-closure-2">oh ye of little faith Google-Closure</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-video-crop">FFMPEG Video Crop</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pandora-text-select-enabler-new-chrome-extension">Pandora Text-Select Enabler - New Chrome Extension </a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-extract-subtitle-file-from-mkv-video-file">FFMPEG extract subtitle file from mkv video file</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/playing-with-remote-desktop-sessions-1">playing with remote desktop sessions #1</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

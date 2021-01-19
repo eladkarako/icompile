@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>צבע אדום API</title>
+  <meta itemprop="name"                                content="צבע אדום API"       />
+  <meta name="dcterms.title"                           content="צבע אדום API"       />
+  <meta property="og:title"                            content="צבע אדום API"       />
+  <meta name="twitter:title"                           content="צבע אדום API"       />
+  <meta name="twitter:text:title"                      content="צבע אדום API"       />
+  <meta name="application-name"                        content="צבע אדום API"       />
+  <meta name="subject"                                 content="צבע אדום API"       />
+  <meta name="apple-mobile-web-app-title"              content="צבע אדום API"       />
+  <meta name="msapplication-tooltip"                   content="צבע אדום API"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="צבע אדום API"       />
+  <meta itemprop="description"                         content="צבע אדום API"       />
+  <meta name="dcterms.description"                     content="צבע אדום API"       />
+  <meta name="twitter:description"                     content="צבע אדום API"       />
+  <meta property="og:description"                      content="צבע אדום API"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="אדום,אזורים,גליל,וינגייט,יישובים,מכון,עליון,תבור,ajax,alef,alert,alerts,appears,area,areaid,aspx,basic,beit,blob,call,called,check,city,cityid,code,combined,combining,console,control,cookie,cookies,copy,database,databases,defined,design,duplicated,earth,enddate,estimation,extracting,facbf,fbaf,fetch,fetching,file,fromdate,function,getjsonfile,github,global,globally,google,googlemap,group,handlers,hebrew,history,hpnewsid,html,informatics,inside,interaction,isfirst,javascript,jquery,json,label,lang,loaded,location,loop,master,method,names,ordered,oref,page,parsing,parts,paste,places,related,repeats,request,rifid,seconds,session,shared,silencewave,siteversion,source,startdate,strong,timed,timers,todate,unorganised,uuid,variable,verbosed,write,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="אדום,אזורים,גליל,וינגייט,יישובים,מכון,עליון,תבור,ajax,alef,alert,alerts,appears,area,areaid,aspx,basic,beit,blob,call,called,check,city,cityid,code,combined,combining,console,control,cookie,cookies,copy,database,databases,defined,design,duplicated,earth,enddate,estimation,extracting,facbf,fbaf,fetch,fetching,file,fromdate,function,getjsonfile,github,global,globally,google,googlemap,group,handlers,hebrew,history,hpnewsid,html,informatics,inside,interaction,isfirst,javascript,jquery,json,label,lang,loaded,location,loop,master,method,names,ordered,oref,page,parsing,parts,paste,places,related,repeats,request,rifid,seconds,session,shared,silencewave,siteversion,source,startdate,strong,timed,timers,todate,unorganised,uuid,variable,verbosed,write,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/mui-file-format-editing"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/mui-file-format-editing"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/force-chrome-password-saving-by-removing-event-handlers-the-jsninja-way"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/red-color-alert-api"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/red-color-alert-api"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/red-color-alert-api"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/red-color-alert-api"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/red-color-alert-api"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/red-color-alert-api"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-07-18T17:41:39+00:00"     />
+  <meta name="page-datetime"                           content="2014-07-18T17:41:39+00:00"     />
+  <meta property="article:published_time"              content="2014-07-18T17:41:39+00:00"     />
+  <meta name="dcterms.date"                            content="2014-07-18T17:41:39+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2015-10-21T19:52:08+00:00"    />
+  <meta property="article:modified_time"               content="2015-10-21T19:52:08+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/red-color-alert-api"
+,"url"             : "https://icompile.eladkarako.com/red-color-alert-api"
+,"headline"        : "צבע אדום API"
+,"description"     : "צבע אדום API"
+,"datePosted"      : "2014-07-18T17:41:39+00:00"
+,"dateCreated"     : "2014-07-18T17:41:39+00:00"
+,"datePublished"   : "2014-07-18T17:41:39+00:00"
+,"dateModified"    : "2015-10-21T19:52:08+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0009925075041">
+  <header>
+    <h1 itemprop="headline">צבע אדום API</h1>
+    <sup>Posted at <time datetime="2015-10-21T19:52:08+00:00" itemprop="dateModified">Wed, 21 Oct 2015 19:52:08 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">new:<br/>
+<br/>
+https://www.oref.org.il/WarningMessages/alert/alerts.json<br/>
+https://www.oref.org.il/WarningMessages/History/AlertsHistory.json<br/>
+<br/>
+This gets a session cookie:<br/>
+<br/>
+https://www.oref.org.il/Shared/Ajax/GetTickerMessages.aspx?lang=he&isFirst=0&hpNewsId=901<br/>
+<br/>
+- - - - - - - - - - - - - -<br/>
+<br/>
+<code>view-source:https://www.oref.org.il/</code> in the inner-HTML, will see several JSON-like "databases", <br/>
+first "group" are those are used to related a geo-location Hebrew city-names to an area-code <sub>(<code>{ code: "6", area: "גליל עליון" }</code>)</sub>, <br/>
+next there will be a 'city-id UUID code to an area code (above) and estimation of the lat/lng' (probably using Google earth/map API) <sub>(<code>{cityID:"45FD1BB3DEA530F551074B0454E829E4", areaID:"34", area:"תבור", lat:"32.682085", lng:"35.320743"}</code>)</sub>, <br/>
+near the end of the page you'll have a really big "DB", combining verbosed name in Hebrew of the city, UUID for each city, and its area code, probably a combined "DB" (<sub><code>{label:"מכון וינגייט", value:"0", id:"2FACBF110E44944FBAF0C3767751F1FE", lat:"32.2630364", lng:"34.837004", areaid:"0"}</code>)</sub> ordered by Hebrew alef-beit.<br/>
+<br/>
+- - - - - - - - - - - - - -<br/>
+<br/>
+The <code>SilenceWave.js</code> (https://www.oref.org.il/Shared/ClientScripts/SilenceWave.js?SiteVersion=3.3) appears to control the UI part of the page, several timers, JavaScript UI-interaction handlers, extracting and parsing parts of the "DB" from inside the page, basic <strong>cookies</strong> parsing (they already have loaded jQuery!) (◔_◔) 🙄, a call to a global function that hasn't set in this JS-file <code>GetJsonFile</code> - but defined in another JS file called <code>main.js</code> (https://www.oref.org.il/Shared/ClientScripts/Design2015/main.js?SiteVersion=3.3), <br/>
+which uses XMLHTTPRequest to fetch the JSON, which also uses <code>console.log</code> to write down each time it does that <sub>(<code>[7:14:57] https://www.oref.org.il/WarningMessages/History/AlertsHistory.json</code>)</sub>, <br/>
+its URL is also set globally, this time in the page's main body <code>var urlGetAlerts='https://www.oref.org.il/WarningMessages/History/AlertsHistory.json';</strong> as a global-variable. <br/>
+It also seems that the code is so unorganised, there is a second loop for fetching the JSON right inside <code>WarningMessages.js</code> (https://www.oref.org.il/Shared/ClientScripts/WarningMessages/WarningMessages.js?SiteVersion=3.3) <br/>
+containing a duplicated-code copy/paste from <code>main.js</code>. The code repeats itself due to an empty cookie-check.<br/>
+<br/>
+This whole thing says that there is a request (at-least from two places) every 2 seconds, but sometimes every 1 seconds do to the two method-timed together :|<br/>
+<br/>
+- - - - - - - - - - - - - -<br/>
+<br/>
+these are the old API:<br/>
+<br/>
+<br/>
+http://www.oref.org.il/WarningMessages/History/AlertsHistory.json<br/>
+<br/>
+http://www.oref.org.il/Shared/Ajax/GoogleMap.aspx?lang=he&RiFid=1087<br/>
+<br/>
+http://www.oref.org.il/shared/Ajax/GoogleMap.aspx?City=&area=0&lang=he&RiFid=1087&from=City<br/>
+<br/>
+http://www.oref.org.il/Shared/Ajax/GetInstructionsByArea.aspx?lang=he&RiFid=1087<br/>
+<br/>
+url             = url + "&fromDate=" + startDate + "&toDate=" + endDate<br/>
+<br/>
+<br/>
+- - - - - <br/>
+<br/>
+Here is a example for the "database" from the old page:<br/>
+<a href="https://github.com/eladkarako/Informatics/blob/master/__%D7%90%D7%96%D7%95%D7%A8%D7%99%D7%9D.json">__אזורים.json</a><br/>
+<br/>
+<a href="https://github.com/eladkarako/Informatics/blob/master/__%D7%90%D7%96%D7%95%D7%A8%D7%99%D7%9D2.json">__אזורים2.json</a><br/>
+<br/>
+<a href="https://github.com/eladkarako/Informatics/blob/master/__%D7%99%D7%99%D7%A9%D7%95%D7%91%D7%99%D7%9D.json">__יישובים.json</a><br/>
+<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/mui-file-format-editing">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/force-chrome-password-saving-by-removing-event-handlers-the-jsninja-way">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/force-chrome-password-saving-by-removing-event-handlers-the-jsninja-way">Force Chrome Password Saving By Removing Event Handlers - The JSNinja Way!!!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/peerblock-unlimited-subscription">PeerBlock Unlimited Subscription</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/gnu-parallel-on-cygwin">GNU Parallel On Cygwin</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/legitimate-ip-microsoft">Legitimate Whitelist Connections From IP Ranges - Microsoft</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/regbot">RegBot</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/malicious-domains-lists">Malicious-Domains Lists</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/purifying-hosts-lists">Purifying HOSTS lists</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/browser-maintenance-using-sqlite">Browser Maintenance Using SQLITE</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/asset-pagefair-netads-min-js-reverse-engineering">JavaScript- Let's Reverse-Engineer Some Anti-AdBlock From asset.pagefair.net/ads.min.js</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/something-unknown-is-doing-we-dont-know-what">Something Unknown Is Doing We Don't Know What</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/curl_multi-example">PHP Ninja - A curl_multi working example - that actually works!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/qd-url-breakdown">Q&D URL breakdown</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/curl-and-cmd-fun-response-headers-manipulation-shell-script">CMD/Bash Script Ninja - cURL Response Header Number Manipulation</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-__definegetter__-and-__definesetter__-example">JavaScript Ninja - __defineGetter__ and __defineSetter__ advanced methods + Example: Creating innerText Implementation For Browsers That Do Not Have It</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-some-ip-related-method-from-an-old-project">JavaScript Some IP Related Method From An Old Project</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/some-md5-related-code-from-an-old-project">Some MD5 Related Code From An Old Project</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

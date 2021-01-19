@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>PokéMod</title>
+  <meta itemprop="name"                                content="PokéMod"       />
+  <meta name="dcterms.title"                           content="PokéMod"       />
+  <meta property="og:title"                            content="PokéMod"       />
+  <meta name="twitter:title"                           content="PokéMod"       />
+  <meta name="twitter:text:title"                      content="PokéMod"       />
+  <meta name="application-name"                        content="PokéMod"       />
+  <meta name="subject"                                 content="PokéMod"       />
+  <meta name="apple-mobile-web-app-title"              content="PokéMod"       />
+  <meta name="msapplication-tooltip"                   content="PokéMod"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="PokéMod"       />
+  <meta itemprop="description"                         content="PokéMod"       />
+  <meta name="dcterms.description"                     content="PokéMod"       />
+  <meta name="twitter:description"                     content="PokéMod"       />
+  <meta property="og:description"                      content="PokéMod"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="abtn,align,amount,android,animated,anonhosted,apkmirror,application,armeabi,assets,ball,blank,block,blocked,border,bottom,business,catch,caught,click,code,countries,currency,dailybonus,dashed,data,dcoffee,debugging,devices,dicon,display,donate,donatecc,donating,donations,download,downloading,egif,elad,enable,enjoy,escape,false,features,fees,ffff,forms,framework,free,game,green,hack,hacking,hacks,hate,hidden,holoholo,hosts,image,install,internal,item,items,itickable,karako,killed,lack,latest,learn,limit,limitations,location,lock,logo,longer,managers,masterball,medium,memory,mewtwo,mewtwoceleb,minapi,minutes,mock,modals,modesttree,modify,monoscript,mons,multipart,navigation,niantic,nianticlabs,nodpi,nofollow,number,onerror,ontimeout,open,orientation,origin,passed,paypal,phone,play,played,pointer,pokeball,pokedeximpl,pokemod,pokemon,pokemongo,popups,process,profile,related,release,rgba,rooted,runs,sandbox,save,scripts,scrolling,seamless,seconds,secret,servers,service,size,sleepy,special,stack,stardust,start,state,storefront,strong,stuff,support,switch,target,temporarily,title,tonight,turn,turned,unlimited,unsafe,upgrade,users,util,vbkoo,walkers,webscr,weird,work,works,wrote,xposed,youtube,zenject,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="abtn,align,amount,android,animated,anonhosted,apkmirror,application,armeabi,assets,ball,blank,block,blocked,border,bottom,business,catch,caught,click,code,countries,currency,dailybonus,dashed,data,dcoffee,debugging,devices,dicon,display,donate,donatecc,donating,donations,download,downloading,egif,elad,enable,enjoy,escape,false,features,fees,ffff,forms,framework,free,game,green,hack,hacking,hacks,hate,hidden,holoholo,hosts,image,install,internal,item,items,itickable,karako,killed,lack,latest,learn,limit,limitations,location,lock,logo,longer,managers,masterball,medium,memory,mewtwo,mewtwoceleb,minapi,minutes,mock,modals,modesttree,modify,monoscript,mons,multipart,navigation,niantic,nianticlabs,nodpi,nofollow,number,onerror,ontimeout,open,orientation,origin,passed,paypal,phone,play,played,pointer,pokeball,pokedeximpl,pokemod,pokemon,pokemongo,popups,process,profile,related,release,rgba,rooted,runs,sandbox,save,scripts,scrolling,seamless,seconds,secret,servers,service,size,sleepy,special,stack,stardust,start,state,storefront,strong,stuff,support,switch,target,temporarily,title,tonight,turn,turned,unlimited,unsafe,upgrade,users,util,vbkoo,walkers,webscr,weird,work,works,wrote,xposed,youtube,zenject,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/enable-http2"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/enable-http2"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/httaccess-timezone"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/pokemod"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/pokemod"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/pokemod"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/pokemod"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/pokemod"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/pokemod"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-08-18T16:31:21+00:00"     />
+  <meta name="page-datetime"                           content="2016-08-18T16:31:21+00:00"     />
+  <meta property="article:published_time"              content="2016-08-18T16:31:21+00:00"     />
+  <meta name="dcterms.date"                            content="2016-08-18T16:31:21+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-08-21T23:25:29+00:00"    />
+  <meta property="article:modified_time"               content="2016-08-21T23:25:29+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/pokemod"
+,"url"             : "https://icompile.eladkarako.com/pokemod"
+,"headline"        : "PokéMod"
+,"description"     : "PokéMod"
+,"datePosted"      : "2016-08-18T16:31:21+00:00"
+,"dateCreated"     : "2016-08-18T16:31:21+00:00"
+,"datePublished"   : "2016-08-18T16:31:21+00:00"
+,"dateModified"    : "2016-08-21T23:25:29+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0001887351741">
+  <header>
+    <h1 itemprop="headline">PokéMod</h1>
+    <sup>Posted at <time datetime="2016-08-21T23:25:29+00:00" itemprop="dateModified">Sun, 21 Aug 2016 23:25:29 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><img loading="lazy" lazyload="on"  title="PokéMod- The Pokémon Go MOD That Actually Works!" src="https://icompile.eladkarako.com/_uploads/2016/08/icompile.eladkarako.com_pokemod_application_int.png"  width="679" height="679" class="aligncenter size-full wp-image-5939" /><br/>
+<br/>
+<blockquote style="text-align:center;"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/08/icompile.eladkarako.com_pokemon_go_pokemod_play_as_mewtwo_mod_caught0.png"  width="150" height="150"/><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/08/icompile.eladkarako.com_pokemon_go_pokemod_play_as_mewtwo_mod_caught1.png"  width="150" height="150"/><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/08/icompile.eladkarako.com_pokemon_go_pokemod_play_as_mewtwo_mod_caught2.png"  width="150" height="150"/></blockquote><br/>
+<br/>
+<center><iframe loading="lazy" lazyload="on"  ontimeout='this.style.display="none";' onerror='this.style.display="none";' width="560" height="315" allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" target="" src="https://www.youtube-nocookie.com/embed/vBkoO5en0Ms?rel=0"></iframe></center><br/>
+<br/>
+<!--more--><br/>
+<br/>
+<blockquote><br/>
+<ul><br/>
+<li><strong>PokéMod</strong> Is An Application For <strong>Rooted</strong> <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/08/icompile.eladkarako.com_pokemod_assets_rooted_android-1.png"  width="48" height="48"/> Android-Devices Only.</li><br/>
+<li><strong>PokéMod</strong> Runs In The Background As A &#x1f31f;Service&#x1f31f;, Hacking Some Of The <strong>Pokémon Go</strong> Game-Stack's Memory-Values, To Enable Hidden Features And Modify Amount Of StarDust And Current Pokémons Around You.</li><br/>
+<li><strong>PokéMod</strong> <strong>DOES NOT</strong> Hack Any Of The <strong>Pokémon Go</strong> Servers, In Any Way&#x1f308;, It Only <strong>Temporarily <strong>Mod</strong>ify The Memory Of <em>YOUR PHONE</em>&#x1f4f2;</strong>.</li><br/>
+</blockquote><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/08/icompile.eladkarako.com_pokemod_logo2.png"  width="300" height="235" class="aligncenter size-medium wp-image-5905" /><br/>
+<br/>
+<hr/><br/>
+<blockquote><br/>
+<span style="border-bottom:2px dashed green; background:none rgba(255,252,185,.7);"><strong>How To Use?</strong></span><br/>
+<ol><br/>
+<li><br/>
+Download, Install, Open <strong>PokéMod</strong> Application. Click The Switch To <em>Turn It ON</em>.<br/>
+</li><br/>
+<li><br/>
+Open Your <strong>Pokémon Go</strong> Game As Usual.<br/>
+<span style="border-bottom:2px dashed green; background:none rgba(255,252,185,.7);">Features:</span><br/>
+<ul><br/>
+<li><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/08/icompile.eladkarako.com_pokemod_assets_pokeball.png"  width="32" height="32"/> <strong>Pokéball</strong>s Work 100% Of The Time <strong>On First-Try</strong> <code>["Masterball Mod"]</code></li><br/>
+<li>Unlimited <img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/08/icompile.eladkarako.com_pokemod_assets_stardust.png"  width="12" height="32"/> <strong>StarDust</strong> <code>["-FFFF StarDust Mod"]</code></li><br/>
+<li><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/08/icompile.eladkarako.com_pokemod_assets_mewtwo_animated_gif.gif"  width="90" height="70"/><strong>Every</strong> Pokémon Around You Is Now <strong>Mewtwo</strong>. <code>["MewtwoCeleb Mod"]</code></li><br/>
+</ul><br/>
+</li><br/>
+<li><br/>
+Once You've Passed <code>5</code> Minutes Play-Time <sup>(About 299 Seconds)</sup><br/>
+Your <strong>Pokémon Go</strong> Process Will Be Automatically Killed, And The <strong>PokéMod</strong> State Will Be Turned OFF Again.<br/>
+<br/>
+You Should Now Start <strong>Pokémon Go</strong> (While <strong>PokéMod</strong> Is Still OFF) And Log-In Once (You Can Play A Little Too..) To Save The Changes In Your Profile.<br/>
+<br/>
+Once You've Played A Little, You Can Once Again Set <strong>PokéMod</strong> ON Again, And Catch Some More <strong>Mewtwo(s)</strong> Or Upgrade Your Pokémons With StarDust. <br/>
+<br/>
+You Have (Again) <code>5</code> Minutes Of <strong>PokéMod</strong> Play-Time.<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/08/icompile.eladkarako.com_pokemon_go_pokemod_play_as_mewtwo_mod.png"  width="173" height="200" class="aligncenter size-full wp-image-5984" /><br/>
+</li><br/>
+</ol><br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+<span style="border-bottom:2px dashed green; background:none rgba(255,252,185,.7);"><strong>Compatibility</strong> With Other <strong>Pokémon Go</strong>-"Hacks":</span><br/>
+<strong>PokéMod</strong> Will Work With Any And All Of Your Hacks,<br/>
+You Can Use Any Of Your <em>XPOSED-Framework</em> Walkers, Or <em>Mock-Location</em> Related Stuff,<br/>
+And Still Enjoy The <strong><em>Special</em></strong> Features Of <strong>PokéMod</strong>.</blockquote><br/>
+<br/>
+<blockquote><br/>
+<span style="border-bottom:2px dashed green; background:none rgba(255,252,185,.7);">Why That <em>Weird</em> 5 Minutes Limit?</span><br/>
+- You Probably Want To Play Longer With <strong>PokéMod</strong>, Well, You Can't!<br/>
+<span style="border-bottom:2px dashed green; background:none rgba(255,252,185,.7);"><em>BUT WHY?????</em></span><br/>
+- It Is <strong>A <a href="https://eladkarako.com" target="_blank">Secret</a></strong>.. :\\<br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+<span style="border-bottom:2px dashed green; background:none rgba(255,252,185,.7);"><strong>Download</strong></span><br/>
+<ol><br/>
+<li><br/>
+<a href="http://www.apkmirror.com/apk/niantic-inc/pokemon-go/pokemon-go-0-33-0-release/pokemon-go-0-33-0-android-apk-download/" target="_blank" title="com.nianticlabs.pokemongo_0.33.0-2016080700_minAPI19(armeabi-v7a)(nodpi)_apkmirror.com.apk">Pokémon Go <code>0.33</code> From APKMirror [LATEST]</a> [61.40MB]<br/>
+</li><br/>
+<li><br/>
+<a rem-download="com.eladkarako.pokemongomod_0.33.0_(2016080700)_nodpi.apk" href="http://q.gs/6965854/com-eladkarako-pokemongomod-033-apk" target="_blank"  title="com.eladkarako.pokemongomod_0.33.0_(2016080700)_nodpi.apk">PokéMod <code>0.33</code></a> [11.32MB]<br/>
+</li><br/>
+</ol><br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+<span style="border-bottom:2px dashed green; background:none rgba(255,252,185,.7);"><strong>Support</strong></span><br/>
+Due To Lack Of Time (I've Wrote The Whole Thing Instead Of *Sleepy-Time ☕* Tonight..)<br/>
+I Only Support Donating Users. The App Is Free Though.. And There Are <strong>No Hidden Fees</strong>, Not Even Ads! <sup><strong>(<a href="http://hosts.eladkarako.com" target="_blank">I Hate Ads!!!</a>)</strong></sup><br/>
+<a target="_blank"  href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=7994YX29444PA&amp;lc=US&amp;item_name=Elad%20Karako&amp;item_number=stackoverflow%2dcoffee%2dicon&amp;amount=0%2e50&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted" rel="nofollow"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/08/btn_donate_SM.gif"  width="74" height="21" /></a><br/>
+</blockquote><br/>
+<br/>
+<blockquote><br/>
+<span style="border-bottom:2px dashed green; background:none rgba(255,252,185,.7);"><strong>Limitations</strong></span><br/>
+Don't Redistribute The <strong>PokéMod</strong> APP, Or Use Multipart-Download Managers ☹<br/>
+I Will Block You &#x1f63f;<br/>
+<br/>
+Also, Some Countries Are Blocked From Downloading The <strong>PokéMod</strong> APP!<br/>
+<br/>
+Sorry :] <sub>☞(..not really....)</sub><br/>
+</blockquote><br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/08/icompile.eladkarako.com_pokemod_logo.png"  width="96" height="96" class="aligncenter size-full wp-image-5901" /><br/>
+<br/>
+<hr/><br/>
+Dev.Hub: Learn More:<br/>
+<blockquote><br/>
+MonoScript Data<br/>
+  Niantic.Holoholo.Storefront/PokecoinCounter<br/>
+  Niantic.Holoholo.UI/XpAwardGuiController<br/>
+  PokemonMaterialLerp<br/>
+  DailyBonus<br/>
+  Niantic.Holoholo.Items/IPokestopDisk<br/>
+  ModestTree.Util.Debugging/ProfileBlock<br/>
+  Niantic.Holoholo.Internal/PokedexImpl<br/>
+  HoloholoShared<br/>
+  Zenject/ITickable<br/>
+</blockquote><br/>
+<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/enable-http2">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/httaccess-timezone">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/httaccess-timezone">SEO - Set Your Server's Timezone Using The .htaccess-File</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/7z-methods-and-compressions">7z methods and compressions</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-search-no-w3schools">Remove W3Schools Results From Google-Search Result Page</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/100-based-rating-to-5-star-rating-conversion">100% Based Rating To 5-Star Rating Conversion</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-svg-ninja-textual-half-a-star">HTML5-SVG Ninja - Textual Half A Star</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-use-in-product-review-for-time-lapse">FFMPEG Use In Product Review For Time-Lapse</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-and-canvas-playing-generate-random-noise-and-download-the-image-from-the-canvas">JavaScript and Canvas Playing : Generate Random Noise and Download The Image From The Canvas With New HTML5 Download <a> Attribute + Demo</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/0emm">0emm.com Belongs To Google!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-organization-specific-prefixes">CSS3 Organization Specific Prefixes</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/properly-set-content-disposition">Content-Disposition Header - Like A Boss &#x1f454;☕</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/htaccess-trick-to-proper-download-binary-files">.htaccess Trick To Proper Download Binary-Files</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-x-vienna-summit-september-2016">Google-X Vienna Summit September 2016</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unofficial-apktool-2-1">Unofficial ApkTool 2.1 &#x1f527;</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/contenteditable-and-readonly">ContentEditable And "ReadOnly"? YES!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-edit-everything-safely">Safely</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/samsung-note-5-secret-codes">Samsung Note 5 Secret Codes</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

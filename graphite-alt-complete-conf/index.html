@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>graphite alt complete conf</title>
+  <meta itemprop="name"                                content="graphite alt complete conf"       />
+  <meta name="dcterms.title"                           content="graphite alt complete conf"       />
+  <meta property="og:title"                            content="graphite alt complete conf"       />
+  <meta name="twitter:title"                           content="graphite alt complete conf"       />
+  <meta name="twitter:text:title"                      content="graphite alt complete conf"       />
+  <meta name="application-name"                        content="graphite alt complete conf"       />
+  <meta name="subject"                                 content="graphite alt complete conf"       />
+  <meta name="apple-mobile-web-app-title"              content="graphite alt complete conf"       />
+  <meta name="msapplication-tooltip"                   content="graphite alt complete conf"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="graphite alt complete conf"       />
+  <meta itemprop="description"                         content="graphite alt complete conf"       />
+  <meta name="dcterms.description"                     content="graphite alt complete conf"       />
+  <meta name="twitter:description"                     content="graphite alt complete conf"       />
+  <meta property="og:description"                      content="graphite alt complete conf"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="אולי,אפשר,אקסטרה,ארכיטקטורת,גרפייט,דאטהבייס,דצמבר,הוראות,התקנה,והערות,ינואר,לסקופ,לעבור,לפחות,לשורה,לשלוח,מאוחדת,מידע,מקום,סינכרון,רביעי,שינוי,שלישי,שמתחת,שנייה,תחזוקה,abcdef,accept,accepts,access,account,addr,address,adduser,admin,aggregates,alive,allowed,alter,apache,apparently,application,apply,apps,arguments,auth,auto,autoconf,automake,autorestart,autostart,avoid,backends,backlog,backup,base,bash,bhang,bigip,binary,bind,bison,blank,blob,blog,blogspot,booting,browse,build,bundle,bytes,cache,caching,cairo,call,carbon,cdcd,certfile,certificate,change,changed,changing,chdir,check,chmod,choose,chown,clean,cleanup,click,client,clients,clone,close,cluster,clustering,code,comma,command,complete,completed,components,composer,conf,config,configs,configure,connect,connection,connections,console,content,continue,control,controller,copies,copy,core,counter,create,created,createdb,createuser,creating,ctrl,curl,custom,daemon,daemonize,dashboard,data,database,databases,deal,debug,debugging,default,defined,definitions,delete,denied,deploy,deprecated,desktop,detect,detected,devel,development,device,diffrent,directories,directory,directoty,disable,disk,display,dist,distrib,django,download,drag,driver,droid,drop,duration,echo,edit,editor,elad,email,enable,engine,enjoy,enter,entering,entries,entry,environment,error,errors,essential,essentials,etsy,events,examples,excessive,executed,exist,exit,experience,fabric,facility,false,fast,feature,fetched,field,fields,file,filename,files,fill,find,fixture,floor,folders,fonts,forked,format,function,gauge,gedit,gems,generated,ghanei,gingerlime,gist,github,gnutls,good,graceful,granularity,graphing,graphite,graphitevm,graphiti,great,grep,group,groups,guest,gunicorn,handling,hardware,header,headers,home,host,hosts,hours,html,idea,ignore,images,import,imported,importerror,include,incr,index,indexes,info,information,inheritance,init,install,installed,installer,installing,instances,interface,internal,interval,karako,kernel,keyfile,kill,killed,killing,latest,leave,lets,level,libc,libcurl,libevent,libpq,library,libreadline,libsqlite,libssl,libtool,libxml,libxslt,libyaml,limit,line,links,linux,list,listen,listening,local,localconfig,localhost,locally,locate,location,lock,logfile,logformat,logger,login,logstash,loopback,machine,maintains,make,makes,manage,management,mask,master,match,math,maximum,memcache,memcached,memory,message,messages,metric,metrics,michael,mint,minute,misses,mkdir,mockbrain,mode,modify,module,mygraph,named,naming,nano,ncurses,needed,network,nginx,nicely,nodaemon,node,nodejs,nohup,noll,nopasswd,note,notice,number,object,older,open,openssl,optional,optionally,options,outputs,owners,packages,parameter,parent,pass,password,paste,paster,path,pattern,pending,permission,permissions,pgadmin,pgfoundry,pgmemcache,pkill,plugin,populate,port,postgesql,postgres,postgresql,prefix,preload,prepare,press,prevent,priority,problem,process,processes,production,profile,program,project,prompt,protocol,proxy,psql,psycopg,puppetlabs,push,putty,python,pythonpath,quit,raghavt,random,readthedocs,realtime,recent,redis,regex,regular,remove,removed,removing,render,replace,request,requests,require,required,resolution,resources,restart,restarted,restarting,retentions,role,root,ruby,running,runs,salt,sample,save,saver,sbin,scanned,schema,schemas,screen,scripts,search,seconds,secret,send,sending,separate,server,service,services,session,sessions,settings,setup,share,shared,sharing,shrinking,signal,silent,simple,single,size,skip,sleep,smaller,smallest,snapshots,socket,someuser,source,spew,spews,sqlite,stable,stackdriver,start,starting,stats,statsclient,statsd,status,stdio,steps,stop,stopsignal,storage,store,stored,stream,stuff,subversion,sucks,sudo,superuser,superusers,supervisor,supervisord,support,surjikal,switch,symbolic,sync,syncdb,syslog,system,table,tables,taggeditem,tagging,team,tells,template,terminal,test,timeout,timer,timetostore,timing,tips,tools,touch,trace,traceback,translates,turn,twistd,twisted,type,typing,uapi,umask,uname,understands,uninstall,unix,unlock,unneeded,update,upgrade,usage,user,username,users,userwarning,util,valid,variable,version,virtual,virtualbox,visudo,vmware,vmwaretools,wait,warnings,webapp,week,weird,wget,whisper,whould,widgets,window,winmachine,wins,wordpress,work,worker,workers,write,written,wsgi,xxxx,xxxxxxxxxx,xxxxxxxxxxx,xzvf,years,zlib,zope,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="אולי,אפשר,אקסטרה,ארכיטקטורת,גרפייט,דאטהבייס,דצמבר,הוראות,התקנה,והערות,ינואר,לסקופ,לעבור,לפחות,לשורה,לשלוח,מאוחדת,מידע,מקום,סינכרון,רביעי,שינוי,שלישי,שמתחת,שנייה,תחזוקה,abcdef,accept,accepts,access,account,addr,address,adduser,admin,aggregates,alive,allowed,alter,apache,apparently,application,apply,apps,arguments,auth,auto,autoconf,automake,autorestart,autostart,avoid,backends,backlog,backup,base,bash,bhang,bigip,binary,bind,bison,blank,blob,blog,blogspot,booting,browse,build,bundle,bytes,cache,caching,cairo,call,carbon,cdcd,certfile,certificate,change,changed,changing,chdir,check,chmod,choose,chown,clean,cleanup,click,client,clients,clone,close,cluster,clustering,code,comma,command,complete,completed,components,composer,conf,config,configs,configure,connect,connection,connections,console,content,continue,control,controller,copies,copy,core,counter,create,created,createdb,createuser,creating,ctrl,curl,custom,daemon,daemonize,dashboard,data,database,databases,deal,debug,debugging,default,defined,definitions,delete,denied,deploy,deprecated,desktop,detect,detected,devel,development,device,diffrent,directories,directory,directoty,disable,disk,display,dist,distrib,django,download,drag,driver,droid,drop,duration,echo,edit,editor,elad,email,enable,engine,enjoy,enter,entering,entries,entry,environment,error,errors,essential,essentials,etsy,events,examples,excessive,executed,exist,exit,experience,fabric,facility,false,fast,feature,fetched,field,fields,file,filename,files,fill,find,fixture,floor,folders,fonts,forked,format,function,gauge,gedit,gems,generated,ghanei,gingerlime,gist,github,gnutls,good,graceful,granularity,graphing,graphite,graphitevm,graphiti,great,grep,group,groups,guest,gunicorn,handling,hardware,header,headers,home,host,hosts,hours,html,idea,ignore,images,import,imported,importerror,include,incr,index,indexes,info,information,inheritance,init,install,installed,installer,installing,instances,interface,internal,interval,karako,kernel,keyfile,kill,killed,killing,latest,leave,lets,level,libc,libcurl,libevent,libpq,library,libreadline,libsqlite,libssl,libtool,libxml,libxslt,libyaml,limit,line,links,linux,list,listen,listening,local,localconfig,localhost,locally,locate,location,lock,logfile,logformat,logger,login,logstash,loopback,machine,maintains,make,makes,manage,management,mask,master,match,math,maximum,memcache,memcached,memory,message,messages,metric,metrics,michael,mint,minute,misses,mkdir,mockbrain,mode,modify,module,mygraph,named,naming,nano,ncurses,needed,network,nginx,nicely,nodaemon,node,nodejs,nohup,noll,nopasswd,note,notice,number,object,older,open,openssl,optional,optionally,options,outputs,owners,packages,parameter,parent,pass,password,paste,paster,path,pattern,pending,permission,permissions,pgadmin,pgfoundry,pgmemcache,pkill,plugin,populate,port,postgesql,postgres,postgresql,prefix,preload,prepare,press,prevent,priority,problem,process,processes,production,profile,program,project,prompt,protocol,proxy,psql,psycopg,puppetlabs,push,putty,python,pythonpath,quit,raghavt,random,readthedocs,realtime,recent,redis,regex,regular,remove,removed,removing,render,replace,request,requests,require,required,resolution,resources,restart,restarted,restarting,retentions,role,root,ruby,running,runs,salt,sample,save,saver,sbin,scanned,schema,schemas,screen,scripts,search,seconds,secret,send,sending,separate,server,service,services,session,sessions,settings,setup,share,shared,sharing,shrinking,signal,silent,simple,single,size,skip,sleep,smaller,smallest,snapshots,socket,someuser,source,spew,spews,sqlite,stable,stackdriver,start,starting,stats,statsclient,statsd,status,stdio,steps,stop,stopsignal,storage,store,stored,stream,stuff,subversion,sucks,sudo,superuser,superusers,supervisor,supervisord,support,surjikal,switch,symbolic,sync,syncdb,syslog,system,table,tables,taggeditem,tagging,team,tells,template,terminal,test,timeout,timer,timetostore,timing,tips,tools,touch,trace,traceback,translates,turn,twistd,twisted,type,typing,uapi,umask,uname,understands,uninstall,unix,unlock,unneeded,update,upgrade,usage,user,username,users,userwarning,util,valid,variable,version,virtual,virtualbox,visudo,vmware,vmwaretools,wait,warnings,webapp,week,weird,wget,whisper,whould,widgets,window,winmachine,wins,wordpress,work,worker,workers,write,written,wsgi,xxxx,xxxxxxxxxx,xxxxxxxxxxx,xzvf,years,zlib,zope,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/graphite-maintenance-manual-services-running-plus-tips"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/graphite-maintenance-manual-services-running-plus-tips"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/i-lv-github"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/graphite-alt-complete-conf"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/graphite-alt-complete-conf"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/graphite-alt-complete-conf"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/graphite-alt-complete-conf"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/graphite-alt-complete-conf"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/graphite-alt-complete-conf"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2013-12-22T14:18:57+00:00"     />
+  <meta name="page-datetime"                           content="2013-12-22T14:18:57+00:00"     />
+  <meta property="article:published_time"              content="2013-12-22T14:18:57+00:00"     />
+  <meta name="dcterms.date"                            content="2013-12-22T14:18:57+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2014-01-17T07:09:55+00:00"    />
+  <meta property="article:modified_time"               content="2014-01-17T07:09:55+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/graphite-alt-complete-conf"
+,"url"             : "https://icompile.eladkarako.com/graphite-alt-complete-conf"
+,"headline"        : "graphite alt complete conf"
+,"description"     : "graphite alt complete conf"
+,"datePosted"      : "2013-12-22T14:18:57+00:00"
+,"dateCreated"     : "2013-12-22T14:18:57+00:00"
+,"datePublished"   : "2013-12-22T14:18:57+00:00"
+,"dateModified"    : "2014-01-17T07:09:55+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007391277831">
+  <header>
+    <h1 itemprop="headline">graphite alt complete conf</h1>
+    <sup>Posted at <time datetime="2014-01-17T07:09:55+00:00" itemprop="dateModified">Fri, 17 Jan 2014 07:09:55 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><!--more--><br/>
+https://gist.github.com/surjikal/2777886#graphite-configuration<br/>
+http://blog.stuartherbert.com/php/2011/09/21/real-time-graphing-with-graphite/<br/>
+http://statsd.readthedocs.org/en/latest/index.html<br/>
+<br/>
+<br/>
+********************* on the machine tips:<br/>
+----------------------------how to install (first!)<br/>
+********** from my experience it is better to have single user named "graphite", and machine named "graphite1". "graphite" user is root.<br/>
+-make it auto login (in the install)<br/>
+-install open-ssh server, desktop sharing without password. now you can vnc and putty!<br/>
+----------------------------<br/>
+<br/>
+------------------------------------- after first install essentials part 1:<br/>
+1. sudo EDITOR=gedit visudo<br/>
+add:<br/>
+graphite ALL=(ALL) NOPASSWD: ALL<br/>
+to avoid sudo password prompt<br/>
+2. put screen the smallest resolution available (system settings - hardware - display - 600x800(4:3) - apply - save.<br/>
+3. disable lock (on configuration, and disable enter password on unlock) (system settings - screen saver and lock settings - remove 'x' from dim screen - turn screen off: never - lock OFF - remove 'x' from require my pass.<br/>
+***************************************************<br/>
+<br/>
+------------------------------------- install essentials part 2:<br/>
+sudo apt-get update<br/>
+sudo apt-get upgrade<br/>
+sudo apt-get install build-essential<br/>
+sudo apt-get install linux-headers-$(uname -r)<br/>
+<br/>
+***************************************************<br/>
+<br/>
+------------------------------------- install essentials part 3: Create a symbolic links for kernel headers. The vmware tools installer is looking for the version.h file in under [kernelsource path]/include/linux/version.h, it's not there. The location of version.h is [kernelsource path]include/generated/uapi/linux/version.h<br/>
+sudo ln -s /usr/src/linux-headers-$(uname -r)/include/generated/uapi/linux/version.h /usr/src/linux-headers-$(uname -r)/include/linux/version.h<br/>
+<br/>
+xxxxxxxxxxx    ********* creating snapshots is a great backup feature. with vmware tools installed on the machine snapshots can be smaller (shrinking memory stuff) -- its a good idea!<br/>
+xxxxxxxxxxx    <br/>
+xxxxxxxxxxx    ------------------------------------- installing VMware tools. start -----optional<br/>
+xxxxxxxxxxx    4. choose (on esx) -> right click machine->guest->install upgrade vmware tools, copy tar.gz from disk to desktop<br/>
+xxxxxxxxxxx    open this on real linux window (on ESX gui console).<br/>
+xxxxxxxxxxx    tar xzvf VMwareTools-8.3.7-341836.tar.gz<br/>
+xxxxxxxxxxx    cd vmware-tools-distrib/<br/>
+xxxxxxxxxxx    sudo ./vmware-install.pl<br/>
+xxxxxxxxxxx    (to uninstall run:   sudo ./vmware-uninstall-tools.pl )<br/>
+xxxxxxxxxxx    --->In which directoty do you want to install the binary files? [/usr/bin]                           ----> {ENTER}<br/>
+xxxxxxxxxxx    --->What is the directory that contains the init directories (rc0.d/ to rc6.d/)? [/etc]              ----> {ENTER}<br/>
+xxxxxxxxxxx    --->What is the directory that contains the init scripts? [/etc/init.d]                              ----> {ENTER}<br/>
+xxxxxxxxxxx    --->In which directory do you want to install the daemon files? [/usr/sbin]                          ----> {ENTER}<br/>
+xxxxxxxxxxx    --->In which directory do you want to install the library files? [/usr/lib/vmware-tools]             ----> {ENTER}<br/>
+xxxxxxxxxxx    --->The path "/usr/lib/vmware-tools" does not exist currently. This program is going to<br/>
+xxxxxxxxxxx     create it, including needed parent directories. Is this what you want? [yes]                        ----> {ENTER}<br/>
+xxxxxxxxxxx    --->In which directory do you want to install the documentation files? [/usr/share/doc/vmware-tools] ----> {ENTER}<br/>
+xxxxxxxxxxx    ---> ...some information...<br/>
+xxxxxxxxxxx    ---> Before running VMware Tools for the first time... configure it... [yes]                         ----> {ENTER}<br/>
+xxxxxxxxxxx    ---> Detected GCC at.... valid path... Whould you like to change it? [no]                            ----> {ENTER}<br/>
+xxxxxxxxxxx    ---> Detected kernel headers at.... valid path... Whould you like to change it? [no]                 ----> {ENTER}<br/>
+xxxxxxxxxxx    ---> *(ignore errors)*.....shared folders feature.. ..CD. [ Press Enter key to continue ]            ----> {ENTER}<br/>
+xxxxxxxxxxx    ---> .....fast network device driver... run again.. ..CD. [ Press Enter key to continue ]            ----> {ENTER}<br/>
+xxxxxxxxxxx    ---> .....host to guest drag and drop.. run again.. ..CD. [ Press Enter key to continue ]            ----> {ENTER}<br/>
+xxxxxxxxxxx    ---> Enjoy, --the VMware team.<br/>
+xxxxxxxxxxx    ---> ****** using the linux mint gui restart machine!!<br/>
+xxxxxxxxxxx    ---> close all vbc, putty sessions.<br/>
+xxxxxxxxxxx    ------------------------------------- installing VMware tools. end<br/>
+xxxxxxxxxxx    xxxxxxxxxx it removed the user 'karako', which is weird.<br/>
+*********************<br/>
+<br/>
+---------------------------------------------------------------Installing graphite base dependencies<br/>
+sudo apt-get install libpq-dev<br/>
+sudo apt-get install python-dev python-pip python-cairo python-psycopg2<br/>
+sudo apt-get install python-django python-django-tagging<br/>
+sudo apt-get install postgresql postgresql-client<br/>
+<br/>
+---------------------------------------------------------------Setup Postgresql<br/>
+--------------------------------------------------------------------------Start the postgresql service:<br/>
+sudo service postgresql start<br/>
+--------------------------------------------------------------------------Create a user and database for graphite:<br/>
+sudo -u postgres createuser graphite<br/>
+sudo -u postgres createdb -O graphite graphite<br/>
+--------------------------------------------------------------------------Change the password of the postgres and graphite users:<br/>
+sudo -u postgres psql -d template1<br/>
+    ALTER USER postgres WITH PASSWORD 'admin';<br/>
+    ALTER USER graphite WITH PASSWORD 'admin';<br/>
+    <br/>
+    **** ->> I use password 'admin' this is the full screen, you write after prompt "template1=# " and press {ENTER}, you write \\q to exit.<br/>
+    **************************************************************<br/>
+    *    psql (9.1.10)<br/>
+    *    Type "help" for help.<br/>
+    *<br/>
+    *    template1=# ALTER USER postgres WITH PASSWORD 'admin';<br/>
+    *    ALTER ROLE<br/>
+    *    template1=# ALTER USER graphite WITH PASSWORD 'admin';<br/>
+    *    ALTER ROLE<br/>
+    *    template1=# \\q<br/>
+    **************************************************************<br/>
+<br/>
+---------------------------------------------------------------Install Graphite<br/>
+sudo pip install carbon<br/>
+sudo pip install whisper<br/>
+sudo pip install graphite-web<br/>
+---------------------------------------------------------------Graphite configuration<br/>
+--------------------------------------------------------------------------1. Removing pyc's. For some reason, there are pyc files in the webapp. Let's delete those:<br/>
+cd /opt/graphite/webapp/graphite<br/>
+sudo rm 'find -name "*.pyc"'<br/>
+--------------------------------------------------------------------------2. Database. Here you will want to edit the settings file so that graphite can connect to postgesql. First you have to create a copy of the example settings file:<br/>
+cd /opt/graphite/webapp/graphite<br/>
+sudo cp local_settings.py{.example,}<br/>
+--------------------------------------------------------------------------** modify database connection. Here's what you probably want to modify in config:<br/>
+sudo gedit local_settings.py<br/>
+    fill the database configuration, notice 'admin' is the db password I use. and change 'ENGINE' too..<br/>
+<br/>
+<br/>
+#DATABASES = {<br/>
+#    'default': {<br/>
+#        'NAME': '/opt/graphite/storage/graphite.db',<br/>
+#        'ENGINE': 'django.db.backends.sqlite3',<br/>
+#        'USER': '',<br/>
+#        'PASSWORD': '',<br/>
+#        'HOST': '',<br/>
+#        'PORT': ''<br/>
+#    }<br/>
+#}<br/>
+#<br/>
+------------------------------>take a long string from here instead "https://api.wordpress.org/secret-key/1.1/salt/"<br/>
+SECRET_KEY = '1234567890abcdef'<br/>
+........<br/>
+<br/>
+DATABASES = {<br/>
+    'default': {<br/>
+        'NAME': 'graphite',<br/>
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',<br/>
+        'USER': 'graphite',<br/>
+        'PASSWORD': 'admin',<br/>
+        'HOST': 'localhost',<br/>
+        'PORT': '5432'<br/>
+    }<br/>
+}<br/>
+<br/>
+#########################<br/>
+# Cluster Configuration #<br/>
+#########################<br/>
+# (To avoid excessive DNS loo<br/>
+<br/>
+------------------------------>optionally set memcached options<br/>
+<br/>
+--------------------------------------->edit local_settings.py again: **since we are not using clustering we can use loopback address (127.0.0.1)<br/>
+sudo gedit local_settings.py<br/>
+<br/>
+locate:<br/>
+    # You should not use the loopback address (127.0.0.1) here if using clustering<br/>
+    # as every webapp in the cluster should use the exact same values to prevent<br/>
+    # unneeded cache misses. Set to [] to disable caching of images and fetched data<br/>
+    #MEMCACHE_HOSTS = ['10.10.10.10:11211', '10.10.10.11:11211', '10.10.10.12:11211']<br/>
+    #DEFAULT_CACHE_DURATION = 60 # Cache images and data for 1 minute<br/>
+<br/>
+replace with:<br/>
+    # You should not use the loopback address (127.0.0.1) here if using clustering<br/>
+    # as every webapp in the cluster should use the exact same values to prevent<br/>
+    # unneeded cache misses. Set to [] to disable caching of images and fetched data<br/>
+    MEMCACHE_HOSTS = ['127.0.0.1:11211']<br/>
+    DEFAULT_CACHE_DURATION = 60 # Cache images and data for 1 minute<br/>
+<br/>
+--------------------------------------->install memcached and memcached-components (for graphite only, we will not deal with postgreSQL for now!!!)<br/>
+sudo apt-get install libevent-dev libmemcached-dev<br/>
+sudo apt-get install memcached python-memcache <br/>
+<br/>
+xxx   optional                        <br/>
+xxx   optional                        -------------------------------------------->install<br/>
+xxx   optional                        sudo apt-get install libevent-dev libmemcached-dev<br/>
+xxx   optional                        sudo apt-get install memcached python-memcache <br/>
+xxx   optional                        sudo wget http://pgfoundry.org/frs/download.php/3018/pgmemcache_2.0.6.tar.bz2<br/>
+xxx   optional                        sudo tar -xvf pgmemcache_2.0.6.tar.bz2 <br/>
+xxx   optional                        cd pgmemcache/<br/>
+xxx   optional                        sudo ./configure<br/>
+xxx   optional                        sudo make<br/>
+xxx   optional                        sudo make install<br/>
+xxx   optional                        -------------------------------------------->make sure it runs on port 11211 (by default it is localhost:11211)<br/>
+xxx   optional                        ps aux | grep memcache<br/>
+xxx   optional                        -------------------------------------------->check memcache stats by typing:<br/>
+xxx   optional                        echo "stats settings" | nc localhost 11211<br/>
+xxx   optional                        -------------------------------------------->we don't use memcached for check memcache stats by typing:<br/>
+xxx   optional                        <br/>
+xxx   optional                        continue with later: http://raghavt.blogspot.co.il/2011/07/pgmemcache-setup-and-usage.html<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+---------------------------------------------------->download pgAdmin III and test the connection.<br/>
+--------------------------------------------------------------------------** After you are done, you have to tell Django to populate the database:<br/>
+sudo python manage.py syncdb<br/>
+<br/>
+        --->will tell you:<br/>
+            Creating tables ...<br/>
+            Creating table account_profile<br/>
+            Creating table account_variable<br/>
+            Creating table account_view<br/>
+            Creating table account_window<br/>
+            Creating table account_mygraph<br/>
+            Creating table dashboard_dashboard_owners<br/>
+            Creating table dashboard_dashboard<br/>
+            Creating table events_event<br/>
+            Creating table auth_permission<br/>
+            Creating table auth_group_permissions<br/>
+            Creating table auth_group<br/>
+            Creating table auth_user_groups<br/>
+            Creating table auth_user_user_permissions<br/>
+            Creating table auth_user<br/>
+            Creating table django_session<br/>
+            Creating table django_admin_log<br/>
+            Creating table django_content_type<br/>
+            Creating table tagging_tag<br/>
+            Creating table tagging_taggeditem<br/>
+<br/>
+            You just installed Django's auth system, which means you don't have any superusers defined.<br/>
+            Would you like to create one now? (yes/no): <br/>
+<br/>
+<br/>
+------> I've used u:"root" p:"admin", no email.<br/>
+            You just installed Django's auth system, which means you don't have any superusers defined.<br/>
+            Would you like to create one now? (yes/no): yes<br/>
+            Username (leave blank to use 'root'): <br/>
+            Email address: <br/>
+            Password: <br/>
+            Password (again): <br/>
+            Superuser created successfully.<br/>
+            Installing custom SQL ...<br/>
+            Installing indexes ...<br/>
+            Installed 0 object(s) from 0 fixture(s)<br/>
+            elad@elad-VirtualBox:/opt/graphite/webapp/graphite$ <br/>
+<br/>
+<br/>
+---------------------------------------------------------------Carbon configuration<br/>
+cd /opt/graphite/conf<br/>
+<br/>
+-------------------------------------------------------------------------- Let's create copies of some conf files:<br/>
+sudo cp carbon.conf{.example,}<br/>
+sudo cp storage-schemas.conf{.example,}<br/>
+-------------------------------------------------------------------------- make carbon listen to localhost, which is a good idea since we've used local DB.  and carbon's job is to make that data available for real-time graphing immediately and try to get it stored on disk as fast as possible.<br/>
+sudo gedit ./carbon.conf<br/>
+    --> search replace 0.0.0.0<br/>
+        with 127.0.0.1<br/>
+        <br/>
+-------------------------------------------------------------------------- make carbon listen to localhost, which is a good idea since we've used local DB.  and carbon's job is to make that data available for real-time graphing immediately and try to get it stored on disk as fast as possible.<br/>
+sudo gedit ./storage-schemas.conf<br/>
+default:<br/>
+    *****************************************************************************************<br/>
+        # Schema definitions for Whisper files. Entries are scanned in order,<br/>
+        # and first match wins. This file is scanned for changes every 60 seconds.<br/>
+        #<br/>
+        #  [name]<br/>
+        #  pattern = regex<br/>
+        #  retentions = timePerPoint:timeToStore, timePerPoint:timeToStore, ...<br/>
+<br/>
+        # Carbon's internal metrics. This entry should match what is specified in<br/>
+        # CARBON_METRIC_PREFIX and CARBON_METRIC_INTERVAL settings<br/>
+        [carbon]<br/>
+        pattern = ^carbon\\.<br/>
+        retentions = 60:90d<br/>
+<br/>
+        [default_1min_for_1day]<br/>
+        pattern = .*<br/>
+        retentions = 60s:1d<br/>
+    *****************************************************************************************<br/>
+        xxxx				replace with:<br/>
+        xxxx				    ***************************************************************************************** -------->That translates to: 6 hours of 10 second data (what we consider "near-realtime"), 1 week of 1 minute data, 5 years of 10 minute data<br/>
+        xxxx				# Schema definitions for Whisper files. Entries are scanned in order,<br/>
+        xxxx				# and first match wins. This file is scanned for changes every 60 seconds.<br/>
+        xxxx				#<br/>
+        xxxx				#  [name]<br/>
+        xxxx				#  pattern = regex<br/>
+        xxxx				#  retentions = timePerPoint:timeToStore, timePerPoint:timeToStore, ...<br/>
+        xxxx				<br/>
+        xxxx				# Carbon's internal metrics. This entry should match what is specified in<br/>
+        xxxx				# CARBON_METRIC_PREFIX and CARBON_METRIC_INTERVAL settings<br/>
+        xxxx				#[carbon]<br/>
+        xxxx				#pattern = ^carbon\\.<br/>
+        xxxx				#retentions = 60:90d<br/>
+        xxxx				#<br/>
+        xxxx				#[default_1min_for_1day]<br/>
+        xxxx				#pattern = .*<br/>
+        xxxx				#retentions = 60s:1d<br/>
+        xxxx				[stats]<br/>
+        xxxx				priority = 110<br/>
+        xxxx				pattern = ^stats\\..*<br/>
+        xxxx				retentions = 10:2160,60:10080,600:262974<br/>
+        xxxx				    *****************************************************************************************<br/>
+replace with:<br/>
+[stats]<br/>
+priority = 110<br/>
+pattern = ^stats\\..*<br/>
+retentions = 5:3h,10:6h,60:14d,600:2y<br/>
+<br/>
+-------------------------------------------------------------------------- We'll make a directory to store all the example configs, to clean up things:<br/>
+sudo mkdir examples<br/>
+sudo mv *.example examples/<br/>
+<br/>
+<br/>
+---------------------------------------------------------------Permissions<br/>
+-------------------------------------------------------------------------- Let's create a graphite user:<br/>
+sudo adduser graphite<br/>
+---> use password:"admin"<br/>
+-------------------------------------------------------------------------- make it root. <br/>
+>>>go to configurations and set user to be "admin".<br/>
+-------------------------------------------------------------------------- skip entering password for root (this is just for fun):<br/>
+sudo EDITOR=gedit visudo<br/>
+>>add at the end of the file:<br/>
+graphite ALL=(ALL) NOPASSWD: ALL<br/>
+<br/>
+-------------------------------------------------------------------------- Then, lets make him own the graphite install:<br/>
+sudo chown -R graphite:graphite /opt/graphite<br/>
+---------------------------------------------------------------Starting up Graphite<br/>
+-------------------------------------------------------------------------- Log in as the graphite user:<br/>
+su graphite<br/>
+---> use password:"admin"<br/>
+-------------------------------------------------------------------------- Starting carbon:<br/>
+sudo python /opt/graphite/bin/carbon-cache.py start<br/>
+<br/>
+--------------->>>> problem:<br/>
+                        elad@elad-VirtualBox:/opt/graphite/webapp/graphite$ sudo python /opt/graphite/bin/carbon-cache.py start<br/>
+                        /usr/lib/python2.7/dist-packages/zope/__init__.py:3: UserWarning: Module twisted was already imported from /usr/local/lib/python2.7/dist-packages/twisted/__init__.pyc, but /opt/graphite/lib is being added to sys.path<br/>
+                          import pkg_resources<br/>
+                        Traceback (most recent call last):<br/>
+                          File "/opt/graphite/bin/carbon-cache.py", line 28, in <module><br/>
+                            from carbon.util import run_twistd_plugin<br/>
+                          File "/opt/graphite/lib/carbon/util.py", line 21, in <module><br/>
+                            from twisted.scripts._twistd_unix import daemonize<br/>
+                        ImportError: cannot import name daemonize<br/>
+                        elad@elad-VirtualBox:/opt/graphite/webapp/graphite$ <br/>
+<br/>
+---------------->>>> because we need older version of twisted: https://github.com/graphite-project/carbon/blob/master/requirements.txt install older version<br/>
+sudo pip install 'Twisted<12.0'<br/>
+<br/>
+---------------->>> and again:<br/>
+sudo python /opt/graphite/bin/carbon-cache.py start<br/>
+<br/>
+-------------------------------------------------------------------------- Starting the Graphite server (Run the web interface under the django development server)<br/>
+sudo python /opt/graphite/bin/run-graphite-devel-server.py /opt/graphite<br/>
+<br/>
+<br/>
+--------------------------------------- browse it..  it will be available locally for now.<br/>
+http://localhost:8080<br/>
+<br/>
+<br/>
+<br/>
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::<br/>
+::::********************************************************************::::<br/>
+::::****    you can't use run-graphite-devel-server.py on production    ::::<br/>
+::::****              set an internal server using gunicorn.            ::::<br/>
+::::********************************************************************::::<br/>
+****************************************************************************<br/>
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::<br/>
+<br/>
+<br/>
+<br/>
+---------------------------------------------------------------------------------------------------------------------:::::::::::::::::::::::::::: using http://www.ghanei.net/graphite<br/>
+<br/>
+<br/>
+--------------------------------------- production internal server (not Apache, not nginx - gunicorn) ----- using http://www.ghanei.net/graphite<br/>
+Graphite comes with a sample WSGI entry point file in /opt/graphite/conf/graphite.wsgi.example. Copy this file to /opt/graphite/conf/graphite_wsgi.py and then start gunicorn:<br/>
+<br/>
+sudo pip install gunicorn<br/>
+cd /opt/graphite/conf/<br/>
+sudo cp ./examples/graphite.wsgi.example ./graphite_wsgi.py<br/>
+---------------------------------------------- optional--------------- sudo gedit graphite_wsgi.py<br/>
+<br/>
+--------------------------------------- run gunicorn as a server, that accepts outside connections (don't use 127.0.0.1- use 0.0.0.0)<br/>
+gunicorn -b '0.0.0.0:8080' -u graphite -g graphite -w 2 graphite_wsgi:application<br/>
+or<br/>
+gunicorn --bind '0.0.0.0:8080' --user graphite --group graphite --workers 2 graphite_wsgi:application<br/>
+<br/>
+****for your information:<br/>
+            usage: gunicorn [OPTIONS] [APP_MODULE]<br/>
+<br/>
+            optional arguments:<br/>
+              -h, --help            show this help message and exit<br/>
+              -v, --version         show program's version number and exit<br/>
+              --proxy-protocol      Enable detect PROXY protocol (PROXY mode). [False]<br/>
+              --worker-connections INT<br/>
+                                    The maximum number of simultaneous clients. [1000]<br/>
+              --pythonpath STRING   A directory to add to the Python path. [None]<br/>
+              -R, --enable-stdio-inheritance<br/>
+                                    Enable stdio inheritance [False]<br/>
+              -k STRING, --worker-class STRING<br/>
+                                    The type of workers to use. [sync]<br/>
+              --access-logfile FILE<br/>
+                                    The Access log file to write to. [None]<br/>
+              --log-syslog-facility SYSLOG_FACILITY<br/>
+                                    Syslog facility name [user]<br/>
+              --log-syslog          Log to syslog. [False]<br/>
+              --preload             Load application code before the worker processes are<br/>
+                                    forked. [False]<br/>
+              -w INT, --workers INT<br/>
+                                    The number of worker process for handling requests.<br/>
+                                    [1]<br/>
+              --graceful-timeout INT<br/>
+                                    Timeout for graceful workers restart. [30]<br/>
+              --keep-alive INT      The number of seconds to wait for requests on a Keep-<br/>
+                                    Alive connection. [2]<br/>
+              -D, --daemon          Daemonize the Gunicorn process. [False]<br/>
+              -p FILE, --pid FILE   A filename to use for the PID file. [None]<br/>
+              -u USER, --user USER  Switch worker processes to run as this user. [1001]<br/>
+              -g GROUP, --group GROUP<br/>
+                                    Switch worker process to run as this group. [1002]<br/>
+              --spew                Install a trace function that spews every line<br/>
+                                    executed by the server. [False]<br/>
+              -n STRING, --name STRING<br/>
+                                    A base to use with setproctitle for process naming.<br/>
+                                    [None]<br/>
+              -m INT, --umask INT   A bit mask for the file mode on files written by<br/>
+                                    Gunicorn. [0]<br/>
+              --limit-request-fields INT<br/>
+                                    Limit the number of HTTP headers fields in a request.<br/>
+                                    [100]<br/>
+              -c FILE, --config FILE<br/>
+                                    The path to a Gunicorn config file. [None]<br/>
+              --access-logformat STRING<br/>
+                                    The Access log format . [%(h)s %(l)s %(u)s %(t)s<br/>
+                                    "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"]<br/>
+              --logger-class STRING<br/>
+                                    The logger you want to use to log events in gunicorn.<br/>
+                                    [simple]<br/>
+              --log-config FILE     The log config file to use. [None]<br/>
+              --check-config        Check the configuration.. [False]<br/>
+              --chdir CHDIR         Chdir to specified directory before apps loading.<br/>
+                                    [/opt/graphite/conf]<br/>
+              --proxy-allow-from PROXY_ALLOW_IPS<br/>
+                                    Front-end's IPs from which allowed accept proxy<br/>
+                                    requests (comma separate). [127.0.0.1]<br/>
+              --max-requests INT    The maximum number of requests a worker will process<br/>
+                                    before restarting. [0]<br/>
+              --settings STRING     The Python path to a Django settings module.<br/>
+                                    (deprecated) [None]<br/>
+              --limit-request-line INT<br/>
+                                    The maximum size of HTTP request line in bytes. [4094]<br/>
+              --certfile FILE       SSL certificate file [None]<br/>
+              --paster STRING       Load a paste.deploy config file. [None]<br/>
+              --error-logfile FILE, --log-file FILE<br/>
+                                    The Error log file to write to. [-]<br/>
+              --log-level LEVEL     The granularity of Error log outputs. [info]<br/>
+              --log-syslog-to SYSLOG_ADDR<br/>
+                                    Address to send syslog messages [udp://localhost:514]<br/>
+              --log-syslog-prefix SYSLOG_PREFIX<br/>
+                                    makes gunicorn use the parameter as program-name in<br/>
+                                    the syslog entries. [None]<br/>
+              -b ADDRESS, --bind ADDRESS<br/>
+                                    The socket to bind. [['127.0.0.1:8000']]<br/>
+              -e ENV, --env ENV     Set environment variable (key=value). [[]]<br/>
+              --limit-request-field_size INT<br/>
+                                    Limit the allowed size of an HTTP request header<br/>
+                                    field. [8190]<br/>
+              -t INT, --timeout INT<br/>
+                                    Workers silent for more than this many seconds are<br/>
+                                    killed and restarted. [30]<br/>
+              --debug               Turn on debugging in the server. [False]<br/>
+              --keyfile FILE        SSL key file [None]<br/>
+              --backlog INT         The maximum number of pending connections. [2048]<br/>
+<br/>
+--------------------------------------- handling permission denied warnings:<br/>
+sudo chmod -R a+w /opt/graphite/storage<br/>
+--------------------------------------- try again:<br/>
+gunicorn -b '0.0.0.0:8080' -u graphite -g graphite -w 2 graphite_wsgi:application<br/>
+    **** you will see in the console:<br/>
+        2013-12-23 16:11:22 [6828] [INFO] Starting gunicorn 18.0<br/>
+        2013-12-23 16:11:22 [6828] [INFO] Listening at: http://0.0.0.0:8080 (6828)<br/>
+        2013-12-23 16:11:22 [6828] [INFO] Using worker: sync<br/>
+        2013-12-23 16:11:22 [6833] [INFO] Booting worker with pid: 6833<br/>
+        2013-12-23 16:11:22 [6834] [INFO] Booting worker with pid: 6834<br/>
+<br/>
+<br/>
+--------------------------------------- browse it<br/>
+http://localhost:8080<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+1. סינכרון דאטהבייס<br/>
+sudo python /opt/graphite/bin/carbon-cache.py stop<br/>
+sudo python /opt/graphite/webapp/graphite/manage.py syncdb<br/>
+<br/>
+sudo python /opt/graphite/bin/carbon-cache.py start<br/>
+cd /opt/graphite/conf/<br/>
+su graphite<br/>
+-------------->use pass "admin"<br/>
+sudo gunicorn -b '0.0.0.0:8080' -u graphite -g graphite -w 2 graphite_wsgi:application<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+x        --------------------------------------- control services controller<br/>
+x        ----------------------------------------------------- control services controller: gunicorn, carbon-cache: http://www.michael-noll.com/blog/2013/06/06/installing-and-running-graphite-via-rpm-and-supervisord/<br/>
+x        sudo apt-get install supervisor<br/>
+x        ----------------------------------------------------- config: http://thecolinblog.blogspot.co.il/2012/05/supervisor-entries-for-graphite.html tells me how to set supervisor to control all graphite processes - supervisord.conf file:<br/>
+x        [program:graphite]<br/>
+x        ; django gunicorn instance for graphite<br/>
+x        command=/home/someuser/devel/graphite/bin/gunicorn_django --config=/home/someuser/devel/graphite/etc/gunicorn.py --pid=/home/someuser/devel/graphite/var/gunicorn.pid webapp/graphite/<br/>
+x        environment=PYTHONPATH="/home/someuser/devel/graphite"<br/>
+x        user=someuser<br/>
+x        autostart=true<br/>
+x        autorestart=true<br/>
+x        directory=/home/someuser/devel/graphite/<br/>
+x         <br/>
+x        [program:carbon]<br/>
+x        ; this is the only way to get carbon to start<br/>
+x        ; in a manner that supervisor understands.<br/>
+x        ; --debug is REQUIRED (apparently)<br/>
+x        ;;;;;;command=/home/someuser/devel/graphite/bin/carbon-cache.py --debug start<br/>
+x        command=/home/someuser/devel/graphite/bin/carbon-cache.py --nodaemon start<br/>
+x        directory=/home/someuser/devel/graphite/<br/>
+x        environment=PYTHONPATH="/home/someuser/devel/graphite"<br/>
+x        user=cdcd<br/>
+x        autostart=true<br/>
+x        autorestart=true<br/>
+x<br/>
+x<br/>
+x        -------------------------------------better: https://gist.github.com/bhang/3004142<br/>
+x        supervisord_graphite_statsd.conf<br/>
+x                        [program:gunicorn-graphite]<br/>
+x                        command=/usr/local/bin/gunicorn_django -u www-data -g www-data -b 127.0.0.1:8080 --log-file=/opt/graphite/storage/log/webapp/gunicorn.log /opt/graphite/webapp/graphite/settings.py<br/>
+x                        process_name=%(program_name)s<br/>
+x                        autostart=true<br/>
+x                        autorestart=true<br/>
+x                        stopsignal=QUIT<br/>
+x                        user=www-data<br/>
+x                         <br/>
+x                        [program:carbon-cache]<br/>
+x                        command=python /opt/graphite/bin/carbon-cache.py --debug start<br/>
+x                        process_name=%(program_name)s<br/>
+x                        autostart=true<br/>
+x                        autorestart=true<br/>
+x                        stopsignal=QUIT<br/>
+x                         <br/>
+x                        [program:statsd]<br/>
+x                        command=/usr/bin/node /opt/statsd/stats.js /opt/statsd/localConfig.js<br/>
+x                        process_name=%(program_name)s<br/>
+x                        autostart=true<br/>
+x                        autorestart=true<br/>
+x                        stopsignal=QUIT<br/>
+x                        user=www-data<br/>
+x<br/>
+x<br/>
+x<br/>
+x        ----------------<br/>
+x<br/>
+x<br/>
+x<br/>
+x        --------------------------------------- work with Apache on other stuff<br/>
+x<br/>
+x<br/>
+x<br/>
+x<br/>
+x<br/>
+x<br/>
+x<br/>
+x<br/>
+x<br/>
+x<br/>
+x<br/>
+x<br/>
+x<br/>
+x<br/>
+x<br/>
+x<br/>
+x        ======================================================== after changing the storage-schemas.conf:<br/>
+x        ** give graphite superuser so it could do this:<br/>
+x        sudo /etc/init.d/memcached status<br/>
+x        sudo /etc/init.d/memcached restart<br/>
+x<br/>
+x        sudo python /opt/graphite/webapp/graphite/manage.py syncdb<br/>
+x        sudo python /opt/graphite/bin/carbon-cache.py stop<br/>
+x        sudo python /opt/graphite/bin/carbon-cache.py status<br/>
+x        sudo python /opt/graphite/bin/carbon-cache.py start<br/>
+x        gunicorn -b '0.0.0.0:8080' -u graphite -g graphite -w 2 graphite_wsgi:application<br/>
+x<br/>
+x<br/>
+x<br/>
+x        #------------------------->start nodejs/statsd<br/>
+x        #<br/>
+x        #cd /opt/graphite/statsd<br/>
+x        #nohup /usr/local/bin/node stats.js local.js &<br/>
+x        #<br/>
+x<br/>
+x        -----------------------------------------------------> render data:<br/>
+x        run or edit:<br/>
+x        sudo gedit /opt/graphite/examples/example-client.py<br/>
+x        sudo /opt/graphite/examples/example-client.py<br/>
+<br/>
+<br/>
+<br/>
+1. סינכרון דאטהבייס<br/>
+sudo python /opt/graphite/bin/carbon-cache.py stop<br/>
+sudo python /opt/graphite/webapp/graphite/manage.py syncdb<br/>
+<br/>
+sudo python /opt/graphite/bin/carbon-cache.py start<br/>
+cd /opt/graphite/conf/<br/>
+su graphite<br/>
+-------------->use pass "admin"<br/>
+sudo gunicorn -b '0.0.0.0:8080' -u graphite -g graphite -w 2 graphite_wsgi:application<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+--------------------------------------------------make carbon open outside:<br/>
+cd /opt/graphite/conf<br/>
+sudo gedit carbon.conf<br/>
+    --->search replace every 127.0.0.1 to 0.0.0.1<br/>
+    run: --- to restart all services<br/>
+            #!/bin/bash<br/>
+            GRAPHITEPASSWORD=admin<br/>
+<br/>
+            ## kill carbon-cache(carbon-cache maintains data-stream on postgreSQL)<br/>
+            sudo python /opt/graphite/bin/carbon-cache.py stop<br/>
+<br/>
+            ## make sure command completed signal...<br/>
+            sleep 1<br/>
+<br/>
+            ## sync database<br/>
+            sudo python /opt/graphite/webapp/graphite/manage.py syncdb<br/>
+<br/>
+            ## make sure command completed signal...<br/>
+            sleep 1<br/>
+<br/>
+            ## restart carbon-cache<br/>
+            sudo python /opt/graphite/bin/carbon-cache.py start<br/>
+<br/>
+            ## make sure command completed signal...<br/>
+            sleep 1<br/>
+<br/>
+            ## run graphite through 'graphite' username, it is important.<br/>
+            cd /opt/graphite/conf/<br/>
+<br/>
+            ## killing nicely all old instances<br/>
+            sudo pkill gunicorn<br/>
+<br/>
+            ## make sure command completed signal...<br/>
+            sleep 1<br/>
+<br/>
+            echo $GRAPHITEPASSWORD | sudo -S gunicorn -b '0.0.0.0:8080' -u graphite -g graphite -w 2 graphite_wsgi:application<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+=-=-=-<br/>
+postgreSQL<br/>
+http://www.postgresql.org<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+=-=-=-=-=-=-=-=-12:48 יום רביעי 25 דצמבר 2013<br/>
+using logstash statsd to send metrics to graphite<br/>
+http://puppetlabs.com/blog/using-logstash-push-metrics-graphite<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+============================================================= שינוי ארכיטקטורת מידע לסקופ של שנייה אחת<br/>
+<br/>
+[ctrl + c] to stop gunicorn server.<br/>
+pkill gunicorn<br/>
+sudo python /opt/graphite/bin/carbon-cache.py stop<br/>
+sudo /etc/init.d/memcached stop<br/>
+sudo rm -rf /opt/graphite/storage/whisper/stats*<br/>
+<br/>
+sudo gedit /opt/graphite/conf/storage-schemas.conf<br/>
+        [real_time]<br/>
+        priority = 200<br/>
+        pattern = ^stats.*<br/>
+        retentions = 1:34560000<br/>
+--------------------------------------------<br/>
+------------------------------------------------------------------------ install statsd<br/>
+sudo apt-get install git nodejs npm redis-server fonts-droid<br/>
+cd /opt/<br/>
+sudo git clone https://github.com/etsy/statsd.git<br/>
+cd statsd<br/>
+sudo cp exampleConfig.js localConfig.js<br/>
+<br/>
+------------------------------------------------------------------------ config statsd<br/>
+sudo gedit localConfig.js<br/>
+        {<br/>
+          graphitePort: 2003<br/>
+        , graphiteHost: "localhost"<br/>
+        , port: 8125<br/>
+        , backends: [ "./backends/graphite" ]<br/>
+        , flushInterval: 1000<br/>
+        }<br/>
+------------------------------------------------------------------------ memcache and graphite config<br/>
+cd /opt/graphite/webapp/graphite<br/>
+sudo gedit local_settings.py<br/>
+    DEFAULT_CACHE_DURATION = 1 # cache for 1 sec<br/>
+<br/>
+cd /opt/graphite/webapp/content/js/<br/>
+sudo gedit composer_widgets.js<br/>
+<br/>
+---- locate "toggleAutoRefresh" at line 1010, locate "var interval = 60" change to "var interval = 1"<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+------------------------------------------------------------------ שינוי ארכיטקטורת מידע לפחות מקום 15:59 יום שלישי 31 דצמבר 2013<br/>
+sudo nano /opt/graphite/conf/storage-schemas.conf<br/>
+**********************************<br/>
+[real_time]<br/>
+priority = 200<br/>
+pattern = ^stats.*<br/>
+retentions = 1:1h,10:6h,60:14d<br/>
+**********************************<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+------------------------------------------------------------------ 08:46 יום רביעי 01 ינואר 2014 installing graphiti<br/>
+cd /opt/<br/>
+sudo git clone https://github.com/paperlesspost/graphiti.git<br/>
+sudo apt-get install ttf-droid<br/>
+<br/>
+---------------------------------------rvm installation steps<br/>
+su graphite<br/>
+---->pass is admin<br/>
+sudo curl -L get.rvm.io | sudo bash -s stable<br/>
+sudo source /etc/profile.d/rvm.sh<br/>
+<br/>
+---------------------------------------check rvm "need to have list"<br/>
+sudo rvm requirements<br/>
+<br/>
+-------------------------------------------- can be diffrent!<br/>
+sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev <br/>
+sudo apt-get install libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion<br/>
+sudo apt-get install libcurl4-gnutls-dev<br/>
+<br/>
+-------------------------------------------- prepare two ruby version (needed for regular and ruby gems)<br/>
+sudo rvm install 1.8.7<br/>
+sudo rvm use 1.8.7<br/>
+sudo rvm install 1.9.3<br/>
+sudo rvm use 1.9.3<br/>
+<br/>
+sudo gem install bundle<br/>
+sudo bundle install<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br/>
+כל מה שמתחת לשורה זו הוא אקסטרה והערות<br/>
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br/>
+<br/>
+<br/>
+<br/>
+----------------------------------------------------- run everything as graphite:graphite<br/>
+su graphite<br/>
+---- pass "admin<br/>
+sudo chown -R graphite:graphite /opt/graphite<br/>
+<br/>
+---------------------------------------------open another terminal<br/>
+su graphite<br/>
+sudo /etc/init.d/memcached start<br/>
+sudo python /opt/graphite/bin/carbon-cache.py start<br/>
+sudo python /opt/graphite/webapp/graphite/manage.py cleanup<br/>
+sudo python /opt/graphite/webapp/graphite/manage.py syncdb<br/>
+cd /opt/graphite/conf/<br/>
+echo admin | sudo -S gunicorn -b '0.0.0.0:8080' -u graphite -g graphite -w 2 graphite_wsgi:application<br/>
+<br/>
+---------------------------------------------open another terminal<br/>
+cd /opt/statsd<br/>
+sudo nodejs stats.js localConfig.js<br/>
+---keep window running, connections will be available in graphitevm1.myCompanyHost.com:8125<br/>
+<br/>
+<br/>
+-----------------------------------------------------------------------------------------------------------------------------------------------<br/>
+:?איך לשלוח מידע<br/>
+-------------------------------------------------->הוראות http://www.stackdriver.com/sending-aggregates-with-statsd/<br/>
+------------------------------------- go to mockbrain.myCompanyHost.com<br/>
+sudo apt-get install python-pip<br/>
+sudo pip install statsd<br/>
+sudo nano /etc/hosts<br/>
+#there is no DNS available, since IT support sucks....<br/>
+172.29.40.112 elad1bigip.myCompanyHost.com      ############## management 172.29.40.112, self ip 172.29.42.103 virtual server 172.29.42.113<br/>
+172.29.42.110 mockbrain.myCompanyHost.com<br/>
+172.29.42.112 graphite1.myCompanyHost.com #note: this ip will be changed soon...<br/>
+172.29.42.112 graphitevm1.myCompanyHost.com #note: this ip will be changed soon...<br/>
+172.29.42.214 winmachine.myCompanyHost.com<br/>
+<br/>
+--------------------------------------------------create information stream to statsd<br/>
+cd ~<br/>
+sudo touch send_data_so_statsd_graphite.py<br/>
+--------------------------------<br/>
+sudo gedit send_data_so_statsd_graphite.py<br/>
+--------------------------------<br/>
+#!/usr/bin/python<br/>
+<br/>
+import random<br/>
+import time<br/>
+import statsd<br/>
+import math<br/>
+sc = statsd.StatsClient('graphite1.myCompanyHost.com', 8125)<br/>
+while True:<br/>
+    sc.incr('test_statsd_metrics.test_counter')<br/>
+    sc.timing('test_statsd_metrics.test_timer', math.floor(random.random() * 100))<br/>
+    sc.gauge('test_statsd_metrics.test_gauge', math.floor(random.random() * 100))<br/>
+    time.sleep(random.random())<br/>
+--------------------------------<br/>
+<br/>
+sudo python send_data_so_statsd_graphite.py<br/>
+<br/>
+-------------------------------------------------------- install python statsd lib<br/>
+------------ follow http://www.stackdriver.com/sending-aggregates-with-statsd/ instructions:<br/>
+------------------------------------------------------------------------------------------------<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+-------------- אולי אפשר לעבור לזה:<br/>
+https://github.com/gingerlime/graphite-fabric<br/>
+זה התקנה מאוחדת של גרפייט<br/>
+<br/>
+whisper-clean.py<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+תחזוקה<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/graphite-maintenance-manual-services-running-plus-tips">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/i-lv-github">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/i-lv-github">I <3 GitHub</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stuff-you-should-probably-uninstall-from-your-low-budget-server">Stuff you should probably uninstall from your low-budget server</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solve-missing-files-for-vmware-tools">Solve missing files for VMWare tools</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/firefox-front-end-test-checklist">Firefox Front-End Test Checklist</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bunch-of-links-regarding-javascript-testing-i-continues-deployment">headless JavaScript Testing with PhJS /i Continues Deployment</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/driver-boot-test-signing-off-windows-7">driver boot - test signing off - Windows 7</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chuck-norris-and-his-theological-philosophical-influence-on-the-israeli">Chuck Norris And His Theological - Philosophical Influence On The Israeli Society</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/intellij-webstorm-phpstorm-java-jdk-8-0-x64">IntelliJ WebStorm PhpStorm Java-JDK 8.0 x64</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/increase-undo-jetbrains-webstorm-intellij">Increase Undo - Jetbrains WebStorm IntelliJ</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/finally-that-bridge">Finally- That Bridge!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/high-quality-animated-gif-using-imagemagick-a-k-a-image-magic">high quality animated-gif using ImageMagick (a.k.a 'Image-Magic')</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cool-facepalm-back-and-forth-infinite-loop-high-quality-animated-gif">Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-code-segment-piggybackdata-the-proper-object-oriented-way-to-overcome-known-problem-of-callback-hell-and-chained-callbacks-with-single-data-parameter">JavaScript Code-Segment: PiggybackData : The Proper Object-Oriented Way to Overcome Known Problem Of "Callback-Hell" And Chained Callbacks With Single Data Parameter</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disconnect-a-windows-based-virtual-machine-without-logging-off">Without Logging-Off</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/varnish-cache-wamp-nodejs-socket-io">varnish-cache + WAMP + NodeJS + Socket.IO</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/c-cryptography-code-segments-i-use-a-lot-lately">C++ Cryptography Code-Segments I Use A Lot Lately</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

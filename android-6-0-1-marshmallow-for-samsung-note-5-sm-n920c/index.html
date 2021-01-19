@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C</title>
+  <meta itemprop="name"                                content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+  <meta name="dcterms.title"                           content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+  <meta property="og:title"                            content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+  <meta name="twitter:title"                           content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+  <meta name="twitter:text:title"                      content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+  <meta name="application-name"                        content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+  <meta name="subject"                                 content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+  <meta name="apple-mobile-web-app-title"              content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+  <meta name="msapplication-tooltip"                   content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+  <meta itemprop="description"                         content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+  <meta name="dcterms.description"                     content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+  <meta name="twitter:description"                     content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+  <meta property="og:description"                      content="Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="aadd,akcs,almhlzb,android,argument,askdbtm,asprgez,auth,bash,bdww,bglpevrcwr,blank,bold,boot,booted,btlbfzb,build,cache,caches,cambodia,carrier,changelist,checksum,clean,code,colb,color,confirm,content,continue,cookie,country,credentials,cwulncqv,cxxu,data,database,date,dcac,dgdmyvhr,download,downloading,dpfl,easy,eavlyaxd,echo,ejbuy,enkqu,erbs,exists,extra,extracting,factory,faster,fbusn,fcnx,fhzchkc,file,filename,files,filesfm,firmwares,firoeq,flush,flushing,font,found,friendly,galaxy,gbshoyh,ghjw,good,googled,gpjkfh,hgzz,hidden,hmwlhxb,home,html,hugefiles,image,images,individual,install,internal,iqzj,jmacrywa,kdrlyf,kies,kxsigi,length,lfetth,login,lollipop,lubvrxvl,makes,marshmallow,mdmtjrv,menu,minutes,mirror,mode,model,modem,modified,msxvcfic,mtueytkbdt,needed,ngfk,nginx,note,odin,olfbqyorld,ooblnj,ooupc,panic,past,payload,pfkqdick,pion,plhv,qfzje,qkffq,rcies,recovery,reset,rghost,rsahl,rstxv,sammobile,samsung,sboot,script,sendmyway,server,shift,size,solidfiles,speedyshare,stage,strong,success,syny,system,target,tdkgjgir,tfjkz,thol,title,toqi,torrent,trusty,tuesi,turbobit,turns,tusfiles,txcrfxrs,upload,uppit,userscloud,ustar,uzdycd,version,warning,weight,wfudn,wipe,wiped,wkbcg,work,write,wxjaj,xjxnfm,xldu,xmko,xqyvb,zippyshare,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="aadd,akcs,almhlzb,android,argument,askdbtm,asprgez,auth,bash,bdww,bglpevrcwr,blank,bold,boot,booted,btlbfzb,build,cache,caches,cambodia,carrier,changelist,checksum,clean,code,colb,color,confirm,content,continue,cookie,country,credentials,cwulncqv,cxxu,data,database,date,dcac,dgdmyvhr,download,downloading,dpfl,easy,eavlyaxd,echo,ejbuy,enkqu,erbs,exists,extra,extracting,factory,faster,fbusn,fcnx,fhzchkc,file,filename,files,filesfm,firmwares,firoeq,flush,flushing,font,found,friendly,galaxy,gbshoyh,ghjw,good,googled,gpjkfh,hgzz,hidden,hmwlhxb,home,html,hugefiles,image,images,individual,install,internal,iqzj,jmacrywa,kdrlyf,kies,kxsigi,length,lfetth,login,lollipop,lubvrxvl,makes,marshmallow,mdmtjrv,menu,minutes,mirror,mode,model,modem,modified,msxvcfic,mtueytkbdt,needed,ngfk,nginx,note,odin,olfbqyorld,ooblnj,ooupc,panic,past,payload,pfkqdick,pion,plhv,qfzje,qkffq,rcies,recovery,reset,rghost,rsahl,rstxv,sammobile,samsung,sboot,script,sendmyway,server,shift,size,solidfiles,speedyshare,stage,strong,success,syny,system,target,tdkgjgir,tfjkz,thol,title,toqi,torrent,trusty,tuesi,turbobit,turns,tusfiles,txcrfxrs,upload,uppit,userscloud,ustar,uzdycd,version,warning,weight,wfudn,wipe,wiped,wkbcg,work,write,wxjaj,xjxnfm,xldu,xmko,xqyvb,zippyshare,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/http-response-status-codes"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/http-response-status-codes"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/making-xda-code-readable-using-javascript-css3"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/android-6-0-1-marshmallow-for-samsung-note-5-sm-n920c"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/android-6-0-1-marshmallow-for-samsung-note-5-sm-n920c"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/android-6-0-1-marshmallow-for-samsung-note-5-sm-n920c"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/android-6-0-1-marshmallow-for-samsung-note-5-sm-n920c"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/android-6-0-1-marshmallow-for-samsung-note-5-sm-n920c"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/android-6-0-1-marshmallow-for-samsung-note-5-sm-n920c"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-02-21T15:10:57+00:00"     />
+  <meta name="page-datetime"                           content="2016-02-21T15:10:57+00:00"     />
+  <meta property="article:published_time"              content="2016-02-21T15:10:57+00:00"     />
+  <meta name="dcterms.date"                            content="2016-02-21T15:10:57+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-02-23T02:53:35+00:00"    />
+  <meta property="article:modified_time"               content="2016-02-23T02:53:35+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/android-6-0-1-marshmallow-for-samsung-note-5-sm-n920c"
+,"url"             : "https://icompile.eladkarako.com/android-6-0-1-marshmallow-for-samsung-note-5-sm-n920c"
+,"headline"        : "Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"
+,"description"     : "Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C"
+,"datePosted"      : "2016-02-21T15:10:57+00:00"
+,"dateCreated"     : "2016-02-21T15:10:57+00:00"
+,"datePublished"   : "2016-02-21T15:10:57+00:00"
+,"dateModified"    : "2016-02-23T02:53:35+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007547606541">
+  <header>
+    <h1 itemprop="headline">Android 6.0.1 Marshmallow For Samsung Note 5 SM-N920C</h1>
+    <sup>Posted at <time datetime="2016-02-23T02:53:35+00:00" itemprop="dateModified">Tue, 23 Feb 2016 02:53:35 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/02/icompile.eladkarako.com_samsung_galaxy_note_5_sm-n920c_android_marshmallow_6.0.png" alt="icompile.eladkarako.com_samsung_galaxy_note_5_sm-n920c_android_marshmallow_6.0" width="705" height="380" class="aligncenter size-full wp-image-4667" /><br/>
+<br/>
+<pre>
+Galaxy Note5 - SM-N920C
+
+Model               SM-N920C
+Model name          Galaxy Note5
+Changelist          110166628
+Build date          Mon, 15 Feb 2016 06:40:05 +0000
+
+
+Date                2016-02-19
+Country/Carrier     Cambodia
+Android Version     6.0.1
+PDA                 N920CXXU2BPB6
+CSC                 N920COLB2BPB6
+Kies?               NO
+</pre><br/>
+<br/>
+<!--more--><br/>
+<br/>
+The checksum stage will take GOOD 10 MINUTES. DON'T PANIC! IT'S OK!<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/02/icompile.eladkarako.com_android6_note5_odin_install_1_2016-02-23_041713.jpg" alt="icompile.eladkarako.com_android6_note5_odin_install_1_2016-02-23_041713" rem-width="890" rem-height="416" class="aligncenter size-full wp-image-4706" /><br/>
+<br/>
+The flush stage is about 12 minutes, I've booted using recovery app from lollipop, to recovery, factory reset, then wiped everything again (caches, data, internal, system), then booted using the recovery menu to download mode. no need to wipe anything after flushing, since it is a clean installation.<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2016/02/icompile.eladkarako.com_android6_note5_odin_install_2_2016-02-23_044752.jpg" alt="icompile.eladkarako.com_android6_note5_odin_install_2_2016-02-23_044752" rem-width="630" rem-height="559" class="aligncenter size-full wp-image-4705" /><br/>
+<br/>
+<hr /><br/>
+<br/>
+<blockquote><br/>
+<a href="http://www.sammobile.com/firmwares/database/SM-N920C/" target="_blank">http://www.sammobile.com/firmwares/database/SM-N920C/</a><br/>
+-><br/>
+<a href="http://www.sammobile.com/firmwares/download/65659/N920CXXU2BPB6_N920COLB2BPB6_CAM/" target="_blank">http://www.sammobile.com/firmwares/download/65659/N920CXXU2BPB6_N920COLB2BPB6_CAM/</a><br/>
+-><br/>
+<strong>(need to login first!)</strong><br/>
+-><br/>
+<a href="http://www.sammobile.com/firmwares/confirm/65659/N920CXXU2BPB6_N920COLB2BPB6_CAM/" target="_blank">http://www.sammobile.com/firmwares/confirm/65659/N920CXXU2BPB6_N920COLB2BPB6_CAM/</a><br/>
+-><br/>
+<a href="http://dl.sammobile.com/OlFbQyorLD1XLDU1RTcnTUZYKjwlMUYqNSxTKDApJFoOARlJUyA5RStXV0cwUlNCQV5cSlNJEgkJHQBNSVpcQUdRXUU./N920CXXU2BPB6_N920COLB2BPB6_CAM.zip" target="_blank">http://dl.sammobile.com/OlFbQyorLD1XLDU1RTcnTUZYKjwlMUYqNSxTKDApJFoOARlJUyA5RStXV0cwUlNCQV5cSlNJEgkJHQBNSVpcQUdRXUU./N920CXXU2BPB6_N920COLB2BPB6_CAM.zip</a><br/>
+<strong>(*link above will only work with <em>your login credentials<sub>(auth. by cookie)</sub>!</em>)</strong><br/>
+</blockquote><br/>
+<br/>
+<hr /><br/>
+<br/>
+<pre><br/>
+File Name:        <strong>N920CXXU2BPB6_N920COLB2BPB6_CAM.zip</strong><br/>
+Size:             <strong>1.88GiB</strong><br/>
+<br/>
+Content-Length:   <strong>2015776220</strong><br/>
+Last-Modified:    <strong>Fri, 19 Feb 2016 06:22:58 GMT</strong><br/>
+Server:           <strong>nginx</strong><br/>
+</pre><br/>
+<br/>
+<br/>
+<br/>
+<blockquote box-like><br/>
+I've Googled around and found it also exists as torrent<br/>
+<sub>(*maybe* faster..)</sub><br/>
+<a mirror target="_blank" title="ZippyShare" href="http://www97.zippyshare.com/v/txcRfxrs/file.html">http://www97.zippyshare.com/v/txcRfxrs/file.html</a><br/>
+<a mirror target="_blank" title="TusFiles" href="https://tusfiles.net/1wa4tdkgjgir">https://tusfiles.net/1wa4tdkgjgir</a><br/>
+<a mirror target="_blank" title="SolidFiles" href="http://www.solidfiles.com/d/726dcac948">http://www.solidfiles.com/d/726dcac948</a><br/>
+<a mirror target="_blank" title="HugeFiles" href="http://hugefiles.net/19ihn8s5jas0">http://hugefiles.net/19ihn8s5jas0</a><br/>
+<a mirror target="_blank" title="RGhost" href="http://pion.rghost.net/">http://pion.rghost.net/</a><br/>
+<a mirror target="_blank" title="TurboBit" href="http://turbobit.net/kyn4tuesi87z.html">http://turbobit.net/kyn4tuesi87z.html</a><br/>
+<a mirror target="_blank" title="SendMyWay" href="https://www.sendmyway.com/www2t0her07o">https://www.sendmyway.com/www2t0her07o</a><br/>
+<a mirror target="_blank" title="SpeedyShare" href="http://www.speedyshare.com/file/FCnx2/N920CXXU2BPB6_N920COLB2BPB6_CAM.zip.torrent">http://www.speedyshare.com/file/FCnx2/N920CXXU2BPB6_N920COLB2BPB6_CAM.zip.torrent</a><br/>
+<a mirror target="_blank" title="FilesFm" href="https://files.fm/u/hgzz9cpb">https://files.fm/u/hgzz9cpb</a><br/>
+<a mirror target="_blank" title="UsersCloud" href="https://userscloud.com/3wxjaj3bdm7j">https://userscloud.com/3wxjaj3bdm7j</a><br/>
+<br/>
+</blockquote><br/>
+<br/>
+<hr /><br/>
+<br/>
+<h3>Downloading individual files</h3><br/>
+<code>N920CXXU2BPB6_N920COLB2BPB6_CAM.zip</code> contains <code>N920CXXU2BPB6_N920COLB2BPB6_N920CXXU2BPB2_HOME.tar.md5</code> which contains 8 files:<br/>
+<code>boot.img</code>[27.3MiB], <code>cache.img</code>[105MiB], <code>cm.bin</code>[2.01MiB], <code>hidden.img</code>[89.4MiB], <code>modem.bin</code>[36.1MiB], <code>recovery.img</code>[28.1MiB], <code>sboot.bin</code>[1.55MiB] and <code>system.img</code>[3.67GiB].<br/>
+<br/>
+using 7zip extracting is easy (you'll see a warning about the tar.md5 having extra data after the payload, it is ok..).<br/>
+my trusty bash script - <br/>
+<pre><span style='color:#696969; '>#!</span><span style='color:#007997; '>/bin/bash</span><br/>
+<br/>
+<span style='color:#800000; font-weight:bold; '>while</span> <span style='color:#808030; '>[</span><span style='color:#0000e6; '>[ $# > 0 </span><span style='color:#808030; '>]</span>]<span style='color:#800080; '>;</span> <span style='color:#800000; font-weight:bold; '>do</span><br/>
+  <span style='color:#797997; '>filename</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"</span><span style='color:#797997; '>$1</span><span style='color:#0000e6; '>"</span><br/>
+  <br/>
+  <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>[</span><span style='color:#0000e6; '>[ ! </span><span style='color:#808030; '>-</span><span style='color:#0000e6; '>f $filename </span><span style='color:#808030; '>]</span>]<span style='color:#800080; '>;</span> <span style='color:#800000; font-weight:bold; '>then</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>echo</span> <span style='color:#0000e6; '>"</span><span style='color:#797997; '>$filename</span><span style='color:#0000e6; '> is not a file"</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>shift</span> <span style='color:#696969; '># past argument</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>continue</span><span style='color:#800080; '>;</span><br/>
+  <span style='color:#800000; font-weight:bold; '>fi</span><br/>
+  <br/>
+  <br/>
+  tar -H ustar <span style='color:#44aadd; '>-c</span> <span style='color:#797997; '>$filename</span> <span style='color:#e34adc; '>></span><span style='color:#797997; '>$filename.tar</span><br/>
+  md5sum <span style='color:#44aadd; '>-t</span> <span style='color:#797997; '>$filename.tar</span> <span style='color:#e34adc; '>></span><span style='color:#e34adc; '>></span><span style='color:#797997; '>$filename.tar</span><br/>
+  mv <span style='color:#797997; '>$filename.tar</span> <span style='color:#797997; '>$filename.tar.md5</span><br/>
+<br/>
+  <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>[</span><span style='color:#0000e6; '>[ </span><span style='color:#808030; '>-</span><span style='color:#0000e6; '>f $filename.tar.md5 </span><span style='color:#808030; '>]</span>]<span style='color:#800080; '>;</span> <span style='color:#800000; font-weight:bold; '>then</span><br/>
+    <span style='color:#bb7977; font-weight:bold; '>echo</span> <span style='color:#0000e6; '>"</span><span style='color:#797997; '>$filename.tar.md5</span><span style='color:#0000e6; '> write success"</span><br/>
+  <span style='color:#800000; font-weight:bold; '>fi</span><br/>
+<br/>
+  <span style='color:#bb7977; font-weight:bold; '>shift</span> <span style='color:#696969; '># past argument</span><br/>
+<span style='color:#800000; font-weight:bold; '>done</span><br/>
+</pre><br/>
+-- turns every file into <code>*******.tar.md5</code>, which makes it odin-friendly, so you could download (for example) just the recovery or modem images instead of the whole rom, in case needed.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<blockquote box-like><strong>sboot.bin.tar.md5</strong><em>[1.56MiB]</em><br/>
+<a mirror target="_blank" title="ZippyShare" href="http://www44.zippyshare.com/v/LuBVrxVl/file.html">http://www44.zippyshare.com/v/LuBVrxVl/file.html</a><br/>
+<a mirror target="_blank" title="TusFiles" href="https://tusfiles.net/6zev29do1zpy">https://tusfiles.net/6zev29do1zpy</a><br/>
+<a mirror target="_blank" title="SolidFiles" href="http://www.solidfiles.com/d/37e05e3f0e">http://www.solidfiles.com/d/37e05e3f0e</a><br/>
+<a mirror target="_blank" title="HugeFiles" href="http://hugefiles.net/i4snl8s9od6c">http://hugefiles.net/i4snl8s9od6c</a><br/>
+<a mirror target="_blank" title="RGhost" href="http://pion.rghost.net/">http://pion.rghost.net/</a><br/>
+<a mirror target="_blank" title="SendMyWay" href="https://www.sendmyway.com/gbshoyh63jqb">https://www.sendmyway.com/gbshoyh63jqb</a><br/>
+<a mirror target="_blank" title="TurboBit" href="http://turbobit.net/a6ghjw13r1jd.html">http://turbobit.net/a6ghjw13r1jd.html</a><br/>
+<a mirror target="_blank" title="SpeedyShare" href="http://www.speedyshare.com/file/ejBuY/sboot.bin.tar.md5">http://www.speedyshare.com/file/ejBuY/sboot.bin.tar.md5</a><br/>
+<a mirror target="_blank" title="FilesFm" href="https://files.fm/u/wkbcg76b">https://files.fm/u/wkbcg76b</a><br/>
+<a mirror target="_blank" title="UsersCloud" href="https://userscloud.com/m7mtueytkbdt">https://userscloud.com/m7mtueytkbdt</a><br/>
+</blockquote><br/>
+<br/>
+<blockquote box-like><strong>cm.bin.tar.md5</strong><em>[2.02MiB]</em><br/>
+<a mirror target="_blank" title="ZippyShare" href="http://www26.zippyshare.com/v/Tzz35vVy/file.html">http://www26.zippyshare.com/v/Tzz35vVy/file.html</a><br/>
+<a mirror target="_blank" title="TusFiles" href="https://tusfiles.net/tfjkz5rd7674">https://tusfiles.net/tfjkz5rd7674</a><br/>
+<a mirror target="_blank" title="SolidFiles" href="http://www.solidfiles.com/d/d002211e4f">http://www.solidfiles.com/d/d002211e4f</a><br/>
+<a mirror target="_blank" title="TurboBit" href="http://turbobit.net/n4a3almhlzb1.html">http://turbobit.net/n4a3almhlzb1.html</a><br/>
+<a mirror target="_blank" title="HugeFiles" href="http://hugefiles.net/w9klf5jr8ytz">http://hugefiles.net/w9klf5jr8ytz</a><br/>
+<a mirror target="_blank" title="SendMyWay" href="https://www.sendmyway.com/5xy0l4g4lo9z">https://www.sendmyway.com/5xy0l4g4lo9z</a><br/>
+<a mirror target="_blank" title="RGhost" href="http://pion.rghost.net/">http://pion.rghost.net/</a><br/>
+<a mirror target="_blank" title="FilesFm" href="https://files.fm/u/p5sg6arr">https://files.fm/u/p5sg6arr</a><br/>
+<a mirror target="_blank" title="SpeedyShare" href="http://www.speedyshare.com/file/nZA4y/cm.bin.tar.md5">http://www.speedyshare.com/file/nZA4y/cm.bin.tar.md5</a><br/>
+<a mirror target="_blank" title="UsersCloud" href="https://userscloud.com/askdbtm57a7s">https://userscloud.com/askdbtm57a7s</a><br/>
+</blockquote><br/>
+<br/>
+<blockquote box-like><strong>boot.img.tar.md5</strong><em>[27.30MiB]</em><br/>
+<a mirror target="_blank" title="ZippyShare" href="http://www111.zippyshare.com/v/EaVLyAxD/file.html">http://www111.zippyshare.com/v/EaVLyAxD/file.html</a><br/>
+<a mirror target="_blank" title="TusFiles" href="https://tusfiles.net/0w039hmwlhxb">https://tusfiles.net/0w039hmwlhxb</a><br/>
+<a mirror target="_blank" title="SolidFiles" href="http://www.solidfiles.com/d/45e2c74333">http://www.solidfiles.com/d/45e2c74333</a><br/>
+<a mirror target="_blank" title="HugeFiles" href="http://hugefiles.net/9t9j72plhv6y">http://hugefiles.net/9t9j72plhv6y</a><br/>
+<a mirror target="_blank" title="SendMyWay" href="https://www.sendmyway.com/w9t5n5ya4i8m">https://www.sendmyway.com/w9t5n5ya4i8m</a><br/>
+<a mirror target="_blank" title="RGhost" href="http://pion.rghost.net/8DGdmyvHR">http://pion.rghost.net/8DGdmyvHR</a><br/>
+<a mirror target="_blank" title="TurboBit" href="http://turbobit.net/thol63enkqu7.html">http://turbobit.net/thol63enkqu7.html</a><br/>
+<a mirror target="_blank" title="SpeedyShare" href="http://www.speedyshare.com/file/r8Whx/boot.img.tar.md5">http://www.speedyshare.com/file/r8Whx/boot.img.tar.md5</a><br/>
+<a mirror target="_blank" title="UsersCloud" href="https://userscloud.com/fh9lfetth7ox">https://userscloud.com/fh9lfetth7ox</a><br/>
+<a mirror target="_blank" title="FilesFm" href="https://files.fm/u/5xjxnfm4">https://files.fm/u/5xjxnfm4</a><br/>
+</blockquote><br/>
+<br/>
+<blockquote box-like><strong>recovery.img.tar.md5</strong><em>[28.10MiB]</em><br/>
+<a mirror target="_blank" title="ZippyShare" href="http://www74.zippyshare.com/v/OOUPC4nW/file.html">http://www74.zippyshare.com/v/OOUPC4nW/file.html</a><br/>
+<a mirror target="_blank" title="TusFiles" href="https://tusfiles.net/qkffq0hk9wnm">https://tusfiles.net/qkffq0hk9wnm</a><br/>
+<a mirror target="_blank" title="SolidFiles" href="http://www.solidfiles.com/d/3934bdb7f2">http://www.solidfiles.com/d/3934bdb7f2</a><br/>
+<a mirror target="_blank" title="TurboBit" href="http://turbobit.net/4kxsigi07fvc.html">http://turbobit.net/4kxsigi07fvc.html</a><br/>
+<a mirror target="_blank" title="HugeFiles" href="http://hugefiles.net/098msxvcfic9">http://hugefiles.net/098msxvcfic9</a><br/>
+<a mirror target="_blank" title="RGhost" href="http://pion.rghost.net/6qF5q9cKQ">http://pion.rghost.net/6qF5q9cKQ</a><br/>
+<a mirror target="_blank" title="SendMyWay" href="https://www.sendmyway.com/89fj8asprgez">https://www.sendmyway.com/89fj8asprgez</a><br/>
+<a mirror target="_blank" title="FilesFm" href="https://files.fm/u/6kw8syny">https://files.fm/u/6kw8syny</a><br/>
+<a mirror target="_blank" title="SpeedyShare" href="http://www.speedyshare.com/file/vp94Q/recovery.img.tar.md5">http://www.speedyshare.com/file/vp94Q/recovery.img.tar.md5</a><br/>
+<a mirror target="_blank" title="UsersCloud" href="https://userscloud.com/ly17ngfk5a39">https://userscloud.com/ly17ngfk5a39</a><br/>
+</blockquote><br/>
+<br/>
+<blockquote box-like><strong>modem.bin.tar.md5</strong><em>[36.10MiB]</em><br/>
+<a mirror target="_blank" title="ZippyShare" href="http://www72.zippyshare.com/v/1u5wfUDN/file.html">http://www72.zippyshare.com/v/1u5wfUDN/file.html</a><br/>
+<a mirror target="_blank" title="TusFiles" href="https://tusfiles.net/rsahl741k6uo">https://tusfiles.net/rsahl741k6uo</a><br/>
+<a mirror target="_blank" title="SolidFiles" href="http://www.solidfiles.com/d/862799d61d">http://www.solidfiles.com/d/862799d61d</a><br/>
+<a mirror target="_blank" title="SendMyWay" href="https://www.sendmyway.com/si23ijg6xmko">https://www.sendmyway.com/si23ijg6xmko</a><br/>
+<a mirror target="_blank" title="HugeFiles" href="http://hugefiles.net/3n18jmacrywa">http://hugefiles.net/3n18jmacrywa</a><br/>
+<a mirror target="_blank" title="RGhost" href="http://pion.rghost.net/6W2kdRLyf">http://pion.rghost.net/6W2kdRLyf</a><br/>
+<a mirror target="_blank" title="TurboBit" href="http://turbobit.net/rcies2qfzje3.html">http://turbobit.net/rcies2qfzje3.html</a><br/>
+<a mirror target="_blank" title="SpeedyShare" href="http://www.speedyshare.com/file/AkCS7/modem.bin.tar.md5">http://www.speedyshare.com/file/AkCS7/modem.bin.tar.md5</a><br/>
+<a mirror target="_blank" title="FilesFm" href="https://files.fm/u/xfv78ha4">https://files.fm/u/xfv78ha4</a><br/>
+<a mirror target="_blank" title="UsersCloud" href="https://userscloud.com/3g8rs1ooblnj">https://userscloud.com/3g8rs1ooblnj</a><br/>
+</blockquote><br/>
+<br/>
+<blockquote box-like><strong>hidden.img.tar.md5</strong><em>[89.50MiB]</em><br/>
+<a mirror target="_blank" title="ZippyShare" href="http://www76.zippyshare.com/v/P4y5toqi/file.html">http://www76.zippyshare.com/v/P4y5toqi/file.html</a><br/>
+<a mirror target="_blank" title="SolidFiles" href="http://www.solidfiles.com/d/6a0da4a21d">http://www.solidfiles.com/d/6a0da4a21d</a><br/>
+<a mirror target="_blank" title="HugeFiles" href="http://hugefiles.net/u6mji9xqyvb6">http://hugefiles.net/u6mji9xqyvb6</a><br/>
+<a mirror target="_blank" title="RGhost" href="http://pion.rghost.net/87BTLbFzb">http://pion.rghost.net/87BTLbFzb</a><br/>
+<a mirror target="_blank" title="SendMyWay" href="https://www.sendmyway.com/uzdycd187xct">https://www.sendmyway.com/uzdycd187xct</a><br/>
+<a mirror target="_blank" title="TurboBit" href="http://turbobit.net/firoeq57dpfl.html">http://turbobit.net/firoeq57dpfl.html</a><br/>
+<a mirror target="_blank" title="SpeedyShare" href="http://www.speedyshare.com/file/FCn62/hidden.img.tar.md5">http://www.speedyshare.com/file/FCn62/hidden.img.tar.md5</a><br/>
+<a mirror target="_blank" title="UsersCloud" href="https://userscloud.com/smxvktsuuhtw">https://userscloud.com/smxvktsuuhtw</a><br/>
+<a mirror target="_blank" title="TusFiles" href="https://tusfiles.net/9gpjkfh68v27">https://tusfiles.net/9gpjkfh68v27</a><br/>
+<a mirror target="_blank" title="FilesFm" href="https://files.fm/u/dt2smv8r">https://files.fm/u/dt2smv8r</a><br/>
+</blockquote><br/>
+<br/>
+<blockquote box-like><strong>cache.img.tar.md5</strong><em>[105.00MiB]</em><br/>
+<a mirror target="_blank" title="ZippyShare" href="http://www95.zippyshare.com/v/pfKQDicK/file.html">http://www95.zippyshare.com/v/pfKQDicK/file.html</a><br/>
+<a mirror target="_blank" title="SolidFiles" href="http://www.solidfiles.com/d/64f3c9c07d">http://www.solidfiles.com/d/64f3c9c07d</a><br/>
+<a mirror target="_blank" title="SpeedyShare" href="http://www.speedyshare.com/file/fBUSN/cache.img.tar.md5">http://www.speedyshare.com/file/fBUSN/cache.img.tar.md5</a><br/>
+<a mirror target="_blank" title="TurboBit" href="http://turbobit.net/rvl65bdww3b0.html">http://turbobit.net/rvl65bdww3b0.html</a><br/>
+<a mirror target="_blank" title="TusFiles" href="https://tusfiles.net/n2fhzchkc7um">https://tusfiles.net/n2fhzchkc7um</a><br/>
+<a mirror target="_blank" title="HugeFiles" href="http://hugefiles.net/nem35erbs1sb">http://hugefiles.net/nem35erbs1sb</a><br/>
+<a mirror target="_blank" title="SendMyWay" href="https://www.sendmyway.com/95bglpevrcwr">https://www.sendmyway.com/95bglpevrcwr</a><br/>
+<a mirror target="_blank" title="UppIt" href="http://upx.nz/M1iqzJ">http://upx.nz/M1iqzJ</a><br/>
+<a mirror target="_blank" title="FilesFm" href="https://files.fm/u/mdmtjrv2">https://files.fm/u/mdmtjrv2</a><br/>
+<a mirror target="_blank" title="UsersCloud" href="https://userscloud.com/21o5q6yx1koe">https://userscloud.com/21o5q6yx1koe</a><br/>
+</blockquote><br/>
+<br/>
+<blockquote box-like><strong>system.img.tar.md5</strong><em>[3.67GiB]</em><br/>
+probably won't upload it...<br/>
+</blockquote><br/>
+<br/>
+<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/http-response-status-codes">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/making-xda-code-readable-using-javascript-css3">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/making-xda-code-readable-using-javascript-css3">Making XDA Code Readable Using JavaScript && CSS3</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cygwin-repo-on-top-of-git">Cygwin Repo On Top Of Git</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-better-uuid-using-chromes-crypto">JavaScript Ninja - Better UUID Using Chrome's Crypto</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cygwin-ctrl-left-to-jump-word-backward">Cygwin CTRL+Left To Jump Word Backward</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-quick-and-dirty-clickjacking-iframe-embedding-protection">JavaScript Ninja - Quick And Dirty ClickJacking IFRAME-Embedding Protection</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/complete-framework-files-samsung-galaxy-note-5-android-5-1-1-arm-arm64-jar-files">Complete Framework Files - Samsung Galaxy Note 5 - Android 5.1.1 - ARM + ARM64 + JAR Files</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/repo-help">repo Help</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/everything-to-html-entity-bookmarklet">Everything To HTML-Entity Bookmarklet</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/network-traffic-analyze-tools">Network Traffic Analyze Tϕϕls</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/file-sharing-hosts-logos">File-Sharing Hosts Logos</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/efficient-json-table-data-representation">Efficient JSON-Table Data Representation</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/clockwork-recovery-img-to-tar-md5">Clockwork Recovery img to tar.md5</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-implement-select-for-all-html-elements">JavaScript Ninja - Implement .select() For All HTML-Elements</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/android-synapse-dynamic-translation-layer-color">Android Synapse - Dynamic Translation Layer Color</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/reverse-engineer-and-modify-d-link-binary-firmware-file">Reverse Engineer And Modify D-Link Binary Firmware File</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/marshmallow-deepsleep-fix">Android Marshmallow 6.0.1 - DeepSleep Fix For Samsung Galaxy Note 5 SM-N920C noblelte</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+- nodeJS, phantomJS are growing on me, too. - Although, I still think PHP is better.
+- Mozilla's Add-On JavaScript SDK is cool.
+- Chrome's Ext. SDK w/ localStorage and HTML, double cool!
+- symmetric enc supported by C.Side JS? nice!

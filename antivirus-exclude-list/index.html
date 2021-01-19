@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Stuff You Should Exclude From Your Anti-Virus</title>
+  <meta itemprop="name"                                content="Stuff You Should Exclude From Your Anti-Virus"       />
+  <meta name="dcterms.title"                           content="Stuff You Should Exclude From Your Anti-Virus"       />
+  <meta property="og:title"                            content="Stuff You Should Exclude From Your Anti-Virus"       />
+  <meta name="twitter:title"                           content="Stuff You Should Exclude From Your Anti-Virus"       />
+  <meta name="twitter:text:title"                      content="Stuff You Should Exclude From Your Anti-Virus"       />
+  <meta name="application-name"                        content="Stuff You Should Exclude From Your Anti-Virus"       />
+  <meta name="subject"                                 content="Stuff You Should Exclude From Your Anti-Virus"       />
+  <meta name="apple-mobile-web-app-title"              content="Stuff You Should Exclude From Your Anti-Virus"       />
+  <meta name="msapplication-tooltip"                   content="Stuff You Should Exclude From Your Anti-Virus"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Stuff You Should Exclude From Your Anti-Virus"       />
+  <meta itemprop="description"                         content="Stuff You Should Exclude From Your Anti-Virus"       />
+  <meta name="dcterms.description"                     content="Stuff You Should Exclude From Your Anti-Virus"       />
+  <meta name="twitter:description"                     content="Stuff You Should Exclude From Your Anti-Virus"       />
+  <meta property="og:description"                      content="Stuff You Should Exclude From Your Anti-Virus"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="action,agree,anti,appdata,application,apply,archives,armadillo,aspack,asprotect,avoid,blindly,bringing,brought,browse,browser,browsers,bsod,building,cache,call,canary,changing,chkdsk,chrome,chromium,close,code,codes,comments,config,connection,connections,copy,copying,crazy,custom,cycle,cygwin,deal,deep,defrag,description,developer,dfrgui,directly,disk,downloaded,drive,driver,drivers,dropbox,elad,error,eset,exclude,excluded,execute,extremely,file,files,firefox,firewall,flash,folder,folders,fonts,forward,found,generate,generating,generic,good,google,hacking,hiberfil,huge,icons,illustrate,include,index,infected,information,install,intensive,items,javascript,jkdefrag,kernel,kill,lags,lenovo,linking,list,local,locate,locked,make,malware,microsoft,minor,mistake,modified,modify,modules,monitor,monitoring,move,moving,mozilla,multi,mydefrag,nasty,naturally,netlimiter,network,notes,obfuscation,odejs,online,open,openssl,pagefile,partition,paste,path,paths,pattern,patterns,peer,peerblock,perfectly,perl,port,private,process,processes,processing,product,profile,program,programs,protect,python,quarantine,random,rate,read,reasoning,recovery,recycle,render,repeate,repo,resource,risk,risky,safe,sample,scan,scanned,scanner,scanning,scans,search,section,sending,sensitive,setup,setups,sharing,signed,slow,slowing,small,software,source,standard,state,storage,stuff,swtools,system,syswow,takes,target,temp,tortoise,tortoisegit,tortoisesvn,trigger,understand,unwrap,update,useless,user,users,utorrent,versions,video,virtualbox,virus,vmware,volume,vuze,walk,websites,windows,wireshark,xampp,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="action,agree,anti,appdata,application,apply,archives,armadillo,aspack,asprotect,avoid,blindly,bringing,brought,browse,browser,browsers,bsod,building,cache,call,canary,changing,chkdsk,chrome,chromium,close,code,codes,comments,config,connection,connections,copy,copying,crazy,custom,cycle,cygwin,deal,deep,defrag,description,developer,dfrgui,directly,disk,downloaded,drive,driver,drivers,dropbox,elad,error,eset,exclude,excluded,execute,extremely,file,files,firefox,firewall,flash,folder,folders,fonts,forward,found,generate,generating,generic,good,google,hacking,hiberfil,huge,icons,illustrate,include,index,infected,information,install,intensive,items,javascript,jkdefrag,kernel,kill,lags,lenovo,linking,list,local,locate,locked,make,malware,microsoft,minor,mistake,modified,modify,modules,monitor,monitoring,move,moving,mozilla,multi,mydefrag,nasty,naturally,netlimiter,network,notes,obfuscation,odejs,online,open,openssl,pagefile,partition,paste,path,paths,pattern,patterns,peer,peerblock,perfectly,perl,port,private,process,processes,processing,product,profile,program,programs,protect,python,quarantine,random,rate,read,reasoning,recovery,recycle,render,repeate,repo,resource,risk,risky,safe,sample,scan,scanned,scanner,scanning,scans,search,section,sending,sensitive,setup,setups,sharing,signed,slow,slowing,small,software,source,standard,state,storage,stuff,swtools,system,syswow,takes,target,temp,tortoise,tortoisegit,tortoisesvn,trigger,understand,unwrap,update,useless,user,users,utorrent,versions,video,virtualbox,virus,vmware,volume,vuze,walk,websites,windows,wireshark,xampp,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/github-branch-delete"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/github-branch-delete"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/hebrew-unicode-range"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/antivirus-exclude-list"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/antivirus-exclude-list"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/antivirus-exclude-list"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/antivirus-exclude-list"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/antivirus-exclude-list"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/antivirus-exclude-list"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-04-18T03:17:52+00:00"     />
+  <meta name="page-datetime"                           content="2017-04-18T03:17:52+00:00"     />
+  <meta property="article:published_time"              content="2017-04-18T03:17:52+00:00"     />
+  <meta name="dcterms.date"                            content="2017-04-18T03:17:52+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-04-18T03:23:16+00:00"    />
+  <meta property="article:modified_time"               content="2017-04-18T03:23:16+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/antivirus-exclude-list"
+,"url"             : "https://icompile.eladkarako.com/antivirus-exclude-list"
+,"headline"        : "Stuff You Should Exclude From Your Anti-Virus"
+,"description"     : "Stuff You Should Exclude From Your Anti-Virus"
+,"datePosted"      : "2017-04-18T03:17:52+00:00"
+,"dateCreated"     : "2017-04-18T03:17:52+00:00"
+,"datePublished"   : "2017-04-18T03:17:52+00:00"
+,"dateModified"    : "2017-04-18T03:23:16+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0002745842941">
+  <header>
+    <h1 itemprop="headline">Stuff You Should Exclude From Your Anti-Virus</h1>
+    <sup>Posted at <time datetime="2017-04-18T03:23:16+00:00" itemprop="dateModified">Tue, 18 Apr 2017 03:23:16 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">It should be perfectly safe to exclude some folders from your anti-virus processing.<br/>
+Have a look below, my notes/comments should help you understand the generic state-of mind and then you can apply the same reasoning to modify or add other items.<br/>
+<br/>
+<!--more--><br/>
+<pre>
+On every Windows-7+ PC:
+C:\\System Volume Information\\*.*
+C:\\$Recycle.Bin\\*.*
+C:\\Config.Msi\\*.*
+C:\\Recovery\\*.*
+C:\\Windows\\Fonts\\*.*    (will kill your CPU with useless scans)
+C:\\hiberfil.sys                 those files should never be scanned
+C:\\pagefile.sys                 if locked by mistake or modified, you are looking forward to a BSOD...
+
+------repeate the list-above for EACH hard-disk partition you have (D, E, F,...)-----
+
+
+If you have an IBM/Lenovo PC:
+C:\\DRIVERS\\*.*
+C:\\SWTOOLS\\*.*
+
+A Developer:
+C:\\My_source_codes\\*.*    never allow to an anti-virus to walk through your files,
+                          especially if your code should be private,
+                          a lot of patterns found when linking/building exe files will
+                          trigger sending a sample of the file to the anti-virus-resource-center.
+                          also, building programs will generate a lot of I/O,
+                          and some of the obfuscation modules used to protect an execute from hacking,
+                          is considered a malware-like pattern: UPX, Armadillo, ASPack, ASProtect,...
+                          or even modified LIB files! be safe and exclude it all!!!
+
+C:\\My_SVN_REPO            Windows with TortoiseGit/TortoiseSVN
+C:\\My_GIT_REPO            will kill your CPU if not excluded!
+C:\\Program Files\\TortoiseGit    Tortoise* will often cycle through the repositories to
+C:\\Program Files\\TortoiseSVN    update the icons, and will generate a lot of anti-virus attention!!!
+                          
+C:\\Dropbox\\*.*      (or whatever you call it - a lot of I/O if you won't exclude it!)
+C:\\cygwin\\*.*       (a LOT (!) of small files, and archives, will kill your CPU!)
+C:\\cg_cache\\*.*     (or whatever you call it - a lot of archives with each having a LOT of small files)
+C:\\git32\\*.*
+C:\
+odejs32\\*.*
+C:\\OpenSSL-Win64\\*.*
+C:\\Perl64\\*.*
+C:\\Python27\\*.*
+C:\\xampp\\*.*
+C:\\www\\*.*
+C:\\vm\\*.*           (or whatever you name your VirtualBox/VMware/... storage - a lot of disk action!)
+
+Just A User:
+C:\\All_My_Setups\\*.*   (or whatever you name your "programs/software install and setup-storage",
+                        things like ISO, RAR, ZIP files takes a lot of time to unwrap 
+                        and if found a minor something, will often move the entire huge file
+                        to quarantine, which may be on another partition, which will kill your CPU and
+                        make overall moving/copying file very slow, and later you'll have to deal with
+                        bringing the huge files out of quarantine, again..
+
+Browser's exe (not user-profile!)
+C:\\Users\\Elad\\AppData\\Local\\Chromium\\Application\\*.*    Chrome, Firefox keep the application part
+C:\\Program Files\\Google\\Chrome\\*.*                      and user files in different folders,
+C:\\Program Files\\Mozilla Firefox\\*.*                    if you use them a lot, this will trigger the anti-virus
+                                                        with the "on execute" scan, slowing things for you..
+                                                        New versions of Chrome and Firefox uses multi-process,
+                                                        which mean they will open another process of Chrome (for example),
+                                                        to render a video, and close it again, this is usually a low risk,
+                                                        especially if you don't use online/peer/port scanner, and you're
+                                                        happy with the standard scanning.
+                                                        Do not exclude the user-profile (usually placed in the AppData folder),
+                                                        since when you'll browse bad websites, the cache/temp files might include
+                                                        a risky JavaScript or nasty flash-file.. so let your anti-virus scan those!
+
+Custom Network Drivers:
+C:\\Program Files\\PeerBlock\\*.*          those programs uses a kernel-driver
+C:\\Program Files\\NetLimiter\\*.*         to monitor the connections, if you won't exclude those,
+C:\\Program Files\\Wireshark\\*.*          you will probably get a BSOD or an error, or a VERY slow network!
+
+"A lot of I/O" programs:
+C:\\Program Files\\Locate32\\*.*           a search program will run through your files every now and again
+                                        to index them, this will trigger a nasty slowing down effect.
+
+Defrag/Scan-disk programs               you may or may not want to add those programs to your exclude list,
+C:\\Windows\\System32\\dfrgui.exe          granted, those are a good target to be infected with a virus or a malware,  
+C:\\Windows\\SysWOW64\\dfrgui.exe          but those are also generating extremely deep processes,
+C:\\Windows\\System32\\Defrag.exe          defrag/scan programs are not directly changing the disk, they use Windows' API for that
+C:\\Windows\\SysWOW64\\Defrag.exe          but they are still sensitive to lags, and are generating intensive I/O, which 
+C:\\Program Files\\JkDefrag\\*.*           will make your anti-virus crazy... unless you're having an anti-virus that knows
+C:\\Program Files\\MyDefrag\\*.*           to avoid Microsoft-signed applications (ESET/AVG knows..)
+C:\\Windows\\System32\\chkdsk.exe
+C:\\Windows\\SysWOW64\\chkdsk.exe
+
+Network/Disk/ I/O intensive programs
+C:\\Program Files\\uTorrent\\*.*           every file-sharing programs, should be excluded,
+C:\\Program Files\\Vuze\\*.*               but never the downloaded files!
+                                        the random port/connection rate especially for an anti-virus with
+                                        firewall-like monitoring/capabilities will drive it crazy!
+
+
+
+
+Naturally read the description,
+and don't copy-paste blindly the path into your anti-virus exclude-list.
+Some the paths brought-here are to illustrate to you the generic-name
+of the product,
+
+for example in the section above,
+with the path to the Chrome-browser,
+you may add the paths to other browsers,
+for example: Google-Chrome Canary "C:\\Users\\Elad\\AppData\\Local\\Google\\Chrome SxS\\Application\\*.*"
+
+In addition make sure you agree with each and every one of the items
+you are going to add to your exclude-list!
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/github-branch-delete">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/hebrew-unicode-range">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hebrew-unicode-range">Hebrew Unicode-Range</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/odin-3-10-7b3-patched-version">Odin For Samsung Phones (Patched/Mod Version 3.10.7b3)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adding-noto-mono-courier-new-droid-sans-mono-roboto-mono-ubuntu-mono-to-windows-cmd">'Ubuntu Mono' To Windows' CMD</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/crowd-wisdom-ebay-enhancements">JavaScript Ninja - Crowd Wisdom eBay Enhancements</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-ebay-fetch-accurate-sold-amount-and-update-the-main-page">JavaScript Snippet - eBay - Fetch Accurate "Sold" Amount And Update The Main Page</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/feature-policy-header">Feature-Policy Header</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromereader-a-news-reader-right-in-your-mobile-google-chrome">ChromeReader - A News Reader Right In Your Mobile Google Chrome</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/block-chrome-content-suggestions">ChromeReader/Content-Suggestions - Yes You CAN Block It...</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/flat-namednodemap">But Flat!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/how-to-block-websockets-on-google-chrome">Block Sockets? Ask Me How!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/remove-nonstandard-placeholder">And The New Non-Standard Placeholder - And How To Remove It!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-fake-native-code">A.K.A: Obfuscation Magic Helper</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/websocket-killer">WebSocket Killer - For Real!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/rgba_4444-textures-doom">Google Message :] *Sign* RGBA_4444 Textures Still Does Not Works Perfectly...</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/make-chrome-faster">Make Chrome Faster</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/dont-use-chrome-command-line-switch-enable-gpu-memory-buffer-compositor-resources-it-will-break-your-html5-videos">Don't Use Chrome Command-Line Switch `enable-gpu-memory-buffer-compositor-resources` It Will Break Your HTML5 Videos!</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

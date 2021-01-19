@@ -1,0 +1,2 @@
+RegBot - Are IP addresses, which automates (Bot halt) register in some honeypot forums. On the pages written in H2, which are all registrations and postings reported.
+Most IP addresses are also on http://stopforumspam.com listed and will pass on to SFS.

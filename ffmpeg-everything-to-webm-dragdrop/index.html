@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>FFmpeg - Everything To WebM - Drag&Drop!</title>
+  <meta itemprop="name"                                content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+  <meta name="dcterms.title"                           content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+  <meta property="og:title"                            content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+  <meta name="twitter:title"                           content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+  <meta name="twitter:text:title"                      content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+  <meta name="application-name"                        content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+  <meta name="subject"                                 content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+  <meta name="apple-mobile-web-app-title"              content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+  <meta name="msapplication-tooltip"                   content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+  <meta itemprop="description"                         content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+  <meta name="dcterms.description"                     content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+  <meta name="twitter:description"                     content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+  <meta property="og:description"                      content="FFmpeg - Everything To WebM - Drag&Drop!"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="allowing,aresample,asetpts,aspect,async,audio,auto,avoid,banner,batch,call,change,chapters,chpl,color,columns,command,commands,comp,compatible,convert,corrupt,create,cycle,debugging,default,dejudder,designed,disable,downloaded,drag,drop,echo,errorlevel,exit,export,failed,familiar,fast,fastseek,faststart,fflags,ffmpeg,file,files,filter,fixed,fixes,flags,fmts,force,format,frame,frames,generate,genpts,global,goto,header,hide,high,ignidx,ignorecrop,increase,info,input,internal,language,length,libopus,libvpx,limit,loglevel,loop,make,maxrate,mess,metadata,method,minimal,minrate,mode,mono,movflags,mpdecimate,nofillin,nofirstpass,optional,output,parallel,partially,pass,pause,players,playing,popular,post,quality,rate,recover,reduce,remove,render,resize,rows,runs,scale,seconds,setpts,settings,showall,size,speed,standard,starting,startpts,stats,stereo,strict,switches,thinking,threads,tile,variance,video,vsync,webm,whitespace,workable,yadif,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="allowing,aresample,asetpts,aspect,async,audio,auto,avoid,banner,batch,call,change,chapters,chpl,color,columns,command,commands,comp,compatible,convert,corrupt,create,cycle,debugging,default,dejudder,designed,disable,downloaded,drag,drop,echo,errorlevel,exit,export,failed,familiar,fast,fastseek,faststart,fflags,ffmpeg,file,files,filter,fixed,fixes,flags,fmts,force,format,frame,frames,generate,genpts,global,goto,header,hide,high,ignidx,ignorecrop,increase,info,input,internal,language,length,libopus,libvpx,limit,loglevel,loop,make,maxrate,mess,metadata,method,minimal,minrate,mode,mono,movflags,mpdecimate,nofillin,nofirstpass,optional,output,parallel,partially,pass,pause,players,playing,popular,post,quality,rate,recover,reduce,remove,render,resize,rows,runs,scale,seconds,setpts,settings,showall,size,speed,standard,starting,startpts,stats,stereo,strict,switches,thinking,threads,tile,variance,video,vsync,webm,whitespace,workable,yadif,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/cmd-ninja-relative-to-fully-qualified-path-and-other-file-properties-without-directing-relative-path-to-another-cmd-file-as-an-argument"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/cmd-ninja-relative-to-fully-qualified-path-and-other-file-properties-without-directing-relative-path-to-another-cmd-file-as-an-argument"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/download-latest-busybox-binary-for-android-ready-to-use"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/ffmpeg-everything-to-webm-dragdrop"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/ffmpeg-everything-to-webm-dragdrop"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/ffmpeg-everything-to-webm-dragdrop"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/ffmpeg-everything-to-webm-dragdrop"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/ffmpeg-everything-to-webm-dragdrop"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/ffmpeg-everything-to-webm-dragdrop"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-07-03T14:38:09+00:00"     />
+  <meta name="page-datetime"                           content="2017-07-03T14:38:09+00:00"     />
+  <meta property="article:published_time"              content="2017-07-03T14:38:09+00:00"     />
+  <meta name="dcterms.date"                            content="2017-07-03T14:38:09+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-07-03T15:45:25+00:00"    />
+  <meta property="article:modified_time"               content="2017-07-03T15:45:25+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/ffmpeg-everything-to-webm-dragdrop"
+,"url"             : "https://icompile.eladkarako.com/ffmpeg-everything-to-webm-dragdrop"
+,"headline"        : "FFmpeg - Everything To WebM - Drag&Drop!"
+,"description"     : "FFmpeg - Everything To WebM - Drag&Drop!"
+,"datePosted"      : "2017-07-03T14:38:09+00:00"
+,"dateCreated"     : "2017-07-03T14:38:09+00:00"
+,"datePublished"   : "2017-07-03T14:38:09+00:00"
+,"dateModified"    : "2017-07-03T15:45:25+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0009862909941">
+  <header>
+    <h1 itemprop="headline">FFmpeg - Everything To WebM - Drag&Drop!</h1>
+    <sup>Posted at <time datetime="2017-07-03T15:45:25+00:00" itemprop="dateModified">Mon, 03 Jul 2017 15:45:25 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">This little batch file will convert every video file,<br/>
+you will drag&drop over it to a 360p WebM-video.<br/>
+<br/>
+You can change few of the internal switches,<br/>
+allowing to create an audio-less webm or increase the default 12FPS to 25FPS.<br/>
+<br/>
+The default settings were designed to render a minimal-size,<br/>
+but relatively high-quality video file.<br/>
+<br/>
+It will also try fix and recover any mess you have (for example - a partially downloaded file),<br/>
+to a workable video, compatible with playing with all standard video-players.<br/>
+<br/>
+<!--more--><br/>
+<br/>
+<pre>
+@echo off
+
+::-----------------------------------
+:: a drag&drop *2WebM
+::-----------------------------------
+
+
+set FILE_INPUT="%~s1"
+set FILE_OUTPUT="%~d1%~p1%~n1_fixed.webm"
+
+::optional frame-per-second at 25 rate. better - use 12FPS.
+set FPS=12
+::set FPS=25
+
+::optional: limit length to 5 seconds.
+set TO=
+::set TO=-to "00:00:05.000"
+
+::optional: with audio - MONO(-ac 1)/STEREO(-ac 2)/AUTO(remove -ac).  better: no audio(-an) .
+set AUDIO=-an
+::set AUDIO=-c:a      "libopus"               ^
+::          -b:a      "96k"                   ^
+::          -ac       "1"                     ^
+::          -metadata:s:a:0 "language=eng"    ^
+::          -filter:a "asetpts=PTS-STARTPTS,aresample=async=1:min_hard_comp=0.100000"
+
+
+::optional: keep size as is. better: resize to 360p (16:9 video aspect).
+set FORCE169=,pad=width=ih*16/9:height=ih:x=(ow-iw)/2:y=(oh-ih)/2:color=#00000000,scale=w=640:h=360
+::set FORCE169=
+
+
+set COMMAND=call ffmpeg -hide_banner -loglevel "info" -stats -strict "experimental" -y      ^
+            -i                  %FILE_INPUT%                                                ^
+            -pass               "##PASS##"                                                  ^
+            -speed              "##SPEED##"                                                 ^
+            -flags              "-loop+naq+low_delay+global_header-output_corrupt"          ^
+            -flags2             "+fast+ignorecrop+showall+export_mvs"                       ^
+            -fflags             "+ignidx+genpts+nofillin+discardcorrupt-fastseek"           ^
+            -movflags           "+faststart+disable_chpl"                                   ^
+            -avoid_negative_ts  "make_zero"                                                 ^
+            -map_metadata       "-1"                                                        ^
+            -map_chapters       "-1"                                                        ^
+            -me_method          "full"                                                      ^
+            -pix_fmt            "yuv420p"                                                   ^
+            -threads            "16"                                                        ^
+            -sn                                                                             ^
+            -ss                 "00:00:00.001"                                              ^
+            -c:v                "libvpx-vp9"   -b:v "500k" -minrate "200k" -maxrate "500k"  ^
+            -filter:v           "setpts=PTS-STARTPTS,yadif=0:-1:0,dejudder=cycle=20,mpdecimate,fps=fps=%FPS%,setpts=N/FRAME_RATE/TB-STARTPTS,format=pix_fmts=yuv420p%FORCE169%" -vsync "1"    ^
+            %AUDIO%                                                                         ^
+            -frame-parallel     "1"                                                         ^
+            -auto-alt-ref       "1"                                                         ^
+            -tile-rows          "2"                                                         ^
+            -tile-columns       "6"                                                         ^
+            -aq-mode            "variance"                                                  ^
+            -lag-in-frames      "25"                                                        ^
+            %TO%                                                                            ^
+            -f "webm"                                                                       ^
+            ##OUT##
+
+::generate two commands for first and second pass.
+set COMMAND_PASS_FIRST=%COMMAND%
+set COMMAND_PASS_FIRST=%COMMAND_PASS_FIRST:##PASS##=1%
+set COMMAND_PASS_FIRST=%COMMAND_PASS_FIRST:##SPEED##=4%
+set COMMAND_PASS_FIRST=%COMMAND_PASS_FIRST:##OUT##=nul%
+
+set COMMAND_PASS_SECOND=%COMMAND%
+set COMMAND_PASS_SECOND=%COMMAND_PASS_SECOND:##PASS##=2%
+set COMMAND_PASS_SECOND=%COMMAND_PASS_SECOND:##SPEED##=-5%
+set COMMAND_PASS_SECOND=%COMMAND_PASS_SECOND:##OUT##=%%FILE_OUTPUT%
+
+::reduce whitespace for debugging the command.
+set COMMAND_PASS_FIRST=%COMMAND_PASS_FIRST:  = %
+set COMMAND_PASS_FIRST=%COMMAND_PASS_FIRST:  = %
+set COMMAND_PASS_FIRST=%COMMAND_PASS_FIRST:  = %
+set COMMAND_PASS_FIRST=%COMMAND_PASS_FIRST:  = %
+set COMMAND_PASS_FIRST=%COMMAND_PASS_FIRST:  = %
+set COMMAND_PASS_FIRST=%COMMAND_PASS_FIRST:  = %
+set COMMAND_PASS_FIRST=%COMMAND_PASS_FIRST:  = %
+set COMMAND_PASS_SECOND=%COMMAND_PASS_SECOND:  = %
+set COMMAND_PASS_SECOND=%COMMAND_PASS_SECOND:  = %
+set COMMAND_PASS_SECOND=%COMMAND_PASS_SECOND:  = %
+set COMMAND_PASS_SECOND=%COMMAND_PASS_SECOND:  = %
+set COMMAND_PASS_SECOND=%COMMAND_PASS_SECOND:  = %
+set COMMAND_PASS_SECOND=%COMMAND_PASS_SECOND:  = %
+set COMMAND_PASS_SECOND=%COMMAND_PASS_SECOND:  = %
+
+::run both commands, the && will make-sure the second command only runs on errorlevel==0 of the first command.
+echo.
+echo starting first-pass.
+echo.
+echo %COMMAND_PASS_FIRST%
+%COMMAND_PASS_FIRST%
+if not ErrorLevel == 0 goto NOFIRSTPASS
+echo.
+echo done.
+echo.
+
+echo.
+echo starting second-pass.
+echo.
+echo %COMMAND_PASS_SECOND%
+%COMMAND_PASS_SECOND%
+if not ErrorLevel == 0 goto NOSECONDPASS
+echo.
+echo done.
+echo.
+
+
+del /f /q "ffmpeg2pass*.log"  2&gt;nul &gt;nul
+goto EXIT
+
+
+:NOFIRSTPASS
+  echo.
+  echo first-pass failed.
+  goto EXIT
+
+
+:NOSECONDPASS
+  echo.
+  echo second-pass failed.
+  goto EXIT
+
+
+:EXIT
+  pause
+
+</pre><br/>
+<br/>
+<em>if the format is familiar to you, you might be thinking of this other popular post: <a href="https://icompile.eladkarako.com/ffmpeg-fixes-your-video-files/" >iCompile- FFMPEG Fixes Your Video Files</a>.</em><br/>
+<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/cmd-ninja-relative-to-fully-qualified-path-and-other-file-properties-without-directing-relative-path-to-another-cmd-file-as-an-argument">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/download-latest-busybox-binary-for-android-ready-to-use">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/download-latest-busybox-binary-for-android-ready-to-use">Download Latest BUSYBOX Binary For Android - Ready To Use!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/java-ninja-d-i-y-j-c-e-policy">Java Ninja - D.I.Y. J.C.E. Policy</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/fiddler4-direct-download-link">Fiddler4 Direct Download LInk</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/telerik-fiddler-subdomains">Telerik - Fiddler SubDomains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/autoit-subdomains">AutoIt SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/world-timezones-2017-ini-format">World Timezones 2017 - INI Format</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/any-relative-path-to-a-fully-qualified-8-3-old-dos-short-format-path-dragdrop-support">8.3 Old-DOS Short-Format PATH - Drag&Drop Support!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-entity-xml">HTML Entity - XML</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-fixes-your-video-files">FFMPEG Fixes Your Video Files</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-unicode-string-prototype-fromcharcode-fix-to-allow-more-than-2-bytes-unicode-chars-directly-a-k-a-unicode-surrogate-pair">JavaScript Ninja - Unicode - String.prototype.fromCharCode Fix To Allow More Than-2 Bytes Unicode Chars Directly (A.K.A Unicode-Surrogate-Pair)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/parsing-url-scheme">Parsing URL - Scheme</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nodejs-master-simple-request">NodeJS Master - Simple Request</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/advanced-font-typographics-disable-or-enable-everything">CSS Ninja - Advanced Font-Typographics - Disable/Enable Everything</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-snapshot-vs-continuous">Chromium: Snapshot vs. Continuous</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chrome-with-webm-version-9-vp9">Chrome With WebM Version 9 (VP9)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/a-non-blocking-font-download-pure-css-no-javascript">No JavaScript!</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

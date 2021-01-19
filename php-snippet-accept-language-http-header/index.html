@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']</title>
+  <meta itemprop="name"                                content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+  <meta name="dcterms.title"                           content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+  <meta property="og:title"                            content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+  <meta name="twitter:title"                           content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+  <meta name="twitter:text:title"                      content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+  <meta name="application-name"                        content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+  <meta name="subject"                                 content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+  <meta name="apple-mobile-web-app-title"              content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+  <meta name="msapplication-tooltip"                   content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+  <meta itemprop="description"                         content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+  <meta name="dcterms.description"                     content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+  <meta name="twitter:description"                     content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+  <meta property="og:description"                      content="Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accept,accessing,accuracy,actuall,address,ahead,alignnone,alter,analytics,applying,array,associative,back,based,break,browser,browsers,browsing,builds,cell,chrome,client,code,collecting,collection,color,common,content,default,definition,derive,derived,desc,determine,difference,display,dump,echo,element,english,eval,evaluation,explode,extract,fallback,firefox,flag,float,floatval,foreach,format,formats,google,group,groups,handy,header,hebrew,heck,higher,hyphen,image,information,inline,installed,isset,keys,language,languages,lingual,list,made,make,margin,measured,multi,multisort,names,native,natural,naturally,navigated,navigator,nevermind,nice,note,number,numeric,ordered,output,padding,page,parse,parsed,parsing,preferred,preg,price,priority,products,proper,provide,quality,regional,reliable,replace,reported,request,requests,return,rgba,rule,send,server,settings,simply,size,small,snippet,sort,sorted,specific,standard,statistics,strong,stronger,support,supported,target,thumb,translate,underscore,usage,user,versions,weaker,window,windows,wrote,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accept,accessing,accuracy,actuall,address,ahead,alignnone,alter,analytics,applying,array,associative,back,based,break,browser,browsers,browsing,builds,cell,chrome,client,code,collecting,collection,color,common,content,default,definition,derive,derived,desc,determine,difference,display,dump,echo,element,english,eval,evaluation,explode,extract,fallback,firefox,flag,float,floatval,foreach,format,formats,google,group,groups,handy,header,hebrew,heck,higher,hyphen,image,information,inline,installed,isset,keys,language,languages,lingual,list,made,make,margin,measured,multi,multisort,names,native,natural,naturally,navigated,navigator,nevermind,nice,note,number,numeric,ordered,output,padding,page,parse,parsed,parsing,preferred,preg,price,priority,products,proper,provide,quality,regional,reliable,replace,reported,request,requests,return,rgba,rule,send,server,settings,simply,size,small,snippet,sort,sorted,specific,standard,statistics,strong,stronger,support,supported,target,thumb,translate,underscore,usage,user,versions,weaker,window,windows,wrote,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/php-snippet-session-help-store-users-unique-id-ssid-ssidv4-and-force-minimal-requests-frequency-by-using-request-time-header"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/php-snippet-session-help-store-users-unique-id-ssid-ssidv4-and-force-minimal-requests-frequency-by-using-request-time-header"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/php-snippet-check-if-session-started-compatible-with-every-php-version"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/php-snippet-accept-language-http-header"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/php-snippet-accept-language-http-header"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/php-snippet-accept-language-http-header"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/php-snippet-accept-language-http-header"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/php-snippet-accept-language-http-header"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/php-snippet-accept-language-http-header"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-07-19T20:52:22+00:00"     />
+  <meta name="page-datetime"                           content="2014-07-19T20:52:22+00:00"     />
+  <meta property="article:published_time"              content="2014-07-19T20:52:22+00:00"     />
+  <meta name="dcterms.date"                            content="2014-07-19T20:52:22+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2014-07-20T02:37:42+00:00"    />
+  <meta property="article:modified_time"               content="2014-07-20T02:37:42+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/php-snippet-accept-language-http-header"
+,"url"             : "https://icompile.eladkarako.com/php-snippet-accept-language-http-header"
+,"headline"        : "Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"
+,"description"     : "Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']"
+,"datePosted"      : "2014-07-19T20:52:22+00:00"
+,"dateCreated"     : "2014-07-19T20:52:22+00:00"
+,"datePublished"   : "2014-07-19T20:52:22+00:00"
+,"dateModified"    : "2014-07-20T02:37:42+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0002413085041">
+  <header>
+    <h1 itemprop="headline">Native Language and PHP Parsing Of $SERVER['HTTP_ACCEPT_LANGUAGE']</h1>
+    <sup>Posted at <time datetime="2014-07-20T02:37:42+00:00" itemprop="dateModified">Sun, 20 Jul 2014 02:37:42 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><pre><style>code{background-color:rgba(255,251,204,.6) !important;display:inline !important;padding: 2px 5px 3px 5px !important;margin: 1px 3px 1px 2px !important;}</style></pre><br/>
+<br/>
+One of the header being sent in a request done by standard (new-age) browsers is the <code>Accept-Language</code>, which derive from the definition of the languages-settings in the browser, its quite reliable, usually used to specify what your preferred language should be, in-case the target page support multi-lingual content,<br/>
+its also used in Google-Translate, while browsing a language different from your own set.<br/>
+<br/>
+<br/>
+most common is the 'en', 'en-US' and 'en_US', those do not have actual difference, unless the user have installed a specific MUI of Windows, or a non-default versions of Chrome or Firefox, those <code>en*</code> "default" will be send.<br/>
+<br/>
+<br/>
+Both Firefox and Chrome (and Chrome based-on) browsers will also support regional/different language builds, which other then provide native-language front, will also alter the sent requests to specify that the currently used language is <strong>"more important"</strong> then the other (usually the <code>en</code> will still be sent).<br/>
+the quality of "stronger" vs. "weaker" measured by the <strong><code>q=___</code></strong> added to each of the languages reported.<br/>
+<br/>
+<br/>
+<br/>
+for example my Google-Chrome browser, will send 'English' and also 'Hebrew':<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2014/07/2014-07-19_2312481.jpg" alt="2014-07-19_2312481" width="471" height="108" class="alignnone size-full wp-image-1566" /><br/>
+<br/>
+On Google Chrome, I've navigated to <code>chrome://settings/languages</code> page,<br/>
+and set those values (in that order..)<br/>
+<br/>
+<img loading="lazy" lazyload="on"  style="width:100%;" src="https://icompile.eladkarako.com/_uploads/2014/07/2014-07-19_232957.jpg" alt="2014-07-19_232957" width="686" height="309" class="alignnone size-full wp-image-1562" /><br/>
+<br/>
+<br/>
+As can be seen, the evaluation is same as in the request, the higher the number, the higher the priority.<br/>
+<br/>
+<br/>
+<br/>
+On client-side, many statistics-collecting products such as Google-Analytics will use the very same value (derived from browser's settings) by accessing <code>navigator.language</code> value <small>(or <code>window.navigator.userLanguage</code> on IE)</small><br/>
+<br/>
+On server-side PHP, do the same by accessing <code>$SERVER['HTTP_ACCEPT_LANGUAGE']</code> and parsing the string <small>for example:</small> <code>en,en-US;q=0.8,he;q=0.6</code> into something useful, probably an array that is ordered by the <code>q=</code> value,<br/>
+<br/>
+although as a rule-of-thumb this is not really necessary, since the standard is to send the first-used language first, simply cut out the first cell and return it.<br/>
+<br/>
+<br/>
+<br/>
+the following also provides a fallback.<br/>
+<pre>
+$languages_header = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : 'en_US';
+$languages_header = explode(',', $languages_header);
+echo $languages_header[0]
+</pre><br/>
+<br/>
+<br/>
+<br/>
+I <strong>did</strong> made a small collection of supported languages, there is <strong>three</strong> formats that are being used as part of the <strong>i18n</strong> standard.<br/>
+<ol><br/>
+<li>regional underscore - <code>en_US</code></li><br/>
+<li>regional hyphen - <code>en-US</code></li><br/>
+<li>non regional - <code>en</code> <small>(...Note that I've made those names.. so don't try Google it around..)</small><br/>
+</ol><br/>
+<br/>
+<br/>
+<br/>
+the following list might come-in handy, since group [1] and [2] (regional) provided more information, the list is sorted a-z, in those 3 groups <small>(in the order above, first is regional underscore, regional hyphen then non regional)</small><br/>
+<br/>
+I'm using the PHP's array format..<br/>
+<br/>
+<small><pre>
+$languages_supported = array('af_ZA', 'ar_AE', 'ar_BH', 'ar_DZ', 'ar_EG', 'ar_IQ', 'ar_JO', 'ar_KW', 'ar_LB', 'ar_LY', 'ar_MA', 'ar_OM', 'ar_QA', 'ar_SA', 'ar_SY', 'ar_TN', 'ar_YE', 'az_AZ', 'az_IR', 'be_BY', 'bg_BG', 'bn_BD', 'bn_IN', 'bs_BA', 'ca_AD', 'ca_ES', 'ca_FR', 'ca_IT', 'cs_CZ', 'cy_GB', 'da_dk', 'da_DK', 'de_at', 'de_AT', 'de_ch', 'de_CH', 'de_de', 'de_DE', 'de_LI', 'de_LU', 'dv_MV', 'el_gr', 'el_GR', 'en_au', 'en_AU', 'en_BZ', 'en_ca', 'en_CA', 'en_CB', 'en_gb', 'en_GB', 'en_IE', 'en_in', 'en_JM', 'en_NZ', 'en_PH', 'en_sg', 'en_TT', 'en_us', 'en_US', 'en_ZA', 'en_ZW', 'es_419', 'es_ar', 'es_AR', 'es_BO', 'es_cl', 'es_CL', 'es_CO', 'es_CR', 'es_DO', 'es_EC', 'es_es', 'es_ES', 'es_GT', 'es_HN', 'es_LA', 'es_mx', 'es_MX', 'es_NI', 'es_PA', 'es_pe', 'es_PE', 'es_PR', 'es_PY', 'es_SV', 'es_UY', 'es_VE', 'et_EE', 'eu_ES', 'fa_AF', 'fa_IR', 'fi_fi', 'fi_FI', 'fo_FO', 'fr_BE', 'fr_CA', 'fr_CH', 'fr_fr', 'fr_FR', 'fr_FX', 'fr_LU', 'fr_MC', 'fy_NL', 'gl_ES', 'gu_IN', 'he_il', 'he_IL', 'hi_IN', 'hr_BA', 'hr_HR', 'hu_hu', 'hu_HU', 'hy_AM', 'id_ID', 'is_IS', 'it_CH', 'it_it', 'it_IT', 'ja_jp', 'ja_JP', 'jv_ID', 'ka_GE', 'kk_KZ', 'km_KH', 'kn_IN', 'ko_kr', 'ko_KR', 'kok_IN', 'ky_KG', 'lt_LT', 'lv_LV', 'mi_NZ', 'mk_MK', 'ml_IN', 'mn_MN', 'mr_IN', 'mr_MR', 'ms_BN', 'ms_MY', 'mt_MT', 'my_MM', 'nb_NO', 'nl_BE', 'nl_nl', 'nl_NL', 'nn_NO', 'no_NO', 'ns_ZA', 'pa_IN', 'pl_pl', 'pl_PL', 'ps_AR', 'pt_br', 'pt_BR', 'pt_pt', 'pt_PT', 'qu_BO', 'qu_EC', 'qu_PE', 'ro_RO', 'ru_ru', 'ru_RU', 'ru_UA', 'sa_IN', 'se_FI', 'se_NO', 'se_SE', 'si_LK', 'sk_SK', 'sl_SI', 'sq_AL', 'sr_BA', 'sr_SP', 'sr_YU', 'su_ID', 'sv_FI', 'sv_se', 'sv_SE', 'sw_KE', 'syr_SY', 'ta_IN', 'ta_LK', 'te_IN', 'th_th', 'th_TH', 'tl_PH', 'tn_ZA', 'to_ID', 'tr_tr', 'tr_TR', 'tt_RU', 'ug_CN', 'uk_UA', 'ur_PK', 'uz_UZ', 'vi_VI', 'vi_VN', 'xh_ZA', 'zh_cn', 'zh_CN', 'zh_hk', 'zh_HK', 'zh_MO', 'zh_SG', 'zh_tw', 'zh_TW', 'zu_ZA', 'af-ZA', 'ar-AE', 'ar-BH', 'ar-DZ', 'ar-EG', 'ar-IQ', 'ar-JO', 'ar-KW', 'ar-LB', 'ar-LY', 'ar-MA', 'ar-OM', 'ar-QA', 'ar-SA', 'ar-SY', 'ar-TN', 'ar-YE', 'az-AZ', 'be-BY', 'bg-BG', 'bs-BA', 'ca-ES', 'cs-CZ', 'cy-GB', 'da-dk', 'da-DK', 'de-at', 'de-AT', 'de-ch', 'de-CH', 'de-de', 'de-DE', 'de-LI', 'de-LU', 'dv-MV', 'el-gr', 'el-GR', 'en-au', 'en-AU', 'en-BZ', 'en-ca', 'en-CA', 'en-CB', 'en-gb', 'en-GB', 'en-IE', 'en-in', 'en-JM', 'en-NZ', 'en-PH', 'en-sg', 'en-TT', 'en-us', 'en-US', 'en-ZA', 'en-ZW', 'es-419', 'es-ar', 'es-AR', 'es-BO', 'es-cl', 'es-CL', 'es-CO', 'es-CR', 'es-DO', 'es-EC', 'es-es', 'es-ES', 'es-GT', 'es-HN', 'es-mx', 'es-MX', 'es-NI', 'es-PA', 'es-pe', 'es-PE', 'es-PR', 'es-PY', 'es-SV', 'es-UY', 'es-VE', 'et-EE', 'eu-ES', 'fa-IR', 'fi-fi', 'fi-FI', 'fo-FO', 'fr-BE', 'fr-CA', 'fr-CH', 'fr-fr', 'fr-FR', 'fr-LU', 'fr-MC', 'gl-ES', 'gu-IN', 'he-il', 'he-IL', 'hi-IN', 'hr-BA', 'hr-HR', 'hu-hu', 'hu-HU', 'hy-AM', 'id-ID', 'is-IS', 'it-CH', 'it-it', 'it-IT', 'ja-jp', 'ja-JP', 'ka-GE', 'kk-KZ', 'kn-IN', 'kok-IN', 'ko-kr', 'ko-KR', 'ky-KG', 'lt-LT', 'lv-LV', 'mi-NZ', 'mk-MK', 'mn-MN', 'mr-IN', 'ms-BN', 'ms-MY', 'mt-MT', 'nb-NO', 'nl-BE', 'nl-nl', 'nl-NL', 'nn-NO', 'ns-ZA', 'pa-IN', 'pl-pl', 'pl-PL', 'ps-AR', 'pt-br', 'pt-BR', 'pt-pt', 'pt-PT', 'qu-BO', 'qu-EC', 'qu-PE', 'ro-RO', 'ru-ru', 'ru-RU', 'sa-IN', 'se-FI', 'se-NO', 'se-SE', 'sk-SK', 'sl-SI', 'sq-AL', 'sr-BA', 'sr-SP', 'sv-FI', 'sv-se', 'sv-SE', 'sw-KE', 'syr-SY', 'ta-IN', 'te-IN', 'th-th', 'th-TH', 'tl-PH', 'tn-ZA', 'tr-tr', 'tr-TR', 'tt-RU', 'uk-UA', 'ur-PK', 'uz-UZ', 'vi-VN', 'xh-ZA', 'zh-cn', 'zh-CN', 'zh-hk', 'zh-HK', 'zh-MO', 'zh-SG', 'zh-tw', 'zh-TW', 'zu-ZA', 'ab', 'af', 'am', 'an', 'ang', 'ar', 'as', 'ast', 'ay', 'az', 'be', 'bem', 'bg', 'bi', 'bn', 'bo', 'br', 'bs', 'byn', 'ca', 'co', 'crh', 'cs', 'csb', 'cv', 'cy', 'cz', 'da', 'de', 'dk', 'dv', 'dz', 'el', 'en', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fil', 'fo', 'fr', 'frp', 'fur', 'fy', 'ga', 'gd', 'gez', 'gl', 'gn', 'gu', 'gv', 'ha', 'he', 'hi', 'hne', 'hr', 'ht', 'hu', 'hy', 'ia', 'id', 'ig', 'io', 'is', 'it', 'ja', 'jv', 'ka', 'kab', 'kk', 'km', 'kn', 'ko', 'kok', 'ks', 'ku', 'kw', 'ky', 'la', 'lb', 'lg', 'li', 'ln', 'lo', 'lt', 'lv', 'mai', 'mg', 'mi', 'mk', 'ml', 'mn', 'mr', 'ms', 'mt', 'mus', 'my', 'na', 'nb', 'nds', 'ne', 'new', 'ng', 'nl', 'nn', 'no', 'nr', 'ns', 'nso', 'oc', 'or', 'os', 'pa', 'pl', 'pms', 'ps', 'pt', 'qu', 'rm', 'ro', 'ru', 'rw', 'sa', 'sc', 'sd', 'se', 'si', 'sk', 'sl', 'sm', 'so', 'sp', 'sq', 'sr', 'st', 'su', 'sv', 'sw', 'syr', 'ta', 'te', 'tg', 'th', 'ti', 'tig', 'tk', 'tl', 'tlh', 'tn', 'to', 'tr', 'ts', 'tt', 'ug', 'uk', 'ur', 'uz', 've', 'vi', 'wa', 'wal', 'wo', 'xh', 'yi', 'yo', 'zh', 'zu');
+</pre></small><br/>
+<br/>
+<br/>
+<br/>
+Just in-case we would like to break the <code>Accept-Language</code> string, I've wrote a nice way of doing it..<br/>
+<pre>
+$all_languages_eval = array();
+
+foreach($languages_header as $language_header){
+  $language_name = preg_replace('/([^;]+);.*$/', '${1}', $language_header); //extract actuall language string
+
+  $language_significance = preg_replace('/^[^q]*q=([^\\,]+)*$/', '${1}', $language_header);      //extract evaluation as string
+  $language_significance = is_numeric($language_significance) ? floatval($language_significance) : 1.0; //parse evaluation, if no q=__ (first language is like "1"), then we will use 1.0
+
+  $all_languages_eval[ $language_name ] = $language_significance;
+}
+
+array_multisort($all_languages_eval, SORT_DESC , SORT_NATURAL);//SORT_DESC: higher-value is on top (vs. SORT_ASC).
+
+var_dump($all_languages_eval);
+</pre><br/>
+<br/>
+languages without value specification are (by definition) have q=1 (and usually put ahead as the main language to be using).<br/>
+<br/>
+<br/>
+you'll be parsing the string into an associative array using 'language string' as key, and its proper float-significance as value, then its a matter of applying some <code>array_multisort</code> with <code>SORT_DESC</code> flag to really make usage of the fact we've parsed so much...<br/>
+<strong>But Heck! You Can't Put A Price-Tag On Accuracy!!</strong><small> (well.. actually.. you really can.. nevermind..)</small><br/>
+<br/>
+well.. our example from before: <code>en,en-US;q=0.8,he;q=0.6</code> will be show this output:<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2014/07/2014-07-20_003053.jpg" alt="2014-07-20_003053" width="414" height="166" class="alignnone size-full wp-image-1571" /><br/>
+<br/>
+<br/>
+naturally you may take the first element's key name, which is the "higher" value language, which you should be using to determine the user's language.<br/>
+<br/>
+<br/>
+<br/>
+to get back just the array of languages ordered by most significant to least <code>$arr = array_keys($all_languages_eval);</code> <small>will output en,en-US,he</small>, for just the string of the first one <code>array_keys($all_languages_eval)[0]</code> its OK to address specific cell since we've got fallback to "en", <small>which is also the native result: en</small><br/>
+', 'PHP Snippet - Accept-Language HTTP header, Browser Settings</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-session-help-store-users-unique-id-ssid-ssidv4-and-force-minimal-requests-frequency-by-using-request-time-header">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-check-if-session-started-compatible-with-every-php-version">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-check-if-session-started-compatible-with-every-php-version">PHP Snippet - Check If Session Started (Compatible With Every PHP Version)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-a-self-called-function-just-like-javascript">PHP Snippet - A Self-Called Function Just Like JavaScript</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-parse-http-headers-string-into-an-associative-array">PHP Snippet - Parse HTTP Headers String Into An Associative Array</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-array-by-reference">PHP Snippet - Array By-Reference</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ip2country-sql-download">IP2Country SQL Download</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-snippet-proper-utf-8-and-gzip-with-buffers-handling-and-content-length-header-and-ratio-information">PHP Snippet - Proper UTF-8 And GZip With Buffers-Handling And Content-Length Header And Ratio Information</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/a-better-wordpress-image-css">Better WordPress Post Image Display Using Block-Container And CSS3</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-google-chrome-developer-tools-wow-nice">Wow Nice!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-wil-wheaton-project">The Wil Wheaton Project</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/java-9">Java 9</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/doctor-who-season-8-12th-doctor-peter-capaldi">Doctor Who Season 8 - 12th Doctor - Peter Capaldi</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/putty-theme-and-logs">PUTTY Theme And Logs</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/xen-server-within-vmware-hypervisor-nested-virtual-machine-architectures">Xen-Server Within VMware Hypervisor - Nested Virtual-Machine Architectures</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/jetbrains-ides-early-access">JetBrains IDEs Early Access - Yummy!!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/autohotkey-remap-space-to-underscore">AutoHotKey Script - Replace (Re-Map) Space to Underscore</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/minimal-javascript-bookmarklet-format-no-cache">No-Cache</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>based on Javascript - Algorithm Steps and Design Example For Efficiency</title>
+  <meta itemprop="name"                                content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+  <meta name="dcterms.title"                           content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+  <meta property="og:title"                            content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+  <meta name="twitter:title"                           content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+  <meta name="twitter:text:title"                      content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+  <meta name="application-name"                        content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+  <meta name="subject"                                 content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+  <meta name="apple-mobile-web-app-title"              content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+  <meta name="msapplication-tooltip"                   content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+  <meta itemprop="description"                         content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+  <meta name="dcterms.description"                     content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+  <meta name="twitter:description"                     content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+  <meta property="og:description"                      content="based on Javascript - Algorithm Steps and Design Example For Efficiency"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="algorithm,amount,area,array,backward,based,beautifier,blank,blue,boolean,breaking,calculation,calling,cases,changed,char,chars,checking,code,color,combined,comparing,complexity,computation,concat,conditions,continue,continuex,covers,define,delete,demo,design,difference,draft,effective,efficiency,efficient,engines,evaluates,exist,expression,extra,faster,field,flushed,forward,found,fully,function,github,high,hold,holds,html,hyper,idea,ignore,implicitly,include,increasing,indexer,input,inside,integrating,javascript,join,joining,joinx,length,letter,letters,limit,lines,make,mechanism,memory,method,methods,minified,minifier,minify,multi,native,naturally,page,parser,parsing,plain,prepare,problem,prove,push,putting,rawcss,reference,regular,removing,rendering,replace,requirement,return,returning,saving,scope,searching,secondclass,sequences,series,simpler,simplicity,simply,single,site,size,skipping,solution,space,spaces,split,steps,storage,stores,storing,strict,strings,strong,switch,target,temp,textarea,thinking,times,title,tools,total,uglify,understand,usage,variable,walk,walking,wasting,work,working,worst,wrong,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="algorithm,amount,area,array,backward,based,beautifier,blank,blue,boolean,breaking,calculation,calling,cases,changed,char,chars,checking,code,color,combined,comparing,complexity,computation,concat,conditions,continue,continuex,covers,define,delete,demo,design,difference,draft,effective,efficiency,efficient,engines,evaluates,exist,expression,extra,faster,field,flushed,forward,found,fully,function,github,high,hold,holds,html,hyper,idea,ignore,implicitly,include,increasing,indexer,input,inside,integrating,javascript,join,joining,joinx,length,letter,letters,limit,lines,make,mechanism,memory,method,methods,minified,minifier,minify,multi,native,naturally,page,parser,parsing,plain,prepare,problem,prove,push,putting,rawcss,reference,regular,removing,rendering,replace,requirement,return,returning,saving,scope,searching,secondclass,sequences,series,simpler,simplicity,simply,single,site,size,skipping,solution,space,spaces,split,steps,storage,stores,storing,strict,strings,strong,switch,target,temp,textarea,thinking,times,title,tools,total,uglify,understand,usage,variable,walk,walking,wasting,work,working,worst,wrong,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/optimise-speed-tip-jetbrains-webstorm-a-java-based-tweak"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/optimise-speed-tip-jetbrains-webstorm-a-java-based-tweak"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/adding-gjslinter-to-webstorm-google-closure-jslinter-jetbrains-webstorm-integration"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/css-minifier-based-on-javascript-algorithm-steps-and-design-example-for-efficiency"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/css-minifier-based-on-javascript-algorithm-steps-and-design-example-for-efficiency"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/css-minifier-based-on-javascript-algorithm-steps-and-design-example-for-efficiency"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/css-minifier-based-on-javascript-algorithm-steps-and-design-example-for-efficiency"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/css-minifier-based-on-javascript-algorithm-steps-and-design-example-for-efficiency"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/css-minifier-based-on-javascript-algorithm-steps-and-design-example-for-efficiency"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2013-04-01T03:42:29+00:00"     />
+  <meta name="page-datetime"                           content="2013-04-01T03:42:29+00:00"     />
+  <meta property="article:published_time"              content="2013-04-01T03:42:29+00:00"     />
+  <meta name="dcterms.date"                            content="2013-04-01T03:42:29+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2013-04-01T04:29:45+00:00"    />
+  <meta property="article:modified_time"               content="2013-04-01T04:29:45+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/css-minifier-based-on-javascript-algorithm-steps-and-design-example-for-efficiency"
+,"url"             : "https://icompile.eladkarako.com/css-minifier-based-on-javascript-algorithm-steps-and-design-example-for-efficiency"
+,"headline"        : "based on Javascript - Algorithm Steps and Design Example For Efficiency"
+,"description"     : "based on Javascript - Algorithm Steps and Design Example For Efficiency"
+,"datePosted"      : "2013-04-01T03:42:29+00:00"
+,"dateCreated"     : "2013-04-01T03:42:29+00:00"
+,"datePublished"   : "2013-04-01T03:42:29+00:00"
+,"dateModified"    : "2013-04-01T04:29:45+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0009477874631">
+  <header>
+    <h1 itemprop="headline">based on Javascript - Algorithm Steps and Design Example For Efficiency</h1>
+    <sup>Posted at <time datetime="2013-04-01T04:29:45+00:00" itemprop="dateModified">Mon, 01 Apr 2013 04:29:45 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">1. javascript replace stores sub-strings as in the length of the string you are searching.<br/>
+2. requirement: make a CSS minifier (a.k.a uglify algorithm) that will be more efficient then replace. and prove it.<br/>
+<br/>
+<br/>
+I.draft solution<br/>
+1. use 'replace' to understand the plain problem:<br/>
+<pre>
+var cssunbeautifier = function (rawcss) {
+    'use strict';
+    var s = rawcss;
+
+    s = s.replace(/\
+/ig, '');
+    s = s.replace(/\\s*:\\s*/ig, ':');
+    s = s.replace(/\\s*\\,\\s*/ig, ',');
+    s = s.replace(/\\s*\\{\\s*/ig, '{');
+    s = s.replace(/\\s*\\}\\s*/ig, '}');
+    s = s.replace(/\\s*\\;\\s*/ig, ';');
+
+    return (s);
+};
+</pre><br/>
+<br/>
+problem: replace evaluates as new regular expression, storing sequences are done 6 times,<br/>
+plain calculation (without integrating parser engines, etc..)- since using the /g switch is searching all the<br/>
+input, -----: o(6n).<br/>
+memory complexity: string replace is returning a string and saving a string in variable, old reference is GC(flushed..) and new reference stores ~~ same amount or less.<br/>
+worst case there are no replacements and the same input size is returning again, -------: o(6n).<br/>
+simplicity: high.<br/>
+<br/>
+<br/>
+second solution:<br/>
+look at the string as array of chars.<br/>
+prepare second empty array to hold the minified-string result.<br/>
+<br/>
+while walking over the array: think: if "you" (the current char) are 'space', then on some cases, we (as the storing mechanism as storage area) overlook/ignore <strong>it</strong> and continue to the next char.<br/>
+this covers the previous spaces, limit them to single space on some cases, or none in other cases.<br/>
+asking again, but this time or the forward char, "if I (the current char) am "space", then on some cases we can overlook or ignore <strong>it</strong>.<br/>
+<br/>
+for example:<br/>
+forward "delete":<br/>
+space and then '{' - we do nothing<br/>
+but: '}' and then space - we don't include the space.<br/>
+<br/>
+backward "delete":<br/>
+space and then space - we do not include the first space.<br/>
+<br/>
+<br/>
+here is the combined example of the second draft,<br/>
+<br/>
+<pre><br/>
+a = "  .exampleClass .secondClass {   background-color :   blue ; }  ".split('');<br/>
+b=[];<br/>
+for(var i=0; i<a.length; i++){<br/>
+    //forward space delete --- look backward<br/>
+    if(  (a[i]===' ') && <br/>
+         ( (a[i-1]===' ') || (a[i-1]===';') || (a[i-1]===':') || <br/>
+           (a[i-1]==='{') || (a[i-1]==='}') )  ) continue;<br/>
+<br/>
+    //backward space delete --- look forward<br/>
+    if(  (a[i]===' ') && <br/>
+         ( (a[i+1]===' ') || (a[i+1]===';') || (a[i+1]===':') || <br/>
+           (a[i+1]==='{') || (a[i+1]==='}') )  ) continue;<br/>
+           <br/>
+    b.push(a[i]);<br/>
+}<br/>
+b.join('');<br/>
+</pre><br/>
+<br/>
+the result will be ".exampleClass .secondClass{background-color:blue;}"<br/>
+<br/>
+<br/>
+<br/>
+third solution,<br/>
+removing the "if" usage is usually effective consider the total length,<br/>
+and the fact the "if" conditions are breaking the code.<br/>
+<br/>
+we will walk the same amount of steps as before, the algorithm has not changed,<br/>
+but by skipping the conditions and comparing boolean values, the code is rendering using simpler set-of "tools",<br/>
+if before we've had:<br/>
+<pre>for, length, ifx2, [indexer in array],  &&, ||, continuex2, push, joinx1 and return.</pre><br/>
+now we have         <br/>
+<pre>for, length, [indexer in array], &&, ||, push, joinx1 and return.</pre><br/>
+which means parsing is faster/simpler.<br/>
+<br/>
+here is the example, doing the same as before, but better:<br/>
+<pre><br/>
+a = "  .exampleClass .secondClass {   background-color :   blue ; }  ".split('');<br/>
+b = [];<br/>
+for (var i = 0; i < a.length; i++)<br/>
+    " " === a[i] && <br/>
+    (" " === a[i - 1] || ";" === a[i - 1] || ":" === a[i - 1] || "{" === a[i - 1] || "}" === a[i - 1]) <br/>
+<br/>
+    || " " === a[i] && <br/>
+    (" " === a[i + 1] || ";" === a[i + 1] || ":" === a[i + 1] || "{" === a[i + 1] || "}" === a[i + 1])<br/>
+    <br/>
+    || b.push(a[i]);<br/>
+</pre><br/>
+<br/>
+<br/>
+<br/>
+how not to continue:<br/>
+you might be thinking that joining the "checking for a series of spaces" might be an even better idea (or faster),<br/>
+but in fact it is hardly the case- by increasing the amount of "tools" or "native-methods" you are using (like concat, join or simply putting [] inside an array thus implicitly define a new array (for example), the parser need to use,<br/>
+and comparing string and not "single letter string" (a.k.a char.) -- (there is a difference!)<br/>
+for example by <br/>
+<pre><br/>
+......<br/>
+    for (var i = 0; i < a.length; i++)<br/>
+    var s = [].concat(a[i - 1],a[i],a[i + 1]).join('');<br/>
+    (s === "   " || s===";  " || s===":  ") || b.push(a[i])<br/>
+......<br/>
+</pre><br/>
+<br/>
+this is naturally wrong, since by asking each time on 2 chars- each time, we are 'wasting' computation,<br/>
+both in memory complexity, where now each temp. storage holds 3 letters char, and both in algorithm complexity.<br/>
+<br/>
+  <br/>
+  <br/>
+<br/>
+a fully working example can be found in my <a href="http://work.eladkarako.com/demo" title="http://work.eladkarako.com/demo" target="_blank">work.eladkarako.com/demo</a> site,<br/>
+in the page <a href="http://work.eladkarako.com/demo/css_beautifier.html" title="http://work.eladkarako.com/demo/css_beautifier.html" target="_blank">http://work.eladkarako.com/demo/css_beautifier.html</a>. <br/>
+<br/>
+   <br/>
+the code is available in my github, <a href="https://github.com/eladkarako/Hyper-Efficient-CSS-Beautifier" title="https://github.com/eladkarako/Hyper-Efficient-CSS-Beautifier" target="_blank">https://github.com/eladkarako/Hyper-Efficient-CSS-Beautifier</a><br/>
+exist along with the beautifier algorithm, which is also, very efficient.<br/>
+   <br/>
+    <br/>
+  <br/>
+  <br/>
+extra something:<br/>
+<br/>
+you might want to minify multi-lines too (and space between... etc..)<br/>
+the following example is using a scope of method, it can be used,<br/>
+by calling <em>cssUnBeautifier</em> with the value field of textarea (for example)<br/>
+<pre><br/>
+var cssUnBeautifier = function(rawcss) {<br/>
+   'use strict';<br/>
+    var a = rawcss.split(''), s=[];<br/>
+    for (var i = 0; i < a.length; i++)<br/>
+        "\<br/>
+" === a[i]<br/>
+<br/>
+        ||<br/>
+        " " === a[i] && <br/>
+        (" " === a[i - 1] || ";" === a[i - 1] || ":" === a[i - 1] || "{" === a[i - 1] || "}" === a[i - 1]) <br/>
+<br/>
+        || <br/>
+        " " === a[i] && <br/>
+        (" " === a[i + 1] || ";" === a[i + 1] || ":" === a[i + 1] || "{" === a[i + 1] || "}" === a[i + 1]) <br/>
+        <br/>
+        || s.push(a[i]);<br/>
+<br/>
+   return( s.join('') );<br/>
+};<br/>
+</pre>', 'CSS minifier</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/optimise-speed-tip-jetbrains-webstorm-a-java-based-tweak">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/adding-gjslinter-to-webstorm-google-closure-jslinter-jetbrains-webstorm-integration">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adding-gjslinter-to-webstorm-google-closure-jslinter-jetbrains-webstorm-integration">Adding GJSLinter to WebStorm - Google-Closure-JSLinter JetBrains WebStorm Integration</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/shell-svn-from-php">Shell SVN From PHP</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/more-wamp-php-tricks-increase-limits">More WAMP PHP Tricks - Increase Limits</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/all-known-methods-of-sending-requests-using-pure-javascript">All Known Methods Of Sending Requests Using Pure JavaScript</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers">New Outbrain Widget For Bloggers</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/my-favorite-passover-movies">My Favorite Passover Movies</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sugru-arrived-happy-day">Adjust! Sugru Arrived - Happy Day!!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/oh-ye-of-little-faith-google-closure-2">oh ye of little faith Google-Closure</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-video-crop">FFMPEG Video Crop</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pandora-text-select-enabler-new-chrome-extension">Pandora Text-Select Enabler - New Chrome Extension </a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-extract-subtitle-file-from-mkv-video-file">FFMPEG extract subtitle file from mkv video file</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/playing-with-remote-desktop-sessions-1">playing with remote desktop sessions #1</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/i-really-love-javascript">I really love JavaScript</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/htaccess-forward-rewrite-rule">htaccess forward (rewrite) rule</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/altoids-taste-like-toothpaste-smells-like-bengay-and-anyhow-not-nearly-that-strong-anyway">and anyhow not nearly that strong anyway</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/big-data-machine-logstash-agent-daemon-pipe-to-perl-script-that-sends-to-elasticsearch-server-from-the-very-start">pipe to perl script that sends to ElasticSearch server - from the very start</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

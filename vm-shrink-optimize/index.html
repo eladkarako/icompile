@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>VM Shrink and Optimization Guide</title>
+  <meta itemprop="name"                                content="VM Shrink and Optimization Guide"       />
+  <meta name="dcterms.title"                           content="VM Shrink and Optimization Guide"       />
+  <meta property="og:title"                            content="VM Shrink and Optimization Guide"       />
+  <meta name="twitter:title"                           content="VM Shrink and Optimization Guide"       />
+  <meta name="twitter:text:title"                      content="VM Shrink and Optimization Guide"       />
+  <meta name="application-name"                        content="VM Shrink and Optimization Guide"       />
+  <meta name="subject"                                 content="VM Shrink and Optimization Guide"       />
+  <meta name="apple-mobile-web-app-title"              content="VM Shrink and Optimization Guide"       />
+  <meta name="msapplication-tooltip"                   content="VM Shrink and Optimization Guide"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="VM Shrink and Optimization Guide"       />
+  <meta itemprop="description"                         content="VM Shrink and Optimization Guide"       />
+  <meta name="dcterms.description"                     content="VM Shrink and Optimization Guide"       />
+  <meta name="twitter:description"                     content="VM Shrink and Optimization Guide"       />
+  <meta property="og:description"                      content="VM Shrink and Optimization Guide"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="adjustments,archive,back,backup,brpkoi,button,ccleaner,changing,clean,cleanmgr,cleanup,click,closest,code,compact,compacting,configure,content,continue,continues,created,custom,defrag,delete,deleting,dfrgui,disable,disabled,disk,docs,double,download,downloads,drive,drives,easier,enabled,everytime,export,fasion,file,files,folder,folders,free,github,guide,hgah,ification,image,imgur,installed,jqschq,leftovers,line,located,machine,make,master,merge,methods,microsoft,minimum,mods,nedded,needed,njfsxo,null,oatni,open,optimize,optional,oracle,orderly,oxez,partial,program,progress,protection,reboot,recent,reduce,registry,remove,restore,save,sdelete,select,service,services,shrink,shrinking,shutdown,simply,snapshot,snapshots,space,start,state,step,steps,stop,storage,store,strong,switch,system,tree,trim,turn,update,updated,updates,vboxmanage,virtual,virtualbox,windir,windows,worry,xcjedla,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="adjustments,archive,back,backup,brpkoi,button,ccleaner,changing,clean,cleanmgr,cleanup,click,closest,code,compact,compacting,configure,content,continue,continues,created,custom,defrag,delete,deleting,dfrgui,disable,disabled,disk,docs,double,download,downloads,drive,drives,easier,enabled,everytime,export,fasion,file,files,folder,folders,free,github,guide,hgah,ification,image,imgur,installed,jqschq,leftovers,line,located,machine,make,master,merge,methods,microsoft,minimum,mods,nedded,needed,njfsxo,null,oatni,open,optimize,optional,oracle,orderly,oxez,partial,program,progress,protection,reboot,recent,reduce,registry,remove,restore,save,sdelete,select,service,services,shrink,shrinking,shutdown,simply,snapshot,snapshots,space,start,state,step,steps,stop,storage,store,strong,switch,system,tree,trim,turn,update,updated,updates,vboxmanage,virtual,virtualbox,windir,windows,worry,xcjedla,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/js-snippet-relink-urls-for-a-quick-download-from-github"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/js-snippet-relink-urls-for-a-quick-download-from-github"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/disable-on-screen-keyboard-starting-every-boot"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/vm-shrink-optimize"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/vm-shrink-optimize"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/vm-shrink-optimize"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/vm-shrink-optimize"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/vm-shrink-optimize"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/vm-shrink-optimize"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2019-10-11T06:11:01+00:00"     />
+  <meta name="page-datetime"                           content="2019-10-11T06:11:01+00:00"     />
+  <meta property="article:published_time"              content="2019-10-11T06:11:01+00:00"     />
+  <meta name="dcterms.date"                            content="2019-10-11T06:11:01+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2019-10-11T06:11:01+00:00"    />
+  <meta property="article:modified_time"               content="2019-10-11T06:11:01+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/vm-shrink-optimize"
+,"url"             : "https://icompile.eladkarako.com/vm-shrink-optimize"
+,"headline"        : "VM Shrink and Optimization Guide"
+,"description"     : "VM Shrink and Optimization Guide"
+,"datePosted"      : "2019-10-11T06:11:01+00:00"
+,"dateCreated"     : "2019-10-11T06:11:01+00:00"
+,"datePublished"   : "2019-10-11T06:11:01+00:00"
+,"dateModified"    : "2019-10-11T06:11:01+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0001624770751">
+  <header>
+    <h1 itemprop="headline">VM Shrink and Optimization Guide</h1>
+    <sup>Posted at <time datetime="2019-10-11T06:11:01+00:00" itemprop="dateModified">Fri, 11 Oct 2019 06:11:01 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">After you've installed a clean new Windows 7/8/10, <br/>
+and installed all the nedded updated from Windows-update,  <br/>
+you'll end up with a hard-drive of about 35GB of a virtual-machine,  <br/>
+with almost nothing on it.  <br/>
+ <br/>
+There are several folders you can delete, free-space null'ification and  <br/>
+hard-drive compacting methods that will reduce about 15GB of the hard-file,  <br/>
+without changing anything in your machine configuration itself. <br/>
+ <br/>
+Shrinking the hard-drive will make it easier for you to export VM. <br/>
+ <br/>
+This will also optimize the performances of the VM. :] <br/>
+ <br/>
+<ol><br/>
+<li><br/>
+Disable system-protection, you don't need it in a virtual-machine,  <br/>
+where you can use a snapshot when needed. <br/>
+ <br/>
+Run: <code>C:\Windows\system32\systempropertiesadvanced.exe</code>,  <br/>
+go to system-protection tab, for each drive click configure,  <br/>
+set the progress-bar to the minimum possible, and click OK,  <br/>
+go back and switch to <strong>Turn off system protection</strong>. <br/>
+Click the <strong>Delete</strong> button (click continue) and do the same for the next drives. <br/>
+Reboot the VM once before you'll continue the next steps. <br/>
+<img loading="lazy" lazyload="on"  src="https://i.imgur.com/hgaH38e.png" /> <br/>
+<img loading="lazy" lazyload="on"  src="https://i.imgur.com/jqsCHq7.png" /> <br/>
+</li><br/>
+<li><br/>
+Run Windows disk-cleanup: <code>%windir%\system32\cleanmgr.exe</code> <br/>
+<img loading="lazy" lazyload="on"  src="https://i.imgur.com/XCjEdLa.png" /> <br/>
+select <strong>everything</strong>, including old Windows-updates, run cleanup. <br/>
+<img loading="lazy" lazyload="on"  src="https://i.imgur.com/3nJfSXO.png" /> <br/>
+</li><br/>
+<li><br/>
+Clean up leftovers, fix registry, remove old system-restore snapshots with  <br/>
+this custom CCleaner: https://github.com/eladkarako/mods/tree/store/CCleaner <br/>
+download just the CCleaner folder using github-partial-get: https://github.com/eladkarako/github-partial-get/archive/master.zip  <br/>
+or just download the main exe and the INI file. <br/>
+</li><br/>
+<li><br/>
+Disable the windows update service, and delete <code>C:\Windows\SoftwareDistribution\</code> to save about 5GB of storage. <br/>
+run <code>services.msc</code>, look for the line of Windows Update, double click it,  <br/>
+click stop, set to disabled, click OK. <br/>
+<img loading="lazy" lazyload="on"  src="https://i.imgur.com/2BRPkOI.png" /> <br/>
+You can now go to <code>C:\Windows\SoftwareDistribution\</code> and delete its entire-content. <br/>
+Don't worry, in-case you'll need the Windows Update again, simply set it to enabled and click run, the folder will be re-created. <br/>
+</li><br/>
+<li><br/>
+Defrag all of the drives with Windows Defrag: <code>%windir%\system32\dfrgui.exe</code>, <br/>
+it will make sure the hard-drive content is as continues as possible. <br/>
+<img loading="lazy" lazyload="on"  src="https://i.imgur.com/NPg9v4Z.png" /> <br/>
+</li><br/>
+<li><br/>
+Download sdelete from https://docs.microsoft.com/sysinternals/downloads/sdelete <br/>
+open CMD as administrator, and run <code>sdelete c: -z</code> to zero out empty space. <br/>
+<img loading="lazy" lazyload="on"  src="https://i.imgur.com/qu1GpR9.png" /> <br/>
+</li><br/>
+<li><br/>
+<strong>Reboot the VM, and run defrag and sdelete again.</strong> <br/>
+</li><br/>
+<li><br/>
+Shutdown the VM in an orderly fasion. <br/>
+<img loading="lazy" lazyload="on"  src="https://i.imgur.com/Ra0qU3i.png" /> <br/>
+</li><br/>
+<li><br/>
+Optional.<br/>
+Delete all snapshots of the virtual-machine, <br/>
+everytime you'll delete one, its state will merge into the previous one <br/>
+(don't worry it won't effect the current state), to save time start by deleting <br/>
+the most recent-ones, the ones that are closest to the current-state line. <br/>
+<img loading="lazy" lazyload="on"  src="https://i.imgur.com/oAtNI44.png" /> <br/>
+<br/>
+This step is need if you wish to export the machine, <br/>
+or maybe backup the virtual-machine folder. <br/>
+</li><br/>
+<li><br/>
+<blockquote>My machine name (Windows 7) is <code>w7</code> and it's located at <code>C:\vm\w7\</code>, <br/>
+the hard-drive file name is <code>w7.vdi</code>, make adjustments to where you place your VM, <br/>
+and the name of your hard-drive file.</blockquote> <br/>
+ <br/>
+Open CMD as administrator and run: <br/>
+<code>"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"  modifymedium --compact c:\vm\w7\w7.vdi</code> <br/>
+<img loading="lazy" lazyload="on"  src="https://i.imgur.com/ki4OXeZ.png" /> <br/>
+ <br/>
+This is the final-step, <br/>
+it will try to trim storage space from the end-image, <br/>
+that is why it was so important to defrag and use sdelete. <br/>
+</li><br/>
+</ol><br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/js-snippet-relink-urls-for-a-quick-download-from-github">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/disable-on-screen-keyboard-starting-every-boot">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disable-on-screen-keyboard-starting-every-boot">Disable On-Screen Keyboard Starting on Every Boot</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/color-convertion-kelvin-to-rgb-with-javascript">Color Convertion - Kelvin to RGB - with JavaScript</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-html-to-text">PHP Method To Extract Text From HTML (Tag-Based) Content</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-document-ready">JavaScript Method For Launching A Callback When The Document Is Ready</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/f-lux-eye-friendly-coding">f.lux - Eye-Friendly Coding</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/autohotkey-disable-mouse-with-f8">AutoHotKey - Disable Mouse Movement, Buttons And Scroll To Help With Lenovo-TrackPoint - Mouse Cursor Move By Itself - Problem</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/autohotkey-disable-touchpad-while-typing">AutoHotKey - Disable TouchPad/Mouse Movement/Buttons/Scroll for 300ms After A Key-Press To Help With Accidental Touch-Gestures</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-shadowdom-data-extraction-example">JavaScript Example On How To Extract Data From ShadowDom Nodes In A Document (From VirusTotal New Design)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-javascript-ajax-form-submit-with-sanitize-and-fallback-nojquery">A Server-Side [PHP] And Client-Side [HTML5/JavaScript] Way Of AJAX-Submitting A Form, With No-Script Fallback To Plain HTML</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-chunked-response">Trying To Send A Chunk-ed Response With Plain-PHP</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/virustotal-api">VirusTotal API</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nullify-windows-ownership-and-permissions">Null-ify Windows Ownership And Permissions</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adguard-subdomains">AdGuard SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hebrew-voice-from-google-translate-and-ffmpeg-pitch-manipulation">Hebrew Voice From Google-Translate And FFMPEG Pitch-Manipulation</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nullify-windows-registry-permissions">Null-ify Windows-Registry Permissions</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/babylon-subdomains">Babylon-Related Sub-Domains</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

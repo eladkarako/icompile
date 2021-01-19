@@ -1,0 +1,3 @@
+<a title="David Ferreira" href="http://themeforest.net/user/davidsife" target="_blank">David Ferreira</a> has created a great, high quality set of 500 icons of social networking <a href="http://www.wpzoom.com/wpzoom/500-free-icons-wpzoom-social-networking-icon-set/">original post</a>.
+
+<a href="https://github.com/eladkarako/icompile/releases/download/latest/WPZOOM_Social_Networking_Icon_Set_png.rar">https://github.com/eladkarako/icompile/releases/download/latest/WPZOOM_Social_Networking_Icon_Set_png.rar</a>

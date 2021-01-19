@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>cast_sender.js - AdBlock finder</title>
+  <meta itemprop="name"                                content="cast_sender.js - AdBlock finder"       />
+  <meta name="dcterms.title"                           content="cast_sender.js - AdBlock finder"       />
+  <meta property="og:title"                            content="cast_sender.js - AdBlock finder"       />
+  <meta name="twitter:title"                           content="cast_sender.js - AdBlock finder"       />
+  <meta name="twitter:text:title"                      content="cast_sender.js - AdBlock finder"       />
+  <meta name="application-name"                        content="cast_sender.js - AdBlock finder"       />
+  <meta name="subject"                                 content="cast_sender.js - AdBlock finder"       />
+  <meta name="apple-mobile-web-app-title"              content="cast_sender.js - AdBlock finder"       />
+  <meta name="msapplication-tooltip"                   content="cast_sender.js - AdBlock finder"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="cast_sender.js - AdBlock finder"       />
+  <meta itemprop="description"                         content="cast_sender.js - AdBlock finder"       />
+  <meta name="dcterms.description"                     content="cast_sender.js - AdBlock finder"       />
+  <meta name="twitter:description"                     content="cast_sender.js - AdBlock finder"       />
+  <meta property="og:description"                      content="cast_sender.js - AdBlock finder"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="adblock,android,appendchild,bold,break,cast,catch,chrome,clank,color,command,concat,crios,document,eureka,extension,extensionid,finder,font,found,function,game,gcrweb,gstatic,indexof,init,length,match,message,navigator,onerror,open,parseint,readystate,return,script,send,sender,status,typeof,useragent,weight,window,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="adblock,android,appendchild,bold,break,cast,catch,chrome,clank,color,command,concat,crios,document,eureka,extension,extensionid,finder,font,found,function,game,gcrweb,gstatic,indexof,init,length,match,message,navigator,onerror,open,parseint,readystate,return,script,send,sender,status,typeof,useragent,weight,window,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/supersu-systemless-false"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/supersu-systemless-false"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/even-smaller-gif"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/cast-senderadblock-finder"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/cast-senderadblock-finder"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/cast-senderadblock-finder"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/cast-senderadblock-finder"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/cast-senderadblock-finder"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/cast-senderadblock-finder"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-05-14T21:56:37+00:00"     />
+  <meta name="page-datetime"                           content="2016-05-14T21:56:37+00:00"     />
+  <meta property="article:published_time"              content="2016-05-14T21:56:37+00:00"     />
+  <meta name="dcterms.date"                            content="2016-05-14T21:56:37+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-05-14T23:07:31+00:00"    />
+  <meta property="article:modified_time"               content="2016-05-14T23:07:31+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/cast-senderadblock-finder"
+,"url"             : "https://icompile.eladkarako.com/cast-senderadblock-finder"
+,"headline"        : "cast_sender.js - AdBlock finder"
+,"description"     : "cast_sender.js - AdBlock finder"
+,"datePosted"      : "2016-05-14T21:56:37+00:00"
+,"dateCreated"     : "2016-05-14T21:56:37+00:00"
+,"datePublished"   : "2016-05-14T21:56:37+00:00"
+,"dateModified"    : "2016-05-14T23:07:31+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0007992623641">
+  <header>
+    <h1 itemprop="headline">cast_sender.js - AdBlock finder</h1>
+    <sup>Posted at <time datetime="2016-05-14T23:07:31+00:00" itemprop="dateModified">Sat, 14 May 2016 23:07:31 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">https://www.gstatic.com/cv/js/sender/v1/cast_sender.js<br/>
+<br/>
+<pre><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+  <span style='color:#800000; font-weight:bold; '>var</span> d <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>var</span> a <span style='color:#808030; '>=</span> window<span style='color:#808030; '>.</span>navigator<span style='color:#808030; '>.</span>userAgent<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>match</span><span style='color:#808030; '>(</span><span style='color:#800000; '>/</span><span style='color:#0000e6; '>Chrome</span><span style='color:#0f69ff; '>\\/</span><span style='color:#808030; '>(</span><span style='color:#808030; '>[</span><span style='color:#0000e6; '>0</span><span style='color:#808030; '>-</span><span style='color:#0000e6; '>9</span><span style='color:#808030; '>]</span><span style='color:#808030; '>+</span><span style='color:#808030; '>)</span><span style='color:#800000; '>/</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+      <span style='color:#800000; font-weight:bold; '>return</span> a <span style='color:#800080; '>?</span> <span style='color:#008c00; '>50</span> <span style='color:#808030; '>&lt;=</span> <span style='color:#800000; font-weight:bold; '>parseInt</span><span style='color:#808030; '>(</span>a<span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>10</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>:</span> <span style='color:#808030; '>!</span><span style='color:#008c00; '>1</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#808030; '>,</span> e <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>currentScript <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span> <span style='color:#808030; '>!=</span> document<span style='color:#808030; '>.</span>currentScript<span style='color:#808030; '>.</span>src<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>indexOf</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>?loadGamesSDK</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>?</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>/cast_game_sender.js</span><span style='color:#800000; '>"</span> <span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>/cast_sender.js</span><span style='color:#800000; '>"</span><br/>
+    <span style='color:#808030; '>,</span> f <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>boadgeojelhgndaghljhdicfkmllpafd</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>dliochdbjfkdbacpmhlcpmleaejidimm</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>enhhojjnijigcajfphajepfemndkmdlo</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>fmfcbgogabcbclcofgocippekhfcmgfj</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span><br/>
+    <span style='color:#808030; '>,</span> g <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>pkedcjkdefgpdelpbcmbmeomcjbeemfm</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>fjhoaacokmgbjemoflkofnenfaiekifl</span><span style='color:#800000; '>"</span><span style='color:#808030; '>]</span><br/>
+    <span style='color:#808030; '>,</span> h <span style='color:#808030; '>=</span> d<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>?</span> g<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>concat</span><span style='color:#808030; '>(</span>f<span style='color:#808030; '>)</span> <span style='color:#800080; '>:</span> f<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>concat</span><span style='color:#808030; '>(</span>g<span style='color:#808030; '>)</span><br/>
+    <span style='color:#808030; '>,</span> k <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> c<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>var</span> b <span style='color:#808030; '>=</span><br/>
+        <span style='color:#800000; font-weight:bold; '>new</span> XMLHttpRequest<span style='color:#800080; '>;</span><br/>
+      b<span style='color:#808030; '>.</span>onreadystatechange <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+        <span style='color:#008c00; '>4</span> <span style='color:#808030; '>==</span> b<span style='color:#808030; '>.</span>readyState <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#008c00; '>200</span> <span style='color:#808030; '>==</span> b<span style='color:#808030; '>.</span>status <span style='color:#808030; '>&amp;&amp;</span> c<span style='color:#808030; '>(</span><span style='color:#808030; '>!</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><br/>
+      <span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+      b<span style='color:#808030; '>.</span>onerror <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+        c<span style='color:#808030; '>(</span><span style='color:#808030; '>!</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><br/>
+      <span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+      <span style='color:#800000; font-weight:bold; '>try</span> <span style='color:#800080; '>{</span><br/>
+        b<span style='color:#808030; '>.</span>open<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>GET</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> a<span style='color:#808030; '>,</span> <span style='color:#808030; '>!</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> b<span style='color:#808030; '>.</span>send<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><br/>
+      <span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>catch</span> <span style='color:#808030; '>(</span>n<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+        c<span style='color:#808030; '>(</span><span style='color:#808030; '>!</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><br/>
+      <span style='color:#800080; '>}</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#808030; '>,</span> p <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>a <span style='color:#808030; '>>=</span> h<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>length</span><span style='color:#808030; '>)</span> l<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+      <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span><br/>
+        <span style='color:#800000; font-weight:bold; '>var</span> c <span style='color:#808030; '>=</span> h<span style='color:#808030; '>[</span>a<span style='color:#808030; '>]</span><br/>
+          <span style='color:#808030; '>,</span> b <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>chrome-extension://</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> c <span style='color:#808030; '>+</span> e<span style='color:#800080; '>;</span><br/>
+        <span style='color:#008c00; '>0</span> <span style='color:#808030; '>&lt;=</span> f<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>indexOf</span><span style='color:#808030; '>(</span>c<span style='color:#808030; '>)</span> <span style='color:#800080; '>?</span> k<span style='color:#808030; '>(</span>b<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>n<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+          n <span style='color:#800080; '>?</span> <span style='color:#808030; '>(</span>window<span style='color:#808030; '>.</span>chrome<span style='color:#808030; '>.</span>cast <span style='color:#808030; '>=</span> window<span style='color:#808030; '>.</span>chrome<span style='color:#808030; '>.</span>cast <span style='color:#808030; '>||</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> window<span style='color:#808030; '>.</span>chrome<span style='color:#808030; '>.</span>cast<span style='color:#808030; '>.</span>extensionId <span style='color:#808030; '>=</span> c<span style='color:#808030; '>,</span> m<span style='color:#808030; '>(</span>b<span style='color:#808030; '>,</span> l<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>:</span> p<span style='color:#808030; '>(</span>a <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><br/>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>:</span> m<span style='color:#808030; '>(</span>b<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+          p<span style='color:#808030; '>(</span>a <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><br/>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><br/>
+      <span style='color:#800080; '>}</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#808030; '>,</span> m <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>,</span> c<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>var</span> b <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>createElement<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>script</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+      b<span style='color:#808030; '>.</span>onerror <span style='color:#808030; '>=</span> c<span style='color:#800080; '>;</span><br/>
+      b<span style='color:#808030; '>.</span>src <span style='color:#808030; '>=</span> a<span style='color:#800080; '>;</span><br/>
+      <span style='color:#808030; '>(</span>document<span style='color:#808030; '>.</span>head <span style='color:#808030; '>||</span> document<span style='color:#808030; '>.</span>documentElement<span style='color:#808030; '>)</span><br/>
+      <span style='color:#808030; '>.</span>appendChild<span style='color:#808030; '>(</span>b<span style='color:#808030; '>)</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#808030; '>,</span> l <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>var</span> a <span style='color:#808030; '>=</span> window<span style='color:#808030; '>.</span>__onGCastApiAvailable<span style='color:#800080; '>;</span><br/>
+      a <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>function</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>==</span> <span style='color:#800000; font-weight:bold; '>typeof</span> a <span style='color:#808030; '>&amp;&amp;</span> a<span style='color:#808030; '>(</span><span style='color:#808030; '>!</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>No cast extension found</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><br/>
+    <span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+  a<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span><br/>
+    <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span> <span style='color:#808030; '>&lt;=</span> window<span style='color:#808030; '>.</span>navigator<span style='color:#808030; '>.</span>userAgent<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>indexOf</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>CriOS</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>var</span> q <span style='color:#808030; '>=</span> window<span style='color:#808030; '>.</span>__gCrWeb <span style='color:#808030; '>&amp;&amp;</span> window<span style='color:#808030; '>.</span>__gCrWeb<span style='color:#808030; '>.</span>message <span style='color:#808030; '>&amp;&amp;</span> window<span style='color:#808030; '>.</span>__gCrWeb<span style='color:#808030; '>.</span>message<span style='color:#808030; '>.</span>invokeOnHost<span style='color:#800080; '>;</span><br/>
+      <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>q<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+        q<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span><br/>
+          command<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>cast.sender.init</span><span style='color:#800000; '>"</span><br/>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+        <span style='color:#800000; font-weight:bold; '>break</span> a<br/>
+      <span style='color:#800080; '>}</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>window<span style='color:#808030; '>.</span>chrome<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#800000; font-weight:bold; '>var</span> r <span style='color:#808030; '>=</span> window<span style='color:#808030; '>.</span>navigator<span style='color:#808030; '>.</span>userAgent<span style='color:#800080; '>;</span><br/>
+      <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span> <span style='color:#808030; '>&lt;=</span> r<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>indexOf</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Android</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>&amp;&amp;</span> <span style='color:#008c00; '>0</span> <span style='color:#808030; '>&lt;=</span> r<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>indexOf</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Chrome/</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>&amp;&amp;</span> window<span style='color:#808030; '>.</span>navigator<span style='color:#808030; '>.</span>presentation<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span><br/>
+        <span style='color:#800000; font-weight:bold; '>var</span> t <span style='color:#808030; '>=</span> d<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>?</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>50</span><span style='color:#800000; '>"</span> <span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span><br/>
+        m<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>//www.gstatic.com/eureka/clank</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> t <span style='color:#808030; '>+</span> e<span style='color:#808030; '>,</span> l<span style='color:#808030; '>)</span><br/>
+      <span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>else</span> p<span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><br/>
+    <span style='color:#800080; '>}</span> <span style='color:#800000; font-weight:bold; '>else</span> l<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><br/>
+  <span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/supersu-systemless-false">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/even-smaller-gif">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/even-smaller-gif">Even Smaller GIF</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/eset-subdomains">ESet-Related Sub-Domains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sm-n920c_mm_skyhigh34_mod_eladkarako-zip">sm-n920c_mm_skyhigh34_mod_eladkarako.zip</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/backup-network-architecture">Windows Tech Ninja - Backup/Restore Your Network Architecture</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tcp-z">TCP-Z</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-high-interest-video-thumbnails">FFMPEG - High-Interest Video Thumbnails</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/save-songs-from-pandora-radio">Save Songs From Pandora Radio</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-time-range-to-time-diff-using-javascript">FFMPEG Time-Range To Time-Diff Using JavaScript</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-correct-way-to-fast-cut-video">FFMPEG Correct Way to Fast Cut Video</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/n-state-html-element">N-State HTML Element</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/contenteditable-states">contentEditable States</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-720p-vid-data-sample">YouTube 720p Vid Data Sample</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/wmidiag-plus-fixer">WMIDiag.vbs - WMI Diagnostic Script + WMI Fixer</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/element-size">JavaScript Ninja - Element's Measurements</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/make-supersu-mod-no-systemless">Make SuperSU MOD No-Systemless</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/android-fstab-file-useful-for-installation-scripts">Android FSTAB File - Useful For Installation Scripts</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

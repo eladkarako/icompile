@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>JavaScript Basic Stuff - Page's HTML View-Source Programmatically</title>
+  <meta itemprop="name"                                content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+  <meta name="dcterms.title"                           content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+  <meta property="og:title"                            content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+  <meta name="twitter:title"                           content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+  <meta name="twitter:text:title"                      content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+  <meta name="application-name"                        content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+  <meta name="subject"                                 content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+  <meta name="apple-mobile-web-app-title"              content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+  <meta name="msapplication-tooltip"                   content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+  <meta itemprop="description"                         content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+  <meta name="dcterms.description"                     content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+  <meta name="twitter:description"                     content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+  <meta property="og:description"                      content="JavaScript Basic Stuff - Page's HTML View-Source Programmatically"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="ajax,answer,appendchild,auto,basic,border,break,client,code,color,compiling,connection,consolas,console,courier,csstext,deal,difference,doctype,document,domain,dynamically,ease,family,fetch,font,fork,function,github,handlebars,hidden,html,imgur,innerhtml,internet,interrupted,jahm,javascript,location,lucida,make,margin,modifying,monospace,mustache,naturally,nbsp,nofollow,notes,notice,open,options,outerhtml,overflow,padding,page,radius,readystate,rendering,requires,return,rgba,safe,sans,script,send,serif,server,shadow,small,solid,source,stack,standard,start,store,strict,stuff,target,window,wise,wonderful,workaround,wrapping,wrote,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="ajax,answer,appendchild,auto,basic,border,break,client,code,color,compiling,connection,consolas,console,courier,csstext,deal,difference,doctype,document,domain,dynamically,ease,family,fetch,font,fork,function,github,handlebars,hidden,html,imgur,innerhtml,internet,interrupted,jahm,javascript,location,lucida,make,margin,modifying,monospace,mustache,naturally,nbsp,nofollow,notes,notice,open,options,outerhtml,overflow,padding,page,radius,readystate,rendering,requires,return,rgba,safe,sans,script,send,serif,server,shadow,small,solid,source,stack,standard,start,store,strict,stuff,target,window,wise,wonderful,workaround,wrapping,wrote,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/php-filter_sanitize-think-regex-instead"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/php-filter_sanitize-think-regex-instead"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/github-api-has-no-user-id-to-user-name"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/javascript-basic-stuff-pages-html-view-source-programmatically"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/javascript-basic-stuff-pages-html-view-source-programmatically"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/javascript-basic-stuff-pages-html-view-source-programmatically"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/javascript-basic-stuff-pages-html-view-source-programmatically"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/javascript-basic-stuff-pages-html-view-source-programmatically"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/javascript-basic-stuff-pages-html-view-source-programmatically"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2015-03-18T20:03:13+00:00"     />
+  <meta name="page-datetime"                           content="2015-03-18T20:03:13+00:00"     />
+  <meta property="article:published_time"              content="2015-03-18T20:03:13+00:00"     />
+  <meta name="dcterms.date"                            content="2015-03-18T20:03:13+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2015-03-18T20:05:46+00:00"    />
+  <meta property="article:modified_time"               content="2015-03-18T20:05:46+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/javascript-basic-stuff-pages-html-view-source-programmatically"
+,"url"             : "https://icompile.eladkarako.com/javascript-basic-stuff-pages-html-view-source-programmatically"
+,"headline"        : "JavaScript Basic Stuff - Page's HTML View-Source Programmatically"
+,"description"     : "JavaScript Basic Stuff - Page's HTML View-Source Programmatically"
+,"datePosted"      : "2015-03-18T20:03:13+00:00"
+,"dateCreated"     : "2015-03-18T20:03:13+00:00"
+,"datePublished"   : "2015-03-18T20:03:13+00:00"
+,"dateModified"    : "2015-03-18T20:05:46+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003998076241">
+  <header>
+    <h1 itemprop="headline">JavaScript Basic Stuff - Page's HTML View-Source Programmatically</h1>
+    <sup>Posted at <time datetime="2015-03-18T20:05:46+00:00" itemprop="dateModified">Wed, 18 Mar 2015 20:05:46 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">There are 2 options   <sub>[ and a workaround, which I will Explain later.. ]</sub><br/>
+<!--more--><br/>
+<br/>
+<br/>
+<h2>#1. "HTML" From D.O.M</h2><br/>
+<pre><code><span class="com">//get HTML from DOM (not really HTML from the server but an interrupted one - the plus is that it is immediate to fetch).</span><br/>
+<span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span><br/>
+  <span class="str">"use strict"</span><span class="pun">;</span><br/>
+<br/>
+  <span class="kwd">var</span><span class="pln"> d </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">createElement</span><span class="pun">(</span><span class="str">"div"</span><span class="pun">);</span><span class="pln"><br/>
+  d</span><span class="pun">.</span><span class="pln">style</span><span class="pun">.</span><span class="pln">cssText </span><span class="pun">=</span> <span class="str">"max-width:500px; max-height:200px; background-color:rgba(223,223,223,.7); border:3px solid rgba(0,0,0,.5); padding:5px; margin:10px; overflow-x:hidden; overflow-y:auto; word-break:break-word; font-family:'Courier New',Consolas,Lucida Console,monospace,sans-serif; text-shadow:.3px .3px rgba(0,0,0,.2),-0.3px -0.3px rgba(0,0,0,.2); border-radius:5px; box-shadow:1px 1px 5px rgba(0,0,0,.3),-1px -1px 5px rgba(0,0,0,.3)"</span><span class="pun">;</span><span class="pln"><br/>
+  d</span><span class="pun">.</span><span class="pln">appendChild</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">createTextNode</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">querySelector</span><span class="pun">(</span><span class="str">'html'</span><span class="pun">).</span><span class="pln">innerHTML</span><span class="pun">));</span><span class="pln"><br/>
+  document</span><span class="pun">.</span><span class="pln">querySelector</span><span class="pun">(</span><span class="str">'body'</span><span class="pun">).</span><span class="pln">appendChild</span><span class="pun">(</span><span class="pln">d</span><span class="pun">);</span><br/>
+<span class="pun">}());</span></code></pre><br/>
+this is the 'safe' result, without the <code>&lt;html&gt;</code> wrapping and <code>doctype</code>: <img loading="lazy" lazyload="on"  src="http://i.stack.imgur.com/ZD7KC.png" alt="from DOM" /><br/>
+<h2>#2. HTML From Server (Through "Self-Ajax")</h2><br/>
+<pre><code><span class="com">//get HTML from server, its the real-deal, but requires internet-connection (again...), since its the same-page you are OK to Ajax (domain wise..)</span><br/>
+<span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span><br/>
+  <span class="kwd">var</span><span class="pln"> xhr </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">XMLHttpRequest</span><span class="pun">();</span><span class="pln"><br/>
+  xhr</span><span class="pun">.</span><span class="pln">responseType </span><span class="pun">=</span> <span class="str">"text"</span><span class="pun">;</span><span class="pln"><br/>
+  xhr</span><span class="pun">.</span><span class="pln">onreadystatechange </span><span class="pun">=</span> <span class="kwd">function</span><span class="pun">(</span><span class="pln">e</span><span class="pun">){</span><br/>
+    <span class="kwd">var</span><span class="pln"> <br/>
+      xhr </span><span class="pun">=</span><span class="pln"> e</span><span class="pun">.</span><span class="pln">target<br/>
+      </span><span class="pun">,</span><span class="pln"> d </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">createElement</span><span class="pun">(</span><span class="str">"div"</span><span class="pun">)</span><br/>
+      <span class="pun">;</span><br/>
+<br/>
+    <span class="kwd">if</span><span class="pun">(</span><span class="pln">xhr</span><span class="pun">.</span><span class="pln">DONE </span><span class="pun">!==</span><span class="pln"> xhr</span><span class="pun">.</span><span class="pln">readyState</span><span class="pun">)</span> <span class="kwd">return</span><span class="pun">;</span><span class="pln"><br/>
+<br/>
+    d</span><span class="pun">.</span><span class="pln">style</span><span class="pun">.</span><span class="pln">cssText </span><span class="pun">=</span> <span class="str">"max-width:500px; max-height:200px; background-color:rgba(223,223,223,.7); border:3px solid rgba(0,0,0,.5); padding:5px; margin:10px; overflow-x:hidden; overflow-y:auto; word-break:break-word; font-family:'Courier New',Consolas,Lucida Console,monospace,sans-serif; text-shadow:.3px .3px rgba(0,0,0,.2),-0.3px -0.3px rgba(0,0,0,.2); border-radius:5px; box-shadow:1px 1px 5px rgba(0,0,0,.3),-1px -1px 5px rgba(0,0,0,.3)"</span><span class="pun">;</span><span class="pln"><br/>
+<br/>
+    d</span><span class="pun">.</span><span class="pln">appendChild</span><span class="pun">(</span><span class="pln">document</span><span class="pun">.</span><span class="pln">createTextNode</span><span class="pun">(</span><span class="pln">xhr</span><span class="pun">.</span><span class="pln">responseText</span><span class="pun">));</span><span class="pln"><br/>
+    document</span><span class="pun">.</span><span class="pln">querySelector</span><span class="pun">(</span><span class="str">'body'</span><span class="pun">).</span><span class="pln">appendChild</span><span class="pun">(</span><span class="pln">d</span><span class="pun">);</span><br/>
+  <span class="pun">}</span><span class="pln"><br/>
+  xhr</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="str">"GET"</span><span class="pun">,</span> <span class="typ">String</span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">location</span><span class="pun">.</span><span class="pln">href</span><span class="pun">),</span> <span class="kwd">true</span><span class="pun">);</span><span class="pln"><br/>
+  xhr</span><span class="pun">.</span><span class="pln">send</span><span class="pun">();</span><br/>
+<span class="pun">}());</span></code></pre><br/>
+<h1>I've ran both in the console, in this current page <sub>(naturally before I've wrote this answer..)</sub></h1><br/>
+and this is the side by side result, notice the difference.<br/>
+<br/>
+<img loading="lazy" lazyload="on"  src="http://i.stack.imgur.com/jaHM0.png" alt="Side By Side" /><br/>
+<br/>
+notes and stuff..:<br/>
+<ul><br/>
+	<li>you might use the html's <code>outerHTML</code> (but its not always available in every standard DOM)</li><br/>
+	<li>ease up your server's load by compiling/rendering the page's source dynamically in client-side using<a href="https://mustache.github.io/" rel="nofollow">mustache</a> or <a href="http://handlebarsjs.com/" rel="nofollow">handlebars</a>.</li><br/>
+	<li>you can store the text of the page, before any (most) of the modifications in the <code>localStorage</code>, fork the code above, and make a small (and wonderful) script, place this script in the page's <code>head</code>just before you start modifying the page's source..</li><br/>
+</ul><br/>
+&nbsp;<br/>
+<br/>
+my answer available here:<br/>
+http://stackoverflow.com/a/29131388/257319</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/php-filter_sanitize-think-regex-instead">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/github-api-has-no-user-id-to-user-name">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/github-api-has-no-user-id-to-user-name">JavaScript Ninja Techniques - GitHub API - User-Id To User-Name ? Nope.</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/youtube-video-thumbnail-resolutions">YouTube Video-Thumbnail Resolutions</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/dangerdolan-theme-song">DangerDolan's Theme Song</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/android-luckypatcher-application">Android LuckyPatcher Application</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unshorten-console-log-with-console-dir">UnShorten console.log With console.dir</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-ninja-techniques-minimal-html-markup-needed-for-text">HTML5 Ninja Techniques - Minimal HTML Markup Needed For Text</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/spoof-javascript-debugging-of-your-secret-methods-code-tostringtosource-override">Spoof JavaScript Debugging Of Your Secret Methods Code - toString/toSource Override</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-executable-spoofed-code">But Totally Unreadable</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/shingeki-no-kyojin-attack-on-titan-manga-leaked-ending">進撃の巨人 - Shingeki no Kyojin - Attack On Titan - Manga Leaked Ending</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/intellij-idea-run-faster-part-3-disable-internal-features-you-never-use">IntelliJ IDEA - Run Faster - Part #3 - Disable Internal Features You Never Use</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bad-email-domains">Used By Disposable-Email Services</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-blob-objecturl-real-data-conversion">JavaScript Blob-objectURL real data conversion</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disable-youtube-video-source-blob">Google Chrome/Chromium - Local Hack - Disable YouTube Video-Source-Blob</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/mobeam-beepngo-tracking-hosts">mobeam Beep'nGo - Tracking HOSTS</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/infinite-painter-users-showcase">JSON Resource - Android "Infinite Painter" From seanbrakefield.com - Users Showcase Images</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stocard-json-resources">Stocard JSON Resources</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

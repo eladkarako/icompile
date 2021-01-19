@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>ContentEditable And "ReadOnly"? YES!</title>
+  <meta itemprop="name"                                content="ContentEditable And "ReadOnly"? YES!"       />
+  <meta name="dcterms.title"                           content="ContentEditable And "ReadOnly"? YES!"       />
+  <meta property="og:title"                            content="ContentEditable And "ReadOnly"? YES!"       />
+  <meta name="twitter:title"                           content="ContentEditable And "ReadOnly"? YES!"       />
+  <meta name="twitter:text:title"                      content="ContentEditable And "ReadOnly"? YES!"       />
+  <meta name="application-name"                        content="ContentEditable And "ReadOnly"? YES!"       />
+  <meta name="subject"                                 content="ContentEditable And "ReadOnly"? YES!"       />
+  <meta name="apple-mobile-web-app-title"              content="ContentEditable And "ReadOnly"? YES!"       />
+  <meta name="msapplication-tooltip"                   content="ContentEditable And "ReadOnly"? YES!"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="ContentEditable And "ReadOnly"? YES!"       />
+  <meta itemprop="description"                         content="ContentEditable And "ReadOnly"? YES!"       />
+  <meta name="dcterms.description"                     content="ContentEditable And "ReadOnly"? YES!"       />
+  <meta name="twitter:description"                     content="ContentEditable And "ReadOnly"? YES!"       />
+  <meta property="og:description"                      content="ContentEditable And "ReadOnly"? YES!"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="access,acxozwlnahq,adobe,agugy,allowed,allowing,animation,apparently,appealing,arrow,auto,awjszsigy,awvkiaogid,back,backup,base,bhbj,blank,blocking,bold,border,break,change,ciagfqo,ciagicb,ciagphn,ciagphnwyw,cjxib,cjxodg,cjxzcgfuihn,code,color,combination,console,container,content,context,control,courier,cross,ctrl,cutting,dashed,data,days,dcakica,decided,demo,developer,dgvklwnyb,dhatzxf,disabling,dmvyc,doctype,document,domain,dropped,dtds,dwfsbhkgbg,easily,easy,edge,editable,element,escape,ewxlihr,ewxlpgo,ewxlpsdjb,exbligh,false,family,fast,ffffff,filtering,flick,font,forms,function,gcgvybwl,good,gphnwyw,gywn,gzwxlbwvudc,handlers,hbgxvdy,hdxrvy,headers,hlywq,hlzcbyz,html,iaogid,ibhryiibsyw,idea,identifying,idgv,idjwecbyz,idxzcgfuihn,ighlywrlcnm,igrhc,igrvbwfpbj,igvszw,igzvbnqtd,ihnly,ijwvc,ilgtvuetq,inception,include,initially,innerhtml,inrlehqvy,interaction,isuu,iywnrdxbfaw,iywxsij,izdmmda,iznmm,jhcdogbm,jhkdi,jlkcl,jllmnvbtwvc,jlywrvbmx,jpchq,jvdw,kaogicagzg,kcmfniaogid,kdgq,keys,kgvszw,kica,kicagigh,kicagigvszw,kicbmdw,koibub,koibyz,lazzzzyyyy,lbnqub,lbnquy,lbnquymfja,lbxb,lckhutuw,lckhutuwgit,ligxpz,line,llcz,lmfkb,lmjhy,lock,lpsj,lvbjwvc,make,making,margin,mata,mbhq,menu,modals,monospace,mtzg,nature,navigation,navigations,nhaaa,noia,nope,noyxjzzxq,npsjlbi,ntsgjz,nvbg,nwyw,nzsb,odhrwpc,omjvbgq,onchange,oncopy,oncuechange,oncut,ondrag,ondragend,ondrop,onemptied,onkeyup,onmouseup,onpaste,onreset,opportunity,option,orientation,origin,original,overflow,owogih,oyanpi,oyanpia,oyanpizsdds,oyanplnzu,oyanpmnyb,oybmb,ozwvc,padding,page,pagedown,pageup,paste,pbhk,pcfkb,permitted,phnwyw,phrase,pjwvc,pointer,policies,policy,popups,ports,post,posted,posts,program,qihdoyxqgaw,quality,questions,radius,rare,readonly,refresh,request,restore,restoring,return,rfttwvc,rgba,rzueu,sandbox,script,scripts,scrolling,seamless,secure,selecting,shadow,sigrpcj,simpl,simple,single,site,smart,solution,source,space,start,stroke,strong,styling,system,target,tcgf,thinking,thought,touch,udgvudd,udhjvbdwvc,unsafe,usable,user,uzxjive,vbmn,version,visible,vkaxrhymxlx,vuyi,vvrgltgilz,vwigjlzm,vyzt,wall,wcmu,webkit,weight,white,wiki,wikipedia,world,wrap,xkoyanpkrpq,xkoyanpmnyb,xvcjojn,ydhm,ymfja,yoim,ysbuyw,ywjszs,ywmdu,ywxsb,yywrpdxm,yzsblzgl,zagfkb,zcgfupgo,zcgfupibkb,zdhjva,zhmvy,zizjsgjz,zjawntu,ztskicagih,zwjraxqtdgv,zxjmbg,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="access,acxozwlnahq,adobe,agugy,allowed,allowing,animation,apparently,appealing,arrow,auto,awjszsigy,awvkiaogid,back,backup,base,bhbj,blank,blocking,bold,border,break,change,ciagfqo,ciagicb,ciagphn,ciagphnwyw,cjxib,cjxodg,cjxzcgfuihn,code,color,combination,console,container,content,context,control,courier,cross,ctrl,cutting,dashed,data,days,dcakica,decided,demo,developer,dgvklwnyb,dhatzxf,disabling,dmvyc,doctype,document,domain,dropped,dtds,dwfsbhkgbg,easily,easy,edge,editable,element,escape,ewxlihr,ewxlpgo,ewxlpsdjb,exbligh,false,family,fast,ffffff,filtering,flick,font,forms,function,gcgvybwl,good,gphnwyw,gywn,gzwxlbwvudc,handlers,hbgxvdy,hdxrvy,headers,hlywq,hlzcbyz,html,iaogid,ibhryiibsyw,idea,identifying,idgv,idjwecbyz,idxzcgfuihn,ighlywrlcnm,igrhc,igrvbwfpbj,igvszw,igzvbnqtd,ihnly,ijwvc,ilgtvuetq,inception,include,initially,innerhtml,inrlehqvy,interaction,isuu,iywnrdxbfaw,iywxsij,izdmmda,iznmm,jhcdogbm,jhkdi,jlkcl,jllmnvbtwvc,jlywrvbmx,jpchq,jvdw,kaogicagzg,kcmfniaogid,kdgq,keys,kgvszw,kica,kicagigh,kicagigvszw,kicbmdw,koibub,koibyz,lazzzzyyyy,lbnqub,lbnquy,lbnquymfja,lbxb,lckhutuw,lckhutuwgit,ligxpz,line,llcz,lmfkb,lmjhy,lock,lpsj,lvbjwvc,make,making,margin,mata,mbhq,menu,modals,monospace,mtzg,nature,navigation,navigations,nhaaa,noia,nope,noyxjzzxq,npsjlbi,ntsgjz,nvbg,nwyw,nzsb,odhrwpc,omjvbgq,onchange,oncopy,oncuechange,oncut,ondrag,ondragend,ondrop,onemptied,onkeyup,onmouseup,onpaste,onreset,opportunity,option,orientation,origin,original,overflow,owogih,oyanpi,oyanpia,oyanpizsdds,oyanplnzu,oyanpmnyb,oybmb,ozwvc,padding,page,pagedown,pageup,paste,pbhk,pcfkb,permitted,phnwyw,phrase,pjwvc,pointer,policies,policy,popups,ports,post,posted,posts,program,qihdoyxqgaw,quality,questions,radius,rare,readonly,refresh,request,restore,restoring,return,rfttwvc,rgba,rzueu,sandbox,script,scripts,scrolling,seamless,secure,selecting,shadow,sigrpcj,simpl,simple,single,site,smart,solution,source,space,start,stroke,strong,styling,system,target,tcgf,thinking,thought,touch,udgvudd,udhjvbdwvc,unsafe,usable,user,uzxjive,vbmn,version,visible,vkaxrhymxlx,vuyi,vvrgltgilz,vwigjlzm,vyzt,wall,wcmu,webkit,weight,white,wiki,wikipedia,world,wrap,xkoyanpkrpq,xkoyanpmnyb,xvcjojn,ydhm,ymfja,yoim,ysbuyw,ywjszs,ywmdu,ywxsb,yywrpdxm,yzsblzgl,zagfkb,zcgfupgo,zcgfupibkb,zdhjva,zhmvy,zizjsgjz,zjawntu,ztskicagih,zwjraxqtdgv,zxjmbg,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/unofficial-apktool-2-1"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/unofficial-apktool-2-1"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javascript-ninja-edit-everything-safely"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/contenteditable-and-readonly"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/contenteditable-and-readonly"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/contenteditable-and-readonly"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/contenteditable-and-readonly"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/contenteditable-and-readonly"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/contenteditable-and-readonly"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2015-12-30T02:25:32+00:00"     />
+  <meta name="page-datetime"                           content="2015-12-30T02:25:32+00:00"     />
+  <meta property="article:published_time"              content="2015-12-30T02:25:32+00:00"     />
+  <meta name="dcterms.date"                            content="2015-12-30T02:25:32+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-09-24T16:53:00+00:00"    />
+  <meta property="article:modified_time"               content="2016-09-24T16:53:00+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/contenteditable-and-readonly"
+,"url"             : "https://icompile.eladkarako.com/contenteditable-and-readonly"
+,"headline"        : "ContentEditable And "ReadOnly"? YES!"
+,"description"     : "ContentEditable And "ReadOnly"? YES!"
+,"datePosted"      : "2015-12-30T02:25:32+00:00"
+,"dateCreated"     : "2015-12-30T02:25:32+00:00"
+,"datePublished"   : "2015-12-30T02:25:32+00:00"
+,"dateModified"    : "2016-09-24T16:53:00+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0002332441541">
+  <header>
+    <h1 itemprop="headline">ContentEditable And "ReadOnly"? YES!</h1>
+    <sup>Posted at <time datetime="2016-09-24T16:53:00+00:00" itemprop="dateModified">Sat, 24 Sep 2016 16:53:00 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">making container, any HTML container (PRE, DIV, SPAN) <code>contenteditable="true"</code> is a very appealing opportunity of making the most of the most <em>cutting-edge</em> CSS3-styling and animation (!!) along with easy user-interaction, allowing easily using <kbd>CTRL</kbd>+<kbd>A</kbd>, <br/>
+<br/>
+code is easy enough to program (REALLY EASY) but apparently <br/>
+no one has came across thinking of this solution,<br/>
+while the phrase "thinking out of the box" is dropped quite often,<br/>
+it is a rare quality now days..<br/>
+<br/>
+every previous solution by <em>*others*</em> just include the straightforward solution (a.k.a "head in the wall") identifying every single key-combination that "is allowed" (for example <kbd>CTRL</kbd>+<kbd>A</kbd>) and blocking (<code>preventDefault</code>, <code>cancelBubble</code>, <code>stopPropagation</code> :| and of course <code>return false</code>) by the nature of filtering, you are also blocking... F5 (refresh the page) PageDown, PageUp, Arrow-Keys navigations, F12 for developer's-console...<br/>
+Oh $hit!!! now I have to specifically allow all those **!@# ???<br/>
+<br/>
+well.. NOPE!..<br/>
+...think <em>simpl<strong>er</strong></em><br/>
+<br/>
+because simple is always better.<br/>
+<br/>
+so what if the user "want to change" the content,<br/>
+just change it back, fast enough,<br/>
+restoring the original text might be visible or flick,<br/>
+...but that's OK! <em>(also, - due to smart selecting of the event implementing - it won't..)</em><br/>
+<br/>
+..also! You can always add more event-handlers (touch start?? <em>nhaaa! too lazzzzyyyy</em>)<br/>
+<br/>
+<br/>
+have a look on the following code, I've used it in one of my other posts:<br/>
+<br/>
+<pre><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>style</span><span style='color:#7f0055; '>></span><br/>
+  <span style='color:#7f0055; font-weight:bold; '>pre</span>.code-like{<br/>
+    -webkit-text-stroke: .2px <span style='color:#7f0055; font-weight:bold; '>rgba</span>(0,0,0,.5);<br/>
+    <span style='color:#7f0055; font-weight:bold; '>background</span>: <span style='color:#7f0055; font-weight:bold; '>rgba</span>(245,245,211,.1);<br/>
+    <span style='color:#7f0055; font-weight:bold; '>border-radius</span>: 2px;<br/>
+    <span style='color:#7f0055; font-weight:bold; '>border</span>: 1px dashed <span style='color:#7f0055; font-weight:bold; '>rgba</span>(214,214,214,.7);<br/>
+    <span style='color:#7f0055; font-weight:bold; '>box-shadow</span>: 1px 1px 1px <span style='color:#7f0055; font-weight:bold; '>rgba</span>(0,0,0,.5),  -1px -1px 2px <span style='color:#7f0055; font-weight:bold; '>rgba</span>(0,0,0,.2);<br/>
+    <span style='color:#7f0055; font-weight:bold; '>color</span>: #000000;<br/>
+    <span style='color:#7f0055; font-weight:bold; '>font-family</span>: Courier New,monospace;<br/>
+    <span style='color:#7f0055; font-weight:bold; '>line-height</span>: 1.3em;<br/>
+    <span style='color:#7f0055; font-weight:bold; '>margin</span>: 0;<br/>
+    <span style='color:#7f0055; font-weight:bold; '>overflow-x</span>: auto;<br/>
+    <span style='color:#7f0055; font-weight:bold; '>padding</span>: 5px;<br/>
+    <span style='color:#7f0055; font-weight:bold; '>white-space</span>: pre <span style='color:#7f0055; font-weight:bold; '>!important</span>;<br/>
+    <span style='color:#7f0055; font-weight:bold; '>word-break</span>: normal <span style='color:#7f0055; font-weight:bold; '>!important</span>;<br/>
+    <span style='color:#7f0055; font-weight:bold; '>word-wrap</span>: normal <span style='color:#7f0055; font-weight:bold; '>!important</span>;<br/>
+  }<br/>
+<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>style</span><span style='color:#7f0055; '>></span><br/>
+<br/>
+<br/>
+<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>pre</span> class=<span style='color:#2a00ff; '>"code-like"</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#000000;<span style='color:#7f0055; font-weight:bold; '>background</span>:#ffffff;<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>&amp;lt;?<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#7f0055; font-weight:bold; '>font-weight</span>:bold; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>xml<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span> <span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>version<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>=<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#7f0055; font-weight:bold; '>font-weight</span>:bold; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>1.0<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>?<span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><br/>
+<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>&amp;lt;!<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#7f0055; font-weight:bold; '>font-weight</span>:bold; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>DOCTYPE<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span> <span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#7f0055; font-weight:bold; '>font-weight</span>:bold; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>cross-domain-policy<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span> <span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>SYSTEM<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span> <span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>http<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>:<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#7f0055; font-weight:bold; '>font-weight</span>:bold; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>//<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#3f3fbf; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>www.adobe.com<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#3f3fbf; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>/xml/dtds/cross-domain-policy.dtd<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><br/>
+<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>&amp;lt;<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>cross-domain-policy<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><br/>
+  <span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>&amp;lt;<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>site-control<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span> permitted-cross-domain-policies=<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>all<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>/></span><span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><br/>
+  <span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>&amp;lt;<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>allow-access-from<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span> domain=<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>*<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span> to-ports=<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>*<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span> secure=<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>false<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>/></span><span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><br/>
+  <span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>&amp;lt;<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>allow-http-request-headers-from<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span> domain=<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>*<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span> headers=<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>*<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span> secure=<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>false<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#2a00ff; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>"<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>/></span><span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><br/>
+<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>&amp;lt;/<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span>cross-domain-policy<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>span</span> style=<span style='color:#2a00ff; '>'</span><span style='color:#7f0055; font-weight:bold; '>color</span>:#7f0055; <span style='color:#2a00ff; '>'</span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>></span><span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>span</span><span style='color:#7f0055; '>></span><br/>
+<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>pre</span><span style='color:#7f0055; '>></span><br/>
+<br/>
+<br/>
+<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; font-weight:bold; '>script</span><span style='color:#7f0055; '>></span><br/>
+  <span style='color:#7f0055; font-weight:bold; '>function</span> make_editable_readonly(element){<br/>
+    element.backup_innerHTML = element.innerHTML;   <span style='color:#3f7f59; '>/* backup before editable. */</span><br/>
+    element.contenteditable = <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>true</span><span style='color:#2a00ff; '>"</span>;               <span style='color:#3f7f59; '>/* editable. CTRL+A is usable (FUN!) */</span><br/>
+<br/>
+    element.onautocomplete                          <span style='color:#3f7f59; '>/* what in the world could change the content? actually lot!.. */</span><br/>
+  = element.onchange <br/>
+  = element.oncontextmenu <br/>
+  = element.oncopy <br/>
+  = element.oncuechange <br/>
+  = element.oncut <br/>
+  = element.ondrag <br/>
+  = element.ondragend <br/>
+  = element.ondrop <br/>
+  = element.onemptied <br/>
+  = element.onkeyup <br/>
+  = element.onmouseup <br/>
+  = element.onpaste <br/>
+  = element.onreset = <span style='color:#7f0055; font-weight:bold; '>function</span> restore(){ <br/>
+                        <span style='color:#7f0055; font-weight:bold; '>if</span> (element.innerHTML !== element.backup_innerHTML) <br/>
+                          element.innerHTML = element.backup_innerHTML;<br/>
+                      };<br/>
+  }<br/>
+  <br/>
+  make_editable_readonly(<br/>
+    document.querySelector(<span style='color:#2a00ff; '>'</span><span style='color:#2a00ff; '>pre.code-like</span><span style='color:#2a00ff; '>'</span>)<br/>
+  );<br/>
+<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; font-weight:bold; '>script</span><span style='color:#7f0055; '>></span><br/>
+</pre><br/>
+<br/>
+demo (you can view it in new tab or have a look it the source..)<br/>
+<iframe loading="lazy" lazyload="on"  width="100%" allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" target="" src="data:text/html;charset=UTF-8;base64,PCFkb2N0eXBlIGh0bWw+CjxodG1sIGRpcj0ibHRyIiBsYW5nPSJlbi1VUyI+CjxoZWFkPgogIDxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSxjaHJvbWU9MSIvPgogIDxtZXRhIGh0dHAtZXF1aXY9IkNvbnRlbnQtVHlwZSIgICAgY29udGVudD0idGV4dC9odG1sO2NoYXJzZXQ9VVRGLTgiLz4KICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgICAgICAgICAgICAgIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCxoZWlnaHQ9ZGV2aWNlLWhlaWdodCxpbml0aWFsLXNjYWxlPTEuMCxtaW5pbXVtLXNjYWxlPTEuMCxtYXhpbXVtLXNjYWxlPTEuMCx1c2VyLXNjYWxhYmxlPW5vIi8+CiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIiBtZWRpYT0iYWxsIj4KICAgIGh0bWx7IAogICAgICBiYWNrZ3JvdW5kOiBub25lIGxpZ2h0Ymx1ZTsKICAgIH0KICA8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5Pgo8c3R5bGU+CiAgcHJlLmNvZGUtbGlrZXsKICAgIC13ZWJraXQtdGV4dC1zdHJva2U6IC4ycHggcmdiYSgwLDAsMCwuNSk7CiAgICBiYWNrZ3JvdW5kOiByZ2JhKDI0NSwyNDUsMjExLC4xKTsKICAgIGJvcmRlci1yYWRpdXM6IDJweDsKICAgIGJvcmRlcjogMXB4IGRhc2hlZCByZ2JhKDIxNCwyMTQsMjE0LC43KTsKICAgIGJveC1zaGFkb3c6IDFweCAxcHggMXB4IHJnYmEoMCwwLDAsLjUpLCAgLTFweCAtMXB4IDJweCByZ2JhKDAsMCwwLC4yKTsKICAgIGNvbG9yOiAjMDAwMDAwOwogICAgZm9udC1mYW1pbHk6IENvdXJpZXIgTmV3LG1vbm9zcGFjZTsKICAgIGxpbmUtaGVpZ2h0OiAxLjNlbTsKICAgIG1hcmdpbjogMDsKICAgIG92ZXJmbG93LXg6IGF1dG87CiAgICBwYWRkaW5nOiA1cHg7CiAgICB3aGl0ZS1zcGFjZTogcHJlICFpbXBvcnRhbnQ7CiAgICB3b3JkLWJyZWFrOiBub3JtYWwgIWltcG9ydGFudDsKICAgIHdvcmQtd3JhcDogbm9ybWFsICFpbXBvcnRhbnQ7CiAgfQo8L3N0eWxlPgoKCjxwcmUgY2xhc3M9ImNvZGUtbGlrZSIgc3R5bGU9J2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZDojZmZmZmZmOyc+PHNwYW4gc3R5bGU9J2NvbG9yOiM3ZjAwNTU7ICc+Jmx0Oz88L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM3ZjAwNTU7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+eG1sPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojN2YwMDU1OyAnPiA8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM3ZjAwNTU7ICc+dmVyc2lvbjwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzdmMDA1NTsgJz49PC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMmEwMGZmOyAnPiI8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM3ZjAwNTU7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+MS4wPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMmEwMGZmOyAnPiI8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM3ZjAwNTU7ICc+Pz48L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojN2YwMDU1OyAnPiZsdDshPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojN2YwMDU1OyBmb250LXdlaWdodDpib2xkOyAnPkRPQ1RZUEU8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojN2YwMDU1OyBmb250LXdlaWdodDpib2xkOyAnPmNyb3NzLWRvbWFpbi1wb2xpY3k8L3NwYW4+IDxzcGFuIHN0eWxlPSdjb2xvcjojN2YwMDU1OyAnPlNZU1RFTTwvc3Bhbj4gPHNwYW4gc3R5bGU9J2NvbG9yOiMyYTAwZmY7ICc+Ijwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzJhMDBmZjsgJz5odHRwPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMmEwMGZmOyAnPjo8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM3ZjAwNTU7IGZvbnQtd2VpZ2h0OmJvbGQ7ICc+Ly88L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiMzZjNmYmY7ICc+d3d3LmFkb2JlLmNvbTwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzNmM2ZiZjsgJz4veG1sL2R0ZHMvY3Jvc3MtZG9tYWluLXBvbGljeS5kdGQ8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiMyYTAwZmY7ICc+Ijwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzdmMDA1NTsgJz4+PC9zcGFuPgo8c3BhbiBzdHlsZT0nY29sb3I6IzdmMDA1NTsgJz4mbHQ7PC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojN2YwMDU1OyAnPmNyb3NzLWRvbWFpbi1wb2xpY3k8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM3ZjAwNTU7ICc+Pjwvc3Bhbj4KICA8c3BhbiBzdHlsZT0nY29sb3I6IzdmMDA1NTsgJz4mbHQ7PC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojN2YwMDU1OyAnPnNpdGUtY29udHJvbDwvc3Bhbj4gcGVybWl0dGVkLWNyb3NzLWRvbWFpbi1wb2xpY2llcz08c3BhbiBzdHlsZT0nY29sb3I6IzJhMDBmZjsgJz4iPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMmEwMGZmOyAnPmFsbDwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzJhMDBmZjsgJz4iPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojN2YwMDU1OyAnPi8+PC9zcGFuPgogIDxzcGFuIHN0eWxlPSdjb2xvcjojN2YwMDU1OyAnPiZsdDs8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM3ZjAwNTU7ICc+YWxsb3ctYWNjZXNzLWZyb208L3NwYW4+IGRvbWFpbj08c3BhbiBzdHlsZT0nY29sb3I6IzJhMDBmZjsgJz4iPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMmEwMGZmOyAnPio8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiMyYTAwZmY7ICc+Ijwvc3Bhbj4gdG8tcG9ydHM9PHNwYW4gc3R5bGU9J2NvbG9yOiMyYTAwZmY7ICc+Ijwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzJhMDBmZjsgJz4qPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMmEwMGZmOyAnPiI8L3NwYW4+IHNlY3VyZT08c3BhbiBzdHlsZT0nY29sb3I6IzJhMDBmZjsgJz4iPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMmEwMGZmOyAnPmZhbHNlPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMmEwMGZmOyAnPiI8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM3ZjAwNTU7ICc+Lz48L3NwYW4+CiAgPHNwYW4gc3R5bGU9J2NvbG9yOiM3ZjAwNTU7ICc+Jmx0Ozwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzdmMDA1NTsgJz5hbGxvdy1odHRwLXJlcXVlc3QtaGVhZGVycy1mcm9tPC9zcGFuPiBkb21haW49PHNwYW4gc3R5bGU9J2NvbG9yOiMyYTAwZmY7ICc+Ijwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzJhMDBmZjsgJz4qPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMmEwMGZmOyAnPiI8L3NwYW4+IGhlYWRlcnM9PHNwYW4gc3R5bGU9J2NvbG9yOiMyYTAwZmY7ICc+Ijwvc3Bhbj48c3BhbiBzdHlsZT0nY29sb3I6IzJhMDBmZjsgJz4qPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMmEwMGZmOyAnPiI8L3NwYW4+IHNlY3VyZT08c3BhbiBzdHlsZT0nY29sb3I6IzJhMDBmZjsgJz4iPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMmEwMGZmOyAnPmZhbHNlPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojMmEwMGZmOyAnPiI8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM3ZjAwNTU7ICc+Lz48L3NwYW4+CjxzcGFuIHN0eWxlPSdjb2xvcjojN2YwMDU1OyAnPiZsdDsvPC9zcGFuPjxzcGFuIHN0eWxlPSdjb2xvcjojN2YwMDU1OyAnPmNyb3NzLWRvbWFpbi1wb2xpY3k8L3NwYW4+PHNwYW4gc3R5bGU9J2NvbG9yOiM3ZjAwNTU7ICc+Pjwvc3Bhbj4KPC9wcmU+CgoKPHNjcmlwdD4KICBmdW5jdGlvbiBtYWtlX2VkaXRhYmxlX3JlYWRvbmx5KGVsZW1lbnQpewogICAgZWxlbWVudC5iYWNrdXBfaW5uZXJIVE1MID0gZWxlbWVudC5pbm5lckhUTUw7ICAgLyogYmFja3VwIGJlZm9yZSBlZGl0YWJsZS4gKi8KICAgIGVsZW1lbnQuY29udGVudGVkaXRhYmxlID0gInRydWUiOyAgICAgICAgICAgICAgIC8qIGVkaXRhYmxlLiBDVFJMK0EgaXMgdXNhYmxlIChGVU4hKSAqLwoKICAgIGVsZW1lbnQub25hdXRvY29tcGxldGUgICAgICAgICAgICAgICAgICAgICAgICAgIC8qIHdoYXQgaW4gdGhlIHdvcmxkIGNvdWxkIGNoYW5nZSB0aGUgY29udGVudD8gYWN0dWFsbHkgbG90IS4uICovCiAgPSBlbGVtZW50Lm9uY2hhbmdlIAogID0gZWxlbWVudC5vbmNvbnRleHRtZW51IAogID0gZWxlbWVudC5vbmNvcHkgCiAgPSBlbGVtZW50Lm9uY3VlY2hhbmdlIAogID0gZWxlbWVudC5vbmN1dCAKICA9IGVsZW1lbnQub25kcmFnIAogID0gZWxlbWVudC5vbmRyYWdlbmQgCiAgPSBlbGVtZW50Lm9uZHJvcCAKICA9IGVsZW1lbnQub25lbXB0aWVkIAogID0gZWxlbWVudC5vbmtleXVwIAogID0gZWxlbWVudC5vbm1vdXNldXAgCiAgPSBlbGVtZW50Lm9ucGFzdGUgCiAgPSBlbGVtZW50Lm9ucmVzZXQgPSBmdW5jdGlvbiByZXN0b3JlKCl7IAogICAgICAgICAgICAgICAgICAgICAgICBpZiAoZWxlbWVudC5pbm5lckhUTUwgIT09IGVsZW1lbnQuYmFja3VwX2lubmVySFRNTCkgCiAgICAgICAgICAgICAgICAgICAgICAgICAgZWxlbWVudC5pbm5lckhUTUwgPSBlbGVtZW50LmJhY2t1cF9pbm5lckhUTUw7CiAgICAgICAgICAgICAgICAgICAgICB9OwogIH0KICAKICBtYWtlX2VkaXRhYmxlX3JlYWRvbmx5KAogICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigncHJlLmNvZGUtbGlrZScpCiAgKTsKPC9zY3JpcHQ+PC9ib2R5Pgo8L2h0bWw+Cg=="></iframe><br/>
+<br/>
+<br/>
+I've actually initially thought it was a good idea to put the styling and script in this post (here...) ..too<br/>
+but decided it <a href="https://en.wikipedia.org/wiki/Inception" target="_blank">too mata/"inception"</a><br/>
+<br/>
+I've posted it also here:<br/>
+<a href="http://stackoverflow.com/questions/4144271/disabling-paste-option-from-the-context-menu/34522284#34522284" target="_blank">http://stackoverflow.com/questions/4144271/disabling-paste-option-from-the-context-menu/34522284#34522284</a> (see the alternatives.. :| )</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/unofficial-apktool-2-1">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-edit-everything-safely">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-edit-everything-safely">Safely</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/samsung-note-5-secret-codes">Samsung Note 5 Secret Codes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/download-windows-movie-maker">Windows Essential - Download Just Movie-Maker And Gallery URLs</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows-installer-clean-up-portable">Windows Installer Clean-Up - Portable</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ebays-sellers-description-web-page-url">eBay's Seller's Description Web-Page URL</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-events-no-bubble-no-defaults">JavaScript Ninja - Proper Prevention Of Event-Bubbling And Default-Actions</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-inform-ctrl-a-is-enabled">CSS3 - Let Your Users Know They Can Use [CTRL]+[A] To Select The Code In PRE and CODE elements</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/is-it-possible-to-have-an-immune-system-response-passed-cross-generation">Genetics 101 - Immune-System-Response Cross Generation? ☤</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-object-sort">JavaScript Snippet - Object Sort</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/whatsapps-status-api">WhatsAPP's Status API</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/prevent-skype-click2call-toolbar-from-breaking-your-website">Prevent Skype-Click2Call Toolbar From Breaking Your Website</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html-ninja-what-is-the-difference-between-mimetypes-text-and-application">HTML Ninja - What Is The Difference Between Mimetypes: text/... and application/... ???</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-email-validation">PHP Snippet - EMAIL Validation</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ccleaner-ini-rip">CCleaner INI Rip</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/enlarge-ccleaner-font-size">Enlarge CCleaner's Font-Size</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/strip-youtube-xsrf">JavaScript Ninja - Strip Some Of YouTube's Anti-XSRF Protection And Inspect Encoded Plain Video-Resources</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Easily!</title>
+  <meta itemprop="name"                                content="Easily!"       />
+  <meta name="dcterms.title"                           content="Easily!"       />
+  <meta property="og:title"                            content="Easily!"       />
+  <meta name="twitter:title"                           content="Easily!"       />
+  <meta name="twitter:text:title"                      content="Easily!"       />
+  <meta name="application-name"                        content="Easily!"       />
+  <meta name="subject"                                 content="Easily!"       />
+  <meta name="apple-mobile-web-app-title"              content="Easily!"       />
+  <meta name="msapplication-tooltip"                   content="Easily!"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Easily!"       />
+  <meta itemprop="description"                         content="Easily!"       />
+  <meta name="dcterms.description"                     content="Easily!"       />
+  <meta name="twitter:description"                     content="Easily!"       />
+  <meta property="og:description"                      content="Easily!"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="access,acts,apply,ascii,assume,atob,auto,back,baeb,base,basically,bold,bookmarklet,bring,btoa,button,change,character,charcodeat,code,color,complex,control,correct,create,creates,crypt,data,decoration,decrypt,decrypted,decryptor,default,document,duplicate,eager,easily,easy,ecryptor,ehaab,element,encrypt,encryption,escape,examples,explanation,false,feel,ficompile,fnpif,font,free,function,generate,gist,gistid,gistuser,github,google,high,html,importance,input,inside,javascript,keeping,login,longer,make,manually,minify,minimalist,modify,navigation,needed,norm,normalise,null,number,obfuscated,optionally,origin,password,plain,press,prototype,provide,query,range,readable,ready,referrer,required,resources,restore,return,sandbox,save,scripts,scrolling,seamless,selector,shift,simple,simplified,size,source,split,step,steps,store,strong,structure,symmetric,title,type,typing,ugly,unavoidable,undefined,underline,unescape,unicode,visualise,websites,weight,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="access,acts,apply,ascii,assume,atob,auto,back,baeb,base,basically,bold,bookmarklet,bring,btoa,button,change,character,charcodeat,code,color,complex,control,correct,create,creates,crypt,data,decoration,decrypt,decrypted,decryptor,default,document,duplicate,eager,easily,easy,ecryptor,ehaab,element,encrypt,encryption,escape,examples,explanation,false,feel,ficompile,fnpif,font,free,function,generate,gist,gistid,gistuser,github,google,high,html,importance,input,inside,javascript,keeping,login,longer,make,manually,minify,minimalist,modify,navigation,needed,norm,normalise,null,number,obfuscated,optionally,origin,password,plain,press,prototype,provide,query,range,readable,ready,referrer,required,resources,restore,return,sandbox,save,scripts,scrolling,seamless,selector,shift,simple,simplified,size,source,split,step,steps,store,strong,structure,symmetric,title,type,typing,ugly,unavoidable,undefined,underline,unescape,unicode,visualise,websites,weight,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/ffmpeg-logo"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/ffmpeg-logo"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/ebay-search-from-addressbar"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/easy-string-encryption-with-javascript"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/easy-string-encryption-with-javascript"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/easy-string-encryption-with-javascript"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/easy-string-encryption-with-javascript"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/easy-string-encryption-with-javascript"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/easy-string-encryption-with-javascript"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2017-06-02T20:56:10+00:00"     />
+  <meta name="page-datetime"                           content="2017-06-02T20:56:10+00:00"     />
+  <meta property="article:published_time"              content="2017-06-02T20:56:10+00:00"     />
+  <meta name="dcterms.date"                            content="2017-06-02T20:56:10+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2017-06-02T22:08:19+00:00"    />
+  <meta property="article:modified_time"               content="2017-06-02T22:08:19+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/easy-string-encryption-with-javascript"
+,"url"             : "https://icompile.eladkarako.com/easy-string-encryption-with-javascript"
+,"headline"        : "Easily!"
+,"description"     : "Easily!"
+,"datePosted"      : "2017-06-02T20:56:10+00:00"
+,"dateCreated"     : "2017-06-02T20:56:10+00:00"
+,"datePublished"   : "2017-06-02T20:56:10+00:00"
+,"dateModified"    : "2017-06-02T22:08:19+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0000796346941">
+  <header>
+    <h1 itemprop="headline">Easily!</h1>
+    <sup>Posted at <time datetime="2017-06-02T22:08:19+00:00" itemprop="dateModified">Fri, 02 Jun 2017 22:08:19 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><ul><br/>
+  <li><br/>
+    Keeping <em>some</em> data in your JavaScript source, is unavoidable,<br/>
+    it is best to keep it at-least, somewhat obfuscated.<br/>
+  </li><br/>
+  <li><br/>
+    Here is a <strong>simple</strong> string encrypt/decrypt function.<br/>
+  </li><br/>
+  <li><br/>
+    <em>First</em> run the <strong>function</strong> with your <strong>plain-text</strong>, to encrypt it.<br/>
+    Next, store both the <strong>function</strong> and the <strong>encrypted text</strong> in your source-code.<br/>
+    Need the plain-text again?<br/>
+    Run the <strong>function again</strong>, but this time: on your <strong>encrypted text</strong>!<br/>
+    to get the <strong>plain-text</strong> back.<br/>
+  </li><br/>
+  <li><br/>
+    The function is added to the String <code>prototype</code> for an easy access.<br/>
+  </li><br/>
+  <li><br/>
+    <span style="font-size:18pt; text-decoration:underline;">The Code:</span><br/>
+<br/>
+    <a title="https://gist.github.com/eladkarako/738ff6791dd2e44baeb5787851f874d5" href="https://gist.github.com/eladkarako/738ff6791dd2e44baeb5787851f874d5">https://gist.github.com/eladkarako/738ff6791dd2e44baeb5787851f874d5</a><br/>
+<br/>
+    <iframe loading="lazy" lazyload="on"  type="text/html" charset="UTF-8" loading="eager" lazyload="off" importance="high" 
+      src="https://icompile.eladkarako.com/_resources/embed_gist.html?gistuser=eladkarako&gistid=738ff6791dd2e44baeb5787851f874d5&origin=https%3A%2F%2Ficompile.eladkarako.com" 
+      referrerpolicy="no-referrer" sandbox="allow-same-origin allow-scripts allow-top-navigation" 
+      seamless="false" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" 
+      style="height:300px;"
+    ></iframe><br/>
+  </li><br/>
+  <li><br/>
+    <span style="font-size:18pt; text-decoration:underline;">Examples:</span><br/>
+    <ul><br/>
+      <li><br/>
+        <code><span style='color:#800000; '>"</span><span style='color:#0000e6; '>hello</span><span style='color:#800000; '>"</span><span style='color:#808030; '>.</span>crypt_symmetric<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span></code><br/>
+        will result with <code>ehaab</code>.<br/>
+      </li><br/>
+      <li><br/>
+        <code><span style='color:#800000; '>"</span><span style='color:#0000e6; '>שָלוֹם</span><span style='color:#800000; '>"</span><span style='color:#808030; '>.</span>crypt_symmetric<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span></code><br/>
+        will result with <code>&#x05E4;&#x05B5;&#x05D1;&#x05D8;&#x05B4;&#x05D0;</code>.<br/>
+      </li><br/>
+    </ul><br/>
+<br/>
+    <hr/><br/>
+<br/>
+    Optionally keep your characters in the ASCII range,<br/>
+    by <code>.normalise_to_ascii()</code> and bring them back <br/>
+    to Unicode using <code>.normalise_to_unicode()</code>.<br/>
+    <br/>
+    The explanation <strong>"why it is required?"</strong> is a bit long,<br/>
+    so it is up to you if it is needed or not.<br/>
+<br/>
+    <sub>Basically, since <code>XOR</code> creates a little character-shift,<br/>You might end up with a "control-character", that might make your code looks ugly,<br/>at this case you can always use <code>"YOUR_STRING".crypt_symmetric().normalise_to_ascii()</code> and <code>btoa</code>,<br/>to keep it as a BASE64 string,<br/>  followed by <code>atob</code> and <code>"YOUR_STRING".normalise_to_unicode().crypt_symmetric()</code> to restore it :]</sub><br/>
+  </li><br/>
+  <li><br/>
+    Yes. The <em>same</em> function acts as an <em>ecryptor and as a decryptor</em>.<br/>
+    It uses a very simple <em>symmetric-encryption</em> using <strong>XOR</strong> and a <strong>key</strong>,<br/>
+    which by default is <code>13</code>, but you may, <em>optionally, provide your own key</em> (number).<br/>
+  </li><br/>
+  <li><br/>
+    You are provided with some-what longer function,<br/>
+    to help you visualise the steps, and simplified your understanding.<br/>
+    Feel free to modify, minify the base structure to make it more/less complex to your needs... :]<br/>
+    <ul><li>Best to keep it simple though.</li></ul><br/>
+  </li><br/>
+</ul><br/>
+<br/>
+also available on this gist:<br/>
+<br/>
+<br/>
+<br/>
+<hr/><br/>
+<br/>
+<br/>
+How to use it as a bookmarklet (to put your password into the correct input-element, to save you some typing).<br/>
+<img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2017/06/icompile.eladkarako.com_javascript_string_enc_dec_used_in_google_new_login.png" alt="" width="646" height="561"  /><br/>
+<br/>
+let us assume your password is: <code>password</code>,<br/>
+now you can create a bookmarklet with the encrypted password, that will put the decrypted value, right inside the correct input-element, ready for you to press the <code>next</code> button.<br/>
+<br/>
+first step is generate the password:<br/>
+<pre><br/>
+<span style='color:#797997; '>String</span><span style='color:#808030; '>.</span><span style='color:#797997; '>prototype</span><span style='color:#808030; '>.</span>norm_to_ascii<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#800000; font-weight:bold; '>unescape</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>encodeURIComponent</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#797997; '>String</span><span style='color:#808030; '>.</span><span style='color:#797997; '>prototype</span><span style='color:#808030; '>.</span>norm_to_unicode<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#800000; font-weight:bold; '>decodeURIComponent</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>escape</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+<span style='color:#797997; '>String</span><span style='color:#808030; '>.</span><span style='color:#797997; '>prototype</span><span style='color:#808030; '>.</span>crypt_sym<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>k<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#797997; '>String</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>fromCharCode</span><span style='color:#808030; '>.</span>apply<span style='color:#808030; '>(</span><span style='color:#0f4d75; '>undefined</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>map<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>c<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span><span style='color:#800000; font-weight:bold; '>return</span> c<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>charCodeAt</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#808030; '>^</span><span style='color:#808030; '>(</span>k<span style='color:#808030; '>||</span><span style='color:#008c00; '>13</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span><span style='color:#800080; '>;</span><br/>
+<br/>
+<span style='color:#696969; '>//do this manually</span><br/>
+btoa<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>password</span><span style='color:#800000; '>"</span><span style='color:#808030; '>.</span>norm_to_ascii<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>crypt_sym<span style='color:#808030; '>(</span><span style='color:#008c00; '>1111</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>norm_to_ascii<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+</pre><br/>
+we'll get: <code>fWx+fnpif2k=</code>.<br/>
+<br/>
+next is to make the minimalist, ad-hoc, bookmarklet:<br/>
+<br/>
+<pre>
+javascript:(function(){top.document.querySelector('input[name="password"]').value=String.fromCharCode.apply(null,unescape(encodeURIComponent(atob("fWx+fnpif2k="))).split("").map(function(c){return c.charCodeAt(0)^13}));return true}());
+</pre><br/>
+<br/>
+You can me things more readable if you want to duplicate the same bookmarklet for other websites:<br/>
+<pre>
+javascript:(function(e,v,k){e.value=String.fromCharCode.apply(null,unescape(encodeURIComponent(atob(v))).split("").map(function(c){return c.charCodeAt(0)^k}));return true;}(top.document.querySelector('input[name="password"]'),"fWx+fnpif2k=",13));
+</pre><br/>
+<br/>
+this way you can change the selector query, the encrypted password, and the key from "outside" the main function :]<br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-logo">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/ebay-search-from-addressbar">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ebay-search-from-addressbar">Quick eBay Search- From Your Address-Bar!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/yet-another-escape-to-unicode">Yet Another Escape To Unicode</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-canvas-clear">HTML5 Canvas Clear</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-androidfilehost-404">Solved: androidfilehost Not Available: Use dev Sub-Domain Instead Of www</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/godaddy-portal-requires-js-support">GoDaddy Portal Requires JS Support.</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/git-lfs-on-linux-mint">Installing Git-LFS On Linux Mint</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/build-apktool">Build ApkTool</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-java">Solved: Java</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solved-linux-mint-and-debian-packages">Solved: Linux Mint And Debian Packages</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/samsung-usb-drivers">Samsung USB Drivers And KIES3</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/smooth-scroll-animation-no-jquery">No jQuery!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/generate-keystore-and-sign-anything">Generate KeyStore And Sign Anything</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/lean-ux-tokyo">Lean UX Convention</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unfuck-crayon-syntax-highlighter">UnFuck Crayon-Syntax-Highlighter</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/mozilla-ftp-download-latest-firefox">Mozilla FTP - Download Latest Firefox</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/supersu-mods-no-systemless-no-bindsystemxbin-force-permissive">Force PERMISSIVE</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

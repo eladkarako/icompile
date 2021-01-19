@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR</title>
+  <meta itemprop="name"                                content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+  <meta name="dcterms.title"                           content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+  <meta property="og:title"                            content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+  <meta name="twitter:title"                           content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+  <meta name="twitter:text:title"                      content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+  <meta name="application-name"                        content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+  <meta name="subject"                                 content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+  <meta name="apple-mobile-web-app-title"              content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+  <meta name="msapplication-tooltip"                   content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+  <meta itemprop="description"                         content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+  <meta name="dcterms.description"                     content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+  <meta name="twitter:description"                     content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+  <meta property="og:description"                      content="How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="abstract,adds,ahead,alias,args,argument,arguments,assume,auto,backward,binary,browser,build,builds,call,cared,check,checks,checktypes,chunk,chunks,clang,clangformat,closure,code,commonjs,compilation,compiled,compiler,conjunction,console,content,continue,control,controls,conventions,cool,correctly,couple,create,creation,default,denoted,dependency,depends,deprecated,describing,detailed,developers,diagnostic,disable,docs,download,downloaded,downloading,effectivly,embedded,emit,enabled,enforce,enforcing,error,errors,escaping,exits,externs,extra,fair,february,file,filename,files,find,flag,flags,folder,form,format,formatting,function,generate,generic,github,glob,good,google,graph,greater,greatly,group,html,iife,include,includes,increases,input,insights,inspect,internal,interpolate,interpreted,introduce,isolation,items,java,javascript,jscomp,jsstring,jszip,jumped,latest,legacy,level,links,lint,lintchecks,linter,listed,llvm,logging,loose,maintained,maps,marker,maven,mini,minimatch,mode,modifying,module,modules,multiple,named,names,newly,note,notify,occur,offers,official,officially,option,optional,options,output,pages,parse,parsed,party,pass,passes,patch,patching,path,patterns,phase,portability,pretty,primary,print,prints,produced,progress,project,property,props,provide,prune,python,read,recent,recursively,redirect,relation,relay,releases,renaming,render,repo,report,reports,resumed,rules,save,saved,scraped,semi,serialized,size,slow,sort,source,sources,staffed,standalone,standard,start,state,stdout,stored,story,strict,styling,stylings,suggested,suggests,suit,supported,syntax,team,tells,test,times,tips,tree,trigger,turn,unimportant,unzip,usable,users,util,utilities,validity,variable,variation,vars,version,versions,viable,warning,warnings,website,wget,wiki,work,wrapper,written,years,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="abstract,adds,ahead,alias,args,argument,arguments,assume,auto,backward,binary,browser,build,builds,call,cared,check,checks,checktypes,chunk,chunks,clang,clangformat,closure,code,commonjs,compilation,compiled,compiler,conjunction,console,content,continue,control,controls,conventions,cool,correctly,couple,create,creation,default,denoted,dependency,depends,deprecated,describing,detailed,developers,diagnostic,disable,docs,download,downloaded,downloading,effectivly,embedded,emit,enabled,enforce,enforcing,error,errors,escaping,exits,externs,extra,fair,february,file,filename,files,find,flag,flags,folder,form,format,formatting,function,generate,generic,github,glob,good,google,graph,greater,greatly,group,html,iife,include,includes,increases,input,insights,inspect,internal,interpolate,interpreted,introduce,isolation,items,java,javascript,jscomp,jsstring,jszip,jumped,latest,legacy,level,links,lint,lintchecks,linter,listed,llvm,logging,loose,maintained,maps,marker,maven,mini,minimatch,mode,modifying,module,modules,multiple,named,names,newly,note,notify,occur,offers,official,officially,option,optional,options,output,pages,parse,parsed,party,pass,passes,patch,patching,path,patterns,phase,portability,pretty,primary,print,prints,produced,progress,project,property,props,provide,prune,python,read,recent,recursively,redirect,relation,relay,releases,renaming,render,repo,report,reports,resumed,rules,save,saved,scraped,semi,serialized,size,slow,sort,source,sources,staffed,standalone,standard,start,state,stdout,stored,story,strict,styling,stylings,suggested,suggests,suit,supported,syntax,team,tells,test,times,tips,tree,trigger,turn,unimportant,unzip,usable,users,util,utilities,validity,variable,variation,vars,version,versions,viable,warning,warnings,website,wget,wiki,work,wrapper,written,years,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/windows_sendo_46_items_only_limit"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/windows_sendo_46_items_only_limit"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/dropbox"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/closure-compiler-after-deprecation-of-closure-linter"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/closure-compiler-after-deprecation-of-closure-linter"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/closure-compiler-after-deprecation-of-closure-linter"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/closure-compiler-after-deprecation-of-closure-linter"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/closure-compiler-after-deprecation-of-closure-linter"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/closure-compiler-after-deprecation-of-closure-linter"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2020-09-20T19:05:11+00:00"     />
+  <meta name="page-datetime"                           content="2020-09-20T19:05:11+00:00"     />
+  <meta property="article:published_time"              content="2020-09-20T19:05:11+00:00"     />
+  <meta name="dcterms.date"                            content="2020-09-20T19:05:11+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2020-09-20T19:05:11+00:00"    />
+  <meta property="article:modified_time"               content="2020-09-20T19:05:11+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/closure-compiler-after-deprecation-of-closure-linter"
+,"url"             : "https://icompile.eladkarako.com/closure-compiler-after-deprecation-of-closure-linter"
+,"headline"        : "How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"
+,"description"     : "How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR"
+,"datePosted"      : "2020-09-20T19:05:11+00:00"
+,"dateCreated"     : "2020-09-20T19:05:11+00:00"
+,"datePublished"   : "2020-09-20T19:05:11+00:00"
+,"dateModified"    : "2020-09-20T19:05:11+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0001178260061">
+  <header>
+    <h1 itemprop="headline">How To Get A Semi-Official Closure-Linter (now part of Closure-Compiler) As A Standalone JAR</h1>
+    <sup>Posted at <time datetime="2020-09-20T19:05:11+00:00" itemprop="dateModified">Sun, 20 Sep 2020 19:05:11 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">Closure-Linter was deprecated some time around February 2017,  <br/>
+the links to download it from the Google-code website (and Google-code itself) were long gone,  <br/>
+<br/>
+Both https://developers.google.com/closure/utilities  <br/>
+and https://github.com/google/closure-compiler/wiki/Lint-checks  <br/>
+both tells you about the sad story of the the project, and under-staffed team.  <br/>
+<br/>
+...but it wasn't really gone,  <br/>
+just embedded into the closure-compiler project,  <br/>
+and if you read-through the pages - there is also a way to generate just the linter jar again.  <br/>
+<br/>
+=-=-=-=-=-=-=  <br/>
+<br/>
+First,  <br/>
+if you want to relay on maven, for the builds,  <br/>
+just go ahead to https://repo1.maven.org/maven2/com/google/javascript/closure-compiler-linter/  <br/>
+where you can downloaded a jar for the linter ("officially" it is a mini-build of just the linter-option from the closure-compiler project, but it is, effectivly, what we are looking for).  <br/>
+<br/>
+For example: https://repo1.maven.org/maven2/com/google/javascript/closure-compiler-linter/v20200830/closure-compiler-linter-v20200830.jar  <br/>
+<br/>
+=-=-=-=-=-=-=  <br/>
+<br/>
+https://code.google.com/p/closure-linter  will just redirect you to https://github.com/google/closure-linter  <br/>
+which is where the OLD project is stored (not maintained, stored. for good couple of years..).  <br/>
+<br/>
+=-=-=-=-=-=-=  <br/>
+<br/>
+https://github.com/google/closure-compiler/wiki/Lint-checks suggests you either use the closure-compiler jar with <code>--jscomp_warning=lintChecks</code> (which is a pretty fair option!),  <br/>
+or build a standalone jar.  <br/>
+<br/>
+It also notify you that the checks are more generic,  <br/>
+less formatting and more syntax. Which actually will suit most users pretty well!  <br/>
+<br/>
+I myself was patching the linter code (Python) several times in several variation,  <br/>
+to introduce a way to disable some of the formatting rules, I've mostly cared about the code to be parsed correctly and that's it... So to me, the "new" linter having most of the styling "tips" scraped away is a good thing.  <br/>
+<br/>
+( https://clang.llvm.org/docs/ClangFormat.html is suggested for enforcing stylings ).  <br/>
+<br/>
+=-=-=-=-=-=-=  <br/>
+<br/>
+If you look for the old (but usable) linter you can still find it in:  <br/>
+https://github.com/eladkarako/icompile/releases/download/latest/latest_linter_with_wget_and_tar.rar  <br/>
+and  <br/>
+https://github.com/eladkarako/icompile/releases/download/latest/closure_linter_2_3_9_with_patch.rar  <br/>
+  <br/>
+But browser around https://repo1.maven.org/maven2/com/google/javascript/  <br/>
+to get the newly (already compiled) jar from the closure-compiler-linter folder,  <br/>
+try it. It might suit you.<br/>
+<br/>
+=-=-=-=-=-=-=  <br/>
+<br/>
+Note I was downloading <code>closure-compiler-linter-v20200830.jar</code> but it didn't render any console viable output nor did it present anything similar to a "help" in the console.  <br/>
+I've jumped backward few versions to <code>closure-compiler-linter-v20190325.jar</code>, and the same thing.  <br/>
+<br/>
+Keep cool,  <br/>
+just pass-along the argument the path the javascript file you would like to check.  <br/>
+<br/>
+You can inspect (the code) for both:  <br/>
+/com/google/javascript/jscomp/AbstractCommandLineRunner.java<br/>
+and /com/google/javascript/jscomp/CommandLineRunner.java  <br/>
+to get some insights.  <br/>
+<br/>
+The arguments are very similar to the closure-compiler itself.  <br/>
+<br/>
+<pre><br/>
+It still got <code>--dependency_mode=[NONE|SORT_ONLY|PRUNE_LEGACY|PRUNE|LOOSE|STRICT]</code> (for now),  <br/>
+<code>--help</code> (which does not seems to work or output anything),  <br/>
+<code>--print_tree</code> (Prints out the parse tree and exits),  <br/>
+<code>--print_ast</code> (Prints a dot file describing the internal abstract syntax tree and exits),  <br/>
+<code>--print_pass_graph</code> (Prints a dot file describing the passes that will get run and exits),  <br/>
+<code>--emit_use_strict</code> (Start output with "'use strict';"),  <br/>
+<code>--strict_mode_input</code> (Assume input sources are to run in strict mode),  <br/>
+<code>--jscomp_dev_mode</code> alias <code>--dev_mode</code> (Turn on (very slow) extra validity checks for use when modifying the compiler.  <br/>
+<code>--logging_level</code> (The logging level (standard java.util.logging.Level values) for Compiler progress. Does not control errors or warnings for the JavaScript code under compilation),  <br/>
+<code>--externs</code> (The file containing JavaScript externs. You may specify multiple),  <br/>
+<code>--js</code> (The JavaScript filename. You may specify multiple. The flag name is optional, because args are interpreted as files by default. You may also use minimatch-style glob patterns. For example, use "--js='**.js' --js='!**_test.js' to recursively include all js files that do not end in _test.js)<br/>
+<code>--jszip</code> (The JavaScript zip filename. You may specify multiple),  <br/>
+<code>--js_output_file</code> (Primary output filename. If not specified, output is written to stdout),  <br/>
+<code>--chunk</code> alias <code>--module</code> (A JavaScript chunk specification. The format is <name>:<num-js-files>[:[<dep>,...][:]]]. Chunk names must be unique. Each dep is the name of a chunk that this chunk depends on. Chunks must be listed in dependency order, and JS source files must be listed in the corresponding order. Where --chunk flags occur in relation to --js flags is unimportant. <num-js-files> may be set to 'auto' for the first chunk if it has no dependencies. Provide the value 'auto' to trigger chunk creation from CommonJS modules),  <br/>
+<code>--continue-saved-compilation</code> (Filename where the intermediate compilation state was previously saved),  <br/>
+<br/>
+<code>--save-after-checks</code> (Filename to save phase 1 intermediate state so that the compilation can be resumed later),  <br/>
+<code>--variable_renaming_report</code> (File where the serialized version of the variable renaming map produced should be saved),  <br/>
+<code>--create_renaming_reports</code> (If true, variable renaming and property renaming report files will be produced as {binary name}_vars_renaming_report.out and {binary name}_props_renaming_report.out. Note that this flag cannot be used in conjunction with either variable_renaming_report or property_renaming_report),  <br/>
+<code>--source_map_include_content</code> (Includes sources content into source map. Greatly increases the size of source maps but offers greater portability),  <br/>
+<code>--property_renaming_report</code> (File where the serialized version of the property renaming map produced should be saved),  <br/>
+<code>--third_party</code> (Check source validity but do not enforce Closure style rules and conventions),  <br/>
+<code>--summary_detail_level</code> (Controls how detailed the compilation summary is. Values: 0 (never print summary), 1 (print summary only if there are errors or warnings), 2 (print summary if the 'checkTypes' diagnostic  group is enabled, see --jscomp_warning), 3 (always print summary). The default level is 1),  <br/>
+<code>--isolation_mode</code> (If set to IIFE the compiler output will follow the form:  (function(){%output%}).call(this);    Options: [NONE|IIFE]),  <br/>
+<code>--output_wrapper</code>  (Interpolate output into this string at the place denoted by the marker token %output%. Use marker token %output|jsstring% to do js string escaping on the output. Consider using the --isolation_mode flag instead),  <br/>
+...<br/>
+.....<br/>
+<code>--jscomp_off</code> (Turn off the named class of warnings. Must be one of the error group items. '*' adds all supported)<br/>
+........<br/>
+..........<br/>
+....and more.....<br/>
+</pre><br/>
+<br/>
+You may quickly download the (recent!) source from https://repo1.maven.org/maven2/com/google/javascript/closure-compiler-linter/v20200830/closure-compiler-linter-v20200830-sources.jar (for example),  <br/>
+and unzip it.<br/>
+<br/>
+=-=-=-=-=-=-=  <br/>
+<br/>
+https://github.com/google/closure-compiler/wiki  <br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/windows_sendo_46_items_only_limit">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/dropbox">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/dropbox">DropBox</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">SHealth</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">Show Hidden Devices In Windows Device-Manager</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/fasterfox-eladkarako-mod">FasterFox (EladKarako MOD)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/notepad2-and-notepad">Notepad2 and Notepad++</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/w3schools-a-developers-best-friend">w3schools - a developer's best friend</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromium-browser-the-future-of-google-chrome">Chromium Browser - The Future Of Google Chrome</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/free-icons-for-developers">free icons for developers</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/matlab-advanced-memory-prellocation">MATLAB Advanced </a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/triquicksort-string-sorting-algorithm">triQuickSort String Sorting Algorithm</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/matlab-advanced-scoping-exceptions">MATLAB Advanced - Scoping exceptions</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disable-google-fade-in-homepage">Disable Google Fade-in Homepage</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/force-save-password">Force Save Password</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/matlab-advanced-biometric-recognition">MATLAB Advanced - Biometric Recognition</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/matlab-advanced-video-tutorials">MATLAB Advanced - Video Tutorials</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/deflate-folder-tree">Deflate Folder Tree</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

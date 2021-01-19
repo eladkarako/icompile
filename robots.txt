@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://icompile.eladkarako.com/sitemap.xml

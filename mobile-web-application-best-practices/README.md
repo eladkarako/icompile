@@ -1,0 +1,1 @@
+<h2><a href="http://www.w3.org/TR/mwabp/" rel="nofollow">Mobile Web Application Best Practices</a></h2>

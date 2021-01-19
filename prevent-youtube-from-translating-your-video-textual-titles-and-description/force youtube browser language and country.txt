@@ -1,0 +1,16 @@
+force language and country when browsing
+gl is country
+hl is language
+https://www.youtube.com/playlist?list=PLv67DJABiuAgKfGld9MOY3kJOG2--4Rxe&gl=IL&hl=he-IL
+https://www.youtube.com/playlist?list=PLv67DJABiuAgKfGld9MOY3kJOG2--4Rxe&gl=GB&hl=en-GB
+
+Another way is to open 'Incognito mode', do not log-into your account (so, every experiment you'll be doing in changing language and county won't stick to your actual YouTube account).
+Now next to the sign-in button, there are 3-dots, click them and select a different country and/or language.
+
+
+
+
+---------------------------------------
+make sure your channel isn't translated
+https://www.youtube.com/channel/UCRedgf5rdWzUCIP5HGwU84w?nv=1&disable_polymer=true
+https://www.youtube.com/user/karakoelad/translate?disable_polymer=1

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>My Favorite Passover Movies</title>
+  <meta itemprop="name"                                content="My Favorite Passover Movies"       />
+  <meta name="dcterms.title"                           content="My Favorite Passover Movies"       />
+  <meta property="og:title"                            content="My Favorite Passover Movies"       />
+  <meta name="twitter:title"                           content="My Favorite Passover Movies"       />
+  <meta name="twitter:text:title"                      content="My Favorite Passover Movies"       />
+  <meta name="application-name"                        content="My Favorite Passover Movies"       />
+  <meta name="subject"                                 content="My Favorite Passover Movies"       />
+  <meta name="apple-mobile-web-app-title"              content="My Favorite Passover Movies"       />
+  <meta name="msapplication-tooltip"                   content="My Favorite Passover Movies"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="My Favorite Passover Movies"       />
+  <meta itemprop="description"                         content="My Favorite Passover Movies"       />
+  <meta name="dcterms.description"                     content="My Favorite Passover Movies"       />
+  <meta name="twitter:description"                     content="My Favorite Passover Movies"       />
+  <meta property="og:description"                      content="My Favorite Passover Movies"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="באמצעות,ביטוי,ברכות,חירות,לכולם,מצות,מרור,רגולרי,action,actor,actors,adewale,adventure,adventurer,agbaje,aharon,akinnuoye,alfred,align,alignnone,allen,alun,american,amusing,ancient,anthony,april,armstrong,arnold,avari,awakens,barrie,begins,bernard,bill,blank,border,brendan,bruce,byron,caldinez,campaign,carl,cellpadding,cellspacing,channel,chase,chinn,city,color,colspan,comedy,connor,cooper,corey,costa,countries,country,covenant,cronin,davies,denholm,dennis,diamond,director,dixon,djalili,donn,donna,dorough,dunham,durkin,dwayne,eddie,egypt,elliott,erick,fantasy,favorite,fehr,fellows,fielder,find,fisher,ford,foreign,found,frank,fraser,freeman,french,genre,genres,george,gorrara,government,grossman,hamunaptra,hannah,harris,harrison,harry,hebrew,hidden,higgins,hired,holland,hootkins,horror,howie,hyde,image,imdb,imhotep,indiana,ipale,ishaq,israeli,john,johnson,jonathan,jones,judaism,june,kahler,karen,kevin,kiran,lacey,lane,language,legend,legion,lemkow,leonard,london,lost,marshall,matthew,menezes,mins,mioni,molina,movie,movies,mummified,mummy,muren,museum,myths,nazis,oded,omid,parkes,passover,patricia,patrick,paul,peter,rachel,rage,raiders,rees,references,reimbold,released,returns,rhys,richards,roach,rocky,romo,ronald,rowspan,runtime,sacks,scurfield,sean,sergio,serving,shah,shaun,shipped,size,slaves,sommers,sonny,spielberg,stars,stephen,steven,strong,table,tablian,tagoe,tales,target,taylor,tbody,telling,terror,terry,theme,thriller,title,tony,tutte,valign,velasquez,vogel,vosloo,wakes,watkins,weisz,welker,william,wolf,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="באמצעות,ביטוי,ברכות,חירות,לכולם,מצות,מרור,רגולרי,action,actor,actors,adewale,adventure,adventurer,agbaje,aharon,akinnuoye,alfred,align,alignnone,allen,alun,american,amusing,ancient,anthony,april,armstrong,arnold,avari,awakens,barrie,begins,bernard,bill,blank,border,brendan,bruce,byron,caldinez,campaign,carl,cellpadding,cellspacing,channel,chase,chinn,city,color,colspan,comedy,connor,cooper,corey,costa,countries,country,covenant,cronin,davies,denholm,dennis,diamond,director,dixon,djalili,donn,donna,dorough,dunham,durkin,dwayne,eddie,egypt,elliott,erick,fantasy,favorite,fehr,fellows,fielder,find,fisher,ford,foreign,found,frank,fraser,freeman,french,genre,genres,george,gorrara,government,grossman,hamunaptra,hannah,harris,harrison,harry,hebrew,hidden,higgins,hired,holland,hootkins,horror,howie,hyde,image,imdb,imhotep,indiana,ipale,ishaq,israeli,john,johnson,jonathan,jones,judaism,june,kahler,karen,kevin,kiran,lacey,lane,language,legend,legion,lemkow,leonard,london,lost,marshall,matthew,menezes,mins,mioni,molina,movie,movies,mummified,mummy,muren,museum,myths,nazis,oded,omid,parkes,passover,patricia,patrick,paul,peter,rachel,rage,raiders,rees,references,reimbold,released,returns,rhys,richards,roach,rocky,romo,ronald,rowspan,runtime,sacks,scurfield,sean,sergio,serving,shah,shaun,shipped,size,slaves,sommers,sonny,spielberg,stars,stephen,steven,strong,table,tablian,tagoe,tales,target,taylor,tbody,telling,terror,terry,theme,thriller,title,tony,tutte,valign,velasquez,vogel,vosloo,wakes,watkins,weisz,welker,william,wolf,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/sugru-arrived-happy-day"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/my-favorite-passover-movies"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/my-favorite-passover-movies"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/my-favorite-passover-movies"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/my-favorite-passover-movies"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/my-favorite-passover-movies"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/my-favorite-passover-movies"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2013-03-25T15:58:26+00:00"     />
+  <meta name="page-datetime"                           content="2013-03-25T15:58:26+00:00"     />
+  <meta property="article:published_time"              content="2013-03-25T15:58:26+00:00"     />
+  <meta name="dcterms.date"                            content="2013-03-25T15:58:26+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2013-05-04T08:52:26+00:00"    />
+  <meta property="article:modified_time"               content="2013-05-04T08:52:26+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/my-favorite-passover-movies"
+,"url"             : "https://icompile.eladkarako.com/my-favorite-passover-movies"
+,"headline"        : "My Favorite Passover Movies"
+,"description"     : "My Favorite Passover Movies"
+,"datePosted"      : "2013-03-25T15:58:26+00:00"
+,"dateCreated"     : "2013-03-25T15:58:26+00:00"
+,"datePublished"   : "2013-03-25T15:58:26+00:00"
+,"dateModified"    : "2013-05-04T08:52:26+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0006017224631">
+  <header>
+    <h1 itemprop="headline">My Favorite Passover Movies</h1>
+    <sup>Posted at <time datetime="2013-05-04T08:52:26+00:00" itemprop="dateModified">Sat, 04 May 2013 08:52:26 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">I Watch Those Every Passover, with That Whole "Ancient Egypt" Theme, a Bit of Judaism Telling Tales, Myths and Legend,<br/>
+<br/>
+All Of Those Also Have Some Little Hidden Hebrew/Israeli References, I Found So Amusing,<br/>
+<br/>
+My Favorite Of (of course) is when the Mummy (1st movie) is Speaking Hebrew (a.k.a "The Language Of The Hebrew Slaves" to His Saying...)   :)<br/>
+<ul><br/>
+	<li><br/>
+<h4>The Mummy - <a title="IMDB" href="http://www.imdb.com/title/tt0120616" target="_blank">IMDB</a></h4><br/>
+<div><br/>
+<table width="100%" border="0" cellspacing="3" cellpadding="3"><br/>
+<tbody><br/>
+<tr><br/>
+<td colspan="2">The Mummy: Brendan Fraser stars as an American serving in the French Foreign Legion who, on an archaeological dig at the ancient city of Hamunaptra accidentally awakens the Mummy.</td><br/>
+<td rowspan="11" align="center" valign="top" width="170"><img loading="lazy" lazyload="on"  class="alignnone size-full wp-image-645" alt="1583_The_Mummy_1999" src="https://icompile.eladkarako.com/_uploads/2013/03/1583_The_Mummy_1999.jpg" width="150" height="225" /></td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"></td><br/>
+<td>April 16, 1999</td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Runtime:</strong></td><br/>
+<td>125 mins</td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Genres:</strong></td><br/>
+<td><a href="http://www.1channel.ch/?genre=Action">Action</a> <a href="http://www.1channel.ch/?genre=Adventure">Adventure</a> <a href="http://www.1channel.ch/?genre=Comedy">Comedy</a> <a href="http://www.1channel.ch/?genre=Fantasy">Fantasy</a> <a href="http://www.1channel.ch/?genre=Horror">Horror</a> <a href="http://www.1channel.ch/?genre=Thriller">Thriller</a></td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Countries:</strong></td><br/>
+<td><a href="http://www.1channel.ch/?country=USA">USA</a></td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Director:</strong></td><br/>
+<td><a href="http://www.1channel.ch/?&amp;director=Stephen%20Sommers">Stephen Sommers</a></td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Actors:</strong></td><br/>
+<td><a href="http://www.1channel.ch/?actor_name=Aharon%20Ipale">Aharon Ipale</a> <a href="http://www.1channel.ch/?actor_name=Arnold%20Vosloo">Arnold Vosloo</a> <a href="http://www.1channel.ch/?actor_name=Bernard%20Fox">Bernard Fox</a> <a href="http://www.1channel.ch/?actor_name=Brendan%20Fraser">Brendan Fraser</a> <a href="http://www.1channel.ch/?actor_name=Carl%20Chase">Carl Chase</a><a href="http://www.1channel.ch/?actor_name=Corey%20Johnson">Corey Johnson</a> <a href="http://www.1channel.ch/?actor_name=Erick%20Avari">Erick Avari</a> <a href="http://www.1channel.ch/?actor_name=George%20Lane%20Cooper">George Lane Cooper</a> <a href="http://www.1channel.ch/?actor_name=Howie%20Dorough">Howie Dorough</a> <a href="http://www.1channel.ch/?actor_name=Jo%E3o%20Costa%20Menezes">João Costa Menezes</a> <a href="http://www.1channel.ch/?actor_name=John%20Hannah">John Hannah</a> <a href="http://www.1channel.ch/?actor_name=Jonathan%20Hyde">Jonathan Hyde</a> <a href="http://www.1channel.ch/?actor_name=Kevin%20J%20O'Connor">Kevin J O'Connor</a> <a href="http://www.1channel.ch/?actor_name=Oded%20Fehr">Oded Fehr</a> <a href="http://www.1channel.ch/?actor_name=Omid%20Djalili">Omid Djalili</a> <a href="http://www.1channel.ch/?actor_name=Patricia%20Velasquez">Patricia Velasquez</a> <a href="http://www.1channel.ch/?actor_name=Rachel%20Weisz">Rachel Weisz</a> <a href="http://www.1channel.ch/?actor_name=Ray%20Donn">Ray Donn</a> <a href="http://www.1channel.ch/?actor_name=Sean%20Cronin">Sean Cronin</a><a href="http://www.1channel.ch/?actor_name=Stephen%20Dunham">Stephen Dunham</a> <a href="http://www.1channel.ch/?actor_name=Tuc%20Watkins">Tuc Watkins</a></td><br/>
+</tr><br/>
+</tbody><br/>
+</table><br/>
+</div><br/>
+<h4><a title="-&gt;" href="http://www.1channel.ch/watch-1583-The-Mummy" target="_blank">-&gt;</a></h4><br/>
+</li><br/>
+	<li><br/>
+<h4>The Mummy Returns - <a title="IMDB" href="http://www.imdb.com/title/tt0209163" target="_blank">IMDB</a></h4><br/>
+<div><br/>
+<table width="100%" border="0" cellspacing="3" cellpadding="3"><br/>
+<tbody><br/>
+<tr><br/>
+<td colspan="2">The Mummy Returns: The mummified body of Imhotep is shipped to a museum in London, where he once again wakes and begins his campaign of rage and terror.</td><br/>
+<td rowspan="11" align="center" valign="top" width="170"><img loading="lazy" lazyload="on"  class="alignnone size-full wp-image-647" alt="1403_The_Mummy_Returns_2001" src="https://icompile.eladkarako.com/_uploads/2013/03/1403_The_Mummy_Returns_2001.jpg" width="150" height="225" /></td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Released:</strong></td><br/>
+<td>April 29, 2001</td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Runtime:</strong></td><br/>
+<td>130 mins</td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Genres:</strong></td><br/>
+<td><a href="http://www.1channel.ch/?genre=Action">Action</a> <a href="http://www.1channel.ch/?genre=Thriller">Thriller</a> <a href="http://www.1channel.ch/?genre=Horror">Horror</a> <a href="http://www.1channel.ch/?genre=Adventure">Adventure</a> <a href="http://www.1channel.ch/?genre=Fantasy">Fantasy</a></td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Countries:</strong></td><br/>
+<td><a href="http://www.1channel.ch/?country=USA">USA</a></td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Director:</strong></td><br/>
+<td><a href="http://www.1channel.ch/?&amp;director=Stephen%20Sommers">Stephen Sommers</a></td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Actors:</strong></td><br/>
+<td><a href="http://www.1channel.ch/?actor_name=Adewale%20Akinnuoye-Agbaje">Adewale Akinnuoye-Agbaje</a> <a href="http://www.1channel.ch/?actor_name=Aharon%20Ipale">Aharon Ipale</a> <a href="http://www.1channel.ch/?actor_name=Alun%20Armstrong">Alun Armstrong</a> <a href="http://www.1channel.ch/?actor_name=Arnold%20Vosloo">Arnold Vosloo</a><a href="http://www.1channel.ch/?actor_name=Brendan%20Fraser">Brendan Fraser</a> <a href="http://www.1channel.ch/?actor_name=Bruce%20Byron">Bruce Byron</a> <a href="http://www.1channel.ch/?actor_name=Donna%20Air">Donna Air</a> <a href="http://www.1channel.ch/?actor_name=Dwayne%20Johnson">Dwayne Johnson</a> <a href="http://www.1channel.ch/?actor_name=Joe%20Dixon">Joe Dixon</a> <a href="http://www.1channel.ch/?actor_name=John%20Hannah">John Hannah</a> <a href="http://www.1channel.ch/?actor_name=Oded%20Fehr">Oded Fehr</a> <a href="http://www.1channel.ch/?actor_name=Patricia%20Velasquez">Patricia Velasquez</a> <a href="http://www.1channel.ch/?actor_name=Paul%20Sacks">Paul Sacks</a> <a href="http://www.1channel.ch/?actor_name=Rachel%20Weisz">Rachel Weisz</a> <a href="http://www.1channel.ch/?actor_name=Rocky%20Taylor">Rocky Taylor</a> <a href="http://www.1channel.ch/?actor_name=Sean%20Cronin">Sean Cronin</a> <a href="http://www.1channel.ch/?actor_name=Shaun%20Parkes">Shaun Parkes</a> <a href="http://www.1channel.ch/?actor_name=Tom%20Fisher">Tom Fisher</a></td><br/>
+</tr><br/>
+</tbody><br/>
+</table><br/>
+</div></li><br/>
+</ul><br/>
+<h4>             <a title="-&gt;" href="http://www.1channel.ch/watch-1403-The-Mummy-Returns" target="_blank">-&gt;</a></h4><br/>
+<ul><br/>
+	<li><br/>
+<h4>Indiana Jones And The Raiders of the Lost Ark - <a title="IMDB" href="http://www.imdb.com/title/tt0082971" target="_blank">IMDB</a></h4><br/>
+<div><br/>
+<table width="100%" border="0" cellspacing="3" cellpadding="3"><br/>
+<tbody><br/>
+<tr><br/>
+<td colspan="2">Raiders of the Lost Ark: Archeologist and adventurer Indiana Jones is hired by the US government to find the Ark of the Covenant, before the Nazis...</td><br/>
+<td rowspan="11" align="center" valign="top" width="170"><br/>
+<div></div><br/>
+<div><img loading="lazy" lazyload="on"  class="alignnone size-full wp-image-646" alt="831_Raiders_of_the_Lost_Ark_1981" src="https://icompile.eladkarako.com/_uploads/2013/03/831_Raiders_of_the_Lost_Ark_1981.jpg" width="150" height="225" /></div></td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Released:</strong></td><br/>
+<td>June 12, 1981</td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Runtime:</strong></td><br/>
+<td>115 mins</td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Genres:</strong></td><br/>
+<td><a href="http://www.1channel.ch/?genre=Action">Action</a> <a href="http://www.1channel.ch/?genre=Adventure">Adventure</a></td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Countries:</strong></td><br/>
+<td><a href="http://www.1channel.ch/?country=USA">USA</a></td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Director:</strong></td><br/>
+<td><a href="http://www.1channel.ch/?&amp;director=Steven%20Spielberg">Steven Spielberg</a></td><br/>
+</tr><br/>
+<tr><br/>
+<td width="70"><strong>Actors:</strong></td><br/>
+<td><a href="http://www.1channel.ch/?actor_name=Alfred%20Molina">Alfred Molina</a> <a href="http://www.1channel.ch/?actor_name=Anthony%20Chinn">Anthony Chinn</a> <a href="http://www.1channel.ch/?actor_name=Anthony%20Higgins">Anthony Higgins</a> <a href="http://www.1channel.ch/?actor_name=Barrie%20Holland">Barrie Holland</a> <a href="http://www.1channel.ch/?actor_name=Bill%20Reimbold">Bill Reimbold</a><a href="http://www.1channel.ch/?actor_name=Denholm%20Elliott">Denholm Elliott</a> <a href="http://www.1channel.ch/?actor_name=Dennis%20Muren">Dennis Muren</a> <a href="http://www.1channel.ch/?actor_name=Don%20Fellows">Don Fellows</a> <a href="http://www.1channel.ch/?actor_name=Eddie%20Tagoe">Eddie Tagoe</a> <a href="http://www.1channel.ch/?actor_name=Frank%20Marshall">Frank Marshall</a><a href="http://www.1channel.ch/?actor_name=Frank%20Welker">Frank Welker</a> <a href="http://www.1channel.ch/?actor_name=George%20Harris">George Harris</a> <a href="http://www.1channel.ch/?actor_name=Harrison%20Ford">Harrison Ford</a> <a href="http://www.1channel.ch/?actor_name=Harry%20Fielder">Harry Fielder</a> <a href="http://www.1channel.ch/?actor_name=Ishaq%20Bux">Ishaq Bux</a> <a href="http://www.1channel.ch/?actor_name=John%20Rees">John Rees</a> <a href="http://www.1channel.ch/?actor_name=John%20Rhys-Davies">John Rhys-Davies</a> <a href="http://www.1channel.ch/?actor_name=Karen%20Allen">Karen Allen</a> <a href="http://www.1channel.ch/?actor_name=Kiran%20Shah">Kiran Shah</a> <a href="http://www.1channel.ch/?actor_name=Matthew%20Scurfield">Matthew Scurfield</a> <a href="http://www.1channel.ch/?actor_name=Pat%20Roach">Pat Roach</a> <a href="http://www.1channel.ch/?actor_name=Patrick%20Durkin">Patrick Durkin</a> <a href="http://www.1channel.ch/?actor_name=Paul%20Freeman">Paul Freeman</a> <a href="http://www.1channel.ch/?actor_name=Peter%20Diamond">Peter Diamond</a> <a href="http://www.1channel.ch/?actor_name=Rocky%20Taylor">Rocky Taylor</a> <a href="http://www.1channel.ch/?actor_name=Romo%20Gorrara">Romo Gorrara</a> <a href="http://www.1channel.ch/?actor_name=Ronald%20Lacey">Ronald Lacey</a> <a href="http://www.1channel.ch/?actor_name=Sergio%20Mioni">Sergio Mioni</a> <a href="http://www.1channel.ch/?actor_name=Sonny%20Caldinez">Sonny Caldinez</a> <a href="http://www.1channel.ch/?actor_name=Ted%20Grossman">Ted Grossman</a> <a href="http://www.1channel.ch/?actor_name=Terry%20Leonard">Terry Leonard</a> <a href="http://www.1channel.ch/?actor_name=Terry%20Richards">Terry Richards</a> <a href="http://www.1channel.ch/?actor_name=Tony%20Vogel">Tony Vogel</a> <a href="http://www.1channel.ch/?actor_name=Tutte%20Lemkow">Tutte Lemkow</a> <a href="http://www.1channel.ch/?actor_name=Vic%20Tablian">Vic Tablian</a> <a href="http://www.1channel.ch/?actor_name=William%20Hootkins">William Hootkins</a> <a href="http://www.1channel.ch/?actor_name=Wolf%20Kahler">Wolf Kahler</a></td><br/>
+</tr><br/>
+</tbody><br/>
+</table><br/>
+</div></li><br/>
+</ul><br/>
+<a title="-&gt;" href="http://www.1channel.ch/watch-831-Raiders-of-the-Lost-Ark" target="_blank">-&gt;</a><br/>
+<h1 style="text-align: center;">ברכות לכולם באמצעות ביטוי-רגולרי קטן לחג</h1><br/>
+<h1 style="text-align: center;">(חג (פסח|חירות|מצות) (שמח|כשר</h1><br/>
+<h1 style="text-align: center;"><span style="color: #EFE5D9;">פסח | מצה | מרור</span></h1><br/>
+<h1 style="text-align: center;"></h1><br/>
+<h1></h1></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/new-outbrain-widget-for-bloggers">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/sugru-arrived-happy-day">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/sugru-arrived-happy-day">Adjust! Sugru Arrived - Happy Day!!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/oh-ye-of-little-faith-google-closure-2">oh ye of little faith Google-Closure</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-video-crop">FFMPEG Video Crop</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/pandora-text-select-enabler-new-chrome-extension">Pandora Text-Select Enabler - New Chrome Extension </a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-extract-subtitle-file-from-mkv-video-file">FFMPEG extract subtitle file from mkv video file</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/playing-with-remote-desktop-sessions-1">playing with remote desktop sessions #1</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/i-really-love-javascript">I really love JavaScript</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/htaccess-forward-rewrite-rule">htaccess forward (rewrite) rule</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/altoids-taste-like-toothpaste-smells-like-bengay-and-anyhow-not-nearly-that-strong-anyway">and anyhow not nearly that strong anyway</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/big-data-machine-logstash-agent-daemon-pipe-to-perl-script-that-sends-to-elasticsearch-server-from-the-very-start">pipe to perl script that sends to ElasticSearch server - from the very start</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/graphite-maintenance-manual-services-running-plus-tips">plus tips</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/graphite-alt-complete-conf">graphite alt complete conf</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/i-lv-github">I <3 GitHub</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stuff-you-should-probably-uninstall-from-your-low-budget-server">Stuff you should probably uninstall from your low-budget server</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solve-missing-files-for-vmware-tools">Solve missing files for VMWare tools</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/firefox-front-end-test-checklist">Firefox Front-End Test Checklist</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

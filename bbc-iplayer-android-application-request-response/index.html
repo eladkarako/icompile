@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>BBC iPlayer Android Application Request-Response</title>
+  <meta itemprop="name"                                content="BBC iPlayer Android Application Request-Response"       />
+  <meta name="dcterms.title"                           content="BBC iPlayer Android Application Request-Response"       />
+  <meta property="og:title"                            content="BBC iPlayer Android Application Request-Response"       />
+  <meta name="twitter:title"                           content="BBC iPlayer Android Application Request-Response"       />
+  <meta name="twitter:text:title"                      content="BBC iPlayer Android Application Request-Response"       />
+  <meta name="application-name"                        content="BBC iPlayer Android Application Request-Response"       />
+  <meta name="subject"                                 content="BBC iPlayer Android Application Request-Response"       />
+  <meta name="apple-mobile-web-app-title"              content="BBC iPlayer Android Application Request-Response"       />
+  <meta name="msapplication-tooltip"                   content="BBC iPlayer Android Application Request-Response"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="BBC iPlayer Android Application Request-Response"       />
+  <meta itemprop="description"                         content="BBC iPlayer Android Application Request-Response"       />
+  <meta name="dcterms.description"                     content="BBC iPlayer Android Application Request-Response"       />
+  <meta name="twitter:description"                     content="BBC iPlayer Android Application Request-Response"       />
+  <meta property="og:description"                      content="BBC iPlayer Android Application Request-Response"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accept,action,actionname,active,agent,alignnone,alive,android,apache,appcallback,appconfig,application,appstatus,bbcid,bbciospromo,beacon,beautified,berkshire,bind,boot,bristol,cache,cambridge,code,config,connection,container,content,control,cornwall,counties,coventry,createevent,cumbria,cwwtf,cymru,date,derby,devon,display,document,echo,element,encoding,environment,essex,etag,false,fappconfig,fion,fmobile,foot,footer,foyle,function,fwww,gaidheal,global,guernsey,gzip,header,hereford,hideelement,high,hits,hockeykit,host,html,humberside,image,images,index,initevent,inline,iplayer,itemname,javascript,jersey,jquery,json,kent,lancashire,leeds,leicester,length,loaded,london,manchester,mast,mediasets,merseyside,modified,music,newcastle,nkdata,norfolk,northampton,nottingham,null,oxford,packagename,pagetitle,phone,playlister,polling,quot,radio,radioplayer,recipe,recipies,redirect,refresh,rememberme,request,require,response,rtmp,school,scotland,server,sheffield,shropshire,size,solent,somerset,sound,stage,statecookie,stats,status,stoke,suffolk,surrey,sussex,tablet,target,tees,test,title,type,ulster,undefined,urlpattern,user,vary,wales,wiltshire,worcester,yaml,york,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accept,action,actionname,active,agent,alignnone,alive,android,apache,appcallback,appconfig,application,appstatus,bbcid,bbciospromo,beacon,beautified,berkshire,bind,boot,bristol,cache,cambridge,code,config,connection,container,content,control,cornwall,counties,coventry,createevent,cumbria,cwwtf,cymru,date,derby,devon,display,document,echo,element,encoding,environment,essex,etag,false,fappconfig,fion,fmobile,foot,footer,foyle,function,fwww,gaidheal,global,guernsey,gzip,header,hereford,hideelement,high,hits,hockeykit,host,html,humberside,image,images,index,initevent,inline,iplayer,itemname,javascript,jersey,jquery,json,kent,lancashire,leeds,leicester,length,loaded,london,manchester,mast,mediasets,merseyside,modified,music,newcastle,nkdata,norfolk,northampton,nottingham,null,oxford,packagename,pagetitle,phone,playlister,polling,quot,radio,radioplayer,recipe,recipies,redirect,refresh,rememberme,request,require,response,rtmp,school,scotland,server,sheffield,shropshire,size,solent,somerset,sound,stage,statecookie,stats,status,stoke,suffolk,surrey,sussex,tablet,target,tees,test,title,type,ulster,undefined,urlpattern,user,vary,wales,wiltshire,worcester,yaml,york,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/morfix-melingo-android-application-request-response"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/morfix-melingo-android-application-request-response"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javascript-quick-and-dirty-pure-client-side-qr-code-rendering-playground"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/bbc-iplayer-android-application-request-response"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/bbc-iplayer-android-application-request-response"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/bbc-iplayer-android-application-request-response"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/bbc-iplayer-android-application-request-response"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/bbc-iplayer-android-application-request-response"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/bbc-iplayer-android-application-request-response"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-09-27T09:01:03+00:00"     />
+  <meta name="page-datetime"                           content="2014-09-27T09:01:03+00:00"     />
+  <meta property="article:published_time"              content="2014-09-27T09:01:03+00:00"     />
+  <meta name="dcterms.date"                            content="2014-09-27T09:01:03+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2014-10-17T22:15:20+00:00"    />
+  <meta property="article:modified_time"               content="2014-10-17T22:15:20+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/bbc-iplayer-android-application-request-response"
+,"url"             : "https://icompile.eladkarako.com/bbc-iplayer-android-application-request-response"
+,"headline"        : "BBC iPlayer Android Application Request-Response"
+,"description"     : "BBC iPlayer Android Application Request-Response"
+,"datePosted"      : "2014-09-27T09:01:03+00:00"
+,"dateCreated"     : "2014-09-27T09:01:03+00:00"
+,"datePublished"   : "2014-09-27T09:01:03+00:00"
+,"dateModified"    : "2014-10-17T22:15:20+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0003648081141">
+  <header>
+    <h1 itemprop="headline">BBC iPlayer Android Application Request-Response</h1>
+    <sup>Posted at <time datetime="2014-10-17T22:15:20+00:00" itemprop="dateModified">Fri, 17 Oct 2014 22:15:20 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/2014/09/images-1.jpg" alt="images (1)" width="284" height="177" class="alignnone size-full wp-image-1954" /><br/>
+<br/>
+<!--more--><br/>
+<br/>
+<br/>
+<code style="display:inline;">Android boot-up #1/2</code><br/>
+<br/>
+request:<br/>
+<pre>
+GET http://polling.bbc.co.uk/appconfig/iplayerradio/android/1.6.1/status.json HTTP/1.1
+User-Agent: BBCiPlayerRadio/1.6.1.1522345 (SM-N900; Android 4.4.2)
+Host: polling.bbc.co.uk
+Connection: Keep-Alive
+Accept-Encoding: gzip
+</pre><br/>
+<br/>
+response:<br/>
+<pre>
+HTTP/1.1 200 OK
+Server: Apache
+Content-Type: application/json
+ETag: &quot;28-50354284fae00&quot;
+X-PAL-Host: pal051.cwwtf.bbc.co.uk:80
+Last-Modified: Thu, 18 Sep 2014 10:07:52 GMT
+Content-Length: 40
+X-Cache-Action: HIT
+X-Cache-Hits: 4
+X-Cache-Age: 259
+Vary: Accept-Encoding
+Cache-Control: max-age=49
+Date: Sat, 27 Sep 2014 08:53:53 GMT
+Connection: keep-alive
+
+{
+	&quot;status&quot;: {
+		&quot;appStatus&quot;: &quot;on&quot;	
+	}
+}
+
+</pre><br/>
+<br/>
+response (beautified):<br/>
+<pre>
+{
+  "status": {
+    "appStatus": "on"
+  }
+}
+</pre><br/>
+<br/>
+<code style="display:inline;">Android boot-up #2/2</code><br/>
+<br/>
+request:<br/>
+<pre>
+GET http://polling.bbc.co.uk/appconfig/iplayerradio/android/1.6.1/config.json HTTP/1.1
+User-Agent: BBCiPlayerRadio/1.6.1.1522345 (SM-N900; Android 4.4.2)
+Host: polling.bbc.co.uk
+Connection: Keep-Alive
+Accept-Encoding: gzip
+</pre><br/>
+<br/>
+response:<br/>
+<pre>
+HTTP/1.1 200 OK
+Server: Apache
+Content-Type: application/json
+ETag: &quot;f23-50354284fae00&quot;
+X-PAL-Host: pal043.cwwtf.bbc.co.uk:80
+Last-Modified: Thu, 18 Sep 2014 10:07:52 GMT
+Content-Length: 3875
+X-Cache-Action: HIT
+X-Cache-Hits: 2
+X-Cache-Age: 163
+Vary: Accept-Encoding
+Cache-Control: max-age=269
+Date: Sat, 27 Sep 2014 08:53:53 GMT
+Connection: keep-alive
+
+{
+
+	&quot;config&quot;: {
+
+		&quot;ion&quot;: {
+			&quot;recipe&quot;: &quot;http%3A%2F%2Fwww.bbc.co.uk%2Fmobile%2Fappconfig%2Fiplayerradio%2Fion-recipies%2Fiplayerradio.1.5.yaml&quot;
+		},
+
+		&quot;mediaSets&quot;: {
+			&quot;low&quot;: &quot;android-phone-tablet-rtmp-3g&quot;,
+			&quot;hi&quot;: &quot;android-phone-rtmp-high&quot;
+		},
+		
+		&quot;promotedApps&quot;: [
+			{
+				&quot;title&quot;: &quot;More UK Radio&quot;,
+				&quot;packageName&quot;: &quot;uk.co.radioplayer&quot;,
+				&quot;interstitialUrl&quot;: &quot;http://www.radioplayer.co.uk/bbciospromo/index-android.html&quot;,
+				&quot;actionName&quot;: &quot;radioplayer_link&quot;
+			}
+		],
+
+		&quot;stationsWithAODEpisodesDisabled&quot;: [
+			&quot;bbc_radio_scotland&quot;,
+			&quot;bbc_radio_nan_gaidheal&quot;,
+			&quot;bbc_radio_ulster&quot;,
+			&quot;bbc_radio_foyle&quot;,
+			&quot;bbc_radio_wales&quot;,
+			&quot;bbc_radio_cymru&quot;,
+			&quot;bbc_radio_berkshire&quot;,
+			&quot;bbc_radio_bristol&quot;,
+			&quot;bbc_radio_cambridge&quot;,
+			&quot;bbc_radio_cornwall&quot;,
+			&quot;bbc_radio_coventry_warwickshire&quot;,
+			&quot;bbc_radio_cumbria&quot;,
+			&quot;bbc_radio_derby&quot;,
+			&quot;bbc_radio_devon&quot;,
+			&quot;bbc_radio_essex&quot;,
+			&quot;bbc_radio_gloucestershire&quot;,
+			&quot;bbc_radio_guernsey&quot;,
+			&quot;bbc_radio_hereford_worcester&quot;,
+			&quot;bbc_radio_humberside&quot;,
+			&quot;bbc_radio_jersey&quot;,
+			&quot;bbc_radio_kent&quot;,
+			&quot;bbc_radio_lancashire&quot;,
+			&quot;bbc_radio_leeds&quot;,
+			&quot;bbc_radio_leicester&quot;,
+			&quot;bbc_radio_lincolnshire&quot;,
+			&quot;bbc_london&quot;,
+			&quot;bbc_radio_manchester&quot;,
+			&quot;bbc_radio_merseyside&quot;,
+			&quot;bbc_radio_newcastle&quot;,
+			&quot;bbc_radio_norfolk&quot;,
+			&quot;bbc_radio_northampton&quot;,
+			&quot;bbc_radio_nottingham&quot;,
+			&quot;bbc_radio_oxford&quot;,
+			&quot;bbc_radio_sheffield&quot;,
+			&quot;bbc_radio_shropshire&quot;,
+			&quot;bbc_radio_solent&quot;,
+			&quot;bbc_radio_somerset_sound&quot;,
+			&quot;bbc_radio_stoke&quot;,
+			&quot;bbc_radio_suffolk&quot;,
+			&quot;bbc_radio_surrey&quot;,
+			&quot;bbc_radio_sussex&quot;,
+			&quot;bbc_tees&quot;,
+			&quot;bbc_three_counties_radio&quot;,
+			&quot;bbc_radio_wiltshire&quot;,
+			&quot;bbc_wm&quot;,
+			&quot;bbc_radio_york&quot;,
+			&quot;bbc_school_radio&quot;
+		],
+		
+		&quot;alarmAdjustInMilliseconds&quot;: 10000,
+
+		&quot;webViewURLSettings&quot;: [
+		   {
+		     &quot;urlPattern&quot;: &quot;^https?://www(?:.int|.test|.stage)?.bbc.co.uk/music/playlister(?:$|[/#?.]+.*$)&quot;,
+		     &quot;javascript&quot;: &quot;(function(){require(['jquery-1.9'],function($){document.iplayerRadioApp={makePlaylisterAPICalls:function(){document.playlister.makeSafeForWebView(function(e){BBCiPlayerRadioApp.makeSafeForWebViewComplete()});document.playlister.onSnippetPlaybackRequested(function(e){BBCiPlayerRadioApp.snippetPlaybackRequested()})}};if(document.playlister!==undefined){document.iplayerRadioApp.makePlaylisterAPICalls()}else{$(document).bind('playlister-api-loaded',function(){document.iplayerRadioApp.makePlaylisterAPICalls()})}})})();&quot;,
+		     &quot;pageTitle&quot;: &quot;Playlister&quot;
+		   },
+		   {
+		     &quot;urlPattern&quot;: &quot;^https?://(www|ssl)(?:.int|.test|.stage)?.bbc.co.uk/id(?:$|(?!\\/(statecookie|refresh|redirect).*)[/#\\\\?\\\\.]+.*$)&quot;,
+		     &quot;javascript&quot;: &quot;(function(){document.bbcid={makeSafeForWebView:function(appCallback){document.bbcid.hideElement('div#orb-header');document.bbcid.hideElement('div#orb-footer');document.bbcid.hideElement('#blq-mast');document.bbcid.hideElement('#blq-global');document.bbcid.hideElement('#blq-foot');document.bbcid.hideElement('div.rememberme-container');if(appCallback!==undefined){appCallback({target:document.bbcid})}},hideElement:function(itemName){var element=document.querySelector(itemName);if(element!==null){element.style.display='none'}}};var event=document.createEvent('Event');event.initEvent('bbcid-api-loaded',true,true);document.dispatchEvent(event)})();(function(){document.iplayerRadioApp={makeBBCiDAPICalls:function(){document.bbcid.makeSafeForWebView(function(e){BBCiPlayerRadioApp.makeSafeForWebViewComplete()})}};if(document.bbcid!==undefined){document.iplayerRadioApp.makeBBCiDAPICalls()}else{document.addEventListener('bbcid-api-loaded',function(){document.iplayerRadioApp.makeBBCiDAPICalls()},false)}})();&quot;,
+		     &quot;pageTitle&quot;: &quot;BBC iD&quot;
+		   }
+		],
+		
+		&quot;stats&quot;: {
+			&quot;echo&quot;: {
+				&quot;active&quot;: false,
+				&quot;environment&quot;: &quot;nkdata&quot;
+			},
+			&quot;beacon&quot;: {
+				&quot;active&quot;: true,
+				&quot;environment&quot;: &quot;bbc&quot;
+			}
+		},
+
+		&quot;hockeykit&quot;: {
+			&quot;active&quot;: false
+		}
+
+	}
+
+}
+
+</pre><br/>
+<br/>
+response (beautified):<br/>
+<pre>
+{
+
+  "config": {
+
+    "ion": {
+      "recipe": "http%3A%2F%2Fwww.bbc.co.uk%2Fmobile%2Fappconfig%2Fiplayerradio%2Fion-recipies%2Fiplayerradio.1.5.yaml"
+    },
+
+    "mediaSets": {
+      "low": "android-phone-tablet-rtmp-3g",
+      "hi": "android-phone-rtmp-high"
+    },
+
+    "promotedApps": [{
+      "title": "More UK Radio",
+      "packageName": "uk.co.radioplayer",
+      "interstitialUrl": "http://www.radioplayer.co.uk/bbciospromo/index-android.html",
+      "actionName": "radioplayer_link"
+    }],
+
+    "stationsWithAODEpisodesDisabled": [
+      "bbc_radio_scotland",
+      "bbc_radio_nan_gaidheal",
+      "bbc_radio_ulster",
+      "bbc_radio_foyle",
+      "bbc_radio_wales",
+      "bbc_radio_cymru",
+      "bbc_radio_berkshire",
+      "bbc_radio_bristol",
+      "bbc_radio_cambridge",
+      "bbc_radio_cornwall",
+      "bbc_radio_coventry_warwickshire",
+      "bbc_radio_cumbria",
+      "bbc_radio_derby",
+      "bbc_radio_devon",
+      "bbc_radio_essex",
+      "bbc_radio_gloucestershire",
+      "bbc_radio_guernsey",
+      "bbc_radio_hereford_worcester",
+      "bbc_radio_humberside",
+      "bbc_radio_jersey",
+      "bbc_radio_kent",
+      "bbc_radio_lancashire",
+      "bbc_radio_leeds",
+      "bbc_radio_leicester",
+      "bbc_radio_lincolnshire",
+      "bbc_london",
+      "bbc_radio_manchester",
+      "bbc_radio_merseyside",
+      "bbc_radio_newcastle",
+      "bbc_radio_norfolk",
+      "bbc_radio_northampton",
+      "bbc_radio_nottingham",
+      "bbc_radio_oxford",
+      "bbc_radio_sheffield",
+      "bbc_radio_shropshire",
+      "bbc_radio_solent",
+      "bbc_radio_somerset_sound",
+      "bbc_radio_stoke",
+      "bbc_radio_suffolk",
+      "bbc_radio_surrey",
+      "bbc_radio_sussex",
+      "bbc_tees",
+      "bbc_three_counties_radio",
+      "bbc_radio_wiltshire",
+      "bbc_wm",
+      "bbc_radio_york",
+      "bbc_school_radio"
+    ],
+
+    "alarmAdjustInMilliseconds": 10000,
+
+    "webViewURLSettings": [{
+      "urlPattern": "^https?://www(?:.int|.test|.stage)?.bbc.co.uk/music/playlister(?:$|[/#?.]+.*$)",
+      "javascript": "(function(){require(['jquery-1.9'],function($){document.iplayerRadioApp={makePlaylisterAPICalls:function(){document.playlister.makeSafeForWebView(function(e){BBCiPlayerRadioApp.makeSafeForWebViewComplete()});document.playlister.onSnippetPlaybackRequested(function(e){BBCiPlayerRadioApp.snippetPlaybackRequested()})}};if(document.playlister!==undefined){document.iplayerRadioApp.makePlaylisterAPICalls()}else{$(document).bind('playlister-api-loaded',function(){document.iplayerRadioApp.makePlaylisterAPICalls()})}})})();",
+      "pageTitle": "Playlister"
+    }, {
+      "urlPattern": "^https?://(www|ssl)(?:.int|.test|.stage)?.bbc.co.uk/id(?:$|(?!\\/(statecookie|refresh|redirect).*)[/#\\\\?\\\\.]+.*$)",
+      "javascript": "(function(){document.bbcid={makeSafeForWebView:function(appCallback){document.bbcid.hideElement('div#orb-header');document.bbcid.hideElement('div#orb-footer');document.bbcid.hideElement('#blq-mast');document.bbcid.hideElement('#blq-global');document.bbcid.hideElement('#blq-foot');document.bbcid.hideElement('div.rememberme-container');if(appCallback!==undefined){appCallback({target:document.bbcid})}},hideElement:function(itemName){var element=document.querySelector(itemName);if(element!==null){element.style.display='none'}}};var event=document.createEvent('Event');event.initEvent('bbcid-api-loaded',true,true);document.dispatchEvent(event)})();(function(){document.iplayerRadioApp={makeBBCiDAPICalls:function(){document.bbcid.makeSafeForWebView(function(e){BBCiPlayerRadioApp.makeSafeForWebViewComplete()})}};if(document.bbcid!==undefined){document.iplayerRadioApp.makeBBCiDAPICalls()}else{document.addEventListener('bbcid-api-loaded',function(){document.iplayerRadioApp.makeBBCiDAPICalls()},false)}})();",
+      "pageTitle": "BBC iD"
+    }],
+
+    "stats": {
+      "echo": {
+        "active": false,
+        "environment": "nkdata"
+      },
+      "beacon": {
+        "active": true,
+        "environment": "bbc"
+      }
+    },
+
+    "hockeykit": {
+      "active": false
+    }
+
+  }
+
+}
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/morfix-melingo-android-application-request-response">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-quick-and-dirty-pure-client-side-qr-code-rendering-playground">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-quick-and-dirty-pure-client-side-qr-code-rendering-playground">JavaScript Quick And Dirty - Pure Client-Side QR Code Rendering Playground</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows-7-test-mode-onoff">Windows 7 Test Mode ON/OFF</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bash-rename-all-files-lower-case">bash rename all files lower-case</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/constantine-vs-hellblazer-success">Constantine vs. Hellblazer - Success! </a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/lenovo-x220-model-42914cg-direct-link-drivers-to-lenovo-website">Lenovo X220 Model 42914CG - Direct Link Drivers To Lenovo Website</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-techniques-discovering-ad-block-implementation-example">JavaScript Ninja Techniques - Discovering Ad-Block + Implementation Example</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chromeflagsenable-app-window-controls">chrome://flags/#enable-app-window-controls</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ginger-manual-uninstall">Ginger Manual Uninstall</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/make-windows-7-sp1-use-microsoft-update">Make Windows 7 SP1 Use Microsoft Update</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/prototype-js-1-7-2-kills-console-log">Prototype.JS 1.7.2 Kills Console-Log!!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/lenovo-ultranav-trackpointtrackpad-scroll-is-not-working-fixed">Lenovo UltraNav TrackPoint/TrackPad - Scroll Is Not Working Fixed</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unicode-checkbox-check-characters">Unicode Checkbox / Check Characters</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/java_home-jdk_home-jre_home-for-compatible-android-sdk">JRE_HOME For Compatible Android SDK</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/why-ive-switched-from-wamp-to-wt-nmp">Why I've Switched From WAMP to WT-NMP</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/root-samsung-s3-gt-i9300-android-4-3">Root Samsung S3 GT-I9300 Android 4.3</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ad-block-lists">Ad-Block Lists</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>gllto.glpals.com Is For GPS (Android)</title>
+  <meta itemprop="name"                                content="gllto.glpals.com Is For GPS (Android)"       />
+  <meta name="dcterms.title"                           content="gllto.glpals.com Is For GPS (Android)"       />
+  <meta property="og:title"                            content="gllto.glpals.com Is For GPS (Android)"       />
+  <meta name="twitter:title"                           content="gllto.glpals.com Is For GPS (Android)"       />
+  <meta name="twitter:text:title"                      content="gllto.glpals.com Is For GPS (Android)"       />
+  <meta name="application-name"                        content="gllto.glpals.com Is For GPS (Android)"       />
+  <meta name="subject"                                 content="gllto.glpals.com Is For GPS (Android)"       />
+  <meta name="apple-mobile-web-app-title"              content="gllto.glpals.com Is For GPS (Android)"       />
+  <meta name="msapplication-tooltip"                   content="gllto.glpals.com Is For GPS (Android)"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="gllto.glpals.com Is For GPS (Android)"       />
+  <meta itemprop="description"                         content="gllto.glpals.com Is For GPS (Android)"       />
+  <meta name="dcterms.description"                     content="gllto.glpals.com Is For GPS (Android)"       />
+  <meta name="twitter:description"                     content="gllto.glpals.com Is For GPS (Android)"       />
+  <meta property="og:description"                      content="gllto.glpals.com Is For GPS (Android)"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accepted,accuracy,accurate,addresses,agps,america,android,antenna,ascii,assist,based,baudrate,bcmls,blank,block,blocked,blocking,blocks,brcm,broadcom,browser,build,burp,cases,cell,change,changed,checked,chrome,claim,closeness,code,collected,conf,connected,connections,content,country,cpcoldstart,crespo,data,debug,default,delete,deleted,developers,device,devices,devkf,disable,domain,domains,download,downloaded,drag,drop,edit,enable,encoding,error,estimate,estimations,false,fast,faster,features,fiddler,file,files,find,forum,frqplan,generic,github,glconfig,gldata,glgps,gllapi,gllio,gllto,glonass,glpals,google,gpiodelayms,gprsclass,guide,high,host,hostname,hosts,httpsynclto,index,info,information,initial,internals,kind,larger,latest,lbsenable,lbsserver,level,levels,limit,list,listener,lists,located,location,locations,lock,logfacmask,logprimask,lpmode,ltodir,made,make,manager,master,message,meters,mobile,needed,network,nmea,node,nokia,north,note,notice,older,online,option,orbit,page,party,pass,permission,persist,personally,phone,pipe,plan,pool,port,portname,position,positioning,post,postcount,privacy,programs,prop,props,proxy,pwdn,radio,rawdata,reboot,rebooted,refloc,related,replace,replacing,report,reports,resolve,resolved,resolver,reverse,rftype,root,rootzwiki,samsung,satalites,script,sdcard,search,seconds,server,servers,showpost,showthread,spread,storage,store,strong,suite,supl,suplenable,supluseapn,suplut,suplversion,supported,switch,system,target,term,test,thres,threshold,title,tools,topic,tower,ttysac,turned,update,updates,variation,variations,verbose,version,vodafone,wakelock,warning,wifi,windows,wiper,wondered,xmlns,xmlschema,xtra,yourfile,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accepted,accuracy,accurate,addresses,agps,america,android,antenna,ascii,assist,based,baudrate,bcmls,blank,block,blocked,blocking,blocks,brcm,broadcom,browser,build,burp,cases,cell,change,changed,checked,chrome,claim,closeness,code,collected,conf,connected,connections,content,country,cpcoldstart,crespo,data,debug,default,delete,deleted,developers,device,devices,devkf,disable,domain,domains,download,downloaded,drag,drop,edit,enable,encoding,error,estimate,estimations,false,fast,faster,features,fiddler,file,files,find,forum,frqplan,generic,github,glconfig,gldata,glgps,gllapi,gllio,gllto,glonass,glpals,google,gpiodelayms,gprsclass,guide,high,host,hostname,hosts,httpsynclto,index,info,information,initial,internals,kind,larger,latest,lbsenable,lbsserver,level,levels,limit,list,listener,lists,located,location,locations,lock,logfacmask,logprimask,lpmode,ltodir,made,make,manager,master,message,meters,mobile,needed,network,nmea,node,nokia,north,note,notice,older,online,option,orbit,page,party,pass,permission,persist,personally,phone,pipe,plan,pool,port,portname,position,positioning,post,postcount,privacy,programs,prop,props,proxy,pwdn,radio,rawdata,reboot,rebooted,refloc,related,replace,replacing,report,reports,resolve,resolved,resolver,reverse,rftype,root,rootzwiki,samsung,satalites,script,sdcard,search,seconds,server,servers,showpost,showthread,spread,storage,store,strong,suite,supl,suplenable,supluseapn,suplut,suplversion,supported,switch,system,target,term,test,thres,threshold,title,tools,topic,tower,ttysac,turned,update,updates,variation,variations,verbose,version,vodafone,wakelock,warning,wifi,windows,wiper,wondered,xmlns,xmlschema,xtra,yourfile,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/solve-mscomctl-ocx-errors"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/solve-mscomctl-ocx-errors"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/proper-jquery-loading-no-external-resources-safe-to-use-acknowledge-and-callback"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/gllto-glpals-com-is-for-gps-android"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/gllto-glpals-com-is-for-gps-android"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/gllto-glpals-com-is-for-gps-android"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/gllto-glpals-com-is-for-gps-android"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/gllto-glpals-com-is-for-gps-android"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/gllto-glpals-com-is-for-gps-android"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-12-11T08:58:19+00:00"     />
+  <meta name="page-datetime"                           content="2014-12-11T08:58:19+00:00"     />
+  <meta property="article:published_time"              content="2014-12-11T08:58:19+00:00"     />
+  <meta name="dcterms.date"                            content="2014-12-11T08:58:19+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2015-01-02T15:35:40+00:00"    />
+  <meta property="article:modified_time"               content="2015-01-02T15:35:40+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/gllto-glpals-com-is-for-gps-android"
+,"url"             : "https://icompile.eladkarako.com/gllto-glpals-com-is-for-gps-android"
+,"headline"        : "gllto.glpals.com Is For GPS (Android)"
+,"description"     : "gllto.glpals.com Is For GPS (Android)"
+,"datePosted"      : "2014-12-11T08:58:19+00:00"
+,"dateCreated"     : "2014-12-11T08:58:19+00:00"
+,"datePublished"   : "2014-12-11T08:58:19+00:00"
+,"dateModified"    : "2015-01-02T15:35:40+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0009928828141">
+  <header>
+    <h1 itemprop="headline">gllto.glpals.com Is For GPS (Android)</h1>
+    <sup>Posted at <time datetime="2015-01-02T15:35:40+00:00" itemprop="dateModified">Fri, 02 Jan 2015 15:35:40 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><img loading="lazy" lazyload="on"  src="https://icompile.eladkarako.com/_uploads/gps.jpg" /><br/>
+<br/>
+<br/>
+You might have notice connections from <code>gllto.glpals.com</code> from your mobile device and wondered what is it,  <br/>
+well its related to AGPS (Assist GPS) which are lists of satalites locations,  <br/>
+along with mobile-location (your SIM allows an estimate location by relative closeness to a mobile-antenna),  <br/>
+that can help the GPS zero-in ("GPS fix") on the current accurate-location.<br/>
+<br/>
+Note:  <br/>
+GPS-related configuration-files, are spread across the file-system,  <br/>
+most Samsung devices will have:  <br/>
+<code>/system/etc/gps.conf</code>:  <br/>
+<pre>
+NTP_SERVER=north-america.pool.ntp.org
+XTRA_SERVER_1=http://gllto1.glpals.com/4day/v3/latest/lto2.dat
+XTRA_SERVER_2=http://gllto2.glpals.com/4day/v3/latest/lto2.dat
+SUPL_HOST=supl.google.com
+SUPL_PORT=7276
+</pre><br/>
+<br/>
+and <code>/system/etc/gps.xml</code>:  <br/>
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;glgps xmlns="http://www.glpals.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.glpals.com/glconfig.xsd" &gt;
+  &lt;!--HAL Confguration  --&gt;
+  &lt;hal
+       PortName="/dev/ttySAC1"
+       BaudRate="921600"
+       GpioNStdbyPath="/sys/class/sec/gps/GPS_PWR_EN/value"
+       GpioDelayMs="250"
+       NvStorageDir="/data/system/gps/"
+       FactoryTestFilePath="/data/"
+
+       LogDirectory="/storage/sdcard0/gps/broadcom/storage"
+
+       WakeLock="geo"
+
+       LPmode="false"
+       CpColdStart="false"
+       CpGuardTimeSec="1"
+
+       SuplEnable="true"
+       SuplUseApn="false"
+       SuplTlsCertPath="/system/etc/gps.cer"
+       SuplTlsEnable="false"
+       SuplUT1Seconds="20"
+       SuplUT2Seconds="20"
+       SuplUT3Seconds="20"
+       SuplVersion="1"
+
+       LbsEnable="true"
+       LbsServer="BCMLS2.glpals.com"
+       HttpSyncLto="true"
+       LtoDir="/data/system/gps/"
+
+       IgnoreJniTime="true"
+       AssertEnabled="false"
+   /&gt;
+
+  &lt;gll
+       LogPriMask="LOG_INFO"
+       LogFacMask="LOG_GLLIO | LOG_RAWDATA | LOG_DEVKF | LOG_GLLAPI | LOG_NMEA"
+       FrqPlan="FRQ_PLAN_26MHZ_2PPM_26MHZ_300PPB"
+       RfType="GL_RF_47521_BRCM_EXT_LNA"
+       WarmStandbyTimeout1Seconds="10"
+       WarmStandbyTimeout2Seconds="15"
+  &gt;
+  &lt;/gll&gt;
+
+  &lt;gll_features
+       EnableLowPowerPmm="true"
+  /&gt;
+
+&lt;/glgps&gt;
+</pre><br/>
+<br/>
+<hr/><br/>
+<br/>
+Here is an example for another variation of <code>gps.xml</code>:  <br/>
+<a href="https://android.googlesource.com/device/samsung/crespo4g/+/85fa55814b52f182504333d5512d68e29e7f2932/gps.xml">https://android.googlesource.com/device/samsung/crespo4g/+/85fa55814b52f182504333d5512d68e29e7f2932/gps.xml</a>  <br/>
+and <code>gps.conf</code>:  <br/>
+<a href="https://android.googlesource.com/device/samsung/crespo4g/+/85fa55814b52f182504333d5512d68e29e7f2932/gps.conf">https://android.googlesource.com/device/samsung/crespo4g/+/85fa55814b52f182504333d5512d68e29e7f2932/gps.conf</a>.<br/>
+<br/>
+<hr/><br/>
+<br/>
+more files are available under <code>/data/gps/</code> or <code>/data/system/gps/</code>,  <br/>
+including the downloaded <code>lto2.dat</code> (long term orbit data)<br/>
+<br/>
+<hr/><br/>
+<br/>
+<a href="http://gllto.glpals.com/2day/glo/v2/latest/" title="http://gllto.glpals.com/2day/glo/v2/latest/" target="_blank">http://gllto.glpals.com/2day/glo/v2/latest/</a><br/>
+<a href="http://gllto.glpals.com/2day/latest/" title="http://gllto.glpals.com/2day/latest/" target="_blank">http://gllto.glpals.com/2day/latest/</a><br/>
+<a href="http://gllto.glpals.com/2day/v2/latest/" title="http://gllto.glpals.com/2day/v2/latest/" target="_blank">http://gllto.glpals.com/2day/v2/latest/</a><br/>
+<a href="http://gllto.glpals.com/2day/v3/latest/" title="http://gllto.glpals.com/2day/v3/latest/" target="_blank">http://gllto.glpals.com/2day/v3/latest/</a><br/>
+<a href="http://gllto.glpals.com/2day/v4/latest/" title="http://gllto.glpals.com/2day/v4/latest/" target="_blank">http://gllto.glpals.com/2day/v4/latest/</a><br/>
+<a href="http://gllto.glpals.com/4day/glo/v2/latest/" title="http://gllto.glpals.com/4day/glo/v2/latest/" target="_blank">http://gllto.glpals.com/4day/glo/v2/latest/</a><br/>
+<a href="http://gllto.glpals.com/4day/v3/latest/" title="http://gllto.glpals.com/4day/v3/latest/" target="_blank">http://gllto.glpals.com/4day/v3/latest/</a><br/>
+<a href="http://gllto.glpals.com/4day/v4/latest/" title="http://gllto.glpals.com/4day/v4/latest/" target="_blank">http://gllto.glpals.com/4day/v4/latest/</a><br/>
+<a href="http://gllto.glpals.com/7day/glo/v2/latest/" title="http://gllto.glpals.com/7day/glo/v2/latest/" target="_blank">http://gllto.glpals.com/7day/glo/v2/latest/</a><br/>
+<a href="http://gllto.glpals.com/7day/latest/" title="http://gllto.glpals.com/7day/latest/" target="_blank">http://gllto.glpals.com/7day/latest/</a><br/>
+<a href="http://gllto.glpals.com/7day/v2/latest/" title="http://gllto.glpals.com/7day/v2/latest/" target="_blank">http://gllto.glpals.com/7day/v2/latest/</a><br/>
+<a href="http://gllto.glpals.com/7day/v3/latest/" title="http://gllto.glpals.com/7day/v3/latest/" target="_blank">http://gllto.glpals.com/7day/v3/latest/</a><br/>
+<a href="http://gllto.glpals.com/7day/v4/latest/" title="http://gllto.glpals.com/7day/v4/latest/" target="_blank">http://gllto.glpals.com/7day/v4/latest/</a><br/>
+<br/>
+<hr/><br/>
+<br/>
+Those are variations of list of satalites available, known as AGPS.  <br/>
+You will most likely notice those when you use a 3rd-party GPS manager app that has an option to clear/update AGPS,  <br/>
+or if you pipe-the connections of your phone through a reverse-proxy/man-in-the-middle listener programs such as BURP-suite or Fiddler.  <br/>
+The data file will be most likely located under <code>/data/gps/gldata.sto</code> or <code>/data/system/gps/gldata.sto</code>.  <br/>
+<br/>
+<hr/><br/>
+<br/>
+Privacy:  <br/>
+<br/>
+If you have any kind of system ad-block such as HOSTS lists or a proxy,  <br/>
+you should find out if it blocks any of the domains used to download updates for the AGPS.  <br/>
+<br/>
+You <strong>should not block</strong> those domains:  <br/>
+<pre>
+gllto.glpals.com
+gllto1.glpals.com
+gllto2.glpals.com
+gllto3.glpals.com
+bcmls.glpals.com
+bcmls1.glpals.com
+bcmls2.glpals.com
+bcmls3.glpals.com
+</pre><br/>
+<br/>
+You <strong>MAY block</strong> those domains:  <br/>
+<pre>
+supl.google.com
+supl.nokia.com
+lbs.geo.t-mobile.com
+supl.vodafone.com
+supl.three.com
+</pre><br/>
+<br/>
+<hr/><br/>
+<br/>
+Possible fix when one of the domains is blocked and you are not sure if/what is blocking it,  <br/>
+is to replace the domain-hostname with ONE of the resolved IP-addresses,  <br/>
+you can search online for various online tools to resolve domain hostname to IP,  <br/>
+or use <code>chrome://net-internals/#dns</code> on an older Chrome browser.  <br/>
+<br/>
+for example <code>bcmls2.glpals.com</code> resolved to those IPs:  <br/>
+<pre>
+54.190.124.218
+52.37.77.41
+35.167.243.194
+52.42.193.147
+34.208.182.246
+52.88.180.37
+52.88.175.51
+44.239.132.28
+
+52.25.120.35
+52.88.175.51
+44.233.217.3
+54.190.124.218
+100.21.81.80
+34.208.182.246
+54.149.98.29
+52.88.136.170
+</pre><br/>
+<br/>
+You can try <a href="https://github.com/eladkarako/net-resolver">https://github.com/eladkarako/net-resolver</a> just put <code>bcmls2.glpals.com</code> in a text-file and pass it to the js script (<code>node index.js yourfile.txt</code> or drag&amp;drop over <code>index.cmd</code> if you are on Windows).  <br/>
+<br/>
+<hr/><br/>
+<br/>
+In XDA-developers <a href="https://forum.xda-developers.com/showthread.php?t=1239713&page=76">https://forum.xda-developers.com/showthread.php?t=1239713&page=76</a> claim to allow a faster GPS-lock ("GPS-Fix") by replacing the content of  <code>/system/etc/gps.conf</code> with the following content (afterwards you should delete <code> /data/gps</code> or <code>/data/system/gps/</code> and reboot, then use any GPS test app from the store and update the AGPS):  <br/>
+(for non-glonass devices)<br/>
+<pre>
+NTP_SERVER=in.pool.ntp.org
+XTRA_SERVER_1=http://gllto.glpals.com/7day/v4/latest/lto2.dat
+XTRA_SERVER_2=http://gllto.glpals.com/7day/v3/latest/lto2.dat
+XTRA_SERVER_3=http://gllto.glpals.com/30day/v2/latest/lto2.dat
+SUPL_HOST=supl.google.com
+SUPL_PORT=7276
+</pre><br/>
+<br/>
+(for glonass devices)<br/>
+<pre>
+NTP_SERVER=in.pool.ntp.org
+XTRA_SERVER_1=http://gllto.glpals.com/7day/glo/v2/latest/lto2.dat
+XTRA_SERVER_2=http://gllto.glpals.com/4day/glo/v2/latest/lto2.dat
+XTRA_SERVER_3=http://gllto.glpals.com/2day/glo/v2/latest/lto2.dat
+SUPL_HOST=supl.google.com
+SUPL_PORT=7276
+</pre><br/>
+<br/>
+<hr/><br/>
+<br/>
+I personally changed <code>gps.conf</code> to:  <br/>
+<pre>
+#------------------------------time servers
+NTP_SERVER=time.google.com
+NTP_SERVER=pool.ntp.org
+
+#------------------------------long-term-orbit-data servers (glonass supported devices) - can change version in some cases if file isn't loading.
+XTRA_SERVER_1=http://gllto.glpals.com/7day/glo/v2/latest/lto2.dat
+XTRA_SERVER_2=http://gllto.glpals.com/4day/glo/v2/latest/lto2.dat
+XTRA_SERVER_3=http://gllto.glpals.com/2day/glo/v2/latest/lto2.dat
+
+#------------------------------long-term-orbit-data servers (old, non-glonass devices) - can change version in some cases if file isn't loading.
+###XTRA_SERVER_1=http://gllto.glpals.com/7day/v2/latest/lto2.dat
+###XTRA_SERVER_2=http://gllto.glpals.com/2day/v2/latest/lto2.dat
+###XTRA_SERVER_3=http://gllto.glpals.com/30day/v2/latest/lto2.dat
+
+#------------------------------server for initial location based on IP and data collected from previous/other devices.
+SUPL_HOST=supl.google.com
+SUPL_PORT=7275
+
+
+#------------------------------master-switch for AGPS
+DEFAULT_AGPS_ENABLE=TRUE
+
+#------------------------------WiFi positioning. based on previous registration of devices location when connected to WiFi and location at supl.google.com (1=enable, 0=disable).
+ENABLE_WIPER=1
+
+#------------------------------initial very-generic location (ip-to-country and other estimations) based on information from supl.google.com (1=enable, 0=disable).
+REPORT_POSITION_USE_SUPL_REFLOC=1
+
+#------------------------------cell-tower reports as location (1=enable, 0=disable).
+INTERMEDIATE_POS=1
+
+#------------------------------limit what is accepted as location from cell-tower (accuracy-threshold). in meters (use larger values for faster "lock"). do not use zero.
+ACCURACY_THRES=3000
+
+#------------------------------this is mostly already set in gps.xml
+# DEBUG LEVELS: 0 - none, 1 - Error, 2 - Warning, 3 - Info
+# 4 - Debug, 5 - Verbose
+###DEBUG_LEVEL =0
+
+
+#---------------------------------------------------------
+# set file permission to 644, root:root (0).
+# set file EOL to windows (\r\n),
+# set file encoding to ASCII (or UTF8, without BOM!)
+# delete content of '/data/gps' or '/data/system/gps'
+#---------------------------------------------------------
+# edit build.prop
+# make sure it has those props, with those values (change if needed):
+#     ro.ril.gprsclass=12
+#     persist.radio.apm_sim_not_pwdn=1
+#     ro.com.google.locationfeatures=1
+#     ro.com.google.networklocation=1
+#---------------------------------------------------------
+# reboot
+# enable location with high-accuracy (with google), 
+# and have SIM in the device if possible.
+#---------------------------------------------------------
+
+
+#####https://rootzwiki.com/topic/28989-the-end-all-be-all-guide-to-your-gps/
+#####https://forum.xda-developers.com/showthread.php?t=1239713
+#####https://forum.xda-developers.com/showthread.php?t=1239713&page=76
+#####https://forum.xda-developers.com/showpost.php?p=45490978&postcount=751#post_message_45490978
+</pre><br/>
+<br/>
+and <code>gps.xml</code> to:  <br/>
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;glgps xmlns="http://www.glpals.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.glpals.com/glconfig.xsd" &gt;
+  &lt;!--HAL Confguration  --&gt;
+  &lt;hal
+       PortName="/dev/ttySAC1"
+       BaudRate="921600"
+       GpioNStdbyPath="/sys/class/sec/gps/GPS_PWR_EN/value"
+       GpioDelayMs="250"
+       NvStorageDir="/data/system/gps/"
+       FactoryTestFilePath="/data/"
+
+       LogDirectory="/storage/sdcard0/gps/broadcom/storage"
+
+       WakeLock="geo"
+
+       LPmode="false"
+       CpColdStart="false"
+       CpGuardTimeSec="1"
+       ReAidingOnHotStart="true"
+       SuplEnable="true"
+       SuplUseApn="true"
+       SuplTlsCertPath="/system/bin/gps.cer"
+       SuplTlsEnable="false"
+       SuplUT1Seconds="20"
+       SuplUT2Seconds="20"
+       SuplUT3Seconds="20"
+       SuplVersion="1"
+
+       LbsEnable="true"
+       LbsServer="BCMLS2.glpals.com"
+       HttpSyncLto="true"
+       LbsCellEnable="true"
+       LtoDir="/data/system/gps/"
+
+       HulaSensorMask="0x1F"
+       IgnoreJniTime="true"
+       AssertEnabled="false"
+   /&gt;
+
+  &lt;gll
+       LogPriMask="LOG_INFO"
+       LogFacMask="LOG_GLLIO | LOG_RAWDATA | LOG_GLLAPI | LOG_NMEA"
+       FrqPlan="FRQ_PLAN_26MHZ_2PPM_26MHZ_300PPB"
+       RfType="GL_RF_47521_BRCM_EXT_LNA"
+       WarmStandbyTimeout1Seconds="10"
+       WarmStandbyTimeout2Seconds="15"
+  &gt;
+  &lt;/gll&gt;
+
+  &lt;gll_features
+       EnableLowPowerPmm="true"
+  /&gt;
+
+&lt;/glgps&gt;
+</pre><br/>
+<br/>
+I've deleted the content of <code>/data/system/gps/</code>,  <br/>
+made sure the <code>build.prop</code> file was not blocking network location of google location,  <br/>
+and rebooted the device,  <br/>
+after I've turned ON GPS on high accuracy, on cell-data, I've tried to clear and update AGPS,  <br/>
+and checked <code>/data/system/gps/</code>,  <br/>
+<code>gldata.sto</code> was there quite fast, but for <code>lto2.dat</code> it took a while.  <br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/solve-mscomctl-ocx-errors">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/proper-jquery-loading-no-external-resources-safe-to-use-acknowledge-and-callback">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/proper-jquery-loading-no-external-resources-safe-to-use-acknowledge-and-callback">Safe-To-Use Acknowledge And Callback</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-search-domain-check-api-on-android">Google Search-Domain-Check API On Android</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/reverse-understanding-gaednsproxy-appspot-com-service">Reverse Understanding - gaednsproxy.appspot.com Service</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/controlling-hot-tv-remote-with-smartphone">שלט ממיר הוט באפליקציה בסמארטפון</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/the-hunger-games-shayetet-13">The Hunger Games && Shayetet 13</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/json-usage-sample-for-google-maps-api-elevation-and-geocode-api">JSON Usage Sample For Google-Maps API (Elevation And Geocode API)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/samsung-note-3-n900-custom-recovery-supersu-binary-superuser-apk-mount-system-rw-disable-knox-remove-bloatware">Remove Bloatware</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/easy-htaccess-gzip-compression">Easy .htaccess GZIP compression</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/4chan-logo-vectorised">4Chan Logo Vectorised</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/formal-language-algorithm-specific-word-format-problem-solution-using-javascript-implementations">Formal-Language Algorithm Specific Word Format Problem Solution Using JavaScript Implementations</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-techniques-web-cross-domain-cross-origin-heuristics-research-solution-demo">JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Research-Solution Demo 4Work</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-techniques-web-cross-domain-cross-origin-heuristics-presentation-tease">JavaScript Ninja Techniques - Web Cross-Domain / Cross Origin Heuristics - Presentation Tease 4Work</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/gluten-free-trick">טריק לשיפור לחם-קל של בר-אל</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/proper-british-morning-qi-and-tea">Proper British Morning - QI && Tea</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/handlebarsjs-2-0-cdn-resources-explained">HandlebarsJS 2.0 CDN-Resources Explained</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/life-logic">Life's Logic</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>pipe to perl script that sends to ElasticSearch server - from the very start</title>
+  <meta itemprop="name"                                content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+  <meta name="dcterms.title"                           content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+  <meta property="og:title"                            content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+  <meta name="twitter:title"                           content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+  <meta name="twitter:text:title"                      content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+  <meta name="application-name"                        content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+  <meta name="subject"                                 content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+  <meta name="apple-mobile-web-app-title"              content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+  <meta name="msapplication-tooltip"                   content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+  <meta itemprop="description"                         content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+  <meta name="dcterms.description"                     content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+  <meta name="twitter:description"                     content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+  <meta property="og:description"                      content="pipe to perl script that sends to ElasticSearch server - from the very start"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="נמצא,קובץ,קונפיגורציה,agent,apache,append,assume,authors,auto,autoremove,backup,baseconfig,bashrc,brain,brainvm,build,change,chmod,chown,chrome,clean,close,cloud,command,common,compile,conf,console,content,copy,cpan,cpanm,cpanmin,cpanminus,curl,daemon,data,defaults,download,drtech,esafe,essential,faster,files,fixup,flatjar,folder,foobar,gedit,generate,generator,github,google,graphite,groups,headers,host,hosts,html,index,information,init,initd,install,installer,java,json,karako,libapache,line,linux,local,localhost,logstash,looper,loopsend,machine,make,makefile,manually,master,mintx,minutes,mkdir,module,modules,nano,note,open,openjdk,oracle,parser,password,path,perl,perllib,pipe,prepare,printer,program,protocol,pscp,putty,reboot,related,remove,repository,restart,root,running,script,search,send,sender,sends,sense,server,servername,service,session,share,single,small,snmp,start,status,storage,sudo,team,test,timestamp,transfer,uname,uninstall,update,upgrade,user,usermod,username,verify,viewer,wamp,webserver,webstore,webupd,wget,windows,winscp,working,writing,xvzf,xxxx,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="נמצא,קובץ,קונפיגורציה,agent,apache,append,assume,authors,auto,autoremove,backup,baseconfig,bashrc,brain,brainvm,build,change,chmod,chown,chrome,clean,close,cloud,command,common,compile,conf,console,content,copy,cpan,cpanm,cpanmin,cpanminus,curl,daemon,data,defaults,download,drtech,esafe,essential,faster,files,fixup,flatjar,folder,foobar,gedit,generate,generator,github,google,graphite,groups,headers,host,hosts,html,index,information,init,initd,install,installer,java,json,karako,libapache,line,linux,local,localhost,logstash,looper,loopsend,machine,make,makefile,manually,master,mintx,minutes,mkdir,module,modules,nano,note,open,openjdk,oracle,parser,password,path,perl,perllib,pipe,prepare,printer,program,protocol,pscp,putty,reboot,related,remove,repository,restart,root,running,script,search,send,sender,sends,sense,server,servername,service,session,share,single,small,snmp,start,status,storage,sudo,team,test,timestamp,transfer,uname,uninstall,update,upgrade,user,usermod,username,verify,viewer,wamp,webserver,webstore,webupd,wget,windows,winscp,working,writing,xvzf,xxxx,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/altoids-taste-like-toothpaste-smells-like-bengay-and-anyhow-not-nearly-that-strong-anyway"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/altoids-taste-like-toothpaste-smells-like-bengay-and-anyhow-not-nearly-that-strong-anyway"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/graphite-maintenance-manual-services-running-plus-tips"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/big-data-machine-logstash-agent-daemon-pipe-to-perl-script-that-sends-to-elasticsearch-server-from-the-very-start"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/big-data-machine-logstash-agent-daemon-pipe-to-perl-script-that-sends-to-elasticsearch-server-from-the-very-start"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/big-data-machine-logstash-agent-daemon-pipe-to-perl-script-that-sends-to-elasticsearch-server-from-the-very-start"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/big-data-machine-logstash-agent-daemon-pipe-to-perl-script-that-sends-to-elasticsearch-server-from-the-very-start"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/big-data-machine-logstash-agent-daemon-pipe-to-perl-script-that-sends-to-elasticsearch-server-from-the-very-start"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/big-data-machine-logstash-agent-daemon-pipe-to-perl-script-that-sends-to-elasticsearch-server-from-the-very-start"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-01-07T12:12:58+00:00"     />
+  <meta name="page-datetime"                           content="2014-01-07T12:12:58+00:00"     />
+  <meta property="article:published_time"              content="2014-01-07T12:12:58+00:00"     />
+  <meta name="dcterms.date"                            content="2014-01-07T12:12:58+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2014-01-17T07:03:51+00:00"    />
+  <meta property="article:modified_time"               content="2014-01-17T07:03:51+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/big-data-machine-logstash-agent-daemon-pipe-to-perl-script-that-sends-to-elasticsearch-server-from-the-very-start"
+,"url"             : "https://icompile.eladkarako.com/big-data-machine-logstash-agent-daemon-pipe-to-perl-script-that-sends-to-elasticsearch-server-from-the-very-start"
+,"headline"        : "pipe to perl script that sends to ElasticSearch server - from the very start"
+,"description"     : "pipe to perl script that sends to ElasticSearch server - from the very start"
+,"datePosted"      : "2014-01-07T12:12:58+00:00"
+,"dateCreated"     : "2014-01-07T12:12:58+00:00"
+,"datePublished"   : "2014-01-07T12:12:58+00:00"
+,"dateModified"    : "2014-01-17T07:03:51+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0008776909831">
+  <header>
+    <h1 itemprop="headline">pipe to perl script that sends to ElasticSearch server - from the very start</h1>
+    <sup>Posted at <time datetime="2014-01-17T07:03:51+00:00" itemprop="dateModified">Fri, 17 Jan 2014 07:03:51 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><!--more--><br/>
+<br/>
+use mintx64:<br/>
+fullusername/username/password<br/>
+brain/brain/brain<br/>
+---- your single user should be "brain" and so is machine name.<br/>
+<br/>
+------------------------------------------------------------pre<br/>
+sudo apt-get -y update<br/>
+sudo apt-get -y upgrade<br/>
+sudo apt-get install --assume-yes build-essential<br/>
+sudo apt-get install --assume-yes linux-headers-$(uname -r)<br/>
+------------------------------------------------------------<br/>
+<br/>
+------------------------------------------------------------java<br/>
+sudo apt-get remove --assume-yes openjdk*<br/>
+sudo apt-get autoremove<br/>
+sudo apt-get clean<br/>
+sudo apt-get update<br/>
+<br/>
+sudo add-apt-repository --yes ppa:webupd8team/java<br/>
+sudo apt-get -y update<br/>
+sudo apt-get install --assume-yes oracle-java7-installer<br/>
+------------------------------------------------------------<br/>
+<br/>
+-------------HOSTS fixup<br/>
+sudo sed -i '$s/$/\<br/>
+&\<br/>
+&127.0.1.1       brain.myCompanyHost.com/' /etc/hosts<br/>
+sudo sed -i '$s/$/\<br/>
+&\<br/>
+&172.29.32.140   elasticsearch.myCompanyHost.com/' /etc/hosts<br/>
+<br/>
+<br/>
+-------------<br/>
+-------------install webserver<br/>
+sudo apt-get install --assume-yes apache2<br/>
+sudo apt-get install --assume-yes php5 libapache2-mod-php5<br/>
+sudo sed -i '$s/$/\<br/>
+&\<br/>
+&ServerName localhost/' /etc/apache2/apache2.conf<br/>
+sudo /etc/init.d/apache2 restart<br/>
+-------------<br/>
+-------------<br/>
+<br/>
+<br/>
+-------------<br/>
+-------------prepare webserver root www folder for writing<br/>
+sudo usermod --append --groups www-data brain<br/>
+sudo usermod --append --groups root brain<br/>
+sudo chown brain:brain -R /var/www<br/>
+-------------<br/>
+<br/>
+<br/>
+-------------perl related modules<br/>
+sudo curl -L http://cpanmin.us | sudo perl - --sudo App::cpanminus<br/>
+sudo cpanm --sudo Elasticsearch<br/>
+        --------------------------------------this is a backup way to download and compile this perl module ----- make sure the 's' in Elasticsearch is small-case everywhere!!!<br/>
+        sudo cpanm --sudo --uninstall Elasticsearch<br/>
+<br/>
+        cd ~<br/>
+        wget http://search.cpan.org/CPAN/authors/id/D/DR/DRTECH/Elasticsearch-0.76.tar.gz<br/>
+        tar xvzf Elasticsearch-0.76.tar.gz<br/>
+        cd Elasticsearch-0.76<br/>
+        sudo perl Makefile.PL<br/>
+        sudo make<br/>
+        sudo make test<br/>
+        sudo make install<br/>
+                *verify by<br/>
+                ls -asl /usr/local/share/perl/5.14.2/Elasticsearch.pm<br/>
+<br/>
+        sudo nano ~/.bashrc<br/>
+            add:<br/>
+                PERLLIB="$PERLLIB:/usr/local/share/perl/5.14.2/"<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+--------------------------------------logstash log sender<br/>
+mkdir ~/logstash<br/>
+cd ~/logstash<br/>
+wget https://download.elasticsearch.org/logstash/logstash/logstash-1.3.2-flatjar.jar -O logstash.jar<br/>
+wget https://raw.github.com/eladkarako/logstashconf/master/baseconfig.conf<br/>
+rm ~/logstash/send2elasticsearch.pl && wget https://raw.github.com/eladkarako/logstashconf/master/send2elasticsearch.pl<br/>
+sed -i 's/elasticsearch.host.com/elasticsearch.myCompanyHost.com/' ~/logstash/send2elasticsearch.pl<br/>
+sudo chmod 0755 ~/logstash/send2elasticsearch.pl<br/>
+<br/>
+xxxx     --------------------------------------logstash auto run as daemon. note that the start path and name are taken from "logstash log sender" (above)<br/>
+xxxx     cd ~/logstash<br/>
+xxxx     wget https://raw.github.com/eladkarako/logstashconf/master/logstash_for_initd.sh<br/>
+xxxx     sudo mv logstash_for_initd.sh /etc/init.d/.<br/>
+xxxx     sudo mv /etc/init.d/logstash_for_initd.sh /etc/init.d/logstash<br/>
+xxxx     sudo chmod 0755 /etc/init.d/logstash<br/>
+xxxx     sudo update-rc.d logstash defaults<br/>
+xxxx     ***sudo reboot*********<br/>
+xxxx     sudo logstash status<br/>
+xxxx         if not working:<br/>
+xxxx             sudo update-rc.d -f foobar remove<br/>
+xxxx             sudo rm /etc/init.d/logstash<br/>
+xxxx <br/>
+xxxx <br/>
+<br/>
+--------------------------------------logstash start manually from console VNC session<br/>
+cd ~/logstash<br/>
+java -jar logstash.jar agent -f baseconfig.conf<br/>
+------------- close down the VNC viewer, the program will keep running.<br/>
+<br/>
+-------------copy data C:\\wamp\\www\\1\\cloud-storage\aw to machine's /var/www/cloud-storage/raw using winscp. **it should take about 15 minutes.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+--------------------------------------run manually (not as service)<br/>
+curl "https://raw.github.com/eladkarako/logstashconf/master/one_line.csv" | ~/logstash/send2elasticsearch.pl<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+--------------------------------------generate foo information with current timestamp<br/>
+mkdir ~/foo || cd ~/foo<br/>
+-------------------------------------------foo line generator<br/>
+wget https://raw2.github.com/eladkarako/logstashconf/master/send2send2el.pl<br/>
+<br/>
+-------------------------------------------line sender<br/>
+rm ~/logstash/send2elasticsearch.pl && wget https://raw.github.com/eladkarako/logstashconf/master/send2elasticsearch.pl<br/>
+sed -i 's/elasticsearch.host.com/elasticsearch.myCompanyHost.com/' ~/logstash/send2elasticsearch.pl<br/>
+<br/>
+-------------------------------------------looper<br/>
+wget https://raw2.github.com/eladkarako/logstashconf/master/loopsend.sh<br/>
+sudo chmod 0755 *.pl *.sh<br/>
+./loopsend.sh<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+xxxx sudo cpanm Elasticsearch<br/>
+xxxx sudo cpan Module::Build<br/>
+<br/>
+<br/>
+<br/>
+--------------------------------------logstash log sender<br/>
+mkdir ~/logstash<br/>
+cd ~/logstash<br/>
+wget https://download.elasticsearch.org/logstash/logstash/logstash-1.3.2-flatjar.jar -O logstash.jar<br/>
+wget https://raw.github.com/eladkarako/logstashconf/master/baseconfig.conf<br/>
+wget https://raw.github.com/eladkarako/logstashconf/master/send2elasticsearch.pl<br/>
+sed -i 's/elasticsearch.host.com/\\"elasticsearch.myCompanyHost.com\\"/' send2elasticsearch.pl<br/>
+sudo u+x send2elasticsearch.pl<br/>
+<br/>
+--------------------------------------perl parser <br/>
+<br/>
+pip install elasticsearch<br/>
+https://chrome.google.com/webstore/detail/sense/doinijnbnggojdlcjifpdckfokbbfpbo<br/>
+---------------------------<br/>
+common::sense<br/>
+Data::Printer<br/>
+JSON::XS<br/>
+LWP::Protocol::Net::Curl<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+------------------------------------------ generate foo values:<br/>
+mkdir ~/foo && cd ~/foo<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+-------------------------------------------------->copy content:<br/>
+open winscp to karako@brain.myCompanyHost.com<br/>
+copy all files from /var/www to c:\\wamp\\www\\1<br/>
+<br/>
+open putty to karako@172.29.42.112 ("brainvm1" on esx)<br/>
+cd /var/www<br/>
+sudo chmod -R 777 .<br/>
+<br/>
+open winscp to karako@172.29.42.112 ("brainvm1" on esx)<br/>
+set copy 9 files at same time in transfer to make copy faster.<br/>
+copy "cloud-storage,service,index.html" from c:\\wamp\\www\\1 to karako@172.29.42.112 /var/www<br/>
+<br/>
+<br/>
+sudo /etc/hosts<br/>
+172.29.42.112   elasticsearch.myCompanyHost.com #elasticsearch<br/>
+172.29.42.112   graphite.myCompanyHost.com      #graphite<br/>
+<br/>
+<br/>
+--------------install cpanm<br/>
+sudo curl -L http://cpanmin.us | sudo perl - --sudo App::cpanminus<br/>
+sudo cpanm install Net::SNMP<br/>
+sudo cpanm install Elasticsearch<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+----------------------------------------------------------------- קובץ קונפיגורציה נמצא פה<br/>
+sudo gedit /etc/apache2/apache2.conf<br/>
+<br/>
+using winscp copy all files in /var/www/raw to c:\\wamp\\www\\1<br/>
+<br/>
+windows:<br/>
+open cmd<br/>
+run command<br/>
+pscp -r c:/wamp/www/1 karako@172.29.42.112:/var/www<br/>
+    it will show:<br/>
+        karako@172.29.42.112's password:<br/>
+    then start copy:<br/>
+        f25344b5d560a9c04686e44c3 | 452 kB | 452.6 kB/s | ETA: 00:00:00 | 100%<br/>
+        f25344b5d560a9c04686e44c3 | 452 kB | 452.6 kB/s | ETA: 00:00:00 | 100%<br/>
+        f25344b5d560a9c04686e44c3 | 452 kB | 452.6 kB/s | ETA: 00:00:00 | 100%<br/>
+        f25344b5d560a9c04686e44c3 | 453 kB | 453.2 kB/s | ETA: 00:00:00 | 100%<br/>
+        f25344b5d560a9c04686e44c3 | 452 kB | 452.8 kB/s | ETA: 00:00:00 | 100%<br/>
+        f25344b5d560a9c04686e44c3 | 452 kB | 452.6 kB/s | ETA: 00:00:00 | 100%<br/>
+        f25344b5d560a9c04686e44c3 | 452 kB | 452.6 kB/s | ETA: 00:00:00 | 100%<br/>
+        f25344b5d560a9c04686e44c3 | 452 kB | 452.6 kB/s | ETA: 00:00:00 | 100%<br/>
+        f25344b5d560a9c04686e44c3 | 452 kB | 452.6 kB/s | ETA: 00:00:00 | 100%<br/>
+        f25344b5d560a9c04686e44c3 | 452 kB | 452.6 kB/s | ETA: 00:00:00 | 100%<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+use 172.29.42.112 (then change to new IP 172.29.42.100)<br/>
+<br/>
+u/p of sudo user: karako/ESafe8349<br/>
+<br/>
+', 'Big-Data machine, Logstash agent daemon</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/altoids-taste-like-toothpaste-smells-like-bengay-and-anyhow-not-nearly-that-strong-anyway">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/graphite-maintenance-manual-services-running-plus-tips">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/graphite-maintenance-manual-services-running-plus-tips">plus tips</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/graphite-alt-complete-conf">graphite alt complete conf</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/i-lv-github">I <3 GitHub</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/stuff-you-should-probably-uninstall-from-your-low-budget-server">Stuff you should probably uninstall from your low-budget server</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/solve-missing-files-for-vmware-tools">Solve missing files for VMWare tools</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/firefox-front-end-test-checklist">Firefox Front-End Test Checklist</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/bunch-of-links-regarding-javascript-testing-i-continues-deployment">headless JavaScript Testing with PhJS /i Continues Deployment</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/driver-boot-test-signing-off-windows-7">driver boot - test signing off - Windows 7</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/chuck-norris-and-his-theological-philosophical-influence-on-the-israeli">Chuck Norris And His Theological - Philosophical Influence On The Israeli Society</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/intellij-webstorm-phpstorm-java-jdk-8-0-x64">IntelliJ WebStorm PhpStorm Java-JDK 8.0 x64</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/increase-undo-jetbrains-webstorm-intellij">Increase Undo - Jetbrains WebStorm IntelliJ</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/finally-that-bridge">Finally- That Bridge!</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/high-quality-animated-gif-using-imagemagick-a-k-a-image-magic">high quality animated-gif using ImageMagick (a.k.a 'Image-Magic')</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/cool-facepalm-back-and-forth-infinite-loop-high-quality-animated-gif">Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-code-segment-piggybackdata-the-proper-object-oriented-way-to-overcome-known-problem-of-callback-hell-and-chained-callbacks-with-single-data-parameter">JavaScript Code-Segment: PiggybackData : The Proper Object-Oriented Way to Overcome Known Problem Of "Callback-Hell" And Chained Callbacks With Single Data Parameter</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disconnect-a-windows-based-virtual-machine-without-logging-off">Without Logging-Off</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

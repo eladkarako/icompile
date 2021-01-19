@@ -1,0 +1,4 @@
+using separation of variables to ?nd the temperature distribution of rectangular and circular plates in the transient state.
+Suppose that for a thin rectangular plate which occupies the plane region 0 ? x ? a, 0 ? y ? b, the top and bottom faces are insulated, and that its four edges are held at zero temperature. If the plate has the initial temperature function u(x, y, 0) = f(x, y), then in the transient state its temperature function u(x, y, t) is the solution of the following initial boundary value problem
+<img src="https://icompile.eladkarako.com/_uploads/2010-09-11_162458.gif" alt="" title="2010-09-11_162458" width="543" height="126" class="alignnone size-full wp-image-156" />
+We shall ?nd the solution of (36.1)

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Trying To Send A Chunk-ed Response With Plain-PHP</title>
+  <meta itemprop="name"                                content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+  <meta name="dcterms.title"                           content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+  <meta property="og:title"                            content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+  <meta name="twitter:title"                           content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+  <meta name="twitter:text:title"                      content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+  <meta name="application-name"                        content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+  <meta name="subject"                                 content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+  <meta name="apple-mobile-web-app-title"              content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+  <meta name="msapplication-tooltip"                   content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+  <meta itemprop="description"                         content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+  <meta name="dcterms.description"                     content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+  <meta name="twitter:description"                     content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+  <meta property="og:description"                      content="Trying To Send A Chunk-ed Response With Plain-PHP"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="access,alive,amount,apache,array,asia,associative,author,blender,bonus,bool,buffer,buffering,bytes,call,char,chunk,chunked,chunklen,chunks,clean,code,commands,compression,connection,content,control,convert,count,crashes,date,dechex,default,disable,dump,easier,echo,elad,encoding,engine,error,exec,execution,explode,false,filesize,flush,foreach,fortune,func,function,games,generate,gist,github,gzip,header,headers,hexadecimal,htaccess,huknc,ifmodule,implicit,implode,index,information,initial,input,internal,jerusalem,karako,killing,language,length,level,limit,make,making,marking,maximum,maxlifetime,memory,merge,mock,nginx,ordered,orderly,origin,original,output,param,plain,post,prepare,printf,process,queue,regex,reporting,request,require,response,return,returns,script,send,sending,sends,session,setenv,setenvif,setlocale,settings,shuffle,single,size,split,start,strict,strlen,timezone,transfer,truffle,type,untill,upload,user,usleep,zlib,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="access,alive,amount,apache,array,asia,associative,author,blender,bonus,bool,buffer,buffering,bytes,call,char,chunk,chunked,chunklen,chunks,clean,code,commands,compression,connection,content,control,convert,count,crashes,date,dechex,default,disable,dump,easier,echo,elad,encoding,engine,error,exec,execution,explode,false,filesize,flush,foreach,fortune,func,function,games,generate,gist,github,gzip,header,headers,hexadecimal,htaccess,huknc,ifmodule,implicit,implode,index,information,initial,input,internal,jerusalem,karako,killing,language,length,level,limit,make,making,marking,maximum,maxlifetime,memory,merge,mock,nginx,ordered,orderly,origin,original,output,param,plain,post,prepare,printf,process,queue,regex,reporting,request,require,response,return,returns,script,send,sending,sends,session,setenv,setenvif,setlocale,settings,shuffle,single,size,split,start,strict,strlen,timezone,transfer,truffle,type,untill,upload,user,usleep,zlib,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/php-javascript-ajax-form-submit-with-sanitize-and-fallback-nojquery"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/php-javascript-ajax-form-submit-with-sanitize-and-fallback-nojquery"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/virustotal-api"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/php-chunked-response"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/php-chunked-response"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/php-chunked-response"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/php-chunked-response"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/php-chunked-response"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/php-chunked-response"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2019-10-13T19:58:11+00:00"     />
+  <meta name="page-datetime"                           content="2019-10-13T19:58:11+00:00"     />
+  <meta property="article:published_time"              content="2019-10-13T19:58:11+00:00"     />
+  <meta name="dcterms.date"                            content="2019-10-13T19:58:11+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2019-10-13T19:58:11+00:00"    />
+  <meta property="article:modified_time"               content="2019-10-13T19:58:11+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/php-chunked-response"
+,"url"             : "https://icompile.eladkarako.com/php-chunked-response"
+,"headline"        : "Trying To Send A Chunk-ed Response With Plain-PHP"
+,"description"     : "Trying To Send A Chunk-ed Response With Plain-PHP"
+,"datePosted"      : "2019-10-13T19:58:11+00:00"
+,"dateCreated"     : "2019-10-13T19:58:11+00:00"
+,"datePublished"   : "2019-10-13T19:58:11+00:00"
+,"dateModified"    : "2019-10-13T19:58:11+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0001966990751">
+  <header>
+    <h1 itemprop="headline">Trying To Send A Chunk-ed Response With Plain-PHP</h1>
+    <sup>Posted at <time datetime="2019-10-13T19:58:11+00:00" itemprop="dateModified">Sun, 13 Oct 2019 19:58:11 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><code>.htaccess</code><br/>
+<pre>
+SetEnvIf Request_URI .* no-gzip=1
+
+#&lt;ifModule mod_headers.c&gt;
+#  Header set Connection keep-alive
+#&lt;/ifModule&gt;
+#
+#&lt;IfModule mod_php5.c&gt;
+#  php_value post_max_size 5M
+#  php_value upload_max_filesize 5M
+#  php_value memory_limit 700M
+#  php_value max_execution_time 9000000
+#  php_value max_input_time 259200
+#  php_value session.gc_maxlifetime 12000
+#&lt;/IfModule&gt;
+#
+</pre><br/>
+<br/>
+<code>chunk_ed__response___index.php</code><br/>
+<pre>
+&lt;?php
+  /**
+   * making a chunk'ed response.
+   *
+   * 1. disable gzip compression (both PHP script and .htaccess).
+   * 2. no buffering (PHP engine will not delay the PHP-script response untill the script will end), killing initial PHP buffer.
+   * 3. PHP-engine language-initializing to UTF-8.
+   * 3. pre-send content-headers.
+   *
+   * @author Elad Karako (icompile.eladkarako.com)
+   * @link   http://icompile.eladkarako.com
+   */
+  error_reporting(E_STRICT);
+
+  //settings - no gzip
+//  @apache_setenv('no-gzip', 1);         //don't use it, it crashes nginx :) use the added to .htaccess   ::-&gt;&gt;   SetEnvIf Request_URI .* no-gzip=1
+  @ini_set("zlib.output_compression", 0);
+
+  //settings - no buffering
+  @ini_set('output_buffering', 0);
+  @ini_set('implicit_flush', 0);
+  @ob_implicit_flush(0);
+  while (ob_get_level() &gt; 0) @ob_end_clean(); //disable Apache's and nginx's (pre)initial-buffer.
+
+  //language-engine configuration
+  mb_language("uni");
+  mb_internal_encoding('UTF-8');
+  mb_http_input('UTF-8');
+  mb_http_output('UTF-8');
+  mb_regex_encoding('UTF-8');
+  setlocale(LC_ALL, 'en_US.UTF-8');
+
+  //language-content response-headers
+  header('Charset: UTF-8', true);
+  header('Content-Encoding: UTF-8', true);
+  header('Content-Type: text/plain; charset=UTF-8', true);
+
+  //bonus
+  usleep(10 * 1000); //10 milliseconds
+  date_default_timezone_set("Asia/Jerusalem");
+  header('Access-Control-Allow-Origin: *', true, 200);
+
+  //-------------------------------------------------------------------------------
+
+  require_once('./fn.php');
+
+  $output = str_repeat('a', 1000 * 4); //mock output
+
+
+  $chunks = get_chunks($output);
+  send_chunks($chunks);
+?&gt;
+</pre><br/>
+<br/>
+<code>fn.php</code><br/>
+<pre>
+&lt;?php
+
+  /**
+   * convert text, to chunks, with additional information (to be used in "send_chunks" function).
+   *
+   * @param string $output     - original text to be process.
+   * @param int    $chunk_size - (default is 512 characters) set maximum amount of characters in single-chunk.
+   *
+   * @return array
+   */
+  function get_chunks($output = '', $chunk_size = 512) {
+    $chunks = explode('|###|', chunk_split($output, $chunk_size, '|###|'));
+    $chunks = array_map(function ($chunk) {
+      return [
+        //original text
+        'content_text'                           =&gt; $chunk
+
+        //size of original text (in characters)
+        , 'content_char_count'                   =&gt; mb_strlen($chunk)
+        , 'content_char_count_in_hexadecimal'    =&gt; dechex(mb_strlen($chunk))
+
+        //size of original text (in bytes)
+        , 'content_size_in_bytes'                =&gt; mb_strlen($chunk, '8bit')
+        , 'content_size_in_bytes_in_hexadecimal' =&gt; dechex(mb_strlen($chunk, '8bit'))
+      ];
+    }, $chunks);
+
+    return $chunks;
+  }
+
+
+  /**
+   * sends out the header marking the response as chunked,
+   * and start sending pre-ordered chunked, as given from get_chunks function.
+   *
+   * @param $chunks - associative array as given from get_chunks function
+   *
+   * @return bool - always returns true (to easier-concatenation of commands)
+   */
+  function send_chunks($chunks) {
+    header("Transfer-Encoding: chunked", true);
+
+    $size_of_original_content = 0;
+    foreach ($chunks as $index =&gt; $chunk) $size_of_original_content += $chunk['content_size_in_bytes']; //just sum length without sending output yet.
+    header("Content-Length: " . $size_of_original_content, true); //make sure
+
+    foreach ($chunks as $index =&gt; $chunk) {
+      printf("%x\r\n%s\r\n", $chunk['content_size_in_bytes'], $chunk['content_text']);
+      flush();
+
+      usleep(100 * 1000); //10 milliseconds
+    }
+
+    return true;
+  }
+
+
+  //
+  //  if (false === $prepare_output_as_chunked_transfer_encoding) return $output;
+  //
+  //  $sep = "\r\n";
+  //  $output_chunked = '';
+  //  foreach ($output as $index =&gt; $chunk) {
+  //    $size = dechex(mb_strlen($chunk));
+  //    $output_chunked .= $size . $sep . $chunk . $sep;
+  //  }
+  //
+  //  return $output_chunked;
+  //  }
+  //
+  //  $output = str_repeat('a', 512 * 4); //mock output
+  //
+  //  $output = get_chunks($output, 512);
+  //
+  //
+  //  $chunks = get_chunks();
+  //  $chunks = str_repeat('a', 512 * 4);
+  //
+  //
+  //  //generate an orderly chunk-queue
+  //  $chunks = call_user_func(function () { //512x4 = 2048
+  //
+  //    return array_merge($chunk, $chunk, $chunk, $chunk);
+  //  });
+  //
+  //  //output the chunks
+  //  foreach ($chunks as $chunk) {
+  //    $size = dechex(mb_strlen($chunk));
+  //    $sep = "\r\n";
+  //
+  //    echo $size . $sep . $chunk . $sep;
+  //    @ob_flush();
+  //    @flush();
+  //    usleep(500 * 1000); //500 milliseconds
+  //  }
+  //
+  //
+  //  for ($i = 0; $i &lt; ob_get_level(); $i++) ob_end_flush();
+  //  ob_implicit_flush(1);
+  //  flush();
+  //
+  //  function dump_chunk($chunk) {
+  //    printf("%x\r\n%s\r\n", strlen($chunk), $chunk);
+  //    flush();
+  //  }
+  //
+  //  for (; ;) {
+  //    $output = [];
+  //    exec("/usr/games/fortune", $output);
+  //    dump_chunk(implode("\n", $output));
+  //    usleep(pow(2, 18));
+  //  }
+  //
+
+
+  //  header("Transfer-Encoding: chunked", true);
+  //
+  //  function get_chunk($string) {
+  //    return printf(
+  //      "%x\r\n%s\r\n", mb_strlen($string), $string
+  //    );
+  //  }
+
+  //
+  //  function truffle_shuffle($body, $chunklen = 76, $end = "\r\n") {
+  //    $chunk = chunk_split($body, $chunklen, "-=blender=-");
+  //    $truffle = explode("-=blender=-", $chunk);
+  //    $shuffle = shuffle($truffle);
+  //    $huknc = implode($end, $shuffle);
+  //
+  //    return $huknc;
+  //  }
+  //
+
+?&gt;
+</pre><br/>
+<br/>
+<a href="https://gist.github.com/eladkarako/ca60209ff85efa1c1a0be58f8469c891">https://gist.github.com/eladkarako/ca60209ff85efa1c1a0be58f8469c891</a><br/>
+</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/php-javascript-ajax-form-submit-with-sanitize-and-fallback-nojquery">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/virustotal-api">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/virustotal-api">VirusTotal API</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nullify-windows-ownership-and-permissions">Null-ify Windows Ownership And Permissions</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/adguard-subdomains">AdGuard SubDomains</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/hebrew-voice-from-google-translate-and-ffmpeg-pitch-manipulation">Hebrew Voice From Google-Translate And FFMPEG Pitch-Manipulation</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/nullify-windows-registry-permissions">Null-ify Windows-Registry Permissions</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/babylon-subdomains">Babylon-Related Sub-Domains</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/block-internet-access-from-thinapp-app">Block Internet-Access From VMWare ThinApp (Thinstall)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/trackers-utorrent-format">Trackers In µTorrent Format</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/removing-ads-from-apk">Removing Ads From Android Applications</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/levenshtein-distance-and-a-real-world-use-in-finding-similar-words">Levenshtein Distance And A Real-World-Use In-Finding Similar-Words</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/removing-ads-from-apk-by-nullifying-libs">Removing Ads From Android Applications By Nullifying LIBs</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/modified-perseus-kernel-for-samsung-galaxy-s4-i9500">Modified Perseus-UNIVERSAL5410 Kernel For Samsung Galaxy S4 (i9500)</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/prevent-mouse-movement-from-waking-up-the-computer">Prevent Mouse Movement From Waking Up The Computer</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/opensearch-for-static-hosted-websites-using-google-search">OpenSearch For A Static-Hosted Websites Using Google-Search</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tech-buzzwords">Tech-BuzzWords</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unofficial-apktool">Unofficial ApkTool &#x1f527;</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

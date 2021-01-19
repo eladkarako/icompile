@@ -1,0 +1,3 @@
+<iframe width="960" height="720" src="https://www.youtube-nocookie.com/embed/LNVz5RykbIc?rel=0&amp;showinfo=0&amp;showads=0" frameborder="0" allowfullscreen></iframe>
+
+<a href="https://github.com/eladkarako/natural-language-pronunciation---easily-pronounce-random-word-in-both-PHP-or-Javascript" target="_blank">https://github.com/eladkarako/natural-language-pronunciation---easily-pronounce-random-word-in-both-PHP-or-Javascript</a>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF</title>
+  <meta itemprop="name"                                content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+  <meta name="dcterms.title"                           content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+  <meta property="og:title"                            content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+  <meta name="twitter:title"                           content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+  <meta name="twitter:text:title"                      content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+  <meta name="application-name"                        content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+  <meta name="subject"                                 content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+  <meta name="apple-mobile-web-app-title"              content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+  <meta name="msapplication-tooltip"                   content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+  <meta itemprop="description"                         content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+  <meta name="dcterms.description"                     content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+  <meta name="twitter:description"                     content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+  <meta property="og:description"                      content="Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="accel,adding,alpha,animated,animation,apply,applying,arrow,back,blank,buffer,button,called,captain,caption,capture,change,check,checkbox,coalesce,codec,codecguide,color,combo,command,compress,compression,content,convert,cool,copy,custom,decided,decoration,default,deja,delaying,deluxe,desired,download,duplicate,duplication,easy,enable,ends,episode,executable,export,exporting,facepalm,fancy,faster,featuring,fewer,ffdshow,file,files,filter,filters,folder,frame,frames,funny,generation,good,grey,high,higher,huge,image,imagemagick,images,increase,infinite,install,jean,jump,keys,layers,line,lite,localhost,location,loop,magic,make,mark,meaning,mega,meme,memes,menu,modify,naturally,nbsp,nice,number,open,optimi,optional,options,overlay,pack,package,page,path,picard,plugins,preferences,preformance,press,process,processed,processing,program,project,projects,quality,rate,reload,remove,removing,rendered,repeated,rest,restart,running,scales,season,select,sequence,serving,shows,shrink,situation,small,smaller,smooth,source,sourceforge,spread,star,start,starts,static,steps,strong,stuff,subtitle,switch,target,threading,threads,trek,underline,vdxa,video,videodub,videolan,virtualdub,wait,watched,watching,whatnot,white,wiki,wikipedia,wild,write,youtube,zeplus,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="accel,adding,alpha,animated,animation,apply,applying,arrow,back,blank,buffer,button,called,captain,caption,capture,change,check,checkbox,coalesce,codec,codecguide,color,combo,command,compress,compression,content,convert,cool,copy,custom,decided,decoration,default,deja,delaying,deluxe,desired,download,duplicate,duplication,easy,enable,ends,episode,executable,export,exporting,facepalm,fancy,faster,featuring,fewer,ffdshow,file,files,filter,filters,folder,frame,frames,funny,generation,good,grey,high,higher,huge,image,imagemagick,images,increase,infinite,install,jean,jump,keys,layers,line,lite,localhost,location,loop,magic,make,mark,meaning,mega,meme,memes,menu,modify,naturally,nbsp,nice,number,open,optimi,optional,options,overlay,pack,package,page,path,picard,plugins,preferences,preformance,press,process,processed,processing,program,project,projects,quality,rate,reload,remove,removing,rendered,repeated,rest,restart,running,scales,season,select,sequence,serving,shows,shrink,situation,small,smaller,smooth,source,sourceforge,spread,star,start,starts,static,steps,strong,stuff,subtitle,switch,target,threading,threads,trek,underline,vdxa,video,videodub,videolan,virtualdub,wait,watched,watching,whatnot,white,wiki,wikipedia,wild,write,youtube,zeplus,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/high-quality-animated-gif-using-imagemagick-a-k-a-image-magic"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/high-quality-animated-gif-using-imagemagick-a-k-a-image-magic"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/javascript-code-segment-piggybackdata-the-proper-object-oriented-way-to-overcome-known-problem-of-callback-hell-and-chained-callbacks-with-single-data-parameter"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/cool-facepalm-back-and-forth-infinite-loop-high-quality-animated-gif"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/cool-facepalm-back-and-forth-infinite-loop-high-quality-animated-gif"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/cool-facepalm-back-and-forth-infinite-loop-high-quality-animated-gif"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/cool-facepalm-back-and-forth-infinite-loop-high-quality-animated-gif"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/cool-facepalm-back-and-forth-infinite-loop-high-quality-animated-gif"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/cool-facepalm-back-and-forth-infinite-loop-high-quality-animated-gif"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2014-04-21T03:56:14+00:00"     />
+  <meta name="page-datetime"                           content="2014-04-21T03:56:14+00:00"     />
+  <meta property="article:published_time"              content="2014-04-21T03:56:14+00:00"     />
+  <meta name="dcterms.date"                            content="2014-04-21T03:56:14+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2014-04-21T03:56:14+00:00"    />
+  <meta property="article:modified_time"               content="2014-04-21T03:56:14+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/cool-facepalm-back-and-forth-infinite-loop-high-quality-animated-gif"
+,"url"             : "https://icompile.eladkarako.com/cool-facepalm-back-and-forth-infinite-loop-high-quality-animated-gif"
+,"headline"        : "Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"
+,"description"     : "Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF"
+,"datePosted"      : "2014-04-21T03:56:14+00:00"
+,"dateCreated"     : "2014-04-21T03:56:14+00:00"
+,"datePublished"   : "2014-04-21T03:56:14+00:00"
+,"dateModified"    : "2014-04-21T03:56:14+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0004752508931">
+  <header>
+    <h1 itemprop="headline">Cool Facepalm Back-and-Forth Infinite-Loop High-Quality Animated GIF</h1>
+    <sup>Posted at <time datetime="2014-04-21T03:56:14+00:00" itemprop="dateModified">Mon, 21 Apr 2014 03:56:14 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody"><span style="line-height: 1.5em;">I've watched the episode Deja Q of Star Trek The Next Generation (Season 3 Episode 13),</span><br/>
+<br/>
+it was the source of this very wild-spread meme, called "<a href="http://knowyourmeme.com/memes/facepalm" target="_blank">facepalm</a>", featuring captain <a href="http://en.wikipedia.org/wiki/Jean-Luc_Picard" target="_blank">Jean-Luc Picard</a>,<br/>
+in whatever-whatnot situation (quite funny..)<br/>
+<br/>
+anyway I've decided to use it as a custom 404 page for a small project I'm doing,<br/>
+this aside, I've desired a fancy animated-GIF, with caption, to capture the entire thing...<br/>
+<br/>
+steps:<br/>
+<ol><br/>
+	<li>get getting the video source (YouTube is a good source, or any HD deluxe package of <em>Star Trek The Next Generation</em> for a better, higher quality result).</li><br/>
+	<li><span style="text-decoration: underline;">For Video-Processing</span> ::  get <a href="http://www.virtualdub.org/" target="_blank">VirtualDub</a> (<a href="http://sourceforge.net/projects/virtualdub/files/virtualdub-win/1.10.4.35491/VirtualDub-1.10.4-AMD64.zip/download" target="_blank">x64</a>) and install it<br/>
+here are some configuration (grey ones, are optional).<br/>
+<ol><br/>
+	<li><span style="line-height: 1.5em; color: #c0c0c0;">Options-&gt;Preformance</span><br/>
+<ul><br/>
+	<li><span style="color: #c0c0c0;">set all scales to far right (increase buffer).</span></li><br/>
+</ul><br/>
+</li><br/>
+	<li><span style="line-height: 1.5em; color: #000000;">Options-&gt;Preferences</span><br/>
+<ul><br/>
+	<li><span style="line-height: 1.5em; color: #000000;">-&gt;Images</span><br/>
+<ul><br/>
+	<li><span style="color: #000000;"><span style="line-height: 1.5em;">set value of </span><em style="line-height: 1.5em;">default frame rate</em><span style="line-height: 1.5em;"> to 0.5000, it </span><span style="line-height: 1.5em;">means "capture an image every ½ of a second".</span></span></li><br/>
+</ul><br/>
+</li><br/>
+	<li><span style="color: #c0c0c0;">-&gt;Threading</span><br/>
+<ul><br/>
+	<li><span style="color: #c0c0c0;">Video compression threads: change from 0 to 1.</span></li><br/>
+	<li><span style="color: #c0c0c0;">increase max-threads in combo-box below.</span></li><br/>
+</ul><br/>
+</li><br/>
+	<li><span style="color: #c0c0c0;">-&gt;3D accel</span><br/>
+<ul><br/>
+	<li><span style="color: #c0c0c0;">check ON the Enable 3D video filter acceleration (VDXA)</span></li><br/>
+</ul><br/>
+</li><br/>
+</ul><br/>
+</li><br/>
+</ol><br/>
+</li><br/>
+	<li>For Adding Caption- The Easy Way (As a Subtitle) ::<br/>
+<ol><br/>
+	<li>get <a href="www.codecguide.com" target="_blank">K-Lite x86 and x64</a> mega codec pack, install all ffdshow64 filters.</li><br/>
+	<li>copy content of <em><strong>C:\\Program Files (x86)\\K-Lite Codec Pack\\Filters\\ffdshow64</strong></em><strong> </strong>into<br/>
+<em>[where-ever-you've-placed-videolan]</em>\\VideoLan\\plugins\\.</li><br/>
+	<li>restart VideoLan</li><br/>
+</ol><br/>
+</li><br/>
+</ol><br/>
+&nbsp;<br/>
+<br/>
+now a little watching through the video shows that Jean-Luc Picard starts the meme stuff at<br/>
+frame number 9287 (in time this is about 0:06:11.480 into from the very start),<br/>
+and ends on 9333 (0:06:13.320)<br/>
+<ol><br/>
+	<li>go to the start location, you can jump frames with [RIGHT Arrow] [LEFT Arrow] keys, press the 'Mark In' button.</li><br/>
+	<li>do the same with the end location (press the 'Mark Out' button.</li><br/>
+	<li>in the menu:<br/>
+<ol><br/>
+	<li>File-&gt;Export-&gt;Image Sequence<br/>
+<ol><br/>
+	<li>select a folder (probably best if it will be an empty one)</li><br/>
+	<li>select 'PNG' and remove the checkbox 'Quick compress'</li><br/>
+	<li>press 'OK' and wait 'till done,</li><br/>
+	<li>open command-line (CMD) and change-dir to this folder.</li><br/>
+	<li>*make sure you have 'imagemagick' (a.k.a Image-Magic) in the PATH so you could write 'convert.exe' anywhere and get the executable running..</li><br/>
+	<li>run:<br/>
+<span style="line-height: 1.5em;">convert -background white -alpha remove -layers OptimizePlus -delay 6 *.p<span style="line-height: 1.5em;">ng -loop 0 myAnimatedGif.gif</span><br/>
+</span></li><br/>
+	<li>* we are delaying 6/100 since we have a-lot of frames, and it will be reasonably smooth animation (also very high-quality)</li><br/>
+	<li>this will be now need to be processed again so the animation will be repeated back and forth</li><br/>
+	<li>run:<br/>
+<span style="line-height: 1.5em;">convert myAnimatedGif.gif -coalesce -duplicate 1,-2-1 -layers Optimi<span style="line-height: 1.5em;">zePlus -loop 0 backnforthAni.gif</span><br/>
+</span></li><br/>
+	<li>*the command is removing optimizations and applying back after processing, duplication (meaning adding..) frames.</li><br/>
+</ol><br/>
+</li><br/>
+</ol><br/>
+</li><br/>
+</ol><br/>
+you can apply filters in VideoDub to shrink result before exporting the static-images<br/>
+the subtitle (there are few) are very useful since you can modify the subtitle file and reload it, and export the result,<br/>
+which is faster then using another program to image-process text into an image, and put it as an overlay to the video frame,<br/>
+<br/>
+using subtitle will, naturally, be rendered into the video, but it will be on the higher quality since it will be done once..<br/>
+<br/>
+result:<br/>
+<br/>
+very high-quality but huge file, so unless you're serving it from localhost, with the rest of your project files,<br/>
+make it<br/>
+- smaller.<br/>
+- use fewer frames and higher delay.<br/>
+or..<br/>
+- use different quality imagemagick-command-line-switch<br/>
+<br/>
+<br/>
+I'm using 46 frames and 6/100 delay<br/>
+<br/>
+nice, isn't.. :)</div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/high-quality-animated-gif-using-imagemagick-a-k-a-image-magic">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-code-segment-piggybackdata-the-proper-object-oriented-way-to-overcome-known-problem-of-callback-hell-and-chained-callbacks-with-single-data-parameter">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-code-segment-piggybackdata-the-proper-object-oriented-way-to-overcome-known-problem-of-callback-hell-and-chained-callbacks-with-single-data-parameter">JavaScript Code-Segment: PiggybackData : The Proper Object-Oriented Way to Overcome Known Problem Of "Callback-Hell" And Chained Callbacks With Single Data Parameter</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/disconnect-a-windows-based-virtual-machine-without-logging-off">Without Logging-Off</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/varnish-cache-wamp-nodejs-socket-io">varnish-cache + WAMP + NodeJS + Socket.IO</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/c-cryptography-code-segments-i-use-a-lot-lately">C++ Cryptography Code-Segments I Use A Lot Lately</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/poem-about-an-ad-for-a-generic-brand">Poem about an Ad for a Generic Brand</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/independence-day-2014">Independence Day 2014</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/a-new-best-reading-blog-about-security-of-web-servers-using-htaccess">A New Best Reading Blog About Security Of Web-Servers Using htaccess :)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/blocking-access-by-ip">Blocking ACCESS By IP</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-code-segment-efficient-cross-broser-alternative-to-hasattribute">JavaScript Code-Segment: efficient cross-broser alternative to 'hasAttribute'</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-code-segment-efficient-cross-broser-foreach-protype-for-array">JavaScript Code-Segment: efficient cross-broser forEach protype for Array</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-code-segment-efficient-cross-broser-foreach-protype-override-for-both-array-and-object-can-be-used-for-jsons">JavaScript Code-Segment: efficient cross-broser forEach protype override for both array and object (can be used for JSONs)</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/php-non-english-hebrew-file-names-file-system-processing-for-jquery-mobile-html5-application-rendering">For jQuery Mobile HTML5 Application Rendering</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/favorite-bo-burnham-poems">Favorite Bo Burnham Poems</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/tcl-irule-to-networks-targeted-with-dynamic-ip">TCL iRule to Networks-Targeted With Dynamic IP</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-snippet-avoid-loops-gather-data-using-map">Gather Data Using MAP</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/html5-security-cheatsheet">HTML5 Security Cheatsheet - What your browser does when you look away...</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html encoding="UTF-8" charset="UTF-8" dir="ltr" lang="en-US" xml:lang="en-US" language="English" itemscope="" itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+<!-- ╔════════════════════════════════════════════════╗
+     ║ favor latest IE with Chrome-Frame if possible. ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta http-equiv="X-UA-Compatible"                   content="IE=edge,chrome=1"                                      />
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ normalize script/style engine with explicit character-set. ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+  <meta charset="UTF-8"                                                                                                />
+  <meta http-equiv="content-type"                      content="text/html;charset=UTF-8"                               />
+  <meta http-equiv="Content-Script-Type"               content="text/javascript;charset=UTF-8"                         />
+  <meta http-equiv="Content-Style-Type"                content="text/css;charset=UTF-8"                                />
+<!-- ╔══════════════════════════════════════════════╗
+     ║ bread and butter of mobile-friendly website. ║
+     ╚══════════════════════════════════════════════╝ -->
+  <meta name="viewport"                                content="width=device-width,initial-scale=1.0,shrink-to-fit=no,minimal-ui"                                           />
+<!-- ╔════════════════════════════╗
+     ║ poor's man's HTTP-Headers. ║
+     ╚════════════════════════════╝ -->
+  <meta http-equiv="Feature-Policy"                    content="fullscreen *; wake-lock *; vibrate *; geolocation *;"  />
+  <meta http-equiv="Cache-Control"                     content="public,max-age=1800,max-stale,stale-while-revalidate=86400,stale-if-error=259200" rem="max-age=30minutes"   />
+  <meta http-equiv="X-Content-Type-Options"            content="nosniff"                                               />
+  <meta http-equiv="X-DNS-Prefetch-Control"            content="on"                                                    />
+<!-- needs more work... 
+  <meta http-equiv="Content-Security-Policy"           content="default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' icompile.eladkarako.com eladkarako.com eladkarako.github.io www.google.com www.google-analytics.com www.googletagmanager.com www.github.com gist.github.com gist.githubusercontent.com; font-src github.githubassets.com; form-action 'none; frame-ancestors 'self'; frame-src 'self' render.githubusercontent.com gist.github.com; img-src 'self' *.imgur.com data: *.githubusercontent.com; media-src 'none'; script-src 'self' github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src 'none'"                                                                                                         />
+-->  
+  <meta http-equiv="X-XSS-Protection"                  content="1; mode=block"                                         />
+<!-- ╔════════════════════════════════════╗
+     ║ disable browser annoying features. ║
+     ╚════════════════════════════════════╝ -->
+  <meta name="format-detection"                        content="telephone=no,date=no,address=no,email=no,url=no"       />
+  <meta http-equiv="imagetoolbar"                      content="no"                                                    />
+  <meta http-equiv="cleartype"                         content="on"                                                    />
+  <meta http-equiv="Page-Enter"                        content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <meta http-equiv="Page-Exit"                         content="RevealTrans(Duration=0.0,Transition=0.0)"              />
+  <!-----------------------------------------------------------------------do not modify line below here, an installed skype read it AS IS (you need to make the HTML is UTF-8 (no BOM) with Windown EOL). -->
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+  <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- ╔══════════════════════════════════╗
+     ║ compatible with viewport for IE. ║
+     ╚══════════════════════════════════╝ -->
+  <meta name="HandheldFriendly"                        content="True"              />
+  <meta name="MSThemeCompatible"                       content="no"                />
+  <meta name="theme-color"                             content="#b1cff4"           />
+  <meta name="mssmarttagspreventparsing"               content="true"              />
+  <meta name="apple-mobile-web-app-capable"            content="yes"               />
+  <meta name="apple-mobile-web-app-status-bar-style"   content="translucent black" />
+  <meta name="msapplication-navbutton-color"           content="translucent black" />
+<!-- ╔══════════╗
+     ║ audience ║
+     ╚══════════╝ -->
+  <meta name="target"                                  content="all"               />
+  <meta name="audience"                                content="all"               />
+  <meta name="coverage"                                content="Worldwide"         />
+  <meta name="distribution"                            content="Global"            />
+  <meta name="rating"                                  content="safe for kids"     />
+<!-- ╔══════════╗
+     ║ language ║
+     ╚══════════╝ -->
+  <meta http-equiv="Content-Language"                  content="en-US"             />
+  <meta property="og:locale"                           content="en_US"             />
+  <meta name="language"                                content="English"           />
+  <meta name="og:type"                                 content="article"           />
+<!-- ╔═══════════════════════════════╗
+     ║ site-name and author contact. ║
+     ╚═══════════════════════════════╝ -->
+  <meta property="og:site_name"                        content="iCompile"          />
+  <meta name="article:author"                          content="Elad Karako"       />
+  <meta name="author"                                  content="Elad Karako"       />
+  <meta name="owner"                                   content="Elad Karako"       />
+  <meta name="contactName"                             content="Elad Karako"       />
+  <meta name="dcterms.creator"                         content="Elad Karako"       />
+  <link rel="me"                                       href="https://github.com/eladkarako/"  type="text/html"  />
+  <link rel="author"                                   href="https://github.com/eladkarako/"                    />
+  <link rel="profile"                                  href="https://gmpg.org/xfn/11"                           />
+  <meta name="dcterms.type"                            content="Text"              />
+  <meta name="dcterms.format"                          content="text/html"         />  
+<!-- ╔═════════════════════════════════════╗
+     ║ specific page information - title . ║
+     ╚═════════════════════════════════════╝ -->
+  <title>HTML5-SVG Ninja - Textual Half A Star</title>
+  <meta itemprop="name"                                content="HTML5-SVG Ninja - Textual Half A Star"       />
+  <meta name="dcterms.title"                           content="HTML5-SVG Ninja - Textual Half A Star"       />
+  <meta property="og:title"                            content="HTML5-SVG Ninja - Textual Half A Star"       />
+  <meta name="twitter:title"                           content="HTML5-SVG Ninja - Textual Half A Star"       />
+  <meta name="twitter:text:title"                      content="HTML5-SVG Ninja - Textual Half A Star"       />
+  <meta name="application-name"                        content="HTML5-SVG Ninja - Textual Half A Star"       />
+  <meta name="subject"                                 content="HTML5-SVG Ninja - Textual Half A Star"       />
+  <meta name="apple-mobile-web-app-title"              content="HTML5-SVG Ninja - Textual Half A Star"       />
+  <meta name="msapplication-tooltip"                   content="HTML5-SVG Ninja - Textual Half A Star"       />
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║ specific page information - description (title is fine too). ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+  <meta name="description"                             content="HTML5-SVG Ninja - Textual Half A Star"       />
+  <meta itemprop="description"                         content="HTML5-SVG Ninja - Textual Half A Star"       />
+  <meta name="dcterms.description"                     content="HTML5-SVG Ninja - Textual Half A Star"       />
+  <meta name="twitter:description"                     content="HTML5-SVG Ninja - Textual Half A Star"       />
+  <meta property="og:description"                      content="HTML5-SVG Ninja - Textual Half A Star"       />
+<!-- ╔═══════════╗
+     ║ keywords. ║
+     ╚═══════════╝ -->
+  <meta property="keywords"                            content="adjust,align,antialias,antialiased,attempt,base,bicolored,bold,border,bwxucz,byzwnpc,cdata,cdovl,chqiid,ciagicagic,ciagicb,ciagicbzdmd,ciagpc,click,code,color,copy,create,data,defs,drawing,easy,escape,false,fill,font,forms,fucy,graphic,halfway,handles,html,iahr,icagicbub,iibozwlnahq,image,images,imcigedi,imciget,imjalij,inzbwdci,iodaliiaglz,italic,iymljb,jhkdi,jhzgllbnq,jjwvdgv,jtyww,kerning,kica,kicagic,kicagidxsaw,kicagihn,ksigig,ldhjpy,lock,luoja,lwtlcm,lxntb,margin,media,modals,mznnldd,navigation,nice,ninja,noiagigdlb,nswyntusmju,offset,open,orientation,origin,padding,paste,pbmc,pointer,popups,qigf,qlwogidwvc,qpcfbq,rbvefbki,rendering,rgba,roboto,rvcc,rvccbzdg,rviiwgc,sandbox,sans,scripts,scrolling,seamless,serif,shadow,size,sizing,smoothing,source,star,stop,stroke,subpixel,symbol,target,textual,type,unicode,unsafe,vcmcvmjawmc,vector,vertical,wdcb,webkit,weight,wlwnvbg,xmlns,xvcj,xvcmvkiib,yellow,ypsjyz,zagfkb,zaxppbmc,zdmc,zgvmcz,zywgdgv,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+  <meta property="article:tag"                         content="adjust,align,antialias,antialiased,attempt,base,bicolored,bold,border,bwxucz,byzwnpc,cdata,cdovl,chqiid,ciagicagic,ciagicb,ciagicbzdmd,ciagpc,click,code,color,copy,create,data,defs,drawing,easy,escape,false,fill,font,forms,fucy,graphic,halfway,handles,html,iahr,icagicbub,iibozwlnahq,image,images,imcigedi,imciget,imjalij,inzbwdci,iodaliiaglz,italic,iymljb,jhkdi,jhzgllbnq,jjwvdgv,jtyww,kerning,kica,kicagic,kicagidxsaw,kicagihn,ksigig,ldhjpy,lock,luoja,lwtlcm,lxntb,margin,media,modals,mznnldd,navigation,nice,ninja,noiagigdlb,nswyntusmju,offset,open,orientation,origin,padding,paste,pbmc,pointer,popups,qigf,qlwogidwvc,qpcfbq,rbvefbki,rendering,rgba,roboto,rvcc,rvccbzdg,rviiwgc,sandbox,sans,scripts,scrolling,seamless,serif,shadow,size,sizing,smoothing,source,star,stop,stroke,subpixel,symbol,target,textual,type,unicode,unsafe,vcmcvmjawmc,vector,vertical,wdcb,webkit,weight,wlwnvbg,xmlns,xvcj,xvcmvkiib,yellow,ypsjyz,zagfkb,zaxppbmc,zdmc,zgvmcz,zywgdgv,eladkarako,eladkarakomod,icompile,Elad Karako,Karako Elad,אלעד קרקו,קרקו אלעד,קרקו"    />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ relation: next/previous/first/last pages.      ║
+     ║ (although not advised a single page-article).  ║
+     ╚════════════════════════════════════════════════╝ -->
+  <link rel="start"                                       href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager"       />
+  <link rel="prev"                                        href="https://icompile.eladkarako.com/100-based-rating-to-5-star-rating-conversion"    />
+  <link rel="previous"                                    href="https://icompile.eladkarako.com/100-based-rating-to-5-star-rating-conversion"    />
+  <link rel="next"                                        href="https://icompile.eladkarako.com/ffmpeg-use-in-product-review-for-time-lapse"        />
+  <link rel="last"                                        href="https://icompile.eladkarako.com/shealth"        />
+  <link rel="up"                                          href="https://icompile.eladkarako.com/" />
+  <base target="_top"                                     href="https://icompile.eladkarako.com/" />
+<!-- ╔══════╗
+     ║ URL. ║
+     ╚══════╝ -->
+  <link rel="canonical"                                   href="https://icompile.eladkarako.com/html5-svg-ninja-textual-half-a-star"         />
+  <meta property="og:url"                              content="https://icompile.eladkarako.com/html5-svg-ninja-textual-half-a-star"         />
+  <meta name="twitter:url"                             content="https://icompile.eladkarako.com/html5-svg-ninja-textual-half-a-star"         />
+  <meta name="identifier-URL"                          content="https://icompile.eladkarako.com/html5-svg-ninja-textual-half-a-star"         />
+  <meta name="msapplication-starturl"                  content="https://icompile.eladkarako.com/html5-svg-ninja-textual-half-a-star"         />
+  <meta name="dcterms.identifier"                      content="https://icompile.eladkarako.com/html5-svg-ninja-textual-half-a-star"         />
+<!-- ╔════════════════════════════════╗
+     ║ Data and Time - UTC. Creation. ║
+     ╚════════════════════════════════╝ -->
+  <meta name="creation_date"                           content="2016-09-09T19:03:08+00:00"     />
+  <meta name="page-datetime"                           content="2016-09-09T19:03:08+00:00"     />
+  <meta property="article:published_time"              content="2016-09-09T19:03:08+00:00"     />
+  <meta name="dcterms.date"                            content="2016-09-09T19:03:08+00:00"     />
+<!-- ╔═════════════════════════════════════╗
+     ║ Data and Time - UTC. Last-Modified. ║
+     ╚═════════════════════════════════════╝ -->
+  <meta name="dcterms.modified"                        content="2016-09-09T19:48:12+00:00"    />
+  <meta property="article:modified_time"               content="2016-09-09T19:48:12+00:00"    />
+<!-- ╔═════════════════════════════════════════╗
+     ║ License - FREE FOR ALL - PUBLIC-DOMAIN! ║
+     ╚═════════════════════════════════════════╝ -->
+  <link rel="license"                                     href="https://icompile.eladkarako.com/LICENSE" />
+<!-- ╔════════════════════╗
+     ║ preconnect (self)  ║
+     ╚════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://icompile.eladkarako.com"                             />
+<!-- ╔═══════════════════════╗
+     ║ preconnect (external) ║
+     ╚═══════════════════════╝ -->
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="https://utteranc.es"                                         />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.googletagmanager.com"                                    />
+  <!-- not being used right now... 
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="www.google-analytics.com"                                    />
+  <link rel="dns-prefetch"   crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  <link rel="preconnect"     crossorigin="anonymous"                                                                                     href="ssl.google-analytics.com"                                    />
+  -->
+<!-- ╔═════════════════╗
+     ║ preload (self)  ║
+     ╚═════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"        type="image/x-icon"                           as="image"                     href="https://icompile.eladkarako.com/favicon.ico"                 />
+  <link rel="preload"        crossorigin="anonymous"        type="text/css"               charset="UTF-8" as="style"                     href="https://icompile.eladkarako.com/_resources/index.css"        />
+  <link rel="preload"        crossorigin="anonymous"        type="text/javascript"        charset="UTF-8" as="script"                    href="https://icompile.eladkarako.com/_resources/index.js"         />
+<!-- ╔════════════════════╗
+     ║ preload (external) ║
+     ╚════════════════════╝ -->
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://utteranc.es/client.js"                               />
+  <link rel="preload"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" as="script"                          href="https://www.googletagmanager.com/gtag/js?id=G-M28VNCZS3P"    />
+<!-- ╔══════╗
+     ║ load ║
+     ╚══════╝ -->
+  <link rel="icon"           crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+  <link rel="shortcut icon"  crossorigin="anonymous"        type="image/x-icon"                                                                href="https://icompile.eladkarako.com/favicon.ico" />
+<!-- ╔════════════════════════════════════════════════╗
+     ║ page specific image (but favicon is fine too). ║
+     ╚════════════════════════════════════════════════╝ -->
+  <meta itemprop="image"                                    type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <meta property="og:image"                                 type="image/png"                                                                content="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="apple-touch-icon image_src"                    type="image/png"                                                                   href="https://icompile.eladkarako.com/favicon.png" />
+  <link rel="stylesheet"     crossorigin="anonymous"        type="text/css"               charset="UTF-8" media="all"                          href="https://icompile.eladkarako.com/_resources/index.css"   />
+  <link rel="manifest"       crossorigin="anonymous"        type="application/manifest+json"  charset="UTF-8"                                  href="https://icompile.eladkarako.com/manifest.webmanifest"   />
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║ OpenSearch (as en external file). type is important. ║
+     ╚══════════════════════════════════════════════════════╝ -->
+  <link rel="search"                                   href="https://icompile.eladkarako.com/opensearch.xml" type="application/opensearchdescription+xml" title="Search icompile.eladkarako.com" charset="UTF-8" />
+<!-- ╔═══════════════════════════════════════╗
+     ║ micro-data in a schema-friendly JSON. ║
+     ╚═══════════════════════════════════════╝ -->
+  <script type="application/ld+json">
+{"@context"        : "http://schema.org/"
+,"@type"           : "WebSite"
+,"name"            : "iCompile"
+,"alternateName"   : "iCompile"
+,"@id"             : "https://icompile.eladkarako.com/html5-svg-ninja-textual-half-a-star"
+,"url"             : "https://icompile.eladkarako.com/html5-svg-ninja-textual-half-a-star"
+,"headline"        : "HTML5-SVG Ninja - Textual Half A Star"
+,"description"     : "HTML5-SVG Ninja - Textual Half A Star"
+,"datePosted"      : "2016-09-09T19:03:08+00:00"
+,"dateCreated"     : "2016-09-09T19:03:08+00:00"
+,"datePublished"   : "2016-09-09T19:03:08+00:00"
+,"dateModified"    : "2016-09-09T19:48:12+00:00"
+,"thumbnailUrl"    : "https://icompile.eladkarako.com/favicon.png"
+,"image"           : {"@type"       : "ImageObject"
+                     ,"url"         : "https://icompile.eladkarako.com/favicon.png"
+                     ,"width"       : 152
+                     ,"height"      : 152
+                     }
+,"potentialAction" : {"@type"       : "SearchAction"
+                     ,"target"      : "https://www.google.com/search/?q={query}%20site%3Ahttps%3A%2F%2Ficompile.eladkarako.com%2F"
+                     ,"query"       : "required"
+                     }
+,"author"          : {"@type"       : "Person"
+                     ,"name"        : "Elad Karako"
+                     ,"givenName"   : "Elad"
+                     ,"familyName"  : "Karako"
+                     ,"jobTitle"    : "Software Engineer"
+                     }
+,"license"         : "https://icompile.eladkarako.com/LICENSE"
+}
+  </script>
+<!-- ╔════════════════════╗
+     ║ Analytics (no JS). ║
+     ╚════════════════════╝ -->
+  <noscript><iframe          crossorigin="anonymous"  type="text/html"              charset="UTF-8" loading="eager" lazyload="off"        src="https://www.googletagmanager.com/ns.html?id=G-M28VNCZS3P" referrerpolicy="unsafe-url" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" height="0" width="0" style="display:none;"></iframe></noscript>
+</head>
+<body role="main">
+
+<article id="post-0008877443741">
+  <header>
+    <h1 itemprop="headline">HTML5-SVG Ninja - Textual Half A Star</h1>
+    <sup>Posted at <time datetime="2016-09-09T19:48:12+00:00" itemprop="dateModified">Fri, 09 Sep 2016 19:48:12 GMT</time></sup>
+  </header>
+  <br/>
+  <div itemprop="articleBody">SVG is so easy on drawing vector-graphic,<br/>
+BUT it handles text in images very well (you can copy/paste it as well).<br/>
+<br/>
+Use Unicode symbol <code>&#x1f31f;︎</code> and fill it halfway with yellow color to create a nice very easy to use SVG-image  :)<br/>
+<br/>
+<sub>You can right click it to view the source or open it in a new tab.</sub><br/>
+<br/>
+<iframe loading="lazy" lazyload="on"  allowfullscreen="true" frameborder="0" marginheight="0" marginwidth="0" referrerpolicy="unsafe-url" scrolling="yes" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation" seamless="false" target="" src="data:text/html;charset=UTF-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4NXB0IiBoZWlnaHQ9Ijg1cHQiID4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmljb2xvcmVkIiB4MT0iMCIgeDI9IjEwMCUiIHkxPSIwIiB5Mj0iMjAlIj4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0icmdiYSgyNTUsMjU1LDAsICAuOSkiICBvZmZzZXQ9IjgwJSIgICAvPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSJyZ2JhKDI1NSwyNTUsMjU1LC45KSIgIG9mZnNldD0iODAlIiAgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxzdHlsZT4KICAgIC8qPCFbQ0RBVEFbKi8KICAgIHN2ZywgdGV4dCB7CiAgICAgIHBhZGRpbmc6MDsKICAgICAgbWFyZ2luOjA7CiAgICB9CiAgICBzdmd7CiAgICAgIGZvbnQ6ICAgICAgICAgICAgIDgwcHQvODBwdCAiUm9ib3RvIiwgc2Fucy1zZXJpZjsKICAgICAgdmVydGljYWwtYWxpZ246ICAgbWlkZGxlOwogICAgICB0ZXh0LXNpemUtYWRqdXN0OiAxMDAlOwogICAgICBmb250LWtlcm5pbmc6ICAgICBub3JtYWw7CiAgICAgIGJveC1zaXppbmc6ICAgICAgIGJvcmRlci1ib3g7CiAgICAgIHRleHQtcmVuZGVyaW5nOiAgIGdlb21ldHJpY1ByZWNpc2lvbjsKICAgIH0KICAgIHRleHR7CiAgICAgIC8qIGF0ZW1wdCB0byBhbnRpYWxpYXMgKi8KICAgICAgLXdlYmtpdC1mb250LXNtb290aGluZzogICBzdWJwaXhlbC1hbnRpYWxpYXNlZDsKICAgICAgdGV4dC1zaGFkb3c6ICAgICAgICAgICAgICAwIDAgLjVweCByZ2JhKDAsIDAsIDAsIC4xKTsKICAgICAgc3Ryb2tlOiAgICAgICAgICAgICAgICAgICByZ2JhKDAsMCwwLC44KTsKICAgICAgc3Ryb2tlLXdpZHRoOiAgICAgICAgICAgICAycHg7CiAgICAgIGZpbGw6ICAgICAgICAgICAgICAgICAgICAgdXJsKCNiaWNvbG9yZWQpOwogICAgfQogICAgLypdXT4qLwogIDwvc3R5bGU+CiAgPHRleHQgeD0iMCIgeT0iNzBwdCI+8J+Mn++4jjwvdGV4dD4KPC9zdmc+"></iframe><br/>
+<br/>
+<!--more--><br/>
+<br/>
+<pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>svg</span> <span style='color:#666616; '>xmlns</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#666616; '>http</span><span style='color:#800080; '>:</span><span style='color:#800000; font-weight:bold; '>//</span><span style='color:#5555dd; '>www.w3.org</span><span style='color:#40015a; '>/2000/svg</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>width</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#008c00; '>85</span><span style='color:#006600; '>pt</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>height</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#008c00; '>85</span><span style='color:#006600; '>pt</span><span style='color:#800000; '>"</span> <span style='color:#a65700; '>&gt;</span><br/>
+  <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>defs</span><span style='color:#a65700; '>&gt;</span><br/>
+    <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>linearGradient</span> <span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>bicolored</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>x1</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#008c00; '>0</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>x2</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#008c00; '>100</span><span style='color:#006600; '>%</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>y1</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#008c00; '>0</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>y2</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#008c00; '>20</span><span style='color:#006600; '>%</span><span style='color:#800000; '>"</span><span style='color:#a65700; '>&gt;</span><br/>
+      <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>stop</span> <span style='color:#074726; '>stop-color</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='font-weight:bold; font-style:italic; '>r</span><span style='font-weight:bold; font-style:italic; '>g</span><span style='font-weight:bold; font-style:italic; '>b</span><span style='font-weight:bold; font-style:italic; '>a</span><span style='font-weight:bold; font-style:italic; '>(</span><span style='font-weight:bold; font-style:italic; '>2</span><span style='font-weight:bold; font-style:italic; '>5</span><span style='font-weight:bold; font-style:italic; '>5</span><span style='font-weight:bold; font-style:italic; '>,</span><span style='font-weight:bold; font-style:italic; '>2</span><span style='font-weight:bold; font-style:italic; '>5</span><span style='font-weight:bold; font-style:italic; '>5</span><span style='font-weight:bold; font-style:italic; '>,</span><span style='font-weight:bold; font-style:italic; '>0</span><span style='font-weight:bold; font-style:italic; '>,</span><span style='color:#0000e6; '>  </span><span style='font-weight:bold; font-style:italic; '>.</span><span style='font-weight:bold; font-style:italic; '>9</span><span style='font-weight:bold; font-style:italic; '>)</span><span style='color:#800000; '>"</span>  <span style='color:#074726; '>offset</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#008c00; '>80</span><span style='color:#006600; '>%</span><span style='color:#800000; '>"</span>   <span style='color:#a65700; '>/></span><br/>
+      <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>stop</span> <span style='color:#074726; '>stop-color</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='font-weight:bold; font-style:italic; '>r</span><span style='font-weight:bold; font-style:italic; '>g</span><span style='font-weight:bold; font-style:italic; '>b</span><span style='font-weight:bold; font-style:italic; '>a</span><span style='font-weight:bold; font-style:italic; '>(</span><span style='font-weight:bold; font-style:italic; '>2</span><span style='font-weight:bold; font-style:italic; '>5</span><span style='font-weight:bold; font-style:italic; '>5</span><span style='font-weight:bold; font-style:italic; '>,</span><span style='font-weight:bold; font-style:italic; '>2</span><span style='font-weight:bold; font-style:italic; '>5</span><span style='font-weight:bold; font-style:italic; '>5</span><span style='font-weight:bold; font-style:italic; '>,</span><span style='font-weight:bold; font-style:italic; '>2</span><span style='font-weight:bold; font-style:italic; '>5</span><span style='font-weight:bold; font-style:italic; '>5</span><span style='font-weight:bold; font-style:italic; '>,</span><span style='font-weight:bold; font-style:italic; '>.</span><span style='font-weight:bold; font-style:italic; '>9</span><span style='font-weight:bold; font-style:italic; '>)</span><span style='color:#800000; '>"</span>  <span style='color:#074726; '>offset</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#008c00; '>80</span><span style='color:#006600; '>%</span><span style='color:#800000; '>"</span>  <span style='color:#a65700; '>/></span><br/>
+    <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>linearGradient</span><span style='color:#a65700; '>&gt;</span><br/>
+  <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>defs</span><span style='color:#a65700; '>&gt;</span><br/>
+  <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>style</span> <span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>text/css</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>media</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>all</span><span style='color:#800000; '>"</span><span style='color:#a65700; '>&gt;</span><br/>
+    <span style='color:#696969; '>/*&lt;![CDATA[*/</span><br/>
+    <span style='color:#800000; font-weight:bold; '>svg</span><span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>text</span> <span style='color:#800080; '>{</span><br/>
+      <span style='color:#bb7977; font-weight:bold; '>padding</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span><br/>
+      <span style='color:#bb7977; font-weight:bold; '>margin</span><span style='color:#808030; '>:</span><span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#800000; font-weight:bold; '>svg</span><span style='color:#800080; '>{</span><br/>
+      <span style='color:#bb7977; font-weight:bold; '>font</span><span style='color:#808030; '>:</span>             80pt/<span style='color:#008c00; '>80</span><span style='color:#006600; '>pt</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Roboto</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#074726; '>sans-serif</span><span style='color:#800080; '>;</span><br/>
+      <span style='color:#bb7977; font-weight:bold; '>vertical-align</span><span style='color:#808030; '>:</span>   <span style='color:#074726; '>middle</span><span style='color:#800080; '>;</span><br/>
+      text-size-adjust<span style='color:#808030; '>:</span> <span style='color:#008c00; '>100</span><span style='color:#006600; '>%</span><span style='color:#800080; '>;</span><br/>
+      font-kerning<span style='color:#808030; '>:</span>     <span style='color:#074726; '>normal</span><span style='color:#800080; '>;</span><br/>
+      <span style='color:#bb7977; font-weight:bold; '>box-sizing</span><span style='color:#808030; '>:</span>       <span style='color:#074726; '>border-box</span><span style='color:#800080; '>;</span><br/>
+      <span style='color:#bb7977; font-weight:bold; '>text-rendering</span><span style='color:#808030; '>:</span>   geometricPrecision<span style='color:#800080; '>;</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#800000; font-weight:bold; '>text</span><span style='color:#800080; '>{</span><br/>
+      <span style='color:#696969; '>/* attempt to antialias */</span><br/>
+      -webkit-font-smoothing<span style='color:#808030; '>:</span>   subpixel-antialiased<span style='color:#800080; '>;</span><br/>
+      <span style='color:#bb7977; font-weight:bold; '>text-shadow</span><span style='color:#808030; '>:</span>              <span style='color:#008c00; '>0</span> <span style='color:#008c00; '>0</span> <span style='color:#008c00; '>.5</span><span style='color:#006600; '>px</span> <span style='color:#400000; '>rgba</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>.1</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+      <span style='color:#bb7977; font-weight:bold; '>stroke</span><span style='color:#808030; '>:</span>                   <span style='color:#400000; '>rgba</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>.8</span><span style='color:#808030; '>)</span><span style='color:#800080;'>;</span><br/>
+      <span style='color:#bb7977; font-weight:bold; '>stroke-width</span><span style='color:#808030; '>:</span>             <span style='color:#008c00; '>2</span><span style='color:#006600; '>px</span><span style='color:#800080; '>;</span><br/>
+      <span style='color:#bb7977; font-weight:bold; '>fill</span><span style='color:#808030; '>:</span>                     <span style='color:#400000; '>url</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>#</span><span style='color:#7d0045; '>bicolored</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br/>
+    <span style='color:#800080; '>}</span><br/>
+    <span style='color:#696969; '>/*]]&gt;*/</span><br/>
+  <span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>style</span><span style='color:#a65700; '>&gt;</span><br/>
+  <span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>text</span> <span style='color:#074726; '>x</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#008c00; '>0</span><span style='color:#800000; '>"</span> <span style='color:#074726; '>y</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#008c00; '>70</span><span style='color:#006600; '>pt</span><span style='color:#800000; '>"</span><span style='color:#a65700; '>&gt;</span>&#x1f31f;︎<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>text</span><span style='color:#a65700; '>&gt;</span><br/>
+<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>svg</span><span style='color:#a65700; '>&gt;</span><br/>
+</pre></div>
+  <br/>
+  <br/>
+  <br/>
+  <footer>
+    <center><a rel="first" title="First Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/show-hidden-devices-in-windows-device-manager">&vert;&lt;</a>&nbsp;<a rel="previous" title="Previous Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/100-based-rating-to-5-star-rating-conversion">&lt;</a>&nbsp;<a rel="index" title="Home-Page" itemprop="relatedLink" href="https://icompile.eladkarako.com/">&Hat;</a>&nbsp;<a rel="next" title="Next Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-use-in-product-review-for-time-lapse">&gt;</a>&nbsp;<a rel="last" title="Last Article" itemprop="relatedLink" href="https://icompile.eladkarako.com/shealth">&gt;&vert;</a></center>
+    <br/>
+    <table>
+      <thead>
+        <tr><td colspan="2">Next Articles</td></tr>
+      </thead>
+      <tbody>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ffmpeg-use-in-product-review-for-time-lapse">FFMPEG Use In Product Review For Time-Lapse</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-and-canvas-playing-generate-random-noise-and-download-the-image-from-the-canvas">JavaScript and Canvas Playing : Generate Random Noise and Download The Image From The Canvas With New HTML5 Download <a> Attribute + Demo</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/0emm">0emm.com Belongs To Google!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-organization-specific-prefixes">CSS3 Organization Specific Prefixes</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/properly-set-content-disposition">Content-Disposition Header - Like A Boss &#x1f454;☕</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/htaccess-trick-to-proper-download-binary-files">.htaccess Trick To Proper Download Binary-Files</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/google-x-vienna-summit-september-2016">Google-X Vienna Summit September 2016</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/unofficial-apktool-2-1">Unofficial ApkTool 2.1 &#x1f527;</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/contenteditable-and-readonly">ContentEditable And "ReadOnly"? YES!</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-ninja-edit-everything-safely">Safely</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/samsung-note-5-secret-codes">Samsung Note 5 Secret Codes</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/download-windows-movie-maker">Windows Essential - Download Just Movie-Maker And Gallery URLs</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/windows-installer-clean-up-portable">Windows Installer Clean-Up - Portable</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/ebays-sellers-description-web-page-url">eBay's Seller's Description Web-Page URL</a></td></tr>
+        <tr><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/javascript-events-no-bubble-no-defaults">JavaScript Ninja - Proper Prevention Of Event-Bubbling And Default-Actions</a></td><td><a itemprop="relatedLink" href="https://icompile.eladkarako.com/css3-inform-ctrl-a-is-enabled">CSS3 - Let Your Users Know They Can Use [CTRL]+[A] To Select The Code In PRE and CODE elements</a></td></tr>
+      </tbody>
+    </table>
+  </footer>
+</article>
+<br/>
+<hr/>
+<br/>
+
+
+<br/>
+<script defer="defer"        crossorigin="anonymous"  type="text/javascript"        charset="UTF-8" loading="eager" lazyload="off"        src="https://icompile.eladkarako.com/_resources/index.js"></script>
+</body>
+</html>
